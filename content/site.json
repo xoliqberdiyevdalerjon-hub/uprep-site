@@ -1,7 +1,16 @@
 {
-  "eyebrow": "Sapienza va LazioDiSCo misolida · 2026/27",
-  "title": "Italiyaga yo'l",
-  "lead": "Qabul xatidan full enrollment'gacha 7 bosqich. Bosqichni bosing: nima qilinadi, qaysi hujjat kerak va qachongacha.",
+  "eyebrow": "Uprep · 2026/27 o'quv yili",
+  "title": "Chet elda o'qishga yo'l",
+  "lead": "Davlat va universitet tanlashdan boshlab, viza va birinchi kunlargacha. Hammasi o'zbek tilida, rasmiy manbalar asosida.",
   "telegram": "Uprep_Admin",
+  "price": "$399",
+  "priceNote": "Bir marta to'lov. Kurs umrbod ochiq.",
+  "includes": [
+    "8 bosqichli to'liq yo'riqnoma: arizadan full enrollment'gacha",
+    "Har bosqich uchun hujjatlar ro'yxati va belgilab boriladigan checklist",
+    "Stipendiya (DSU) va ISEE uchun oiladan yig'iladigan hujjatlar",
+    "Viza, permesso va Italiyaga kelgandan keyingi ishlar",
+    "Muddatlar kalendari va yangilanishlar"
+  ],
   "footer": "Umumiy ma'lumot, kafolat emas. Talablar va sanalar har yili, universitet va viloyatga qarab o'zgaradi. Topshirishdan oldin rasmiy manbani tekshiring."
 }

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "italiya",
+    "name": "Italiya",
+    "code": "IT",
+    "status": "open",
+    "blurb": "To'liq qo'llanma: universitetlar, stipendiya, viza"
+  },
+  {
+    "id": "de",
+    "name": "Germaniya",
+    "code": "DE",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "fr",
+    "name": "Fransiya",
+    "code": "FR",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "es",
+    "name": "Ispaniya",
+    "code": "ES",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "nl",
+    "name": "Niderlandiya",
+    "code": "NL",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "at",
+    "name": "Avstriya",
+    "code": "AT",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "hu",
+    "name": "Vengriya",
+    "code": "HU",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "pl",
+    "name": "Polsha",
+    "code": "PL",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "cz",
+    "name": "Chexiya",
+    "code": "CZ",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "gb",
+    "name": "Buyuk Britaniya",
+    "code": "GB",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "us",
+    "name": "AQSh",
+    "code": "US",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "ca",
+    "name": "Kanada",
+    "code": "CA",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "kr",
+    "name": "Janubiy Koreya",
+    "code": "KR",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "jp",
+    "name": "Yaponiya",
+    "code": "JP",
+    "status": "soon",
+    "blurb": ""
+  },
+  {
+    "id": "tr",
+    "name": "Turkiya",
+    "code": "TR",
+    "status": "soon",
+    "blurb": ""
+  }
+]

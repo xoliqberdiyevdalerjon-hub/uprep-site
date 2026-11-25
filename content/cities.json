@@ -1,0 +1,74 @@
+[
+  {
+    "id": "roma",
+    "name": "Rim",
+    "region": "Lazio",
+    "dsu": "DiSCo",
+    "intro": "Italiyaning poytaxti va eng katta talabalar shahri. Sapienza, Tor Vergata va Roma Tre shu yerda.",
+    "points": [
+      "Ish va amaliyot imkoniyati ko'p: vazirliklar, xalqaro tashkilotlar, kompaniyalar.",
+      "Ijara narxi Italiya o'rtachasidan yuqori.",
+      "Stipendiya: DiSCo, 2026/27 da 8 200 € gacha, kuniga 2 mahal bepul ovqat."
+    ]
+  },
+  {
+    "id": "milano",
+    "name": "Milan",
+    "region": "Lombardia",
+    "dsu": "Universitetning o'zi",
+    "intro": "Italiyaning moliya, biznes va dizayn markazi. Universita degli Studi di Milano, Politecnico di Milano, Bocconi shu yerda.",
+    "points": [
+      "Ish bozori eng kuchli shahar.",
+      "Yashash Italiyadagi eng qimmat shaharlardan.",
+      "Stipendiyani har bir universitet o'zi e'lon qiladi."
+    ]
+  },
+  {
+    "id": "torino",
+    "name": "Turin",
+    "region": "Piemonte",
+    "dsu": "EDISU Piemonte",
+    "intro": "Sanoat va muhandislik shahri, Alp tog'lari yonida. Universita di Torino va Politecnico di Torino shu yerda.",
+    "points": [
+      "Rim va Milanga nisbatan yashash arzonroq.",
+      "EDISU stipendiyasi 2026/27 da 8 455 € gacha.",
+      "UniTo'da Talents4UniTo grantlari ham bor."
+    ]
+  },
+  {
+    "id": "bologna",
+    "name": "Bolonya",
+    "region": "Emilia-Romagna",
+    "dsu": "ER.GO",
+    "intro": "Klassik talabalar shahri: shahar hayoti universitet atrofida aylanadi.",
+    "points": [
+      "Yevropadagi eng qadimgi universitet shu yerda (1088).",
+      "ER.GO stipendiyasi 2026/27 da 7 171 € gacha, yotoqxona stipendiya hisobidan to'lanadi.",
+      "Ijara topish qiyin: erta qidiring."
+    ]
+  },
+  {
+    "id": "siena",
+    "name": "Siena",
+    "region": "Toscana",
+    "dsu": "DSU Toscana",
+    "intro": "Toskanadagi kichik o'rta asr shahri, tinch va xavfsiz.",
+    "points": [
+      "Universitet 1240-yilda ochilgan.",
+      "Kichik shahar: hamma joyga piyoda yetib boriladi.",
+      "Stipendiya: DSU Toscana."
+    ]
+  },
+  {
+    "id": "messina",
+    "name": "Messina",
+    "region": "Sicilia",
+    "dsu": "ERSU Messina",
+    "intro": "Sitsiliyadagi dengiz bo'yidagi shahar, Messina bo'g'ozida.",
+    "points": [
+      "Kontrakt yiliga 156–506 € (davlat guruhiga qarab).",
+      "Janubda yashash odatda arzonroq.",
+      "ERSU stipendiyasi 2026/27 da 8 246 € gacha."
+    ]
+  }
+]

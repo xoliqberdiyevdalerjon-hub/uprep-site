@@ -15,6 +15,9 @@ content:
       - { name: title, label: Sarlavha, type: string }
       - { name: lead, label: Qisqa matn, type: text }
       - { name: telegram, label: Telegram username (@ belgisisiz), type: string }
+      - { name: price, label: "Kurs narxi (masalan $399)", type: string }
+      - { name: priceNote, label: Narx ostidagi izoh, type: string }
+      - { name: includes, label: Kurs ichida nima bor (ro'yxat), type: string, list: true }
       - { name: footer, label: Pastki izoh, type: text }
 
   - name: stages
@@ -27,6 +30,7 @@ content:
       - { name: id, label: "Qisqa kod (lotin harf/raqam, bo'sh joysiz, masalan s8)", type: string, required: true }
       - { name: title, label: Sarlavha, type: string, required: true }
       - { name: sub, label: Qisqa izoh, type: string }
+      - { name: free, label: "Bepul bosqich (to'lovsiz ochiq)", type: boolean }
       - name: icon
         label: Belgi
         type: select
@@ -139,3 +143,166 @@ content:
       - { name: url, label: "Havola (YouTube yoki https://...)", type: string }
       - { name: file, label: Fayl yoki video yuklash, type: file }
       - { name: image, label: Muqova rasmi, type: image }
+
+  - name: countries
+    label: Davlatlar
+    type: file
+    path: content/countries.json
+    format: json
+    list: true
+    fields:
+      - { name: id, label: "Qisqa kod (masalan italiya)", type: string, required: true }
+      - { name: name, label: Nomi, type: string, required: true }
+      - { name: code, label: "Ikki harfli kod (IT, DE...)", type: string }
+      - name: status
+        label: "Holati: open = ochiq, soon = tez orada"
+        type: select
+        options:
+          values: [open, soon]
+      - { name: blurb, label: Qisqa izoh, type: string }
+
+  - name: italy
+    label: Italiya sahifasi
+    type: file
+    path: content/italy.json
+    format: json
+    fields:
+      - { name: title, label: Sarlavha, type: string }
+      - { name: lead, label: Kirish matni, type: text }
+      - name: stats
+        label: Katta raqamlar
+        type: object
+        list: true
+        fields:
+          - { name: big, label: Raqam, type: string }
+          - { name: small, label: Izoh, type: string }
+      - name: sections
+        label: Bo'limlar
+        type: object
+        list: true
+        fields:
+          - { name: id, label: "Qisqa kod (lotin, bo'sh joysiz)", type: string }
+          - { name: title, label: Sarlavha, type: string }
+          - name: blocks
+            label: Bloklar
+            type: block
+            list: true
+            blockKey: type
+            blocks:
+              - name: text
+                label: Matn
+                fields:
+                  - { name: title, label: Sarlavha, type: string }
+                  - { name: body, label: Matn, type: text }
+              - name: list
+                label: Ro'yxat
+                fields:
+                  - { name: title, label: Sarlavha, type: string }
+                  - name: style
+                    label: Ko'rinishi
+                    type: select
+                    options:
+                      values: [steps, checklist, bullets]
+                  - { name: items, label: Qatorlar, type: string, list: true }
+              - name: callout
+                label: Maslahat / Ogohlantirish
+                fields:
+                  - name: style
+                    label: Turi
+                    type: select
+                    options:
+                      values: [tip, warn, info]
+                  - { name: text, label: Matn, type: text }
+              - name: video
+                label: Video
+                fields:
+                  - { name: title, label: Sarlavha, type: string }
+                  - { name: url, label: YouTube havolasi, type: string }
+                  - { name: caption, label: Izoh, type: string }
+              - name: image
+                label: Rasm
+                fields:
+                  - { name: image, label: Rasm, type: image }
+                  - { name: caption, label: Izoh, type: string }
+              - name: stats
+                label: Katta raqamlar
+                fields:
+                  - name: items
+                    label: Raqamlar
+                    type: object
+                    list: true
+                    fields:
+                      - { name: big, label: Raqam, type: string }
+                      - { name: small, label: Izoh, type: string }
+              - name: cards
+                label: Kartalar
+                fields:
+                  - name: items
+                    label: Kartalar
+                    type: object
+                    list: true
+                    fields:
+                      - { name: title, label: Sarlavha, type: string }
+                      - { name: text, label: Matn, type: text }
+
+  - name: cities
+    label: Shaharlar
+    type: file
+    path: content/cities.json
+    format: json
+    list: true
+    fields:
+      - { name: id, label: "Qisqa kod (masalan roma)", type: string, required: true }
+      - { name: name, label: Nomi, type: string, required: true }
+      - { name: region, label: Viloyat, type: string }
+      - { name: dsu, label: Stipendiya idorasi, type: string }
+      - { name: intro, label: Kirish matni, type: text }
+      - { name: points, label: Muhim faktlar, type: string, list: true }
+
+  - name: universities
+    label: Universitetlar
+    type: file
+    path: content/universities.json
+    format: json
+    list: true
+    fields:
+      - { name: id, label: "Qisqa kod (masalan sapienza)", type: string, required: true }
+      - { name: short, label: Qisqa nomi, type: string, required: true }
+      - { name: name, label: To'liq nomi, type: string }
+      - { name: city, label: "Shahar kodi (roma, milano, torino...)", type: string }
+      - { name: founded, label: Tashkil topgan yili, type: string }
+      - { name: rank, label: "Reyting (masalan QS 2027: #111)", type: string }
+      - { name: intro, label: Qisqa tavsif, type: text }
+      - { name: portalLabel, label: Ariza tugmasi matni, type: string }
+      - { name: portalUrl, label: "Ariza / ro'yxatdan o'tish havolasi (https://...)", type: string }
+      - { name: fee, label: Ariza to'lovi, type: string }
+      - name: deadlines
+        label: Muddatlar
+        type: object
+        list: true
+        fields:
+          - { name: label, label: "Nima (masalan Bakalavr 2027/28)", type: string }
+          - { name: date, label: "Sana (masalan 19.02 – 15.04.2027)", type: string }
+      - { name: deadlineNote, label: Muddatlar haqida izoh, type: text }
+      - name: levels
+        label: Darajalar
+        type: object
+        list: true
+        fields:
+          - { name: name, label: "Nomi (Foundation, Bakalavr...)", type: string }
+          - { name: duration, label: Davomiyligi, type: string }
+          - { name: req, label: Talablar, type: string, list: true }
+      - { name: docs, label: Kerakli hujjatlar, type: string, list: true }
+      - { name: scholarship, label: Stipendiya, type: text }
+      - { name: acceptance, label: Qabul foizi, type: text }
+      - { name: tip, label: Uprep maslahati, type: text }
+      - { name: video, label: "Ariza videosi (YouTube havolasi)", type: string }
+      - { name: programmesUrl, label: "Yo'nalishlar ro'yxati havolasi", type: string }
+      - { name: infoUrl, label: Xalqaro talabalar sahifasi, type: string }
+      - name: sources
+        label: Manbalar
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Nomi, type: string }
+          - { name: url, label: Havola, type: string }

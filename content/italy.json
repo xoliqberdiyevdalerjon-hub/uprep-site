@@ -1,0 +1,135 @@
+{
+  "title": "Italiya",
+  "lead": "Yevropaning eng qadimgi universitetlari, ingliz tilidagi yuzlab dasturlar va oilaning daromadiga qarab beriladigan stipendiya.",
+  "stats": [
+    {
+      "big": "742",
+      "small": "to'liq ingliz tilidagi dastur (2025/26)"
+    },
+    {
+      "big": "~8 455 €",
+      "small": "yillik DSU stipendiyasi, maksimal (2026/27, EDISU)"
+    },
+    {
+      "big": "20 soat",
+      "small": "haftasiga rasmiy ishlash mumkin"
+    },
+    {
+      "big": "90 kun",
+      "small": "180 kun ichida Shengen bo'ylab sayohat"
+    }
+  ],
+  "sections": [
+    {
+      "id": "nega",
+      "title": "Nega Italiya",
+      "blocks": [
+        {
+          "type": "list",
+          "title": "Asosiy sabablar",
+          "style": "bullets",
+          "items": [
+            "Bologna universiteti 1088-yilda ochilgan: Yevropadagi eng qadimgi universitet.",
+            "QS 2027 reytingida Politecnico di Milano #87, Sapienza #111, Bologna #123.",
+            "Ingliz tilida o'qish mumkin: 2025/26 yilda 742 ta to'liq inglizcha va 420 ta ikki tilli dastur bor edi.",
+            "Kontrakt past: masalan, Pisa'da xorijliklar yiliga 290–2 900 € to'laydi, Messina'da 156–506 €.",
+            "Stipendiya: DSU oila daromadiga qarab beriladi. Stipendiya olgan talaba kontraktdan ozod bo'ladi.",
+            "Diplom Yevropada tan olinadi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tizim",
+      "title": "Ta'lim tizimi",
+      "blocks": [
+        {
+          "type": "cards",
+          "items": [
+            {
+              "title": "Foundation",
+              "text": "1 yillik tayyorlov kursi. 11 yillik maktab attestati bilan bakalavrga kirish uchun kerak bo'lishi mumkin. Narxi universitetga qarab 1 300–5 000 €."
+            },
+            {
+              "title": "Bakalavr (Laurea)",
+              "text": "3 yil, 180 ECTS. Odatda 12 yillik ta'lim yoki 11 yil + Foundation / 1 yil universitet talab qilinadi."
+            },
+            {
+              "title": "Magistratura (Laurea Magistrale)",
+              "text": "2 yil, 120 ECTS. Bakalavr diplomi, B2 ingliz tili, ko'pincha CV va motivatsion xat."
+            },
+            {
+              "title": "Yagona sikl",
+              "text": "Tibbiyot, stomatologiya, arxitektura kabi yo'nalishlar 5–6 yil davom etadi va alohida test (masalan IMAT) bilan qabul qiladi."
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "Testlar dasturga qarab: CEnT-S, TOLC, SAT, IMAT yoki suhbat. Har bir dasturning chaqiruvi (bando)da aniq yozilgan."
+        }
+      ]
+    },
+    {
+      "id": "pul",
+      "title": "Xarajatlar va stipendiya",
+      "blocks": [
+        {
+          "type": "stats",
+          "items": [
+            {
+              "big": "10 179,85 €",
+              "small": "viza uchun yillik minimal mablag' (2026, Unibo ma'lumoti)"
+            },
+            {
+              "big": "≈ 700 €",
+              "small": "SSN ixtiyoriy tibbiy sug'urta, yiliga"
+            },
+            {
+              "big": "16 €",
+              "small": "permesso arizasidagi marca da bollo"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Stipendiya (DSU) qanday ishlaydi",
+          "body": "Har bir viloyatda stipendiyani o'z idorasi beradi: Lazio'da DiSCo, Piemonte'da EDISU, Emilia-Romagna'da ER.GO, Toscana'da DSU Toscana. Lombardiya'da esa har bir universitetning o'zi.\n\nStipendiya oila daromadi va mulkiga qarab beriladi. Buning uchun O'zbekistondan oila tarkibi, daromad va uy-joy hujjatlari apostil va italyancha tarjima bilan olib kelinadi, Italiyada CAF ular asosida ISEE parificato hisoblaydi.\n\n2026/27 yilda fuori sede talaba uchun maksimal summa taxminan 7 171–8 455 € bo'ldi. Ba'zi shaharlarda yotoqxona va ovqat bepul, ba'zilarida ular stipendiya hisobidan to'lanadi."
+        }
+      ]
+    },
+    {
+      "id": "hayot",
+      "title": "Talaba hayoti",
+      "blocks": [
+        {
+          "type": "list",
+          "title": "Kelgandan keyingi asosiy ishlar",
+          "style": "steps",
+          "items": [
+            "8 kun ichida permesso di soggiorno arizasi: pochtadagi kit orqali, keyin Questura.",
+            "Codice fiscale: soliq raqami. Bank, SIM-karta va ijara shartnomasi uchun kerak.",
+            "Tibbiy sug'urta: xususiy yoki SSN'ga ixtiyoriy yozilish.",
+            "Universitetda full enrollment: asl hujjatlar bilan."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Qoidalar",
+          "style": "bullets",
+          "items": [
+            "Ish: haftasiga 20 soat, yiliga 1 040 soatgacha (DPR 394/1999, 14-modda).",
+            "Permesso bilan boshqa Shengen davlatlariga 180 kun ichida 90 kungacha borish mumkin.",
+            "O'qishni tugatgach, shartlar bajarilsa, 12 oygacha ish qidirish ruxsatnomasi olish mumkin."
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "warn",
+          "text": "Turistik viza bilan universitetga yozilib bo'lmaydi. Faqat D toifadagi talaba vizasi."
+        }
+      ]
+    }
+  ]
+}

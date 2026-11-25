@@ -1,25 +1,21 @@
-# Uprep — Italiyaga yo'l
+# Uprep — chet elda o'qish platformasi
 
-Italiyada o'qish bo'yicha bosqichma-bosqich qo'llanma sayti (GitHub Pages).
+Sayt: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/
 
-## Matn, video, rasm va fayl qo'shish (kod kerak emas)
+## Matnlarni tahrirlash
+app.pagescms.org → uprep-site. Bo'limlar: Bosh sahifa, Bosqichlar (kurs), Davlatlar, Italiya sahifasi, Shaharlar, Universitetlar, Kalendar, Materiallar. **Save** bosilgach sayt 1–2 daqiqada yangilanadi.
 
-1. https://app.pagescms.org saytiga kiring va **GitHub bilan** tizimga kiring.
-2. Pages CMS ilovasiga shu repoga ruxsat bering va repoini tanlang.
-3. Chap menyuda bo'limlar chiqadi:
-   - **Bosh sahifa**: sarlavha, qisqa matn, Telegram username.
-   - **Bosqichlar**: har bir bosqich. Ichida **Bloklar** bor: `+` tugmasi bilan Matn, Ro'yxat, Maslahat, Video, Rasm, Fayl, Havola tugmasi, Katta raqamlar yoki Taqqoslash kartalari qo'shasiz va sudrab tartibini o'zgartirasiz.
-   - **Kalendar**: muhim sanalar.
-   - **Materiallar**: bosh sahifadagi video, PDF va havolalar.
-4. **Save** ni bosing. Sayt 1–2 daqiqada yangilanadi.
+## Hisob va to'lovni yoqish (bir marta)
+1. **Supabase** (supabase.com, GitHub bilan kiring) → New project.
+   - SQL Editor → `supabase/schema.sql` ni ishga tushiring.
+   - Authentication → URL Configuration → Site URL: sayt manzili.
+   - Project Settings → API → `Project URL` va `anon public` kalitni `assets/config.js` ga yozing.
+2. **Stripe** (stripe.com, Italiya) → Managed Payments'ni yoqing.
+   - Mahsulot: "Uprep: Italiya kursi", $399, bir martalik, tax code `txcd_20060358` (Online courses – written material).
+   - Payment Link yarating; "After payment" → redirect: `<sayt>/#hisob?paid=1`. Havolani `assets/config.js` dagi `paymentLink` ga yozing.
+3. **Webhook**: Supabase → Edge Functions → `stripe-webhook` (`supabase/functions/stripe-webhook/index.ts`), Verify JWT: off.
+   - Secrets: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`.
+   - Stripe → Developers → Webhooks → endpoint: `https://<project>.supabase.co/functions/v1/stripe-webhook`, event: `checkout.session.completed`.
+4. **Pullik kontentni yopish**: kurs bloklarini `course_stages` jadvaliga ko'chirib, `content/stages.json` da faqat sarlavhalar qoldiriladi.
 
-### Maslahatlar
-- Katta videolarni YouTube'ga yuklab, havolasini qo'ying: GitHub 100 MB dan katta faylni qabul qilmaydi.
-- Ro'yxatning `checklist` ko'rinishida `# Pul` kabi qator guruh sarlavhasi bo'ladi.
-- Bosqichning «Qisqa kod»ini o'zgartirmang: tashrif buyuruvchilarning belgilari shunga bog'langan.
-
-## Tuzilishi
-- `index.html`, `assets/` — sayt ko'rinishi (o'zgartirish shart emas)
-- `content/*.json` — barcha matnlar
-- `media/` — yuklangan rasm, video va fayllar
-- `.pages.yml` — Pages CMS sozlamasi
+Hisoblar yoqilmaguncha sayt "tez orada" rejimida ishlaydi. Egasi uchun ko'rib chiqish: `<sayt>/#oldindan-korish`.

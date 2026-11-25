@@ -1,12 +1,59 @@
 [
   {
+    "id": "s0",
+    "title": "Maqsad va universitet",
+    "sub": "Daraja, yo'nalish va shaharni tanlash",
+    "icon": "cap",
+    "free": true,
+    "when": "Ariza ochilishidan 2–3 oy oldin",
+    "intro": "Birinchi qadam: qaysi darajaga, qaysi yo'nalishga va qaysi universitetga topshirishingizni aniqlaysiz. Shu qaror keyingi hamma hujjatlarni belgilaydi.",
+    "blocks": [
+      {
+        "type": "list",
+        "title": "Nima qilasiz",
+        "style": "steps",
+        "items": [
+          "Darajani tanlang: Foundation, bakalavr yoki magistratura. 11 yillik attestat bilan ko'pincha Foundation yoki 1 yil universitet kerak bo'ladi.",
+          "Ingliz tilidagi dasturlarni universitetlar ro'yxatidan toping: har bir universitet sahifasida havola bor.",
+          "Talablarni solishtiring: yillar soni, B2 sertifikat, test (CEnT-S, TOLC, SAT, IMAT), GPA.",
+          "Shaharni stipendiya bo'yicha ham tanlang: har viloyatda DSU summasi va shartlari boshqacha.",
+          "3–5 ta universitetni tanlab, ularning ariza sanalarini kalendarga yozib qo'ying."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Tayyorlab qo'ying",
+        "style": "checklist",
+        "items": [
+          "Xalqaro pasport",
+          "Ingliz tili sertifikati (odatda B2)",
+          "Attestat yoki diplom va baholar",
+          "Universitetlar va sanalar ro'yxati"
+        ]
+      },
+      {
+        "type": "callout",
+        "style": "tip",
+        "text": "Bir universitetga emas, 3–5 tasiga topshiring: sanalari turlicha, bittasi kechiksa, boshqasi bor."
+      }
+    ],
+    "srcLabel": "Universitaly – Study in Italy",
+    "srcUrl": "https://www.universitaly.it/"
+  },
+  {
     "id": "s1",
-    "title": "Pre-acceptance",
-    "sub": "Universitet sizni oldindan tanlaydi",
+    "title": "Universitetga ariza",
+    "sub": "Portalda ro'yxatdan o'tish va hujjat topshirish",
     "icon": "send",
     "when": "Sapienza: 22.12.2025 – 15.05.2026",
-    "intro": "Hammasi shu yerdan boshlanadi. Sapienza'da bu MoveIn portalidagi pre-selection: hujjatlaringiz ko'rib chiqiladi va o'tsangiz, pre-acceptance (oldindan qabul) olasiz.",
+    "intro": "Har bir universitetning o'z ariza portali bor. Misol uchun Sapienza'da bu MoveIn: ro'yxatdan o'tasiz, hujjatlarni yuklaysiz va pre-selection natijasini kutasiz. O'tsangiz, pre-acceptance (oldindan qabul) olasiz.",
     "blocks": [
+      {
+        "type": "button",
+        "label": "Sapienza: MoveIn'da ro'yxatdan o'tish",
+        "url": "https://sapienza.gomovein.com/",
+        "note": "Har bir ariza 30 €, yiliga 2 tagacha"
+      },
       {
         "type": "list",
         "title": "Nima qilasiz",
@@ -32,10 +79,22 @@
         "type": "callout",
         "style": "tip",
         "text": "2026/27 uchun MoveIn dekabr oxirida ochilgan. 2027/28 ga topshirmoqchi bo'lsangiz, sertifikat va transcript'ni noyabrgacha tayyorlab qo'ying."
+      },
+      {
+        "type": "list",
+        "title": "Boshqa universitetlar portallari",
+        "style": "bullets",
+        "items": [
+          "Turin: apply.unito.it",
+          "Siena: apply.unisi.it",
+          "Bologna: Studenti Online (studenti.unibo.it)",
+          "Messina: international.unime.it",
+          "Har birining to'liq ma'lumoti Universitetlar bo'limida."
+        ]
       }
     ],
     "srcLabel": "Sapienza – International Admissions",
-    "srcUrl": "https://www.uniroma1.it/en/en/admissions"
+    "srcUrl": "https://www.uniroma1.it/en/admissions"
   },
   {
     "id": "s2",
@@ -166,7 +225,7 @@
   },
   {
     "id": "s5",
-    "title": "LazioDiSCo stipendiyasi",
+    "title": "Stipendiya (DSU)",
     "sub": "Sapienza, Tor Vergata, Roma Tre va boshqa Lazio universitetlari",
     "icon": "coin",
     "when": "Ariza 10.06 – 22.07.2026 · ISEEUP 10.12.2026 gacha",

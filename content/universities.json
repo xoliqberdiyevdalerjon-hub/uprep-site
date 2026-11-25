@@ -1,0 +1,445 @@
+[
+  {
+    "id": "sapienza",
+    "name": "Sapienza Universita di Roma",
+    "short": "Sapienza",
+    "city": "roma",
+    "founded": "1303",
+    "rank": "QS 2027: #111",
+    "intro": "Yevropadagi eng katta universitetlardan biri. Xalqaro talabalar MoveIn platformasi orqali pre-selection'dan o'tadi.",
+    "portalLabel": "MoveIn'da ro'yxatdan o'tish",
+    "portalUrl": "https://sapienza.gomovein.com/",
+    "infoUrl": "https://www.uniroma1.it/en/admissions",
+    "programmesUrl": "https://www.uniroma1.it/it/pagina/international-admissions-2026-2027",
+    "fee": "Har bir ariza 30 €, yiliga 2 tagacha ariza",
+    "deadlines": [
+      {
+        "label": "MoveIn pre-selection (2026/27)",
+        "date": "22.12.2025 – 15.05.2026"
+      },
+      {
+        "label": "Universitaly pre-enrollment (2026/27)",
+        "date": "30.06.2026 gacha"
+      }
+    ],
+    "deadlineNote": "2027/28 sanalari hali e'lon qilinmagan. Odatda MoveIn dekabr oxirida ochiladi.",
+    "levels": [
+      {
+        "name": "Foundation",
+        "duration": "1 yil",
+        "req": [
+          "11 yillik attestat",
+          "Narxi 5 000 €"
+        ]
+      },
+      {
+        "name": "Bakalavr",
+        "duration": "3 yil",
+        "req": [
+          "12 yillik ta'lim yoki 11 yil + Foundation",
+          "Ingliz tili B2",
+          "CV va motivatsion xat",
+          "Dasturga qarab test"
+        ]
+      },
+      {
+        "name": "Magistratura",
+        "duration": "2 yil",
+        "req": [
+          "Kamida 3 yillik bakalavr diplomi",
+          "Ingliz tili B2",
+          "CV va motivatsion xat",
+          "Test yoki suhbat"
+        ]
+      }
+    ],
+    "docs": [
+      "Pasport",
+      "Attestat yoki diplom",
+      "Transcript (baholar varaqasi)",
+      "Til sertifikati",
+      "Dastur so'rasa: CV, motivatsion xat, tavsiyanoma"
+    ],
+    "scholarship": "DiSCo (Lazio): 2026/27 da 8 200 € gacha, kuniga 2 mahal bepul ovqat.",
+    "acceptance": "Universitet rasmiy qabul foizini e'lon qilmaydi. Natija hujjatlaringiz va dasturdagi joylar soniga bog'liq.",
+    "tip": "Yiliga faqat 2 ta ariza: dasturlarni oldindan tanlab, eng kuchli ikkitasiga topshiring.",
+    "video": "",
+    "sources": [
+      {
+        "label": "Sapienza – International Admissions",
+        "url": "https://www.uniroma1.it/en/admissions"
+      }
+    ]
+  },
+  {
+    "id": "torvergata",
+    "name": "Universita di Roma Tor Vergata",
+    "short": "Tor Vergata",
+    "city": "roma",
+    "founded": "1982",
+    "rank": "QS 2027: #342",
+    "intro": "Rimdagi zamonaviy kampus universiteti. Iqtisod va boshqaruv yo'nalishlari ingliz tilida kuchli.",
+    "portalLabel": "Qabul sahifasi",
+    "portalUrl": "https://web.uniroma2.it/en/percorso/admissions",
+    "infoUrl": "https://web.uniroma2.it/en/percorso/admissions",
+    "programmesUrl": "https://web.uniroma2.it/en/percorso/admissions",
+    "fee": "Dasturga qarab: Business Administration and Economics 0 €, Global Governance 100 €",
+    "deadlines": [],
+    "deadlineNote": "Har bir dasturning o'z chaqiruvi va bosqichlari bor. Global Governance 2027/28 chaqiruvi e'lon qilingan: 4 bosqich, viza oluvchilar uchun 75 o'rin.",
+    "levels": [
+      {
+        "name": "Foundation",
+        "duration": "1 yil",
+        "req": [
+          "Ingliz tili B1"
+        ]
+      },
+      {
+        "name": "Bakalavr (masalan, BAE)",
+        "duration": "3 yil",
+        "req": [
+          "CEnT-S testi va suhbat",
+          "Ingliz tili B2, suhbatda tekshiriladi"
+        ]
+      },
+      {
+        "name": "Magistratura",
+        "duration": "2 yil",
+        "req": [
+          "Bakalavr diplomi",
+          "Dasturning chaqiruvidagi talablar"
+        ]
+      }
+    ],
+    "docs": [
+      "Pasport",
+      "Attestat yoki diplom va transcript",
+      "Til sertifikati",
+      "Dastur so'rasa: CV, motivatsion xat"
+    ],
+    "scholarship": "DiSCo (Lazio).",
+    "acceptance": "Universitet rasmiy qabul foizini e'lon qilmaydi. Natija hujjatlaringiz va dasturdagi joylar soniga bog'liq.",
+    "tip": "Har bir dasturning chaqiruvi (call for applications) alohida PDF: sanalarni o'sha yerdan oling.",
+    "video": "",
+    "sources": [
+      {
+        "label": "Tor Vergata – Admissions",
+        "url": "https://web.uniroma2.it/en/percorso/admissions"
+      }
+    ]
+  },
+  {
+    "id": "unimi",
+    "name": "Universita degli Studi di Milano",
+    "short": "Milan (UniMi)",
+    "city": "milano",
+    "founded": "1924",
+    "rank": "QS 2027: #270",
+    "intro": "Milandagi yirik davlat universiteti, tibbiyot, iqtisod va fan yo'nalishlari kuchli.",
+    "portalLabel": "Xalqaro qabul sahifasi",
+    "portalUrl": "https://www.unimi.it/en/international/coming-abroad/enrol-programme/international-enrolment-degree-programmes",
+    "infoUrl": "https://www.unimi.it/en/international/coming-abroad/enrol-programme/international-enrolment-degree-programmes",
+    "programmesUrl": "https://www.unimi.it/en/study",
+    "fee": "Magistratura arizasi 30 €",
+    "deadlines": [],
+    "deadlineNote": "Sanalar har bir dastur sahifasida (Enrolment bo'limi) e'lon qilinadi.",
+    "levels": [
+      {
+        "name": "Bakalavr",
+        "duration": "3 yil",
+        "req": [
+          "CEnT-S yoki TOLC testi",
+          "Ingliz tili B2"
+        ]
+      },
+      {
+        "name": "Magistratura",
+        "duration": "2 yil",
+        "req": [
+          "Bakalavr diplomi",
+          "CV",
+          "Ingliz tili B2"
+        ]
+      }
+    ],
+    "docs": [
+      "Pasport",
+      "Diplom va transcript",
+      "Til sertifikati",
+      "CV"
+    ],
+    "scholarship": "Universitetning o'z chaqiruvi. Magistratura uchun a'lochilik granti yiliga 8 000 € gacha.",
+    "acceptance": "Universitet rasmiy qabul foizini e'lon qilmaydi. Natija hujjatlaringiz va dasturdagi joylar soniga bog'liq.",
+    "tip": "Lombardiyada stipendiyani universitet o'zi beradi: DSU chaqiruvini unimi.it'dan kuzating.",
+    "video": "",
+    "sources": [
+      {
+        "label": "UniMi – International enrolment",
+        "url": "https://www.unimi.it/en/international/coming-abroad/enrol-programme/international-enrolment-degree-programmes"
+      }
+    ]
+  },
+  {
+    "id": "unito",
+    "name": "Universita degli Studi di Torino",
+    "short": "Turin (UniTo)",
+    "city": "torino",
+    "founded": "1404",
+    "rank": "QS 2027: #397",
+    "intro": "Italiyaning eng katta universitetlaridan biri. Arizalar Apply@UniTo portalida.",
+    "portalLabel": "Apply@UniTo'da ro'yxatdan o'tish",
+    "portalUrl": "https://apply.unito.it",
+    "infoUrl": "https://en.unito.it/studying-unito/international-degree-seeking-students",
+    "programmesUrl": "https://en.unito.it/studying-unito/international-degree-seeking-students",
+    "fee": "70 € (2 tagacha dastur)",
+    "deadlines": [
+      {
+        "label": "Magistratura (2027/28)",
+        "date": "25.11.2026 – 29.01.2027"
+      },
+      {
+        "label": "Bakalavr (2027/28)",
+        "date": "19.02 – 15.04.2027"
+      }
+    ],
+    "deadlineNote": "",
+    "levels": [
+      {
+        "name": "Foundation",
+        "duration": "1 yil",
+        "req": [
+          "60 ECTS: 2 000 €",
+          "30 ECTS: 1 300 €"
+        ]
+      },
+      {
+        "name": "Bakalavr",
+        "duration": "3 yil",
+        "req": [
+          "12 yillik ta'lim yoki Foundation",
+          "Dasturga qarab test",
+          "Ingliz tili B2"
+        ]
+      },
+      {
+        "name": "Magistratura",
+        "duration": "2 yil",
+        "req": [
+          "Bakalavr diplomi",
+          "CV va motivatsion xat (majburiy)",
+          "Ingliz tili B2"
+        ]
+      }
+    ],
+    "docs": [
+      "Pasport",
+      "Diplom va transcript",
+      "Til sertifikati",
+      "CV va motivatsion xat"
+    ],
+    "scholarship": "EDISU Piemonte: 2026/27 da 8 455 € gacha. Talents4UniTo: yiliga 10 000 €.",
+    "acceptance": "Universitet rasmiy qabul foizini e'lon qilmaydi. Natija hujjatlaringiz va dasturdagi joylar soniga bog'liq.",
+    "tip": "Magistratura oynasi hozir ochiq: hujjatlar tayyor bo'lsa, yanvargacha kutmang.",
+    "video": "",
+    "sources": [
+      {
+        "label": "UniTo – International degree seeking students",
+        "url": "https://en.unito.it/studying-unito/international-degree-seeking-students"
+      }
+    ]
+  },
+  {
+    "id": "unibo",
+    "name": "Alma Mater Studiorum – Universita di Bologna",
+    "short": "Bologna (Unibo)",
+    "city": "bologna",
+    "founded": "1088",
+    "rank": "QS 2027: #123",
+    "intro": "Yevropadagi eng qadimgi universitet. 97 000 dan ortiq talaba, 92 ta ingliz tilidagi dastur.",
+    "portalLabel": "Studenti Online",
+    "portalUrl": "https://studenti.unibo.it/sol/welcome.htm?siteLanguage=en",
+    "infoUrl": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-first-cycle-and-single-cycle-degree-programmes/enrolling-in-a-first-cycle-or-single-cycle-degree-programme-if-you-come-from-a-non-eu-country",
+    "programmesUrl": "https://www.unibo.it/en/study",
+    "fee": "Dasturga qarab",
+    "deadlines": [
+      {
+        "label": "Hujjatlarni yuklash, standart tartib (2026/27)",
+        "date": "21.07.2026 gacha"
+      }
+    ],
+    "deadlineNote": "Har bir dasturning chaqiruvi (call for applications) alohida: test va sanalar o'sha yerda.",
+    "levels": [
+      {
+        "name": "Bakalavr",
+        "duration": "3 yil",
+        "req": [
+          "11 yillik attestat bo'lsa, 1 yil universitet imtihonlari kerak (Foundation yo'q)",
+          "TOLC, CEnT-S yoki SAT, dasturga qarab"
+        ]
+      },
+      {
+        "name": "Magistratura",
+        "duration": "2 yil",
+        "req": [
+          "Bakalavr diplomi",
+          "Dasturning talablari"
+        ]
+      }
+    ],
+    "docs": [
+      "Pasport",
+      "Diplom va transcript",
+      "Til sertifikati",
+      "Universitaly pre-enrollment"
+    ],
+    "scholarship": "ER.GO: 2026/27 da 7 171 € gacha. Yotoqxona stipendiya hisobidan to'lanadi, ovqat ixtiyoriy kredit.",
+    "acceptance": "Universitet rasmiy qabul foizini e'lon qilmaydi. Natija hujjatlaringiz va dasturdagi joylar soniga bog'liq.",
+    "tip": "Viza uchun pre-enrollment shartsiz (unconditional) bo'lishi kerak: hujjatlarni iyulgacha yuklang.",
+    "video": "",
+    "sources": [
+      {
+        "label": "Unibo – Non-EU first cycle enrolment",
+        "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-first-cycle-and-single-cycle-degree-programmes/enrolling-in-a-first-cycle-or-single-cycle-degree-programme-if-you-come-from-a-non-eu-country"
+      }
+    ]
+  },
+  {
+    "id": "unisi",
+    "name": "Universita di Siena",
+    "short": "Siena",
+    "city": "siena",
+    "founded": "1240",
+    "rank": "QS 2027: #572",
+    "intro": "Toskanadagi qadimiy universitet. Censis 2026/27 bo'yicha Toskanada 1-o'rin.",
+    "portalLabel": "apply.unisi.it'da ro'yxatdan o'tish",
+    "portalUrl": "https://apply.unisi.it",
+    "infoUrl": "https://admission.unisi.it/",
+    "programmesUrl": "https://en.unisi.it/",
+    "fee": "Rasmiy narxlar sahifasida",
+    "deadlines": [
+      {
+        "label": "Viza oluvchilar uchun (2026/27)",
+        "date": "6.05.2026 gacha"
+      },
+      {
+        "label": "Foundation (2026/27)",
+        "date": "20.03 / 8.05 / 22.05.2026"
+      }
+    ],
+    "deadlineNote": "2027/28 kalendari hali e'lon qilinmagan.",
+    "levels": [
+      {
+        "name": "Foundation",
+        "duration": "1 yil",
+        "req": [
+          "Narxi 3 500 €"
+        ]
+      },
+      {
+        "name": "Bakalavr",
+        "duration": "3 yil",
+        "req": [
+          "CV (hamma uchun)",
+          "Ba'zi dasturlarda motivatsion xat"
+        ]
+      },
+      {
+        "name": "Magistratura",
+        "duration": "2 yil",
+        "req": [
+          "Bakalavr diplomi",
+          "CV",
+          "Ba'zi dasturlarda motivatsion xat"
+        ]
+      }
+    ],
+    "docs": [
+      "Pasport",
+      "Diplom va transcript",
+      "Til sertifikati",
+      "CV"
+    ],
+    "scholarship": "DSU Toscana.",
+    "acceptance": "Universitet rasmiy qabul foizini e'lon qilmaydi. Natija hujjatlaringiz va dasturdagi joylar soniga bog'liq.",
+    "tip": "Viza kerak bo'lganlar uchun yozgi qabul yo'q: hammasini may boshigacha topshiring.",
+    "video": "",
+    "sources": [
+      {
+        "label": "UniSi – Admission calendar",
+        "url": "https://admission.unisi.it/?p=3003"
+      }
+    ]
+  },
+  {
+    "id": "unime",
+    "name": "Universita degli Studi di Messina",
+    "short": "Messina (UniMe)",
+    "city": "messina",
+    "founded": "1548",
+    "rank": "QS 2027: 761–770",
+    "intro": "1548-yilda dunyodagi birinchi iyezuitlar kolleji sifatida ochilgan. Kontrakt Italiyadagi eng pastlardan.",
+    "portalLabel": "Ariza va qabul sahifasi",
+    "portalUrl": "https://international.unime.it/study-us/application-and-admission",
+    "infoUrl": "https://international.unime.it/",
+    "programmesUrl": "https://international.unime.it/",
+    "fee": "40 €",
+    "deadlines": [
+      {
+        "label": "Early Bird (2027/28)",
+        "date": "1 – 20.12.2026"
+      },
+      {
+        "label": "2-bosqich",
+        "date": "2.02 – 19.03.2027"
+      },
+      {
+        "label": "3-bosqich",
+        "date": "8.04 – 8.05.2027"
+      }
+    ],
+    "deadlineNote": "Early Bird faqat yakuniy hujjatlar, B2 va DoV/CIMEA tayyor bo'lsa.",
+    "levels": [
+      {
+        "name": "Foundation",
+        "duration": "9 oy",
+        "req": [
+          "Narxi 5 000 €, 1-semestr onlayn",
+          "GPA 70%+, ingliz tili B2",
+          "Tugatgach, ochiq qabulli bakalavrga testsiz"
+        ]
+      },
+      {
+        "name": "Bakalavr",
+        "duration": "3 yil",
+        "req": [
+          "12 yillik ta'lim yoki Foundation",
+          "Ingliz tili B2"
+        ]
+      },
+      {
+        "name": "Magistratura",
+        "duration": "2 yil",
+        "req": [
+          "Bakalavr diplomi",
+          "Ingliz tili B2"
+        ]
+      }
+    ],
+    "docs": [
+      "Pasport",
+      "Diplom va transcript",
+      "Ingliz tili B2",
+      "Early Bird uchun DoV yoki CIMEA"
+    ],
+    "scholarship": "ERSU Messina: 2026/27 da 8 246 € gacha. Kontrakt yiliga 156–506 €.",
+    "acceptance": "Universitet rasmiy qabul foizini e'lon qilmaydi. Natija hujjatlaringiz va dasturdagi joylar soniga bog'liq.",
+    "tip": "Early Bird 1-dekabrda ochiladi: DoV/CIMEA tayyor bo'lsa, birinchi bo'lib topshiring.",
+    "video": "",
+    "sources": [
+      {
+        "label": "UniMe – Application and admission",
+        "url": "https://international.unime.it/study-us/application-and-admission"
+      }
+    ]
+  }
+]
