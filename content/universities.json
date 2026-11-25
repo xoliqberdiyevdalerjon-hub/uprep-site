@@ -1,5 +1,243 @@
 [
   {
+    "id": "univaq",
+    "short": "L'Aquila",
+    "name": "Universita degli Studi dell'Aquila",
+    "city": "laquila",
+    "type": "Davlat",
+    "web": "https://www.univaq.it/",
+    "detailed": false
+  },
+  {
+    "id": "unich",
+    "short": "Chieti-Pescara",
+    "name": "Universita degli Studi di Chieti-Pescara \"G. d'Annunzio\"",
+    "city": "chieti-pescara",
+    "type": "Davlat",
+    "web": "https://www.unich.it/",
+    "detailed": false
+  },
+  {
+    "id": "unite",
+    "short": "Teramo",
+    "name": "Universita degli Studi di Teramo",
+    "city": "teramo",
+    "type": "Davlat",
+    "web": "https://www.unite.it/",
+    "detailed": false
+  },
+  {
+    "id": "unibas",
+    "short": "Basilicata",
+    "name": "Universita degli Studi della Basilicata",
+    "city": "potenza",
+    "type": "Davlat",
+    "web": "https://portale.unibas.it/site/home.html",
+    "detailed": false
+  },
+  {
+    "id": "unicz",
+    "short": "Magna Graecia",
+    "name": "Universita degli Studi di Catanzaro \"Magna Graecia\"",
+    "city": "catanzaro",
+    "type": "Davlat",
+    "web": "https://web.unicz.it/",
+    "detailed": false
+  },
+  {
+    "id": "unical",
+    "short": "Unical",
+    "name": "Universita della Calabria",
+    "city": "rende",
+    "type": "Davlat",
+    "web": "https://www.unical.it/",
+    "detailed": false
+  },
+  {
+    "id": "unirc",
+    "short": "Mediterranea",
+    "name": "Universita degli Studi \"Mediterranea\" di Reggio Calabria",
+    "city": "reggio-calabria",
+    "type": "Davlat",
+    "web": "https://unirc.it/",
+    "detailed": false
+  },
+  {
+    "id": "unidarc",
+    "short": "Dante Alighieri",
+    "name": "Universita per Stranieri \"Dante Alighieri\"",
+    "city": "reggio-calabria",
+    "type": "Xususiy",
+    "web": "https://www.unidarc.it/",
+    "detailed": false
+  },
+  {
+    "id": "unina",
+    "short": "Federico II",
+    "name": "Universita degli Studi di Napoli Federico II",
+    "city": "napoli",
+    "type": "Davlat",
+    "web": "https://www.unina.it/",
+    "detailed": false
+  },
+  {
+    "id": "unior",
+    "short": "L'Orientale",
+    "name": "Universita degli Studi di Napoli \"L'Orientale\"",
+    "city": "napoli",
+    "type": "Davlat",
+    "web": "https://www.unior.it/",
+    "detailed": false
+  },
+  {
+    "id": "uniparthenope",
+    "short": "Parthenope",
+    "name": "Universita degli Studi di Napoli \"Parthenope\"",
+    "city": "napoli",
+    "type": "Davlat",
+    "web": "https://www.uniparthenope.it/",
+    "detailed": false
+  },
+  {
+    "id": "unisob",
+    "short": "Suor Orsola Benincasa",
+    "name": "Universita degli Studi \"Suor Orsola Benincasa\"",
+    "city": "napoli",
+    "type": "Xususiy",
+    "web": "https://www.unisob.na.it/",
+    "detailed": false
+  },
+  {
+    "id": "unisannio",
+    "short": "Sannio",
+    "name": "Universita degli Studi del Sannio",
+    "city": "benevento",
+    "type": "Davlat",
+    "web": "https://unisannio.it/",
+    "detailed": false
+  },
+  {
+    "id": "unicampania",
+    "short": "Vanvitelli",
+    "name": "Universita degli Studi della Campania \"Luigi Vanvitelli\"",
+    "city": "caserta",
+    "type": "Davlat",
+    "web": "https://unicampania.it/",
+    "detailed": false
+  },
+  {
+    "id": "unisa",
+    "short": "Salerno",
+    "name": "Universita degli Studi di Salerno",
+    "city": "salerno",
+    "type": "Davlat",
+    "web": "https://www.unisa.it/",
+    "detailed": false
+  },
+  {
+    "id": "unibo",
+    "name": "Alma Mater Studiorum – Universita di Bologna",
+    "short": "Bologna (Unibo)",
+    "city": "bologna",
+    "founded": "1088",
+    "rank": "QS 2027: #123",
+    "intro": "Yevropadagi eng qadimgi universitet. 97 000 dan ortiq talaba, 92 ta ingliz tilidagi dastur.",
+    "portalLabel": "Studenti Online",
+    "portalUrl": "https://studenti.unibo.it/sol/welcome.htm?siteLanguage=en",
+    "infoUrl": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-first-cycle-and-single-cycle-degree-programmes/enrolling-in-a-first-cycle-or-single-cycle-degree-programme-if-you-come-from-a-non-eu-country",
+    "programmesUrl": "https://www.unibo.it/en/study",
+    "fee": "Dasturga qarab",
+    "deadlines": [
+      {
+        "label": "Hujjatlarni yuklash, standart tartib (2026/27)",
+        "date": "21.07.2026 gacha"
+      }
+    ],
+    "deadlineNote": "Har bir dasturning chaqiruvi (call for applications) alohida: test va sanalar o'sha yerda.",
+    "levels": [
+      {
+        "name": "Bakalavr",
+        "duration": "3 yil",
+        "req": [
+          "11 yillik attestat bo'lsa, 1 yil universitet imtihonlari kerak (Foundation yo'q)",
+          "TOLC, CEnT-S yoki SAT, dasturga qarab"
+        ]
+      },
+      {
+        "name": "Magistratura",
+        "duration": "2 yil",
+        "req": [
+          "Bakalavr diplomi",
+          "Dasturning talablari"
+        ]
+      }
+    ],
+    "docs": [
+      "Pasport",
+      "Diplom va transcript",
+      "Til sertifikati",
+      "Universitaly pre-enrollment"
+    ],
+    "scholarship": "ER.GO: 2026/27 da 7 171 € gacha. Yotoqxona stipendiya hisobidan to'lanadi, ovqat ixtiyoriy kredit.",
+    "acceptance": "Universitet rasmiy qabul foizini e'lon qilmaydi. Natija hujjatlaringiz va dasturdagi joylar soniga bog'liq.",
+    "tip": "Viza uchun pre-enrollment shartsiz (unconditional) bo'lishi kerak: hujjatlarni iyulgacha yuklang.",
+    "video": "",
+    "sources": [
+      {
+        "label": "Unibo – Non-EU first cycle enrolment",
+        "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-first-cycle-and-single-cycle-degree-programmes/enrolling-in-a-first-cycle-or-single-cycle-degree-programme-if-you-come-from-a-non-eu-country"
+      }
+    ],
+    "type": "Davlat",
+    "web": "https://www.unibo.it/",
+    "detailed": true
+  },
+  {
+    "id": "unife",
+    "short": "Ferrara",
+    "name": "Universita degli Studi di Ferrara",
+    "city": "ferrara",
+    "type": "Davlat",
+    "web": "https://www.unife.it/",
+    "detailed": false
+  },
+  {
+    "id": "unimore",
+    "short": "Unimore",
+    "name": "Universita degli Studi di Modena e Reggio Emilia",
+    "city": "modena",
+    "type": "Davlat",
+    "web": "https://www.unimore.it/",
+    "detailed": false
+  },
+  {
+    "id": "unipr",
+    "short": "Parma",
+    "name": "Universita degli Studi di Parma",
+    "city": "parma",
+    "type": "Davlat",
+    "web": "https://www.unipr.it/",
+    "detailed": false
+  },
+  {
+    "id": "units",
+    "short": "Trieste",
+    "name": "Universita degli Studi di Trieste",
+    "city": "trieste",
+    "type": "Davlat",
+    "web": "https://www.units.it/",
+    "detailed": false
+  },
+  {
+    "id": "uniud",
+    "short": "Udine",
+    "name": "Universita degli Studi di Udine",
+    "city": "udine",
+    "type": "Davlat",
+    "web": "https://www.uniud.it/",
+    "detailed": false
+  },
+  {
     "id": "sapienza",
     "name": "Sapienza Universita di Roma",
     "short": "Sapienza",
@@ -10,7 +248,7 @@
     "portalLabel": "MoveIn'da ro'yxatdan o'tish",
     "portalUrl": "https://sapienza.gomovein.com/",
     "infoUrl": "https://www.uniroma1.it/en/admissions",
-    "programmesUrl": "https://www.uniroma1.it/it/pagina/international-admissions-2026-2027",
+    "programmesUrl": "https://corsidilaurea.uniroma1.it/en",
     "fee": "Har bir ariza 30 €, yiliga 2 tagacha ariza",
     "deadlines": [
       {
@@ -68,8 +306,506 @@
       {
         "label": "Sapienza – International Admissions",
         "url": "https://www.uniroma1.it/en/admissions"
+      },
+      {
+        "label": "Sapienza – MoveIn academic requirements 2026/27 (PDF)",
+        "url": "https://www.uniroma1.it/sites/default/files/field_file_allegati/academic_requirements_movein_2026-2027_web_20260608.pdf"
       }
-    ]
+    ],
+    "type": "Davlat",
+    "web": "https://www.uniroma1.it/",
+    "detailed": true,
+    "programmes": [
+      {
+        "level": "Bakalavr",
+        "name": "Applied Computer Science and Artificial Intelligence",
+        "lang": "Ingliz",
+        "req": "12 yillik ta'lim, matematika va fan asoslari",
+        "gpa": "75",
+        "test": "SAT (960+) yoki CEnT-S"
+      },
+      {
+        "level": "Bakalavr",
+        "name": "Bioinformatics",
+        "lang": "Ingliz",
+        "req": "12 yillik ta'lim; fizika, matematika, biologiya, kimyo asoslari",
+        "gpa": "75",
+        "test": "CEnT-S"
+      },
+      {
+        "level": "Bakalavr",
+        "name": "Business Sciences",
+        "lang": "Ingliz",
+        "req": "12 yil yoki 11 yil + Foundation; matematika kuchli bo'lsa yaxshi",
+        "gpa": "80",
+        "test": "SAT (960+) yoki CEnT-S (18/55)"
+      },
+      {
+        "level": "Bakalavr",
+        "name": "Economics and Finance",
+        "lang": "Ingliz",
+        "req": "12 yil yoki 11 yil + Foundation; matematika kuchli bo'lsa yaxshi",
+        "gpa": "80",
+        "test": "SAT (960+) yoki CEnT-S"
+      },
+      {
+        "level": "Bakalavr",
+        "name": "Classics",
+        "lang": "Ingliz",
+        "req": "12 yillik ta'lim",
+        "gpa": "75",
+        "test": "SAT yoki TOLC-E / Test HUM (ingliz tilida)"
+      },
+      {
+        "level": "Bakalavr",
+        "name": "Global Humanities",
+        "lang": "Ingliz",
+        "req": "12 yillik ta'lim",
+        "gpa": "70",
+        "test": "SAT yoki Test HUM (ingliz tilida)"
+      },
+      {
+        "level": "Bakalavr",
+        "name": "Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications",
+        "lang": "Ingliz",
+        "req": "12 yillik ta'lim, fan asoslari",
+        "gpa": "60",
+        "test": "SAT yoki CEnT-S"
+      },
+      {
+        "level": "Bakalavr",
+        "name": "Sustainable Building Engineering",
+        "lang": "Ingliz",
+        "req": "12 yil yoki 11 yil + 1 yil texnik universitet",
+        "gpa": "80",
+        "test": "SAT yoki CEnT-S"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Applied Dynamic and Clinical Psychology",
+        "lang": "Ingliz",
+        "req": "Psixologiya bakalavri",
+        "gpa": "75",
+        "test": "Yozma imtihon (iyul)"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Astrophysics and Cosmology",
+        "lang": "Ingliz",
+        "req": "Fizika/astronomiya bakalavri; CV va motivatsion xat",
+        "gpa": "80",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Atmospheric Science and Technology for Meteorology and Climate",
+        "lang": "Ingliz",
+        "req": "Fizika yoki texnik bakalavr, kuchli matematika; L'Aquila bilan qo'shma",
+        "gpa": "75",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Architecture – Urban Regeneration",
+        "lang": "Ingliz",
+        "req": "3 yillik arxitektura bakalavri",
+        "gpa": "70",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Architecture (Conservation)",
+        "lang": "Ingliz",
+        "req": "3 yillik arxitektura bakalavri",
+        "gpa": "70",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Artificial Intelligence and Robotics",
+        "lang": "Ingliz",
+        "req": "Informatika, kompyuter injiniringi yoki yaqin soha",
+        "gpa": "75",
+        "test": "Texnik suhbat"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Biochemistry",
+        "lang": "Ingliz",
+        "req": "Biologiya/biotexnologiya (yoki kimyo/fizika + biologiya)",
+        "gpa": "78",
+        "test": "Suhbat bo'lishi mumkin"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Business Management",
+        "lang": "Ingliz",
+        "req": "Iqtisod/biznes bakalavri, kamida 18 ECTS biznes",
+        "gpa": "90",
+        "test": "Suhbat bo'lishi mumkin; 100 o'rin"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Chemical Engineering",
+        "lang": "Ingliz",
+        "req": "Kimyo injiniringi bakalavri",
+        "gpa": "75",
+        "test": "GRE/GATE tavsiya, majburiy emas"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Cognitive Forensic Sciences",
+        "lang": "Ingliz",
+        "req": "Bakalavr, ko'rsatilgan sohalardan kamida 40 ECTS",
+        "gpa": "75",
+        "test": "Statistika va metodlar bo'yicha suhbat"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Cognitive Neuroscience",
+        "lang": "Ingliz",
+        "req": "Psixologiya, kamida 90 ECTS",
+        "gpa": "75",
+        "test": "Infostud'da ro'yxat, 35 € to'lov"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Computer Science",
+        "lang": "Ingliz",
+        "req": "Informatika yoki kompyuter injiniringi, kamida 90 ECTS",
+        "gpa": "75",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Control Engineering",
+        "lang": "Ingliz",
+        "req": "Avtomatika/informatika injiniringi, matematika yoki fizika",
+        "gpa": "75",
+        "test": "Texnik suhbat"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Cultural Heritage in the Near and Middle East, and in Africa",
+        "lang": "Ingliz",
+        "req": "Arxeologiya yoki yaqin soha",
+        "gpa": "75",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Cybersecurity",
+        "lang": "Ingliz",
+        "req": "Informatika, injiniring, matematika, fizika, statistika yoki telekom",
+        "gpa": "75",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Data Science",
+        "lang": "Ingliz",
+        "req": "Informatika, statistika, matematika, fizika, injiniring yoki iqtisod",
+        "gpa": "80",
+        "test": "Onlayn test va suhbat; GRE tavsiya"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Design, Multimedia and Visual Communication",
+        "lang": "Ingliz",
+        "req": "Dizayn bakalavri yoki ko'rsatilgan sohalarda 40 ECTS",
+        "gpa": "75",
+        "test": "Portfolio"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Development and International Cooperation Studies",
+        "lang": "Ingliz / Italyan",
+        "req": "Siyosatshunoslik yoki rivojlanish sohasi afzal",
+        "gpa": "75",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Economics",
+        "lang": "Ingliz",
+        "req": "Iqtisod, biznes yoki moliya; 90 ECTS, shundan 18 iqtisod",
+        "gpa": "85",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Economics and Communication for Management and Innovation",
+        "lang": "Ingliz",
+        "req": "Iqtisod/biznes, 72 ECTS (18 biznes)",
+        "gpa": "90",
+        "test": "Suhbat bo'lishi mumkin"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Electrical Engineering",
+        "lang": "Ingliz",
+        "req": "Elektr, elektronika yoki energetika injiniringi afzal",
+        "gpa": "75",
+        "test": "Onlayn suhbat bo'lishi mumkin"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Electronics Engineering",
+        "lang": "Ingliz",
+        "req": "Kuchli matematika, fizika va elektronika",
+        "gpa": "80",
+        "test": "Onlayn suhbat bo'lishi mumkin"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Energy Engineering",
+        "lang": "Ingliz",
+        "req": "Talablar rasmiy ro'yxatda yangilanadi",
+        "gpa": "",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Engineering in Computer Science and Artificial Intelligence",
+        "lang": "Ingliz",
+        "req": "Kompyuter injiniringi, informatika yoki fan sohasi",
+        "gpa": "75",
+        "test": "Texnik suhbat"
+      },
+      {
+        "level": "Magistratura",
+        "name": "English and Anglo-American Studies",
+        "lang": "Ingliz",
+        "req": "Ingliz tili sohasida 54 kredit; darsdan oldin italyan B1",
+        "gpa": "75",
+        "test": "Test yo'q; C1 tavsiya"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Environmental and Sustainable Building Engineering",
+        "lang": "Ingliz",
+        "req": "Qurilish, ekologiya yoki fuqarolik injiniringi",
+        "gpa": "80",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Environmental Engineering",
+        "lang": "Ingliz",
+        "req": "Fan yoki injiniring bakalavri",
+        "gpa": "80",
+        "test": "Oldindan saralash, suhbat bo'lishi mumkin"
+      },
+      {
+        "level": "Magistratura",
+        "name": "European Studies",
+        "lang": "Ingliz",
+        "req": "Iqtisod, huquq yoki siyosatshunoslik",
+        "gpa": "80",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Fashion Theory and Practices",
+        "lang": "Ingliz",
+        "req": "Moda, san'at, dizayn, gumanitar, marketing yoki to'qimachilik",
+        "gpa": "80",
+        "test": "Portfolio va CV"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Finance and Insurance",
+        "lang": "Ingliz",
+        "req": "Iqtisod/moliya; 72 ECTS biznes, matematika va huquq",
+        "gpa": "85",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Genetics and Molecular Biology",
+        "lang": "Ingliz",
+        "req": "Biologiya bakalavri yoki 90 kredit tegishli fanlardan",
+        "gpa": "75",
+        "test": "Saralash; non-EU uchun 5 o'rin"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Green Industrial Engineering for Sustainable Development",
+        "lang": "Ingliz / Italyan",
+        "req": "Ekologiya yoki sanoat injiniringi",
+        "gpa": "60",
+        "test": "CV va motivatsion xat; sertifikat bo'lmasa suhbat"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Health Economics",
+        "lang": "Ingliz",
+        "req": "Iqtisod yoki biznes, 60 ECTS",
+        "gpa": "85",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Landscape Architecture",
+        "lang": "Ingliz",
+        "req": "Landshaft arxitekturasi yoki yaqin soha, 90 ECTS",
+        "gpa": "75",
+        "test": "Portfolio"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Management Engineering",
+        "lang": "Ingliz",
+        "req": "Menejment injiniringi yoki yaqin soha",
+        "gpa": "85",
+        "test": "Onlayn test bo'lishi mumkin"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Mechanical Engineering",
+        "lang": "Ingliz",
+        "req": "Mexanika injiniringi yoki yaqin soha",
+        "gpa": "75",
+        "test": "GRE ixtiyoriy"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Mediterranean Archaeology",
+        "lang": "Ingliz",
+        "req": "Arxeologiya, madaniy meros, qadimgi tarix yoki san'at",
+        "gpa": "75",
+        "test": "Suhbat"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Nanotechnology Engineering",
+        "lang": "Ingliz",
+        "req": "Injiniring, kimyo, fizika yoki boshqa STEM",
+        "gpa": "75",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Physics",
+        "lang": "Ingliz",
+        "req": "Fizika bakalavri; CV va motivatsion xat",
+        "gpa": "80",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Product and Service Design",
+        "lang": "Ingliz",
+        "req": "Dizayn, injiniring, arxitektura, informatika yoki marketing",
+        "gpa": "80",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Safety and Civil Protection Engineering",
+        "lang": "Ingliz",
+        "req": "Sanoat yoki fuqarolik injiniringi",
+        "gpa": "80",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Science and Technology for the Conservation of Cultural Heritage",
+        "lang": "Ingliz",
+        "req": "Fan bakalavri, 54 ECTS fan fanlaridan",
+        "gpa": "75",
+        "test": "Suhbat yoki onlayn saralash"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Space and Astronautical Engineering",
+        "lang": "Ingliz",
+        "req": "Aerokosmik injiniring afzal",
+        "gpa": "75",
+        "test": "Hujjatlar ko'rib chiqiladi, keyin suhbat"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Statistical Methods and Applications",
+        "lang": "Ingliz",
+        "req": "Matematik tahlil, ehtimollik, statistika va dasturlash",
+        "gpa": "75",
+        "test": "Komissiya baholaydi; GRE foydali"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Telecommunication Engineering",
+        "lang": "Ingliz",
+        "req": "ICT injiniring afzal",
+        "gpa": "80",
+        "test": "Onlayn texnik suhbat"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Transport Systems Engineering",
+        "lang": "Ingliz",
+        "req": "Talablar rasmiy havolada",
+        "gpa": "72",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Architettura (Restauro)",
+        "lang": "Italyan",
+        "req": "Arxitektura yoki fuqarolik injiniringi; italyan B2",
+        "gpa": "70",
+        "test": "Portfolio"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Architettura del Paesaggio",
+        "lang": "Italyan",
+        "req": "Landshaft, arxitektura yoki yaqin soha, 90 kredit; italyan B2",
+        "gpa": "75",
+        "test": "Portfolio"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Architettura – Rigenerazione urbana",
+        "lang": "Italyan",
+        "req": "Arxitektura asoslari, 108 kredit; italyan B2",
+        "gpa": "70",
+        "test": "Milliy arxitektura testi"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Design, Comunicazione visiva e multimediale",
+        "lang": "Italyan / Ingliz",
+        "req": "Dizayn bakalavri yoki 40 kredit",
+        "gpa": "75",
+        "test": ""
+      },
+      {
+        "level": "Magistratura",
+        "name": "Ingegneria gestionale",
+        "lang": "Italyan",
+        "req": "Menejment injiniringi; italyan va ingliz B2",
+        "gpa": "85",
+        "test": "Onlayn test bo'lishi mumkin"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Management delle imprese",
+        "lang": "Italyan",
+        "req": "72 kredit, 18 biznes; italyan B2",
+        "gpa": "80",
+        "test": "CV ko'rib chiqiladi"
+      },
+      {
+        "level": "Magistratura",
+        "name": "Scienze e Tecnologie per la Conservazione dei Beni Culturali",
+        "lang": "Italyan",
+        "req": "Fan bakalavri; italyan B2",
+        "gpa": "75",
+        "test": "Suhbat yoki onlayn saralash"
+      }
+    ],
+    "programmesNote": "Ro'yxat Sapienza'ning MoveIn 2026/27 talablar hujjatidan olingan. GPA 100 ballik shkalada. Tibbiyot (Medicine and Surgery) alohida test orqali qabul qiladi. 2027/28 ro'yxati e'lon qilinganda yangilanadi."
   },
   {
     "id": "torvergata",
@@ -126,7 +862,118 @@
         "label": "Tor Vergata – Admissions",
         "url": "https://web.uniroma2.it/en/percorso/admissions"
       }
-    ]
+    ],
+    "type": "Davlat",
+    "web": "https://web.uniroma2.it/",
+    "detailed": true
+  },
+  {
+    "id": "uniroma3",
+    "short": "Roma Tre",
+    "name": "Universita degli Studi Roma Tre",
+    "city": "roma",
+    "type": "Davlat",
+    "web": "https://www.uniroma3.it/",
+    "detailed": false
+  },
+  {
+    "id": "uniroma4",
+    "short": "Foro Italico",
+    "name": "Universita degli Studi di Roma \"Foro Italico\"",
+    "city": "roma",
+    "type": "Davlat",
+    "web": "https://www.uniroma4.it/",
+    "detailed": false
+  },
+  {
+    "id": "luiss",
+    "short": "LUISS",
+    "name": "LUISS Guido Carli",
+    "city": "roma",
+    "type": "Xususiy",
+    "web": "https://www.luiss.it/",
+    "detailed": false
+  },
+  {
+    "id": "lumsa",
+    "short": "LUMSA",
+    "name": "LUMSA (Roma, Palermo, Taranto)",
+    "city": "roma",
+    "type": "Xususiy",
+    "web": "https://www.lumsa.it/",
+    "detailed": false
+  },
+  {
+    "id": "unicamillus",
+    "short": "UniCamillus",
+    "name": "Saint Camillus International University of Health and Medical Sciences",
+    "city": "roma",
+    "type": "Xususiy",
+    "web": "https://www.unicamillus.org/",
+    "detailed": false
+  },
+  {
+    "id": "unicampus",
+    "short": "Campus Bio-Medico",
+    "name": "Universita Campus Bio-Medico di Roma",
+    "city": "roma",
+    "type": "Xususiy",
+    "web": "https://www.unicampus.it/",
+    "detailed": false
+  },
+  {
+    "id": "uer",
+    "short": "Universita Europea",
+    "name": "Universita Europea di Roma",
+    "city": "roma",
+    "type": "Xususiy",
+    "web": "https://www.universitaeuropeadiroma.it/",
+    "detailed": false
+  },
+  {
+    "id": "unint",
+    "short": "UNINT",
+    "name": "Universita degli Studi Internazionali di Roma",
+    "city": "roma",
+    "type": "Xususiy",
+    "web": "https://www.unint.eu/",
+    "detailed": false
+  },
+  {
+    "id": "unilink",
+    "short": "Link Campus",
+    "name": "Link Campus University",
+    "city": "roma",
+    "type": "Xususiy",
+    "web": "https://www.unilink.it/",
+    "detailed": false
+  },
+  {
+    "id": "unicas",
+    "short": "Cassino",
+    "name": "Universita degli Studi di Cassino e del Lazio Meridionale",
+    "city": "cassino",
+    "type": "Davlat",
+    "web": "https://www.unicas.it/",
+    "detailed": false
+  },
+  {
+    "id": "unitus",
+    "short": "Tuscia",
+    "name": "Universita degli Studi della Tuscia",
+    "city": "viterbo",
+    "type": "Davlat",
+    "web": "https://www.unitus.it/",
+    "detailed": false
+  },
+  {
+    "id": "unige",
+    "short": "Genova",
+    "name": "Universita degli Studi di Genova",
+    "city": "genova",
+    "type": "Davlat",
+    "web": "https://unige.it/",
+    "detailed": false
   },
   {
     "id": "unimi",
@@ -177,7 +1024,172 @@
         "label": "UniMi – International enrolment",
         "url": "https://www.unimi.it/en/international/coming-abroad/enrol-programme/international-enrolment-degree-programmes"
       }
-    ]
+    ],
+    "type": "Davlat",
+    "web": "https://www.unimi.it/",
+    "detailed": true
+  },
+  {
+    "id": "unimib",
+    "short": "Bicocca",
+    "name": "Universita degli Studi di Milano-Bicocca",
+    "city": "milano",
+    "type": "Davlat",
+    "web": "https://www.unimib.it/",
+    "detailed": false
+  },
+  {
+    "id": "polimi",
+    "short": "Politecnico di Milano",
+    "name": "Politecnico di Milano",
+    "city": "milano",
+    "type": "Davlat",
+    "web": "https://www.polimi.it/",
+    "detailed": false
+  },
+  {
+    "id": "bocconi",
+    "short": "Bocconi",
+    "name": "Universita Commerciale Luigi Bocconi",
+    "city": "milano",
+    "type": "Xususiy",
+    "web": "https://www.unibocconi.it/",
+    "detailed": false
+  },
+  {
+    "id": "unicatt",
+    "short": "Cattolica",
+    "name": "Universita Cattolica del Sacro Cuore (Milano, Roma, Brescia, Piacenza, Cremona)",
+    "city": "milano",
+    "type": "Xususiy",
+    "web": "https://www.unicatt.it/",
+    "detailed": false
+  },
+  {
+    "id": "iulm",
+    "short": "IULM",
+    "name": "IULM – Libera Universita di Lingue e Comunicazione",
+    "city": "milano",
+    "type": "Xususiy",
+    "web": "https://www.iulm.it/",
+    "detailed": false
+  },
+  {
+    "id": "unisr",
+    "short": "San Raffaele",
+    "name": "Universita Vita-Salute San Raffaele",
+    "city": "milano",
+    "type": "Xususiy",
+    "web": "https://www.unisr.it/",
+    "detailed": false
+  },
+  {
+    "id": "hunimed",
+    "short": "Humanitas",
+    "name": "Humanitas University (Rozzano)",
+    "city": "milano",
+    "type": "Xususiy",
+    "web": "https://www.hunimed.eu/",
+    "detailed": false
+  },
+  {
+    "id": "liuc",
+    "short": "LIUC",
+    "name": "LIUC – Universita Cattaneo",
+    "city": "castellanza",
+    "type": "Xususiy",
+    "web": "https://www.liuc.it/",
+    "detailed": false
+  },
+  {
+    "id": "unibg",
+    "short": "Bergamo",
+    "name": "Universita degli Studi di Bergamo",
+    "city": "bergamo",
+    "type": "Davlat",
+    "web": "https://www.unibg.it/",
+    "detailed": false
+  },
+  {
+    "id": "unibs",
+    "short": "Brescia",
+    "name": "Universita degli Studi di Brescia",
+    "city": "brescia",
+    "type": "Davlat",
+    "web": "https://www.unibs.it/",
+    "detailed": false
+  },
+  {
+    "id": "unipv",
+    "short": "Pavia",
+    "name": "Universita degli Studi di Pavia",
+    "city": "pavia",
+    "type": "Davlat",
+    "web": "https://web.unipv.it/",
+    "detailed": false
+  },
+  {
+    "id": "uninsubria",
+    "short": "Insubria",
+    "name": "Universita degli Studi dell'Insubria",
+    "city": "varese",
+    "type": "Davlat",
+    "web": "https://www.uninsubria.it/",
+    "detailed": false
+  },
+  {
+    "id": "univpm",
+    "short": "Politecnica delle Marche",
+    "name": "Universita Politecnica delle Marche",
+    "city": "ancona",
+    "type": "Davlat",
+    "web": "https://www.univpm.it/",
+    "detailed": false
+  },
+  {
+    "id": "unicam",
+    "short": "Camerino",
+    "name": "Universita degli Studi di Camerino",
+    "city": "camerino",
+    "type": "Davlat",
+    "web": "https://www.unicam.it/",
+    "detailed": false
+  },
+  {
+    "id": "unimc",
+    "short": "Macerata",
+    "name": "Universita degli Studi di Macerata",
+    "city": "macerata",
+    "type": "Davlat",
+    "web": "https://www.unimc.it/",
+    "detailed": false
+  },
+  {
+    "id": "uniurb",
+    "short": "Urbino",
+    "name": "Universita degli Studi di Urbino Carlo Bo",
+    "city": "urbino",
+    "type": "Davlat",
+    "web": "https://www.uniurb.it/",
+    "detailed": false
+  },
+  {
+    "id": "unimol",
+    "short": "Molise",
+    "name": "Universita degli Studi del Molise",
+    "city": "campobasso",
+    "type": "Davlat",
+    "web": "https://www2.unimol.it/",
+    "detailed": false
+  },
+  {
+    "id": "unineuromed",
+    "short": "UNINEUROMED",
+    "name": "Neuromed Mediterranean University of Sciences and Technologies",
+    "city": "pozzilli",
+    "type": "Xususiy",
+    "web": "https://www.unineuromed.it/",
+    "detailed": false
   },
   {
     "id": "unito",
@@ -246,129 +1258,118 @@
         "label": "UniTo – International degree seeking students",
         "url": "https://en.unito.it/studying-unito/international-degree-seeking-students"
       }
-    ]
+    ],
+    "type": "Davlat",
+    "web": "https://www.unito.it/",
+    "detailed": true
   },
   {
-    "id": "unibo",
-    "name": "Alma Mater Studiorum – Universita di Bologna",
-    "short": "Bologna (Unibo)",
-    "city": "bologna",
-    "founded": "1088",
-    "rank": "QS 2027: #123",
-    "intro": "Yevropadagi eng qadimgi universitet. 97 000 dan ortiq talaba, 92 ta ingliz tilidagi dastur.",
-    "portalLabel": "Studenti Online",
-    "portalUrl": "https://studenti.unibo.it/sol/welcome.htm?siteLanguage=en",
-    "infoUrl": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-first-cycle-and-single-cycle-degree-programmes/enrolling-in-a-first-cycle-or-single-cycle-degree-programme-if-you-come-from-a-non-eu-country",
-    "programmesUrl": "https://www.unibo.it/en/study",
-    "fee": "Dasturga qarab",
-    "deadlines": [
-      {
-        "label": "Hujjatlarni yuklash, standart tartib (2026/27)",
-        "date": "21.07.2026 gacha"
-      }
-    ],
-    "deadlineNote": "Har bir dasturning chaqiruvi (call for applications) alohida: test va sanalar o'sha yerda.",
-    "levels": [
-      {
-        "name": "Bakalavr",
-        "duration": "3 yil",
-        "req": [
-          "11 yillik attestat bo'lsa, 1 yil universitet imtihonlari kerak (Foundation yo'q)",
-          "TOLC, CEnT-S yoki SAT, dasturga qarab"
-        ]
-      },
-      {
-        "name": "Magistratura",
-        "duration": "2 yil",
-        "req": [
-          "Bakalavr diplomi",
-          "Dasturning talablari"
-        ]
-      }
-    ],
-    "docs": [
-      "Pasport",
-      "Diplom va transcript",
-      "Til sertifikati",
-      "Universitaly pre-enrollment"
-    ],
-    "scholarship": "ER.GO: 2026/27 da 7 171 € gacha. Yotoqxona stipendiya hisobidan to'lanadi, ovqat ixtiyoriy kredit.",
-    "acceptance": "Universitet rasmiy qabul foizini e'lon qilmaydi. Natija hujjatlaringiz va dasturdagi joylar soniga bog'liq.",
-    "tip": "Viza uchun pre-enrollment shartsiz (unconditional) bo'lishi kerak: hujjatlarni iyulgacha yuklang.",
-    "video": "",
-    "sources": [
-      {
-        "label": "Unibo – Non-EU first cycle enrolment",
-        "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-first-cycle-and-single-cycle-degree-programmes/enrolling-in-a-first-cycle-or-single-cycle-degree-programme-if-you-come-from-a-non-eu-country"
-      }
-    ]
+    "id": "polito",
+    "short": "Politecnico di Torino",
+    "name": "Politecnico di Torino",
+    "city": "torino",
+    "type": "Davlat",
+    "web": "https://www.polito.it/",
+    "detailed": false
   },
   {
-    "id": "unisi",
-    "name": "Universita di Siena",
-    "short": "Siena",
-    "city": "siena",
-    "founded": "1240",
-    "rank": "QS 2027: #572",
-    "intro": "Toskanadagi qadimiy universitet. Censis 2026/27 bo'yicha Toskanada 1-o'rin.",
-    "portalLabel": "apply.unisi.it'da ro'yxatdan o'tish",
-    "portalUrl": "https://apply.unisi.it",
-    "infoUrl": "https://admission.unisi.it/",
-    "programmesUrl": "https://en.unisi.it/",
-    "fee": "Rasmiy narxlar sahifasida",
-    "deadlines": [
-      {
-        "label": "Viza oluvchilar uchun (2026/27)",
-        "date": "6.05.2026 gacha"
-      },
-      {
-        "label": "Foundation (2026/27)",
-        "date": "20.03 / 8.05 / 22.05.2026"
-      }
-    ],
-    "deadlineNote": "2027/28 kalendari hali e'lon qilinmagan.",
-    "levels": [
-      {
-        "name": "Foundation",
-        "duration": "1 yil",
-        "req": [
-          "Narxi 3 500 €"
-        ]
-      },
-      {
-        "name": "Bakalavr",
-        "duration": "3 yil",
-        "req": [
-          "CV (hamma uchun)",
-          "Ba'zi dasturlarda motivatsion xat"
-        ]
-      },
-      {
-        "name": "Magistratura",
-        "duration": "2 yil",
-        "req": [
-          "Bakalavr diplomi",
-          "CV",
-          "Ba'zi dasturlarda motivatsion xat"
-        ]
-      }
-    ],
-    "docs": [
-      "Pasport",
-      "Diplom va transcript",
-      "Til sertifikati",
-      "CV"
-    ],
-    "scholarship": "DSU Toscana.",
-    "acceptance": "Universitet rasmiy qabul foizini e'lon qilmaydi. Natija hujjatlaringiz va dasturdagi joylar soniga bog'liq.",
-    "tip": "Viza kerak bo'lganlar uchun yozgi qabul yo'q: hammasini may boshigacha topshiring.",
-    "video": "",
-    "sources": [
-      {
-        "label": "UniSi – Admission calendar",
-        "url": "https://admission.unisi.it/?p=3003"
-      }
-    ]
+    "id": "uniupo",
+    "short": "Piemonte Orientale",
+    "name": "Universita del Piemonte Orientale",
+    "city": "novara",
+    "type": "Davlat",
+    "web": "https://www.uniupo.it/",
+    "detailed": false
+  },
+  {
+    "id": "unisg",
+    "short": "Scienze Gastronomiche",
+    "name": "Universita degli Studi di Scienze Gastronomiche",
+    "city": "pollenzo",
+    "type": "Xususiy",
+    "web": "https://www.unisg.it/",
+    "detailed": false
+  },
+  {
+    "id": "uniba",
+    "short": "Bari Aldo Moro",
+    "name": "Universita degli Studi di Bari Aldo Moro",
+    "city": "bari",
+    "type": "Davlat",
+    "web": "https://www.uniba.it/",
+    "detailed": false
+  },
+  {
+    "id": "poliba",
+    "short": "Politecnico di Bari",
+    "name": "Politecnico di Bari",
+    "city": "bari",
+    "type": "Davlat",
+    "web": "https://www.poliba.it/",
+    "detailed": false
+  },
+  {
+    "id": "lum",
+    "short": "LUM",
+    "name": "LUM – Libera Universita Mediterranea \"Giuseppe Degennaro\"",
+    "city": "casamassima",
+    "type": "Xususiy",
+    "web": "https://www.lum.it/",
+    "detailed": false
+  },
+  {
+    "id": "unifg",
+    "short": "Foggia",
+    "name": "Universita degli Studi di Foggia",
+    "city": "foggia",
+    "type": "Davlat",
+    "web": "https://www.unifg.it/",
+    "detailed": false
+  },
+  {
+    "id": "unisalento",
+    "short": "Salento",
+    "name": "Universita del Salento",
+    "city": "lecce",
+    "type": "Davlat",
+    "web": "https://www.unisalento.it/",
+    "detailed": false
+  },
+  {
+    "id": "unica",
+    "short": "Cagliari",
+    "name": "Universita degli Studi di Cagliari",
+    "city": "cagliari",
+    "type": "Davlat",
+    "web": "https://unica.it/",
+    "detailed": false
+  },
+  {
+    "id": "uniss",
+    "short": "Sassari",
+    "name": "Universita degli Studi di Sassari",
+    "city": "sassari",
+    "type": "Davlat",
+    "web": "https://www.uniss.it/",
+    "detailed": false
+  },
+  {
+    "id": "unipa",
+    "short": "Palermo",
+    "name": "Universita degli Studi di Palermo",
+    "city": "palermo",
+    "type": "Davlat",
+    "web": "https://www.unipa.it/",
+    "detailed": false
+  },
+  {
+    "id": "unict",
+    "short": "Catania",
+    "name": "Universita degli Studi di Catania",
+    "city": "catania",
+    "type": "Davlat",
+    "web": "https://www.unict.it/",
+    "detailed": false
   },
   {
     "id": "unime",
@@ -440,6 +1441,196 @@
         "label": "UniMe – Application and admission",
         "url": "https://international.unime.it/study-us/application-and-admission"
       }
-    ]
+    ],
+    "type": "Davlat",
+    "web": "https://www.unime.it/",
+    "detailed": true
+  },
+  {
+    "id": "unikore",
+    "short": "Kore",
+    "name": "Universita degli Studi di Enna \"Kore\"",
+    "city": "enna",
+    "type": "Xususiy",
+    "web": "https://unikore.it/",
+    "detailed": false
+  },
+  {
+    "id": "unifi",
+    "short": "Firenze",
+    "name": "Universita degli Studi di Firenze",
+    "city": "firenze",
+    "type": "Davlat",
+    "web": "https://www.unifi.it/",
+    "detailed": false
+  },
+  {
+    "id": "unipi",
+    "short": "Pisa",
+    "name": "Universita di Pisa",
+    "city": "pisa",
+    "type": "Davlat",
+    "web": "https://www.unipi.it/",
+    "detailed": false
+  },
+  {
+    "id": "unisi",
+    "name": "Universita di Siena",
+    "short": "Siena",
+    "city": "siena",
+    "founded": "1240",
+    "rank": "QS 2027: #572",
+    "intro": "Toskanadagi qadimiy universitet. Censis 2026/27 bo'yicha Toskanada 1-o'rin.",
+    "portalLabel": "apply.unisi.it'da ro'yxatdan o'tish",
+    "portalUrl": "https://apply.unisi.it",
+    "infoUrl": "https://admission.unisi.it/",
+    "programmesUrl": "https://en.unisi.it/",
+    "fee": "Rasmiy narxlar sahifasida",
+    "deadlines": [
+      {
+        "label": "Viza oluvchilar uchun (2026/27)",
+        "date": "6.05.2026 gacha"
+      },
+      {
+        "label": "Foundation (2026/27)",
+        "date": "20.03 / 8.05 / 22.05.2026"
+      }
+    ],
+    "deadlineNote": "2027/28 kalendari hali e'lon qilinmagan.",
+    "levels": [
+      {
+        "name": "Foundation",
+        "duration": "1 yil",
+        "req": [
+          "Narxi 3 500 €"
+        ]
+      },
+      {
+        "name": "Bakalavr",
+        "duration": "3 yil",
+        "req": [
+          "CV (hamma uchun)",
+          "Ba'zi dasturlarda motivatsion xat"
+        ]
+      },
+      {
+        "name": "Magistratura",
+        "duration": "2 yil",
+        "req": [
+          "Bakalavr diplomi",
+          "CV",
+          "Ba'zi dasturlarda motivatsion xat"
+        ]
+      }
+    ],
+    "docs": [
+      "Pasport",
+      "Diplom va transcript",
+      "Til sertifikati",
+      "CV"
+    ],
+    "scholarship": "DSU Toscana.",
+    "acceptance": "Universitet rasmiy qabul foizini e'lon qilmaydi. Natija hujjatlaringiz va dasturdagi joylar soniga bog'liq.",
+    "tip": "Viza kerak bo'lganlar uchun yozgi qabul yo'q: hammasini may boshigacha topshiring.",
+    "video": "",
+    "sources": [
+      {
+        "label": "UniSi – Admission calendar",
+        "url": "https://admission.unisi.it/?p=3003"
+      }
+    ],
+    "type": "Davlat",
+    "web": "https://www.unisi.it/",
+    "detailed": true
+  },
+  {
+    "id": "unistrasi",
+    "short": "Stranieri di Siena",
+    "name": "Universita per Stranieri di Siena",
+    "city": "siena",
+    "type": "Davlat",
+    "web": "https://www.unistrasi.it/",
+    "detailed": false
+  },
+  {
+    "id": "unitn",
+    "short": "Trento",
+    "name": "Universita degli Studi di Trento",
+    "city": "trento",
+    "type": "Davlat",
+    "web": "https://www.unitn.it/",
+    "detailed": false
+  },
+  {
+    "id": "unibz",
+    "short": "Bolzano",
+    "name": "Libera Universita di Bolzano",
+    "city": "bolzano",
+    "type": "Xususiy",
+    "web": "https://www.unibz.it/",
+    "detailed": false
+  },
+  {
+    "id": "unipg",
+    "short": "Perugia",
+    "name": "Universita degli Studi di Perugia",
+    "city": "perugia",
+    "type": "Davlat",
+    "web": "https://www.unipg.it/",
+    "detailed": false
+  },
+  {
+    "id": "unistrapg",
+    "short": "Stranieri di Perugia",
+    "name": "Universita per Stranieri di Perugia",
+    "city": "perugia",
+    "type": "Davlat",
+    "web": "https://www.unistrapg.it/",
+    "detailed": false
+  },
+  {
+    "id": "univda",
+    "short": "Valle d'Aosta",
+    "name": "Universita della Valle d'Aosta",
+    "city": "aosta",
+    "type": "Xususiy",
+    "web": "https://www.univda.it/",
+    "detailed": false
+  },
+  {
+    "id": "unive",
+    "short": "Ca' Foscari",
+    "name": "Universita Ca' Foscari Venezia",
+    "city": "venezia",
+    "type": "Davlat",
+    "web": "https://www.unive.it/",
+    "detailed": false
+  },
+  {
+    "id": "iuav",
+    "short": "IUAV",
+    "name": "Universita Iuav di Venezia",
+    "city": "venezia",
+    "type": "Davlat",
+    "web": "https://www.iuav.it/",
+    "detailed": false
+  },
+  {
+    "id": "unipd",
+    "short": "Padova",
+    "name": "Universita degli Studi di Padova",
+    "city": "padova",
+    "type": "Davlat",
+    "web": "https://www.unipd.it/",
+    "detailed": false
+  },
+  {
+    "id": "univr",
+    "short": "Verona",
+    "name": "Universita degli Studi di Verona",
+    "city": "verona",
+    "type": "Davlat",
+    "web": "https://www.univr.it/",
+    "detailed": false
   }
 ]

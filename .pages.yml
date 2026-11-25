@@ -258,6 +258,8 @@ content:
       - { name: dsu, label: Stipendiya idorasi, type: string }
       - { name: intro, label: Kirish matni, type: text }
       - { name: points, label: Muhim faktlar, type: string, list: true }
+      - { name: pros, label: "Kuchli tomonlari (Nega shu shahar)", type: string, list: true }
+      - { name: cons, label: Bilib qo'ying, type: string, list: true }
 
   - name: universities
     label: Universitetlar
@@ -270,6 +272,13 @@ content:
       - { name: short, label: Qisqa nomi, type: string, required: true }
       - { name: name, label: To'liq nomi, type: string }
       - { name: city, label: "Shahar kodi (roma, milano, torino...)", type: string }
+      - name: type
+        label: Turi
+        type: select
+        options:
+          values: [Davlat, Xususiy]
+      - { name: web, label: "Rasmiy sayt (https://...)", type: string }
+      - { name: detailed, label: "To'liq ma'lumotli sahifa", type: boolean }
       - { name: founded, label: Tashkil topgan yili, type: string }
       - { name: rank, label: "Reyting (masalan QS 2027: #111)", type: string }
       - { name: intro, label: Qisqa tavsif, type: text }
@@ -298,6 +307,22 @@ content:
       - { name: tip, label: Uprep maslahati, type: text }
       - { name: video, label: "Ariza videosi (YouTube havolasi)", type: string }
       - { name: programmesUrl, label: "Yo'nalishlar ro'yxati havolasi", type: string }
+      - name: programmes
+        label: Yo'nalishlar
+        type: object
+        list: true
+        fields:
+          - name: level
+            label: Daraja
+            type: select
+            options:
+              values: [Bakalavr, Magistratura, Yagona sikl, Foundation]
+          - { name: name, label: Nomi, type: string }
+          - { name: lang, label: Tili, type: string }
+          - { name: req, label: Kim topshira oladi, type: text }
+          - { name: gpa, label: "Minimal GPA (100 ballik)", type: string }
+          - { name: test, label: Test yoki suhbat, type: string }
+      - { name: programmesNote, label: Yo'nalishlar haqida izoh, type: text }
       - { name: infoUrl, label: Xalqaro talabalar sahifasi, type: string }
       - name: sources
         label: Manbalar

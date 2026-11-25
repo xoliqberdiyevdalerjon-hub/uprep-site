@@ -1,39 +1,113 @@
 [
   {
-    "id": "roma",
-    "name": "Rim",
-    "region": "Lazio",
-    "dsu": "DiSCo",
-    "intro": "Italiyaning poytaxti va eng katta talabalar shahri. Sapienza, Tor Vergata va Roma Tre shu yerda.",
-    "points": [
-      "Ish va amaliyot imkoniyati ko'p: vazirliklar, xalqaro tashkilotlar, kompaniyalar.",
-      "Ijara narxi Italiya o'rtachasidan yuqori.",
-      "Stipendiya: DiSCo, 2026/27 da 8 200 € gacha, kuniga 2 mahal bepul ovqat."
-    ]
+    "id": "laquila",
+    "name": "L'Aquila",
+    "region": "Abruzzo",
+    "dsu": "ADSU (L'Aquila, Chieti-Pescara, Teramo)",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
   },
   {
-    "id": "milano",
-    "name": "Milan",
-    "region": "Lombardia",
+    "id": "chieti-pescara",
+    "name": "Chieti va Pescara",
+    "region": "Abruzzo",
+    "dsu": "ADSU (L'Aquila, Chieti-Pescara, Teramo)",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "teramo",
+    "name": "Teramo",
+    "region": "Abruzzo",
+    "dsu": "ADSU (L'Aquila, Chieti-Pescara, Teramo)",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "potenza",
+    "name": "Potenza va Matera",
+    "region": "Basilicata",
+    "dsu": "ARDSU Basilicata",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "catanzaro",
+    "name": "Catanzaro",
+    "region": "Calabria",
     "dsu": "Universitetning o'zi",
-    "intro": "Italiyaning moliya, biznes va dizayn markazi. Universita degli Studi di Milano, Politecnico di Milano, Bocconi shu yerda.",
-    "points": [
-      "Ish bozori eng kuchli shahar.",
-      "Yashash Italiyadagi eng qimmat shaharlardan.",
-      "Stipendiyani har bir universitet o'zi e'lon qiladi."
-    ]
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
   },
   {
-    "id": "torino",
-    "name": "Turin",
-    "region": "Piemonte",
-    "dsu": "EDISU Piemonte",
-    "intro": "Sanoat va muhandislik shahri, Alp tog'lari yonida. Universita di Torino va Politecnico di Torino shu yerda.",
-    "points": [
-      "Rim va Milanga nisbatan yashash arzonroq.",
-      "EDISU stipendiyasi 2026/27 da 8 455 € gacha.",
-      "UniTo'da Talents4UniTo grantlari ham bor."
-    ]
+    "id": "rende",
+    "name": "Rende (Kozentsa)",
+    "region": "Calabria",
+    "dsu": "Universitetning o'zi",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "reggio-calabria",
+    "name": "Reggio-Kalabriya",
+    "region": "Calabria",
+    "dsu": "Universitetning o'zi",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "napoli",
+    "name": "Neapol",
+    "region": "Campania",
+    "dsu": "ADISURC",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "benevento",
+    "name": "Benevento",
+    "region": "Campania",
+    "dsu": "ADISURC",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "caserta",
+    "name": "Kazerta",
+    "region": "Campania",
+    "dsu": "ADISURC",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "salerno",
+    "name": "Salerno",
+    "region": "Campania",
+    "dsu": "ADISURC",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
   },
   {
     "id": "bologna",
@@ -45,7 +119,422 @@
       "Yevropadagi eng qadimgi universitet shu yerda (1088).",
       "ER.GO stipendiyasi 2026/27 da 7 171 € gacha, yotoqxona stipendiya hisobidan to'lanadi.",
       "Ijara topish qiyin: erta qidiring."
+    ],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "ferrara",
+    "name": "Ferrara",
+    "region": "Emilia-Romagna",
+    "dsu": "ER.GO",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "modena",
+    "name": "Modena va Reggio-Emiliya",
+    "region": "Emilia-Romagna",
+    "dsu": "ER.GO",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "parma",
+    "name": "Parma",
+    "region": "Emilia-Romagna",
+    "dsu": "ER.GO",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "piacenza",
+    "name": "Pyachensa",
+    "region": "Emilia-Romagna",
+    "dsu": "ER.GO",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "trieste",
+    "name": "Triyest",
+    "region": "Friuli-Venezia Giulia",
+    "dsu": "ARDIS",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "udine",
+    "name": "Udine",
+    "region": "Friuli-Venezia Giulia",
+    "dsu": "ARDIS",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "roma",
+    "name": "Rim",
+    "region": "Lazio",
+    "dsu": "DiSCo",
+    "intro": "Italiyaning poytaxti va eng yirik talabalar shahri. Sapienza, Tor Vergata, Roma Tre, LUISS va boshqa universitetlar shu yerda.",
+    "points": [],
+    "pros": [
+      "Universitet tanlovi katta: davlat universitetlari va xususiy universitetlar bir shaharda.",
+      "Amaliyot va ish imkoniyati: vazirliklar, elchixonalar va BMTning FAO, IFAD, WFP kabi tashkilotlari shu yerda joylashgan.",
+      "Tarix har qadamda: shahar markazi UNESCO jahon merosi ro'yxatida.",
+      "Iqlimi yumshoq: qish iliq, quyoshli kunlar ko'p.",
+      "Stipendiya kuchli: DiSCo 2026/27 da 8 200 € gacha va kuniga 2 mahal bepul ovqat berdi.",
+      "Fiumicino: Italiyaning eng katta aeroporti, butun dunyoga reyslar."
+    ],
+    "cons": [
+      "Ijara Italiya o'rtachasidan qimmat: uy-joyni erta qidiring.",
+      "Shahar katta: kampusga yo'l vaqt olishi mumkin, Tor Vergata shahar chetida.",
+      "Davlat idoralarida navbatlar uzun bo'lishi mumkin: permesso va boshqa ishlarni erta boshlang."
     ]
+  },
+  {
+    "id": "cassino",
+    "name": "Kassino",
+    "region": "Lazio",
+    "dsu": "DiSCo",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "viterbo",
+    "name": "Viterbo",
+    "region": "Lazio",
+    "dsu": "DiSCo",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "genova",
+    "name": "Genuya",
+    "region": "Liguria",
+    "dsu": "ALiSEO",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "milano",
+    "name": "Milan",
+    "region": "Lombardia",
+    "dsu": "Universitetning o'zi",
+    "intro": "Italiyaning moliya, biznes va dizayn markazi. Universita degli Studi di Milano, Politecnico di Milano, Bocconi shu yerda.",
+    "points": [
+      "Ish bozori eng kuchli shahar.",
+      "Yashash Italiyadagi eng qimmat shaharlardan.",
+      "Stipendiyani har bir universitet o'zi e'lon qiladi."
+    ],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "bergamo",
+    "name": "Bergamo",
+    "region": "Lombardia",
+    "dsu": "Universitetning o'zi",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "brescia",
+    "name": "Breshiya",
+    "region": "Lombardia",
+    "dsu": "Universitetning o'zi",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "pavia",
+    "name": "Paviya",
+    "region": "Lombardia",
+    "dsu": "Universitetning o'zi",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "varese",
+    "name": "Varese va Komo",
+    "region": "Lombardia",
+    "dsu": "Universitetning o'zi",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "castellanza",
+    "name": "Kastellansa",
+    "region": "Lombardia",
+    "dsu": "Universitetning o'zi",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "cremona",
+    "name": "Kremona",
+    "region": "Lombardia",
+    "dsu": "Universitetning o'zi",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "ancona",
+    "name": "Ankona",
+    "region": "Marche",
+    "dsu": "ERDIS",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "camerino",
+    "name": "Kamerino",
+    "region": "Marche",
+    "dsu": "ERDIS",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "macerata",
+    "name": "Macherata",
+    "region": "Marche",
+    "dsu": "ERDIS",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "urbino",
+    "name": "Urbino",
+    "region": "Marche",
+    "dsu": "ERDIS",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "campobasso",
+    "name": "Kampobasso",
+    "region": "Molise",
+    "dsu": "ESU Molise",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "pozzilli",
+    "name": "Potsilli",
+    "region": "Molise",
+    "dsu": "ESU Molise",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "torino",
+    "name": "Turin",
+    "region": "Piemonte",
+    "dsu": "EDISU Piemonte",
+    "intro": "Sanoat va muhandislik shahri, Alp tog'lari yonida. Universita di Torino va Politecnico di Torino shu yerda.",
+    "points": [
+      "Rim va Milanga nisbatan yashash arzonroq.",
+      "EDISU stipendiyasi 2026/27 da 8 455 € gacha.",
+      "UniTo'da Talents4UniTo grantlari ham bor."
+    ],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "novara",
+    "name": "Novara, Vercelli va Alessandriya",
+    "region": "Piemonte",
+    "dsu": "EDISU Piemonte",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "pollenzo",
+    "name": "Pollenso",
+    "region": "Piemonte",
+    "dsu": "EDISU Piemonte",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "bari",
+    "name": "Bari",
+    "region": "Puglia",
+    "dsu": "ADISU Puglia",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "casamassima",
+    "name": "Kasamassima",
+    "region": "Puglia",
+    "dsu": "ADISU Puglia",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "foggia",
+    "name": "Fodjiya",
+    "region": "Puglia",
+    "dsu": "ADISU Puglia",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "lecce",
+    "name": "Lechche",
+    "region": "Puglia",
+    "dsu": "ADISU Puglia",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "taranto",
+    "name": "Taranto",
+    "region": "Puglia",
+    "dsu": "ADISU Puglia",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "cagliari",
+    "name": "Kalyari",
+    "region": "Sardegna",
+    "dsu": "ERSU (Cagliari, Sassari)",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "sassari",
+    "name": "Sassari",
+    "region": "Sardegna",
+    "dsu": "ERSU (Cagliari, Sassari)",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "palermo",
+    "name": "Palermo",
+    "region": "Sicilia",
+    "dsu": "ERSU (Palermo, Catania, Messina, Enna)",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "catania",
+    "name": "Katanya",
+    "region": "Sicilia",
+    "dsu": "ERSU (Palermo, Catania, Messina, Enna)",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "messina",
+    "name": "Messina",
+    "region": "Sicilia",
+    "dsu": "ERSU (Palermo, Catania, Messina, Enna)",
+    "intro": "Sitsiliyadagi dengiz bo'yidagi shahar, Messina bo'g'ozida.",
+    "points": [
+      "Kontrakt yiliga 156–506 € (davlat guruhiga qarab).",
+      "Janubda yashash odatda arzonroq.",
+      "ERSU stipendiyasi 2026/27 da 8 246 € gacha."
+    ],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "enna",
+    "name": "Enna",
+    "region": "Sicilia",
+    "dsu": "ERSU (Palermo, Catania, Messina, Enna)",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "firenze",
+    "name": "Florensiya",
+    "region": "Toscana",
+    "dsu": "DSU Toscana",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "pisa",
+    "name": "Piza",
+    "region": "Toscana",
+    "dsu": "DSU Toscana",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
   },
   {
     "id": "siena",
@@ -57,18 +546,78 @@
       "Universitet 1240-yilda ochilgan.",
       "Kichik shahar: hamma joyga piyoda yetib boriladi.",
       "Stipendiya: DSU Toscana."
-    ]
+    ],
+    "pros": [],
+    "cons": []
   },
   {
-    "id": "messina",
-    "name": "Messina",
-    "region": "Sicilia",
-    "dsu": "ERSU Messina",
-    "intro": "Sitsiliyadagi dengiz bo'yidagi shahar, Messina bo'g'ozida.",
-    "points": [
-      "Kontrakt yiliga 156–506 € (davlat guruhiga qarab).",
-      "Janubda yashash odatda arzonroq.",
-      "ERSU stipendiyasi 2026/27 da 8 246 € gacha."
-    ]
+    "id": "trento",
+    "name": "Trento",
+    "region": "Trentino-Alto Adige",
+    "dsu": "Trento: Opera Universitaria; Bolzano: viloyat idorasi",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "bolzano",
+    "name": "Bolsano",
+    "region": "Trentino-Alto Adige",
+    "dsu": "Trento: Opera Universitaria; Bolzano: viloyat idorasi",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "perugia",
+    "name": "Peruja",
+    "region": "Umbria",
+    "dsu": "ADiSU",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "aosta",
+    "name": "Aosta",
+    "region": "Valle d'Aosta",
+    "dsu": "Viloyat stipendiya idorasi",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "venezia",
+    "name": "Venetsiya",
+    "region": "Veneto",
+    "dsu": "Universitetning o'zi (ESU: yotoqxona va oshxona)",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "padova",
+    "name": "Padua",
+    "region": "Veneto",
+    "dsu": "Universitetning o'zi (ESU: yotoqxona va oshxona)",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
+  },
+  {
+    "id": "verona",
+    "name": "Verona",
+    "region": "Veneto",
+    "dsu": "Universitetning o'zi (ESU: yotoqxona va oshxona)",
+    "intro": "",
+    "points": [],
+    "pros": [],
+    "cons": []
   }
 ]

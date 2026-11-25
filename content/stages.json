@@ -42,26 +42,45 @@
   },
   {
     "id": "s1",
-    "title": "Universitetga ariza",
-    "sub": "Portalda ro'yxatdan o'tish va hujjat topshirish",
+    "title": "Pre-acceptance",
+    "sub": "Universitetga ariza va oldindan qabul",
     "icon": "send",
-    "when": "Sapienza: 22.12.2025 – 15.05.2026",
-    "intro": "Har bir universitetning o'z ariza portali bor. Misol uchun Sapienza'da bu MoveIn: ro'yxatdan o'tasiz, hujjatlarni yuklaysiz va pre-selection natijasini kutasiz. O'tsangiz, pre-acceptance (oldindan qabul) olasiz.",
+    "when": "Sapienza 2026/27: 22.12.2025 – 15.05.2026",
+    "intro": "Pre-acceptance universitetning \"sizni olishga tayyormiz\" degan javobi. Har bir universitetning o'z ariza portali bor: Sapienza'da bu MoveIn. Hujjatlaringizni yuklaysiz, komissiya ko'rib chiqadi va o'tsangiz, pre-acceptance xati keladi. Shu xat bilan keyingi bosqichlar boshlanadi.",
     "blocks": [
       {
         "type": "button",
         "label": "Sapienza: MoveIn'da ro'yxatdan o'tish",
         "url": "https://sapienza.gomovein.com/",
-        "note": "Har bir ariza 30 €, yiliga 2 tagacha"
+        "note": "Har bir ariza 30 €, yiliga 2 tagacha, pul qaytarilmaydi"
+      },
+      {
+        "type": "stats",
+        "items": [
+          {
+            "big": "30 €",
+            "small": "bitta ariza (Sapienza)"
+          },
+          {
+            "big": "2 ta",
+            "small": "yiliga maksimal ariza"
+          },
+          {
+            "big": "B2",
+            "small": "ingliz yoki italyan tili, dasturga qarab"
+          }
+        ]
       },
       {
         "type": "list",
-        "title": "Nima qilasiz",
+        "title": "Qadamlar",
         "style": "steps",
         "items": [
-          "MoveIn portalida ro'yxatdan o'ting va dasturni tanlang: yiliga 2 tagacha.",
-          "Hujjatlarni yuklang va har bir ariza uchun 30 € to'lang. Bu pul qaytarilmaydi.",
-          "Natijani kuting. Pre-acceptance kelgach, 2- va 3-bosqichni darhol boshlang."
+          "Yo'nalishni tanlang: Universitetlar bo'limidagi Sapienza sahifasida hamma yo'nalishlar va talablar bor.",
+          "sapienza.gomovein.com saytida ro'yxatdan o'ting. Hamma joyda bitta email ishlating.",
+          "Profilni to'ldiring va hujjatlarni PDF qilib yuklang.",
+          "Har bir ariza uchun 30 € to'lang. To'lovsiz ariza ko'rib chiqilmaydi.",
+          "Natijani MoveIn'da kuting. Pre-acceptance kelsa, darhol DoV/CIMEA va Universitaly'ga o'ting."
         ]
       },
       {
@@ -70,27 +89,32 @@
         "style": "checklist",
         "items": [
           "Pasport",
-          "Attestat yoki diplom va baholar varaqasi (transcript)",
-          "Ingliz tili sertifikati (odatda B2)",
-          "CV va motivatsion xat, agar dastur so'rasa"
+          "Attestat yoki diplom",
+          "Transcript (baholar varaqasi)",
+          "Til sertifikati (B2)",
+          "Dastur so'rasa: CV, motivatsion xat, SAT yoki CEnT-S natijasi",
+          "Ixtiyoriy: tavsiyanoma"
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Talablar qanday",
+        "body": "Bakalavr uchun odatda 12 yillik ta'lim kerak. 11 yillik attestat bilan ba'zi dasturlar (masalan Business Sciences, Economics and Finance) Foundation yilini qabul qiladi.\n\nMagistratura uchun kamida 3 yillik bakalavr diplomi kerak. Har bir dasturning minimal GPA'si bor: 60 dan 90 gacha (100 ballik shkalada).\n\nKo'p bakalavr dasturlari SAT yoki CEnT-S natijasini so'raydi. Magistraturada ba'zan suhbat bo'ladi."
+      },
+      {
+        "type": "list",
+        "title": "Ko'p uchraydigan xatolar",
+        "style": "bullets",
+        "items": [
+          "Oxirgi kunni kutish: sayt sekinlashadi, hujjat yuklanmay qolishi mumkin.",
+          "Skanlar xira yoki to'liq emas: har bir sahifani aniq, rangli skanerlang.",
+          "Ikkita arizani bir xil kuchsiz dasturga sarflash: yiliga faqat 2 ta imkoniyat bor."
         ]
       },
       {
         "type": "callout",
         "style": "tip",
-        "text": "2026/27 uchun MoveIn dekabr oxirida ochilgan. 2027/28 ga topshirmoqchi bo'lsangiz, sertifikat va transcript'ni noyabrgacha tayyorlab qo'ying."
-      },
-      {
-        "type": "list",
-        "title": "Boshqa universitetlar portallari",
-        "style": "bullets",
-        "items": [
-          "Turin: apply.unito.it",
-          "Siena: apply.unisi.it",
-          "Bologna: Studenti Online (studenti.unibo.it)",
-          "Messina: international.unime.it",
-          "Har birining to'liq ma'lumoti Universitetlar bo'limida."
-        ]
+        "text": "Viza kerak bo'lganlar uchun Sapienza muddati boshqalardan oldin tugaydi (2026/27 da 15-may). Hujjatlarni dekabr-yanvarda tayyorlab qo'ying."
       }
     ],
     "srcLabel": "Sapienza – International Admissions",
@@ -99,42 +123,102 @@
   {
     "id": "s2",
     "title": "DoV yoki CIMEA",
-    "sub": "Diplomingizni Italiyada tasdiqlash",
+    "sub": "Diplomingizni Italiyada tan oldirish",
     "icon": "stamp",
     "when": "Pre-acceptance'dan keyin darhol: vizaga kerak",
-    "intro": "Italiya diplomingiz haqiqiy ekanini va universitetga kirish uchun yetarli ekanini bilishi kerak. Buning ikki yo'li bor, ikkalasi ham qabul qilinadi.",
+    "intro": "Italiya diplomingiz nimaga teng ekanini bilishi kerak. Buning ikki yo'li bor: elchixona beradigan Dichiarazione di Valore (DoV) yoki CIMEA'ning onlayn sertifikati. Qaysi biri kerakligini universitetingiz aytadi.",
     "blocks": [
       {
         "type": "cards",
         "items": [
           {
-            "title": "CIMEA",
-            "text": "Statement of Comparability va Statement of Verification. Onlayn olinadi. Sapienza ro'yxatida birinchi bo'lib turadi."
+            "title": "DoV (Dichiarazione di Valore)",
+            "text": "Toshkentdagi Italiya elchixonasining konsullik bo'limi beradi. Hujjatlar apostillangan va italyanchaga tarjima qilingan bo'lishi kerak."
           },
           {
-            "title": "DoV",
-            "text": "Dichiarazione di Valore. Italiyaning Toshkentdagi elchixonasi beradi. Bunda barcha hujjatlar, transcript ham, apostillangan bo'lishi kerak."
+            "title": "CIMEA",
+            "text": "Onlayn, DiploMe platformasi orqali. Statement of Comparability (diplom nimaga teng) va Statement of Verification (diplom haqiqiyligi)."
           }
         ]
       },
       {
         "type": "list",
-        "title": "Nima qilasiz",
+        "title": "DoV: qadamlar",
         "style": "steps",
         "items": [
-          "Attestat yoki diplomga apostil qo'ydiring (yoki legalizatsiya).",
-          "Italyan tiliga rasmiy tarjima qildiring. Viza uchun tarjimani elchixonaning ishonchli tarjimonlari qiladi.",
-          "CIMEA'ga onlayn ariza bering yoki elchixonadan DoV so'rang."
+          "Attestat yoki diplom va transcript'ga apostil qo'ydiring.",
+          "Elchixonaning ishonchli tarjimonlaridan biriga italyan tiliga tarjima qildiring. Noto'g'ri tarjima bo'lsa, arizani boshidan topshirasiz.",
+          "Elchixona saytidan ariza formasini yuklab, to'ldiring.",
+          "Universitaly'dagi pre-enrollment formasini yuklab oling.",
+          "Konsullik bo'limiga boring: chorshanba 9:30–12:30 (familiyasi A–L), juma 9:30–12:30 (M–Z). Ishonchnoma bilan boshqa odam ham topshira oladi."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "DoV: hujjatlar",
+        "style": "checklist",
+        "items": [
+          "Pasport nusxasi",
+          "To'ldirilgan ariza formasi",
+          "Universitaly pre-enrollment formasi",
+          "Apostillangan asl hujjatlar",
+          "Ularning apostil bilan rangli nusxasi",
+          "Italyancha tarjima"
+        ]
+      },
+      {
+        "type": "stats",
+        "items": [
+          {
+            "big": "300 €",
+            "small": "CIMEA Comparability + Verification (ko'p davlatlar uchun)"
+          },
+          {
+            "big": "60 ish kuni",
+            "small": "CIMEA standart muddati"
+          },
+          {
+            "big": "+100 €",
+            "small": "tezkor: Comparability 30 ish kunida"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "title": "CIMEA: qadamlar",
+        "style": "steps",
+        "items": [
+          "cimea-diplome.it saytida o'zingiz ro'yxatdan o'ting. CIMEA vositachi orqali ariza qabul qilmaydi.",
+          "Service Finder'da davlatingiz va diplomingizni tanlang: tizim xizmat turi va narxni ko'rsatadi (150 € yoki 300 €).",
+          "Hujjatlarni yuklang va to'lang. Tezkor xizmatni faqat ariza paytida tanlash mumkin.",
+          "Tayyor sertifikatni universitetingizga va Universitaly'ga yuklang."
         ]
       },
       {
         "type": "callout",
+        "style": "warn",
+        "text": "CIMEA Comparability DoV o'rnini faqat universitet uni Universitaly'da qabul qilsa bosadi. Diplomning haqiqiyligi esa alohida tasdiqlanadi."
+      },
+      {
+        "type": "callout",
         "style": "tip",
-        "text": "Diplomingiz to'liq ingliz tilida bo'lsa, Sapienza italyancha tarjimani so'ramaydi. Lekin CIMEA Verification yoki apostil baribir kerak."
+        "text": "CIMEA 60 ish kuni, ya'ni taxminan 3 oy oladi. Pre-acceptance kelishi bilan boshlang, viza muddatiga kechikmang."
+      },
+      {
+        "type": "button",
+        "label": "CIMEA DiploMe xizmatlari",
+        "url": "https://www.cimea-diplome.it/page-services",
+        "note": "Narxlar va muddatlar"
+      },
+      {
+        "type": "button",
+        "label": "Elchixona: DoV sahifasi",
+        "url": "https://ambtashkent.esteri.it/it/?p=99",
+        "note": "Ariza formasi va tarjimonlar ro'yxati"
       }
     ],
-    "srcLabel": "Sapienza – enrolment documents",
-    "srcUrl": "https://www.uniroma1.it/sites/default/files/field_file_allegati/enrolmentdocuments_1_0.pdf"
+    "srcLabel": "Italiya elchixonasi, Toshkent – DoV",
+    "srcUrl": "https://ambtashkent.esteri.it/it/?p=99"
   },
   {
     "id": "s3",
@@ -142,8 +226,14 @@
     "sub": "Universitaly portalida",
     "icon": "laptop",
     "when": "Sapienza: 30.06.2026 gacha",
-    "intro": "Universitaly — Italiyaning yagona ariza portali. Universitet arizangizni shu yerda tasdiqlaydi va u elchixonaga o'tadi. Tasdiqsiz vizaga yozila olmaysiz.",
+    "intro": "Universitaly Italiya vazirligining yagona portali. Bu yerda tanlagan dasturingizga pre-enrollment arizasini berasiz. Universitet uni tasdiqlaydi va ariza elchixonaga o'tadi. Tasdiqlangan pre-enrollment'siz vizaga topshirib bo'lmaydi.",
     "blocks": [
+      {
+        "type": "button",
+        "label": "Universitaly portali",
+        "url": "https://www.universitaly.it/",
+        "note": "Ro'yxatdan o'tish va pre-enrollment"
+      },
       {
         "type": "list",
         "title": "Nima qilasiz",
@@ -166,6 +256,21 @@
         ]
       },
       {
+        "type": "text",
+        "title": "Tasdiq nimani bildiradi",
+        "body": "Universitet arizangizni ko'rib chiqib, uni tasdiqlaydi (validation). Viza uchun bu tasdiq shartsiz bo'lishi kerak: hujjatlar to'liq va qabul aniq.\n\nTasdiqlangan pre-enrollment'ning PDF xulosasi vizaga topshiriladigan hujjatlar ro'yxatida bor. Uni yuklab, chop etib qo'ying."
+      },
+      {
+        "type": "list",
+        "title": "Ko'p uchraydigan xatolar",
+        "style": "bullets",
+        "items": [
+          "Universitet portalida va Universitaly'da har xil email ishlatish.",
+          "Dastur nomini noto'g'ri tanlash: pre-acceptance xatidagi nom bilan bir xil bo'lsin.",
+          "Universitet tasdig'ini kutmasdan vizaga yozilish."
+        ]
+      },
+      {
         "type": "callout",
         "style": "tip",
         "text": "Universitet portalida va Universitaly'da bitta email ishlating. Elchixonaning xati aynan shu manzilga keladi."
@@ -176,52 +281,112 @@
         "text": "Yordam: universitaly@cineca.it (texnik) · info@uni-italia.it"
       }
     ],
-    "srcLabel": "Italiya elchixonasi, Toshkent",
-    "srcUrl": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Study-enrolment-and-foundation-years-ENGLISH-rev.pdf"
+    "srcLabel": "Italiya elchixonasi, Toshkent – talaba vizasi",
+    "srcUrl": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Studio-immatricolazione-e-corsi-propedeutici-ITALIANO.rev_.pdf"
   },
   {
     "id": "s4",
     "title": "Viza",
     "sub": "D toifa, talaba vizasi",
     "icon": "passport",
-    "when": "Safardan 6 oy oldin – 15 kun oldin · oxirgi kun 30.11.2026",
-    "intro": "Toshkentdagi Italiya elchixonasining konsullik bo'limiga topshiriladi. Ko'rib chiqish 90 kungacha cho'ziladi va shu vaqt pasportingiz elchixonada turadi, shuning uchun erta topshiring.",
+    "when": "Safardan 6 oy oldin – 15 kun oldin; oxirgi kun 30.11.2026",
+    "intro": "Toshkentdagi Italiya elchixonasining konsullik bo'limiga topshiriladi. Bu D toifadagi milliy viza: 91 kundan 365 kungacha, ko'p martalik. Ko'rib chiqish 90 kungacha davom etadi va shu vaqt pasportingiz elchixonada turadi.",
     "blocks": [
       {
+        "type": "stats",
+        "items": [
+          {
+            "big": "90 kun",
+            "small": "ko'rib chiqish muddati"
+          },
+          {
+            "big": "30.11.2026",
+            "small": "2026/27 uchun oxirgi kun (Foundation'dan tashqari)"
+          },
+          {
+            "big": "30 000 €",
+            "small": "sug'urta, minimal, butun Shengen"
+          },
+          {
+            "big": "10 ish kuni",
+            "small": "bank ko'chirmasining maksimal yoshi"
+          }
+        ]
+      },
+      {
         "type": "list",
-        "title": "Hujjatlar",
+        "title": "Qadamlar",
+        "style": "steps",
+        "items": [
+          "Universitaly pre-enrollment tasdiqlanganini kuting.",
+          "Hujjatlarni ro'yxat bo'yicha yig'ing. Tarjimalarni elchixonaning ishonchli tarjimonlari qiladi.",
+          "O'zbekiston hujjatlariga apostil yetarli: O'zbekiston Gaaga konvensiyasi a'zosi.",
+          "Bank ko'chirmasini eng oxirida oling: 10 ish kunidan eski bo'lmasin.",
+          "Konsullik bo'limiga topshiring: safardan 6 oydan oldin emas va 15 kundan kech emas.",
+          "Javobni kuting. Pasport qaror chiqqunicha qaytarilmaydi."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Hujjatlar (elchixona ro'yxati)",
         "style": "checklist",
         "items": [
           "# Shaxsiy",
-          "To'ldirilgan va imzolangan viza anketasi",
-          "Oq fondagi rasm, 6 oydan eski emas",
-          "Pasport: 10 yil ichida berilgan, viza tugagach yana 90 kun amal qiladi, 2 ta bo'sh sahifa. Nusxasi va ichki pasport/ID nusxasi bilan",
-          "O'zbekistonda yashash joyini tasdiqlovchi hujjat",
+          "Imzolangan viza anketasi (asli)",
+          "1 ta rasm, oq fon, 6 oydan eski emas",
+          "Pasport: 10 yil ichida berilgan, viza tugagach yana 90 kun amal qiladi, 2 ta bo'sh sahifa",
+          "Pasport va ID nusxasi",
+          "Yashash joyi ma'lumotnomasi (my.gov.uz)",
           "# O'qish",
-          "Universitaly pre-enrollment sertifikati",
-          "Universitetning qabul xati",
-          "Birinchi to'lov kvitansiyasi",
+          "Universitaly pre-enrollment nusxasi",
+          "Universitetning italyancha qabul xati: kurs turi, davomiyligi, darslar qanday o'tishi",
+          "Kamida birinchi to'lov kvitansiyasi",
           "Til sertifikati",
-          "Diplom va transcript: asli, nusxasi va italyancha tarjimasi",
-          "DoV va/yoki CIMEA (asli va nusxasi)",
+          "Diplom va transcript: asli va nusxasi",
+          "Diplom va transcript'ning italyancha tarjimasi",
+          "DoV va/yoki CIMEA Comparability (asli va nusxasi)",
           "# Pul",
-          "So'nggi 3 oylik bank ko'chirmasi: O'zbekiston banki, muhr bilan, 10 ish kunidan eski emas",
+          "Ish beruvchi yoki homiy oila a'zosining e'tirozsizlik xati",
+          "So'nggi 3 oylik bank ko'chirmasi (O'zbekiston banki, bank blankasida, ho'l muhr bilan)",
           "Xalqaro karta ko'chirmasi, so'nggi 3 oy",
-          "my.gov.uz'dan ish joyi ma'lumotnomasi. Homiy bo'lsa: uning hujjatlari, Nulla Osta va qarindoshlikni tasdiqlovchi hujjat",
+          "my.gov.uz'dan ish joyi va maosh ma'lumotnomasi (o'zingiz yoki homiy)",
           "# Boshqa",
-          "Sug'urta: kamida 30 000 €, butun Shengen hududi va butun muddatga",
-          "Birinchi oy uchun turar joy: bron yoki taklifnoma",
-          "Borib-kelish chiptasi broni"
+          "Sug'urta: kamida 30 000 €, butun Shengen va butun muddat",
+          "Birinchi oy uchun turar joy: bron yoki Italiyadagi odamning taklifnomasi",
+          "Borib-kelish chiptasi broni",
+          "Imzolangan checklist (italyancha va siz tushunadigan tilda)"
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Ko'p uchraydigan xatolar",
+        "style": "bullets",
+        "items": [
+          "Bank ko'chirmasi eskirgan yoki muhrsiz.",
+          "Sug'urta faqat Italiya uchun, butun Shengen uchun emas.",
+          "Tarjima ro'yxatda yo'q tarjimonda qilingan.",
+          "Kech topshirish: 90 kunlik ko'rib chiqish o'qish boshlanishiga ulgurmay qoladi."
         ]
       },
       {
         "type": "callout",
+        "style": "warn",
+        "text": "Turistik viza bilan universitetga yozilib bo'lmaydi. Faqat D toifadagi talaba vizasi."
+      },
+      {
+        "type": "callout",
         "style": "tip",
-        "text": "Bank ko'chirmasi 10 ish kunidan eski bo'lsa qabul qilinmaydi. Uni boshqa hamma hujjat tayyor bo'lgach, eng oxirida oling."
+        "text": "Hammasidan oldin pasport muddatini tekshiring: viza tugagach yana 90 kun amal qilishi kerak."
+      },
+      {
+        "type": "button",
+        "label": "Elchixona: talaba vizasi ro'yxati (PDF)",
+        "url": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Studio-immatricolazione-e-corsi-propedeutici-ITALIANO.rev_.pdf",
+        "note": "2026/27 o'quv yili, italyan tilida"
       }
     ],
-    "srcLabel": "Italiya elchixonasi, Toshkent – Study enrolment",
-    "srcUrl": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Study-enrolment-and-foundation-years-ENGLISH-rev.pdf"
+    "srcLabel": "Italiya elchixonasi, Toshkent – talaba vizasi 2026/27",
+    "srcUrl": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Studio-immatricolazione-e-corsi-propedeutici-ITALIANO.rev_.pdf"
   },
   {
     "id": "s5",
