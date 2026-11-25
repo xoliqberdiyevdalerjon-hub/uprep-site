@@ -293,6 +293,9 @@ content:
       - { name: rank, label: "Reyting (masalan QS 2027: #111)", type: string }
       - { name: intro, label: Qisqa tavsif, type: text }
       - { name: image, label: "Fon rasmi (ixtiyoriy)", type: image }
+      - { name: applyUrl, label: "Ariza sahifasi (xalqaro talabalar uchun, https://...)", type: string }
+      - { name: applyNote, label: "Ariza haqida qisqa izoh (masalan: DreamApply portali)", type: string }
+      - { name: dsuUrl, label: "Stipendiya sahifasi (faqat universitet o'zi bersa: Lombardiya, Veneto, Kalabriya)", type: string }
       - { name: portalLabel, label: Ariza tugmasi matni, type: string }
       - { name: portalUrl, label: "Ariza / ro'yxatdan o'tish havolasi (https://...)", type: string }
       - { name: fee, label: Ariza to'lovi, type: string }
@@ -342,3 +345,96 @@ content:
         fields:
           - { name: label, label: Nomi, type: string }
           - { name: url, label: Havola, type: string }
+
+  - name: guide
+    label: 0 dan qo'llanma
+    type: file
+    path: content/guide.json
+    format: json
+    fields:
+      - { name: title, label: Sarlavha, type: string }
+      - { name: lead, label: Kirish matni, type: text }
+      - name: overview
+        label: "3 katta qadam (kartochkalar)"
+        type: object
+        list: true
+        fields:
+          - name: icon
+            label: Belgi
+            type: select
+            options:
+              values: [send, passport, home2, coin, cap, stamp, laptop, plane, doc]
+          - { name: title, label: Sarlavha, type: string }
+          - { name: text, label: Matn, type: text }
+      - name: timeline
+        label: Yo'l xaritasi (qadamlar)
+        type: object
+        list: true
+        fields:
+          - { name: when, label: "Qachon (masalan: 10–5 oy oldin)", type: string }
+          - { name: title, label: Sarlavha, type: string }
+          - { name: text, label: Matn, type: text }
+          - { name: stage, label: "Kurs bosqichi kodi (s0...s7, ixtiyoriy)", type: string }
+      - name: levels
+        label: Qaysi daraja mos
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Sarlavha, type: string }
+          - { name: text, label: Matn, type: text }
+      - name: budget
+        label: Xarajatlar
+        type: object
+        list: true
+        fields:
+          - { name: item, label: Nima, type: string }
+          - { name: cost, label: Summa, type: string }
+          - { name: note, label: Izoh, type: text }
+      - name: glossary
+        label: Lug'at
+        type: object
+        list: true
+        fields:
+          - { name: term, label: Atama, type: string }
+          - { name: def, label: Ma'nosi, type: text }
+      - { name: mistakes, label: Ko'p uchraydigan xatolar, type: string, list: true }
+      - name: sources
+        label: Manbalar
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Nomi, type: string }
+          - { name: url, label: Havola, type: string }
+
+  - name: dsu
+    label: Stipendiyalar (viloyatlar)
+    type: file
+    path: content/dsu.json
+    format: json
+    fields:
+      - name: national
+        label: Davlat minimumlari
+        type: object
+        fields:
+          - { name: year, label: O'quv yili, type: string }
+          - { name: fuoriSede, label: Fuori sede summasi, type: string }
+          - { name: pendolare, label: Pendolare summasi, type: string }
+          - { name: inSede, label: In sede summasi, type: string }
+          - { name: isee, label: ISEE chegarasi, type: string }
+          - { name: ispe, label: ISPE chegarasi, type: string }
+          - { name: source, label: Manba nomi, type: string }
+          - { name: sourceUrl, label: Manba havolasi, type: string }
+      - name: agencies
+        label: Idoralar
+        type: object
+        list: true
+        fields:
+          - { name: id, label: Kod, type: string }
+          - { name: name, label: Nomi, type: string }
+          - { name: region, label: Viloyat, type: string }
+          - { name: cities, label: "Shahar kodlari (roma, milano...)", type: string, list: true }
+          - { name: url, label: Sayt, type: string }
+          - { name: deadline, label: Ariza muddati, type: string }
+          - { name: amount, label: "Maksimal summa (bo'sh = davlat minimumi)", type: string }
+          - { name: note, label: Izoh, type: text }
+          - { name: own, label: "Stipendiyani universitetning o'zi beradi", type: boolean }

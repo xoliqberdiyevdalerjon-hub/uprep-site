@@ -6,7 +6,8 @@
     "city": "laquila",
     "type": "Davlat",
     "web": "https://www.univaq.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.univaq.it/en/section.php?id=2065"
   },
   {
     "id": "unich",
@@ -24,7 +25,8 @@
     "city": "teramo",
     "type": "Davlat",
     "web": "https://www.unite.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unite.it/English/Studying_at_UniTe/How_to_apply"
   },
   {
     "id": "unibas",
@@ -33,7 +35,8 @@
     "city": "potenza",
     "type": "Davlat",
     "web": "https://portale.unibas.it/site/home.html",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://internazionale.unibas.it/site/home/info/articolo9501732.html"
   },
   {
     "id": "unicz",
@@ -51,7 +54,10 @@
     "city": "rende",
     "type": "Davlat",
     "web": "https://www.unical.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unical.it/media/medias/2026/UNICALADMISSION_-_HOW_TO_APPLY.pdf",
+    "applyNote": "UNICALADMISSION, ariza 10 €",
+    "dsuUrl": "https://www.unical.it/media/medias/2026/Bando-diritto-allo-studio-2026.27_signed.pdf"
   },
   {
     "id": "unirc",
@@ -60,7 +66,9 @@
     "city": "reggio-calabria",
     "type": "Davlat",
     "web": "https://unirc.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.international.unirc.it/en/international/international-student/admission-and-access-study-courses",
+    "dsuUrl": "https://www.unirc.it/sites/default/files/2026-07/BANDO%20DSU%2026_27.pdf"
   },
   {
     "id": "unidarc",
@@ -78,7 +86,8 @@
     "city": "napoli",
     "type": "Davlat",
     "web": "https://www.unina.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.international.unina.it/non-eu-students-enrolment/"
   },
   {
     "id": "unior",
@@ -87,7 +96,8 @@
     "city": "napoli",
     "type": "Davlat",
     "web": "https://www.unior.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unior.it/en/study-lorientale/teaching-and-learning/immatricolarsi-e-iscriversi/foreign-students"
   },
   {
     "id": "uniparthenope",
@@ -96,7 +106,8 @@
     "city": "napoli",
     "type": "Davlat",
     "web": "https://www.uniparthenope.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://international.uniparthenope.it/how-to-enrol/"
   },
   {
     "id": "unisob",
@@ -132,7 +143,8 @@
     "city": "salerno",
     "type": "Davlat",
     "web": "https://www.unisa.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://web.unisa.it/en/teaching/enrollment/non-eu-citizens-abroad"
   },
   {
     "id": "unibo",
@@ -190,7 +202,9 @@
     ],
     "type": "Davlat",
     "web": "https://www.unibo.it/",
-    "detailed": true
+    "detailed": true,
+    "applyUrl": "https://studenti.unibo.it/sol/welcome.htm?siteLanguage=en",
+    "applyNote": "Studenti Online"
   },
   {
     "id": "unife",
@@ -199,7 +213,8 @@
     "city": "ferrara",
     "type": "Davlat",
     "web": "https://www.unife.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unife.it/en/come-to-study/enroll/how-to-enroll"
   },
   {
     "id": "unimore",
@@ -208,7 +223,8 @@
     "city": "modena",
     "type": "Davlat",
     "web": "https://www.unimore.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unimore.it/en/internationalisation/foreign-qualification"
   },
   {
     "id": "unipr",
@@ -226,7 +242,9 @@
     "city": "trieste",
     "type": "Davlat",
     "web": "https://www.units.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://apply.units.it/",
+    "applyNote": "apply.units.it portali"
   },
   {
     "id": "uniud",
@@ -235,7 +253,8 @@
     "city": "udine",
     "type": "Davlat",
     "web": "https://www.uniud.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.uniud.it/en/uniud-international/International_Students/ammissione-non-ue/prima-arrivo-ue/iscrizioni-con-titolo-di-studio-estero"
   },
   {
     "id": "sapienza",
@@ -805,7 +824,9 @@
         "test": "Suhbat yoki onlayn saralash"
       }
     ],
-    "programmesNote": "Ro'yxat Sapienza'ning MoveIn 2026/27 talablar hujjatidan olingan. GPA 100 ballik shkalada. Tibbiyot (Medicine and Surgery) alohida test orqali qabul qiladi. 2027/28 ro'yxati e'lon qilinganda yangilanadi."
+    "programmesNote": "Ro'yxat Sapienza'ning MoveIn 2026/27 talablar hujjatidan olingan. GPA 100 ballik shkalada. Tibbiyot (Medicine and Surgery) alohida test orqali qabul qiladi. 2027/28 ro'yxati e'lon qilinganda yangilanadi.",
+    "applyUrl": "https://sapienza.gomovein.com/",
+    "applyNote": "MoveIn'da ro'yxatdan o'tish"
   },
   {
     "id": "torvergata",
@@ -865,7 +886,9 @@
     ],
     "type": "Davlat",
     "web": "https://web.uniroma2.it/",
-    "detailed": true
+    "detailed": true,
+    "applyUrl": "https://web.uniroma2.it/en/percorso/admissions",
+    "applyNote": "Qabul sahifasi"
   },
   {
     "id": "uniroma3",
@@ -874,7 +897,8 @@
     "city": "roma",
     "type": "Davlat",
     "web": "https://www.uniroma3.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.uniroma3.it/int/education/enrolment/enrolment-with-a-foreign-qualification/"
   },
   {
     "id": "uniroma4",
@@ -883,7 +907,8 @@
     "city": "roma",
     "type": "Davlat",
     "web": "https://www.uniroma4.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.uniroma4.it/index.php/how-to/matriculate-enroll/international-student-enrollment/?lang=en"
   },
   {
     "id": "luiss",
@@ -892,7 +917,9 @@
     "city": "roma",
     "type": "Xususiy",
     "web": "https://www.luiss.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.luiss.it/en/orientation-and-admissions/admission-procedures/masters-degree-admissions/admission-masters-degrees-20262027-extra-eu/certified-selection-students-outside-eu-and-schengen-area",
+    "applyNote": "Magistratura, ishtirok to'lovi 150 €"
   },
   {
     "id": "lumsa",
@@ -910,7 +937,8 @@
     "city": "roma",
     "type": "Xususiy",
     "web": "https://www.unicamillus.org/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://unicamillus.org/en/services/international-students/"
   },
   {
     "id": "unicampus",
@@ -937,7 +965,8 @@
     "city": "roma",
     "type": "Xususiy",
     "web": "https://www.unint.eu/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unint.eu/en/enter-unint/how-to-enrol/"
   },
   {
     "id": "unilink",
@@ -946,7 +975,8 @@
     "city": "roma",
     "type": "Xususiy",
     "web": "https://www.unilink.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unilink.it/international/how-to-apply"
   },
   {
     "id": "unicas",
@@ -964,7 +994,8 @@
     "city": "viterbo",
     "type": "Davlat",
     "web": "https://www.unitus.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unitus.it/en/international/faqs-for-international-students/"
   },
   {
     "id": "unige",
@@ -973,7 +1004,9 @@
     "city": "genova",
     "type": "Davlat",
     "web": "https://unige.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://unige.it/en/international-enrolment",
+    "applyNote": "UniGeApply"
   },
   {
     "id": "unimi",
@@ -1027,7 +1060,10 @@
     ],
     "type": "Davlat",
     "web": "https://www.unimi.it/",
-    "detailed": true
+    "detailed": true,
+    "applyUrl": "https://www.unimi.it/en/international/coming-abroad/enrol-programme/international-enrolment-degree-programmes",
+    "applyNote": "Xalqaro qabul sahifasi",
+    "dsuUrl": "https://www.unimi.it/sites/default/files/2026-07/Bando_Borse_regionali%202026-27_IT_0.pdf"
   },
   {
     "id": "unimib",
@@ -1036,7 +1072,10 @@
     "city": "milano",
     "type": "Davlat",
     "web": "https://www.unimib.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://en.unimib.it/study/information-international-students/access-students-international-qualification",
+    "applyNote": "apply.unimib.it orqali",
+    "dsuUrl": "https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20def_2.pdf"
   },
   {
     "id": "polimi",
@@ -1045,7 +1084,10 @@
     "city": "milano",
     "type": "Davlat",
     "web": "https://www.polimi.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/application",
+    "applyNote": "Magistratura uchun",
+    "dsuUrl": "https://www.polimi.it/studenti/tasse-borse-e-agevolazioni/diritto-allo-studio"
   },
   {
     "id": "bocconi",
@@ -1054,7 +1096,9 @@
     "city": "milano",
     "type": "Xususiy",
     "web": "https://www.unibocconi.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/admissions",
+    "applyNote": "Apply2B portali"
   },
   {
     "id": "unicatt",
@@ -1063,7 +1107,8 @@
     "city": "milano",
     "type": "Xususiy",
     "web": "https://www.unicatt.it/",
-    "detailed": false
+    "detailed": false,
+    "dsuUrl": "https://educatt.unicatt.it/"
   },
   {
     "id": "iulm",
@@ -1072,7 +1117,9 @@
     "city": "milano",
     "type": "Xususiy",
     "web": "https://www.iulm.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://apply.iulm.it/",
+    "applyNote": "apply.iulm.it portali"
   },
   {
     "id": "unisr",
@@ -1081,7 +1128,9 @@
     "city": "milano",
     "type": "Xususiy",
     "web": "https://www.unisr.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unisr.it/en/servizi/ammissioni/international-medical-doctor-program",
+    "applyNote": "Tibbiyot (MD) dasturi"
   },
   {
     "id": "hunimed",
@@ -1108,7 +1157,10 @@
     "city": "bergamo",
     "type": "Davlat",
     "web": "https://www.unibg.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://apply.unibg.it/",
+    "applyNote": "apply.unibg.it portali",
+    "dsuUrl": "https://www.unibg.it/bandi/bando-borse-studio-e-residenze-universitarie-aa-20262027-scholarships-and-accommodation"
   },
   {
     "id": "unibs",
@@ -1117,7 +1169,9 @@
     "city": "brescia",
     "type": "Davlat",
     "web": "https://www.unibs.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unibs.it/en/international/degree-seeking-students/admission/non-eu-candidates-living-abroad",
+    "dsuUrl": "https://www.unibs.it/sites/default/files/2026-07/Bando%20servizi%20DSU%2026-27%20prot..pdf"
   },
   {
     "id": "unipv",
@@ -1126,7 +1180,8 @@
     "city": "pavia",
     "type": "Davlat",
     "web": "https://web.unipv.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://en.unipv.it/en/education/bachelors-and-masters-degree-programs/after-admission/non-eu-prospective-students"
   },
   {
     "id": "uninsubria",
@@ -1135,7 +1190,8 @@
     "city": "varese",
     "type": "Davlat",
     "web": "https://www.uninsubria.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.uninsubria.it/servizi/vivere-insubria/immatricolarsi-e-iscriversi/immatricolazioni/studenti-non-ue-residenti"
   },
   {
     "id": "univpm",
@@ -1144,7 +1200,9 @@
     "city": "ancona",
     "type": "Davlat",
     "web": "https://www.univpm.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.orienta.univpm.it/en/",
+    "applyNote": "MoveIn orqali, har ariza 10 €"
   },
   {
     "id": "unicam",
@@ -1153,7 +1211,8 @@
     "city": "camerino",
     "type": "Davlat",
     "web": "https://www.unicam.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://international.unicam.it/admissions/pre-admissions-2026-2027"
   },
   {
     "id": "unimc",
@@ -1162,7 +1221,9 @@
     "city": "macerata",
     "type": "Davlat",
     "web": "https://www.unimc.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://apply.unimc.it/",
+    "applyNote": "apply.unimc.it portali"
   },
   {
     "id": "uniurb",
@@ -1171,7 +1232,8 @@
     "city": "urbino",
     "type": "Davlat",
     "web": "https://www.uniurb.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.uniurb.it/international/regular-students/enrolment/non-eu-citizens-living-abroad"
   },
   {
     "id": "unimol",
@@ -1180,7 +1242,8 @@
     "city": "campobasso",
     "type": "Davlat",
     "web": "https://www2.unimol.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unimol.it/english/international-applicant/"
   },
   {
     "id": "unineuromed",
@@ -1261,7 +1324,9 @@
     ],
     "type": "Davlat",
     "web": "https://www.unito.it/",
-    "detailed": true
+    "detailed": true,
+    "applyUrl": "https://apply.unito.it",
+    "applyNote": "Apply@UniTo'da ro'yxatdan o'tish"
   },
   {
     "id": "polito",
@@ -1270,7 +1335,9 @@
     "city": "torino",
     "type": "Davlat",
     "web": "https://www.polito.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/master-s-degree-programmes/applicants-with-a-non-italian-qualification",
+    "applyNote": "Magistratura uchun"
   },
   {
     "id": "uniupo",
@@ -1279,7 +1346,8 @@
     "city": "novara",
     "type": "Davlat",
     "web": "https://www.uniupo.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.uniupo.it/en/international/degree-seeking"
   },
   {
     "id": "unisg",
@@ -1297,7 +1365,9 @@
     "city": "bari",
     "type": "Davlat",
     "web": "https://www.uniba.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://apply.uniba.it/",
+    "applyNote": "DreamApply portali"
   },
   {
     "id": "poliba",
@@ -1306,7 +1376,8 @@
     "city": "bari",
     "type": "Davlat",
     "web": "https://www.poliba.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.poliba.it/en/general-overview"
   },
   {
     "id": "lum",
@@ -1315,7 +1386,8 @@
     "city": "casamassima",
     "type": "Xususiy",
     "web": "https://www.lum.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.lum.it/en/enrolment/"
   },
   {
     "id": "unifg",
@@ -1324,7 +1396,8 @@
     "city": "foggia",
     "type": "Davlat",
     "web": "https://www.unifg.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unifg.it/en/study/degree-courses/enrollment-guide/enrollment-international-students"
   },
   {
     "id": "unisalento",
@@ -1333,7 +1406,8 @@
     "city": "lecce",
     "type": "Davlat",
     "web": "https://www.unisalento.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://international.unisalento.it/en/admission/pre-enrolment-and-visa-for-non-eu-students"
   },
   {
     "id": "unica",
@@ -1342,7 +1416,9 @@
     "city": "cagliari",
     "type": "Davlat",
     "web": "https://unica.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://en.unica.it/en/international/studying-unica/enrolling-abroad",
+    "applyNote": "UNICA DreamApply"
   },
   {
     "id": "uniss",
@@ -1360,7 +1436,8 @@
     "city": "palermo",
     "type": "Davlat",
     "web": "https://www.unipa.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unipa.it/mobilita/en/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/"
   },
   {
     "id": "unict",
@@ -1369,7 +1446,8 @@
     "city": "catania",
     "type": "Davlat",
     "web": "https://www.unict.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unict.it/en/education/masters-degree-programmes-taught-english"
   },
   {
     "id": "unime",
@@ -1444,7 +1522,9 @@
     ],
     "type": "Davlat",
     "web": "https://www.unime.it/",
-    "detailed": true
+    "detailed": true,
+    "applyUrl": "https://international.unime.it/study-us/application-and-admission",
+    "applyNote": "Ariza va qabul sahifasi"
   },
   {
     "id": "unikore",
@@ -1462,7 +1542,9 @@
     "city": "firenze",
     "type": "Davlat",
     "web": "https://www.unifi.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unifi.it/en/study-us/your-learning-path/start-your-enrolment/international-students/non-eu-students",
+    "applyNote": "Apply Unifi portali"
   },
   {
     "id": "unipi",
@@ -1471,7 +1553,9 @@
     "city": "pisa",
     "type": "Davlat",
     "web": "https://www.unipi.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unipi.it/en/education/registration/enrolment-and-registration/enrolment-for-international-students/bachelors-and-single-cycle-masters-degree-courses-no-eu-citizenship/",
+    "dsuUrl": "https://www.unipi.it/didattica/iscrizioni/immatricolazioni-e-iscrizioni/iscrizioni-per-studenti-internazionali/borsa-di-studio-del-dsu/"
   },
   {
     "id": "unisi",
@@ -1541,7 +1625,9 @@
     ],
     "type": "Davlat",
     "web": "https://www.unisi.it/",
-    "detailed": true
+    "detailed": true,
+    "applyUrl": "https://apply.unisi.it",
+    "applyNote": "apply.unisi.it'da ro'yxatdan o'tish"
   },
   {
     "id": "unistrasi",
@@ -1559,7 +1645,8 @@
     "city": "trento",
     "type": "Davlat",
     "web": "https://www.unitn.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://international.unitn.it/"
   },
   {
     "id": "unibz",
@@ -1568,7 +1655,8 @@
     "city": "bolzano",
     "type": "Xususiy",
     "web": "https://www.unibz.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unibz.it/en/applicants/international/international-degree-seeking-applicants/degree-seeking-non-eu-citizens-living-abroad"
   },
   {
     "id": "unipg",
@@ -1577,7 +1665,8 @@
     "city": "perugia",
     "type": "Davlat",
     "web": "https://www.unipg.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://unipg.it/en/international-students/students-wishing-to-enroll/how-to-apply"
   },
   {
     "id": "unistrapg",
@@ -1586,7 +1675,8 @@
     "city": "perugia",
     "type": "Davlat",
     "web": "https://www.unistrapg.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.unistrapg.it/en/educational-offer/bachelors-and-masters-degree-programs/information-students-about-degree-courses/registration-and-fees/access-international-students-degree-programmes"
   },
   {
     "id": "univda",
@@ -1604,7 +1694,10 @@
     "city": "venezia",
     "type": "Davlat",
     "web": "https://www.unive.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://apply.unive.it/",
+    "applyNote": "apply.unive.it portali",
+    "dsuUrl": "https://www.unive.it/pag/8325/"
   },
   {
     "id": "iuav",
@@ -1613,7 +1706,8 @@
     "city": "venezia",
     "type": "Davlat",
     "web": "https://www.iuav.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.iuav.it/it/servizi/non-EU-applicants-residing-abroad"
   },
   {
     "id": "unipd",
@@ -1622,7 +1716,10 @@
     "city": "padova",
     "type": "Davlat",
     "web": "https://www.unipd.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://apply.unipd.it/",
+    "applyNote": "apply.unipd.it portali",
+    "dsuUrl": "https://www.unipd.it/en/borse-studio-regionali"
   },
   {
     "id": "univr",
@@ -1631,6 +1728,8 @@
     "city": "verona",
     "type": "Davlat",
     "web": "https://www.univr.it/",
-    "detailed": false
+    "detailed": false,
+    "applyUrl": "https://www.univr.it/en/our-services/international-degree-seeking-students",
+    "dsuUrl": "https://www.univr.it/it/i-nostri-servizi/futuri-studenti/benefici-borse-di-studio-e-agevolazioni/borse-per-il-diritto-allo-studio"
   }
 ]

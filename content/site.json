@@ -13,7 +13,7 @@
     "Muddatlar kalendari va yangilanishlar"
   ],
   "footer": "Umumiy ma'lumot, kafolat emas. Talablar va sanalar har yili, universitet va viloyatga qarab o'zgaradi. Topshirishdan oldin rasmiy manbani tekshiring.",
-  "heroImage": "",
+  "heroImage": "media/hero-rome.jpg",
   "faq": [
     {
       "q": "Ma'lumotlar qayerdan olinadi?",
@@ -35,5 +35,7 @@
       "q": "Sanalar va talablar o'zgarsa-chi?",
       "a": "Talablar har yili yangilanadi. Biz rasmiy e'lonlarni kuzatib, saytni yangilab boramiz. Topshirishdan oldin har doim rasmiy manbani ham tekshiring."
     }
-  ]
+  ],
+  "heroCredit": "Surat: Diliff, Wikimedia Commons, CC BY-SA 2.5",
+  "heroCreditUrl": "https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome,_Italy_-_April_2007.jpg"
 }

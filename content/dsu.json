@@ -1,0 +1,329 @@
+{
+  "national": {
+    "year": "2026/27",
+    "fuoriSede": "7 171,11 €",
+    "pendolare": "4 190,71 €",
+    "inSede": "2 890,16 €",
+    "isee": "28 339,88 €",
+    "ispe": "61 608,48 €",
+    "source": "MUR, Decreto Direttoriale n. 175 va 176 (2026)",
+    "sourceUrl": "https://www.mur.gov.it/it/atti-e-normativa/decreto-direttoriale-n-175-del-10-02-2026"
+  },
+  "agencies": [
+    {
+      "id": "adsu-aq",
+      "name": "ADSU L'Aquila",
+      "region": "Abruzzo",
+      "cities": [
+        "laquila"
+      ],
+      "url": "https://adsuaq.org/",
+      "deadline": "2026/27: 31.08.2026 gacha"
+    },
+    {
+      "id": "adsu-ch",
+      "name": "ADSU Chieti-Pescara",
+      "region": "Abruzzo",
+      "cities": [
+        "chieti-pescara"
+      ],
+      "url": "https://www.adsuch.it/",
+      "deadline": "Odatda iyul–sentyabr. Aniq sana bandoda."
+    },
+    {
+      "id": "adsu-te",
+      "name": "ADSU Teramo",
+      "region": "Abruzzo",
+      "cities": [
+        "teramo"
+      ],
+      "url": "https://www.adsuteramo.it/",
+      "deadline": "2026/27: 07.09.2026, 12:00 gacha"
+    },
+    {
+      "id": "ardsu-bas",
+      "name": "ARDSU Basilicata",
+      "region": "Basilicata",
+      "cities": [
+        "potenza"
+      ],
+      "url": "https://www.ardsubasilicata.it/",
+      "deadline": "2026/27: 09.10.2026 gacha (uzaytirilgan)"
+    },
+    {
+      "id": "calabria",
+      "name": "Universitetning o'zi",
+      "region": "Calabria",
+      "cities": [
+        "catanzaro",
+        "rende",
+        "reggio-calabria"
+      ],
+      "deadline": "Har bir universitet o'z bandosini chiqaradi (odatda iyul–sentyabr).",
+      "note": "Kalabriyada stipendiyani universitetning o'zi beradi. Universitet sahifasidagi havolaga qarang.",
+      "own": true
+    },
+    {
+      "id": "adisurc",
+      "name": "ADISURC",
+      "region": "Campania",
+      "cities": [
+        "napoli",
+        "benevento",
+        "caserta",
+        "salerno"
+      ],
+      "url": "https://www.adisurcampania.it/",
+      "deadline": "2026/27: 10.09.2026, 12:00 gacha"
+    },
+    {
+      "id": "ergo",
+      "name": "ER.GO",
+      "region": "Emilia-Romagna",
+      "cities": [
+        "bologna",
+        "ferrara",
+        "modena",
+        "parma",
+        "piacenza"
+      ],
+      "url": "https://www.er-go.it/",
+      "deadline": "2026/27: 24.08.2026, 16:00 gacha",
+      "note": "Ariza er-go.it saytidagi «Fai domanda online» bo'limi orqali."
+    },
+    {
+      "id": "ardis",
+      "name": "ARDiS",
+      "region": "Friuli-Venezia Giulia",
+      "cities": [
+        "trieste",
+        "udine"
+      ],
+      "url": "https://www.ardis.fvg.it/",
+      "deadline": "2026/27: 17.09.2026, 13:00 gacha"
+    },
+    {
+      "id": "disco",
+      "name": "DiSCo",
+      "region": "Lazio",
+      "cities": [
+        "roma",
+        "cassino",
+        "viterbo"
+      ],
+      "url": "https://www.laziodisco.it/",
+      "deadline": "2026/27: 10.06 – 22.07.2026",
+      "amount": "6 571 – 7 556 €",
+      "note": "Fuori sede talabaga kuniga 2 mahal bepul ovqat (yiliga 600 € qiymatida), xohlasa pulga almashtirish mumkin."
+    },
+    {
+      "id": "aliseo",
+      "name": "ALiSEO",
+      "region": "Liguria",
+      "cities": [
+        "genova"
+      ],
+      "url": "https://www.aliseo.liguria.it/",
+      "deadline": "2026/27: 15.06 – 31.07.2026"
+    },
+    {
+      "id": "lombardia",
+      "name": "Universitetning o'zi",
+      "region": "Lombardia",
+      "cities": [
+        "milano",
+        "bergamo",
+        "brescia",
+        "pavia",
+        "varese",
+        "castellanza",
+        "cremona"
+      ],
+      "deadline": "Har bir universitet o'z bandosini chiqaradi (2026/27 da ko'pchiligida 30.09.2026 gacha).",
+      "note": "Lombardiyada stipendiyani har bir universitet o'zi beradi. Universitet sahifasidagi havolaga qarang.",
+      "own": true
+    },
+    {
+      "id": "erdis",
+      "name": "ERDIS",
+      "region": "Marche",
+      "cities": [
+        "ancona",
+        "camerino",
+        "macerata",
+        "urbino"
+      ],
+      "url": "https://erdis.it/",
+      "deadline": "2026/27: 28.08.2026 gacha"
+    },
+    {
+      "id": "esu-molise",
+      "name": "ESU Molise",
+      "region": "Molise",
+      "cities": [
+        "campobasso",
+        "pozzilli"
+      ],
+      "url": "https://www.esu.molise.it/",
+      "deadline": "2026/27: bando 23.09.2026 da chiqdi",
+      "note": "Ariza uchun PEC (rasmiy elektron pochta) majburiy."
+    },
+    {
+      "id": "edisu",
+      "name": "EDISU Piemonte",
+      "region": "Piemonte",
+      "cities": [
+        "torino",
+        "novara",
+        "pollenzo"
+      ],
+      "url": "https://www.edisu.piemonte.it/",
+      "deadline": "Odatda sentyabr boshi. Aniq sana bandoda.",
+      "amount": "8 455 € gacha",
+      "note": "Ariza onlayn, SPID yoki CIE bilan shaxsiy kabinet orqali."
+    },
+    {
+      "id": "adisu-puglia",
+      "name": "ADISU Puglia",
+      "region": "Puglia",
+      "cities": [
+        "bari",
+        "casamassima",
+        "foggia",
+        "lecce",
+        "taranto"
+      ],
+      "url": "https://adisupuglia.it/",
+      "deadline": "2026/27: 14.07 – 13.08.2026"
+    },
+    {
+      "id": "ersu-ca",
+      "name": "ERSU Cagliari",
+      "region": "Sardegna",
+      "cities": [
+        "cagliari"
+      ],
+      "url": "https://www.ersucagliari.it/",
+      "deadline": "2026/27: 15.07.2026 dan, avgust oxirigacha"
+    },
+    {
+      "id": "ersu-ss",
+      "name": "ERSU Sassari",
+      "region": "Sardegna",
+      "cities": [
+        "sassari"
+      ],
+      "url": "https://ersusassari.it/",
+      "deadline": "2026/27: 27.07 – 07.09.2026, 13:00 gacha"
+    },
+    {
+      "id": "ersu-pa",
+      "name": "ERSU Palermo",
+      "region": "Sicilia",
+      "cities": [
+        "palermo"
+      ],
+      "url": "https://www.ersupalermo.it/",
+      "deadline": "Odatda avgust oxiri – sentyabr boshi."
+    },
+    {
+      "id": "ersu-ct",
+      "name": "ERSU Catania",
+      "region": "Sicilia",
+      "cities": [
+        "catania"
+      ],
+      "url": "https://www.ersucatania.it/",
+      "deadline": "Odatda avgust oxiri – sentyabr boshi."
+    },
+    {
+      "id": "ersu-me",
+      "name": "ERSU Messina",
+      "region": "Sicilia",
+      "cities": [
+        "messina"
+      ],
+      "url": "https://www.ersumessina.it/",
+      "deadline": "2026/27: 18.08.2026 gacha"
+    },
+    {
+      "id": "enna",
+      "name": "Universitet orqali",
+      "region": "Sicilia",
+      "cities": [
+        "enna"
+      ],
+      "deadline": "Universitetdan so'rang.",
+      "note": "Enna (Kore) talabalari stipendiya bo'yicha universitetning talabalar xizmatiga murojaat qiladi.",
+      "own": true
+    },
+    {
+      "id": "dsu-toscana",
+      "name": "DSU Toscana",
+      "region": "Toscana",
+      "cities": [
+        "firenze",
+        "pisa",
+        "siena"
+      ],
+      "url": "https://www.dsu.toscana.it/",
+      "deadline": "2026/27: 20.07 – 07.09.2026, 13:00 gacha",
+      "note": "Fuori sede g'olibga: o'qish to'lovidan ozod, yotoqxonada bepul joy yoki ijara puli, kuniga 2 mahal bepul ovqat. Ariza «Sportello Studente» portalida."
+    },
+    {
+      "id": "opera-tn",
+      "name": "Opera Universitaria",
+      "region": "Trentino-Alto Adige",
+      "cities": [
+        "trento"
+      ],
+      "url": "https://www.operauni.tn.it/",
+      "deadline": "Odatda yoz oylari. Aniq sana bandoda."
+    },
+    {
+      "id": "bolzano",
+      "name": "Bolzano viloyati idorasi",
+      "region": "Trentino-Alto Adige",
+      "cities": [
+        "bolzano"
+      ],
+      "deadline": "Universitetdan so'rang.",
+      "note": "Bolzanoda stipendiyani avtonom viloyat beradi. unibz talabalar xizmati yo'l ko'rsatadi.",
+      "own": true
+    },
+    {
+      "id": "adisu-umbria",
+      "name": "ADiSU Umbria",
+      "region": "Umbria",
+      "cities": [
+        "perugia"
+      ],
+      "url": "https://www.adisu.umbria.it/",
+      "deadline": "2026/27: 02.09.2026, 12:00 gacha"
+    },
+    {
+      "id": "vda",
+      "name": "Valle d'Aosta viloyati",
+      "region": "Valle d'Aosta",
+      "cities": [
+        "aosta"
+      ],
+      "deadline": "Universitetdan so'rang.",
+      "note": "Valle d'Aostada stipendiyani viloyat beradi. Universitet talabalar xizmati yo'l ko'rsatadi.",
+      "own": true
+    },
+    {
+      "id": "veneto",
+      "name": "Universitetning o'zi",
+      "region": "Veneto",
+      "cities": [
+        "venezia",
+        "padova",
+        "verona"
+      ],
+      "deadline": "Har bir universitet o'z bandosini chiqaradi (odatda iyul – 30.09).",
+      "note": "Venetoda stipendiyani universitet beradi. Yotoqxona va oshxona ESU orqali.",
+      "own": true
+    }
+  ]
+}

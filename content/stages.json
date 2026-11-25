@@ -296,6 +296,10 @@
         "type": "stats",
         "items": [
           {
+            "big": "10 179,85 €",
+            "small": "yiliga pul isboti (2026/27)"
+          },
+          {
             "big": "90 kun",
             "small": "ko'rib chiqish muddati"
           },
@@ -306,10 +310,6 @@
           {
             "big": "30 000 €",
             "small": "sug'urta, minimal, butun Shengen"
-          },
-          {
-            "big": "10 ish kuni",
-            "small": "bank ko'chirmasining maksimal yoshi"
           }
         ]
       },
@@ -325,6 +325,11 @@
           "Konsullik bo'limiga topshiring: safardan 6 oydan oldin emas va 15 kundan kech emas.",
           "Javobni kuting. Pasport qaror chiqqunicha qaytarilmaydi."
         ]
+      },
+      {
+        "type": "callout",
+        "style": "warn",
+        "text": "2026/27 dan pul isboti oshdi: yiliga 10 179,85 € (2025/26 da 6 947,33 € edi). Mablag' sizning yoki ota-onangiz, qarindoshingiz (homiy) hisobida bo'lishi mumkin. Bank ko'chirmasi topshirish kunida 10 ish kunidan eski bo'lmasin."
       },
       {
         "type": "list",
@@ -391,11 +396,16 @@
   {
     "id": "s5",
     "title": "Stipendiya (DSU)",
-    "sub": "Sapienza, Tor Vergata, Roma Tre va boshqa Lazio universitetlari",
+    "sub": "Viloyat stipendiyasi: pul, ovqat, yotoqxona",
     "icon": "coin",
-    "when": "Ariza 10.06 – 22.07.2026 · ISEEUP 10.12.2026 gacha",
-    "intro": "Stipendiya oila daromadiga qarab beriladi. Ariza siz hali O'zbekistondaligingizda, yozda topshiriladi, shuning uchun oila hujjatlarini ham jo'nab ketishdan oldin olib qo'yasiz.",
+    "when": "Ariza odatda iyun – sentyabr (viloyatga qarab)",
+    "intro": "Italiyada stipendiyani universitet joylashgan viloyatning idorasi beradi (Lazio'da DiSCo, Toskanada DSU Toscana va hokazo). U oila daromadiga qarab beriladi. Ariza siz hali O'zbekistondaligingizda, yozda topshiriladi, shuning uchun oila hujjatlarini jo'nab ketishdan oldin tayyorlaysiz. Quyida Lazio (Sapienza, Tor Vergata, Roma Tre) misolida tushuntirilgan.",
     "blocks": [
+      {
+        "type": "callout",
+        "style": "info",
+        "text": "Har bir viloyatning idorasi, muddati va havolasi «Stipendiyalar» sahifasida. 2026/27 da davlat belgilagan minimum: fuori sede talaba uchun 7 171,11 €, ISEE chegarasi 28 339,88 €."
+      },
       {
         "type": "stats",
         "items": [
@@ -446,6 +456,12 @@
         "type": "callout",
         "style": "warn",
         "text": "Qabul qilinmaydi: o'zingiz yozgan ariza, affidavit va qasamyodli bayonot. Oilaning umumiy daromadi nol bo'la olmaydi."
+      },
+      {
+        "type": "button",
+        "label": "Barcha viloyatlar stipendiyasi",
+        "url": "#stipendiya",
+        "note": "20 viloyat: idora, muddat, havola"
       }
     ],
     "srcLabel": "LazioDiSCo – Bando 2026/27",
