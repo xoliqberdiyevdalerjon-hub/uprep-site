@@ -1,0 +1,305 @@
+[
+  {
+    "id": "s1",
+    "title": "Pre-acceptance",
+    "sub": "Universitet sizni oldindan tanlaydi",
+    "icon": "send",
+    "when": "Sapienza: 22.12.2025 – 15.05.2026",
+    "intro": "Hammasi shu yerdan boshlanadi. Sapienza'da bu MoveIn portalidagi pre-selection: hujjatlaringiz ko'rib chiqiladi va o'tsangiz, pre-acceptance (oldindan qabul) olasiz.",
+    "blocks": [
+      {
+        "type": "list",
+        "title": "Nima qilasiz",
+        "style": "steps",
+        "items": [
+          "MoveIn portalida ro'yxatdan o'ting va dasturni tanlang: yiliga 2 tagacha.",
+          "Hujjatlarni yuklang va har bir ariza uchun 30 € to'lang. Bu pul qaytarilmaydi.",
+          "Natijani kuting. Pre-acceptance kelgach, 2- va 3-bosqichni darhol boshlang."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Hujjatlar",
+        "style": "checklist",
+        "items": [
+          "Pasport",
+          "Attestat yoki diplom va baholar varaqasi (transcript)",
+          "Ingliz tili sertifikati (odatda B2)",
+          "CV va motivatsion xat, agar dastur so'rasa"
+        ]
+      },
+      {
+        "type": "callout",
+        "style": "tip",
+        "text": "2026/27 uchun MoveIn dekabr oxirida ochilgan. 2027/28 ga topshirmoqchi bo'lsangiz, sertifikat va transcript'ni noyabrgacha tayyorlab qo'ying."
+      }
+    ],
+    "srcLabel": "Sapienza – International Admissions",
+    "srcUrl": "https://www.uniroma1.it/en/en/admissions"
+  },
+  {
+    "id": "s2",
+    "title": "DoV yoki CIMEA",
+    "sub": "Diplomingizni Italiyada tasdiqlash",
+    "icon": "stamp",
+    "when": "Pre-acceptance'dan keyin darhol: vizaga kerak",
+    "intro": "Italiya diplomingiz haqiqiy ekanini va universitetga kirish uchun yetarli ekanini bilishi kerak. Buning ikki yo'li bor, ikkalasi ham qabul qilinadi.",
+    "blocks": [
+      {
+        "type": "cards",
+        "items": [
+          {
+            "title": "CIMEA",
+            "text": "Statement of Comparability va Statement of Verification. Onlayn olinadi. Sapienza ro'yxatida birinchi bo'lib turadi."
+          },
+          {
+            "title": "DoV",
+            "text": "Dichiarazione di Valore. Italiyaning Toshkentdagi elchixonasi beradi. Bunda barcha hujjatlar, transcript ham, apostillangan bo'lishi kerak."
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Nima qilasiz",
+        "style": "steps",
+        "items": [
+          "Attestat yoki diplomga apostil qo'ydiring (yoki legalizatsiya).",
+          "Italyan tiliga rasmiy tarjima qildiring. Viza uchun tarjimani elchixonaning ishonchli tarjimonlari qiladi.",
+          "CIMEA'ga onlayn ariza bering yoki elchixonadan DoV so'rang."
+        ]
+      },
+      {
+        "type": "callout",
+        "style": "tip",
+        "text": "Diplomingiz to'liq ingliz tilida bo'lsa, Sapienza italyancha tarjimani so'ramaydi. Lekin CIMEA Verification yoki apostil baribir kerak."
+      }
+    ],
+    "srcLabel": "Sapienza – enrolment documents",
+    "srcUrl": "https://www.uniroma1.it/sites/default/files/field_file_allegati/enrolmentdocuments_1_0.pdf"
+  },
+  {
+    "id": "s3",
+    "title": "Pre-enrollment",
+    "sub": "Universitaly portalida",
+    "icon": "laptop",
+    "when": "Sapienza: 30.06.2026 gacha",
+    "intro": "Universitaly — Italiyaning yagona ariza portali. Universitet arizangizni shu yerda tasdiqlaydi va u elchixonaga o'tadi. Tasdiqsiz vizaga yozila olmaysiz.",
+    "blocks": [
+      {
+        "type": "list",
+        "title": "Nima qilasiz",
+        "style": "steps",
+        "items": [
+          "universitaly.it saytida ro'yxatdan o'ting.",
+          "Pre-enrollment formasini to'ldiring: shaxsiy ma'lumotlar, dastur, pasport va diplom skanlari.",
+          "Universitet tasdiqlaydi va arizani elchixonaga yuboradi.",
+          "Vizaga topshirish haqida email keladi. Shundan keyin 4-bosqich."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Hujjatlar",
+        "style": "checklist",
+        "items": [
+          "Pasport skani",
+          "Attestat yoki diplom skani",
+          "Pre-acceptance xati"
+        ]
+      },
+      {
+        "type": "callout",
+        "style": "tip",
+        "text": "Universitet portalida va Universitaly'da bitta email ishlating. Elchixonaning xati aynan shu manzilga keladi."
+      },
+      {
+        "type": "callout",
+        "style": "info",
+        "text": "Yordam: universitaly@cineca.it (texnik) · info@uni-italia.it"
+      }
+    ],
+    "srcLabel": "Italiya elchixonasi, Toshkent",
+    "srcUrl": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Study-enrolment-and-foundation-years-ENGLISH-rev.pdf"
+  },
+  {
+    "id": "s4",
+    "title": "Viza",
+    "sub": "D toifa, talaba vizasi",
+    "icon": "passport",
+    "when": "Safardan 6 oy oldin – 15 kun oldin · oxirgi kun 30.11.2026",
+    "intro": "Toshkentdagi Italiya elchixonasining konsullik bo'limiga topshiriladi. Ko'rib chiqish 90 kungacha cho'ziladi va shu vaqt pasportingiz elchixonada turadi, shuning uchun erta topshiring.",
+    "blocks": [
+      {
+        "type": "list",
+        "title": "Hujjatlar",
+        "style": "checklist",
+        "items": [
+          "# Shaxsiy",
+          "To'ldirilgan va imzolangan viza anketasi",
+          "Oq fondagi rasm, 6 oydan eski emas",
+          "Pasport: 10 yil ichida berilgan, viza tugagach yana 90 kun amal qiladi, 2 ta bo'sh sahifa. Nusxasi va ichki pasport/ID nusxasi bilan",
+          "O'zbekistonda yashash joyini tasdiqlovchi hujjat",
+          "# O'qish",
+          "Universitaly pre-enrollment sertifikati",
+          "Universitetning qabul xati",
+          "Birinchi to'lov kvitansiyasi",
+          "Til sertifikati",
+          "Diplom va transcript: asli, nusxasi va italyancha tarjimasi",
+          "DoV va/yoki CIMEA (asli va nusxasi)",
+          "# Pul",
+          "So'nggi 3 oylik bank ko'chirmasi: O'zbekiston banki, muhr bilan, 10 ish kunidan eski emas",
+          "Xalqaro karta ko'chirmasi, so'nggi 3 oy",
+          "my.gov.uz'dan ish joyi ma'lumotnomasi. Homiy bo'lsa: uning hujjatlari, Nulla Osta va qarindoshlikni tasdiqlovchi hujjat",
+          "# Boshqa",
+          "Sug'urta: kamida 30 000 €, butun Shengen hududi va butun muddatga",
+          "Birinchi oy uchun turar joy: bron yoki taklifnoma",
+          "Borib-kelish chiptasi broni"
+        ]
+      },
+      {
+        "type": "callout",
+        "style": "tip",
+        "text": "Bank ko'chirmasi 10 ish kunidan eski bo'lsa qabul qilinmaydi. Uni boshqa hamma hujjat tayyor bo'lgach, eng oxirida oling."
+      }
+    ],
+    "srcLabel": "Italiya elchixonasi, Toshkent – Study enrolment",
+    "srcUrl": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Study-enrolment-and-foundation-years-ENGLISH-rev.pdf"
+  },
+  {
+    "id": "s5",
+    "title": "LazioDiSCo stipendiyasi",
+    "sub": "Sapienza, Tor Vergata, Roma Tre va boshqa Lazio universitetlari",
+    "icon": "coin",
+    "when": "Ariza 10.06 – 22.07.2026 · ISEEUP 10.12.2026 gacha",
+    "intro": "Stipendiya oila daromadiga qarab beriladi. Ariza siz hali O'zbekistondaligingizda, yozda topshiriladi, shuning uchun oila hujjatlarini ham jo'nab ketishdan oldin olib qo'yasiz.",
+    "blocks": [
+      {
+        "type": "stats",
+        "items": [
+          {
+            "big": "6 571 – 7 556 €",
+            "small": "yiliga, oiladan uzoqda yashovchi talaba uchun"
+          },
+          {
+            "big": "+ 2 mahal",
+            "small": "kuniga bepul ovqat (yiliga 600 € qiymatida)"
+          },
+          {
+            "big": "28 339,88 €",
+            "small": "ISEE chegarasi. ISPE: 61 608,48 €"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Nima qilasiz",
+        "style": "steps",
+        "items": [
+          "laziodisco.it saytida onlayn ariza bering: 10.06 dan 22.07.2026, 12:00 gacha. Xatolarni 30.07 – 11.08 oralig'ida tuzatsa bo'ladi.",
+          "O'zbekistondan oila hujjatlarini oling, apostil qo'ydiring va italyan tiliga tarjima qildiring.",
+          "Italiyada DiSCo tan olgan CAF'da ISEEUP parificato qildiring: 10.12.2026 gacha.",
+          "Permesso hujjatlarini «Il mio profilo» bo'limiga yuklang: 10.12.2026 gacha.",
+          "IBAN raqamingizni kiriting. Pul shu hisobga o'tkaziladi."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Hujjatlar",
+        "style": "checklist",
+        "items": [
+          "# O'zbekistondan",
+          "Oila tarkibi va propiska: har bir a'zoning ismi, tug'ilgan sanasi va manzili",
+          "Har bir a'zoning 2024-yilgi daromadi. Ishlamasa, buni aniq yozgan hujjat",
+          "Uy-joy: oila a'zolari nomida mulk bor-yo'qligi va maydoni (kadastr ma'lumotnomasi)",
+          "Ijara shartnomasi, faqat oila ijarada yashasa"
+        ]
+      },
+      {
+        "type": "callout",
+        "style": "tip",
+        "text": "Oilangiz chet elda yashasa, ijara shartnomasiz ham «fuori sede» hisoblanasiz, ya'ni eng katta summani olasiz. Rimda bepul ovqatni ariza paytida pulga almashtirish mumkin."
+      },
+      {
+        "type": "callout",
+        "style": "warn",
+        "text": "Qabul qilinmaydi: o'zingiz yozgan ariza, affidavit va qasamyodli bayonot. Oilaning umumiy daromadi nol bo'la olmaydi."
+      }
+    ],
+    "srcLabel": "LazioDiSCo – Bando 2026/27",
+    "srcUrl": "https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf"
+  },
+  {
+    "id": "s6",
+    "title": "Italiyaga kelgach",
+    "sub": "Birinchi kunlardagi ishlar",
+    "icon": "plane",
+    "when": "Permesso uchun: kelgandan keyin 8 kun ichida",
+    "intro": "Viza sizni Italiyaga kiritadi, yashash huquqini esa permesso di soggiorno beradi. Uni birinchi haftada boshlang.",
+    "blocks": [
+      {
+        "type": "list",
+        "title": "Nima qilasiz",
+        "style": "steps",
+        "items": [
+          "«Sportello Amico» yozuvi bor Poste Italiane bo'limidan birinchi permesso uchun sariq kitni oling.",
+          "Form 1 ni to'ldiring va imzolang. Pasport va viza nusxasi, sug'urta nusxasi va moliyaviy hujjatlarni qo'shing.",
+          "Tamaki do'konidan (Tabaccheria) 16 € lik marca da bollo oling.",
+          "Kitni pochtaga topshiring va kvitansiyani (Assicurata) saqlang.",
+          "Questura barmoq izi uchun chaqiradi. Karta odatda shundan keyin 90 kun atrofida tayyor bo'ladi."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Hujjatlar",
+        "style": "checklist",
+        "items": [
+          "# Yana kerak bo'ladi",
+          "Codice fiscale: soliq raqami. Bank, telefon, ijara va DiSCo uchun kerak",
+          "Bank hisobi (IBAN): stipendiya shu hisobga keladi",
+          "Italiya SIM-kartasi",
+          "Butun muddatga sog'liq sug'urtasi"
+        ]
+      },
+      {
+        "type": "callout",
+        "style": "tip",
+        "text": "Pochta kvitansiyasini yo'qotmang. Karta kelguncha u sizning hujjatingiz va full enrollment'da ham so'raladi. Sapienza'ning asosiy kampusida (CU007) permesso bo'yicha politsiya bo'limi ishlaydi."
+      }
+    ],
+    "srcLabel": "Sapienza – Residence permit",
+    "srcUrl": "https://www.uniroma1.it/en/pagina/residence-permit-study-purposes"
+  },
+  {
+    "id": "s7",
+    "title": "Full enrollment",
+    "sub": "To'liq talaba bo'lish",
+    "icon": "cap",
+    "when": "Stipendiya uchun: 10.12.2026 gacha (oxirgi chegara 10.02.2027)",
+    "intro": "Oxirgi qadam: asl hujjatlarni Sapienza'ning HELLO – Foreign Students ofisiga topshirasiz va to'liq ro'yxatdan o'tasiz.",
+    "blocks": [
+      {
+        "type": "list",
+        "title": "Hujjatlar",
+        "style": "checklist",
+        "items": [
+          "Amal qiladigan pasport",
+          "«University enrolment» talaba vizasi",
+          "Permesso arizasi kvitansiyasi",
+          "Attestat yoki diplom, italyan yoki ingliz tiliga rasmiy tarjima bilan",
+          "CIMEA Comparability va Verification, yoki DoV va apostillangan hujjatlar"
+        ]
+      },
+      {
+        "type": "callout",
+        "style": "tip",
+        "text": "DiSCo enrollment va permesso hujjatlarini 10.12.2026 gacha kutadi. 10.02.2027 gacha ham ro'yxatdan o'tmasangiz, stipendiyadan chiqarilasiz."
+      },
+      {
+        "type": "callout",
+        "style": "info",
+        "text": "HELLO – Foreign Students: Piazzale Aldo Moro 5, Servizi Generali binosi, C zinapoya, 2-qavat · Hello@uniroma1.it · +39 06 49690261"
+      }
+    ],
+    "srcLabel": "Sapienza – enrolment documents",
+    "srcUrl": "https://www.uniroma1.it/sites/default/files/field_file_allegati/enrolmentdocuments_1_0.pdf"
+  }
+]

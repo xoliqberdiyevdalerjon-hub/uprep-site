@@ -1,0 +1,141 @@
+# Pages CMS sozlamasi (app.pagescms.org). Bu fayl saytdagi hamma matn, video, rasm va fayllarni
+# tugmalar orqali tahrirlash imkonini beradi.
+media:
+  input: media
+  output: media
+
+content:
+  - name: site
+    label: Bosh sahifa
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Ustki kichik yozuv, type: string }
+      - { name: title, label: Sarlavha, type: string }
+      - { name: lead, label: Qisqa matn, type: text }
+      - { name: telegram, label: Telegram username (@ belgisisiz), type: string }
+      - { name: footer, label: Pastki izoh, type: text }
+
+  - name: stages
+    label: Bosqichlar
+    type: file
+    path: content/stages.json
+    format: json
+    list: true
+    fields:
+      - { name: id, label: "Qisqa kod (lotin harf/raqam, bo'sh joysiz, masalan s8)", type: string, required: true }
+      - { name: title, label: Sarlavha, type: string, required: true }
+      - { name: sub, label: Qisqa izoh, type: string }
+      - name: icon
+        label: Belgi
+        type: select
+        options:
+          values: [send, stamp, laptop, passport, coin, plane, cap, home2, doc]
+      - { name: when, label: Qachon (sana), type: string }
+      - { name: intro, label: Kirish matni, type: text }
+      - name: blocks
+        label: Bloklar (matn, ro'yxat, video, rasm, fayl...)
+        type: block
+        list: true
+        blockKey: type
+        blocks:
+          - name: text
+            label: Matn
+            fields:
+              - { name: title, label: Tugma sarlavhasi, type: string }
+              - { name: body, label: Matn (bo'sh qator = yangi xatboshi), type: text }
+          - name: list
+            label: Ro'yxat
+            fields:
+              - { name: title, label: Tugma sarlavhasi, type: string }
+              - name: style
+                label: "Ko'rinishi: steps = raqamli qadamlar, checklist = belgilanadigan hujjatlar, bullets = oddiy ro'yxat"
+                type: select
+                options:
+                  values: [steps, checklist, bullets]
+              - { name: items, label: "Qatorlar (checklist'da # bilan boshlangan qator guruh nomi)", type: string, list: true }
+          - name: callout
+            label: Maslahat / Ogohlantirish
+            fields:
+              - name: style
+                label: "Turi: tip = Uprep maslahati (yashil), warn = ogohlantirish (qizil), info = ma'lumot (ko'k)"
+                type: select
+                options:
+                  values: [tip, warn, info]
+              - { name: text, label: Matn, type: text }
+          - name: video
+            label: Video
+            fields:
+              - { name: title, label: Sarlavha, type: string }
+              - { name: url, label: YouTube yoki Vimeo havolasi, type: string }
+              - { name: file, label: Yoki video fayl (kichik mp4), type: file }
+              - { name: caption, label: Izoh, type: string }
+          - name: image
+            label: Rasm
+            fields:
+              - { name: image, label: Rasm, type: image }
+              - { name: caption, label: Izoh, type: string }
+          - name: file
+            label: Fayl (PDF va boshqalar)
+            fields:
+              - { name: label, label: Tugma matni, type: string }
+              - { name: file, label: Fayl, type: file }
+              - { name: note, label: Kichik izoh, type: string }
+          - name: button
+            label: Havola tugmasi
+            fields:
+              - { name: label, label: Tugma matni, type: string }
+              - { name: url, label: "Havola (https://...)", type: string }
+              - { name: note, label: Kichik izoh, type: string }
+          - name: stats
+            label: Katta raqamlar
+            fields:
+              - name: items
+                label: Raqamlar
+                type: object
+                list: true
+                fields:
+                  - { name: big, label: Raqam, type: string }
+                  - { name: small, label: Izoh, type: string }
+          - name: cards
+            label: Taqqoslash kartalari
+            fields:
+              - name: items
+                label: Kartalar
+                type: object
+                list: true
+                fields:
+                  - { name: title, label: Sarlavha, type: string }
+                  - { name: text, label: Matn, type: text }
+      - { name: srcLabel, label: Manba nomi, type: string }
+      - { name: srcUrl, label: "Manba havolasi (https://...)", type: string }
+
+  - name: calendar
+    label: Kalendar
+    type: file
+    path: content/calendar.json
+    format: json
+    list: true
+    fields:
+      - { name: date, label: Sana, type: string }
+      - { name: tag, label: Teg (masalan DiSCo), type: string }
+      - { name: text, label: Matn, type: string }
+
+  - name: library
+    label: Materiallar
+    type: file
+    path: content/library.json
+    format: json
+    list: true
+    fields:
+      - { name: title, label: Sarlavha, type: string, required: true }
+      - { name: desc, label: Qisqa izoh, type: text }
+      - name: kind
+        label: "Turi: video, file, link yoki image"
+        type: select
+        options:
+          values: [video, file, link, image]
+      - { name: url, label: "Havola (YouTube yoki https://...)", type: string }
+      - { name: file, label: Fayl yoki video yuklash, type: file }
+      - { name: image, label: Muqova rasmi, type: image }
