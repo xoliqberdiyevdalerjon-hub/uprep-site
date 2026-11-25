@@ -12,5 +12,28 @@
     "Viza, permesso va Italiyaga kelgandan keyingi ishlar",
     "Muddatlar kalendari va yangilanishlar"
   ],
-  "footer": "Umumiy ma'lumot, kafolat emas. Talablar va sanalar har yili, universitet va viloyatga qarab o'zgaradi. Topshirishdan oldin rasmiy manbani tekshiring."
+  "footer": "Umumiy ma'lumot, kafolat emas. Talablar va sanalar har yili, universitet va viloyatga qarab o'zgaradi. Topshirishdan oldin rasmiy manbani tekshiring.",
+  "heroImage": "",
+  "faq": [
+    {
+      "q": "Ma'lumotlar qayerdan olinadi?",
+      "a": "Faqat rasmiy manbalardan: universitetlarning o'z saytlari, Italiyaning Toshkentdagi elchixonasi, Italiya ta'lim vazirligi (MUR), CIMEA va viloyat stipendiya idoralarining (DSU) bandolari. Har bir sahifa pastida manba havolasi turadi."
+    },
+    {
+      "q": "Nima bepul, nima pullik?",
+      "a": "Davlat, shahar va universitet sahifalari hamda kursning 1-bosqichi bepul. Ariza, DoV/CIMEA, pre-enrollment, viza, stipendiya va Italiyaga kelgandan keyingi bosqichlar to'liq kursda."
+    },
+    {
+      "q": "To'lov qanday amalga oshiriladi?",
+      "a": "Kurs narxi $399, bir marta to'lanadi va umrbod ochiq qoladi. Karta, Google Pay yoki Apple Pay orqali to'lash mumkin bo'ladi. Onlayn to'lov ishga tushguncha Telegram orqali yozing."
+    },
+    {
+      "q": "Qabul yoki vizaga kafolat berasizmi?",
+      "a": "Yo'q. Qabul qarorini universitet, viza qarorini elchixona chiqaradi. Uprep sizga har bir bosqichni to'g'ri va o'z vaqtida bajarishga yordam beradi."
+    },
+    {
+      "q": "Sanalar va talablar o'zgarsa-chi?",
+      "a": "Talablar har yili yangilanadi. Biz rasmiy e'lonlarni kuzatib, saytni yangilab boramiz. Topshirishdan oldin har doim rasmiy manbani ham tekshiring."
+    }
+  ]
 }

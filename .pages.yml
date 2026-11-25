@@ -19,6 +19,14 @@ content:
       - { name: priceNote, label: Narx ostidagi izoh, type: string }
       - { name: includes, label: Kurs ichida nima bor (ro'yxat), type: string, list: true }
       - { name: footer, label: Pastki izoh, type: text }
+      - { name: heroImage, label: "Bosh sahifa fon rasmi (ixtiyoriy; bo'sh bo'lsa chizilgan Rim manzarasi)", type: image }
+      - name: faq
+        label: Ko'p beriladigan savollar
+        type: object
+        list: true
+        fields:
+          - { name: q, label: Savol, type: string }
+          - { name: a, label: Javob, type: text }
 
   - name: stages
     label: Bosqichlar
@@ -168,6 +176,7 @@ content:
     format: json
     fields:
       - { name: title, label: Sarlavha, type: string }
+      - { name: heroImage, label: "Fon rasmi (ixtiyoriy)", type: image }
       - { name: lead, label: Kirish matni, type: text }
       - name: stats
         label: Katta raqamlar
@@ -257,6 +266,7 @@ content:
       - { name: region, label: Viloyat, type: string }
       - { name: dsu, label: Stipendiya idorasi, type: string }
       - { name: intro, label: Kirish matni, type: text }
+      - { name: image, label: "Fon rasmi (ixtiyoriy)", type: image }
       - { name: points, label: Muhim faktlar, type: string, list: true }
       - { name: pros, label: "Kuchli tomonlari (Nega shu shahar)", type: string, list: true }
       - { name: cons, label: Bilib qo'ying, type: string, list: true }
@@ -282,6 +292,7 @@ content:
       - { name: founded, label: Tashkil topgan yili, type: string }
       - { name: rank, label: "Reyting (masalan QS 2027: #111)", type: string }
       - { name: intro, label: Qisqa tavsif, type: text }
+      - { name: image, label: "Fon rasmi (ixtiyoriy)", type: image }
       - { name: portalLabel, label: Ariza tugmasi matni, type: string }
       - { name: portalUrl, label: "Ariza / ro'yxatdan o'tish havolasi (https://...)", type: string }
       - { name: fee, label: Ariza to'lovi, type: string }

@@ -89,6 +89,75 @@
   function isVideoFile(u){ return /\.(mp4|webm|mov|m4v)(\?|$)/i.test(u); }
   function fileName(u){ return decodeURIComponent(str(u).split("/").pop() || ""); }
 
+  /* ---------------- animated skyline (original drawing, no photos needed) ---------------- */
+  var REDUCED = false; try{ REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){}
+  function R(x, y, w, h, c, rx){ return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '"' + (rx ? ' rx="' + rx + '"' : '') + (c ? ' class="' + c + '"' : '') + '/>'; }
+  function blocks(list){ return list.map(function(b){ var s = R(b[0], b[1], b[2], 340 - b[1]); if(b[3]) s += '<path d="M' + (b[0] - 3) + ' ' + b[1] + ' L' + (b[0] + b[2] / 2) + ' ' + (b[1] - 14) + ' L' + (b[0] + b[2] + 3) + ' ' + b[1] + 'Z"/>'; return s; }).join(""); }
+  function windows(list){ return list.map(function(w){ return R(w[0], w[1], 6, 8, "win", 1); }).join(""); }
+  function pine(x, s){ s = s || 1; return '<path d="M' + x + ' 340 L' + (x + 4) + ' 340 L' + (x + 11) + ' ' + (340 - 72 * s) + ' L' + (x + 7) + ' ' + (340 - 72 * s) + 'Z"/>' +
+    '<ellipse cx="' + (x + 9) + '" cy="' + (340 - 77 * s) + '" rx="' + 40 * s + '" ry="' + 10 * s + '"/><ellipse cx="' + (x - 6) + '" cy="' + (340 - 83 * s) + '" rx="' + 24 * s + '" ry="' + 9 * s + '"/>' +
+    '<ellipse cx="' + (x + 25) + '" cy="' + (340 - 85 * s) + '" rx="' + 22 * s + '" ry="' + 8 * s + '"/><ellipse cx="' + (x + 9) + '" cy="' + (340 - 90 * s) + '" rx="' + 18 * s + '" ry="' + 7 * s + '"/>'; }
+  function cypress(x, h){ h = h || 120; return '<path d="M' + x + ' 340 C' + (x - 10) + ' 300 ' + (x - 9) + ' ' + (340 - h * .7) + ' ' + x + ' ' + (340 - h) + ' C' + (x + 9) + ' ' + (340 - h * .7) + ' ' + (x + 10) + ' 300 ' + x + ' 340Z"/>'; }
+  function skylineSVG(kind){
+    var far, mid, extra = "";
+    if(kind === "town"){
+      far = '<path d="M0 296 C160 262 300 284 460 270 C620 256 760 286 940 276 C1120 266 1300 290 1600 268 L1600 340 L0 340Z"/>' +
+        R(318, 196, 22, 144) + R(348, 214, 18, 126) + R(372, 186, 24, 154) + R(404, 222, 18, 118) + R(1236, 206, 20, 134) + R(1262, 226, 18, 114) +
+        '<path d="M1120 262 C1124 236 1168 236 1172 262Z"/>' + R(1114, 262, 64, 78);
+      mid = blocks([[0,280,64,1],[64,266,46],[110,292,70,1],[180,276,52],[430,286,60,1],[490,270,44],[1010,282,56,1],[1066,270,48],[1330,276,64,1],[1394,262,44],[1438,286,72,1],[1510,272,90]]) +
+        /* cathedral with a ribbed dome */
+        R(676, 272, 268, 68) + '<path d="M668 274 L810 246 L952 274Z"/>' + R(756, 228, 108, 46) + '<path d="M750 232 C754 156 866 156 870 232Z"/>' + R(803, 140, 14, 22) + '<path d="M798 142 Q810 124 822 142Z"/>' +
+        R(972, 168, 32, 172) + '<path d="M968 170 L988 138 L1008 170Z"/>' + R(982, 182, 12, 18, "arches", 6) + R(982, 214, 12, 18, "arches", 6) +
+        R(584, 286, 70, 54) + '<path d="M580 288 C586 254 648 254 654 288Z"/>' +
+        R(770, 288, 8, 30, "arches", 4) + R(796, 288, 8, 30, "arches", 4) + R(842, 288, 8, 30, "arches", 4) + R(816, 284, 10, 40, "arches", 5) +
+        cypress(536, 128) + cypress(552, 104) + cypress(1036, 118) + cypress(1050, 96) + cypress(240, 110) + pine(1160, 1) + pine(30, .9) + pine(1290, .85) +
+        windows([[18,292],[40,292],[18,310],[124,304],[148,304],[1024,296],[1078,284],[1078,304],[1344,290],[1366,290],[1406,278],[1452,300],[1526,288],[1556,288],[1526,308],[452,300],[500,286]]);
+    } else {
+      far = '<path d="M0 300 C180 276 340 290 520 282 C700 274 860 292 1040 284 C1220 276 1420 292 1600 280 L1600 340 L0 340Z"/>' +
+        /* a great dome on a facade */
+        R(1120, 262, 180, 78) + '<path d="M1112 264 L1210 240 L1308 264Z"/>' + R(1160, 206, 100, 40) + '<path d="M1156 210 C1156 150 1264 150 1264 210Z"/>' +
+        R(1202, 140, 16, 22) + '<path d="M1198 142 Q1210 126 1222 142Z"/>' + R(1209, 112, 2, 16) + R(1204, 118, 12, 2) +
+        '<path d="M1126 248 C1126 228 1154 228 1154 248Z"/><path d="M1266 248 C1266 228 1294 228 1294 248Z"/>' +
+        R(470, 250, 14, 90) + '<path d="M470 250 L477 222 L484 250Z"/>' + R(520, 270, 60, 70) + R(1400, 262, 48, 78) + R(1460, 276, 64, 64);
+      mid = blocks([[0,276,70,1],[70,262,50],[120,290,40,1],[372,284,62,1],[434,270,40],[1004,288,56,1],[1060,272,50],[1300,268,70],[1370,282,80,1],[1450,262,60],[1510,286,90,1]]) +
+        /* temple with a dome */
+        '<path d="M178 270 C184 222 288 222 294 270Z"/>' + '<path d="M160 272 L236 244 L312 272Z"/>' + R(166, 272, 140, 68) +
+        [0,1,2,3,4,5,6,7].map(function(i){ return R(176 + i * 16, 280, 6, 48, "arches", 2); }).join("") +
+        /* bell tower */
+        R(330, 176, 30, 164) + '<path d="M326 178 L345 146 L364 178Z"/>' + R(339, 190, 12, 18, "arches", 6) + R(339, 222, 12, 18, "arches", 6) +
+        /* amphitheatre: tall side on the left, broken steps to the right */
+        '<path d="M600 340 L600 214 Q604 204 618 202 L790 192 L796 198 L806 198 L812 210 L824 210 L830 224 L856 226 L862 240 L900 242 L908 256 L960 258 L966 272 L1000 274 L1000 340Z"/>' +
+        '<g clip-path="url(#amphi)"><rect x="600" y="220" width="400" height="96" fill="url(#arch)"/></g>' +
+        [0,1,2,3,4,5,6,7].map(function(i){ return R(614 + i * 22, 206, 6, 8, "arches", 1); }).join("") +
+        pine(470, 1) + pine(548, .85) + pine(1066, 1.05) + pine(1404, .9) + pine(36, .8) + cypress(1024, 124) + cypress(1040, 100) + cypress(414, 116) + cypress(1288, 110) +
+        windows([[16,290],[40,290],[16,308],[84,276],[100,276],[84,296],[386,298],[408,298],[448,284],[1018,300],[1074,286],[1074,306],[1314,282],[1340,282],[1314,302],[1386,296],[1410,296],[1464,276],[1484,276],[1464,296],[1526,300],[1556,300]]);
+      extra = '<clipPath id="amphi"><path d="M600 340 L600 214 Q604 204 618 202 L790 192 L796 198 L806 198 L812 210 L824 210 L830 224 L856 226 L862 240 L900 242 L908 256 L960 258 L966 272 L1000 274 L1000 340Z"/></clipPath>' +
+        '<pattern id="arch" width="24" height="32" patternUnits="userSpaceOnUse" x="600" y="220"><path class="arches" d="M6 30 L6 14 A6 6 0 0 1 18 14 L18 30Z"/></pattern>';
+    }
+    var trail = "M-60 168 C260 70 620 40 980 60 C1260 76 1460 30 1680 -10";
+    var jet = REDUCED ? "" : '<g class="jet"><path d="M10 0 L-6 -3 L-3 0 L-6 3Z"/><path d="M2 0 L-4 -10 L-1 -10 L6 0 L-1 10 L-4 10Z"/>' +
+      '<animateMotion dur="28s" repeatCount="indefinite" rotate="auto" path="' + trail + '"/></g>';
+    return '<svg class="skyline" viewBox="0 0 1600 340" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><defs>' + extra + '</defs>' +
+      '<path class="trail" d="' + trail + '"/>' + jet +
+      '<g class="pf pf1"><g class="l-far">' + far + '</g></g><g class="pf pf2"><g class="l-mid">' + mid + '</g></g>' +
+      '<path class="l-front" d="M0 330 C400 324 800 334 1200 326 C1400 322 1500 328 1600 326 L1600 340 L0 340Z"/></svg>';
+  }
+  var CRUMBS = null, HZ = null;
+  function hero(o){
+    var h = el("section", "hero" + (o.cls ? " " + o.cls : ""));
+    var sky = el("div", "sky"); sky.innerHTML = '<div class="stars"></div><div class="sun"></div><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>'; h.appendChild(sky);
+    var img = safeUrl(o.image); if(img){ var ph = el("div", "photo"); ph.style.backgroundImage = "url(" + JSON.stringify(img) + ")"; h.appendChild(ph); }
+    h.insertAdjacentHTML("beforeend", skylineSVG(o.scene || "rome"));
+    var inn = el("div", "hero-in wrap" + (o.narrow ? " narrow" : "")); h.appendChild(inn);
+    if(CRUMBS){ inn.appendChild(CRUMBS); CRUMBS = null; }
+    h._in = inn; HZ.appendChild(h); return inn;
+  }
+  function heroTitle(t, cls){ t = str(t); var h = el("h1", cls), i = t.lastIndexOf(" "); if(i > 0){ h.appendChild(document.createTextNode(t.slice(0, i + 1))); h.appendChild(el("em", null, t.slice(i + 1))); } else h.textContent = t; return h; }
+  function heroStats(list){ var g = el("div", "hero-stats"); list.forEach(function(x){ if(!x || !str(x[0])) return; var d = el("div"); d.appendChild(el("b", null, String(x[0]))); d.appendChild(el("small", null, x[1])); g.appendChild(d); }); return g; }
+  function btn(cls, icon, label, href, fn){ var b = el(href ? "a" : "button", "btn " + cls); if(href){ b.href = href; if(/^https:/.test(href)){ b.target = "_blank"; b.rel = "noopener"; } } else { b.type = "button"; b.onclick = fn; } b.appendChild(el("span", null, label)); if(icon) b.appendChild(ic(icon)); return b; }
+  function kicker(icon, text, href){ var k = el(href ? "a" : "span", "kicker"); if(href) k.href = href; if(icon === "flag") k.appendChild(el("span", "flag")); else if(icon) k.appendChild(ic(icon)); k.appendChild(document.createTextNode(text)); return k; }
+  function sceneFor(cityId){ return cityId === "roma" ? "rome" : "town"; }
+
   /* ---------------- dates ---------------- */
   var TODAY = new Date(); TODAY.setHours(0,0,0,0);
   function deadline(text){
@@ -193,17 +262,40 @@
     lastView = r.view + (r.view === "uni" ? ":" + r.u.id : "");
     root.textContent = "";
     root.appendChild(appbar(r));
-    var wide = r.view === "home" || r.view === "italy";
+    var wide = ["home", "italy", "course", "stage"].indexOf(r.view) >= 0;
+    HZ = el("div", "herozone"); root.appendChild(HZ);
     var main = el("main", "wrap" + (wide ? "" : " narrow"));
-    var crumbs = crumbsFor(r); if(crumbs) main.appendChild(crumbs);
+    CRUMBS = crumbsFor(r);
     ({home:homeView, italy:italyView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView,
       item:function(m){ itemView(m, r.i); }, city:function(m){ cityView(m, r.c); }, uni:function(m){ uniView(m, r.u, r.tab); }, stage:function(m){ stageView(m, r.st); }
     }[r.view] || homeView)(main, r);
+    if(CRUMBS){ main.insertBefore(CRUMBS, main.firstChild); CRUMBS = null; }
     root.appendChild(main);
     root.appendChild(tabbar(r));
     if(top && !keepScroll) window.scrollTo(0, 0);
+    reveal(main);
+    parallax();
     firstPaint = false;
   }
+  /* sections fade up as they enter the screen */
+  var IO = null;
+  function reveal(main){
+    if(REDUCED || !("IntersectionObserver" in window)) return;
+    document.documentElement.classList.add("rv-on");
+    if(!IO) IO = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); IO.unobserve(e.target); } }); }, {rootMargin:"0px 0px -6% 0px"});
+    var nodes = main.querySelectorAll(":scope > *:not(.crumbs):not(.tabs), .sec > *, .italy .col > *, .hub > *");
+    Array.prototype.forEach.call(nodes, function(n){ if(n.classList.contains("sec")) return; n.classList.add("rv"); IO.observe(n); });
+  }
+  /* skyline layers move at different speeds while scrolling */
+  var pTick = false;
+  function parallax(){
+    var h = document.querySelector(".hero"); if(!h || REDUCED) return;
+    var y = Math.min(window.scrollY, 700);
+    h.style.setProperty("--sy", String(y));
+  }
+  window.addEventListener("scroll", function(){ if(pTick) return; pTick = true; requestAnimationFrame(function(){ pTick = false; parallax(); catchUp(); }); }, {passive:true});
+  /* after a long jump (anchor, End key) show everything already passed */
+  function catchUp(){ var vh = window.innerHeight; Array.prototype.forEach.call(document.querySelectorAll(".rv:not(.in)"), function(n){ if(n.getBoundingClientRect().top < vh){ n.classList.add("in"); if(IO) IO.unobserve(n); } }); }
 
   /* ---------------- chrome ---------------- */
   function logo(h){ var c = el("span", "chip"), l = el("span", "logo"); l.style.setProperty("--h", h + "px"); l.setAttribute("role", "img"); l.setAttribute("aria-label", "Uprep"); c.appendChild(l); return c; }
@@ -268,17 +360,23 @@
     nav.appendChild(inn); return nav;
   }
   function footer(main){
-    var f = el("footer", "foot");
-    if(S.site.footer) f.appendChild(el("p", null, S.site.footer));
-    var p = el("p", "brand"); p.appendChild(logo(13)); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uprep"));
+    var f = el("footer", "foot"), g = el("div", "foot-grid");
+    var about = el("div"); about.appendChild(logo(16)); if(S.site.footer) about.appendChild(el("p", null, S.site.footer)); g.appendChild(about);
+    function col(title, links){ var c = el("div"); c.appendChild(el("h4", null, title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
+    col("Bo'limlar", [["Italiya", "#italiya"], ["Universitetlar", "#universitetlar"], ["Shaharlar", "#shaharlar"], ["Kurs", "#kurs"], ["Kalendar", "#kalendar"], ["Materiallar", "#materiallar"]]);
+    col("Aloqa", [["Telegram: " + tgName(), tgUrl()], [A.user ? "Hisob" : "Kirish", A.user ? "#hisob" : "#kirish"]]);
+    f.appendChild(g);
+    var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uprep. Barcha huquqlar himoyalangan."));
     var tg = el("a", null, tgName()); tg.href = tgUrl(); tg.target = "_blank"; tg.rel = "noopener"; p.appendChild(tg);
     f.appendChild(p); main.appendChild(f);
   }
-  function secHead(title, linkText, hash, id){
-    var h = el("div", "sec-head"); if(id) h.id = id; h.appendChild(el("h2", null, title));
-    if(linkText){ var a = el("a", null, linkText); a.href = "#" + hash; h.appendChild(a); }
+  function secHead(title, linkText, hash, id, eyebrow, desc){
+    var h = el("div", "sec-head"); if(id) h.id = id;
+    var l = el("div"); if(eyebrow) l.appendChild(el("span", "eyebrow", eyebrow)); l.appendChild(el("h2", null, title)); if(desc) l.appendChild(el("p", null, desc)); h.appendChild(l);
+    if(linkText){ var a = el("a", null, linkText); a.href = "#" + hash; a.appendChild(ic("next")); h.appendChild(a); }
     return h;
   }
+  function sec(){ var s = el("section", "sec"); Array.prototype.forEach.call(arguments, function(n){ if(n) s.appendChild(n); }); return s; }
   function rowBtn(icon, title, sub, kind, href, fn){
     var ext = href && /^https:/.test(href);
     var b = el(href ? "a" : "button", "row" + (kind ? " " + kind : ""));
@@ -326,38 +424,63 @@
 
   /* ================= HOME ================= */
   function homeView(main){
-    var grid = el("div", "home"), side = el("div", "col side"), rest = el("div", "col");
-    /* phone shows one column in this order; desktop keeps two columns */
-    function put(col, node, o){ if(!node) return; node.style.order = o; col.appendChild(node); }
-    put(side, boardingPass(), 1);
-    var nx = upcoming()[0]; if(nx) put(side, departure(nx), 4);
-    if(!hasCourse()) put(side, priceCard(false), 7);
-    put(side, rowBtn("chat", tgName() + " ga yozing", "Savollaringizga javob beramiz", "tg", tgUrl()), 20);
+    var owned = hasCourse(), total = S.stages.length, nx = nextStage();
+    var H = hero({cls:"home", scene:"rome", image:S.site.heroImage});
+    H.appendChild(kicker("flag", str(S.site.eyebrow) || "Uprep"));
+    H.appendChild(heroTitle(S.site.title || "Chet elda o'qishga yo'l"));
+    if(S.site.lead) H.appendChild(el("p", "lead", S.site.lead));
+    var act = el("div", "hero-actions");
+    if(owned && nx && doneCount()) act.appendChild(btn("gold", "next", "Davom etish: " + (S.stages.indexOf(nx) + 1) + "-bosqich", "#" + nx.id));
+    else act.appendChild(btn("gold", "next", "Yo'lni boshlash", "#" + (S.stages[0] ? S.stages[0].id : "kurs")));
+    act.appendChild(btn("glass", null, "Universitetlar", "#universitetlar"));
+    act.appendChild(btn("glass", null, "Italiya haqida", "#italiya"));
+    H.appendChild(act);
+    H.appendChild(globalSearch());
+    H.appendChild(heroStats([[S.unis.length, "universitet, MUR ro'yxati"], [S.cities.length, "universitet shahri"], [total, "bosqichli yo'riqnoma"], [price(), "bir marta, umrbod"]]));
 
-    put(rest, globalSearch(), 2);
-    put(rest, secHead("Qayerda o'qimoqchisiz?"), 2);
-    put(rest, countryGrid(), 3);
-    put(rest, secHead("Kurs ichida", hasCourse() ? "Kursni ochish" : "Batafsil", "kurs"), 5);
-    put(rest, routeLine(), 6);
-    put(rest, secHead("Qanday ishlaydi"), 8);
+    var j = el("div", "journey"); j.appendChild(boardingPass());
+    var up = upcoming()[0]; j.appendChild(up ? departure(up) : rowBtn("cal", "Kalendar", "Yil davomidagi muhim sanalar", null, "#kalendar"));
+    main.appendChild(sec(j));
+
+    main.appendChild(sec(secHead("Qayerda o'qimoqchisiz?", null, null, null, "Davlatlar", "Italiya bo'yicha to'liq qo'llanma tayyor. Boshqa davlatlar navbatda."), countryGrid()));
+
+    if(S.unis.length){
+      var rail = el("div", "rail"); S.unis.filter(function(u){ return u.detailed; }).forEach(function(u){ rail.appendChild(uniCard(u)); });
+      main.appendChild(sec(secHead("Italiya universitetlari", "Hammasi (" + S.unis.length + ")", "universitetlar", null, "Tanlang", "Talablar, muddatlar, yo'nalishlar va ariza havolasi bilan to'liq sahifalar."), rail));
+    }
+
+    var cg = el("div", "course-grid"); cg.appendChild(routeLine());
+    cg.appendChild(owned ? rowBtn("route", "Kursni ochish", doneCount() + " / " + total + " bosqich bajarildi", "g", "#kurs") : priceCard(false));
+    main.appendChild(sec(secHead("Arizadan Italiyadagi birinchi kungacha", owned ? "Kursni ochish" : "Batafsil", "kurs", null, "Kurs", total + " bosqich: pre-acceptance, DoV/CIMEA, pre-enrollment, viza, stipendiya va Italiyaga kelgandan keyingi ishlar."), cg));
+
     var how = el("ol", "how");
-    [["Ro'yxatdan o'ting","Email va parol bilan, bir daqiqada."],["Kursni oching", price() + ", bir marta. Karta yoki Google Pay."],["Bosqichma-bosqich boring","Har bosqichda nima qilish, qaysi hujjat va qachongacha."]].forEach(function(x){
+    [["Ro'yxatdan o'ting", "Email va parol bilan, bir daqiqada."], ["Kursni oching", price() + ", bir marta to'lanadi. Karta, Google Pay yoki Apple Pay."], ["Bosqichma-bosqich boring", "Har bosqichda nima qilish, qaysi hujjat kerak va qachongacha."]].forEach(function(x){
       var li = el("li"); li.appendChild(el("b", null, x[0])); li.appendChild(el("span", null, x[1])); how.appendChild(li);
     });
-    put(rest, how, 9);
-    if(S.unis.length){
-      put(rest, secHead("Italiya universitetlari", "Hammasi (" + S.unis.length + ")", "universitetlar"), 10);
-      var rail = el("div", "rail"); S.unis.filter(function(u){ return u.detailed; }).forEach(function(u){ rail.appendChild(uniCard(u)); }); put(rest, rail, 11);
+    main.appendChild(sec(secHead("Qanday ishlaydi", null, null, null, "3 qadam"), how));
+
+    var tr = el("div", "trust");
+    [["shield", "Rasmiy manbalar", "Universitet saytlari, Toshkentdagi Italiya elchixonasi, MUR, CIMEA va DSU bandolari. Har sahifada manba havolasi bor."],
+     ["languages", "O'zbek tilida, sodda", "Murakkab atamalar tushuntirilgan. Har bir hujjat ro'yxat ko'rinishida, belgilab boriladi."],
+     ["clock", "Muddatlar nazoratda", "Eng yaqin muddatgacha necha kun qolgani bosh sahifada va har bir universitet sahifasida ko'rinadi."]].forEach(function(x){
+      var d = el("div"), i = el("span", "ic"); i.appendChild(ic(x[0])); d.appendChild(i); var t = el("span"); t.appendChild(el("b", null, x[1])); t.appendChild(el("span", null, x[2])); d.appendChild(t); tr.appendChild(d);
+    });
+    main.appendChild(sec(secHead("Nega Uprep", null, null, null, "Ishonch"), tr));
+
+    var faq = arr(S.site.faq).filter(function(x){ return x && str(x.q); });
+    if(faq.length){
+      var box = el("div", "faq");
+      faq.forEach(function(x, i){ var b = el("div", "blocks flat"); str(x.a).split(/\n\s*\n/).forEach(function(p){ if(p.trim()) b.appendChild(el("p", "prose", p.trim())); }); box.appendChild(fold("faq:" + i, str(x.q), b, false)); });
+      main.appendChild(sec(secHead("Ko'p beriladigan savollar", tgName() + " ga yozish", "", null, "Savol-javob"), box));
+      var tl = main.lastChild.querySelector(".sec-head a"); if(tl){ tl.href = tgUrl(); tl.target = "_blank"; tl.rel = "noopener"; }
     }
-    footer(rest); if(rest.lastChild) rest.lastChild.style.order = 30;
-    grid.appendChild(side); grid.appendChild(rest); main.appendChild(grid);
+    footer(main);
   }
 
   function globalSearch(){
-    var wrap = el("section", "gsearch");
-    wrap.appendChild(el("h2", null, "Universitet yoki shahar qidiring"));
+    var wrap = el("div", "gsearch");
     var res = el("div", "list gres");
-    var sb = searchBox("Masalan: Sapienza, Milan, Bolonya", "", function(v){
+    var sb = searchBox("Universitet yoki shahar: Sapienza, Milan, Bolonya…", "", function(v){
       var q = norm(v); res.textContent = ""; if(q.length < 2) return;
       var cs = S.cities.filter(function(c){ return norm(c.name + " " + c.region).indexOf(q) >= 0; }).slice(0, 3);
       var us = S.unis.filter(function(u){ var c = cityById(u.city); return norm(u.short + " " + u.name + " " + (c ? c.name : "")).indexOf(q) >= 0; }).slice(0, 6);
@@ -370,18 +493,16 @@
     var total = S.stages.length, n = doneCount(), nx = nextStage(), owned = hasCourse();
     var pass = el("section", "pass"); pass.setAttribute("aria-label", "Sizning yo'lingiz");
     var m = el("div", "pass-main");
-    if(S.site.eyebrow){ var top = el("div", "pass-top"); top.appendChild(el("span", "year", str(S.site.eyebrow))); m.appendChild(top); }
-    m.appendChild(el("h1", null, S.site.title || "Chet elda o'qishga yo'l"));
+    var top = el("div", "pass-top"); top.appendChild(el("span", null, "Sizning yo'lingiz")); top.appendChild(el("span", "seat", "Talaba · " + (str(S.site.eyebrow).match(/\d{4}\/\d{2}/) || ["2026/27"])[0])); m.appendChild(top);
     var rt = el("div", "route");
     var a = el("div", "city"); a.appendChild(el("b", null, "TAS")); a.appendChild(el("small", null, "Toshkent")); rt.appendChild(a);
     var tr = el("div", "track"); tr.setAttribute("role", "img"); tr.setAttribute("aria-label", n + " / " + total + " bosqich bajarildi");
     tr.appendChild(el("span", "fill")); var pl = el("span", "plane"); pl.appendChild(ic("plane")); tr.appendChild(pl); rt.appendChild(tr);
     var b = el("div", "city r"); b.appendChild(el("b", null, "ITA")); b.appendChild(el("small", null, "Italiya")); rt.appendChild(b);
     m.appendChild(rt);
-    if(S.site.lead) m.appendChild(el("p", "lead", S.site.lead));
     pass.appendChild(m);
     var pct = total ? Math.round(n / total * 100) : 0;
-    if(firstPaint && pct > 0 && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+    if(firstPaint && pct > 0 && !REDUCED){
       tr.style.setProperty("--p", "0%"); requestAnimationFrame(function(){ requestAnimationFrame(function(){ tr.style.setProperty("--p", pct + "%"); }); });
     } else tr.style.setProperty("--p", pct + "%");
 
@@ -456,12 +577,12 @@
   /* ================= ITALY ================= */
   function italyView(main){
     var I = S.italy;
-    var head = el("section", "countryhead");
-    head.appendChild(el("span", "tricolor"));
-    head.appendChild(el("h1", null, I.title || "Italiya"));
-    if(I.lead) head.appendChild(el("p", "intro", I.lead));
-    var st = statsBlock({items:I.stats}); if(st) head.appendChild(st);
-    main.appendChild(head);
+    var H = hero({scene:"rome", image:I.heroImage});
+    H.appendChild(kicker("flag", "Davlat qo'llanmasi"));
+    H.appendChild(heroTitle(I.title || "Italiya"));
+    if(I.lead) H.appendChild(el("p", "lead", I.lead));
+    var st = arr(I.stats).map(function(x){ return x ? [x.big, x.small] : null; });
+    if(st.length) H.appendChild(heroStats(st));
 
     var hub = el("div", "hub");
     function tile(icon, title, sub, hash){ var a = el("a", "hubtile"); a.href = "#" + hash; var i = el("span", "ic"); i.appendChild(ic(icon)); a.appendChild(i); var t = el("span", "txt"); t.appendChild(el("b", null, title)); t.appendChild(el("small", null, sub)); a.appendChild(t); a.appendChild(ic("next", "chev")); hub.appendChild(a); }
@@ -472,17 +593,19 @@
 
     var secs = arr(I.sections);
     var cols = el("div", "italy"), left = el("div", "col"), right = el("div", "col side");
+    left.appendChild(secHead("Italiyada o'qish va yashash", null, null, null, "Qo'llanma"));
     secs.forEach(function(s, si){
       var box = el("div", "blocks flat"); arr(s.blocks).forEach(function(b, bi){ var n = blockNode({id:"it-" + s.id}, b, bi, true); if(n) box.appendChild(n); });
       left.appendChild(fold("it:" + s.id, s.title, box, si === 0));
     });
     var top = S.cities.filter(function(c){ return c.intro; });
     if(top.length){
-      left.appendChild(secHead("Mashhur talaba shaharlari", "Hammasi", "shaharlar"));
+      left.appendChild(secHead("Mashhur talaba shaharlari", "Hammasi", "shaharlar", null, "Shaharlar"));
       var cg = el("div", "list"); top.forEach(function(c){ cg.appendChild(cityRow(c)); }); left.appendChild(cg);
     }
     var nx = upcoming()[0]; if(nx) right.appendChild(departure(nx));
     right.appendChild(hasCourse() ? rowBtn("route", "Kursni davom ettirish", "Bosqichma-bosqich yo'riqnoma", "g", "#kurs") : priceCard(true));
+    right.appendChild(rowBtn("chat", tgName() + " ga yozing", "Savollaringizga javob beramiz", "tg", tgUrl()));
     cols.appendChild(left); cols.appendChild(right); main.appendChild(cols);
     footer(main);
   }
@@ -534,7 +657,10 @@
   /* ---------- universities list with search and filters ---------- */
   var UF = { q:"", type:"", city:"" };
   function unisView(main){
-    pageHead(main, "Italiya universitetlari", S.unis.length + " ta universitet: Italiya ta'lim vazirligi (MUR) ro'yxatidagi davlat va xususiy universitetlar.");
+    var H = hero({cls:"compact", scene:"town", narrow:true});
+    H.appendChild(kicker("uni", "Italiya · " + S.unis.filter(function(u){ return u.type === "Davlat"; }).length + " davlat, " + S.unis.filter(function(u){ return u.type === "Xususiy"; }).length + " xususiy"));
+    H.appendChild(heroTitle("Italiya universitetlari"));
+    H.appendChild(el("p", "lead", S.unis.length + " ta universitet: Italiya ta'lim vazirligi (MUR) ro'yxatidagi davlat va xususiy universitetlar. Nom yoki shahar bo'yicha qidiring."));
     var bar = el("div", "filters");
     var sb = searchBox("Universitet yoki shahar nomi", UF.q, function(v){ UF.q = v; draw(); });
     bar.appendChild(sb.node);
@@ -575,7 +701,10 @@
   /* ---------- cities list ---------- */
   var CQ = "";
   function citiesView(main){
-    pageHead(main, "Italiya shaharlari", "Universiteti bor " + S.cities.length + " ta shahar, viloyatlar bo'yicha. Har bir viloyatda stipendiyani o'z idorasi beradi.");
+    var H = hero({cls:"compact", scene:"town", narrow:true});
+    H.appendChild(kicker("pin", "Italiya · 20 viloyat"));
+    H.appendChild(heroTitle("Italiya shaharlari"));
+    H.appendChild(el("p", "lead", "Universiteti bor " + S.cities.length + " ta shahar, viloyatlar bo'yicha. Har bir viloyatda stipendiyani o'z idorasi (DSU) beradi."));
     var sb = searchBox("Shahar yoki viloyat nomi", CQ, function(v){ CQ = v; draw(); });
     var bar = el("div", "filters"); bar.appendChild(sb.node); main.appendChild(bar);
     var box = el("div"); main.appendChild(box);
@@ -596,13 +725,14 @@
 
   /* ---------- city page ---------- */
   function cityView(main, c){
-    var head = el("section", "pagecard");
-    var k = el("span", "kicker"); k.appendChild(ic("pin")); k.appendChild(document.createTextNode(str(c.region) + " viloyati")); head.appendChild(k);
-    head.appendChild(el("h1", null, c.name));
-    if(c.intro) head.appendChild(el("p", "intro", c.intro));
-    var facts = factTable([["Viloyat", c.region], ["Stipendiya idorasi", c.dsu], ["Universitetlar", unisIn(c.id).length + " ta"]]);
-    head.appendChild(facts);
-    main.appendChild(head);
+    var H = hero({cls:"compact", scene:sceneFor(c.id), image:c.image, narrow:true});
+    H.appendChild(kicker("pin", str(c.region) + " viloyati"));
+    H.appendChild(heroTitle(c.name));
+    if(c.intro) H.appendChild(el("p", "lead", c.intro));
+    var n = unisIn(c.id).length;
+    H.appendChild(heroStats([[n, "universitet"], [c.dsu ? str(c.dsu).split(/[\s(]/)[0] : "", "stipendiya idorasi"]]));
+    var facts = factTable([["Viloyat", c.region], ["Stipendiya idorasi", c.dsu], ["Universitetlar", n + " ta"]]);
+    facts.classList.add("city-facts"); main.appendChild(facts);
     if(arr(c.pros).length || arr(c.cons).length){
       var pc = el("div", "proscons");
       if(arr(c.pros).length){ var p = el("section", "pc pro"); var h = el("h3"); h.appendChild(ic("plus")); h.appendChild(document.createTextNode("Nega " + c.name)); p.appendChild(h); var ul = el("ul"); arr(c.pros).forEach(function(x){ var li = el("li"); li.appendChild(ic("check")); li.appendChild(el("span", null, x)); ul.appendChild(li); }); p.appendChild(ul); pc.appendChild(p); }
@@ -624,13 +754,15 @@
   var PF = { level:"", q:"" };
   function uniView(main, u, tab){
     var city = cityById(u.city);
-    var head = el("section", "pagecard unihead");
-    head.appendChild(el("span", "u-mono big", mono(u)));
-    var k = el("a", "kicker link"); k.href = city ? "#shahar-" + city.id : "#shaharlar"; k.appendChild(ic("pin")); k.appendChild(document.createTextNode((city ? city.name : "") + ", " + str(u.type).toLowerCase() + " universitet")); head.appendChild(k);
-    head.appendChild(el("h1", null, u.short || u.name));
-    if(u.short && u.name !== u.short) head.appendChild(el("p", "sub", u.name));
-    if(u.rank){ var rk = el("span", "rank"); rk.appendChild(ic("star")); rk.appendChild(document.createTextNode(u.rank)); head.appendChild(rk); }
-    main.appendChild(head);
+    var H = hero({cls:"compact", scene:sceneFor(u.city), image:u.image, narrow:true});
+    H.appendChild(kicker("pin", (city ? city.name + ", " : "") + str(u.type).toLowerCase() + " universitet", city ? "#shahar-" + city.id : "#shaharlar"));
+    var t = el("div", "unihero-top"); t.appendChild(el("span", "u-mono big", mono(u))); t.appendChild(heroTitle(u.short || u.name)); H.appendChild(t);
+    if(u.short && u.name !== u.short) H.appendChild(el("p", "sub", u.name));
+    if(u.rank){ var rk = el("span", "rank"); rk.appendChild(ic("star")); rk.appendChild(document.createTextNode(u.rank)); H.appendChild(rk); }
+    var q = el("div", "hero-actions");
+    if(safeUrl(u.portalUrl)) q.appendChild(btn("gold", "link", u.portalLabel || "Ariza portali", safeUrl(u.portalUrl)));
+    if(safeUrl(u.web)) q.appendChild(btn("glass", "globe", "Rasmiy sayt", safeUrl(u.web)));
+    if(q.children.length) H.appendChild(q);
 
     var tabs = [["", "Umumiy"]];
     if(arr(u.programmes).length) tabs.push(["yonalishlar", "Yo'nalishlar (" + u.programmes.length + ")"]);
@@ -741,19 +873,30 @@
 
   /* ================= COURSE ================= */
   function courseView(main){
-    var owned = hasCourse(), n = doneCount();
-    var head = el("section", "stagehead");
-    var k = el("span", "kicker" + (owned ? " ok" : "")); k.appendChild(ic(owned ? "check" : "route")); k.appendChild(document.createTextNode(owned ? "Kurs ochiq" + (PREVIEW ? " (ko'rib chiqish rejimi)" : "") : "To'liq kurs: Italiya")); head.appendChild(k);
-    head.appendChild(el("h1", null, "Italiyaga yo'l"));
-    head.appendChild(el("p", "intro", owned ? n + " / " + S.stages.length + " bosqich bajarildi. Bosqichni bosing: nima qilinadi, qaysi hujjat kerak va qachongacha." : S.stages.length + " bosqich: universitet tanlashdan Italiyadagi full enrollment'gacha. 1-bosqich bepul, qolganlari kursda."));
-    main.appendChild(head);
-    main.appendChild(routeLine());
-    if(!owned) main.appendChild(priceCard(false));
-    var more = el("div", "links");
-    more.appendChild(rowBtn("cal", "Kalendar", "Yil davomidagi muhim sanalar", null, "#kalendar"));
-    more.appendChild(rowBtn("folder", "Materiallar", "Rasmiy hujjatlar va havolalar", null, "#materiallar"));
-    main.appendChild(more);
+    var owned = hasCourse(), n = doneCount(), total = S.stages.length;
+    var H = hero({cls:"compact", scene:"rome"});
+    H.appendChild(kicker(owned ? "check" : "route", owned ? "Kurs ochiq" + (PREVIEW ? " (ko'rib chiqish rejimi)" : "") : "To'liq kurs: Italiya"));
+    H.appendChild(heroTitle("Italiyaga yo'l"));
+    H.appendChild(el("p", "lead", owned ? "Bosqichni bosing: nima qilinadi, qaysi hujjat kerak va qachongacha." : total + " bosqich: universitet tanlashdan Italiyadagi full enrollment'gacha. 1-bosqich bepul, qolganlari kursda."));
+    H.appendChild(heroStats([[n + "/" + total, "bosqich bajarildi"], [owned ? "Ochiq" : price(), owned ? "umrbod kirish" : "bir marta to'lov"]]));
+    var cg = el("div", "course-grid"); cg.appendChild(routeLine());
+    var side = el("div", "links");
+    if(!owned) side.appendChild(priceCard(false));
+    side.appendChild(rowBtn("cal", "Kalendar", "Yil davomidagi muhim sanalar", null, "#kalendar"));
+    side.appendChild(rowBtn("folder", "Materiallar", "Rasmiy hujjatlar va havolalar", null, "#materiallar"));
+    side.appendChild(rowBtn("chat", tgName() + " ga yozing", "Savol va yordam", "tg", tgUrl()));
+    cg.appendChild(side); main.appendChild(cg);
     footer(main);
+  }
+  function sidesteps(cur){
+    var nav = el("nav", "sidesteps"); nav.setAttribute("aria-label", "Kurs bosqichlari"); nav.appendChild(el("h4", null, "Kurs bosqichlari"));
+    S.stages.forEach(function(x, i){
+      var a = el("a", (prog[x.id] ? "done" : "") + (x === cur ? " here" : "")); a.href = "#" + x.id; if(x === cur) a.setAttribute("aria-current", "step");
+      var nn = el("span", "n"); if(prog[x.id] && x !== cur) nn.appendChild(ic("check")); else nn.textContent = String(i + 1); a.appendChild(nn);
+      a.appendChild(el("span", "t", x.title)); if(!isOpenStage(x)) a.appendChild(ic("lock"));
+      nav.appendChild(a);
+    });
+    return nav;
   }
   function minimap(s){
     var nav = el("nav", "minimap"); nav.setAttribute("aria-label", "Bosqichlar xaritasi");
@@ -767,6 +910,7 @@
   }
   function stageView(main, s){
     var idx = S.stages.indexOf(s), done = !!prog[s.id], unlocked = isOpenStage(s);
+    var outer = main, lay = el("div", "doclayout"); lay.appendChild(sidesteps(s)); main = el("article"); lay.appendChild(main); outer.appendChild(lay);
     main.appendChild(minimap(s));
     var head = el("section", "stagehead");
     head.appendChild(el("span", "big", String(idx + 1)));
@@ -791,7 +935,7 @@
       if(inside.length){ var ul = el("ul", "ticks small"); inside.forEach(function(x){ var l2 = el("li"); l2.appendChild(ic("check")); l2.appendChild(el("span", null, x)); ul.appendChild(l2); }); lk.appendChild(ul); }
       main.appendChild(lk);
       main.appendChild(priceCard(true));
-      footer(main); return;
+      footer(outer); return;
     }
 
     var box = el("div", "blocks"), firstAcc = {v:true};
@@ -813,7 +957,7 @@
     if(prev){ var pb = el("button", "prevlink"); pb.type = "button"; pb.appendChild(ic("back")); pb.appendChild(el("span", null, "Oldingi: " + str(prev.title))); pb.onclick = function(){ go(prev.id); }; main.appendChild(pb); }
     var u = safeUrl(s.srcUrl);
     if(u){ var a = el("a", "src"); a.href = u; a.target = "_blank"; a.rel = "noopener"; a.appendChild(ic("link")); a.appendChild(el("span", null, "Rasmiy manba: " + (s.srcLabel || u))); main.appendChild(a); }
-    footer(main);
+    footer(outer);
   }
 
   /* ================= LIBRARY / CALENDAR ================= */
