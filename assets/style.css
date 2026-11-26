@@ -712,12 +712,12 @@ main > .card,main > .list,main > .links,main > .proscons{margin-top:14px}
 /* ================= v7: brand, photo hero, guide, scholarships ================= */
 /* animated logo */
 .logo-b{display:inline-flex;align-items:center;gap:9px;height:calc(var(--h,20px) * 1.8)}
-.logo-b .mark{width:calc(var(--h,20px) * 1.8);height:calc(var(--h,20px) * 1.8);overflow:visible;filter:drop-shadow(0 6px 12px rgba(22,39,74,.25))}
+.logo-b .mark{width:calc(var(--h,20px) * 1.8);height:calc(var(--h,20px) * 1.8);overflow:visible;filter:drop-shadow(0 6px 14px rgba(242,122,12,.32))}
 .logo-b .word{font:800 calc(var(--h,20px) * 1.12)/1 var(--display);letter-spacing:-.03em;color:var(--ink)}
 .logo-b .word b{font-weight:800;color:var(--navy-3)}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .logo-b .word b{color:var(--gold-2)} }
 :root[data-theme="dark"] .logo-b .word b{color:var(--gold-2)}
-.mark .u{stroke-dasharray:52;stroke-dashoffset:52;animation:mk-draw 1.1s .15s var(--ease) forwards}
+.mark .u{stroke-dasharray:80;stroke-dashoffset:80;animation:mk-draw 1.1s .15s var(--ease) forwards}
 .mark .arr{transform-box:fill-box;transform-origin:center;animation:mk-bob 3.4s 1.8s ease-in-out infinite}
 .mark .tip{opacity:0;transform-box:fill-box;transform-origin:center;transform:translateY(6px);animation:mk-pop .55s 1.05s var(--ease) forwards}
 .mark .spark{transform-box:fill-box;transform-origin:center;animation:mk-spark 2.6s ease-in-out infinite}
