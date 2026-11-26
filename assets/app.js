@@ -767,6 +767,7 @@
     var tags = el("span", "u-tags");
     if(u.rank) tags.appendChild(el("span", "tag", u.rank));
     var nx = uniNext(u); if(nx) tags.appendChild(el("span", "tag hot", leftLabel(daysLeft(nx.d))));
+    if(u.enCount) tags.appendChild(el("span", "tag lang", u.enCount + " ta ingliz dasturi"));
     if(u.detailed) tags.appendChild(el("span", "tag ok", "To'liq ma'lumot"));
     if(tags.children.length) t.appendChild(tags);
     a.appendChild(t); a.appendChild(ic("next", "chev")); return a;
@@ -778,6 +779,7 @@
     a.appendChild(top);
     var tags = el("span", "u-tags"); if(u.rank) tags.appendChild(el("span", "tag", u.rank));
     var nx = uniNext(u); if(nx) tags.appendChild(el("span", "tag hot", leftLabel(daysLeft(nx.d))));
+    if(u.enCount) tags.appendChild(el("span", "tag lang", u.enCount + " ta ingliz dasturi"));
     a.appendChild(tags); return a;
   }
 
@@ -792,7 +794,7 @@
     var sb = searchBox("Universitet yoki shahar nomi", UF.q, function(v){ UF.q = v; draw(); });
     bar.appendChild(sb.node);
     var chips = el("div", "chips");
-    [["","Hammasi"],["Davlat","Davlat"],["Xususiy","Xususiy"],["detailed","To'liq ma'lumotli"]].forEach(function(x){
+    [["","Hammasi"],["Davlat","Davlat"],["Xususiy","Xususiy"],["en","Ingliz tilidagi dasturlar bor"],["detailed","To'liq ma'lumotli"]].forEach(function(x){
       var b = el("button", "chipf" + (UF.type === x[0] ? " on" : ""), x[1]); b.type = "button"; b.setAttribute("aria-pressed", UF.type === x[0] ? "true" : "false");
       b.onclick = function(){ UF.type = x[0]; Array.prototype.forEach.call(chips.children, function(c){ c.classList.remove("on"); c.setAttribute("aria-pressed", "false"); }); b.classList.add("on"); b.setAttribute("aria-pressed", "true"); draw(); };
       chips.appendChild(b);
@@ -810,11 +812,12 @@
       var q = norm(UF.q);
       var res = S.unis.filter(function(u){
         if(UF.type === "detailed" && !u.detailed) return false;
-        if(UF.type && UF.type !== "detailed" && u.type !== UF.type) return false;
+        if(UF.type === "en" && !u.enCount) return false;
+        if(UF.type && UF.type !== "detailed" && UF.type !== "en" && u.type !== UF.type) return false;
         if(UF.city && u.city !== UF.city) return false;
         if(q){ var c = cityById(u.city); if(norm(u.short + " " + u.name + " " + (c ? c.name + " " + c.region : "")).indexOf(q) < 0) return false; }
         return true;
-      }).sort(function(a, b){ return (b.detailed ? 1 : 0) - (a.detailed ? 1 : 0) || str(a.short).localeCompare(str(b.short)); });
+      }).sort(function(a, b){ return (b.detailed ? 1 : 0) - (a.detailed ? 1 : 0) || (b.enCount || 0) - (a.enCount || 0) || str(a.short).localeCompare(str(b.short)); });
       list.textContent = "";
       count.textContent = res.length + " ta topildi";
       if(!res.length){ list.appendChild(el("div", "empty", "Hech narsa topilmadi. Boshqa nom bilan qidiring yoki filtrni olib tashlang.")); return; }
@@ -879,7 +882,7 @@
   }
 
   /* ---------- university page ---------- */
-  var PF = { level:"", q:"" };
+  var PF = { level:"", q:"", uni:"" };
   function uniView(main, u, tab){
     var city = cityById(u.city);
     var H = hero({cls:"compact", scene:sceneFor(u.city), image:u.image || (city && city.image), narrow:true});
@@ -895,7 +898,7 @@
 
     var tabs = [["", "Umumiy"]];
     if(arr(u.programmes).length) tabs.push(["yonalishlar", "Yo'nalishlar (" + u.programmes.length + ")"]);
-    if(u.detailed){ tabs.push(["qabul", "Qabul"]); tabs.push(["hujjatlar", "Hujjatlar"]); }
+    tabs.push(["qabul", "Qabul va talablar"]); tabs.push(["hujjatlar", "Hujjatlar"]);
     if(tabs.map(function(t){ return t[0]; }).indexOf(tab) < 0) tab = "";
     if(tabs.length > 1){
       var tb = el("nav", "tabs"); tb.setAttribute("aria-label", "Universitet bo'limlari");
@@ -955,13 +958,15 @@
     return c;
   }
   function overviewPanel(box, u, city){
-    if(u.intro) box.appendChild(el("p", "lead-p", u.intro));
+    var P = arr(u.programmes), nB = P.filter(function(p){ return p.level === "Bakalavr"; }).length, nM = P.filter(function(p){ return p.level === "Magistratura"; }).length, nU = P.filter(function(p){ return p.level === "Yagona sikl"; }).length;
+    var intro = str(u.intro) || ((u.short || u.name) + ": " + (city ? city.name + " shahridagi " : "") + str(u.type).toLowerCase() + " universitet. Italiya ta'lim vazirligining Universitaly bazasiga ko'ra, 2026/27 o'quv yilida bu yerda " + (u.enCount ? u.enCount + " ta ingliz tilidagi (yoki qisman ingliz tilidagi) dastur bor." : "ingliz tilidagi dastur yo'q: o'qish italyan tilida, B2 italyan tili kerak."));
+    box.appendChild(el("p", "lead-p", intro));
+    if(u.enCount){ var sb = statsBlock({items:[{big:String(u.enCount), small:"ingliz tilidagi dastur"}, {big:String(nB), small:"bakalavr"}, {big:String(nM), small:"magistratura"}].concat(nU ? [{big:String(nU), small:"yagona sikl (5–6 yil)"}] : [])}); if(sb) box.appendChild(sb); }
     box.appendChild(factTable([["Shahar", city ? city.name : ""], ["Viloyat", city ? city.region : ""], ["Turi", u.type], ["Tashkil topgan", u.founded ? u.founded + "-yil" : ""], ["Reyting", u.rank], ["Stipendiya", u.scholarship || (city && city.dsu ? city.dsu : "")], ["Qabul foizi", u.acceptance]]));
     var vb = videoBlock({url:u.video, title:"Ariza topshirish: video"}); if(vb) box.appendChild(vb);
     if(u.tip) box.appendChild(callout({style:"tip", text:u.tip}));
     box.appendChild(applyCard(u));
     box.appendChild(scholarshipCard(u, city));
-    if(!u.detailed) box.appendChild(reqCard());
     var links = el("div", "links");
     if(safeUrl(u.web)) links.appendChild(rowBtn("globe", "Rasmiy sayt", host(u.web), null, safeUrl(u.web)));
     if(safeUrl(u.infoUrl) && u.infoUrl !== u.applyUrl) links.appendChild(rowBtn("info", "Xalqaro talabalar sahifasi", host(u.infoUrl), null, safeUrl(u.infoUrl)));
@@ -969,12 +974,14 @@
     box.appendChild(links);
   }
   function admissionPanel(box, u){
-    var pu = safeUrl(u.portalUrl);
+    var pu = safeUrl(u.portalUrl) || safeUrl(u.applyUrl);
     if(pu){
       var cta = el("a", "go wide"); cta.href = pu; cta.target = "_blank"; cta.rel = "noopener";
       var sp = el("span"); sp.appendChild(el("small", null, "Ariza to'lovi: " + (u.fee || "rasmiy saytda"))); sp.appendChild(el("span", "t", u.portalLabel || "Ro'yxatdan o'tish")); cta.appendChild(sp); cta.appendChild(ic("link"));
       box.appendChild(cta);
     }
+    var ft = factTable([["Ariza to'lovi", u.fee], ["Kirish testlari", u.tests], ["O'qish narxi", u.tuition || "Davlat universitetlarida oila daromadiga (ISEE) qarab; stipendiya g'oliblari to'lamaydi"], ["Ingliz tilidagi dasturlar", u.enCount ? u.enCount + " ta" : ""]]);
+    box.appendChild(ft);
     if(arr(u.deadlines).length || u.deadlineNote){
       var dc = el("section", "card"); dc.appendChild(el("h3", null, "Muddatlar"));
       if(arr(u.deadlines).length){
@@ -998,13 +1005,16 @@
         lv.appendChild(c);
       });
       box.appendChild(lv);
-    }
+    } else box.appendChild(reqCard());
+    if(!arr(u.deadlines).length) box.appendChild(callout({style:"info", text:"Bu universitetning 2027/28 ariza muddatlarini hali kiritmadik. Odatda xalqaro arizalar kuz yoki qishda ochiladi va bahorda yopiladi. Aniq sanani ariza sahifasida tekshiring."}));
   }
   function docsPanel(box, u){
+    if(!arr(u.docs).length) u = Object.assign({}, u, {docs:["Pasport (kamida 2 yil amal qiladigan)", "Attestat yoki diplom: apostil va tarjima bilan", "Baholar varaqasi (transcript)", "Ingliz tili sertifikati (odatda B2: IELTS, TOEFL va boshqalar)", "Dastur so'rasa: CV, motivatsion xat, tavsiyanoma", "Dastur so'rasa: SAT, CEnT-S, TOLC yoki GMAT natijasi"]});
     if(arr(u.docs).length){ var dk = el("section", "card"); dk.appendChild(el("h3", null, "Ariza uchun hujjatlar")); var ul2 = el("ul", "ticks"); arr(u.docs).forEach(function(x){ var li = el("li"); li.appendChild(ic("check")); li.appendChild(el("span", null, x)); ul2.appendChild(li); }); dk.appendChild(ul2); box.appendChild(dk); }
     box.appendChild(callout({style:"info", text:"Pre-acceptance'dan keyin DoV/CIMEA, Universitaly va viza uchun alohida hujjatlar kerak bo'ladi: ular kursning 2–4-bosqichlarida ro'yxat bilan berilgan."}));
   }
   function programmesPanel(box, u){
+    if(PF.uni !== u.id){ PF.level = ""; PF.q = ""; PF.uni = u.id; }
     var bar = el("div", "filters");
     var levels = []; arr(u.programmes).forEach(function(p){ if(levels.indexOf(p.level) < 0) levels.push(p.level); });
     var chips = el("div", "chips");
@@ -1027,9 +1037,10 @@
       if(!res.length){ list.appendChild(el("div", "empty", "Bunday yo'nalish topilmadi.")); return; }
       res.forEach(function(p){
         var d = el("details", "prog"); var s = el("summary");
-        var t = el("span", "txt"); t.appendChild(el("b", null, p.name)); var m = el("small"); m.appendChild(el("span", "tag" + (p.level === "Bakalavr" ? "" : " alt"), p.level)); m.appendChild(el("span", "tag lang", p.lang)); t.appendChild(m); s.appendChild(t);
+        var t = el("span", "txt"); t.appendChild(el("b", null, p.name)); var m = el("small"); m.appendChild(el("span", "tag" + (p.level === "Bakalavr" ? "" : " alt"), p.level)); m.appendChild(el("span", "tag lang", p.lang)); if(p.access) m.appendChild(el("span", "tag" + (p.access === "Erkin qabul" ? " ok" : " hot"), p.access)); if(p.online) m.appendChild(el("span", "tag", "Onlayn")); t.appendChild(m); s.appendChild(t);
         s.appendChild(ic("down", "chev")); d.appendChild(s);
-        d.appendChild(factTable([["Kim topshira oladi", p.req], ["Minimal GPA", p.gpa ? p.gpa + " / 100" : ""], ["Test yoki suhbat", p.test || "Hujjatlar asosida"], ["Ariza to'lovi", u.fee]]));
+        d.appendChild(factTable([["Kim topshira oladi", p.req || (p.level === "Magistratura" ? "Mos yo'nalishdagi bakalavr diplomi (odatda 3+ yil)" : "12 yillik ta'lim (11 yillik attestat bilan: Foundation yoki 1 yil OTM)")], ["Davomiyligi", p.years ? p.years + " yil" : ""], ["Qabul turi", p.access ? p.access + (p.access === "Erkin qabul" ? ": hujjatlar asosida" : p.access === "Kirish testi" ? ": test natijasiga qarab" : ": joylar soni cheklangan") : ""], ["Minimal GPA", p.gpa ? p.gpa + " / 100" : ""], ["Test yoki suhbat", p.test], ["Kampus", p.campus], ["Ariza to'lovi", u.fee], ["Sinf kodi", p.code]]));
+        var pu = safeUrl(p.url); if(pu){ var la = el("a", "src prog-link"); la.href = pu; la.target = "_blank"; la.rel = "noopener"; la.appendChild(ic("link")); la.appendChild(el("span", null, "Dasturning rasmiy sahifasi")); d.appendChild(la); }
         list.appendChild(d);
       });
     }

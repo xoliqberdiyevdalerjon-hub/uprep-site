@@ -832,3 +832,5 @@ a.ov:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line-2), var(--
 .dsu-card .ic-note{margin:0}
 .dsu-card .btn{margin-top:auto;height:44px;font-size:14px;align-self:flex-start;max-width:100%;overflow:hidden;text-overflow:ellipsis}
 @media (max-width:600px){ .sec-head{flex-direction:column;align-items:flex-start;gap:8px} }
+.prog .prog-link{margin:0 16px 16px}
+.prog summary small .tag{height:22px;font-size:11.5px}
