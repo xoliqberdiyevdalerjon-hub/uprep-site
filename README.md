@@ -5,7 +5,7 @@ Sayt: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/
 ## Matnlarni tahrirlash
 app.pagescms.org → uprep-site. Bo'limlar: Bosh sahifa, Biz haqimizda, Noldan: to'liq yo'riqnoma, Bosqichlar (kurs), Davlatlar, Italiya sahifasi, Shaharlar, Universitetlar, Kalendar, Materiallar. **Save** bosilgach sayt 1–2 daqiqada yangilanadi.
 
-**Eslatma:** «Noldan» matni CMS'da o'zgartirilsa, sahifa darhol yangilanadi, lekin `media/uprep-italiyada-oqish-noldan.pdf` fayli avtomatik o'zgarmaydi. Uni Playwright bilan `#noldan` sahifasidan qayta yaratish kerak.
+**Eslatma:** «Noldan» matni CMS'da o'zgartirilsa, sahifa darhol yangilanadi, lekin `media/uprep-noldan-yoriqnoma.pdf` fayli avtomatik o'zgarmaydi. Uni Playwright bilan `#noldan` sahifasidan qayta yaratish kerak.
 
 ## Hisob va to'lovni yoqish (bir marta)
 1. **Supabase** (supabase.com, GitHub bilan kiring) → New project.

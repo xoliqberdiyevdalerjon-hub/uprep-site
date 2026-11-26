@@ -236,7 +236,7 @@ def dsu_page():
 def noldan_page():
     N = NOLDAN
     b = [f"<h1>{e(N.get('title') or 'Italiyada o`qish noldan')}</h1>", f"<p class=\"lead\">{e(N.get('subtitle'))}</p>",
-         '<p class="btns"><a class="btn gold" href="../media/uprep-italiyada-oqish-noldan.pdf">PDF yuklab olish</a></p>', paras(N.get("letter"))]
+         '<p class="btns"><a class="btn gold" href="../media/uprep-noldan-yoriqnoma.pdf">PDF yuklab olish</a></p>', paras(N.get("letter"))]
     toc = "".join(f'<li><a href="#{e(c["id"])}">{e(c.get("title"))}</a></li>' for c in N.get("chapters", []))
     b.append(f"<nav class=\"toc\"><b>Mundarija</b><ol>{toc}</ol></nav>")
     for c in N.get("chapters", []):

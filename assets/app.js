@@ -272,7 +272,7 @@
     if(h === "foundation") return {view:"foundation"};
     if(h === "noldan") return {view:"noldan"};
     if(h === "biz-haqimizda") return {view:"about"};
-    if(h === "tariflar") return {view:"plans"};
+    if(h === "tariflar") return plansOn() ? {view:"plans"} : {view:"home"};
     if(h === "profil") return {view:"profile"};
     if(h === "ota-onalar") return {view:"parents"};
     if(h === "sozlamalar") return {view:"settings"};
@@ -471,7 +471,7 @@
     function col(title, links){ var c = el("div"); c.appendChild(el("h2", "foot-h", title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
     col("O'rganish", [["0 dan qo'llanma", "#qollanma"], ["Noldan: to'liq yo'riqnoma (PDF)", "#noldan"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Italiyada yashash", "#yashash"], ["Kalendar", "#kalendar"]]);
     col("Vositalar", [["Mening yo'lim", "#rejam"], ["Profil tahlili", "#profil"], ["Menga mos universitet", "#mos-universitet"], ["Hujjatlarim", "#hujjatlarim"], ["Pul kalkulyatori", "#kalkulyator"], ["Kurs", "#kurs"], ["Sozlamalar", "#sozlamalar"]]);
-    col("Uprep", [["Biz haqimizda", "#biz-haqimizda"], ["Tariflar", "#tariflar"], ["Ota-onalar uchun", "#ota-onalar"], ["Talaba-elchilar", "#elchilar"], ["Natijalar", "#natijalar"], ["Jonli efirlar", "#efirlar"], ["Yangiliklar", "#yangiliklar"], ["Fikr va takliflar", "#fikrlar"], ["Telegram: " + tgName(), tgUrl()]]);
+    col("Uprep", [["Biz haqimizda", "#biz-haqimizda"], ].concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"], ["Talaba-elchilar", "#elchilar"], ["Natijalar", "#natijalar"], ["Jonli efirlar", "#efirlar"], ["Yangiliklar", "#yangiliklar"], ["Fikr va takliflar", "#fikrlar"], ["Telegram: " + tgName(), tgUrl()]]));
     f.appendChild(g);
     var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uprep." + (S.site.updated ? " Ma'lumotlar oxirgi marta " + S.site.updated + " da yangilandi." : "")));
     var tg = el("a", null, tgName()); tg.href = tgUrl(); tg.target = "_blank"; tg.rel = "noopener"; p.appendChild(tg);
@@ -526,7 +526,7 @@
     sp.appendChild(el("span", "t", A.user ? "To'lash: " + price() : "Ro'yxatdan o'tish va to'lash")); b.appendChild(sp); b.appendChild(ic("next"));
     b.onclick = startPurchase; c.appendChild(b);
     if(!LIVE) c.appendChild(el("p", "soon-note", "Onlayn to'lov tez orada ishga tushadi."));
-    if(plans().length > 1){ var oa = el("a", "plan-more"); oa.href = "#tariflar"; oa.appendChild(el("span", null, "Yordam kerakmi? " + plans().slice(1).map(function(p){ return p.name + " " + p.price; }).join(" · "))); oa.appendChild(ic("next")); c.appendChild(oa); }
+    if(plansOn() && plans().length > 1){ var oa = el("a", "plan-more"); oa.href = "#tariflar"; oa.appendChild(el("span", null, "Yordam kerakmi? " + plans().slice(1).map(function(p){ return p.name + " " + p.price; }).join(" · "))); oa.appendChild(ic("next")); c.appendChild(oa); }
     return c;
   }
 
@@ -568,6 +568,7 @@
   }
 
   /* ================= PLANS (3 tiers) ================= */
+  function plansOn(){ return arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }).length > 0; }
   function plans(){ var P = arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }); return P.length ? P : [{id:"app", name:"Mustaqil", price:price(), note:"Bir marta to'lov", items:arr(S.site.includes)}]; }
   function planAsk(p){
     var body = "Salom! Uprep saytidan yozyapman. «" + str(p.name) + "» (" + str(p.price) + ") " + (p.id ? "tarifi" : "xizmati") + " bo'yicha ma'lumot olmoqchiman.";
@@ -664,7 +665,7 @@
       var rail = el("div", "rail"); top.forEach(function(u){ rail.appendChild(uniCard(u)); });
       main.appendChild(sec(secHead("Mashhur universitetlar", "Hammasi (" + S.unis.length + ")", "universitetlar", null, "Tanlang"), rail,
         rowBtn("route", "Kurs: arizadan Italiyadagi birinchi kungacha", S.stages.length + " bosqich, har birida hujjatlar va muddatlar", "g", "#kurs"),
-        rowBtn("wallet", "Tariflar", plans().map(function(p){ return p.name + " " + p.price; }).join(" · "), null, "#tariflar")));
+        plansOn() ? rowBtn("wallet", "Tariflar", plans().map(function(p){ return p.name + " " + p.price; }).join(" · "), null, "#tariflar") : null));
     }
 
     var HA = realAmb(); if(HA.length){ var hr = el("div", "rail"); HA.slice(0, 8).forEach(function(a){ hr.appendChild(ambCard(a)); }); main.appendChild(sec(secHead("Italiyada o'qiyotgan talabalarga yozing", "Hammasi", "elchilar", null, "Elchilar"), hr)); }
@@ -1002,7 +1003,7 @@
     {k:"area", q:"Italiyaning qaysi qismida o'qimoqchisiz?", o:[["any","Farqi yo'q",""],["north","Shimol","Milan, Turin, Bolonya, Padova…"],["center","Markaz","Rim, Florensiya, Piza, Siena…"],["south","Janub va orollar","Neapol, Bari, Sitsiliya…"]]},
     {k:"visa", q:"Viza uchun yiliga 10 179,85 € ko'rsata olasizmi?", o:[["yes","Ha, oilamda bor","O'zimning yoki oilamning hisobida"],["part","Qisman, yig'yapmiz",""],["no","Hozircha yo'q",""]]},
     {k:"fam", q:"Oilangiz haqida (stipendiya uchun, taxminan)", form:true},
-    {k:"help", q:"Sizga qancha yordam kerak?", o:[["app","O'zim qilaman, yo'l-yo'riq yetadi","Mustaqil tarifi"],["support","Savollarimga javob berib turilsa bo'ldi","Yordam bilan tarifi"],["full","Hammasini siz bilan birga qilmoqchiman","To'liq hamrohlik tarifi"]]}
+    {k:"help", q:"Sizga qancha yordam kerak?", o:[["app","O'zim qilaman, yo'l-yo'riq yetadi",""],["support","Savollarimga javob berib turilsa bo'ldi",""],["full","Hammasini siz bilan birga qilmoqchiman",""]]}
   ];
   var PRF = {step:0, a:{members:"4", income:""}};
   try{ var pf0 = JSON.parse(localStorage.getItem("uprep-profile") || "null"); if(pf0 && pf0.a) PRF = pf0; }catch(e){}
@@ -1088,11 +1089,16 @@
       box.appendChild(card("Viza uchun pul: 10 179,85 € / yil", vz[1], vz[0], [vz[2]]));
       summary.push("Viza puli: " + pfLabel("visa", a.visa));
       /* 6. plan */
-      var P = plans(), want = P.filter(function(p){ return p.id === a.help; })[0] || P[0];
-      var pc = el("section", "pf-card plan-pick"); var ph = el("div", "pf-h"); ph.appendChild(el("b", null, "Sizga mos tarif: " + want.name)); ph.appendChild(el("span", "tag ok", want.price)); pc.appendChild(ph);
-      if(want.tagline) pc.appendChild(el("p", null, want.tagline));
-      pc.appendChild(btn("line", "wallet", "Barcha tariflar", "#tariflar")); box.appendChild(pc);
-      summary.push("Kerakli yordam: " + pfLabel("help", a.help) + " (" + want.name + ", " + want.price + ")");
+      if(plansOn()){
+        var P = plans(), want = P.filter(function(p){ return p.id === a.help; })[0] || P[0];
+        var pc = el("section", "pf-card plan-pick"); var ph = el("div", "pf-h"); ph.appendChild(el("b", null, "Sizga mos tarif: " + want.name)); ph.appendChild(el("span", "tag ok", want.price)); pc.appendChild(ph);
+        if(want.tagline) pc.appendChild(el("p", null, want.tagline));
+        pc.appendChild(btn("line", "wallet", "Barcha tariflar", "#tariflar")); box.appendChild(pc);
+      } else {
+        var HT = {app:["Mustaqil yo'l", "Ilovadagi bosqichlar, «Mening yo'lim» paneli va «Noldan» yo'riqnomasi sizga yetadi."], support:["Savollaringizga javob", "Natijangizni yuboring: savollaringizga Telegram'da javob beramiz."], full:["Har bir qadamda yordam", "Natijangizni yuboring: vaziyatingizni ko'rib, qanday yordam bera olishimizni aytamiz."]}[a.help] || ["Keyingi qadam", ""];
+        var pc2 = el("section", "pf-card plan-pick"); var ph2 = el("div", "pf-h"); ph2.appendChild(el("b", null, HT[0])); pc2.appendChild(ph2); if(HT[1]) pc2.appendChild(el("p", null, HT[1])); box.appendChild(pc2);
+      }
+      summary.push("Kerakli yordam: " + pfLabel("help", a.help));
       box.appendChild(el("p", "muted-note", "Bu tahlil taxminiy va kafolat emas. Aniq talablar har bir universitet va viloyat sahifasida."));
       /* send */
       var sb = el("button", "go"); sb.type = "button"; var sp = el("span"); sp.appendChild(el("small", null, safeUrl(CFG.leadUrl) ? "Natija to'g'ridan-to'g'ri adminga boradi" : "Natija va yuborish yo'riqnomasi chiqadi")); sp.appendChild(el("span", "t", "Natijani " + tgName() + " ga yuborish")); sb.appendChild(sp); sb.appendChild(ic("send"));
@@ -1128,7 +1134,7 @@
     ask.onclick = function(){ leadSheet("Salom! Men ota-onaman. Farzandimning Italiyada o'qishi bo'yicha savolim bor:\n", "Savolingizni yozing"); };
     cta.appendChild(ask);
     cta.appendChild(rowBtn("star", "Farzandingiz profilini tahlil qiling", "8 savol, 2 daqiqa, bepul", "g", "#profil"));
-    cta.appendChild(rowBtn("wallet", "Tariflar", plans().map(function(p){ return p.name + " " + p.price; }).join(" · "), null, "#tariflar"));
+    if(plansOn()) cta.appendChild(rowBtn("wallet", "Tariflar", plans().map(function(p){ return p.name + " " + p.price; }).join(" · "), null, "#tariflar"));
     cta.appendChild(rowBtn("book", "Italiyada o'qish noldan (PDF)", "Butun yo'l, oddiy tilda", null, "#noldan"));
     main.appendChild(sec(secHead("Keyingi qadam", null, null, null, "Bog'lanish"), cta));
     var srcs = el("div"); arr(P.sources).forEach(function(x){ var u = safeUrl(x.url); if(!u) return; var a2 = el("a", "src"); a2.href = u; a2.target = "_blank"; a2.rel = "noopener"; a2.appendChild(ic("link")); a2.appendChild(el("span", null, x.label)); srcs.appendChild(a2); });
@@ -1610,7 +1616,7 @@
     row(g4, "phone", "c-navy", "Telefonga o'rnatish", {value: standalone ? "O'rnatilgan" : null, onclick: standalone ? null : function(){ if(DEFER){ DEFER.prompt(); DEFER.userChoice.then(function(){ DEFER = null; }); } else toast(ios ? "Safari'da «Ulashish» → «Bosh ekranga qo'shish» ni tanlang." : "Brauzer menyusida «Ilovani o'rnatish» yoki «Bosh ekranga qo'shish» ni tanlang."); }});
     row(g4, "share", "c-green", "Do'stlarga ulashish", {onclick:function(){ var u = location.origin + location.pathname, t = "Uprep: Italiyada o'qish, o'zbek tilida"; if(navigator.share) navigator.share({title:t, url:u}).catch(function(){}); else window.open("https://t.me/share/url?url=" + encodeURIComponent(u) + "&text=" + encodeURIComponent(t), "_blank", "noopener"); }});
     row(g4, "languages", "c-purple", "Til", {value:"O'zbekcha", sub:"Rus tilidagi versiya tayyorlanmoqda"});
-    row(g4, "wallet", "c-gold", "Hisob va to'lov", {value:"Tez orada", href:"#tariflar"});
+    row(g4, "wallet", "c-gold", "Hisob", {value:"Tez orada"});
 
     /* Yordam */
     var g5 = group("Yordam");
@@ -1738,7 +1744,7 @@
   }
 
   /* ================= NOLDAN: long-form guide (also exported as PDF) ================= */
-  var NOLDAN_PDF = "media/uprep-italiyada-oqish-noldan.pdf";
+  var NOLDAN_PDF = "media/uprep-noldan-yoriqnoma.pdf";
   function paras(t, cls){ var f = document.createDocumentFragment(); str(t).split(/\n\s*\n/).forEach(function(p){ if(p.trim()) f.appendChild(el("p", cls || "prose", p.trim())); }); return f; }
   function linkOut(a, u){ a.href = u; if(/^https:/.test(u)){ a.target = "_blank"; a.rel = "noopener"; } return a; }
   function noldanView(main){
@@ -2336,7 +2342,7 @@
     side.appendChild(rowBtn("folder", "Materiallar", "Rasmiy hujjatlar va havolalar", null, "#materiallar"));
     side.appendChild(rowBtn("chat", tgName() + " ga yozing", "Savol va yordam", "tg", tgUrl()));
     cg.appendChild(side); main.appendChild(cg);
-    main.appendChild(plansSection("Tariflar: o'zingizga mosini tanlang"));
+    if(plansOn()) main.appendChild(plansSection("Tariflar: o'zingizga mosini tanlang"));
     footer(main);
   }
   function sidesteps(cur){
