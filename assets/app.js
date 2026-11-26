@@ -636,7 +636,7 @@
     if(NE) main.appendChild(sec(secHead("Keyingi jonli efir", "Hammasi", "efirlar", null, "Jonli"), evCard(NE, false)));
 
     var UP = upcomingAll(4);
-    if(UP.length){ var ul = el("div", "list"); UP.forEach(function(x){ var a = el("a", "lrow"); a.href = "#uni-" + x.u.id + "/qabul"; a.appendChild(el("span", "u-mono", mono(x.u))); var t = el("span", "txt"); t.appendChild(el("b", null, (x.u.short || x.u.name))); t.appendChild(el("small", null, x.x.label + " · " + x.x.date)); a.appendChild(t); a.appendChild(el("span", "tag hot", leftLabel(daysLeft(x.d)))); ul.appendChild(a); });
+    if(UP.length){ var ul = el("div", "list"); UP.forEach(function(x){ var a = el("a", "lrow"); a.href = "#uni-" + x.u.id + "/qabul"; a.appendChild(el("span", "u-mono", mono(x.u))); var t = el("span", "txt"); t.appendChild(el("b", null, (x.u.short || x.u.name))); t.appendChild(el("small", null, x.x.label + " · " + x.x.date)); a.appendChild(t); a.appendChild(el("span", "tag hot", leftLabel(daysLeft(x.d)))); a.appendChild(ic("next", "chev")); ul.appendChild(a); });
       main.appendChild(sec(secHead("Yaqin muddatlar", "Kalendar", "kalendar", null, "Shoshiling"), ul)); }
 
     if(S.unis.length){
@@ -1390,7 +1390,7 @@
   function qlinks(list){ var w = el("nav", "qlinks"); list.forEach(function(x){ var a = el("a"); a.href = "#" + x[2]; a.appendChild(ic(x[0])); a.appendChild(el("span", null, x[1])); w.appendChild(a); }); return w; }
   function quickTiles(){
     var dm = docsMeter(), g = el("div", "qtiles");
-    [["doc","Hujjatlarim", dm ? dm.done + "/" + dm.all + " tayyor" : "Ro'yxatni oling","hujjatlarim"],["star","Profil tahlili","Imkoniyatlaringiz","profil"],["cal","Kalendar","Muhim sanalar","kalendar"],["gear","Sozlamalar","Mavzu, zaxira","sozlamalar"]].forEach(function(x){ var a = el("a", "qtile"); a.href = "#" + x[3]; var i = el("span", "ic"); i.appendChild(ic(x[0])); a.appendChild(i); a.appendChild(el("b", null, x[1])); a.appendChild(el("small", null, x[2])); g.appendChild(a); });
+    [["doc","Hujjatlarim", dm ? dm.done + "/" + dm.all + " tayyor" : "Ro'yxatni oling","hujjatlarim"],["star","Profil tahlili","Imkoniyatlaringiz","profil"],["cal","Kalendar","Muhim sanalar","kalendar"],["gear","Sozlamalar","Mavzu, zaxira","sozlamalar"]].forEach(function(x){ var a = el("a", "qtile"); a.href = "#" + x[3]; var i = el("span", "ic"); i.appendChild(ic(x[0])); a.appendChild(i); a.appendChild(el("b", null, x[1])); a.appendChild(el("small", null, x[2])); a.appendChild(ic("next", "chev qt-chev")); g.appendChild(a); });
     return g;
   }
   function planView(main){
@@ -1994,7 +1994,9 @@
     var tags = el("span", "u-tags"); if(u.rank) tags.appendChild(el("span", "tag", u.rank));
     var nx = uniNext(u); if(nx) tags.appendChild(el("span", "tag hot", leftLabel(daysLeft(nx.d))));
     if(u.enCount) tags.appendChild(el("span", "tag lang", u.enCount + " ta ingliz dasturi"));
-    a.appendChild(tags); return a;
+    a.appendChild(tags);
+    var more = el("span", "u-more"); more.appendChild(el("span", null, "Batafsil")); more.appendChild(ic("next")); a.appendChild(more);
+    return a;
   }
 
   /* ---------- universities list with search and filters ---------- */

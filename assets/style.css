@@ -1271,3 +1271,26 @@ html.calm .rv{opacity:1!important;transform:none!important}
 .qlinks a{display:inline-flex;align-items:center;gap:7px;flex:none;height:40px;padding:0 14px;border-radius:999px;background:var(--surface);box-shadow:0 0 0 1px var(--line);color:var(--ink);font-weight:600;font-size:14px;text-decoration:none}
 .qlinks a:first-child{background:var(--navy);color:#fff;box-shadow:none}
 .qlinks svg{width:17px;height:17px}
+
+/* ---------- Clickable affordance: arrows, lift on hover, press on tap, focus ring ---------- */
+html{-webkit-tap-highlight-color:rgba(36,57,106,.08)}
+.u-more{display:inline-flex;align-items:center;gap:4px;align-self:flex-start;margin-top:-6px;color:var(--accent);font-size:13.5px;font-weight:700}
+.u-more svg{width:16px;height:16px;transition:transform .2s var(--ease)}
+.qtile{position:relative}
+.qt-chev{position:absolute;top:14px;right:12px}
+.lrow .chev{flex:none}
+/* every clickable card */
+a.lrow,a.unicard,a.qtile,a.hubtile,a.row,button.row,a.tool,a.ov.link,a.newsline,a.st-acc,a.jmini,.hsteps a,.qz-h,a.extra,button.extra,a.evc,.rail .amb{cursor:pointer}
+a.qtile,a.tool,a.ov.link,a.newsline,a.st-acc,a.jmini,.hsteps a,a.hubtile,a.row,button.row{transition:transform .2s var(--ease), box-shadow .2s, background .2s}
+@media (hover:hover){
+  a.qtile:hover,a.tool:hover,a.ov.link:hover,a.newsline:hover,a.st-acc:hover,.hsteps a:hover,a.hubtile:hover,a.row:hover,button.row:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line-2), var(--sh-3)}
+  a.jmini:hover{transform:translateY(-3px);box-shadow:var(--sh-3)}
+  a:hover > .chev,button:hover > .chev,a:hover .qt-chev,a.unicard:hover .u-more svg{transform:translateX(4px);color:var(--accent)}
+  .row.g:hover .chev{color:#fff}
+  .sec-head a:hover,.src:hover,.trk-next:hover,.nd-chip:hover{text-decoration:underline;text-underline-offset:3px}
+}
+/* tap feedback on phones */
+a.lrow:active,a.unicard:active,a.qtile:active,a.hubtile:active,a.row:active,button.row:active,a.tool:active,a.ov.link:active,a.newsline:active,a.st-acc:active,a.jmini:active,.hsteps a:active,.btn:active,.go:active,.chipf:active,.qz-opt:active,.qlinks a:active{transform:scale(.97);transition-duration:.08s}
+/* keyboard focus */
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,[role="switch"]:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:12px}
+html.calm a:active,html.calm button:active{transform:none!important}
