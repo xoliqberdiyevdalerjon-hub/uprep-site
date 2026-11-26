@@ -246,6 +246,7 @@
     if(h === "italiya") return {view:"italy"};
     if(h === "qollanma") return {view:"guide"};
     if(h === "mos-universitet") return {view:"quiz"};
+    if(h === "kalkulyator") return {view:"calc"};
     if(h === "stipendiya") return {view:"dsu"};
     if(h === "universitetlar") return {view:"unis"};
     if(h === "shaharlar") return {view:"cities"};
@@ -277,7 +278,7 @@
     HZ = el("div", "herozone"); root.appendChild(HZ);
     var main = el("main", "wrap" + (wide ? "" : " narrow"));
     CRUMBS = crumbsFor(r);
-    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView,
+    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView,
       item:function(m){ itemView(m, r.i); }, city:function(m){ cityView(m, r.c); }, uni:function(m){ uniView(m, r.u, r.tab); }, stage:function(m){ stageView(m, r.st); }
     }[r.view] || homeView)(main, r);
     if(CRUMBS){ main.insertBefore(CRUMBS, main.firstChild); CRUMBS = null; }
@@ -324,6 +325,7 @@
   function section(r){
     if(r.view === "home") return "home";
     if(r.view === "guide" || r.view === "dsu") return r.view;
+    if(r.view === "calc") return "dsu";
     if(r.view === "quiz") return "italy";
     if(["italy","unis","cities","city","uni"].indexOf(r.view) >= 0) return "italy";
     if(["course","stage","cal","lib","item"].indexOf(r.view) >= 0) return "course";
@@ -353,6 +355,7 @@
     if(r.view === "home") return null;
     if(r.view === "italy") c.push(["Italiya"]);
     else if(r.view === "guide") c.push(["Qo'llanma"]);
+    else if(r.view === "calc"){ c.push(["Stipendiyalar","stipendiya"]); c.push(["Pul kalkulyatori"]); }
     else if(r.view === "quiz"){ c.push(["Universitetlar","universitetlar"]); c.push(["Menga mos universitet"]); }
     else if(r.view === "dsu"){ c.push(["Italiya","italiya"]); c.push(["Stipendiyalar"]); }
     else if(r.view === "unis"){ c.push(["Italiya","italiya"]); c.push(["Universitetlar"]); }
@@ -390,7 +393,7 @@
     var f = el("footer", "foot"), g = el("div", "foot-grid");
     var about = el("div"); about.appendChild(logo(16)); if(S.site.footer) about.appendChild(el("p", null, S.site.footer)); g.appendChild(about);
     function col(title, links){ var c = el("div"); c.appendChild(el("h4", null, title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
-    col("Bo'limlar", [["0 dan qo'llanma", "#qollanma"], ["Italiya", "#italiya"], ["Stipendiyalar", "#stipendiya"], ["Universitetlar", "#universitetlar"], ["Shaharlar", "#shaharlar"], ["Kurs", "#kurs"], ["Kalendar", "#kalendar"], ["Materiallar", "#materiallar"]]);
+    col("Bo'limlar", [["0 dan qo'llanma", "#qollanma"], ["Italiya", "#italiya"], ["Stipendiyalar", "#stipendiya"], ["Pul kalkulyatori", "#kalkulyator"], ["Menga mos universitet", "#mos-universitet"], ["Universitetlar", "#universitetlar"], ["Shaharlar", "#shaharlar"], ["Kurs", "#kurs"], ["Kalendar", "#kalendar"], ["Materiallar", "#materiallar"]]);
     col("Aloqa", [["Telegram: " + tgName(), tgUrl()], [A.user ? "Hisob" : "Kirish", A.user ? "#hisob" : "#kirish"]]);
     f.appendChild(g);
     var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uprep. Barcha huquqlar himoyalangan."));
@@ -496,6 +499,7 @@
       var li = el("li"); li.appendChild(el("b", null, x[0])); li.appendChild(el("span", null, x[1])); how.appendChild(li);
     });
     main.appendChild(sec(secHead("Qanday ishlaydi", null, null, null, "3 qadam"), how));
+    main.appendChild(rowBtn("wallet", "Stipendiyaga mos kelasizmi? Hisoblab ko'ring", "Pul kalkulyatori: oila daromadi, uy-joy, jamg'arma", "g", "#kalkulyator"));
 
     var tr = el("div", "trust");
     [["shield", "Rasmiy manbalar", "Universitet saytlari, Toshkentdagi Italiya elchixonasi, MUR, CIMEA va DSU bandolari. Har sahifada manba havolasi bor."],
@@ -648,7 +652,7 @@
 
     var bd = el("div", "budget");
     arr(G.budget).forEach(function(x){ var r = el("div", "bg-row"); var l = el("div"); l.appendChild(el("b", null, x.item)); if(x.note) l.appendChild(el("small", null, x.note)); r.appendChild(l); r.appendChild(el("span", "bg-cost", x.cost)); bd.appendChild(r); });
-    main.appendChild(sec(secHead("Qancha pul kerak bo'ladi", "Stipendiyalar", "stipendiya", "g-pul", "Xarajatlar", "Faqat rasmiy manbada tasdiqlangan summalar. Ijara va kundalik xarajat shaharga qarab farq qiladi."), bd));
+    main.appendChild(sec(secHead("Qancha pul kerak bo'ladi", "Pul kalkulyatori", "kalkulyator", "g-pul", "Xarajatlar", "Faqat rasmiy manbada tasdiqlangan summalar. Ijara va kundalik xarajat shaharga qarab farq qiladi."), bd));
 
     var gl = el("div"), gq = "";
     var gsb = searchBox("Atamani qidiring: ISEE, CIMEA, permesso…", "", function(v){ gq = norm(v); drawG(); });
@@ -817,6 +821,105 @@
     footer(main);
   }
 
+  /* ================= MONEY CALCULATOR ================= */
+  var CK = "uprep-calc", CV = {cur:"EUR", rate:"", members:"4", income:"", m2:"", savings:"", apps:"3", fee:"30", cimea:"300"};
+  try{ var cv0 = JSON.parse(localStorage.getItem(CK) || "null"); if(cv0) for(var k0 in cv0) CV[k0] = cv0[k0]; }catch(e){}
+  function eur(n){ return (Math.round(n * 100) / 100).toLocaleString("ru-RU", {minimumFractionDigits:0, maximumFractionDigits:2}).replace(/ /g, " ") + " €"; }
+  function numv(x){ var n = parseFloat(String(x || "").replace(/\s/g, "").replace(",", ".")); return isNaN(n) ? 0 : n; }
+  function calcView(main){
+    var N = (S.dsu || {}).national || {};
+    var LIM = numv(N.isee) || 28339.88, LIMP = numv(N.ispe) || 61608.48, MIN = numv(N.fuoriSede) || 7171.11, VISA = 10179.85;
+    var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
+    H.appendChild(kicker("wallet", "Bepul hisob-kitob"));
+    H.appendChild(heroTitle("Pul kalkulyatori"));
+    H.appendChild(el("p", "lead", "Viza uchun qancha pul ko'rsatish kerak, boshlanishda qancha xarajat bo'ladi va oilangiz daromadi bilan davlat stipendiyasiga mos kelasizmi: hammasini bir joyda hisoblang."));
+
+    var form = el("section", "card calc-form");
+    form.appendChild(el("h3", null, "1. Oila ma'lumotlari"));
+    form.appendChild(el("p", "note", "Stipendiya oila daromadi va mulkiga qarab beriladi (ISEE parificato). Taxminiy raqamlarni kiriting."));
+    var grid = el("div", "calc-grid");
+    function field(key, label, hint, type, opts){
+      var l = el("label", "fld"); l.appendChild(el("span", null, label));
+      var inp;
+      if(opts){ inp = el("select", "cityselect"); opts.forEach(function(o){ var op = el("option", null, o[1]); op.value = o[0]; if(String(CV[key]) === o[0]) op.selected = true; inp.appendChild(op); }); }
+      else { inp = el("input"); inp.type = "text"; inp.inputMode = "decimal"; inp.value = CV[key]; inp.placeholder = hint || ""; }
+      inp.addEventListener("input", function(){ CV[key] = inp.value; try{ localStorage.setItem(CK, JSON.stringify(CV)); }catch(e){} draw(); });
+      l.appendChild(inp); if(hint && opts) l.appendChild(el("small", "fld-h", hint)); grid.appendChild(l); return inp;
+    }
+    field("cur", "Valyuta", "", null, [["EUR","Yevro (€)"],["USD","AQSh dollari ($)"],["UZS","So'm"]]);
+    var rateL = field("rate", "Kurs: 1 € necha (tanlangan valyutada)?", "masalan, bugungi bank kursi");
+    field("members", "Oila a'zolari soni (siz bilan)", "", null, [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"],["7","7"],["8","8"]]);
+    field("income", "Oilaning bir yillik umumiy daromadi", "barcha ishlaydiganlar, soliqdan oldin");
+    field("m2", "Oilaga tegishli uy-joylar maydoni (m²)", "barcha kvartira va uylar, jami");
+    field("savings", "Bankdagi jamg'arma va depozitlar", "31-dekabr holatiga");
+    form.appendChild(grid);
+
+    var form2 = el("section", "card calc-form");
+    form2.appendChild(el("h3", null, "2. Ariza xarajatlari"));
+    var g2 = el("div", "calc-grid");
+    grid = g2;
+    field("apps", "Nechta universitetga topshirasiz?", "", null, [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"]]);
+    field("fee", "Bitta ariza to'lovi (€)", "davlat universitetlarida odatda 20–70 €");
+    field("cimea", "Diplomni tasdiqlash", "", null, [["0","DoV (elchixona orqali)"],["150","CIMEA, 150 €"],["300","CIMEA, 300 €"],["400","CIMEA tezkor, 400 €"]]);
+    form2.appendChild(g2);
+
+    var out = el("div", "calc-out");
+    main.appendChild(form); main.appendChild(form2); main.appendChild(out);
+
+    function draw(){
+      var cur = CV.cur, rate = cur === "EUR" ? 1 : numv(CV.rate);
+      rateL.parentNode.style.display = cur === "EUR" ? "none" : "";
+      out.textContent = "";
+      function toE(v){ return rate ? numv(v) / rate : 0; }
+      function loc(e){ return cur === "EUR" || !rate ? "" : " ≈ " + Math.round(e * rate).toLocaleString("ru-RU").replace(/ /g, " ") + (cur === "USD" ? " $" : " so'm"); }
+
+      /* visa */
+      var v = el("section", "res-card visa");
+      v.appendChild(el("small", null, "Viza uchun"));
+      v.appendChild(el("b", null, eur(VISA)));
+      v.appendChild(el("p", null, "Bir o'quv yili uchun bankda (sizning yoki homiyingiz hisobida) bo'lishi kerak" + loc(VISA) + ". Bu pul sarflanmaydi, faqat ko'rsatiladi. 2026/27 talabi."));
+      out.appendChild(v);
+
+      /* one-time */
+      var apps = numv(CV.apps), fee = numv(CV.fee), cim = numv(CV.cimea), perm = 120;
+      var once = apps * fee + cim + perm;
+      var o = el("section", "res-card");
+      o.appendChild(el("small", null, "Bir martalik xarajatlar (taxminan)"));
+      o.appendChild(el("b", null, eur(once)));
+      var ul = el("ul", "res-list");
+      [[apps + " ta ariza × " + eur(fee), apps * fee], [cim ? "CIMEA" : "DoV (elchixona tartibi bo'yicha)", cim], ["Permesso di soggiorno (16 € marka + yig'imlar)", perm]].forEach(function(r){ var li = el("li"); li.appendChild(el("span", null, r[0])); li.appendChild(el("b", null, r[1] ? eur(r[1]) : "—")); ul.appendChild(li); });
+      o.appendChild(ul);
+      o.appendChild(el("p", null, "Qo'shilmagan: tarjima va apostil, sug'urta, chipta, birinchi oy ijarasi. Ular shahar va tanlovga qarab farq qiladi."));
+      out.appendChild(o);
+
+      /* ISEE */
+      var m = Math.max(1, numv(CV.members)), scale = [0, 1, 1.57, 2.04, 2.46, 2.85][m] || (2.85 + (m - 5) * 0.35);
+      var inc = toE(CV.income), sav = toE(CV.savings), prop = numv(CV.m2) * 500;
+      var s = el("section", "res-card dsu");
+      s.appendChild(el("small", null, "Davlat stipendiyasi (DSU) imkoniyati"));
+      if(cur !== "EUR" && !rate){ s.appendChild(el("p", null, "Hisoblash uchun valyuta kursini kiriting.")); out.appendChild(s); return; }
+      if(!numv(CV.income) && !numv(CV.m2) && !numv(CV.savings)){ s.appendChild(el("p", null, "Oila daromadi, uy-joy maydoni va jamg'armani kiriting.")); out.appendChild(s); return; }
+      var isp = prop + sav, isee = (inc + 0.2 * isp) / scale, ispe = isp / scale;
+      var lvl, cls;
+      if(isee <= LIM * 2 / 3 && ispe <= LIMP){ lvl = "Yuqori imkoniyat"; cls = "ok"; }
+      else if(isee <= LIM && ispe <= LIMP){ lvl = "Mos kelasiz"; cls = "mid"; }
+      else { lvl = "Chegaradan yuqori"; cls = "no"; }
+      s.classList.add(cls);
+      s.appendChild(el("b", null, lvl));
+      var ul2 = el("ul", "res-list");
+      [["Taxminiy ISEE", eur(isee) + " (chegara " + eur(LIM) + ")"], ["Taxminiy ISPE", eur(ispe) + " (chegara " + eur(LIMP) + ")"], ["Uy-joy bahosi", numv(CV.m2) + " m² × 500 € = " + eur(prop)], ["Oila koeffitsienti", m + " kishi → " + scale]].forEach(function(r){ var li = el("li"); li.appendChild(el("span", null, r[0])); li.appendChild(el("b", null, r[1])); ul2.appendChild(li); });
+      s.appendChild(ul2);
+      s.appendChild(el("p", null, cls === "ok" ? "ISEE chegaraning 2/3 qismidan past: eng katta summa va qonun bo'yicha +15% qo'shimcha. Fuori sede talaba uchun kamida " + eur(MIN) + " / yil, bepul ovqat va o'qish to'lovidan ozodlik." :
+        cls === "mid" ? "Chegaradan past: stipendiyaga ariza bera olasiz. Summa viloyat va daromadga qarab belgilanadi (fuori sede uchun davlat minimumi " + eur(MIN) + ")." :
+        "Davlat stipendiyasi chegarasidan yuqori. Universitetlarning o'z stipendiyalari va o'qish to'lovi chegirmalariga qarang."));
+      out.appendChild(s);
+      out.appendChild(callout({style:"info", text:"Bu taxminiy hisob. Haqiqiy ISEE parificato'ni Italiyada CAF hisoblaydi: u ba'zi chegirmalarni ham qo'llaydi, shuning uchun haqiqiy natija odatda shu yerdagidan past yoki unga teng chiqadi. Chet eldagi uy-joy har m² uchun 500 € deb baholanadi, yer hisobga olinmaydi."}));
+      var bx = el("div", "ic-btns"); bx.appendChild(btn("navy", "coin", "Viloyatlar stipendiyasi", "#stipendiya")); bx.appendChild(btn("line", "book", "0 dan qo'llanma", "#qollanma")); out.appendChild(bx);
+    }
+    draw();
+    footer(main);
+  }
+
   /* ================= ITALY ================= */
   function italyView(main){
     var I = S.italy;
@@ -833,6 +936,7 @@
     tile("pin", "Shaharlar", S.cities.length + " ta shahar, viloyatlar bo'yicha", "shaharlar");
     tile("coin", "Stipendiyalar", "20 viloyat: idora, summa, muddat", "stipendiya");
     tile("book", "0 dan qo'llanma", "Butun yo'l sodda tilda, bepul", "qollanma");
+    tile("wallet", "Pul kalkulyatori", "Viza puli va stipendiya imkoniyati", "kalkulyator");
     main.appendChild(hub);
 
     var secs = arr(I.sections);
