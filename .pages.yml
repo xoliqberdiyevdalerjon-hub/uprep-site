@@ -18,6 +18,20 @@ content:
       - { name: price, label: "Kurs narxi (masalan $399)", type: string }
       - { name: priceNote, label: Narx ostidagi izoh, type: string }
       - { name: includes, label: Kurs ichida nima bor (ro'yxat), type: string, list: true }
+      - name: plans
+        label: "Tariflar (birinchisi saytdagi onlayn to'lovga ulanadi)"
+        type: object
+        list: true
+        fields:
+          - { name: id, label: "Kod (app, support, full)", type: string }
+          - { name: name, label: "Tarif nomi", type: string }
+          - { name: price, label: "Narx (masalan $499)", type: string }
+          - { name: note, label: "Narx ostidagi izoh", type: string }
+          - { name: badge, label: "Belgi (masalan: Eng ko'p tanlanadi; bo'sh bo'lsa chiqmaydi)", type: string }
+          - { name: tagline, label: "Qisqa tavsif", type: text }
+          - { name: items, label: "Nima kiradi (ro'yxat)", type: string, list: true }
+          - { name: cta, label: "Tugma matni", type: string }
+      - { name: plansNote, label: "Tariflar ostidagi izoh", type: text }
       - { name: footer, label: Pastki izoh, type: text }
       - { name: updated, label: "Ma'lumotlar yangilangan sana", type: string }
       - { name: heroImage, label: "Bosh sahifa fon rasmi (ixtiyoriy; bo'sh bo'lsa chizilgan Rim manzarasi)", type: image }

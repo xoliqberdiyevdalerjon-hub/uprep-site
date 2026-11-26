@@ -3,8 +3,8 @@
   "title": "Chet elda o'qishga yo'l",
   "lead": "Davlat va universitet tanlashdan boshlab, viza va birinchi kunlargacha. Hammasi o'zbek tilida, rasmiy manbalar asosida.",
   "telegram": "Uprep_Admin",
-  "price": "$399",
-  "priceNote": "Bir marta to'lov. Kurs umrbod ochiq.",
+  "price": "$199",
+  "priceNote": "Bir marta to'lov. Ilova umrbod ochiq.",
   "includes": [
     "8 bosqichli to'liq yo'riqnoma: arizadan full enrollment'gacha",
     "Har bosqich uchun hujjatlar ro'yxati va belgilab boriladigan checklist",
@@ -21,11 +21,11 @@
     },
     {
       "q": "Nima bepul, nima pullik?",
-      "a": "Davlat, shahar va universitet sahifalari hamda kursning 1-bosqichi bepul. Ariza, DoV/CIMEA, pre-enrollment, viza, stipendiya va Italiyaga kelgandan keyingi bosqichlar to'liq kursda."
+      "a": "Qo'llanma, «Noldan» yo'riqnomasi, universitet, shahar va stipendiya sahifalari hamda kursning 1-bosqichi bepul. Ilovaning to'liq bosqichlari «Mustaqil» tarifida ($199). Online yordam kerak bo'lsa «Yordam bilan» ($499), hammasini biz bilan birga qilmoqchi bo'lsangiz «To'liq hamrohlik» ($1 399)."
     },
     {
       "q": "To'lov qanday amalga oshiriladi?",
-      "a": "Kurs narxi $399, bir marta to'lanadi va umrbod ochiq qoladi. Karta, Google Pay yoki Apple Pay orqali to'lash mumkin bo'ladi. Onlayn to'lov ishga tushguncha Telegram orqali yozing."
+      "a": "Uchta tarif bor: Mustaqil $199, Yordam bilan $499 va To'liq hamrohlik $1 399. Hammasi bir marta to'lanadi. Onlayn to'lov ishga tushguncha Telegram orqali yozing."
     },
     {
       "q": "Qabul yoki vizaga kafolat berasizmi?",
@@ -38,5 +38,56 @@
   ],
   "heroCredit": "Surat: Diliff, Wikimedia Commons, CC BY-SA 2.5",
   "heroCreditUrl": "https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome,_Italy_-_April_2007.jpg",
-  "updated": "26.11.2026"
+  "updated": "26.11.2026",
+  "plans": [
+    {
+      "id": "app",
+      "name": "Mustaqil",
+      "price": "$199",
+      "note": "Bir marta to'lov, umrbod ochiq",
+      "tagline": "Ilovadan o'zingiz foydalanasiz: hamma bosqich, hujjatlar va muddatlar bir joyda.",
+      "badge": "",
+      "items": [
+        "8 bosqichli to'liq yo'riqnoma: arizadan full enrollment'gacha",
+        "Har bosqich uchun hujjatlar ro'yxati va belgilab boriladigan checklist",
+        "Stipendiya (DSU) va ISEE uchun oiladan yig'iladigan hujjatlar",
+        "Viza, permesso va Italiyaga kelgandan keyingi ishlar",
+        "Muddatlar kalendari va yangilanishlar"
+      ],
+      "cta": "Ilovani ochish"
+    },
+    {
+      "id": "support",
+      "name": "Yordam bilan",
+      "price": "$499",
+      "note": "Bir marta to'lov",
+      "tagline": "Ilova va biz bilan online yordam: hujjatlarni o'zingiz topshirasiz, savol tug'ilsa, biz yoningizdamiz.",
+      "badge": "Eng ko'p tanlanadi",
+      "items": [
+        "«Mustaqil» tarifidagi hamma narsa",
+        "Uprep jamoasidan Telegram orqali online yordam",
+        "Savollaringizga bosqichma-bosqich javob beramiz"
+      ],
+      "cta": "Telegram'da yozish"
+    },
+    {
+      "id": "full",
+      "name": "To'liq hamrohlik",
+      "price": "$1 399",
+      "note": "Bir marta to'lov",
+      "tagline": "Noldan Italiyadagi full enrollment'gacha hammasini biz bilan birga qilasiz.",
+      "badge": "",
+      "items": [
+        "«Yordam bilan» tarifidagi hamma narsa",
+        "Barcha hujjatlarni yig'ishda boshidan oxirigacha yordam",
+        "Universitetlarga arizalarni biz topshiramiz",
+        "DoV yoki CIMEA va Universitaly pre-enrollment",
+        "Viza hujjatlarini tayyorlash",
+        "Stipendiya (DSU) arizasi va oila hujjatlari",
+        "Italiyaga kelgach: permesso va full enrollment'gacha yordam"
+      ],
+      "cta": "Telegram'da yozish"
+    }
+  ],
+  "plansNote": "Qabul va vizaga kafolat berilmaydi: qarorni universitet va elchixona chiqaradi. Biz har bir qadamni to'g'ri va o'z vaqtida bajarishga yordam beramiz."
 }
