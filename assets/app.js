@@ -362,7 +362,8 @@
     if(["guide","noldan","foundation","tests","course","stage","cal","lib","item","italy","living"].indexOf(v) >= 0) return "guide";
     if(["unis","uni","progs","cmp","quiz","cities","city"].indexOf(v) >= 0) return "unis";
     if(v === "dsu" || v === "calc") return "dsu";
-    if(["plan","docs","profile","settings"].indexOf(v) >= 0) return "plan";
+    if(v === "settings") return "settings";
+    if(["plan","docs","profile"].indexOf(v) >= 0) return "plan";
     return "other";
   }
 
@@ -371,14 +372,14 @@
     var hl = el("a", "brandlink"); hl.href = "#"; hl.setAttribute("aria-label", "Uprep, bosh sahifa"); hl.appendChild(logo(20)); w.appendChild(hl);
     var nav = el("nav", "topnav"); nav.setAttribute("aria-label", "Asosiy bo'limlar");
     var sec = section(r);
-    [["Qo'llanma","qollanma","guide"],["Universitetlar","universitetlar","unis"],["Stipendiya","stipendiya","dsu"]].forEach(function(x){
+    [["Qo'llanma","qollanma","guide"],["Universitetlar","universitetlar","unis"],["Stipendiya","stipendiya","dsu"],["Rejam","rejam","plan"]].forEach(function(x){
       var a = el("a", null, x[0]); a.href = "#" + x[1];
       if(x[2] === sec){ a.className = "on"; a.setAttribute("aria-current", "page"); }
       nav.appendChild(a);
     });
     w.appendChild(nav);
     w.appendChild(el("span", "ttl"));
-    var pl = el("a", "iconbtn plan" + (FAV.length ? " has" : "")); pl.href = "#rejam"; pl.setAttribute("aria-label", "Mening rejam"); pl.appendChild(ic("heart")); if(FAV.length) pl.appendChild(el("span", "badge", String(FAV.length))); w.appendChild(pl);
+    var gs = el("a", "iconbtn" + (r.view === "settings" ? " on" : "")); gs.href = "#sozlamalar"; gs.setAttribute("aria-label", "Sozlamalar"); gs.title = "Sozlamalar"; gs.appendChild(ic("gear")); if(r.view === "settings") gs.setAttribute("aria-current", "page"); w.appendChild(gs);
     var acc = el("button", "iconbtn" + (A.user ? " me" : " tg")); acc.type = "button"; if(!LIVE) acc.hidden = true;
     acc.appendChild(ic("user")); acc.appendChild(el("span", null, A.user ? "Hisob" : "Kirish"));
     acc.onclick = function(){ go(A.user ? "hisob" : "kirish"); };
