@@ -77,7 +77,21 @@
     "intro": "",
     "points": [],
     "pros": [],
-    "cons": []
+    "cons": [],
+    "links": [
+      {
+        "label": "Questura: permesso di soggiorno",
+        "url": "https://questure.poliziadistato.it/it/Napoli"
+      },
+      {
+        "label": "Shahar hokimiyati (Comune)",
+        "url": "https://www.comune.napoli.it/"
+      },
+      {
+        "label": "ANM (Neapol transporti)",
+        "url": "https://www.anm.it/"
+      }
+    ]
   },
   {
     "id": "benevento",
@@ -121,7 +135,21 @@
       "Ijara topish qiyin: erta qidiring."
     ],
     "pros": [],
-    "cons": []
+    "cons": [],
+    "links": [
+      {
+        "label": "Questura: permesso di soggiorno",
+        "url": "https://questure.poliziadistato.it/it/Bologna"
+      },
+      {
+        "label": "Shahar hokimiyati (Comune)",
+        "url": "https://www.comune.bologna.it/"
+      },
+      {
+        "label": "TPER (Bolonya transporti)",
+        "url": "https://www.tper.it/"
+      }
+    ]
   },
   {
     "id": "ferrara",
@@ -203,7 +231,21 @@
       "Shahar katta: kampusga yo'l vaqt olishi mumkin, Tor Vergata shahar chetida.",
       "Davlat idoralarida navbatlar uzun bo'lishi mumkin: permesso va boshqa ishlarni erta boshlang."
     ],
-    "image": "media/hero-rome.jpg"
+    "image": "media/hero-rome.jpg",
+    "links": [
+      {
+        "label": "Questura: permesso di soggiorno",
+        "url": "https://questure.poliziadistato.it/it/Roma"
+      },
+      {
+        "label": "Shahar hokimiyati (Comune)",
+        "url": "https://www.comune.roma.it/"
+      },
+      {
+        "label": "ATAC (Rim transporti)",
+        "url": "https://www.atac.roma.it/"
+      }
+    ]
   },
   {
     "id": "cassino",
@@ -233,7 +275,21 @@
     "intro": "",
     "points": [],
     "pros": [],
-    "cons": []
+    "cons": [],
+    "links": [
+      {
+        "label": "Questura: permesso di soggiorno",
+        "url": "https://questure.poliziadistato.it/it/Genova"
+      },
+      {
+        "label": "Shahar hokimiyati (Comune)",
+        "url": "https://smart.comune.genova.it/"
+      },
+      {
+        "label": "AMT (Genuya transporti)",
+        "url": "https://www.amt.genova.it/"
+      }
+    ]
   },
   {
     "id": "milano",
@@ -247,7 +303,21 @@
       "Stipendiyani har bir universitet o'zi e'lon qiladi."
     ],
     "pros": [],
-    "cons": []
+    "cons": [],
+    "links": [
+      {
+        "label": "Questura: permesso di soggiorno",
+        "url": "https://questure.poliziadistato.it/it/Milano"
+      },
+      {
+        "label": "Shahar hokimiyati (Comune)",
+        "url": "https://www.comune.milano.it/"
+      },
+      {
+        "label": "ATM (Milan transporti)",
+        "url": "https://www.atm.it/"
+      }
+    ]
   },
   {
     "id": "bergamo",
@@ -277,7 +347,21 @@
     "intro": "",
     "points": [],
     "pros": [],
-    "cons": []
+    "cons": [],
+    "links": [
+      {
+        "label": "Questura: permesso di soggiorno",
+        "url": "https://questure.poliziadistato.it/it/Pavia"
+      },
+      {
+        "label": "Shahar hokimiyati (Comune)",
+        "url": "https://www.comune.pavia.it/"
+      },
+      {
+        "label": "Autoguidovie (Paviya transporti)",
+        "url": "https://www.autoguidovie.it/"
+      }
+    ]
   },
   {
     "id": "varese",
@@ -381,7 +465,21 @@
       "UniTo'da Talents4UniTo grantlari ham bor."
     ],
     "pros": [],
-    "cons": []
+    "cons": [],
+    "links": [
+      {
+        "label": "Questura: permesso di soggiorno",
+        "url": "https://questure.poliziadistato.it/it/Torino"
+      },
+      {
+        "label": "Shahar hokimiyati (Comune)",
+        "url": "https://www.comune.torino.it/"
+      },
+      {
+        "label": "GTT (Turin transporti)",
+        "url": "https://www.gtt.to.it/"
+      }
+    ]
   },
   {
     "id": "novara",
@@ -525,7 +623,21 @@
     "intro": "",
     "points": [],
     "pros": [],
-    "cons": []
+    "cons": [],
+    "links": [
+      {
+        "label": "Questura: permesso di soggiorno",
+        "url": "https://questure.poliziadistato.it/it/Firenze"
+      },
+      {
+        "label": "Shahar hokimiyati (Comune)",
+        "url": "https://www.comune.fi.it/"
+      },
+      {
+        "label": "Autolinee Toscane (transport)",
+        "url": "https://www.at-bus.it/"
+      }
+    ]
   },
   {
     "id": "pisa",
@@ -535,7 +647,21 @@
     "intro": "",
     "points": [],
     "pros": [],
-    "cons": []
+    "cons": [],
+    "links": [
+      {
+        "label": "Questura: permesso di soggiorno",
+        "url": "https://questure.poliziadistato.it/it/Pisa"
+      },
+      {
+        "label": "Shahar hokimiyati (Comune)",
+        "url": "https://www.comune.pisa.it/"
+      },
+      {
+        "label": "Autolinee Toscane (transport)",
+        "url": "https://www.at-bus.it/"
+      }
+    ]
   },
   {
     "id": "siena",
@@ -559,7 +685,21 @@
     "intro": "",
     "points": [],
     "pros": [],
-    "cons": []
+    "cons": [],
+    "links": [
+      {
+        "label": "Questura: permesso di soggiorno",
+        "url": "https://questure.poliziadistato.it/it/Trento"
+      },
+      {
+        "label": "Shahar hokimiyati (Comune)",
+        "url": "https://www.comune.trento.it/"
+      },
+      {
+        "label": "Trentino Trasporti",
+        "url": "https://www.trentinotrasporti.it/"
+      }
+    ]
   },
   {
     "id": "bolzano",
@@ -599,7 +739,21 @@
     "intro": "",
     "points": [],
     "pros": [],
-    "cons": []
+    "cons": [],
+    "links": [
+      {
+        "label": "Questura: permesso di soggiorno",
+        "url": "https://questure.poliziadistato.it/it/Venezia"
+      },
+      {
+        "label": "Shahar hokimiyati (Comune)",
+        "url": "https://www.comune.venezia.it/"
+      },
+      {
+        "label": "ACTV (Venetsiya transporti)",
+        "url": "https://actv.avmspa.it/"
+      }
+    ]
   },
   {
     "id": "padova",
@@ -609,7 +763,21 @@
     "intro": "",
     "points": [],
     "pros": [],
-    "cons": []
+    "cons": [],
+    "links": [
+      {
+        "label": "Questura: permesso di soggiorno",
+        "url": "https://questure.poliziadistato.it/it/Padova"
+      },
+      {
+        "label": "Shahar hokimiyati (Comune)",
+        "url": "https://www.padovanet.it/"
+      },
+      {
+        "label": "Busitalia (Padova transporti)",
+        "url": "https://www.fsbusitalia.it/"
+      }
+    ]
   },
   {
     "id": "verona",
