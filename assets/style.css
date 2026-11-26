@@ -1294,3 +1294,5 @@ a.lrow:active,a.unicard:active,a.qtile:active,a.hubtile:active,a.row:active,butt
 /* keyboard focus */
 a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,[role="switch"]:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:12px}
 html.calm a:active,html.calm button:active{transform:none!important}
+html.calm .mark .u{stroke-dashoffset:0}
+html.calm .mark .tip{opacity:1;transform:none}
