@@ -1972,7 +1972,13 @@
     ct.addEventListener("input", keep);
 
     function manual(){ var lbl = (FBK.filter(function(k){ return k[0] === st.kind; })[0] || ["", ""])[1]; leadSheet("Uprep sayti · " + lbl + (str(ct.value) ? " (aloqa: " + str(ct.value) + ")" : "") + ":\n" + str(tx.value)); }
-    function tgBtn(){ var b = el("button", "textbtn", "Telegram orqali qo'lda yuborish"); b.type = "button"; b.onclick = manual; var w = el("span"); w.appendChild(document.createTextNode(" ")); w.appendChild(b); return w; }
+    function tgBtn(r){ var b = el("button", "textbtn", "Telegram orqali qo'lda yuborish"); b.type = "button"; b.onclick = manual; var w = el("span"); w.appendChild(document.createTextNode(" ")); w.appendChild(b); if(r) w.appendChild(el("small", "fb-code", "Texnik kod: " + fbCode(r))); return w; }
+    /* short technical reason, so the owner can tell what to fix in the Worker settings */
+    function fbCode(r){
+      var H = { network:"Worker'ga ulanib bo'lmadi (kod yangilanmagan, manzil xato yoki CORS)", bad_response:"Worker eski kod bilan ishlayapti", not_configured:"Worker'da BOT_TOKEN, CHAT_ID yoki APP_KEY yo'q", key:"APP_KEY mos emas", origin:"bu sayt Worker'da ruxsat etilmagan", telegram_401:"BOT_TOKEN noto'g'ri yoki bekor qilingan", telegram_404:"BOT_TOKEN noto'g'ri", telegram_400:"CHAT_ID noto'g'ri yoki botda Start bosilmagan", telegram_403:"botda Start bosilmagan yoki bot bloklangan", telegram_unreachable:"Telegram'ga ulanib bo'lmadi", timeout:"javob kelmadi" };
+      var c = str(r.code);
+      return (r.status ? "HTTP " + r.status + (c ? " · " + c : "") : c || "—") + (H[c] ? " (" + H[c] + ")" : "");
+    }
     function lock(on){ sb.disabled = on; sb.classList.toggle("busy", on); if(on) sb.setAttribute("aria-busy", "true"); else sb.removeAttribute("aria-busy"); sl.textContent = on ? "Yuborilmoqda…" : (relay ? "Yuborish" : "Telegram orqali yuborish"); tx.readOnly = on; ct.readOnly = on; }
     function onOnline(){ if(!document.body.contains(form)){ window.removeEventListener("online", onOnline); return; } if(status.classList.contains("warn")) say("info", "Internet qaytdi. Endi «Yuborish»ni bosishingiz mumkin."); }
     window.addEventListener("online", onOnline);
@@ -1995,9 +2001,9 @@
         }
         if(r.reason === "busy") return;
         if(r.reason === "offline") say("warn", "Internet yo'q. Xabaringiz shu qurilmada qoralama sifatida saqlandi: internet qaytgach «Yuborish»ni bosing.");
-        else if(r.reason === "timeout") say("err", "Server javob bermadi. Matn qoralamada saqlandi, birozdan keyin qayta urinib ko'ring.", tgBtn());
+        else if(r.reason === "timeout") say("err", "Server javob bermadi. Matn qoralamada saqlandi, birozdan keyin qayta urinib ko'ring.", tgBtn(r));
         else if(r.reason === "rate") say("warn", "Qisqa vaqtda juda ko'p xabar yuborildi. 10 daqiqadan keyin qayta urinib ko'ring. Matn saqlandi.");
-        else say("err", "Xatolik: xabar yuborilmadi. Matn qoralamada saqlandi.", tgBtn());
+        else say("err", "Xatolik: xabar yuborilmadi. Matn qoralamada saqlandi.", tgBtn(r));
       });
     };
     c.appendChild(form); return c;

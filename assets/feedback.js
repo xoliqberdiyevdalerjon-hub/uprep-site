@@ -84,15 +84,19 @@
       credentials:"omit",
       cache:"no-store"
     }).then(function(r){
-      if(!r.ok) return { ok:false, reason: r.status === 429 ? "rate" : "server", status:r.status };
-      /* success only when the relay itself confirms it (a wrong URL can also answer 200) */
+      var reason = r.status === 429 ? "rate" : "server";
+      /* success only when the relay itself confirms it (a wrong URL can also answer 200);
+         otherwise keep the relay's error code (e.g. "not_configured", "telegram_401") for the message */
       return r.text().then(function(t){
         var j = null; try{ j = JSON.parse(t); }catch(e){}
-        return j && j.ok === true ? { ok:true } : { ok:false, reason:"server", status:r.status };
-      }, function(){ return { ok:false, reason:"server", status:r.status }; });
+        if(r.ok && j && j.ok === true) return { ok:true };
+        var code = j && typeof j.error === "string" ? j.error.slice(0, 40) : (r.ok ? "bad_response" : "");
+        return { ok:false, reason:reason, status:r.status, code:code };
+      }, function(){ return { ok:false, reason:reason, status:r.status, code:"" }; });
     }, function(){
-      if(timedOut) return { ok:false, reason:"timeout" };
-      return { ok:false, reason: (root.navigator && root.navigator.onLine === false) ? "offline" : "server" };
+      if(timedOut) return { ok:false, reason:"timeout", code:"timeout" };
+      if(root.navigator && root.navigator.onLine === false) return { ok:false, reason:"offline" };
+      return { ok:false, reason:"server", status:0, code:"network" }; /* no answer: wrong URL, old Worker code or CORS */
     });
     /* a hard stop even if fetch ignores the abort signal */
     var guard = new Promise(function(res){ setTimeout(function(){ res({ ok:false, reason:"timeout" }); }, ms + 1000); });

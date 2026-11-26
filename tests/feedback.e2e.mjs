@@ -113,11 +113,12 @@ test("offline: text is kept as a draft and restored after reopening", async () =
 });
 
 test("server error: draft kept, error shown with a manual Telegram fallback", async () => {
-  const { ctx, page } = await open({ relay: (r) => r.fulfill({ status: 502, body: '{"ok":false}' }) });
+  const { ctx, page } = await open({ relay: (r) => r.fulfill({ status: 502, contentType: "application/json", body: '{"ok":false,"error":"telegram_401"}' }) });
   await page.fill("#fb-text", "Server xatosi sinovi");
   await page.click(".fb-send");
   await page.waitForSelector(".fb-status.err");
   assert.match((await statusOf(page)).text, /yuborilmadi/);
+  assert.match((await statusOf(page)).text, /Texnik kod: HTTP 502 · telegram_401 \(BOT_TOKEN/);
   assert.equal((await state(page)).feedbackDraft.text, "Server xatosi sinovi");
   await page.click('.fb-status .textbtn:has-text("Telegram")');
   await page.waitForSelector(".sheet");
@@ -130,7 +131,17 @@ test("a 200 answer that is not the relay's {ok:true} is NOT reported as sent", a
   await page.fill("#fb-text", "Noto'g'ri manzil sinovi");
   await page.click(".fb-send");
   await page.waitForSelector(".fb-status.err");
+  assert.match((await statusOf(page)).text, /bad_response/);
   assert.equal((await state(page)).feedbackDraft.text, "Noto'g'ri manzil sinovi");
+  await ctx.close();
+});
+
+test("no answer from the relay (CORS / wrong URL) shows the network code", async () => {
+  const { ctx, page } = await open({ relay: (r) => r.abort("failed") });
+  await page.fill("#fb-text", "Ulanish yo'q sinovi");
+  await page.click(".fb-send");
+  await page.waitForSelector(".fb-status.err");
+  assert.match((await statusOf(page)).text, /Texnik kod: network/);
   await ctx.close();
 });
 
