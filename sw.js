@@ -1,7 +1,7 @@
 /* Uprep service worker: the site opens offline and loads fast.
    Pages and content (content/*.json) are always fetched fresh first, so CMS edits show up immediately;
    the cached copy is used only when the network fails. Versioned assets are served from cache. */
-const CACHE = "uprep-v23";
+const CACHE = "uprep-v25";
 const CORE = ["./", "index.html", "assets/style.css", "assets/app.js", "assets/config.js", "manifest.webmanifest", "media/favicon.svg", "media/icon-192.png", "media/hero-rome-sm.webp",
   "content/site.json", "content/stages.json", "content/calendar.json", "content/library.json", "content/countries.json", "content/italy.json", "content/cities.json",
   "content/universities.json", "content/guide.json", "content/dsu.json", "content/living.json", "content/news.json", "content/reviews.json", "content/foundation.json", "content/tests.json", "content/noldan.json", "content/about.json", "content/parents.json", "content/ambassadors.json", "content/outcomes.json", "content/events.json"];

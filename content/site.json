@@ -20,11 +20,11 @@
     },
     {
       "q": "Nima bepul, nima pullik?",
-      "a": "Saytdagi hamma narsa hozir bepul: qo'llanma, «Noldan» yo'riqnomasi, universitetlar, stipendiyalar, ilovaning 8 bosqichi va barcha vositalar. Pullik qismi bu bizning shaxsiy yordamimiz: «Yordam bilan» ($499) va «To'liq hamrohlik» ($1 490, birinchi 10 talaba uchun). Faqat bitta bosqichda yordam kerak bo'lsa, alohida xizmatlar ham bor ($29 dan)."
+      "a": "Saytdagi hamma narsa hozir bepul: qo'llanma, «Noldan» yo'riqnomasi, universitetlar, stipendiyalar, ilovaning 8 bosqichi va barcha vositalar. Pullik qismi bu bizning shaxsiy yordamimiz: Plus ($499) va Premium ($1 490, birinchi 10 talaba uchun). Faqat bitta bosqichda yordam kerak bo'lsa, alohida xizmatlar ham bor ($29 dan)."
     },
     {
       "q": "To'lov qanday amalga oshiriladi?",
-      "a": "Hozircha tarif tanlab, Telegram orqali yozasiz va to'lov shartlarini @Uprep_Admin bilan kelishasiz. «To'liq hamrohlik»ni 3 qismga bo'lib to'lash mumkin. Onlayn to'lov (karta) ishga tushgach, saytning o'zida to'lash mumkin bo'ladi."
+      "a": "Hozircha tarif tanlab, Telegram orqali yozasiz va to'lov shartlarini @Uprep_Admin bilan kelishasiz. Premium'ni 3 qismga bo'lib to'lash mumkin. Onlayn to'lov (karta) ishga tushgach, saytning o'zida to'lash mumkin bo'ladi."
     },
     {
       "q": "Qabul yoki vizaga kafolat berasizmi?",
@@ -41,7 +41,7 @@
   "plans": [
     {
       "id": "app",
-      "name": "Mustaqil",
+      "name": "Free",
       "price": "Bepul",
       "note": "Beta davrida: login va onlayn to'lov ishga tushguncha",
       "tagline": "Ilovadan o'zingiz foydalanasiz: hamma bosqich, hujjatlar, muddatlar va vositalar bir joyda.",
@@ -52,17 +52,17 @@
         "Hujjatlar checklist'i, profil tahlili va pul kalkulyatori",
         "82 ta universitet va viloyat stipendiyalari bo'yicha ma'lumot"
       ],
-      "cta": "Ilovani ochish"
+      "cta": "Hozir foydalanish"
     },
     {
       "id": "support",
-      "name": "Yordam bilan",
+      "name": "Plus",
       "price": "$499",
       "note": "Bir marta to'lov",
       "tagline": "Hujjatlarni o'zingiz topshirasiz, har bir qadamda esa biz yoningizdamiz va xatolaringizni oldindan tutamiz.",
       "badge": "Eng ko'p tanlanadi",
       "items": [
-        "«Mustaqil» tarifidagi hamma narsa",
+        "Free'dagi hamma narsa",
         "Viza olguningizcha Telegram'da yordam: savollarga 24 soat ichida javob",
         "3 ta video qo'ng'iroq (har biri 30 daqiqa)",
         "Motivatsion xat va CV'ni tekshirib berish (1 marta)",
@@ -72,13 +72,13 @@
     },
     {
       "id": "full",
-      "name": "To'liq hamrohlik",
+      "name": "Premium",
       "price": "$1 490",
       "note": "Birinchi 10 talaba uchun (asoschi narxi), keyin $1 790. 3 qismga bo'lib to'lash mumkin",
       "tagline": "Noldan Italiyadagi full enrollment'gacha hammasini biz bilan birga qilasiz.",
       "badge": "Joylar cheklangan",
       "items": [
-        "«Yordam bilan» tarifidagi hamma narsa",
+        "Plus'dagi hamma narsa",
         "Barcha hujjatlarni yig'ishda boshidan oxirigacha yordam",
         "3–5 ta universitetga arizalarni biz topshiramiz",
         "Motivatsion xat va CV'ni birga yozamiz",

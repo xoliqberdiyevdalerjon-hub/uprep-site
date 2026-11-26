@@ -379,7 +379,7 @@
     });
     w.appendChild(nav);
     w.appendChild(el("span", "ttl"));
-    var gs = el("a", "iconbtn" + (r.view === "settings" ? " on" : "")); gs.href = "#sozlamalar"; gs.setAttribute("aria-label", "Sozlamalar"); gs.title = "Sozlamalar"; gs.appendChild(ic("gear")); if(r.view === "settings") gs.setAttribute("aria-current", "page"); w.appendChild(gs);
+    var gs = el("a", "iconbtn" + (r.view === "settings" || r.view === "plans" ? " on" : "")); gs.href = "#sozlamalar"; gs.setAttribute("aria-label", "Sozlamalar"); gs.title = "Sozlamalar"; gs.appendChild(ic("gear")); if(r.view === "settings") gs.setAttribute("aria-current", "page"); w.appendChild(gs);
     var acc = el("button", "iconbtn" + (A.user ? " me" : " tg")); acc.type = "button"; if(!LIVE) acc.hidden = true;
     acc.appendChild(ic("user")); acc.appendChild(el("span", null, A.user ? "Hisob" : "Kirish"));
     acc.onclick = function(){ go(A.user ? "hisob" : "kirish"); };
@@ -510,7 +510,7 @@
   function priceCard(compact){
     var c = el("section", "price");
     var top = el("div", "price-top");
-    var l = el("div"); l.appendChild(el("span", "price-k", "Ilova: «" + (str(plans()[0].name) || "Mustaqil") + "» tarifi")); l.appendChild(el("b", "price-v", price())); l.appendChild(el("small", null, str(S.site.priceNote) || "Bir marta to'lov. Kurs umrbod ochiq.")); top.appendChild(l);
+    var l = el("div"); l.appendChild(el("span", "price-k", "Ilova: «" + (str(plans()[0].name) || "Free") + "» tarifi")); l.appendChild(el("b", "price-v", price())); l.appendChild(el("small", null, str(S.site.priceNote) || "Bir marta to'lov. Kurs umrbod ochiq.")); top.appendChild(l);
     c.appendChild(top);
     if(!compact){
       var ul = el("ul", "ticks"); arr(S.site.includes).forEach(function(x){ var li = el("li"); li.appendChild(ic("check")); li.appendChild(el("span", null, x)); ul.appendChild(li); }); c.appendChild(ul);
@@ -563,7 +563,7 @@
 
   /* ================= PLANS (3 tiers) ================= */
   function plansOn(){ return arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }).length > 0; }
-  function plans(){ var P = arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }); return P.length ? P : [{id:"app", name:"Mustaqil", price:price(), note:"Bir marta to'lov", items:arr(S.site.includes)}]; }
+  function plans(){ var P = arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }); return P.length ? P : [{id:"app", name:"Free", price:price(), note:"Bir marta to'lov", items:arr(S.site.includes)}]; }
   function planAsk(p){
     var body = "Salom! Uprep saytidan yozyapman. «" + str(p.name) + "» (" + str(p.price) + ") " + (p.id ? "tarifi" : "xizmati") + " bo'yicha ma'lumot olmoqchiman.";
     if(safeUrl(CFG.leadUrl)){ var c = prompt("Siz bilan qanday bog'lanamiz? Telegram @username yoki telefon raqamingiz:"); if(!str(c)) return; sendLead("tarif", body, c); }
@@ -956,7 +956,7 @@
     {k:"area", q:"Italiyaning qaysi qismida o'qimoqchisiz?", o:[["any","Farqi yo'q",""],["north","Shimol","Milan, Turin, Bolonya, Padova…"],["center","Markaz","Rim, Florensiya, Piza, Siena…"],["south","Janub va orollar","Neapol, Bari, Sitsiliya…"]]},
     {k:"visa", q:"Viza uchun yiliga 10 179,85 € ko'rsata olasizmi?", o:[["yes","Ha, oilamda bor","O'zimning yoki oilamning hisobida"],["part","Qisman, yig'yapmiz",""],["no","Hozircha yo'q",""]]},
     {k:"fam", q:"Oilangiz haqida (stipendiya uchun, taxminan)", form:true},
-    {k:"help", q:"Sizga qancha yordam kerak?", o:[["app","O'zim qilaman, yo'l-yo'riq yetadi","Bepul"],["support","Savollarimga javob berib turilsa bo'ldi","Online yordam"],["full","Hammasini siz bilan birga qilmoqchiman","To'liq hamrohlik"]]}
+    {k:"help", q:"Sizga qancha yordam kerak?", o:[["app","O'zim qilaman, yo'l-yo'riq yetadi","Free"],["support","Savollarimga javob berib turilsa bo'ldi","Plus"],["full","Hammasini siz bilan birga qilmoqchiman","Premium"]]}
   ];
   var PRF = {step:0, a:{members:"4", income:""}};
   try{ var pf0 = JSON.parse(localStorage.getItem("uprep-profile") || "null"); if(pf0 && pf0.a) PRF = pf0; }catch(e){}
@@ -1538,16 +1538,10 @@
       list.appendChild(r); return r;
     }
 
-    /* Tarif va to'lov */
+    /* To'lov: one row */
     if(plansOn()){
-      var gp = group("Tarif va to'lov", "Hozircha to'lov Telegram orqali kelishiladi: tarifni bosing, xabar tayyorlanadi. Onlayn to'lov (karta) tez orada.");
-      var PL = plans(), colors = ["c-green", "c-blue", "c-gold"], icons = ["book", "chat", "star"];
-      PL.forEach(function(p, i){
-        var self = i === 0 && str(p.id) !== "support" && str(p.id) !== "full";
-        row(gp, icons[i] || "wallet", colors[i] || "c-navy", p.name + (str(p.badge) ? " · " + p.badge : ""), {sub: str(p.note), value: self ? p.price + " ✓" : p.price, onclick: self ? function(){ go("qollanma"); } : function(){ planAsk(p); }});
-      });
-      if(arr(S.site.extras).length) row(gp, "list", "c-purple", "Alohida xizmatlar", {sub: arr(S.site.extras).map(function(x){ return x.name; }).slice(0, 3).join(", ") + "…", value: "$" + Math.min.apply(null, arr(S.site.extras).map(function(x){ return numv(str(x.price).replace(/[^\d.,]/g, "")) || 9999; })) + " dan", href: "#tariflar"});
-      row(gp, "wallet", "c-navy", "Barcha tariflarni solishtirish", {href: "#tariflar"});
+      var gp = group(null);
+      row(gp, "wallet", "c-gold", "To'lov", {sub: plans().map(function(p){ return p.name; }).join(" · "), value: str(plans()[0].name), href: "#tariflar"});
     }
 
     /* Ko'rinish */
