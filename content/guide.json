@@ -55,9 +55,9 @@
       "stage": "s5"
     },
     {
-      "when": "Iyul – sentyabr (eng kechi 30.11)",
+      "when": "Iyul – sentyabr (2027/28: eng kechi 31.10.2027)",
       "title": "Talaba vizasi",
-      "text": "Toshkentdagi Italiya elchixonasining konsullik bo'limiga topshirasiz. Ko'rib chiqish 90 kungacha davom etadi. 2026/27 uchun yiliga 10 179,85 € mablag'ingiz borligini ko'rsatishingiz kerak.",
+      "text": "Toshkentdagi Italiya elchixonasining konsullik bo'limiga topshirasiz. Ko'rib chiqish 90 kungacha davom etadi. Yiliga 10 179,85 € mablag' ko'rsatasiz: o'zingizning yoki oilangizning qonuniy, kuzatiladigan hisobida.",
       "stage": "s4"
     },
     {
@@ -260,6 +260,10 @@
     {
       "label": "CIMEA DiploMe xizmatlari",
       "url": "https://www.cimea-diplome.it/page-services"
+    },
+    {
+      "label": "MUR sirkulyari: 2026/27 va 2027/28 qoidalari (PDF)",
+      "url": "https://portale.units.it/sites/default/files/2026-05/Circolare%202026-2027%20studenti_internazionali_EN_0.pdf"
     }
   ]
 }

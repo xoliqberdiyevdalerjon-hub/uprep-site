@@ -45,29 +45,29 @@
     "title": "Pre-acceptance",
     "sub": "Universitetga ariza va oldindan qabul",
     "icon": "send",
-    "when": "Sapienza 2026/27: 22.12.2025 – 15.05.2026",
-    "intro": "Pre-acceptance universitetning \"sizni olishga tayyormiz\" degan javobi. Har bir universitetning o'z ariza portali bor: Sapienza'da bu MoveIn. Hujjatlaringizni yuklaysiz, komissiya ko'rib chiqadi va o'tsangiz, pre-acceptance xati keladi. Shu xat bilan keyingi bosqichlar boshlanadi.",
+    "when": "Odatda noyabr – aprel (har universitetda boshqacha)",
+    "intro": "Pre-acceptance universitetning «sizni olishga tayyormiz» degan javobi. Har bir universitetning o'z ariza portali va muddati bor (DreamApply, MoveIn, Apply@... va boshqalar). Hujjatlaringizni yuklaysiz, komissiya ko'rib chiqadi va o'tsangiz, pre-acceptance xati keladi. Shu xat bilan keyingi bosqichlar boshlanadi.",
     "blocks": [
       {
         "type": "button",
-        "label": "Sapienza: MoveIn'da ro'yxatdan o'tish",
-        "url": "https://sapienza.gomovein.com/",
-        "note": "Har bir ariza 30 €, yiliga 2 tagacha, pul qaytarilmaydi"
+        "label": "Universitetlar: har birining ariza havolasi",
+        "url": "#universitetlar",
+        "note": "82 ta universitet, ariza sahifasi va muddatlari bilan"
       },
       {
         "type": "stats",
         "items": [
           {
-            "big": "30 €",
-            "small": "bitta ariza (Sapienza)"
+            "big": "0 – 70 €",
+            "small": "ariza to'lovi (davlat universitetlari)"
           },
           {
-            "big": "2 ta",
-            "small": "yiliga maksimal ariza"
+            "big": "3–5 ta",
+            "small": "universitetga topshirish tavsiya etiladi"
           },
           {
             "big": "B2",
-            "small": "ingliz yoki italyan tili, dasturga qarab"
+            "small": "ingliz yoki italyan tili, dastur tiliga qarab"
           }
         ]
       },
@@ -76,11 +76,11 @@
         "title": "Qadamlar",
         "style": "steps",
         "items": [
-          "Yo'nalishni tanlang: Universitetlar bo'limidagi Sapienza sahifasida hamma yo'nalishlar va talablar bor.",
-          "sapienza.gomovein.com saytida ro'yxatdan o'ting. Hamma joyda bitta email ishlating.",
-          "Profilni to'ldiring va hujjatlarni PDF qilib yuklang.",
-          "Har bir ariza uchun 30 € to'lang. To'lovsiz ariza ko'rib chiqilmaydi.",
-          "Natijani MoveIn'da kuting. Pre-acceptance kelsa, darhol DoV/CIMEA va Universitaly'ga o'ting."
+          "Universitet sahifasida «Yo'nalishlar» va «Qabul va talablar» bo'limlarini o'qing: muddat, to'lov, talab.",
+          "Ariza portalida ro'yxatdan o'ting (havola universitet sahifasidagi «Ariza sahifasi» tugmasida). Hamma joyda bitta email ishlating.",
+          "Profilni to'ldiring va hujjatlarni aniq, rangli PDF qilib yuklang.",
+          "Ariza to'lovini to'lang: to'lovsiz ariza ko'rib chiqilmaydi.",
+          "Natijani kuting. Pre-acceptance kelsa, darhol DoV/CIMEA va Universitaly'ga o'ting."
         ]
       },
       {
@@ -91,34 +91,40 @@
           "Pasport",
           "Attestat yoki diplom",
           "Transcript (baholar varaqasi)",
-          "Til sertifikati (B2)",
-          "Dastur so'rasa: CV, motivatsion xat, SAT yoki CEnT-S natijasi",
+          "Til sertifikati (odatda B2)",
+          "Dastur so'rasa: CV, motivatsion xat, SAT / CEnT-S / TOLC / GMAT natijasi",
           "Ixtiyoriy: tavsiyanoma"
         ]
       },
       {
         "type": "text",
         "title": "Talablar qanday",
-        "body": "Bakalavr uchun odatda 12 yillik ta'lim kerak. 11 yillik attestat bilan ba'zi dasturlar (masalan Business Sciences, Economics and Finance) Foundation yilini qabul qiladi.\n\nMagistratura uchun kamida 3 yillik bakalavr diplomi kerak. Har bir dasturning minimal GPA'si bor: 60 dan 90 gacha (100 ballik shkalada).\n\nKo'p bakalavr dasturlari SAT yoki CEnT-S natijasini so'raydi. Magistraturada ba'zan suhbat bo'ladi."
+        "body": "Bakalavr uchun odatda 12 yillik ta'lim kerak. 11 yillik attestat bilan Foundation yilini o'qish yoki O'zbekistonda 1 yil OTMda o'qib, keyin topshirish mumkin.\n\nMagistratura uchun bakalavr diplomi va tanlangan dasturga mos fanlar kerak. Ko'p dasturlarda minimal GPA bor.\n\nBa'zi bakalavr dasturlari SAT yoki CEnT-S natijasini so'raydi; magistraturada ba'zan suhbat yoki intervyu videosi bo'ladi (masalan Macerata)."
       },
       {
         "type": "list",
         "title": "Ko'p uchraydigan xatolar",
         "style": "bullets",
         "items": [
-          "Oxirgi kunni kutish: sayt sekinlashadi, hujjat yuklanmay qolishi mumkin.",
+          "Oxirgi kunni kutish: portal sekinlashadi, joylar tugashi mumkin.",
           "Skanlar xira yoki to'liq emas: har bir sahifani aniq, rangli skanerlang.",
-          "Ikkita arizani bir xil kuchsiz dasturga sarflash: yiliga faqat 2 ta imkoniyat bor."
+          "Faqat bitta universitetga topshirish: muddatlari turlicha, 3–5 tasiga topshiring.",
+          "Har xil email ishlatish: hamma xat bitta manzilga kelsin."
         ]
       },
       {
         "type": "callout",
+        "style": "info",
+        "text": "Misol: Sapienza (Rim) MoveIn portalida yiliga 2 tagacha ariza, har biri 30 €. Politecnico di Milano magistraturasi 2027/28 uchun 28.01.2027 gacha. Har universitetning aniq sanasi uning sahifasida."
+      },
+      {
+        "type": "callout",
         "style": "tip",
-        "text": "Viza kerak bo'lganlar uchun Sapienza muddati boshqalardan oldin tugaydi (2026/27 da 15-may). Hujjatlarni dekabr-yanvarda tayyorlab qo'ying."
+        "text": "Erta topshiring: 2026/27 dan universitetlar Universitaly'da kvotadan ko'pi bilan 20% ortiq pre-enrollment tasdiqlay oladi. Joy tugasa, kech kelganlar qoladi."
       }
     ],
-    "srcLabel": "Sapienza – International Admissions",
-    "srcUrl": "https://www.uniroma1.it/en/admissions"
+    "srcLabel": "MUR sirkulyari 2026/27 va 2027/28 (PDF)",
+    "srcUrl": "https://portale.units.it/sites/default/files/2026-05/Circolare%202026-2027%20studenti_internazionali_EN_0.pdf"
   },
   {
     "id": "s2",
@@ -225,7 +231,7 @@
     "title": "Pre-enrollment",
     "sub": "Universitaly portalida",
     "icon": "laptop",
-    "when": "Sapienza: 30.06.2026 gacha",
+    "when": "Universitet muddatigacha (odatda bahor – yoz)",
     "intro": "Universitaly Italiya vazirligining yagona portali. Bu yerda tanlagan dasturingizga pre-enrollment arizasini berasiz. Universitet uni tasdiqlaydi va ariza elchixonaga o'tadi. Tasdiqlangan pre-enrollment'siz vizaga topshirib bo'lmaydi.",
     "blocks": [
       {
@@ -233,6 +239,11 @@
         "label": "Universitaly portali",
         "url": "https://www.universitaly.it/",
         "note": "Ro'yxatdan o'tish va pre-enrollment"
+      },
+      {
+        "type": "callout",
+        "style": "warn",
+        "text": "Muddatni universitetning o'zi belgilaydi (2026/27 da 30.06 dan 15.09 gacha bo'lgan). Universitet kvota +20% dan ko'p arizani tasdiqlay olmaydi: kech qolsangiz, joy qolmasligi mumkin."
       },
       {
         "type": "list",
@@ -281,15 +292,15 @@
         "text": "Yordam: universitaly@cineca.it (texnik) · info@uni-italia.it"
       }
     ],
-    "srcLabel": "Italiya elchixonasi, Toshkent – talaba vizasi",
-    "srcUrl": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Studio-immatricolazione-e-corsi-propedeutici-ITALIANO.rev_.pdf"
+    "srcLabel": "MUR sirkulyari 2026/27 va 2027/28 (PDF)",
+    "srcUrl": "https://portale.units.it/sites/default/files/2026-05/Circolare%202026-2027%20studenti_internazionali_EN_0.pdf"
   },
   {
     "id": "s4",
     "title": "Viza",
     "sub": "D toifa, talaba vizasi",
     "icon": "passport",
-    "when": "Safardan 6 oy oldin – 15 kun oldin; oxirgi kun 30.11.2026",
+    "when": "Safardan 6 oy oldin – 15 kun oldin; 2026/27: 30.11.2026, 2027/28: 31.10.2027 gacha",
     "intro": "Toshkentdagi Italiya elchixonasining konsullik bo'limiga topshiriladi. Bu D toifadagi milliy viza: 91 kundan 365 kungacha, ko'p martalik. Ko'rib chiqish 90 kungacha davom etadi va shu vaqt pasportingiz elchixonada turadi.",
     "blocks": [
       {
@@ -297,15 +308,15 @@
         "items": [
           {
             "big": "10 179,85 €",
-            "small": "yiliga pul isboti (2026/27)"
+            "small": "yiliga pul isboti (2026/27 va 2027/28)"
+          },
+          {
+            "big": "31.10.2027",
+            "small": "2027/28 uchun oxirgi kun (bakalavr va magistratura)"
           },
           {
             "big": "90 kun",
             "small": "ko'rib chiqish muddati"
-          },
-          {
-            "big": "30.11.2026",
-            "small": "2026/27 uchun oxirgi kun (Foundation'dan tashqari)"
           },
           {
             "big": "30 000 €",
@@ -329,7 +340,12 @@
       {
         "type": "callout",
         "style": "warn",
-        "text": "2026/27 dan pul isboti oshdi: yiliga 10 179,85 € (2025/26 da 6 947,33 € edi). Mablag' sizning yoki ota-onangiz, qarindoshingiz (homiy) hisobida bo'lishi mumkin. Bank ko'chirmasi topshirish kunida 10 ish kunidan eski bo'lmasin."
+        "text": "Pul isboti: yiliga 10 179,85 €. Pul qonuniy va kuzatiladigan manbadan bo'lishi kerak: o'zingizning yoki oilangizning (4-darajagacha qarindosh) hisobi. Elchixona hisobdagi harakatni va summa oila daromadiga mosligini tekshiradi. Stipendiyaga ariza berganingiz yoki unga mos kelishingiz pul o'rnida hisoblanmaydi."
+      },
+      {
+        "type": "callout",
+        "style": "info",
+        "text": "Muddatlar: 2026/27 uchun 30.11.2026, 2027/28 uchun 31.10.2027 (bakalavr va magistratura). Universitet bundan oldinroq muddat qo'yishi mumkin: o'z universitetingiz sahifasini tekshiring. Foundation kurslari uchun aniq muddat yo'q, lekin darslar boshlanishidan kech bo'lmasin."
       },
       {
         "type": "list",
@@ -390,8 +406,8 @@
         "note": "2026/27 o'quv yili, italyan tilida"
       }
     ],
-    "srcLabel": "Italiya elchixonasi, Toshkent – talaba vizasi 2026/27",
-    "srcUrl": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Studio-immatricolazione-e-corsi-propedeutici-ITALIANO.rev_.pdf"
+    "srcLabel": "MUR sirkulyari 2026/27 va 2027/28 (PDF)",
+    "srcUrl": "https://portale.units.it/sites/default/files/2026-05/Circolare%202026-2027%20studenti_internazionali_EN_0.pdf"
   },
   {
     "id": "s5",
@@ -503,6 +519,17 @@
         "type": "callout",
         "style": "tip",
         "text": "Pochta kvitansiyasini yo'qotmang. Karta kelguncha u sizning hujjatingiz va full enrollment'da ham so'raladi. Sapienza'ning asosiy kampusida (CU007) permesso bo'yicha politsiya bo'limi ishlaydi."
+      },
+      {
+        "type": "callout",
+        "style": "info",
+        "text": "Uy topish, firibgarlardan saqlanish va ijara shartnomasi haqida batafsil: «Italiyada yashash» sahifasi. Eslatma: yotoqxonaga ariza berganingiz viza uchun uy-joy isboti hisoblanmaydi."
+      },
+      {
+        "type": "button",
+        "label": "Italiyada yashash: amaliy maslahatlar",
+        "url": "#yashash",
+        "note": "Kvartira, sog'liq, ish, birinchi hafta"
       }
     ],
     "srcLabel": "Sapienza – Residence permit",
@@ -513,8 +540,8 @@
     "title": "Full enrollment",
     "sub": "To'liq talaba bo'lish",
     "icon": "cap",
-    "when": "Stipendiya uchun: 10.12.2026 gacha (oxirgi chegara 10.02.2027)",
-    "intro": "Oxirgi qadam: asl hujjatlarni Sapienza'ning HELLO – Foreign Students ofisiga topshirasiz va to'liq ro'yxatdan o'tasiz.",
+    "when": "Italiyaga kelgandan keyin, universitet belgilagan muddatda",
+    "intro": "Oxirgi qadam: asl hujjatlarni universitetning xalqaro talabalar (yoki chet el diplomlari) bo'limiga topshirasiz va to'liq ro'yxatdan o'tasiz. Ko'p universitetlar buni kelgandan keyin bir oy ichida so'raydi (masalan Ferrara).",
     "blocks": [
       {
         "type": "list",
@@ -531,12 +558,12 @@
       {
         "type": "callout",
         "style": "tip",
-        "text": "DiSCo enrollment va permesso hujjatlarini 10.12.2026 gacha kutadi. 10.02.2027 gacha ham ro'yxatdan o'tmasangiz, stipendiyadan chiqarilasiz."
+        "text": "Stipendiya idorasi ham enrollment va permesso hujjatlarini kutadi (masalan Lazio DiSCo 2026/27 da 10.12.2026 gacha). O'z viloyatingiz idorasining muddatini «Stipendiyalar» sahifasida tekshiring."
       },
       {
         "type": "callout",
         "style": "info",
-        "text": "HELLO – Foreign Students: Piazzale Aldo Moro 5, Servizi Generali binosi, C zinapoya, 2-qavat · Hello@uniroma1.it · +39 06 49690261"
+        "text": "Misol, Sapienza: HELLO – Foreign Students ofisi, Piazzale Aldo Moro 5, Servizi Generali binosi, C zinapoya, 2-qavat · Hello@uniroma1.it · +39 06 49690261"
       }
     ],
     "srcLabel": "Sapienza – enrolment documents",
