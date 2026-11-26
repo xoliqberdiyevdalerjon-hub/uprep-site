@@ -3,12 +3,13 @@
   "title": "Chet elda o'qishga yo'l",
   "lead": "Davlat va universitet tanlashdan boshlab, viza va birinchi kunlargacha. Hammasi o'zbek tilida, rasmiy manbalar asosida.",
   "telegram": "Uprep_Admin",
-  "price": "Bepul",
-  "priceNote": "Saytdagi ma'lumot va vositalar bepul.",
+  "price": "Bepul (beta)",
+  "priceNote": "Login va onlayn to'lov ishga tushguncha ilova bepul.",
   "includes": [
     "8 bosqichli to'liq yo'riqnoma: arizadan full enrollment'gacha",
     "«Mening yo'lim» paneli, ariza kuzatuvchi va muddat eslatmalari",
-    "Hujjatlar checklist'i, profil tahlili va pul kalkulyatori"
+    "Hujjatlar checklist'i, profil tahlili va pul kalkulyatori",
+    "82 ta universitet va viloyat stipendiyalari bo'yicha ma'lumot"
   ],
   "footer": "Umumiy ma'lumot, kafolat emas. Talablar va sanalar har yili, universitet va viloyatga qarab o'zgaradi. Topshirishdan oldin rasmiy manbani tekshiring.",
   "heroImage": "media/hero-rome.jpg",
@@ -19,11 +20,11 @@
     },
     {
       "q": "Nima bepul, nima pullik?",
-      "a": "Saytdagi hamma narsa bepul: qo'llanma, «Noldan» yo'riqnomasi, universitetlar, stipendiyalar, ilovaning 8 bosqichi va barcha vositalar. Shaxsiy yordam kerak bo'lsa, @Uprep_Admin ga yozing."
+      "a": "Saytdagi hamma narsa hozir bepul: qo'llanma, «Noldan» yo'riqnomasi, universitetlar, stipendiyalar, ilovaning 8 bosqichi va barcha vositalar. Pullik qismi bu bizning shaxsiy yordamimiz: «Yordam bilan» ($499) va «To'liq hamrohlik» ($1 490, birinchi 10 talaba uchun). Faqat bitta bosqichda yordam kerak bo'lsa, alohida xizmatlar ham bor ($29 dan)."
     },
     {
-      "q": "Shaxsiy yordam olsa bo'ladimi?",
-      "a": "Ha. Savolingiz yoki vaziyatingizni @Uprep_Admin ga Telegram orqali yozing: qanday yordam bera olishimizni aytamiz."
+      "q": "To'lov qanday amalga oshiriladi?",
+      "a": "Hozircha tarif tanlab, Telegram orqali yozasiz va to'lov shartlarini @Uprep_Admin bilan kelishasiz. «To'liq hamrohlik»ni 3 qismga bo'lib to'lash mumkin. Onlayn to'lov (karta) ishga tushgach, saytning o'zida to'lash mumkin bo'ladi."
     },
     {
       "q": "Qabul yoki vizaga kafolat berasizmi?",
@@ -36,5 +37,80 @@
   ],
   "heroCredit": "Surat: Diliff, Wikimedia Commons, CC BY-SA 2.5",
   "heroCreditUrl": "https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome,_Italy_-_April_2007.jpg",
-  "updated": "26.11.2026"
+  "updated": "26.11.2026",
+  "plans": [
+    {
+      "id": "app",
+      "name": "Mustaqil",
+      "price": "Bepul",
+      "note": "Beta davrida: login va onlayn to'lov ishga tushguncha",
+      "tagline": "Ilovadan o'zingiz foydalanasiz: hamma bosqich, hujjatlar, muddatlar va vositalar bir joyda.",
+      "badge": "",
+      "items": [
+        "8 bosqichli to'liq yo'riqnoma: arizadan full enrollment'gacha",
+        "«Mening yo'lim» paneli, ariza kuzatuvchi va muddat eslatmalari",
+        "Hujjatlar checklist'i, profil tahlili va pul kalkulyatori",
+        "82 ta universitet va viloyat stipendiyalari bo'yicha ma'lumot"
+      ],
+      "cta": "Ilovani ochish"
+    },
+    {
+      "id": "support",
+      "name": "Yordam bilan",
+      "price": "$499",
+      "note": "Bir marta to'lov",
+      "tagline": "Hujjatlarni o'zingiz topshirasiz, har bir qadamda esa biz yoningizdamiz va xatolaringizni oldindan tutamiz.",
+      "badge": "Eng ko'p tanlanadi",
+      "items": [
+        "«Mustaqil» tarifidagi hamma narsa",
+        "Viza olguningizcha Telegram'da yordam: savollarga 24 soat ichida javob",
+        "3 ta video qo'ng'iroq (har biri 30 daqiqa)",
+        "Motivatsion xat va CV'ni tekshirib berish (1 marta)",
+        "Universitet tanlovi va viza hujjatlarini tekshirib berish"
+      ],
+      "cta": "Telegram'da yozish"
+    },
+    {
+      "id": "full",
+      "name": "To'liq hamrohlik",
+      "price": "$1 490",
+      "note": "Birinchi 10 talaba uchun (asoschi narxi), keyin $1 790. 3 qismga bo'lib to'lash mumkin",
+      "tagline": "Noldan Italiyadagi full enrollment'gacha hammasini biz bilan birga qilasiz.",
+      "badge": "Joylar cheklangan",
+      "items": [
+        "«Yordam bilan» tarifidagi hamma narsa",
+        "Barcha hujjatlarni yig'ishda boshidan oxirigacha yordam",
+        "3–5 ta universitetga arizalarni biz topshiramiz",
+        "Motivatsion xat va CV'ni birga yozamiz",
+        "DoV yoki CIMEA va Universitaly pre-enrollment",
+        "Viza hujjatlarini tayyorlash",
+        "Stipendiya (DSU) arizasi va oila hujjatlari",
+        "Italiyaga kelgach: permesso va full enrollment'gacha yordam"
+      ],
+      "cta": "Telegram'da yozish"
+    }
+  ],
+  "extras": [
+    {
+      "name": "Konsultatsiya, 1 soat",
+      "price": "$29",
+      "note": "Keyin istalgan tarifni olsangiz, shu summa chegiriladi"
+    },
+    {
+      "name": "Motivatsion xat va CV",
+      "price": "$99",
+      "note": "Tuzilma, tahrir va 2 marta tekshirish"
+    },
+    {
+      "name": "Viza hujjatlarini tekshirish",
+      "price": "$149",
+      "note": "Elchixona ro'yxati bo'yicha har bir hujjat"
+    },
+    {
+      "name": "Stipendiya (DSU) paketi",
+      "price": "$199",
+      "note": "Viloyatingiz bandosi, oila hujjatlari, ISEE va ariza"
+    }
+  ],
+  "plansNote": "Qabul va vizaga kafolat berilmaydi: qarorni universitet va elchixona chiqaradi. Universitet, CIMEA, elchixona to'lovlari, tarjima va apostil tarif narxiga kirmaydi."
 }
