@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/sitemap.xml

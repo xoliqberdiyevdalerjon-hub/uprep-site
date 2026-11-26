@@ -31,7 +31,6 @@ Hozir «Profil tahlili», «Tariflar» va «Fikr» formalari xabarni tayyorlab, 
 4. `assets/config.js` dagi `leadUrl` ga `https://<project>.supabase.co/functions/v1/lead` ni yozing.
 Shundan keyin har bir natija botdan admin chatiga keladi, ichida talabaning aloqasi (@username yoki telefon) bo'ladi.
 
-## Google uchun sahifalar
-`python3 scripts/build_seo.py` har bir universitet (`uni/<kod>/`) va asosiy mavzular (`noldan/`, `stipendiya/`, `universitetlar/`, `foundation/`, `testlar/`, `ota-onalar/`, `tariflar/`, `qollanma/`) uchun statik sahifa, `sitemap.xml` va `robots.txt` yozadi. `content/*.json` o'zgarganda qayta ishga tushiring (haftalik tekshiruv buni o'zi qiladi). O'z domeningizga o'tsangiz, skriptdagi `BASE` ni va `index.html` dagi canonical manzilni o'zgartiring.
-
-Google Search Console (ixtiyoriy, tavsiya etiladi): search.google.com/search-console → «URL prefix» → sayt manzili → «HTML tag» usuli. Berilgan `<meta name="google-site-verification" ...>` tegini `index.html` ning `<head>` qismiga qo'ying, so'ng «Sitemaps» bo'limiga `sitemap.xml` ni kiriting.
+## Google (hozircha yopiq)
+Sayt hozircha qidiruv tizimlaridan yashirilgan: `index.html` da `<meta name="robots" content="noindex, nofollow">`.
+Google uchun tayyor sahifalar `google-seo` tarmog'ida saqlangan (`scripts/build_seo.py`). Ochishga qaror qilinganda: noindex tegini olib tashlash, `google-seo` tarmog'ini birlashtirish va `python3 scripts/build_seo.py` ni ishga tushirish.
