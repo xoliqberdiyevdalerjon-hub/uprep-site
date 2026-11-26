@@ -21,3 +21,12 @@ app.pagescms.org → uprep-site. Bo'limlar: Bosh sahifa, Biz haqimizda, Noldan: 
 4. **Pullik kontentni yopish**: kurs bloklarini `course_stages` jadvaliga ko'chirib, `content/stages.json` da faqat sarlavhalar qoldiriladi.
 
 Hisoblar yoqilmaguncha sayt "tez orada" rejimida ishlaydi. Egasi uchun ko'rib chiqish: `<sayt>/#oldindan-korish`.
+
+## Saytdan xabarlar avtomatik @Uprep_Admin'ga kelishi (Uprep bot)
+Hozir «Profil tahlili», «Tariflar» va «Fikr» formalari xabarni tayyorlab, foydalanuvchiga Telegram'da qo'lda yuborishni ko'rsatadi. Avtomatik yuborish uchun:
+1. Telegram'da **@BotFather** → `/newbot` → nom bering (masalan Uprep yordamchi) → **token**ni saqlang.
+2. Admin akkauntidan yangi botga `/start` yozing. Brauzerda `https://api.telegram.org/bot<TOKEN>/getUpdates` ni oching va `"chat":{"id": ...}` raqamini oling: bu **ADMIN_CHAT_ID**.
+3. Supabase → Edge Functions → yangi funksiya `lead` (`supabase/functions/lead/index.ts`), **Verify JWT: off**.
+   Secrets: `TELEGRAM_BOT_TOKEN`, `ADMIN_CHAT_ID`, `ALLOWED_ORIGIN` = `https://xoliqberdiyevdalerjon-hub.github.io`.
+4. `assets/config.js` dagi `leadUrl` ga `https://<project>.supabase.co/functions/v1/lead` ni yozing.
+Shundan keyin har bir natija botdan admin chatiga keladi, ichida talabaning aloqasi (@username yoki telefon) bo'ladi.

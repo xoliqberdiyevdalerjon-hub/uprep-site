@@ -518,11 +518,49 @@
     return c;
   }
 
+  /* ================= SEND TO ADMIN =================
+     With CFG.leadUrl set (Supabase function "lead" + Telegram bot), the message reaches the admin automatically.
+     Without it: a sheet shows the message, copies it, and opens the admin chat directly from the tap
+     (window.open inside a promise is blocked by mobile browsers, so the link is a real <a> the user taps). */
+  function leadSheet(text, title){
+    var old = document.querySelector(".sheet-bg"); if(old) old.remove();
+    var bg = el("div", "sheet-bg"), sh = el("div", "sheet"); sh.setAttribute("role", "dialog"); sh.setAttribute("aria-modal", "true");
+    sh.appendChild(el("h3", null, title || "Xabaringiz tayyor"));
+    var ol = el("ol", "sheet-steps");
+    ["«Nusxalash» tugmasini bosing", "«Telegram'da ochish»ni bosing: " + tgName() + " chati ochiladi", "Xabar maydonini bosib turing, «Joylashtirish» (Вставить / Paste) ni tanlang va yuboring"].forEach(function(t){ ol.appendChild(el("li", null, t)); });
+    sh.appendChild(ol);
+    var ta = el("textarea", "sheet-ta"); ta.value = text; ta.rows = 7; ta.readOnly = true; sh.appendChild(ta);
+    var row = el("div", "sheet-btns");
+    var cp = el("button", "btn line"); cp.type = "button"; cp.appendChild(el("span", null, "Nusxalash")); cp.appendChild(ic("doc"));
+    cp.onclick = function(){ copyText(text).then(function(){ cp.firstChild.textContent = "Nusxalandi ✓"; }); ta.select(); };
+    var op = el("a", "btn gold"); op.href = tgUrl(); op.target = "_blank"; op.rel = "noopener"; op.appendChild(el("span", null, "Telegram'da ochish")); op.appendChild(ic("send"));
+    op.onclick = function(){ copyText(text); };
+    row.appendChild(cp); row.appendChild(op); sh.appendChild(row);
+    var sh2 = el("a", "prevlink"); sh2.href = "https://t.me/share/url?url=" + encodeURIComponent(location.origin + location.pathname) + "&text=" + encodeURIComponent(text); sh2.target = "_blank"; sh2.rel = "noopener"; sh2.appendChild(el("span", null, "Yoki: Telegram «Ulashish» orqali " + tgName() + " ni tanlab yuborish")); sh.appendChild(sh2);
+    var x = el("button", "sheet-x"); x.type = "button"; x.setAttribute("aria-label", "Yopish"); x.textContent = "×"; x.onclick = function(){ bg.remove(); }; sh.appendChild(x);
+    bg.onclick = function(e){ if(e.target === bg) bg.remove(); };
+    bg.appendChild(sh); document.body.appendChild(bg);
+    copyText(text);
+  }
+  function sendLead(kind, text, contact, done){
+    var url = safeUrl(CFG.leadUrl);
+    if(!url){ leadSheet(text); if(done) done(false); return; }
+    fetch(url, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({kind:kind, text:text, contact:str(contact), page:location.href, hp:""})})
+      .then(function(r){ if(!r.ok) throw 0; toast("Yuborildi! " + tgName() + " tez orada javob beradi."); if(done) done(true); })
+      .catch(function(){ leadSheet(text, "Avtomatik yuborilmadi: qo'lda yuboring"); if(done) done(false); });
+  }
+  function leadContactField(){
+    if(!safeUrl(CFG.leadUrl)) return null;
+    var l = el("label", "fld"); l.appendChild(el("span", null, "Siz bilan qanday bog'lanamiz? (Telegram @username yoki telefon)"));
+    var i = el("input"); i.type = "text"; i.placeholder = "@username yoki +998…"; i.autocomplete = "tel"; l.appendChild(i); l._input = i; return l;
+  }
+
   /* ================= PLANS (3 tiers) ================= */
   function plans(){ var P = arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }); return P.length ? P : [{id:"app", name:"Mustaqil", price:price(), note:"Bir marta to'lov", items:arr(S.site.includes)}]; }
   function planAsk(p){
     var body = "Salom! Uprep saytidan yozyapman. «" + str(p.name) + "» (" + str(p.price) + ") tarifi bo'yicha ma'lumot olmoqchiman.";
-    copyText(body).then(function(){ toast("Xabar nusxalandi. Telegram'da joylashtirib yuboring."); window.open(tgUrl(), "_blank", "noopener"); });
+    if(safeUrl(CFG.leadUrl)){ var c = prompt("Siz bilan qanday bog'lanamiz? Telegram @username yoki telefon raqamingiz:"); if(!str(c)) return; sendLead("tarif", body, c); }
+    else leadSheet(body);
   }
   function plansGrid(){
     var g = el("div", "plans");
@@ -1041,8 +1079,13 @@
       summary.push("Kerakli yordam: " + pfLabel("help", a.help) + " (" + want.name + ", " + want.price + ")");
       box.appendChild(el("p", "muted-note", "Bu tahlil taxminiy va kafolat emas. Aniq talablar har bir universitet va viloyat sahifasida."));
       /* send */
-      var sb = el("button", "go"); sb.type = "button"; var sp = el("span"); sp.appendChild(el("small", null, "Natija nusxalanadi va Telegram ochiladi")); sp.appendChild(el("span", "t", "Natijani " + tgName() + " ga yuborish")); sb.appendChild(sp); sb.appendChild(ic("send"));
-      sb.onclick = function(){ copyText("Salom! Uprep saytida profil tahlilidan o'tdim:\n- " + summary.join("\n- ") + "\n\nMaslahat olmoqchiman.").then(function(){ toast("Natija nusxalandi. Telegram'da joylashtirib yuboring."); window.open(tgUrl(), "_blank", "noopener"); }); };
+      var sb = el("button", "go"); sb.type = "button"; var sp = el("span"); sp.appendChild(el("small", null, safeUrl(CFG.leadUrl) ? "Natija to'g'ridan-to'g'ri adminga boradi" : "Natija va yuborish yo'riqnomasi chiqadi")); sp.appendChild(el("span", "t", "Natijani " + tgName() + " ga yuborish")); sb.appendChild(sp); sb.appendChild(ic("send"));
+      var cf = leadContactField(); if(cf) box.appendChild(cf);
+      sb.onclick = function(){
+        var msg = "Salom! Uprep saytida profil tahlilidan o'tdim:\n- " + summary.join("\n- ") + "\n\nMaslahat olmoqchiman.";
+        if(cf && !str(cf._input.value)){ toast("Telegram username yoki telefon raqamingizni yozing"); cf._input.focus(); return; }
+        sendLead("profil", msg, cf ? cf._input.value : "", function(ok){ if(ok) sp.lastChild.textContent = "Yuborildi ✓"; });
+      };
       box.appendChild(sb);
       var again = el("button", "markdone"); again.type = "button"; again.appendChild(ic("route")); again.appendChild(el("span", null, "Qaytadan boshlash")); again.onclick = function(){ PRF = {step:0, a:{members:"4", income:""}}; savePRF(); draw(); }; box.appendChild(again);
       box.appendChild(rowBtn("book", "Keyingi qadam: Italiyada o'qish noldan", "To'liq yo'riqnoma va PDF", "g", "#noldan"));
@@ -1066,7 +1109,7 @@
     if(arr(P.warnings).length){ var mk = el("ul", "mist"); arr(P.warnings).forEach(function(x){ var li = el("li"); li.appendChild(ic("shield")); li.appendChild(el("span", null, x)); mk.appendChild(li); }); main.appendChild(sec(secHead("Ehtiyot bo'ling", null, null, null, "Xavfsizlik"), mk)); }
     var cta = el("div", "links");
     var ask = el("button", "go"); ask.type = "button"; var sp = el("span"); sp.appendChild(el("small", null, "Ota-ona sifatida bevosita yozing")); sp.appendChild(el("span", "t", "Savol berish: " + tgName())); ask.appendChild(sp); ask.appendChild(ic("send"));
-    ask.onclick = function(){ copyText("Salom! Men ota-onaman. Farzandimning Italiyada o'qishi bo'yicha savolim bor:").then(function(){ toast("Matn nusxalandi. Telegram'da savolingizni yozib yuboring."); window.open(tgUrl(), "_blank", "noopener"); }); };
+    ask.onclick = function(){ leadSheet("Salom! Men ota-onaman. Farzandimning Italiyada o'qishi bo'yicha savolim bor:\n", "Savolingizni yozing"); };
     cta.appendChild(ask);
     cta.appendChild(rowBtn("star", "Farzandingiz profilini tahlil qiling", "8 savol, 2 daqiqa, bepul", "g", "#profil"));
     cta.appendChild(rowBtn("wallet", "Tariflar", plans().map(function(p){ return p.name + " " + p.price; }).join(" · "), null, "#tariflar"));
@@ -1571,7 +1614,7 @@
       if(str(tx.value).length < 5){ msg.textContent = "Xabarni yozing."; tx.focus(); return; }
       var lbl = kind.options[kind.selectedIndex].text;
       var body = "Uprep sayti, " + lbl + (str(nm.value) ? " (" + str(nm.value) + ")" : "") + ":\n" + str(tx.value) + "\n\nSahifa: " + location.href;
-      copyText(body).then(function(){ toast("Matn nusxalandi. Telegram'da joylashtirib yuboring."); window.open(tgUrl(), "_blank", "noopener"); });
+      sendLead("feedback", body, str(nm.value));
     };
     c.appendChild(form); return c;
   }
