@@ -189,7 +189,7 @@
   var A = { sb:null, user:null, paid:false, ready:!LIVE };
   var PREVIEW = false; /* owner's design preview, only while accounts are not switched on */
   try{ PREVIEW = !LIVE && localStorage.getItem("uprep-preview") === "1"; }catch(e){}
-  function hasCourse(){ return LIVE ? A.paid : PREVIEW; }
+  function hasCourse(){ if(CFG.openAll) return true; return LIVE ? A.paid : PREVIEW; }
 
   function loadScript(src){ return new Promise(function(res, rej){ var s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = rej; document.head.appendChild(s); }); }
   function initAuth(){
