@@ -274,7 +274,15 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "deadlineNote": "Ingliz tilidagi yagona bakalavr: Economics and Finance (kirish imtihoni, cheklangan joylar). Universitetning xalqaro stipendiyalari bor: 2026/27 chaqirig'i 20.04.2026 da yopilgan. 2027/28 sanalari hali e'lon qilinmagan.",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unich.it/international/international-students-degree-seekers/admission-procedure"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unite",
@@ -324,7 +332,27 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "tuition": "Oila daromadiga qarab (bosqichli)",
+    "english": "B2: Cambridge FCE, Trinity ISE II, IELTS Academic 5.5+, TOEFL iBT 72, Pearson 59",
+    "deadlineNote": "Qabul qarori odatda 1–2 ish kunida, qizg'in davrda taxminan 7 kunda. 2027/28 sanalari hali e'lon qilinmagan.",
+    "deadlines": [
+      {
+        "label": "Universitaly pre-enrollment va viza, 2026/27 (o'tgan yil)",
+        "date": "aprel – 30.11.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unite.it/English/Studying_at_UniTe/How_to_apply"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unite.it/English/Engine/RAServeFile.php/f/news/Guidelines_international_students_uniteramo_2026.pdf"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unibas",
@@ -6723,7 +6751,26 @@
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
     "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
-    "fee": "110 € (magistratura testi)"
+    "fee": "110 € (magistratura testi)",
+    "tuition": "Ikki yillik magistratura: yiliga 9 306 – 10 806 € (dasturga qarab)",
+    "deadlineNote": "Chet elda yashovchi non-EU talabalar joy qolsa, aprel oxirigacha topshira oladi.",
+    "deadlines": [
+      {
+        "label": "2027/28: ikki yillik magistraturalar (ko'p dasturlar)",
+        "date": "22.04.2027"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://apply.iulm.it/courses/browse"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.iulm.it/en/internazionale/studenti-internazionali"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unisr",
@@ -9814,7 +9861,30 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "deadlineNote": "Non-EU talabalar uchun avval kirish testi, so'ng apreldan Universitaly'da pre-enrollment. Saralovchi magistraturalar chaqiriqlari har yili aprel–iyulda chiqadi.",
+    "deadlines": [
+      {
+        "label": "Economics/Tourism magistraturasi: 2027/28 uchun mos kelishni tekshirish",
+        "date": "noyabr 2026 – 15.01.2027"
+      },
+      {
+        "label": "Bakalavr: viza olish muddati (2026/27)",
+        "date": "15.01.2027"
+      }
+    ],
+    "applyUrl": "https://www.uniss.it/en/teaching/student-services/guide-studenti/enrollment-non-eu-students",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.disea.uniss.it/it/node/159"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.uniss.it/en/teaching/student-services/guide-studenti/enrollment-non-eu-students"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unipa",
@@ -12691,7 +12761,25 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "deadlineNote": "Arxitektura bakalavriga non-EU talabalardan B2 italyan tili talab qilinadi. 2027/28 sanalari hali e'lon qilinmagan.",
+    "deadlines": [
+      {
+        "label": "Arxitektura magistraturasi: pre-enrollment va to'lov, 2026/27 (o'tgan yil)",
+        "date": "03.06.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.iuav.it/en/node/762"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.iuav.it/en/node/452"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unipd",
