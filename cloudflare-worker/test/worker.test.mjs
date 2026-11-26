@@ -1,7 +1,8 @@
 // Tests for the feedback relay Worker. Run: node --test cloudflare-worker/test/
 import { test, beforeEach } from "node:test";
 import assert from "node:assert/strict";
-import worker, { cutSafe, formatMessage, safeEqual, corsFor, resetRateLimit, LIMITS } from "../worker.js";
+import worker from "../worker.js";
+const { cutSafe, formatMessage, safeEqual, corsFor, resetRateLimit, LIMITS } = worker._internals;
 
 const KEY = "test-app-key-0123456789abcdef";
 const ORIGIN = "https://xoliqberdiyevdalerjon-hub.github.io";

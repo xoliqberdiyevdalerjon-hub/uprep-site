@@ -18,7 +18,7 @@
  * Response: { ok: true } or { ok: false, error: "<code>" }
  */
 
-export const LIMITS = {
+const LIMITS = {
   telegram: 4000,      // Telegram allows 4096; we keep a safety margin
   body: 16 * 1024,     // max request size in bytes
   text: 3500,          // max user text length (characters)
@@ -54,7 +54,7 @@ function allowedOrigins(env) {
 }
 
 /** CORS headers for this request, or null if the origin is not allowed. */
-export function corsFor(request, env) {
+function corsFor(request, env) {
   const list = allowedOrigins(env);
   const origin = request.headers.get("Origin") || "";
   const base = {
@@ -69,7 +69,7 @@ export function corsFor(request, env) {
 }
 
 /** Constant-time comparison. Both sides are hashed first so their lengths never leak. */
-export async function safeEqual(a, b) {
+async function safeEqual(a, b) {
   const enc = new TextEncoder();
   const [ha, hb] = await Promise.all([
     crypto.subtle.digest("SHA-256", enc.encode(String(a))),
@@ -85,7 +85,7 @@ export async function safeEqual(a, b) {
 }
 
 /** Removes control characters (keeps newlines and tabs), trims, caps length. */
-export function clean(value, max) {
+function clean(value, max) {
   const s = String(value == null ? "" : value)
     .replace(/\r\n?/g, "\n")
     .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "")
@@ -97,7 +97,7 @@ export function clean(value, max) {
  * Shortens text to at most `max` UTF-16 units without splitting an emoji or a letter with accents:
  * cuts on grapheme boundaries (Intl.Segmenter) and never in the middle of a surrogate pair.
  */
-export function cutSafe(text, max, suffix = "") {
+function cutSafe(text, max, suffix = "") {
   const s = String(text);
   if (s.length <= max) return s;
   const room = Math.max(0, max - suffix.length);
@@ -127,7 +127,7 @@ function stamp(env) {
 }
 
 /** Builds the plain-text Telegram message. Plain text = no formatting can be injected by the user. */
-export function formatMessage(data, env) {
+function formatMessage(data, env) {
   const meta = data && typeof data.meta === "object" && data.meta ? data.meta : {};
   const title = KINDS[clean(data.kind, 20)] || "📩 Saytdan xabar";
   const app = clean(meta.app, 40) || "Uprep";
@@ -152,54 +152,58 @@ export function formatMessage(data, env) {
 
 /* best-effort per-instance rate limit (use Cloudflare Rate Limiting rules for a hard limit) */
 const hits = new Map();
-export function limited(ip, now = Date.now()) {
+function limited(ip, now = Date.now()) {
   const list = (hits.get(ip) || []).filter((t) => now - t < LIMITS.rateWindowMs);
   list.push(now);
   hits.set(ip, list);
   if (hits.size > 5000) hits.clear();
   return list.length > LIMITS.rateCount;
 }
-export function resetRateLimit() { hits.clear(); }
+function resetRateLimit() { hits.clear(); }
 
 /* ---------------- handler ---------------- */
 
+async function handle(request, env) {
+  const cors = corsFor(request, env);
+  if (!cors) return json({ ok: false, error: "origin" }, 403, { "Vary": "Origin" });
+  if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
+  if (request.method !== "POST") return json({ ok: false, error: "method" }, 405, { ...cors, "Allow": "POST, OPTIONS" });
+
+  if (!env.BOT_TOKEN || !env.CHAT_ID || !env.APP_KEY) return json({ ok: false, error: "not_configured" }, 500, cors);
+  if (!(await safeEqual(request.headers.get("x-app-key") || "", env.APP_KEY))) return json({ ok: false, error: "key" }, 401, cors);
+
+  if (!/^application\/json\b/i.test(request.headers.get("Content-Type") || "")) return json({ ok: false, error: "type" }, 415, cors);
+  const declared = Number(request.headers.get("Content-Length") || 0);
+  if (declared > LIMITS.body) return json({ ok: false, error: "too_large" }, 413, cors);
+  const raw = await request.text();
+  if (raw.length > LIMITS.body) return json({ ok: false, error: "too_large" }, 413, cors);
+
+  let data;
+  try { data = JSON.parse(raw); } catch { return json({ ok: false, error: "json" }, 400, cors); }
+  if (!data || typeof data !== "object" || Array.isArray(data)) return json({ ok: false, error: "json" }, 400, cors);
+  if (clean(data.hp, 50)) return json({ ok: true }, 200, cors); // honeypot: a bot filled the hidden field
+  if (clean(data.text).length < LIMITS.minText) return json({ ok: false, error: "empty" }, 400, cors);
+
+  const ip = request.headers.get("CF-Connecting-IP") || request.headers.get("x-forwarded-for") || "?";
+  if (limited(ip)) return json({ ok: false, error: "rate" }, 429, { ...cors, "Retry-After": "600" });
+
+  let tg;
+  try {
+    tg = await fetch("https://api.telegram.org/bot" + env.BOT_TOKEN + "/sendMessage", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: env.CHAT_ID, text: formatMessage(data, env), disable_web_page_preview: true }),
+      signal: AbortSignal.timeout(LIMITS.telegramTimeoutMs),
+    });
+  } catch {
+    return json({ ok: false, error: "telegram_unreachable" }, 502, cors);
+  }
+  if (!tg.ok) return json({ ok: false, error: "telegram_" + tg.status }, 502, cors);
+  return json({ ok: true }, 200, cors);
+}
+
+/* Cloudflare reads only the default export. `_internals` is for the tests and is ignored by Cloudflare. */
 export default {
-  async fetch(request, env) {
-    const cors = corsFor(request, env);
-    if (!cors) return json({ ok: false, error: "origin" }, 403, { "Vary": "Origin" });
-    if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
-    if (request.method !== "POST") return json({ ok: false, error: "method" }, 405, { ...cors, "Allow": "POST, OPTIONS" });
-
-    if (!env.BOT_TOKEN || !env.CHAT_ID || !env.APP_KEY) return json({ ok: false, error: "not_configured" }, 500, cors);
-    if (!(await safeEqual(request.headers.get("x-app-key") || "", env.APP_KEY))) return json({ ok: false, error: "key" }, 401, cors);
-
-    if (!/^application\/json\b/i.test(request.headers.get("Content-Type") || "")) return json({ ok: false, error: "type" }, 415, cors);
-    const declared = Number(request.headers.get("Content-Length") || 0);
-    if (declared > LIMITS.body) return json({ ok: false, error: "too_large" }, 413, cors);
-    const raw = await request.text();
-    if (raw.length > LIMITS.body) return json({ ok: false, error: "too_large" }, 413, cors);
-
-    let data;
-    try { data = JSON.parse(raw); } catch { return json({ ok: false, error: "json" }, 400, cors); }
-    if (!data || typeof data !== "object" || Array.isArray(data)) return json({ ok: false, error: "json" }, 400, cors);
-    if (clean(data.hp, 50)) return json({ ok: true }, 200, cors); // honeypot: a bot filled the hidden field
-    if (clean(data.text).length < LIMITS.minText) return json({ ok: false, error: "empty" }, 400, cors);
-
-    const ip = request.headers.get("CF-Connecting-IP") || request.headers.get("x-forwarded-for") || "?";
-    if (limited(ip)) return json({ ok: false, error: "rate" }, 429, { ...cors, "Retry-After": "600" });
-
-    let tg;
-    try {
-      tg = await fetch("https://api.telegram.org/bot" + env.BOT_TOKEN + "/sendMessage", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: env.CHAT_ID, text: formatMessage(data, env), disable_web_page_preview: true }),
-        signal: AbortSignal.timeout(LIMITS.telegramTimeoutMs),
-      });
-    } catch {
-      return json({ ok: false, error: "telegram_unreachable" }, 502, cors);
-    }
-    if (!tg.ok) return json({ ok: false, error: "telegram_" + tg.status }, 502, cors);
-    return json({ ok: true }, 200, cors);
-  },
+  fetch: handle,
+  _internals: { LIMITS, corsFor, safeEqual, clean, cutSafe, formatMessage, limited, resetRateLimit },
 };
