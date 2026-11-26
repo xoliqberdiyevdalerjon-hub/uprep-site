@@ -48,7 +48,7 @@
       "title": "Sog'liq",
       "intro": "Permesso uchun butun muddatga sug'urta kerak. Ikki yo'l bor.",
       "items": [
-        "Italiya davlat sog'liqni saqlash tizimiga (SSN) ixtiyoriy yozilish: talaba uchun yiliga 700 €, faqat kalendar yili uchun (yanvar–dekabr), bo'lib to'lanmaydi.",
+        "Italiya davlat sog'liqni saqlash tizimiga (SSN) ixtiyoriy yozilish: talaba uchun yiliga {{ssn}}, faqat kalendar yili uchun (yanvar–dekabr), bo'lib to'lanmaydi.",
         "Yoki Italiyada amal qiladigan xususiy sug'urta polisi.",
         "SSN'ga yozilsangiz, oilaviy shifokor (medico di base) tanlaysiz va tessera sanitaria (tibbiy karta) olasiz.",
         "Shoshilinch holatda: 112 raqami. Pronto soccorso (tez yordam bo'limi) hammaga yordam beradi."

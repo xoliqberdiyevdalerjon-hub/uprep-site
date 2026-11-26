@@ -14,6 +14,13 @@ content:
       - { name: eyebrow, label: Ustki kichik yozuv, type: string }
       - { name: title, label: Sarlavha, type: string }
       - { name: lead, label: Qisqa matn, type: text }
+      - name: facts
+        label: "Asosiy raqamlar (butun saytda {{viza}}, {{ssn}} o'rniga qo'yiladi)"
+        type: object
+        fields:
+          - { name: viza, label: "Viza uchun yillik summa (masalan 10 179,85 €) — matnda {{viza}}", type: string }
+          - { name: vizaYil, label: "Bu talab qaysi yil uchun — matnda {{vizaYil}}", type: string }
+          - { name: ssn, label: "SSN yillik to'lovi (masalan 700 €) — matnda {{ssn}}", type: string }
       - { name: telegram, label: Telegram username (@ belgisisiz), type: string }
       - { name: price, label: "Kurs narxi (masalan $399)", type: string }
       - { name: priceNote, label: Narx ostidagi izoh, type: string }
@@ -666,6 +673,12 @@ content:
         fields:
           - { name: q, label: Savol, type: string }
           - { name: a, label: "Javob (bo'sh qator = yangi xatboshi)", type: text }
+          - name: link
+            label: "Batafsil havolasi (to'liq ma'lumot turgan sahifa)"
+            type: object
+            fields:
+              - { name: label, label: Matn, type: string }
+              - { name: url, label: "Manzil (masalan #s4)", type: string }
       - { name: docs, label: "Ota-onadan kerak hujjatlar", type: string, list: true }
       - { name: warnings, label: "Ehtiyot bo'ling (ro'yxat)", type: string, list: true }
       - name: sources

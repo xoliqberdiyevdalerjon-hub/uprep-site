@@ -2,6 +2,11 @@
   "eyebrow": "Uprep · 2027/28 qabuli",
   "title": "Chet elda o'qishga yo'l",
   "lead": "Davlat va universitet tanlashdan boshlab, viza va birinchi kunlargacha. Hammasi o'zbek tilida, rasmiy manbalar asosida.",
+  "facts": {
+    "viza": "10 179,85 €",
+    "vizaYil": "2026/27 va 2027/28",
+    "ssn": "700 €"
+  },
   "telegram": "Uprep_Admin",
   "price": "Bepul (beta)",
   "priceNote": "Login va onlayn to'lov ishga tushguncha sayt bepul.",
@@ -20,7 +25,7 @@
     },
     {
       "q": "Nima bepul, nima pullik?",
-      "a": "Saytdagi hamma narsa hozir bepul: qo'llanma, «Noldan» yo'riqnomasi, universitetlar, stipendiyalar, 8 qadamlik qo'llanma va barcha vositalar. Pullik qismi bu bizning shaxsiy yordamimiz: Plus ($499) va Premium ($1 490, birinchi 10 talaba uchun). Faqat bitta bosqichda yordam kerak bo'lsa, alohida xizmatlar ham bor ($29 dan)."
+      "a": "Saytdagi hamma narsa bepul: 8 qadamlik qo'llanma, «Noldan» yo'riqnomasi, universitetlar, stipendiyalar va barcha vositalar. Pullik qismi faqat bizning shaxsiy yordamimiz. Tariflar va narxlar: Sozlamalar → To'lov."
     },
     {
       "q": "To'lov qanday amalga oshiriladi?",

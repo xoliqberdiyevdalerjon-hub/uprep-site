@@ -319,7 +319,7 @@
         "type": "stats",
         "items": [
           {
-            "big": "10 179,85 €",
+            "big": "{{viza}}",
             "small": "yiliga pul isboti (2026/27 va 2027/28)"
           },
           {
@@ -352,7 +352,7 @@
       {
         "type": "callout",
         "style": "warn",
-        "text": "Pul isboti: yiliga 10 179,85 €. Pul qonuniy va kuzatiladigan manbadan bo'lishi kerak: o'zingizning yoki oilangizning (4-darajagacha qarindosh) hisobi. Elchixona hisobdagi harakatni va summa oila daromadiga mosligini tekshiradi. Stipendiyaga ariza berganingiz yoki unga mos kelishingiz pul o'rnida hisoblanmaydi."
+        "text": "Pul isboti: yiliga {{viza}}. Pul qonuniy va kuzatiladigan manbadan bo'lishi kerak: o'zingizning yoki oilangizning (4-darajagacha qarindosh) hisobi. Elchixona hisobdagi harakatni va summa oila daromadiga mosligini tekshiradi. Stipendiyaga ariza berganingiz yoki unga mos kelishingiz pul o'rnida hisoblanmaydi."
       },
       {
         "type": "callout",
@@ -438,7 +438,7 @@
       {
         "type": "callout",
         "style": "info",
-        "text": "Har bir viloyatning idorasi, muddati va havolasi «Stipendiyalar» sahifasida. 2026/27 da davlat belgilagan minimum: fuori sede talaba uchun 7 171,11 €, ISEE chegarasi 28 339,88 €."
+        "text": "Har bir viloyatning idorasi, muddati va havolasi «Stipendiyalar» sahifasida. 2026/27 da davlat belgilagan minimum: fuori sede talaba uchun {{stip}}, ISEE chegarasi {{isee}}."
       },
       {
         "type": "stats",
@@ -452,8 +452,8 @@
             "small": "kuniga bepul ovqat (yiliga 600 € qiymatida)"
           },
           {
-            "big": "28 339,88 €",
-            "small": "ISEE chegarasi. ISPE: 61 608,48 €"
+            "big": "{{isee}}",
+            "small": "ISEE chegarasi. ISPE: {{ispe}}"
           }
         ]
       },

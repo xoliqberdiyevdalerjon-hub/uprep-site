@@ -4,13 +4,14 @@
   "updated": "26.11.2026",
   "letter": "Salom!\n\nAgar shu sahifani ochgan bo'lsangiz, demak boshingizda bitta savol aylanyapti: «Men ham Italiyada o'qiy olamanmi?». Javob ko'pincha «ha». Lekin yo'l uzun, atamalar notanish (pre-acceptance, DoV, Universitaly, permesso...) va internetda bir-biriga zid gaplar ko'p. Shuning uchun ko'pchilik qayerdan boshlashni bilmay, eng muhim muddatlarni o'tkazib yuboradi.\n\nBu yo'riqnoma aynan shuning uchun yozildi. Unda hech narsa bilmaydigan odam uchun hamma narsa tartib bilan, oddiy tilda tushuntirilgan: nima qilasiz, qachon qilasiz, qaysi hujjat kerak va qayerda odamlar ko'p adashadi.\n\nShoshmang. Har bir bobni o'qing, o'zingizga kerakli joyni belgilang va bir vaqtda faqat bitta qadamni bajaring. Yo'l uzun ko'rinadi, lekin har bir qadam alohida olinganda oddiy.",
   "summary": [
-    { "n": "1", "t": "Maqsadni aniqlaysiz", "d": "Daraja, yo'nalish, 3–5 ta universitet, til va testlar." },
-    { "n": "2", "t": "Universitetga ariza berasiz", "d": "Universitet «sizni olamiz» desa, pre-acceptance xati keladi." },
-    { "n": "3", "t": "Diplomni tan oldirasiz", "d": "Elchixonadan DoV yoki onlayn CIMEA sertifikati." },
-    { "n": "4", "t": "Universitaly'da pre-enrollment", "d": "Vazirlik portalida ariza; universitet tasdiqlaydi." },
-    { "n": "5", "t": "Talaba vizasini olasiz", "d": "Toshkentdagi Italiya elchixonasida D toifali viza." },
-    { "n": "6", "t": "Italiyada rasmiylashtirasiz", "d": "8 kun ichida permesso, keyin full enrollment." },
-    { "n": "★", "t": "Yonma-yon: stipendiya", "d": "Oila hujjatlari O'zbekistonda, ariza yozda." }
+    { "n": "1", "t": "Maqsad va universitet", "d": "Daraja, yo'nalish, 3–5 ta universitet, til va testlar." },
+    { "n": "2", "t": "Pre-acceptance", "d": "Universitetga ariza; «sizni olamiz» desa, pre-acceptance xati keladi." },
+    { "n": "3", "t": "DoV yoki CIMEA", "d": "Diplomni tan oldirish: elchixonadan DoV yoki onlayn CIMEA sertifikati." },
+    { "n": "4", "t": "Pre-enrollment", "d": "Universitaly portalida ariza; universitet tasdiqlaydi." },
+    { "n": "5", "t": "Viza", "d": "Toshkentdagi Italiya elchixonasida D toifali talaba vizasi." },
+    { "n": "6", "t": "Stipendiya (DSU)", "d": "Oila hujjatlari O'zbekistonda tayyorlanadi, ariza yozda beriladi." },
+    { "n": "7", "t": "Italiyaga kelgach", "d": "8 kun ichida permesso, codice fiscale va birinchi hafta ishlari." },
+    { "n": "8", "t": "Full enrollment", "d": "Asl hujjatlarni topshirib, to'liq talaba bo'lasiz." }
   ],
   "chapters": [
     {
@@ -24,7 +25,7 @@
         "Qaysi yo'nalish? Iqtisod, muhandislik, IT, tibbiyot, xalqaro munosabatlar...",
         "Qaysi tilda o'qiyman? Ingliz tilidagi dasturlar ko'p: ularda o'qisangiz, italyan tili shart emas.",
         "Qaysi shahar? Katta shahar qiziqarli, lekin uy qimmat. Kichik universitet shahri arzonroq va tinchroq.",
-        "Pulni kim ko'rsatadi? Viza uchun yiliga 10 179,85 € mablag' kerak: sizda yoki oilangizda."
+        "Pulni kim ko'rsatadi? Viza uchun yiliga {{viza}} mablag' kerak: sizda yoki oilangizda."
       ],
       "sections": [
         {
@@ -153,7 +154,7 @@
       "kicker": "5-bob",
       "title": "Stipendiya (DSU): eng katta imkoniyat",
       "when": "Ariza odatda iyun – sentyabr, viloyatga qarab",
-      "body": "Ko'pchilik bilmaydigan narsa: Italiyada oila daromadi past talabalarga viloyat idoralari stipendiya beradi. Bu xorijlik talabalarga ham tegishli. Stipendiya pul, ko'p shaharlarda ovqat va yotoqxona (ba'zi viloyatlarda ular stipendiya hisobidan to'lanadi) hamda o'qish to'lovidan ozodlikni o'z ichiga oladi.\n\n2026/27 o'quv yili uchun davlat belgilagan minimum oiladan uzoqda yashovchi (fuori sede) talaba uchun yiliga 7 171,11 €. Viloyatlar bundan ko'proq ham berishi mumkin.\n\nEng muhim nuqta: ariza yozda, siz hali O'zbekistondaligingizda beriladi. Oila hujjatlarini esa faqat O'zbekistonda tayyorlash mumkin. Shuning uchun bu ishni jo'nab ketishdan oldin boshlaysiz.",
+      "body": "Ko'pchilik bilmaydigan narsa: Italiyada oila daromadi past talabalarga viloyat idoralari stipendiya beradi. Bu xorijlik talabalarga ham tegishli. Stipendiya pul, ko'p shaharlarda ovqat va yotoqxona (ba'zi viloyatlarda ular stipendiya hisobidan to'lanadi) hamda o'qish to'lovidan ozodlikni o'z ichiga oladi.\n\n2026/27 o'quv yili uchun davlat belgilagan minimum oiladan uzoqda yashovchi (fuori sede) talaba uchun yiliga {{stip}}. Viloyatlar bundan ko'proq ham berishi mumkin.\n\nEng muhim nuqta: ariza yozda, siz hali O'zbekistondaligingizda beriladi. Oila hujjatlarini esa faqat O'zbekistonda tayyorlash mumkin. Shuning uchun bu ishni jo'nab ketishdan oldin boshlaysiz.",
       "steps": [
         "Universitetingiz qaysi viloyatda ekanini va u yerdagi stipendiya idorasini toping (Lazio'da DiSCo, Toskanada DSU Toscana va hokazo).",
         "Idoraning bandosini (shartlar hujjati) o'qing: muddat, summa, kerakli hujjatlar.",
@@ -175,7 +176,7 @@
         {
           "title": "Chegaralar (2026/27)",
           "items": [
-            "ISEE chegarasi: 28 339,88 €, ISPE chegarasi: 61 608,48 €. Bittasidan oshsa, stipendiya berilmaydi.",
+            "ISEE chegarasi: {{isee}}, ISPE chegarasi: {{ispe}}. Bittasidan oshsa, stipendiya berilmaydi.",
             "Stipendiya g'oliblari o'qish to'lovidan ozod qilinadi.",
             "Ikkinchi yildan boshlab stipendiya olish uchun yetarli kredit (CFU) to'plash kerak."
           ]
@@ -193,7 +194,7 @@
       "kicker": "6-bob",
       "title": "Talaba vizasi (D toifa)",
       "when": "Safardan 6 oydan 15 kungacha oldin. 2027/28 uchun eng kechi 31.10.2027",
-      "body": "Talaba vizasi Toshkentdagi Italiya elchixonasining konsullik bo'limiga topshiriladi. Bu D toifadagi milliy viza: 91 kundan 365 kungacha, ko'p martalik. Ko'rib chiqish 90 kungacha davom etadi va shu vaqt davomida pasportingiz elchixonada qoladi.\n\nVizaning eng ko'p savol tug'diradigan qismi pul. Yiliga 10 179,85 € mablag'ingiz borligini ko'rsatishingiz kerak (2026/27 va 2027/28 talabi). Bu pul sarflanmaydi: u sizning yoki oilangizning hisobida borligi ko'rsatiladi.",
+      "body": "Talaba vizasi Toshkentdagi Italiya elchixonasining konsullik bo'limiga topshiriladi. Bu D toifadagi milliy viza: 91 kundan 365 kungacha, ko'p martalik. Ko'rib chiqish 90 kungacha davom etadi va shu vaqt davomida pasportingiz elchixonada qoladi.\n\nVizaning eng ko'p savol tug'diradigan qismi pul. Yiliga {{viza}} mablag'ingiz borligini ko'rsatishingiz kerak (2026/27 va 2027/28 talabi). Bu pul sarflanmaydi: u sizning yoki oilangizning hisobida borligi ko'rsatiladi.",
       "steps": [
         "Universitaly pre-enrollment tasdiqlanganini kuting.",
         "Hujjatlarni elchixona ro'yxati bo'yicha yig'ing (pastda).",
@@ -272,7 +273,7 @@
             "Codice fiscale (soliq raqami): bank, telefon, ijara va stipendiya uchun kerak.",
             "Italiya SIM-kartasi.",
             "Bank hisobi (IBAN): stipendiya shu hisobga keladi.",
-            "Sog'liq: Italiya davlat sog'liq tizimiga (SSN) ixtiyoriy yozilish talaba uchun yiliga 700 € (kalendar yili uchun) yoki Italiyada amal qiladigan xususiy sug'urta."
+            "Sog'liq: Italiya davlat sog'liq tizimiga (SSN) ixtiyoriy yozilish talaba uchun yiliga {{ssn}} (kalendar yili uchun) yoki Italiyada amal qiladigan xususiy sug'urta."
           ]
         }
       ],

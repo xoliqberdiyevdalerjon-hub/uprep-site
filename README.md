@@ -37,3 +37,11 @@ Google uchun tayyor sahifalar `google-seo` tarmog'ida saqlangan (`scripts/build_
 
 ## Faqat veb-sayt
 Uprep telefonga o'rnatiladigan ilova (PWA) emas, oddiy veb-sayt. `manifest.webmanifest` olib tashlangan. `sw.js` faqat avval o'rnatilgan eski ilovani tozalash uchun qoldirilgan: u keshni o'chiradi va o'zini ro'yxatdan chiqaradi. `index.html` ham har ochilganda eski service worker'larni o'chiradi.
+
+## Asosiy raqamlar bitta joyda
+
+Viza summasi, uning yili va SSN to'lovi `content/site.json` ichidagi `facts` bo'limida, stipendiya chegaralari esa `content/dsu.json` ichidagi `national` bo'limida turadi. Matnlarda ular `{{viza}}`, `{{vizaYil}}`, `{{ssn}}`, `{{isee}}`, `{{ispe}}`, `{{stip}}`, `{{dsuYil}}` ko'rinishida yoziladi va sayt ochilganda haqiqiy qiymat bilan almashtiriladi. Raqam o'zgarsa, faqat shu ikki joyni yangilang.
+
+## Brauzerda saqlanadigan ma'lumotlar
+
+Foydalanuvchining rejasi, profil tahlili, saqlangan universitetlar va sozlamalari brauzerda bitta `uprep_state_v2` yozuvida saqlanadi. Eski `uprep-*` yozuvlari birinchi ochilishda avtomatik ko'chiriladi.

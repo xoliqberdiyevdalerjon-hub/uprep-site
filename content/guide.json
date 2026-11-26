@@ -57,7 +57,7 @@
     {
       "when": "Iyul – sentyabr (2027/28: eng kechi 31.10.2027)",
       "title": "Talaba vizasi",
-      "text": "Toshkentdagi Italiya elchixonasining konsullik bo'limiga topshirasiz. Ko'rib chiqish 90 kungacha davom etadi. Yiliga 10 179,85 € mablag' ko'rsatasiz: o'zingizning yoki oilangizning qonuniy, kuzatiladigan hisobida.",
+      "text": "Toshkentdagi Italiya elchixonasining konsullik bo'limiga topshirasiz. Ko'rib chiqish 90 kungacha davom etadi. Yiliga {{viza}} mablag' ko'rsatasiz: o'zingizning yoki oilangizning qonuniy, kuzatiladigan hisobida.",
       "stage": "s4"
     },
     {
@@ -213,7 +213,7 @@
     },
     {
       "item": "Viza uchun pul isboti",
-      "cost": "10 179,85 € / yil",
+      "cost": "{{viza}} / yil",
       "note": "2026/27 talabi. Bu pul sarflanmaydi: hisobingizda (yoki homiyingizda) borligini ko'rsatasiz. 2025/26 da 6 947,33 € edi."
     },
     {
@@ -250,7 +250,7 @@
       "url": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Study-enrolment-and-foundation-years-ENGLISH-rev.pdf"
     },
     {
-      "label": "Konsullik ma'lumoti: 2026/27 pul isboti 10 179,85 € (PDF)",
+      "label": "Konsullik ma'lumoti: 2026/27 pul isboti {{viza}} (PDF)",
       "url": "https://ambpodgorica.esteri.it/wp-content/uploads/2026/06/info-visti-2026-27-it-mne.pdf"
     },
     {

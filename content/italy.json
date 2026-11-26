@@ -79,7 +79,7 @@
           "type": "stats",
           "items": [
             {
-              "big": "10 179,85 €",
+              "big": "{{viza}}",
               "small": "viza uchun yillik minimal mablag' (2026, Unibo ma'lumoti)"
             },
             {

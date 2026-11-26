@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="google-site-verification" content="O1Dk-TTNUqNGjQwwzdzgxDX950J0ZRFmFASPZj_ZKI0" />
+<!-- Qidiruv tizimlaridan ataylab yashirilgan (egasining qarori). Google'ga chiqarishda shu 3 ta robots/googlebot/bingbot qatorini olib tashlang va google-seo branch'ini qo'shing. -->
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="bingbot" content="noindex, nofollow, noarchive">
@@ -22,15 +23,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=42">
+<link rel="stylesheet" href="assets/style.css?v=43">
 </head>
 <body>
-<script>try{if(localStorage.getItem("uprep-big"))document.documentElement.classList.add("bigtext");if(localStorage.getItem("uprep-calm"))document.documentElement.classList.add("calm");var t=localStorage.getItem("uprep-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<script>try{var P=(JSON.parse(localStorage.getItem("uprep_state_v2")||"null")||{}).prefs||{};var L=function(k){return localStorage.getItem("uprep-"+k)};var B=P.big||L("big"),C=P.calm||L("calm"),t=P.theme||L("theme"),d=document.documentElement;if(B)d.classList.add("bigtext");if(C)d.classList.add("calm");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}</script>
 <div class="scene" aria-hidden="true"><i></i><i></i><i></i></div>
 <div id="app"><div class="loading" role="status"><span>Yuklanmoqda…</span></div></div>
 <noscript><p style="padding:20px">Sayt ishlashi uchun brauzerda JavaScript yoqilgan bo'lishi kerak.</p></noscript>
 <script src="assets/config.js?v=6"></script>
-<script src="assets/app.js?v=51"></script>
+<script src="assets/app.js?v=52"></script>
 <script>/* Uprep faqat veb-sayt: avval o'rnatilgan ilova (service worker) va uning keshi o'chiriladi */if("serviceWorker" in navigator){navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){r.unregister();});}).catch(function(){});}if(window.caches){caches.keys().then(function(ks){ks.forEach(function(k){if(/^uprep-/.test(k))caches.delete(k);});}).catch(function(){});}</script>
 </body>
 </html>
