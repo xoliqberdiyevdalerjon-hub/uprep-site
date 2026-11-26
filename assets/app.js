@@ -560,7 +560,7 @@
   /* ================= PLANS (3 tiers) ================= */
   function plans(){ var P = arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }); return P.length ? P : [{id:"app", name:"Mustaqil", price:price(), note:"Bir marta to'lov", items:arr(S.site.includes)}]; }
   function planAsk(p){
-    var body = "Salom! Uprep saytidan yozyapman. «" + str(p.name) + "» (" + str(p.price) + ") tarifi bo'yicha ma'lumot olmoqchiman.";
+    var body = "Salom! Uprep saytidan yozyapman. «" + str(p.name) + "» (" + str(p.price) + ") " + (p.id ? "tarifi" : "xizmati") + " bo'yicha ma'lumot olmoqchiman.";
     if(safeUrl(CFG.leadUrl)){ var c = prompt("Siz bilan qanday bog'lanamiz? Telegram @username yoki telefon raqamingiz:"); if(!str(c)) return; sendLead("tarif", body, c); }
     else leadSheet(body);
   }
@@ -588,8 +588,12 @@
   function plansSection(title){
     var wrap = el("div");
     wrap.appendChild(plansGrid());
+    var EX = arr(S.site.extras).filter(function(x){ return x && str(x.name) && str(x.price); });
+    if(EX.length){ var xg = el("div", "extras"); xg.appendChild(el("h3", null, "Faqat bitta bosqichda yordam kerakmi?"));
+      EX.forEach(function(x){ var b = el("button", "extra"); b.type = "button"; var t = el("span", "txt"); t.appendChild(el("b", null, x.name)); if(x.note) t.appendChild(el("small", null, x.note)); b.appendChild(t); b.appendChild(el("span", "extra-p", x.price)); b.onclick = function(){ planAsk(x); }; xg.appendChild(b); });
+      wrap.appendChild(xg); }
     if(str(S.site.plansNote)) wrap.appendChild(el("p", "plans-note", S.site.plansNote));
-    return sec(secHead(title || "Tariflar", null, null, "tariflar-box", "Narxlar", "O'zingizga mos yo'lni tanlang. Hammasi bir marta to'lanadi."), wrap);
+    return sec(secHead(title || "Tariflar", null, null, "tariflar-box", "Narxlar", "O'zingizga mos yo'lni tanlang. Saytdagi ma'lumot va vositalar bepul, pullik qismi shaxsiy yordamimiz."), wrap);
   }
   function plansView(main){
     var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage});
@@ -1635,7 +1639,11 @@
     t.appendChild(el("small", null, [u ? (u.short || u.name) : "", r.program, r.year].filter(Boolean).join(" · "))); f.appendChild(t); c.appendChild(f);
     return c;
   }
-  function copyText(t){ try{ if(navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t); }catch(e){} var a = el("textarea"); a.value = t; document.body.appendChild(a); a.select(); try{ document.execCommand("copy"); }catch(e){} a.remove(); return Promise.resolve(); }
+  function copyText(t){
+    function legacy(){ var a = el("textarea"); a.value = t; a.setAttribute("readonly", ""); a.style.position = "fixed"; a.style.opacity = "0"; document.body.appendChild(a); a.select(); var ok = false; try{ ok = document.execCommand("copy"); }catch(e){} a.remove(); return ok; }
+    try{ if(navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t).catch(function(){ legacy(); }); }catch(e){}
+    legacy(); return Promise.resolve();
+  }
   function feedbackForm(preset){
     var c = el("section", "card fb");
     c.appendChild(el("h3", null, "Fikr, taklif yoki savol yuboring"));

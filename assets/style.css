@@ -1206,3 +1206,12 @@ a.news-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line-2),
 .set-seg{display:inline-flex;flex-wrap:wrap}
 .prevlink.danger{color:var(--red)}
 .set-seg button{padding:0 16px}
+
+/* ---------- Extra services ---------- */
+.extras{margin-top:18px;padding:18px;border-radius:var(--r-lg);background:var(--surface);box-shadow:0 0 0 1px var(--line)}
+.extras h3{margin:0 0 10px;font:700 17px/1.3 var(--display)}
+.extra{display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px;padding:12px 4px;border:0;border-top:1px solid var(--line);background:none;color:var(--ink);text-align:left;cursor:pointer}
+.extra .txt b{display:block;font-size:15px}
+.extra .txt small{display:block;margin-top:2px;color:var(--muted);font-size:13px}
+.extra-p{flex:none;padding:6px 12px;border-radius:999px;background:var(--gold-soft);color:var(--gold-ink);font-weight:800}
+.extra:hover .extra-p{background:var(--gold);color:#1B1300}

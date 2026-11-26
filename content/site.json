@@ -3,14 +3,13 @@
   "title": "Chet elda o'qishga yo'l",
   "lead": "Davlat va universitet tanlashdan boshlab, viza va birinchi kunlargacha. Hammasi o'zbek tilida, rasmiy manbalar asosida.",
   "telegram": "Uprep_Admin",
-  "price": "$199",
-  "priceNote": "Bir marta to'lov. Ilova umrbod ochiq.",
+  "price": "Bepul (beta)",
+  "priceNote": "Login va onlayn to'lov ishga tushguncha ilova bepul.",
   "includes": [
     "8 bosqichli to'liq yo'riqnoma: arizadan full enrollment'gacha",
-    "Har bosqich uchun hujjatlar ro'yxati va belgilab boriladigan checklist",
-    "Stipendiya (DSU) va ISEE uchun oiladan yig'iladigan hujjatlar",
-    "Viza, permesso va Italiyaga kelgandan keyingi ishlar",
-    "Muddatlar kalendari va yangilanishlar"
+    "«Mening yo'lim» paneli, ariza kuzatuvchi va muddat eslatmalari",
+    "Hujjatlar checklist'i, profil tahlili va pul kalkulyatori",
+    "82 ta universitet va viloyat stipendiyalari bo'yicha ma'lumot"
   ],
   "footer": "Umumiy ma'lumot, kafolat emas. Talablar va sanalar har yili, universitet va viloyatga qarab o'zgaradi. Topshirishdan oldin rasmiy manbani tekshiring.",
   "heroImage": "media/hero-rome.jpg",
@@ -21,11 +20,11 @@
     },
     {
       "q": "Nima bepul, nima pullik?",
-      "a": "Qo'llanma, «Noldan» yo'riqnomasi, universitet, shahar va stipendiya sahifalari hamda kursning 1-bosqichi bepul. Ilovaning to'liq bosqichlari «Mustaqil» tarifida ($199). Online yordam kerak bo'lsa «Yordam bilan» ($499), hammasini biz bilan birga qilmoqchi bo'lsangiz «To'liq hamrohlik» ($1 399)."
+      "a": "Saytdagi hamma narsa hozir bepul: qo'llanma, «Noldan» yo'riqnomasi, universitetlar, stipendiyalar, ilovaning 8 bosqichi va barcha vositalar. Pullik qismi bu bizning shaxsiy yordamimiz: «Yordam bilan» ($499) va «To'liq hamrohlik» ($1 490, birinchi 10 talaba uchun). Faqat bitta bosqichda yordam kerak bo'lsa, alohida xizmatlar ham bor ($29 dan)."
     },
     {
       "q": "To'lov qanday amalga oshiriladi?",
-      "a": "Uchta tarif bor: Mustaqil $199, Yordam bilan $499 va To'liq hamrohlik $1 399. Hammasi bir marta to'lanadi. Onlayn to'lov ishga tushguncha Telegram orqali yozing."
+      "a": "Hozircha tarif tanlab, Telegram orqali yozasiz va to'lov shartlarini @Uprep_Admin bilan kelishasiz. «To'liq hamrohlik»ni 3 qismga bo'lib to'lash mumkin. Onlayn to'lov (karta) ishga tushgach, saytning o'zida to'lash mumkin bo'ladi."
     },
     {
       "q": "Qabul yoki vizaga kafolat berasizmi?",
@@ -43,16 +42,15 @@
     {
       "id": "app",
       "name": "Mustaqil",
-      "price": "$199",
-      "note": "Bir marta to'lov, umrbod ochiq",
-      "tagline": "Ilovadan o'zingiz foydalanasiz: hamma bosqich, hujjatlar va muddatlar bir joyda.",
+      "price": "Bepul",
+      "note": "Beta davrida: login va onlayn to'lov ishga tushguncha",
+      "tagline": "Ilovadan o'zingiz foydalanasiz: hamma bosqich, hujjatlar, muddatlar va vositalar bir joyda.",
       "badge": "",
       "items": [
         "8 bosqichli to'liq yo'riqnoma: arizadan full enrollment'gacha",
-        "Har bosqich uchun hujjatlar ro'yxati va belgilab boriladigan checklist",
-        "Stipendiya (DSU) va ISEE uchun oiladan yig'iladigan hujjatlar",
-        "Viza, permesso va Italiyaga kelgandan keyingi ishlar",
-        "Muddatlar kalendari va yangilanishlar"
+        "«Mening yo'lim» paneli, ariza kuzatuvchi va muddat eslatmalari",
+        "Hujjatlar checklist'i, profil tahlili va pul kalkulyatori",
+        "82 ta universitet va viloyat stipendiyalari bo'yicha ma'lumot"
       ],
       "cta": "Ilovani ochish"
     },
@@ -61,26 +59,29 @@
       "name": "Yordam bilan",
       "price": "$499",
       "note": "Bir marta to'lov",
-      "tagline": "Ilova va biz bilan online yordam: hujjatlarni o'zingiz topshirasiz, savol tug'ilsa, biz yoningizdamiz.",
+      "tagline": "Hujjatlarni o'zingiz topshirasiz, har bir qadamda esa biz yoningizdamiz va xatolaringizni oldindan tutamiz.",
       "badge": "Eng ko'p tanlanadi",
       "items": [
         "«Mustaqil» tarifidagi hamma narsa",
-        "Uprep jamoasidan Telegram orqali online yordam",
-        "Savollaringizga bosqichma-bosqich javob beramiz"
+        "Viza olguningizcha Telegram'da yordam: savollarga 24 soat ichida javob",
+        "3 ta video qo'ng'iroq (har biri 30 daqiqa)",
+        "Motivatsion xat va CV'ni tekshirib berish (1 marta)",
+        "Universitet tanlovi va viza hujjatlarini tekshirib berish"
       ],
       "cta": "Telegram'da yozish"
     },
     {
       "id": "full",
       "name": "To'liq hamrohlik",
-      "price": "$1 399",
-      "note": "Bir marta to'lov",
+      "price": "$1 490",
+      "note": "Birinchi 10 talaba uchun (asoschi narxi), keyin $1 790. 3 qismga bo'lib to'lash mumkin",
       "tagline": "Noldan Italiyadagi full enrollment'gacha hammasini biz bilan birga qilasiz.",
-      "badge": "",
+      "badge": "Joylar cheklangan",
       "items": [
         "«Yordam bilan» tarifidagi hamma narsa",
         "Barcha hujjatlarni yig'ishda boshidan oxirigacha yordam",
-        "Universitetlarga arizalarni biz topshiramiz",
+        "3–5 ta universitetga arizalarni biz topshiramiz",
+        "Motivatsion xat va CV'ni birga yozamiz",
         "DoV yoki CIMEA va Universitaly pre-enrollment",
         "Viza hujjatlarini tayyorlash",
         "Stipendiya (DSU) arizasi va oila hujjatlari",
@@ -89,5 +90,27 @@
       "cta": "Telegram'da yozish"
     }
   ],
-  "plansNote": "Qabul va vizaga kafolat berilmaydi: qarorni universitet va elchixona chiqaradi. Biz har bir qadamni to'g'ri va o'z vaqtida bajarishga yordam beramiz."
+  "plansNote": "Qabul va vizaga kafolat berilmaydi: qarorni universitet va elchixona chiqaradi. Universitet, CIMEA, elchixona to'lovlari, tarjima va apostil tarif narxiga kirmaydi.",
+  "extras": [
+    {
+      "name": "Konsultatsiya, 1 soat",
+      "price": "$29",
+      "note": "Keyin istalgan tarifni olsangiz, shu summa chegiriladi"
+    },
+    {
+      "name": "Motivatsion xat va CV",
+      "price": "$99",
+      "note": "Tuzilma, tahrir va 2 marta tekshirish"
+    },
+    {
+      "name": "Viza hujjatlarini tekshirish",
+      "price": "$149",
+      "note": "Elchixona ro'yxati bo'yicha har bir hujjat"
+    },
+    {
+      "name": "Stipendiya (DSU) paketi",
+      "price": "$199",
+      "note": "Viloyatingiz bandosi, oila hujjatlari, ISEE va ariza"
+    }
+  ]
 }

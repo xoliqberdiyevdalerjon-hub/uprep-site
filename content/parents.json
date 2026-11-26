@@ -2,9 +2,18 @@
   "title": "Ota-onalar uchun",
   "lead": "Farzandingiz Italiyada o'qishni xohlayaptimi? Tabiiyki, sizda ko'p savol bor: qancha pul ketadi, viza qanday olinadi, u yerda kim yordam beradi. Bu sahifada shu savollarga ochiq va halol javob berdik.",
   "facts": [
-    { "big": "10 179,85 €", "small": "viza uchun yiliga ko'rsatiladigan mablag' (sarflanmaydi)" },
-    { "big": "7 171,11 €", "small": "davlat stipendiyasining minimumi, yiliga (2026/27)" },
-    { "big": "20 soat", "small": "haftasiga talaba qonuniy ishlashi mumkin" }
+    {
+      "big": "10 179,85 €",
+      "small": "viza uchun yiliga ko'rsatiladigan mablag' (sarflanmaydi)"
+    },
+    {
+      "big": "7 171,11 €",
+      "small": "davlat stipendiyasining minimumi, yiliga (2026/27)"
+    },
+    {
+      "big": "20 soat",
+      "small": "haftasiga talaba qonuniy ishlashi mumkin"
+    }
   ],
   "faq": [
     {
@@ -33,7 +42,7 @@
     },
     {
       "q": "Uprep bilan qanday ishlaymiz? Kafolat berasizmi?",
-      "a": "Qabul va vizaga hech kim halol kafolat bera olmaydi: qarorni universitet va elchixona chiqaradi. Biz har bir qadamni to'g'ri va o'z vaqtida bajarishga yordam beramiz.\n\nUchta tarif bor: Mustaqil ($199), Yordam bilan ($499) va To'liq hamrohlik ($1 399). Oxirgisida hujjat yig'ishdan Italiyadagi full enrollment'gacha hammasini birga qilamiz. Shartlarni boshlashdan oldin aniq kelishib olasiz va ota-ona sifatida bizga istalgan savolni o'zingiz bera olasiz."
+      "a": "Qabul va vizaga hech kim halol kafolat bera olmaydi: qarorni universitet va elchixona chiqaradi. Biz har bir qadamni to'g'ri va o'z vaqtida bajarishga yordam beramiz.\n\nSaytdagi ma'lumot va vositalar bepul. Shaxsiy yordam uchun ikki tarif bor: «Yordam bilan» ($499) va «To'liq hamrohlik» ($1 490, birinchi 10 talaba uchun; 3 qismga bo'lib to'lash mumkin). Oxirgisida hujjat yig'ishdan Italiyadagi full enrollment'gacha hammasini birga qilamiz. Shartlarni boshlashdan oldin aniq kelishib olasiz va ota-ona sifatida bizga istalgan savolni o'zingiz bera olasiz."
     }
   ],
   "warnings": [
@@ -51,8 +60,17 @@
     "Hammasi apostil bilan va italyan tiliga tarjima qilingan bo'lishi kerak"
   ],
   "sources": [
-    { "label": "Italiya elchixonasi, Toshkent: talaba vizasi (PDF)", "url": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Study-enrolment-and-foundation-years-ENGLISH-rev.pdf" },
-    { "label": "MUR: 2026/27 stipendiya minimumlari", "url": "https://www.mur.gov.it/it/atti-e-normativa/decreto-direttoriale-n-175-del-10-02-2026" },
-    { "label": "MUR sirkulyari: 2026/27 va 2027/28 qoidalari (PDF)", "url": "https://portale.units.it/sites/default/files/2026-05/Circolare%202026-2027%20studenti_internazionali_EN_0.pdf" }
+    {
+      "label": "Italiya elchixonasi, Toshkent: talaba vizasi (PDF)",
+      "url": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Study-enrolment-and-foundation-years-ENGLISH-rev.pdf"
+    },
+    {
+      "label": "MUR: 2026/27 stipendiya minimumlari",
+      "url": "https://www.mur.gov.it/it/atti-e-normativa/decreto-direttoriale-n-175-del-10-02-2026"
+    },
+    {
+      "label": "MUR sirkulyari: 2026/27 va 2027/28 qoidalari (PDF)",
+      "url": "https://portale.units.it/sites/default/files/2026-05/Circolare%202026-2027%20studenti_internazionali_EN_0.pdf"
+    }
   ]
 }
