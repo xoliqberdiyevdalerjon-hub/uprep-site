@@ -514,7 +514,21 @@
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
     "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
-    "fee": "10 € (PagoPA orqali)"
+    "fee": "10 € (PagoPA orqali)",
+    "deadlineNote": "2027/28 chaqirig'i taxminan 2027-yil yanvarda chiqadi. 2026/27 da chet ellik magistratura talabalariga 132 ta stipendiya berilgan: o'qish to'lovi, bepul yotoqxona va ovqat hamda 3 600 € nafaqa.",
+    "deadlines": [
+      {
+        "label": "UNICALADMISSION, extra-EU, 2026/27 (o'tgan yil)",
+        "date": "30.03.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unical.it/internazionale/intenational-students/unical-admission/"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unirc",
@@ -1014,7 +1028,20 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "english": "B2 (ingliz tilidagi dasturlar)",
+    "deadlineNote": "Ariza faqat Universitaly orqali, odatda mart–aprelda ochiladi. Bir talaba bitta muassasada bitta dasturga pre-enrollment qila oladi. Ko'rib chiqish taxminan 5 hafta.",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://international.uniparthenope.it/how-to-enrol/"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://international.uniparthenope.it/tuition-fees-and-scholarships/"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unisob",
@@ -1148,7 +1175,17 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "english": "B2 yoki yuqori; ba'zan onlayn intervyu",
+    "deadlineNote": "Chet elda yashovchi non-EU talabalar Universitaly orqali pre-enrollment qiladi; universitet alohida qabul xati bermaydi, tasdiq elchixonaga portal orqali boradi. Rasmiy ro'yxatdan o'tish 1-sentyabrdan.",
+    "applyUrl": "https://international.unicampania.it/index.php/en/international/international-degree-programmes?id=2527",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://international.unicampania.it/index.php/en/international/international-degree-programmes?id=2527"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unisa",
@@ -3942,14 +3979,35 @@
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
     "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
-    "fee": "150 € (magistratura, qaytarilmaydi)",
-    "tests": "Magistratura: GMAT yoki GRE",
+    "fee": "150 € (qaytarilmaydi)",
+    "tests": "Luiss testi yoki 3 yillik natijalar bo'yicha to'g'ridan-to'g'ri qabul; magistratura: GMAT yoki GRE",
     "deadlines": [
+      {
+        "label": "Bakalavr, non-EU: Luiss testi yoki natijalar bo'yicha (2027/28)",
+        "date": "10.02.2027"
+      },
+      {
+        "label": "Bakalavr, non-EU: keyingi Luiss testi (2027/28)",
+        "date": "10.05.2027"
+      },
       {
         "label": "Magistratura, non-EU (2027/28)",
         "date": "dekabr 2026 – 31.03.2027"
       }
-    ]
+    ],
+    "tuition": "Bakalavr va yagona sikl huquq 2027/28: 15 000 € / yil (EU va non-EU uchun bir xil)",
+    "deadlineNote": "Qabul qilinsa, joyni bron qilish uchun birinchi to'lov 5 000 €.",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.luiss.it/en/orientation-and-admissions/admission-procedures/admission-bachelors-and-masters-degree-programs-law/extra-euextra-schengen-students/admission-test-bachelors-degree-programmes-and-single-cycle-masters-degree-programmes-law-extra-euextra-schengen-students"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://api.luiss.it/en/fees"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "lumsa",
@@ -4548,7 +4606,15 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "deadlineNote": "2027/28 umumiy qabul kalendari hali e'lon qilinmagan. Universitetda xalqaro talabalar uchun stipendiyalar bor. Forestry and Environmental Sciences magistraturasi to'liq ingliz tilida.",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unitus.it/en/international/borse-di-studio-international-students/"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unige",
@@ -6253,7 +6319,20 @@
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
     "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
     "fee": "100 €",
-    "tests": "Bakalavr: Bocconi testi yoki SAT; magistratura: GMAT/GRE yoki Bocconi onlayn testi"
+    "tests": "Bakalavr: Bocconi testi yoki SAT; magistratura: GMAT/GRE yoki Bocconi onlayn testi",
+    "tuition": "Bakalavr 2027/28: 17 700 € / yil. Magistratura 2026/27: taxminan 18 550 € / yil",
+    "deadlineNote": "Xalqaro bakalavr talabalari uchun 100% o'qish to'lovidan ozod qilish (Bocconi4Access) va oilaviy ahvolga qarab 20–100% chegirmalar bor.",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/funding/100-full-tuition-waivers-ay-2027-28"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unicatt",
@@ -6560,7 +6639,29 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "fee": "75 € (Tibbiyot uchun 210 €)",
+    "tuition": "Magistratura, oilaviy daromadi chet elda: qat'iy 9 370 € / yil (UCSC International Scholarship bilan taxminan 6 400 €). 2027/28 to'lovlari bahorda e'lon qilinadi",
+    "english": "B2 (ingliz tilida o'qimaganlar uchun); bakalavrda B2 italyan tili ham kerak",
+    "deadlineNote": "Magistratura arizalari 2027/28 uchun 2026-yil noyabrda ochiladi. Natija har raund muddatidan 8 hafta ichida.",
+    "deadlines": [
+      {
+        "label": "Economics and Management (BSc), 2027/28",
+        "date": "04.11.2026 – 17.02.2027"
+      }
+    ],
+    "applyUrl": "https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-5420",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://international.unicatt.it/ucscinternational-admission-and-tuition-application-timeline-5420"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://international.unicatt.it/ucscinternational-admission-and-tuition-tuition-fees-and-scholarships-10154"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "iulm",
@@ -6918,10 +7019,31 @@
     "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
     "deadlines": [
       {
-        "label": "Ingliz tilidagi magistratura, oldindan baholash (2027/28)",
+        "label": "2027/28: magistratura oldindan baholash, 1-chaqiriq",
         "date": "26.11.2026 – 15.01.2027"
+      },
+      {
+        "label": "Ba'zi ingliz tilidagi magistraturalar (masalan Economics and Data Analysis)",
+        "date": "31.01.2027"
+      },
+      {
+        "label": "Natijalar",
+        "date": "31.03.2027"
       }
-    ]
+    ],
+    "fee": "30 € (har bir magistratura uchun, 2 tagacha). Kech qolganlar: 52 € pre-enrollment to'lovi",
+    "deadlineNote": "Hindiston va Pokiston diplomlari uchun Honours bakalavr talab qilinadi.",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://en.unibg.it/study/enrollment/foreign-students-join-us/non-eu-students/non-eu-students-pre-evaluation-online"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://apply.unibg.it/courses/browse"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unibs",
@@ -11924,7 +12046,17 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "fee": "50 € (qaytarilmaydi)",
+    "tuition": "Taxminan 1 200 € / yil (ikki qismda). Universitet o'z bahosiga ko'ra yashash uchun oyiga kamida 800 €",
+    "deadlineNote": "Chet elda yashovchi non-EU talabalar faqat Early Bird raundida topshira oladi (odatda mart – aprel). 2027/28 aniq sanalari dastur sahifalarida e'lon qilinadi.",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unibz.it/en/applicants/international/international-degree-seeking-applicants/degree-seeking-non-eu-citizens-living-abroad"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unipg",
@@ -13300,17 +13432,31 @@
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
     "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
-    "tests": "CEnT-S (ingliz tilidagi bakalavr dasturlari uchun)",
+    "tests": "CEnT-S (ingliz tilidagi ko'p bakalavr dasturlari) yoki TOLC",
     "deadlines": [
       {
-        "label": "2027/28: 1-chaqiriq",
-        "date": "15.09 – 15.11.2026"
+        "label": "2027/28: chet elda yashovchi non-EU, asosiy chaqiriq (ko'p dasturlar)",
+        "date": "07.01 – 07.03.2027"
+      }
+    ],
+    "fee": "60 € (ba'zi dasturlarda 55 €; faqat TOLC so'raydigan bakalavrda 35 € test to'lovi), qaytarilmaydi. Joyni qabul qilish uchun 208 € depozit",
+    "tuition": "Chet elda yashovchi non-EU uchun hammasi kiritilgan qat'iy to'lov: taxminan 2 750 – 2 990 € / yil (dasturga qarab; ba'zi dasturlarda ko'proq)",
+    "deadlineNote": "15.09–15.11.2026 dagi 1-chaqiriq EU va Italiyada yashovchi non-EU talabalar uchun. Har dasturning aniq muddati apply.unipd.it'da.",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unipd.it/en/studiare-inglese-come-fare-domanda"
       },
       {
-        "label": "2027/28: 2-chaqiriq",
-        "date": "01.12.2026 – 01.03.2027"
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unipd.it/en/tuition-fees"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://apply.unipd.it/courses/browse"
       }
-    ]
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "univr",

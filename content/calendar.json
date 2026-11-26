@@ -50,6 +50,11 @@
     "tag": "Macerata"
   },
   {
+    "date": "15.01.2027",
+    "text": "Bergamo: magistratura oldindan baholash tugaydi",
+    "tag": "Bergamo"
+  },
+  {
     "date": "20.01.2027",
     "text": "Pavia: 2-chaqiriq tugaydi",
     "tag": "Pavia"
@@ -75,13 +80,23 @@
     "text": "Enrollment uchun oxirgi chegara, undan keyin stipendiya yo'q"
   },
   {
+    "date": "10.02.2027",
+    "text": "LUISS: bakalavr (non-EU) arizasi tugaydi",
+    "tag": "LUISS"
+  },
+  {
     "date": "17.02.2027",
     "text": "L'Aquila: xalqaro talabalar chaqirig'i tugaydi (13:00)",
     "tag": "L'Aquila"
   },
   {
-    "date": "01.03.2027",
-    "text": "Padova: 2-chaqiriq tugaydi",
+    "date": "17.02.2027",
+    "text": "Cattolica: Economics and Management (BSc) muddati",
+    "tag": "Cattolica"
+  },
+  {
+    "date": "07.03.2027",
+    "text": "Padova: chet elda yashovchi non-EU, asosiy chaqiriq tugaydi",
     "tag": "Padova"
   },
   {
@@ -95,13 +110,13 @@
     "tag": "UniTo"
   },
   {
-    "date": "Kelgach 8 kun ichida",
-    "tag": "Poste",
-    "text": "Permesso di soggiorno arizasi"
-  },
-  {
     "date": "31.10.2027",
     "text": "2027/28: talaba vizasiga ariza berishning oxirgi kuni (bakalavr va magistratura)",
     "tag": "Viza"
+  },
+  {
+    "date": "Kelgach 8 kun ichida",
+    "tag": "Poste",
+    "text": "Permesso di soggiorno arizasi"
   }
 ]
