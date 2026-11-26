@@ -5,14 +5,14 @@
     "text": "MoveIn: pre-selection arizalari"
   },
   {
-    "date": "10.06 – 22.07.2026",
-    "tag": "DiSCo",
-    "text": "Stipendiya arizasi, 1-bosqich (12:00 gacha)"
-  },
-  {
     "date": "30.06.2026 gacha",
     "tag": "Universitaly",
     "text": "Pre-enrollment"
+  },
+  {
+    "date": "10.06 – 22.07.2026",
+    "tag": "DiSCo",
+    "text": "Stipendiya arizasi, 1-bosqich (12:00 gacha)"
   },
   {
     "date": "30.07 – 11.08.2026",
@@ -25,9 +25,9 @@
     "text": "Talaba vizasi uchun oxirgi kun"
   },
   {
-    "date": "Kelgach 8 kun ichida",
-    "tag": "Poste",
-    "text": "Permesso di soggiorno arizasi"
+    "date": "01.12.2026",
+    "text": "Politecnico di Milano: magistratura early bird (stipendiya uchun ham)",
+    "tag": "PoliMi"
   },
   {
     "date": "10.12.2026 gacha",
@@ -35,8 +35,53 @@
     "text": "CAF'da ISEEUP, permesso hujjatlari va enrollment"
   },
   {
+    "date": "22.12.2026",
+    "text": "Milano-Bicocca: erkin qabul dasturlari, 1-chaqiriq tugaydi",
+    "tag": "Bicocca"
+  },
+  {
+    "date": "20.01.2027",
+    "text": "Pavia: 2-chaqiriq tugaydi",
+    "tag": "Pavia"
+  },
+  {
+    "date": "28.01.2027",
+    "text": "Politecnico di Milano: magistratura umumiy chaqiriq tugaydi",
+    "tag": "PoliMi"
+  },
+  {
+    "date": "29.01.2027",
+    "text": "Torino: magistratura 1-chaqiriq tugaydi",
+    "tag": "UniTo"
+  },
+  {
+    "date": "01.02.2027",
+    "text": "Pisa: ingliz tilidagi ko'p magistraturalar muddati",
+    "tag": "Pisa"
+  },
+  {
     "date": "10.02.2027",
     "tag": "DiSCo",
     "text": "Enrollment uchun oxirgi chegara, undan keyin stipendiya yo'q"
+  },
+  {
+    "date": "01.03.2027",
+    "text": "Padova: 2-chaqiriq tugaydi",
+    "tag": "Padova"
+  },
+  {
+    "date": "19.03.2027",
+    "text": "Messina: vizaga muhtojlar, 1-chaqiriq tugaydi",
+    "tag": "Messina"
+  },
+  {
+    "date": "15.04.2027",
+    "text": "Torino: bakalavr chaqirig'i tugaydi",
+    "tag": "UniTo"
+  },
+  {
+    "date": "Kelgach 8 kun ichida",
+    "tag": "Poste",
+    "text": "Permesso di soggiorno arizasi"
   }
 ]

@@ -980,7 +980,7 @@
       var sp = el("span"); sp.appendChild(el("small", null, "Ariza to'lovi: " + (u.fee || "rasmiy saytda"))); sp.appendChild(el("span", "t", u.portalLabel || "Ro'yxatdan o'tish")); cta.appendChild(sp); cta.appendChild(ic("link"));
       box.appendChild(cta);
     }
-    var ft = factTable([["Ariza to'lovi", u.fee], ["Kirish testlari", u.tests], ["O'qish narxi", u.tuition || "Davlat universitetlarida oila daromadiga (ISEE) qarab; stipendiya g'oliblari to'lamaydi"], ["Ingliz tilidagi dasturlar", u.enCount ? u.enCount + " ta" : ""]]);
+    var ft = factTable([["Ariza to'lovi", u.fee], ["Kirish testlari", u.tests], ["Ingliz tili", u.english], ["O'qish narxi", u.tuition || "Davlat universitetlarida oila daromadiga (ISEE) qarab; stipendiya g'oliblari to'lamaydi"], ["Ingliz tilidagi dasturlar", u.enCount ? u.enCount + " ta" : ""]]);
     box.appendChild(ft);
     if(arr(u.deadlines).length || u.deadlineNote){
       var dc = el("section", "card"); dc.appendChild(el("h3", null, "Muddatlar"));
@@ -1006,6 +1006,7 @@
       });
       box.appendChild(lv);
     } else box.appendChild(reqCard());
+    if(u.admUpdated) box.appendChild(el("p", "muted-note", "Qabul ma'lumotlari rasmiy sahifalardan " + u.admUpdated + " da tekshirildi. «O'tgan yil» deb belgilangan sanalar mo'ljal uchun: 2027/28 sanalari e'lon qilinganda yangilanadi."));
     if(!arr(u.deadlines).length) box.appendChild(callout({style:"info", text:"Bu universitetning 2027/28 ariza muddatlarini hali kiritmadik. Odatda xalqaro arizalar kuz yoki qishda ochiladi va bahorda yopiladi. Aniq sanani ariza sahifasida tekshiring."}));
   }
   function docsPanel(box, u){
