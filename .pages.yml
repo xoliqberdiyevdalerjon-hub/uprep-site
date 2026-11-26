@@ -579,6 +579,63 @@ content:
           - { name: label, label: "Tugma matni", type: string }
           - { name: url, label: "Havola (https://...)", type: string }
 
+  - name: ambassadors
+    label: "Talaba-elchilar"
+    type: file
+    path: content/ambassadors.json
+    format: json
+    list: true
+    fields:
+      - { name: name, label: "Ism (masalan Aziza R.)", type: string, required: true }
+      - { name: uni, label: "Universitet kodi (saytdagi manzildan: #uni-sapienza bo'lsa, sapienza)", type: string, required: true }
+      - { name: program, label: "Dastur (masalan Economics, bakalavr)", type: string }
+      - { name: year, label: "Kursi (masalan 2)", type: string }
+      - { name: photo, label: "Rasm (kvadrat)", type: image }
+      - { name: telegram, label: "Telegram username (@ bilan yoki @ siz)", type: string, required: true }
+      - { name: text, label: "Qisqa gap (masalan: Rimda uy topish va Sapienza haqida so'rang)", type: text }
+      - { name: consent, label: "Talaba saytda ko'rsatilishiga rozi (belgilanmasa chiqmaydi)", type: boolean }
+
+  - name: outcomes
+    label: "Natijalar (ismsiz)"
+    type: file
+    path: content/outcomes.json
+    format: json
+    list: true
+    fields:
+      - { name: uni, label: "Universitet kodi (masalan sapienza)", type: string, required: true }
+      - name: level
+        label: Daraja
+        type: select
+        options:
+          values: [Foundation, Bakalavr, Magistratura]
+      - { name: program, label: Dastur, type: string }
+      - { name: year, label: "O'quv yili (masalan 2026/27)", type: string }
+      - { name: ielts, label: "IELTS (masalan 6.5)", type: string }
+      - { name: gpa, label: "Baho (masalan 4.6/5 yoki 82%)", type: string }
+      - name: result
+        label: Natija
+        type: select
+        options:
+          values: [qabul, rad, kutish]
+      - { name: scholarship, label: "Stipendiya (masalan DiSCo, universitet stipendiyasi; bo'lmasa bo'sh)", type: string }
+      - { name: note, label: "Izoh (ixtiyoriy)", type: text }
+      - { name: consent, label: "Talaba natijasini e'lon qilishga rozi (belgilanmasa chiqmaydi)", type: boolean }
+
+  - name: events
+    label: "Jonli efirlar"
+    type: file
+    path: content/events.json
+    format: json
+    list: true
+    fields:
+      - { name: title, label: Mavzu, type: string, required: true }
+      - { name: date, label: "Sana (KK.OO.YYYY, masalan 05.12.2026)", type: string, required: true }
+      - { name: time, label: "Vaqt, Toshkent (masalan 20:00)", type: string }
+      - { name: where, label: "Qayerda (masalan Telegram kanal, YouTube)", type: string }
+      - { name: link, label: "Qatnashish havolasi (https://...)", type: string }
+      - { name: desc, label: "Qisqa tavsif", type: text }
+      - { name: recording, label: "Yozuv havolasi (efirdan keyin, https://...)", type: string }
+
   - name: parents
     label: "Ota-onalar uchun"
     type: file

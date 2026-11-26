@@ -216,12 +216,13 @@
 
   /* ---------------- data ---------------- */
   var root = document.getElementById("app");
-  var S = { site:{}, stages:[], calendar:[], library:[], countries:[], italy:{}, cities:[], unis:[], guide:{}, dsu:{agencies:[]}, living:{}, news:[], reviews:[], foundation:{}, tests:{}, noldan:{}, about:{}, parents:{}, loaded:false };
+  var S = { site:{}, stages:[], calendar:[], library:[], countries:[], italy:{}, cities:[], unis:[], guide:{}, dsu:{agencies:[]}, living:{}, news:[], reviews:[], foundation:{}, tests:{}, noldan:{}, about:{}, parents:{}, amb:[], out:[], ev:[], loaded:false };
   var firstPaint = true;
   function load(name, fallback){
     return fetch("content/" + name + ".json", {cache:"no-cache"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ return fallback; });
   }
-  Promise.all([load("site",{}), load("stages",[]), load("calendar",[]), load("library",[]), load("countries",[]), load("italy",{}), load("cities",[]), load("universities",[]), load("guide",{}), load("dsu",{agencies:[]}), load("living",{}), load("news",[]), load("reviews",[]), load("foundation",{}), load("tests",{}), load("noldan",{}), load("about",{}), load("parents",{})]).then(function(r){
+  Promise.all([load("site",{}), load("stages",[]), load("calendar",[]), load("library",[]), load("countries",[]), load("italy",{}), load("cities",[]), load("universities",[]), load("guide",{}), load("dsu",{agencies:[]}), load("living",{}), load("news",[]), load("reviews",[]), load("foundation",{}), load("tests",{}), load("noldan",{}), load("about",{}), load("parents",{}), load("ambassadors",[]), load("outcomes",[]), load("events",[])]).then(function(r){
+    S.amb = arr(r[18]); S.out = arr(r[19]); S.ev = arr(r[20]);
     S.noldan = r[15] || {}; S.about = r[16] || {}; S.parents = r[17] || {};
     S.foundation = r[13] || {}; S.tests = r[14] || {};
     S.reviews = arr(r[12]);
@@ -263,6 +264,9 @@
     if(h === "tariflar") return {view:"plans"};
     if(h === "profil") return {view:"profile"};
     if(h === "ota-onalar") return {view:"parents"};
+    if(h === "elchilar") return {view:"amb"};
+    if(h === "natijalar") return {view:"out"};
+    if(h === "efirlar") return {view:"events"};
     if(h === "testlar") return {view:"tests"};
     if(h === "hujjatlarim") return {view:"docs"};
     if(h === "stipendiya") return {view:"dsu"};
@@ -296,7 +300,7 @@
     HZ = el("div", "herozone"); root.appendChild(HZ);
     var main = el("main", "wrap" + (wide ? "" : " narrow"));
     CRUMBS = crumbsFor(r);
-    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, plans:plansView, profile:profileView, parents:parentsView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView,
+    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, plans:plansView, profile:profileView, parents:parentsView, amb:ambView, out:outView, events:eventsView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView,
       item:function(m){ itemView(m, r.i); }, city:function(m){ cityView(m, r.c); }, uni:function(m){ uniView(m, r.u, r.tab); }, stage:function(m){ stageView(m, r.st); }
     }[r.view] || homeView)(main, r);
     if(CRUMBS){ main.insertBefore(CRUMBS, main.firstChild); CRUMBS = null; }
@@ -371,7 +375,7 @@
     var big = el("button", "iconbtn txtbtn"); big.type = "button"; big.textContent = "A+"; big.title = "Matnni kattalashtirish"; big.setAttribute("aria-label", "Matnni kattalashtirish"); big.setAttribute("aria-pressed", document.documentElement.classList.contains("bigtext") ? "true" : "false");
     big.onclick = function(){ var on = document.documentElement.classList.toggle("bigtext"); big.setAttribute("aria-pressed", on ? "true" : "false"); try{ localStorage.setItem("uprep-big", on ? "1" : ""); }catch(e){} };
     w.appendChild(big);
-    var pl = el("a", "iconbtn plan" + (FAV.length ? " has" : "")); pl.href = "#rejam"; pl.setAttribute("aria-label", "Mening rejam"); pl.appendChild(ic("heart")); if(FAV.length) pl.appendChild(el("span", "badge", String(FAV.length))); w.appendChild(pl);
+    var pl = el("a", "iconbtn plan" + (FAV.length ? " has" : "")); pl.href = "#rejam"; pl.setAttribute("aria-label", "Mening yo'lim"); pl.appendChild(ic("heart")); if(FAV.length) pl.appendChild(el("span", "badge", String(FAV.length))); w.appendChild(pl);
     var acc = el("button", "iconbtn" + (A.user ? " me" : " tg")); acc.type = "button"; if(!LIVE) acc.hidden = true;
     acc.appendChild(ic("user")); acc.appendChild(el("span", null, A.user ? "Hisob" : "Kirish"));
     acc.onclick = function(){ go(A.user ? "hisob" : "kirish"); };
@@ -386,12 +390,15 @@
     else if(r.view === "living"){ c.push(["Italiya","italiya"]); c.push(["Yashash"]); }
     else if(r.view === "news") c.push(["Yangiliklar"]);
     else if(r.view === "progs"){ c.push(["Universitetlar","universitetlar"]); c.push(["Dastur qidirish"]); }
-    else if(r.view === "plan") c.push(["Mening rejam"]);
+    else if(r.view === "plan") c.push(["Mening yo'lim"]);
     else if(r.view === "reviews") c.push(["Fikrlar"]);
     else if(r.view === "about") c.push(["Biz haqimizda"]);
     else if(r.view === "plans"){ c.push(["Kurs","kurs"]); c.push(["Tariflar"]); }
     else if(r.view === "profile") c.push(["Profil tahlili"]);
     else if(r.view === "parents") c.push(["Ota-onalar uchun"]);
+    else if(r.view === "amb") c.push(["Talaba-elchilar"]);
+    else if(r.view === "out") c.push(["Natijalar"]);
+    else if(r.view === "events") c.push(["Jonli efirlar"]);
     else if(r.view === "noldan"){ c.push(["Qo'llanma","qollanma"]); c.push(["Noldan: to'liq yo'riqnoma"]); }
     else if(r.view === "foundation"){ c.push(["Qo'llanma","qollanma"]); c.push(["Foundation"]); }
     else if(r.view === "tests"){ c.push(["Qo'llanma","qollanma"]); c.push(["Testlar"]); }
@@ -428,7 +435,7 @@
     tab("book", "Qo'llanma", sec === "guide", "qollanma");
     tab("uni", "Universitet", r.view === "unis" || r.view === "uni", "universitetlar");
     tab("route", "Kurs", sec === "course", "kurs");
-    tab("heart", "Rejam", sec === "plan", "rejam");
+    tab("heart", "Yo'lim", sec === "plan", "rejam");
     nav.appendChild(inn); return nav;
   }
   /* install as an app (PWA) */
@@ -452,7 +459,7 @@
     var about = el("div"); about.appendChild(logo(16)); if(S.site.footer) about.appendChild(el("p", null, S.site.footer)); g.appendChild(about);
     function col(title, links){ var c = el("div"); c.appendChild(el("h2", "foot-h", title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
     col("O'rganish", [["0 dan qo'llanma", "#qollanma"], ["Noldan: to'liq yo'riqnoma (PDF)", "#noldan"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Italiyada yashash", "#yashash"], ["Kurs", "#kurs"], ["Tariflar", "#tariflar"]]);
-    col("Vositalar", [["Hujjatlarim", "#hujjatlarim"], ["Menga mos universitet", "#mos-universitet"], ["Pul kalkulyatori", "#kalkulyator"], ["Kalendar", "#kalendar"], ["Yangiliklar", "#yangiliklar"], ["Profil tahlili", "#profil"], ["Ota-onalar uchun", "#ota-onalar"], ["Fikr va takliflar", "#fikrlar"], ["Biz haqimizda", "#biz-haqimizda"], ["Telegram: " + tgName(), tgUrl()]]);
+    col("Vositalar", [["Hujjatlarim", "#hujjatlarim"], ["Menga mos universitet", "#mos-universitet"], ["Pul kalkulyatori", "#kalkulyator"], ["Kalendar", "#kalendar"], ["Yangiliklar", "#yangiliklar"], ["Mening yo'lim", "#rejam"], ["Profil tahlili", "#profil"], ["Ota-onalar uchun", "#ota-onalar"], ["Talaba-elchilar", "#elchilar"], ["Natijalar", "#natijalar"], ["Jonli efirlar", "#efirlar"], ["Fikr va takliflar", "#fikrlar"], ["Biz haqimizda", "#biz-haqimizda"], ["Telegram: " + tgName(), tgUrl()]]);
     f.appendChild(g);
     var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uprep." + (S.site.updated ? " Ma'lumotlar oxirgi marta " + S.site.updated + " da yangilandi." : "")));
     var tg = el("a", null, tgName()); tg.href = tgUrl(); tg.target = "_blank"; tg.rel = "noopener"; p.appendChild(tg);
@@ -573,6 +580,10 @@
     var n0 = S.news[0];
     if(n0){ var nb = el("a", "newsline"); nb.href = safeUrl(n0.link) || "#yangiliklar"; nb.appendChild(el("span", "tag alt", n0.tag || "Yangilik")); nb.appendChild(el("span", "t", n0.title)); nb.appendChild(ic("next", "chev")); main.appendChild(nb); }
 
+    if(ME) main.appendChild(journeyMini());
+    else main.appendChild(rowBtn("heart", "Mening yo'lim: shaxsiy panel", "3 savol: keyingi qadam, muddatlar va arizalar holati bir joyda", "g", "#rejam"));
+    var NE = evList().filter(function(x){ return x.s.getTime() + 3600000 >= Date.now(); })[0];
+    if(NE) main.appendChild(sec(secHead("Keyingi jonli efir", "Hammasi", "efirlar", null, "Jonli"), evCard(NE, false)));
     /* 2. the whole path in 3 steps */
     var G = S.guide || {};
     if(arr(G.overview).length){
@@ -602,6 +613,7 @@
         rowBtn("wallet", "Tariflar", plans().map(function(p){ return p.name + " " + p.price; }).join(" · "), null, "#tariflar")));
     }
 
+    var HA = realAmb(); if(HA.length){ var hr = el("div", "rail"); HA.slice(0, 8).forEach(function(a){ hr.appendChild(ambCard(a)); }); main.appendChild(sec(secHead("Italiyada o'qiyotgan talabalarga yozing", "Hammasi", "elchilar", null, "Elchilar"), hr)); }
     /* real reviews only */
     var RV = realReviews();
     if(RV.length){ var rg = el("div", "rev-grid"); RV.slice(0, 3).forEach(function(r){ rg.appendChild(reviewCard(r)); }); main.appendChild(sec(secHead("Talabalar fikrlari", "Hammasi", "fikrlar", null, "Fikrlar"), rg)); }
@@ -1250,14 +1262,135 @@
     b.onclick = function(){ toggleFav(u.id); paint(); toast(isFav(u.id) ? "«Mening rejam»ga qo'shildi" : "Rejadan olib tashlandi"); };
     paint(); return b;
   }
+  /* ================= CALENDAR EXPORT (Google / .ics) ================= */
+  function ymd(x){ return x.getFullYear() + String(x.getMonth() + 1).padStart(2, "0") + String(x.getDate()).padStart(2, "0"); }
+  function utcStamp(x){ return x.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, ""); }
+  /* ev: {title, d (Date, all-day) | start (Date, exact), details} */
+  function gcalUrl(ev){
+    var dates = ev.start ? utcStamp(ev.start) + "/" + utcStamp(new Date(ev.start.getTime() + 3600000)) : ymd(ev.d) + "/" + ymd(new Date(ev.d.getFullYear(), ev.d.getMonth(), ev.d.getDate() + 1));
+    return "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(ev.title) + "&dates=" + dates + "&details=" + encodeURIComponent(str(ev.details) + "\n\nUprep: " + location.origin + location.pathname);
+  }
+  function icsEsc(t){ return str(t).replace(/\\/g, "\\\\").replace(/;/g, "\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
+  function icsDownload(list, name){
+    var L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Uprep//UZ", "CALSCALE:GREGORIAN"];
+    list.forEach(function(ev, i){
+      L.push("BEGIN:VEVENT", "UID:uprep-" + Date.now() + "-" + i + "@uprep", "DTSTAMP:" + utcStamp(new Date()));
+      if(ev.start){ L.push("DTSTART:" + utcStamp(ev.start), "DTEND:" + utcStamp(new Date(ev.start.getTime() + 3600000))); }
+      else { L.push("DTSTART;VALUE=DATE:" + ymd(ev.d), "DTEND;VALUE=DATE:" + ymd(new Date(ev.d.getFullYear(), ev.d.getMonth(), ev.d.getDate() + 1))); }
+      L.push("SUMMARY:" + icsEsc(ev.title), "DESCRIPTION:" + icsEsc(ev.details));
+      (ev.start ? ["-PT1H"] : ["-P7D", "-P1D"]).forEach(function(tr){ L.push("BEGIN:VALARM", "ACTION:DISPLAY", "DESCRIPTION:" + icsEsc(ev.title), "TRIGGER:" + tr, "END:VALARM"); });
+      L.push("END:VEVENT");
+    });
+    L.push("END:VCALENDAR");
+    var blob = new Blob([L.join("\r\n")], {type:"text/calendar;charset=utf-8"}), a = el("a"); a.href = URL.createObjectURL(blob); a.download = (name || "uprep") + ".ics"; document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 800);
+    toast("Kalendar fayli yuklandi: uni oching va «Qo'shish»ni bosing.");
+  }
+  function calAdd(ev){
+    var w = el("span", "caladd no-print");
+    var g = el("a", null); g.href = gcalUrl(ev); g.target = "_blank"; g.rel = "noopener"; g.appendChild(ic("cal")); g.appendChild(el("span", null, "Google")); w.appendChild(g);
+    var i = el("button", null); i.type = "button"; i.appendChild(ic("cal")); i.appendChild(el("span", null, "iPhone / .ics")); i.onclick = function(){ icsDownload([ev], "uprep-muddat"); }; w.appendChild(i);
+    return w;
+  }
+
+  /* ================= APPLICATION TRACKER ================= */
+  var TSTEPS = [
+    ["Tayyorlanmoqda", "Hujjatlarni yig'ing va ariza portalida ro'yxatdan o'ting.", "#hujjatlarim"],
+    ["Ariza topshirildi", "Javobni kuting, emailni kuzating. Shu vaqtda apostil va tarjimani boshlang.", "#s2"],
+    ["Pre-acceptance keldi", "Darhol DoV yoki CIMEA'ni boshlang: CIMEA 3 oygacha oladi.", "#s2"],
+    ["DoV / CIMEA tayyor", "Universitaly'da pre-enrollment qiling.", "#s3"],
+    ["Universitaly tasdiqlandi", "Viza hujjatlarini yig'ing; bank ko'chirmasini eng oxirida oling.", "#s4"],
+    ["Viza olindi", "Yo'lga tayyorlaning. Kelgach 8 kun ichida permesso.", "#s6"],
+    ["Full enrollment", "Tabriklaymiz! Stipendiya idorasining muddatlarini kuzating.", "#stipendiya"]
+  ];
+  var TR = {};
+  try{ TR = JSON.parse(localStorage.getItem("uprep-track") || "{}") || {}; }catch(e){ TR = {}; }
+  function saveTR(){ try{ localStorage.setItem("uprep-track", JSON.stringify(TR)); }catch(e){} }
+  function todayStr(){ var t = new Date(); return String(t.getDate()).padStart(2, "0") + "." + String(t.getMonth() + 1).padStart(2, "0") + "." + t.getFullYear(); }
+  function trOf(id){ return TR[id] || {s:0, d:{}}; }
+  function tracker(u, onChange){
+    var c = el("div", "trk");
+    function draw(){
+      c.textContent = ""; var t = trOf(u.id);
+      var ol = el("ol", "trk-steps" + (t.rej ? " rej" : ""));
+      TSTEPS.forEach(function(s, i){ var li = el("li", i < t.s ? "done" : i === t.s ? "cur" : ""); var b = el("button"); b.type = "button"; b.title = s[0]; b.setAttribute("aria-label", s[0]); b.onclick = function(){ var x = trOf(u.id); x.s = i; x.d = x.d || {}; if(!x.d[i]) x.d[i] = todayStr(); TR[u.id] = x; saveTR(); draw(); if(onChange) onChange(); }; li.appendChild(b); ol.appendChild(li); });
+      c.appendChild(ol);
+      var st = TSTEPS[t.s];
+      var info = el("div", "trk-info");
+      info.appendChild(el("b", null, (t.rej ? "Rad etildi · " : "") + (t.s + 1) + "/" + TSTEPS.length + ": " + st[0] + (t.d && t.d[t.s] ? " (" + t.d[t.s] + ")" : "")));
+      if(!t.rej && t.s < TSTEPS.length - 1){ var nx = el("a", "trk-next"); nx.href = TSTEPS[t.s][2]; nx.appendChild(el("span", null, "Keyingi ish: " + st[1])); nx.appendChild(ic("next")); info.appendChild(nx); }
+      else if(!t.rej) info.appendChild(el("p", null, st[1]));
+      else info.appendChild(el("p", null, "Xafa bo'lmang: boshqa universitetlaringizga e'tibor bering. Keyingi bosqich ochilsa, qayta topshirish mumkin."));
+      c.appendChild(info);
+      var row = el("div", "trk-act");
+      if(t.s < TSTEPS.length - 1 && !t.rej){ var adv = el("button", "btn line"); adv.type = "button"; adv.appendChild(el("span", null, "Keyingi holat: " + TSTEPS[t.s + 1][0])); adv.appendChild(ic("check")); adv.onclick = function(){ var x = trOf(u.id); x.s++; x.d = x.d || {}; x.d[x.s] = todayStr(); TR[u.id] = x; saveTR(); draw(); toast("Holat yangilandi"); if(onChange) onChange(); }; row.appendChild(adv); }
+      var rj = el("button", "prevlink"); rj.type = "button"; rj.appendChild(el("span", null, t.rej ? "Rad belgisini olib tashlash" : "Rad etildi deb belgilash")); rj.onclick = function(){ var x = trOf(u.id); x.rej = !x.rej; TR[u.id] = x; saveTR(); draw(); if(onChange) onChange(); }; row.appendChild(rj);
+      c.appendChild(row);
+    }
+    draw(); return c;
+  }
+
+  /* ================= "MENING YO'LIM" ================= */
+  var ME = null;
+  try{ ME = JSON.parse(localStorage.getItem("uprep-me") || "null"); }catch(e){ ME = null; }
+  function saveME(){ try{ localStorage.setItem("uprep-me", JSON.stringify(ME)); }catch(e){} }
+  function docsMeter(){ try{ return JSON.parse(localStorage.getItem("uprep-docs-meter") || "null"); }catch(e){ return null; } }
+  function favDeadlines(){
+    var L = []; FAV.map(uniById).filter(Boolean).forEach(function(u){ arr(u.deadlines).forEach(function(d){ var dd = deadline(d.date); if(dd && daysLeft(dd) >= 0) L.push({u:u, d:dd, x:d}); }); });
+    return L.sort(function(a, b){ return a.d - b.d; });
+  }
+  function nextAction(){
+    var favs = FAV.map(uniById).filter(Boolean), dm = docsMeter();
+    if(!favs.length) return ["star", "Universitetlarni tanlang", "3–5 ta universitet saqlang: muddatlari shu yerda chiqadi", "#mos-universitet"];
+    var low = favs.filter(function(u){ return !trOf(u.id).rej; }).sort(function(a, b){ return trOf(a.id).s - trOf(b.id).s; })[0];
+    if(low && trOf(low.id).s === 0 && (!dm || dm.done < dm.all)) return ["doc", "Hujjatlaringizni tayyorlang", dm ? dm.done + " / " + dm.all + " tayyor" : "Sizga kerak ro'yxatni oling", "#hujjatlarim"];
+    if(low){ var t = trOf(low.id); if(t.s < TSTEPS.length - 1) return ["next", (low.short || low.name) + ": " + TSTEPS[t.s][1].split(".")[0], "Hozirgi holat: " + TSTEPS[t.s][0], TSTEPS[t.s][2]]; }
+    return ["check", "Hammasi bajarildi", "Stipendiya va permesso muddatlarini kuzating", "#stipendiya"];
+  }
+  function lvlName(v){ return v === "fy" ? "Foundation" : v === "ma" ? "Magistratura" : "Bakalavr"; }
+  function onboarding(main, done){
+    var c = el("section", "card onb"); c.appendChild(el("h3", null, "Keling, yo'lingizni sozlaymiz"));
+    c.appendChild(el("p", "note", "3 ta savol. Javoblar faqat shu qurilmada saqlanadi."));
+    var me = ME || {lvl:"", year:""};
+    function grp(label, key, opts){ var w = el("div", "onb-q"); w.appendChild(el("b", null, label)); var r = el("div", "onb-opts"); opts.forEach(function(o){ var b = el("button", "chipf" + (me[key] === o[0] ? " on" : ""), o[1]); b.type = "button"; b.onclick = function(){ me[key] = o[0]; Array.prototype.forEach.call(r.children, function(x){ x.classList.remove("on"); }); b.classList.add("on"); }; r.appendChild(b); }); w.appendChild(r); c.appendChild(w); }
+    grp("1. Qaysi darajaga?", "lvl", [["fy","Foundation"],["ba","Bakalavr"],["ma","Magistratura"]]);
+    grp("2. Qachon o'qishni boshlamoqchisiz?", "year", [["2027","2027 kuzi"],["2028","2028 kuzi"],["x","Hali bilmayman"]]);
+    var w3 = el("div", "onb-q"); w3.appendChild(el("b", null, "3. Universitetlar (keyin ham qo'shsa bo'ladi)"));
+    var r3 = el("div", "onb-opts");
+    S.unis.slice().sort(function(a, b){ return (b.detailed ? 1000 : 0) + (b.enCount || 0) - ((a.detailed ? 1000 : 0) + (a.enCount || 0)); }).slice(0, 12).forEach(function(u){ var b = el("button", "chipf" + (isFav(u.id) ? " on" : ""), u.short || u.name); b.type = "button"; b.onclick = function(){ toggleFav(u.id); b.classList.toggle("on", isFav(u.id)); }; r3.appendChild(b); });
+    w3.appendChild(r3); var more = el("a", "trk-next"); more.href = "#mos-universitet"; more.appendChild(el("span", null, "Yoki test orqali topish")); more.appendChild(ic("next")); w3.appendChild(more); c.appendChild(w3);
+    var ok = el("button", "btn gold"); ok.type = "button"; ok.appendChild(el("span", null, "Tayyor")); ok.appendChild(ic("check"));
+    ok.onclick = function(){ if(!me.lvl){ toast("Darajani tanlang"); return; } ME = me; saveME(); done(); };
+    c.appendChild(ok); main.appendChild(c);
+  }
+  function journeyMini(){
+    var na = nextAction(), fd = favDeadlines()[0], dm = docsMeter();
+    var c = el("a", "jmini"); c.href = "#rejam";
+    var h = el("div", "jm-h"); h.appendChild(el("span", "eyebrow", "Mening yo'lim · " + lvlName(ME.lvl) + (ME.year && ME.year !== "x" ? ", " + ME.year + " kuzi" : ""))); h.appendChild(ic("next")); c.appendChild(h);
+    c.appendChild(el("b", null, na[1])); c.appendChild(el("small", null, na[2]));
+    var s = el("div", "jm-stats");
+    [[FAV.length, "universitet"], [dm ? Math.round(dm.done / Math.max(1, dm.all) * 100) + "%" : "—", "hujjatlar"], [fd ? leftLabel(daysLeft(fd.d)) : "—", fd ? (fd.u.short || fd.u.name) : "yaqin muddat"]].forEach(function(x){ var d = el("div"); d.appendChild(el("b", null, String(x[0]))); d.appendChild(el("small", null, x[1])); s.appendChild(d); });
+    c.appendChild(s); return c;
+  }
   function planView(main){
     var H = hero({cls:"compact", scene:"rome", narrow:true});
     H.appendChild(kicker("heart", "Shu qurilmada saqlanadi"));
-    H.appendChild(heroTitle("Mening rejam"));
-    H.appendChild(el("p", "lead", "Tanlagan universitetlaringiz, ularning muddatlari va yo'ldagi yutuqlaringiz bir joyda."));
-    var n = doneCount(), total = S.stages.length, nx = nextStage();
-    H.appendChild(heroStats([[FAV.length, "saqlangan universitet"], [n + "/" + total, "bosqich bajarildi"]]));
-    var favs = FAV.map(uniById).filter(Boolean);
+    H.appendChild(heroTitle("Mening yo'lim"));
+    if(!ME){ H.appendChild(el("p", "lead", "Shaxsiy panelingiz: keyingi qadam, universitetlaringizning muddatlari, arizalar holati va hujjatlar bir joyda.")); onboarding(main, function(){ render(true); }); footer(main); return; }
+    H.appendChild(el("p", "lead", "Maqsad: " + lvlName(ME.lvl) + (ME.year && ME.year !== "x" ? ", " + ME.year + " kuzi" : "") + ". Keyingi qadam, muddatlar va arizalar holati bir joyda."));
+    var dm = docsMeter(), favs = FAV.map(uniById).filter(Boolean);
+    var sent = favs.filter(function(u){ return trOf(u.id).s >= 1; }).length;
+    H.appendChild(heroStats([[favs.length, "universitet"], [sent, "ariza topshirildi"], [dm ? dm.done + "/" + dm.all : "—", "hujjat tayyor"]]));
+    var na = nextAction(); main.appendChild(rowBtn(na[0], "Keyingi qadam: " + na[1], na[2], "g", na[3]));
+    if(ME.lvl === "fy") main.appendChild(rowBtn("cap", "Foundation bor universitetlar", "11 yillik attestat bilan yo'l", null, "#foundation"));
+
+    var FD = favDeadlines();
+    if(FD.length){
+      var ul = el("ol", "agenda");
+      FD.slice(0, 6).forEach(function(x){ var li = el("li"); var w = el("div", "when", x.x.date); w.appendChild(el("span", "left", leftLabel(daysLeft(x.d)))); li.appendChild(w); var t = el("div"); t.appendChild(el("span", "tag", x.u.short || x.u.name)); t.appendChild(el("p", null, x.x.label)); t.appendChild(calAdd({title:(x.u.short || x.u.name) + ": " + x.x.label, d:x.d, details:x.x.label + " (" + x.x.date + ")"})); li.appendChild(t); ul.appendChild(li); });
+      var all = el("button", "btn line"); all.type = "button"; all.appendChild(el("span", null, "Hammasini kalendarga qo'shish (.ics)")); all.appendChild(ic("cal"));
+      all.onclick = function(){ icsDownload(FD.map(function(x){ return {title:(x.u.short || x.u.name) + ": " + x.x.label, d:x.d, details:x.x.label + " (" + x.x.date + ")"}; }), "uprep-muddatlar"); };
+      main.appendChild(sec(secHead("Universitetlaringiz muddatlari", null, null, null, "Yaqin", "Har biri uchun 7 kun va 1 kun oldin eslatma qo'yiladi."), ul, all));
+    }
     if(!favs.length){
       main.appendChild(callout({style:"info", text:"Hali universitet saqlamadingiz. Universitet sahifasidagi «Saqlash ♥» tugmasini bosing yoki testdan o'ting."}));
       var bx = el("div", "ic-btns"); bx.appendChild(btn("gold", "star", "Menga mos universitet", "#mos-universitet")); bx.appendChild(btn("line", "uni", "Universitetlar", "#universitetlar")); main.appendChild(bx);
@@ -1265,25 +1398,97 @@
       var g = el("div", "qz-res");
       favs.forEach(function(u){
         var c = el("article", "qz-card"), city = cityById(u.city);
-        var h = el("a", "qz-h"); h.href = "#uni-" + u.id; h.appendChild(el("span", "u-mono", mono(u))); var t = el("span", "txt"); t.appendChild(el("b", null, u.short || u.name)); t.appendChild(el("small", null, (city ? city.name + ", " + city.region : ""))); h.appendChild(t); c.appendChild(h);
-        var dl = el("dl", "ic-rows"), nxd = uniNext(u), ag = city ? dsuFor(city.id) : null;
-        [["Eng yaqin muddat", nxd ? nxd.x.date + " · " + leftLabel(daysLeft(nxd.d)) : "Hali e'lon qilinmagan"], ["Ariza to'lovi", u.fee || "—"], ["Stipendiya", ag ? (ag.own ? "Universitetning o'zi" : ag.name) + (ag.deadline ? " · " + ag.deadline : "") : "—"], ["Ingliz dasturlari", u.enCount ? u.enCount + " ta" : "—"]].forEach(function(r){ var d = el("div"); d.appendChild(el("dt", null, r[0])); d.appendChild(el("dd", null, r[1])); dl.appendChild(d); });
-        c.appendChild(dl);
-        var bx2 = el("div", "ic-btns"); var au = safeUrl(u.applyUrl); if(au) bx2.appendChild(btn("gold", "link", "Ariza", au)); bx2.appendChild(btn("line", "book", "Dasturlar", "#uni-" + u.id + "/yonalishlar")); bx2.appendChild(favBtn(u, "line")); c.appendChild(bx2);
+        var h = el("a", "qz-h"); h.href = "#uni-" + u.id; h.appendChild(el("span", "u-mono", mono(u))); var t = el("span", "txt"); t.appendChild(el("b", null, u.short || u.name)); var nxd = uniNext(u); t.appendChild(el("small", null, (city ? city.name : "") + (nxd ? " · " + nxd.x.date + " (" + leftLabel(daysLeft(nxd.d)) + ")" : ""))); h.appendChild(t); c.appendChild(h);
+        c.appendChild(tracker(u, function(){ render(false); }));
+        var bx2 = el("div", "ic-btns"); var au = safeUrl(u.portalUrl) || safeUrl(u.applyUrl); if(au) bx2.appendChild(btn("gold", "link", "Ariza sahifasi", au)); bx2.appendChild(btn("line", "book", "Talablar", "#uni-" + u.id + "/qabul")); bx2.appendChild(favBtn(u, "line")); c.appendChild(bx2);
         g.appendChild(c);
       });
-      main.appendChild(sec(secHead("Saqlangan universitetlar (" + favs.length + ")", "Yana qo'shish", "universitetlar", null, "Tanlov"), g));
+      main.appendChild(sec(secHead("Arizalarim (" + favs.length + ")", "Yana qo'shish", "universitetlar", null, "Kuzatuv", "Holatni yangilash uchun nuqtani yoki «Keyingi holat» tugmasini bosing."), g));
       if(favs.length > 1){ var cb = btn("navy", "list", "Saqlanganlarni taqqoslash", "#taqqoslash"); cb.onclick = function(){ CMP = FAV.slice(0, 3); saveCmp(); }; main.appendChild(cb); }
     }
-    main.appendChild(sec(secHead("Yo'ldagi qadamlaringiz", null, null, null, n + " / " + total), routeLine()));
-    if(nx) main.appendChild(rowBtn("next", "Keyingi qadam: " + (S.stages.indexOf(nx) + 1) + ". " + str(nx.title), str(nx.sub), "g", "#" + nx.id));
+    var n = doneCount(), total = S.stages.length;
+    main.appendChild(sec(secHead("Kurs bosqichlari", null, null, null, n + " / " + total), routeLine()));
     var tools = el("div", "links");
-    tools.appendChild(rowBtn("doc", "Hujjatlarim", "Sizga kerak hujjatlar, belgilab boring", "g", "#hujjatlarim"));
-    tools.appendChild(rowBtn("list", "Universitetlarni taqqoslash", "Saqlanganlarni yonma-yon ko'ring", null, "#taqqoslash"));
-    tools.appendChild(rowBtn("star", "Menga mos universitet", "6 savollik test", null, "#mos-universitet"));
+    tools.appendChild(rowBtn("doc", "Hujjatlarim", dm ? dm.done + " / " + dm.all + " tayyor" : "Sizga kerak hujjatlar, belgilab boring", "g", "#hujjatlarim"));
+    tools.appendChild(rowBtn("star", "Profil tahlili", "Imkoniyatlaringizni baholang", null, "#profil"));
     tools.appendChild(rowBtn("wallet", "Pul kalkulyatori", "Viza puli va stipendiya imkoniyati", null, "#kalkulyator"));
     tools.appendChild(rowBtn("cal", "Kalendar", "Barcha muhim sanalar", null, "#kalendar"));
     main.appendChild(sec(secHead("Vositalar", null, null, null, "Foydali"), tools));
+    var rs = el("button", "prevlink"); rs.type = "button"; rs.appendChild(el("span", null, "Maqsadni o'zgartirish")); rs.onclick = function(){ ME = null; saveME(); render(true); }; main.appendChild(rs);
+    footer(main);
+  }
+
+  /* ================= AMBASSADORS / OUTCOMES / EVENTS (owner fills via CMS) ================= */
+  function tgHandle(v){ var m = str(v).replace(/^https?:\/\/t\.me\//i, "").replace(/^@/, "").match(/^[A-Za-z0-9_]{4,32}$/); return m ? m[0] : ""; }
+  function realAmb(uid){ return arr(S.amb).filter(function(a){ return a && a.consent && str(a.name) && tgHandle(a.telegram) && (!uid || a.uni === uid); }); }
+  function ambCard(a){
+    var c = el("article", "amb"); var top = el("div", "amb-top"); var ph = safeUrl(a.photo);
+    if(ph){ var im = el("img"); im.src = ph; im.alt = ""; im.loading = "lazy"; top.appendChild(im); } else top.appendChild(el("span", "rev-av", str(a.name).charAt(0).toUpperCase()));
+    var t = el("div"); t.appendChild(el("b", null, a.name)); var u = uniById(a.uni); t.appendChild(el("small", null, [u ? (u.short || u.name) : "", a.program, a.year ? a.year + "-kurs" : ""].filter(Boolean).join(" · "))); top.appendChild(t); c.appendChild(top);
+    if(a.text) c.appendChild(el("p", null, a.text));
+    var b = el("a", "btn navy"); b.href = "https://t.me/" + tgHandle(a.telegram); b.target = "_blank"; b.rel = "noopener"; b.appendChild(el("span", null, "Telegram'da yozish")); b.appendChild(ic("send")); c.appendChild(b);
+    return c;
+  }
+  function ambView(main){
+    var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
+    H.appendChild(kicker("users", "Talaba-elchilar"));
+    H.appendChild(heroTitle("Italiyada o'qiyotgan talabalarga yozing"));
+    H.appendChild(el("p", "lead", "Universitet, shahar, uy va hayot haqida hozir o'sha yerda o'qiyotgan o'zbek talabalardan so'rang. Har bir elchi roziligi bilan ko'rsatilgan."));
+    var A0 = realAmb();
+    if(!A0.length) main.appendChild(callout({style:"info", text:"Elchilar ro'yxati tez orada shu yerda chiqadi. Hozircha savollaringizni " + tgName() + " ga yozing."}));
+    else { var by = {}; A0.forEach(function(a){ (by[a.uni] = by[a.uni] || []).push(a); });
+      Object.keys(by).forEach(function(k){ var u = uniById(k), g = el("div", "amb-grid"); by[k].forEach(function(a){ g.appendChild(ambCard(a)); }); main.appendChild(sec(secHead(u ? (u.short || u.name) : "Boshqa", u ? "Universitet" : null, u ? "uni-" + u.id : null, null, u ? ((cityById(u.city) || {}).name || "") : ""), g)); }); }
+    main.appendChild(rowBtn("send", "Italiyada o'qiysizmi? Elchi bo'ling", "Yangi kelayotgan talabalarga yordam bering: " + tgName() + " ga yozing", null, tgUrl()));
+    footer(main);
+  }
+  var RES = {qabul:["Qabul qilindi","ok"], rad:["Rad etildi","hot"], kutish:["Kutilmoqda","lang"]};
+  function realOut(uid){ return arr(S.out).filter(function(o){ return o && o.consent && str(o.uni) && RES[o.result] && (!uid || o.uni === uid); }); }
+  function outCard(o){
+    var u = uniById(o.uni), c = el("article", "outc");
+    var h = el("div", "pf-h"); h.appendChild(el("b", null, u ? (u.short || u.name) : o.uni)); h.appendChild(el("span", "tag " + RES[o.result][1], RES[o.result][0])); c.appendChild(h);
+    c.appendChild(el("p", null, [o.level, o.program, o.year].filter(function(x){ return str(x); }).join(" · ")));
+    var dl = el("dl", "ic-rows"); [["IELTS", o.ielts], ["Baho", o.gpa], ["Stipendiya", o.scholarship]].forEach(function(r){ if(!str(r[1])) return; var d = el("div"); d.appendChild(el("dt", null, r[0])); d.appendChild(el("dd", null, r[1])); dl.appendChild(d); }); c.appendChild(dl);
+    if(o.note) c.appendChild(el("p", "ic-note", o.note));
+    return c;
+  }
+  function outView(main){
+    var H = hero({cls:"compact", scene:"town", narrow:true});
+    H.appendChild(kicker("check", "Haqiqiy natijalar"));
+    H.appendChild(heroTitle("Uprep talabalari natijalari"));
+    H.appendChild(el("p", "lead", "Talabalarimiz qayerga, qanday baho va IELTS bilan topshirgani va natijasi. Ismlar ko'rsatilmaydi, har bir natija talabaning roziligi bilan qo'shiladi."));
+    var O = realOut();
+    if(!O.length){ main.appendChild(callout({style:"info", text:"Natijalar to'planmoqda. Bu yerda faqat haqiqiy natijalar chiqadi: biror raqam o'ylab topilmaydi."})); footer(main); return; }
+    var acc = O.filter(function(o){ return o.result === "qabul"; }).length, sch = O.filter(function(o){ return str(o.scholarship) && !/^yo'?q$/i.test(str(o.scholarship)); }).length, dec = O.filter(function(o){ return o.result !== "kutish"; }).length;
+    var sg = el("div", "about-stats"); [[O.length, "ariza natijasi"], [acc, "qabul qilindi"], [dec ? Math.round(acc / dec * 100) + "%" : "—", "qabul ulushi (javob kelganlardan)"], [sch, "stipendiya bilan"]].forEach(function(x){ var d = el("div"); d.appendChild(el("b", null, String(x[0]))); d.appendChild(el("small", null, x[1])); sg.appendChild(d); }); main.appendChild(sg);
+    var lv = "", fl = el("div", "onb-opts"), g = el("div", "outc-grid");
+    function draw(){ g.textContent = ""; O.filter(function(o){ return !lv || o.level === lv; }).forEach(function(o){ g.appendChild(outCard(o)); }); }
+    [["","Hammasi"],["Foundation","Foundation"],["Bakalavr","Bakalavr"],["Magistratura","Magistratura"]].forEach(function(x){ var b = el("button", "chipf" + (x[0] === lv ? " on" : ""), x[1]); b.type = "button"; b.onclick = function(){ lv = x[0]; Array.prototype.forEach.call(fl.children, function(y){ y.classList.remove("on"); }); b.classList.add("on"); draw(); }; fl.appendChild(b); });
+    draw(); main.appendChild(fl); main.appendChild(g);
+    main.appendChild(el("p", "muted-note", "O'tgan natijalar kelajakdagi qabulga kafolat emas: talablar har yili o'zgaradi."));
+    main.appendChild(rowBtn("star", "O'z imkoniyatingizni ko'ring", "Bepul profil tahlili", "g", "#profil"));
+    footer(main);
+  }
+  function evStart(e){ var d = deadline(e.date); if(!d) return null; var m = str(e.time).match(/^(\d{1,2}):(\d{2})/); /* Tashkent = UTC+5 */ return new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate(), m ? +m[1] - 5 : 9, m ? +m[2] : 0)); }
+  function evList(){ return arr(S.ev).filter(function(e){ return e && str(e.title) && evStart(e); }).map(function(e){ return {e:e, s:evStart(e)}; }).sort(function(a, b){ return a.s - b.s; }); }
+  function evCard(x, past){
+    var e = x.e, c = el("article", "evc" + (past ? " past" : ""));
+    var w = el("div", "ev-when"); w.appendChild(el("b", null, e.date)); w.appendChild(el("small", null, (str(e.time) || "") + " (Toshkent)")); c.appendChild(w);
+    var t = el("div", "ev-tx"); t.appendChild(el("b", null, e.title)); if(e.where) t.appendChild(el("small", null, e.where)); if(e.desc) t.appendChild(el("p", null, e.desc));
+    var bx = el("div", "ic-btns");
+    if(past){ var r = safeUrl(e.recording); if(r) bx.appendChild(btn("line", "play", "Yozuvni ko'rish", r)); }
+    else { var l = safeUrl(e.link); if(l) bx.appendChild(btn("gold", "link", "Qatnashish", l)); t.appendChild(calAdd({title:"Uprep efiri: " + e.title, start:x.s, details:str(e.desc) + (l ? "\n" + l : "")})); }
+    t.appendChild(bx); c.appendChild(t); return c;
+  }
+  function eventsView(main){
+    var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
+    H.appendChild(kicker("chat", "Jonli savol-javob"));
+    H.appendChild(heroTitle("Jonli efirlar"));
+    H.appendChild(el("p", "lead", "Ariza, viza va stipendiya bo'yicha jonli efirlar: savolingizni bevosita bering."));
+    var L = evList(), now = new Date(), up = L.filter(function(x){ return x.s.getTime() + 3600000 >= now.getTime(); }), past = L.filter(function(x){ return x.s.getTime() + 3600000 < now.getTime(); }).reverse();
+    if(up.length){ var g = el("div", "ev-list"); up.forEach(function(x){ g.appendChild(evCard(x, false)); }); main.appendChild(sec(secHead("Keyingi efirlar", null, null, null, "Rejada"), g)); }
+    else main.appendChild(callout({style:"info", text:"Yangi efir e'lon qilinganda shu yerda chiqadi. E'lonlarni Telegram'da kuzating: " + tgName() + "."}));
+    var pr = past.filter(function(x){ return safeUrl(x.e.recording); });
+    if(pr.length){ var g2 = el("div", "ev-list"); pr.forEach(function(x){ g2.appendChild(evCard(x, true)); }); main.appendChild(sec(secHead("O'tgan efirlar yozuvlari", null, null, null, "Arxiv"), g2)); }
     footer(main);
   }
 
@@ -1593,6 +1798,7 @@
       G.push([(DQ2.dsu === "yes" ? "6" : "5") + ". Italiyaga kelgach", "plane", stageChecklist("s6").concat(stageChecklist("s7"))]);
       var all = 0, done = 0;
       G.forEach(function(g){ g[2] = g[2].filter(function(x){ return !/^#/.test(x.text); }); all += g[2].length; done += g[2].filter(function(x){ return prog[x.key]; }).length; });
+      try{ localStorage.setItem("uprep-docs-meter", JSON.stringify({done:done, all:all})); }catch(e){}
       var head = el("div", "docs-head");
       var m = el("div", "docs-meter"); var bar = el("span", "meter"); var bi = el("i"); bi.style.width = (all ? done / all * 100 : 0) + "%"; bar.appendChild(bi); m.appendChild(el("b", null, done + " / " + all + " tayyor")); m.appendChild(bar); head.appendChild(m);
       var pr = btn("navy", "file", "PDF qilib saqlash", null, function(){ window.print(); }); pr.classList.add("no-print"); head.appendChild(pr);
@@ -1880,6 +2086,8 @@
     if(u.enCount){ var sb = statsBlock({items:[{big:String(u.enCount), small:"ingliz tilidagi dastur"}, {big:String(nB), small:"bakalavr"}, {big:String(nM), small:"magistratura"}].concat(nU ? [{big:String(nU), small:"yagona sikl (5–6 yil)"}] : [])}); if(sb) box.appendChild(sb); }
     box.appendChild(factTable([["Shahar", city ? city.name : ""], ["Viloyat", city ? city.region : ""], ["Turi", u.type], ["Tashkil topgan", u.founded ? u.founded + "-yil" : ""], ["Reyting", u.rank], ["Stipendiya", u.scholarship || (city && city.dsu ? city.dsu : "")], ["Qabul foizi", u.acceptance]]));
     var vb = videoBlock({url:u.video, title:"Ariza topshirish: video"}); if(vb) box.appendChild(vb);
+    var UA = realAmb(u.id); if(UA.length){ var ag = el("div", "amb-grid"); UA.forEach(function(a){ ag.appendChild(ambCard(a)); }); var ah = el("section", "card"); ah.appendChild(el("h3", null, "Shu yerda o'qiyotgan talabaga yozing")); ah.appendChild(ag); box.appendChild(ah); }
+    var UO = realOut(u.id); if(UO.length){ var og = el("div", "outc-grid"); UO.slice(0, 4).forEach(function(o){ og.appendChild(outCard(o)); }); var oh = el("section", "card"); oh.appendChild(el("h3", null, "Uprep talabalari natijalari (" + UO.length + ")")); oh.appendChild(og); if(UO.length > 4){ var oa = el("a", "trk-next"); oa.href = "#natijalar"; oa.appendChild(el("span", null, "Barcha natijalar")); oa.appendChild(ic("next")); oh.appendChild(oa); } box.appendChild(oh); }
     if(u.tip) box.appendChild(callout({style:"tip", text:u.tip}));
     var mini = el("div", "mini-actions"); mini.appendChild(cmpBtn(u, "line")); mini.appendChild(shareBtn(u.short || u.name, "line")); box.appendChild(mini);
     box.appendChild(applyCard(u));
@@ -1909,7 +2117,7 @@
           var dd = deadline(d.date), n = dd ? daysLeft(dd) : null;
           var li = el("li", n != null && n < 0 ? "past" : "");
           var w = el("div", "when", d.date); if(n != null) w.appendChild(el("span", "left", n < 0 ? "O'tdi" : leftLabel(n))); li.appendChild(w);
-          li.appendChild(el("p", null, d.label)); ol.appendChild(li);
+          var dp = el("div"); dp.appendChild(el("p", null, d.label)); if(dd && n >= 0) dp.appendChild(calAdd({title:(u.short || u.name) + ": " + d.label, d:dd, details:d.label + " (" + d.date + ")"})); li.appendChild(dp); ol.appendChild(li);
         });
         dc.appendChild(ol);
       }
@@ -2106,7 +2314,7 @@
       var w = el("div", "when", c.date);
       if(n != null) w.appendChild(el("span", "left", n < 0 ? "O'tdi" : leftLabel(n)));
       li.appendChild(w);
-      var t = el("div"); if(c.tag) t.appendChild(el("span", "tag", c.tag)); t.appendChild(el("p", null, c.text)); li.appendChild(t);
+      var t = el("div"); if(c.tag) t.appendChild(el("span", "tag", c.tag)); t.appendChild(el("p", null, c.text)); if(!short && c._d && n >= 0) t.appendChild(calAdd({title:str(c.text).slice(0, 90), d:c._d, details:c.text})); li.appendChild(t);
       ul.appendChild(li);
     });
     return ul;
