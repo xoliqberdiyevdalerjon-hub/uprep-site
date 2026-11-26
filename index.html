@@ -11,13 +11,16 @@
 <meta property="og:description" content="Pre-acceptance, DoV/CIMEA, Universitaly, viza, stipendiya va full enrollment: bosqichma-bosqich.">
 <meta property="og:image" content="media/hero-rome.jpg">
 <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="media/logo.jpg">
+<link rel="apple-touch-icon" href="media/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Uprep">
 <link rel="preload" as="image" href="media/hero-rome.jpg" media="(min-width: 700px)">
 <link rel="preload" as="image" href="media/hero-rome-sm.jpg" media="(max-width: 699px)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=13">
+<link rel="stylesheet" href="assets/style.css?v=15">
 </head>
 <body>
 <script>try{if(localStorage.getItem("uprep-big"))document.documentElement.classList.add("bigtext")}catch(e){}</script>
@@ -25,6 +28,7 @@
 <div id="app"><div class="loading" role="status"><span>Yuklanmoqda…</span></div></div>
 <noscript><p style="padding:20px">Sayt ishlashi uchun brauzerda JavaScript yoqilgan bo'lishi kerak.</p></noscript>
 <script src="assets/config.js?v=5"></script>
-<script src="assets/app.js?v=14"></script>
+<script src="assets/app.js?v=16"></script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){});});}</script>
 </body>
 </html>

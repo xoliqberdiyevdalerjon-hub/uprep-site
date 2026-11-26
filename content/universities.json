@@ -24,8 +24,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-Data",
-        "url": "https://www.disim.univaq.it/degree.php?section=single-0A01&degree_id=10"
+        "code": "LM-Data"
       },
       {
         "level": "Magistratura",
@@ -50,8 +49,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-18",
-        "url": "https://www.disim.univaq.it/degree.php?section=single-0A01&degree_id=9"
+        "code": "LM-18"
       },
       {
         "level": "Magistratura",
@@ -59,8 +57,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-32",
-        "url": "https://www.disim.univaq.it/degree.php?section=single-0A01&degree_id=18"
+        "code": "LM-32"
       },
       {
         "level": "Magistratura",
@@ -68,8 +65,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-25",
-        "url": "https://www.disim.univaq.it/degree.php?section=iscritti"
+        "code": "LM-25"
       },
       {
         "level": "Magistratura",
@@ -93,8 +89,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-44",
-        "url": "https://www.disim.univaq.it/degree.php?section=single-0A01&degree_id=4"
+        "code": "LM-44"
       },
       {
         "level": "Magistratura",
@@ -102,8 +97,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-44",
-        "url": "https://www.disim.univaq.it/degree.php?section=single-0A01&degree_id=6"
+        "code": "LM-44"
       },
       {
         "level": "Magistratura",
@@ -111,8 +105,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-40",
-        "url": "https://www.disim.univaq.it/degree.php?section=single-0A01&degree_id=5"
+        "code": "LM-40"
       },
       {
         "level": "Magistratura",
@@ -163,12 +156,30 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-27",
-        "url": "https://www.disim.univaq.it/degree.php?section=single-0A01&degree_id=7"
+        "code": "LM-27"
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "tuition": "Ro'yxatdan o'tishda 156 € viloyat solig'i",
+    "deadlineNote": "Muddat 17.02.2027, soat 13:00 (Italiya vaqti). Italyan tilidagi dasturlar uchun CISIA italyan tili testi.",
+    "deadlines": [
+      {
+        "label": "2027/28: xalqaro talabalar chaqirig'i",
+        "date": "17.02.2027"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.univaq.it/en/section.php?id=2062"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.univaq.it/en/section.php?id=2065"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unich",
@@ -511,7 +522,7 @@
     "name": "Universita degli Studi \"Mediterranea\" di Reggio Calabria",
     "city": "reggio-calabria",
     "type": "Davlat",
-    "web": "https://unirc.it/",
+    "web": "https://www.unirc.it/",
     "detailed": false,
     "applyUrl": "https://www.international.unirc.it/en/international/international-student/admission-and-access-study-courses",
     "dsuUrl": "https://www.unirc.it/sites/default/files/2026-07/BANDO%20DSU%2026_27.pdf",
@@ -742,8 +753,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-52",
-        "url": "https://www.scienzepolitiche.unina.it/?page_id=1266"
+        "code": "LM-52"
       },
       {
         "level": "Magistratura",
@@ -842,8 +852,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-70",
-        "url": "https://www.agraria.unina.it/lauree-magistrali/sustainable-food-systems"
+        "code": "LM-70"
       },
       {
         "level": "Magistratura",
@@ -1240,7 +1249,25 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "deadlineNote": "Universitetning o'zi chet ellik non-EU talabalarga magistratura uchun stipendiya beradi (2026/27 da 48 ta). Avval UNISA Esse3 platformasida ariza, keyin Universitaly. 2027/28 chaqirig'i odatda bahor oxiri – yoz boshida chiqadi.",
+    "deadlines": [
+      {
+        "label": "UNISA stipendiyasi (48 ta, magistratura), 2026/27 (o'tgan yil)",
+        "date": "25.06.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://web.unisa.it/en/international/enrollment-at-unisa/general-information"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://web.unisa.it/uploads/rescue/167/14294/call-for-applications-unisa-scholarship-2026-2027.pdf"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unibo",
@@ -2064,7 +2091,7 @@
     "type": "Davlat",
     "web": "https://www.unife.it/",
     "detailed": false,
-    "applyUrl": "https://www.unife.it/en/come-to-study/enroll/how-to-enroll",
+    "applyUrl": "https://apply.unife.it/",
     "enCount": 6,
     "programmes": [
       {
@@ -2124,7 +2151,30 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "fee": "20 € (qaytarilmaydi)",
+    "deadlineNote": "Viza berilgach bir oy ichida Ferraraga kelib, ro'yxatdan o'tish kerak. Permesso taxminan 107,50 €.",
+    "deadlines": [
+      {
+        "label": "Magistratura: Universitaly, 2026/27 (o'tgan yil)",
+        "date": "30.06.2026"
+      },
+      {
+        "label": "Bakalavr: Universitaly, 2026/27 (o'tgan yil)",
+        "date": "31.07.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unife.it/en/come-to-study/enroll/how-to-enroll"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://apply.unife.it/news/new/5-apply"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unimore",
@@ -2134,7 +2184,7 @@
     "type": "Davlat",
     "web": "https://www.unimore.it/",
     "detailed": false,
-    "applyUrl": "https://www.unimore.it/en/internationalisation/foreign-qualification",
+    "applyUrl": "https://international.unimore.it/bandilan.html",
     "enCount": 9,
     "programmes": [
       {
@@ -2219,7 +2269,20 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "fee": "Dasturga qarab (masalan International Management 20 €)",
+    "deadlineNote": "Ro'yxatdan o'tish sanalari har yili mart–aprel atrofida e'lon qilinadi. Chet elda yashovchi non-EU talabalar uchun qat'iy (flat) to'lov chegirmasi bor.",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://international.unimore.it/bandilan.html"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.international.unimore.it/apply.html"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unipr",
@@ -2413,7 +2476,7 @@
     "sources": [
       {
         "label": "Qabul ma'lumoti (rasmiy sahifa)",
-        "url": "https://apply.unipr.it/news/new/3-call-admission-2026-2027"
+        "url": "https://apply.unipr.it/"
       },
       {
         "label": "Qabul ma'lumoti (rasmiy sahifa)",
@@ -2741,7 +2804,31 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "fee": "20 € (oldindan baholash, qaytarilmaydi)",
+    "tuition": "2026/27: yiliga 16 – 2 076 € (ISEE bo'yicha)",
+    "deadlineNote": "2027/28 qoidalari iyun oyida e'lon qilinadigan prospektda bo'ladi.",
+    "deadlines": [
+      {
+        "label": "Non-EU oldindan baholash (Elix-Forms), 2026/27 (o'tgan yil)",
+        "date": "01.02 – 31.05.2026"
+      },
+      {
+        "label": "Universitaly pre-enrollment, 2026/27 (o'tgan yil)",
+        "date": "30.06.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.uniud.it/en/education/info-for/how-to-apply"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.uniud.it/en/uniud-international/International_Students/ammissione-non-ue/prima-arrivo-ue/informazioni-utili"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "sapienza",
@@ -3555,7 +3642,7 @@
     "type": "Davlat",
     "web": "https://www.uniroma3.it/",
     "detailed": false,
-    "applyUrl": "https://www.uniroma3.it/int/education/enrolment/enrolment-with-a-foreign-qualification/",
+    "applyUrl": "https://www.uniroma3.it/int/education/international-students/",
     "enCount": 11,
     "programmes": [
       {
@@ -3643,8 +3730,7 @@
         "lang": "Ingliz + italyan",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM/SC-GIUR",
-        "url": "https://giurisprudenza.uniroma3.it/en/study/educational-offer/masters-degree-in-law-and-new-technologies/"
+        "code": "LM/SC-GIUR"
       },
       {
         "level": "Magistratura",
@@ -4299,7 +4385,29 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "fee": "15 € (oldindan qabul)",
+    "tuition": "Xalqaro talabalar uchun taxminan 1 000 € / yildan (davlatga qarab)",
+    "english": "B2 sertifikati",
+    "deadlineNote": "2027/28 arizalari 2027-yil yanvarda ochiladi. Odatda fevral–iyun oralig'ida, har dasturning o'z muddati bor.",
+    "deadlines": [
+      {
+        "label": "Magistratura, 2026/27 (o'tgan yil)",
+        "date": "30.06.2026"
+      }
+    ],
+    "applyUrl": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unicas.it/international-unicas/international-office/international-welcome-service/prospective-international-students-unicas/pre-admission-admission-enrollment/"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unicas.it/international-unicas/why-choose-us/fees-and-fundings/"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unitus",
@@ -5581,8 +5689,7 @@
         "lang": "Ingliz + italyan",
         "access": "Kirish testi",
         "years": "2",
-        "code": "LM-24",
-        "url": "https://www.auic.polimi.it/formazione/corsi-di-laurea-magistrale/dettaglio/1013?tx_didatticascuole_show%5Banno%5D=2024&cHash=656ff385423ec28f0bd7f8cd8a2e2a60"
+        "code": "LM-24"
       },
       {
         "level": "Magistratura",
@@ -6449,8 +6556,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-17",
-        "url": "https://www.unicatt.it/corsi/magistrale/fisica-brescia.html"
+        "code": "LM-17"
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
@@ -6835,8 +6941,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "3",
-        "code": "L-18",
-        "url": "https://permalink.unibs.it/suacds/2026/54456R/infogen"
+        "code": "L-18"
       },
       {
         "level": "Magistratura",
@@ -6844,8 +6949,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-Data",
-        "url": "https://permalink.unibs.it/suacds/2026/54477R/infogen"
+        "code": "LM-Data"
       },
       {
         "level": "Magistratura",
@@ -6853,8 +6957,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-35",
-        "url": "https://permalink.unibs.it/suacds/2026/05853R/infogen"
+        "code": "LM-35"
       },
       {
         "level": "Magistratura",
@@ -6862,8 +6965,7 @@
         "lang": "Ingliz + italyan",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-25",
-        "url": "https://permalink.unibs.it/suacds/2026/05881R/infogen"
+        "code": "LM-25"
       },
       {
         "level": "Magistratura",
@@ -6871,8 +6973,7 @@
         "lang": "Ingliz + italyan",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-31",
-        "url": "https://permalink.unibs.it/suacds/2026/05891R/infogen"
+        "code": "LM-31"
       },
       {
         "level": "Magistratura",
@@ -6880,12 +6981,30 @@
         "lang": "Ingliz + italyan",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-33",
-        "url": "https://permalink.unibs.it/suacds/2026/05861R/infogen"
+        "code": "LM-33"
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "fee": "Magistratura oldindan baholash: 20 €; italyan tili testi 25 €",
+    "deadlineNote": "2027/28 sanalari hali e'lon qilinmagan. Non-EU talabalar uchun STAR va LMINT stipendiyalari bor (universitetning o'zi beradi).",
+    "deadlines": [
+      {
+        "label": "Universitaly pre-enrollment va viza, 2026/27 (o'tgan yil)",
+        "date": "31.08.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unibs.it/en/international/degree-seeking-students/admission/pre-evaluation-masters-degrees"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unibs.it/en/international/degree-seeking-students/grants"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unipv",
@@ -7215,7 +7334,7 @@
     "type": "Davlat",
     "web": "https://www.uninsubria.it/",
     "detailed": false,
-    "applyUrl": "https://www.uninsubria.it/servizi/vivere-insubria/immatricolarsi-e-iscriversi/immatricolazioni/studenti-non-ue-residenti",
+    "applyUrl": "https://www.uninsubria.eu/services/uninsubria-living/pre-enrollment-non-ue-students",
     "enCount": 7,
     "programmes": [
       {
@@ -7278,7 +7397,27 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "tuition": "156 € ro'yxat to'lovi + davlat guruhiga qarab qat'iy to'lov: 200 € dan 3 300 € gacha",
+    "english": "Ingliz tilidagi dasturlarda B2 (dasturga qarab); italyan tili testi talab qilinmaydi",
+    "deadlineNote": "2027/28 chaqirig'i hali e'lon qilinmagan.",
+    "deadlines": [
+      {
+        "label": "Universitaly pre-enrollment, 2026/27 (o'tgan yil)",
+        "date": "30.06.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.uninsubria.eu/services/uninsubria-living/pre-enrollment-non-ue-students"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.uninsubria.it/servizi/vivere-insubria/immatricolarsi-e-iscriversi/immatricolazioni/studenti-non-ue-residenti"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "univpm",
@@ -7385,8 +7524,7 @@
         "lang": "Ingliz + italyan",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-Data",
-        "url": "https://www.econ.univpm.it/EM11"
+        "code": "LM-Data"
       },
       {
         "level": "Magistratura",
@@ -7465,13 +7603,30 @@
         "lang": "Ingliz + italyan",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-77",
-        "url": "https://www.econ.univpm.it/EM12"
+        "code": "LM-77"
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
     "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
-    "fee": "Har bir ariza 10 €, ko'pi bilan 2 ta ariza"
+    "fee": "Har bir ariza 10 €, ko'pi bilan 2 ta ariza",
+    "deadlineNote": "Natija kamida 45 kunda chiqadi. Ingliz tilidagi dasturlarga ro'yxatdan o'tish 5-noyabrgacha. 2027/28 qo'llanmasi hali e'lon qilinmagan.",
+    "deadlines": [
+      {
+        "label": "1-chaqiriq, 2026/27 (o'tgan yil)",
+        "date": "16.12.2025 – 30.01.2026"
+      },
+      {
+        "label": "2-chaqiriq, 2026/27 (o'tgan yil)",
+        "date": "01.03 – 30.04.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.international.univpm.it/wp-content/uploads/2025/12/UNIVPM-ADMISSION-GUIDELINES_movein_2026-2027-1.pdf"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unicam",
@@ -7585,7 +7740,28 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "fee": "20 € (qaytarilmaydi)",
+    "tuition": "2025/26: non-EU uchun 556 € / yil (ba'zi davlatlar uchun 456 €). Hammasi kiritilgan paket (o'qish + yotoqxona + ovqat): 6 876 € / yil",
+    "english": "Ingliz tilidagi dasturlarda sertifikat ixtiyoriy, B2 tavsiya qilinadi",
+    "deadlineNote": "2027/28 chaqirig'i hali e'lon qilinmagan. Pre-admission yakuniy qabul degani emas.",
+    "deadlines": [
+      {
+        "label": "Pre-admission, non-EU, 2026/27 (o'tgan yil)",
+        "date": "31.03.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://international.unicam.it/admissions/pre-admissions-2026-2027"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://international.unicam.it/admissions/tuition-fees-2025-26"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unimc",
@@ -7655,7 +7831,42 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "fee": "20 € (2027/28 dan)",
+    "deadlineNote": "Arizadan oldin intervyu videosini yozib yuklash shart, aks holda ariza avtomatik rad etiladi. Natija muddatdan kamida 2 hafta keyin. «Invest Your Talent in Italy» stipendiyasi bor.",
+    "deadlines": [
+      {
+        "label": "2027/28: 1-oqim",
+        "date": "03.11 – 30.11.2026"
+      },
+      {
+        "label": "2027/28: 2-oqim",
+        "date": "08.01.2027"
+      },
+      {
+        "label": "2027/28: 3-oqim",
+        "date": "01.02.2027"
+      },
+      {
+        "label": "2027/28: 4-oqim",
+        "date": "01.03.2027"
+      },
+      {
+        "label": "2027/28: oxirgi muddat (ba'zi dasturlar)",
+        "date": "30.04.2027"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://apply.unimc.it/en_GB/news/new/95-and-complete-your-pre-admission-application-unimc-20272028"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unimc.it/en/international/scholarships-for-international-students"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "uniurb",
@@ -7665,7 +7876,7 @@
     "type": "Davlat",
     "web": "https://www.uniurb.it/",
     "detailed": false,
-    "applyUrl": "https://www.uniurb.it/international/regular-students/enrolment/non-eu-citizens-living-abroad",
+    "applyUrl": "https://apply.uniurb.it/",
     "enCount": 5,
     "programmes": [
       {
@@ -7715,7 +7926,15 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "deadlineNote": "Magistraturaga avval apply.uniurb.it'da ariza va komissiya bilan intervyu, keyin Universitaly. 2027/28 sanalari hali e'lon qilinmagan.",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.uniurb.it/international/regular-students/enrolment/non-eu-citizens-living-abroad"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unimol",
@@ -7723,7 +7942,7 @@
     "name": "Universita degli Studi del Molise",
     "city": "campobasso",
     "type": "Davlat",
-    "web": "https://www2.unimol.it/",
+    "web": "https://www.unimol.it/",
     "detailed": false,
     "applyUrl": "https://www.unimol.it/english/international-applicant/",
     "enCount": 4,
@@ -8631,8 +8850,7 @@
         "lang": "Ingliz + italyan",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-77",
-        "url": "https://disei.uniupo.it/it/didattica/corsi-di-laurea/amministrazione-professione-persone-app-2526"
+        "code": "LM-77"
       },
       {
         "level": "Magistratura",
@@ -8667,8 +8885,7 @@
         "lang": "Ingliz + italyan",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-77",
-        "url": "https://disei.uniupo.it/it/didattica/corsi-di-laurea/management-economia-finanza-mef-2526"
+        "code": "LM-77"
       },
       {
         "level": "Magistratura",
@@ -8690,7 +8907,26 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "fee": "Hujjatlarni baholash bepul",
+    "deadlineNote": "Magistratura uchun oldindan baholash so'rash mumkin. 2027/28 sanalari hali e'lon qilinmagan.",
+    "deadlines": [
+      {
+        "label": "Universitaly pre-enrollment, 2026/27 (o'tgan yil)",
+        "date": "15.09.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.uniupo.it/en/international/degree-seeking/you-want-come-upo/how-enrol-upo"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.uniupo.it/en/international/students/you-want-come-upo/how-enrol-upo/faq-%E2%80%93-registration-and-pre-registration-universitaly-international-students"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unisg",
@@ -8830,7 +9066,29 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "deadlineNote": "Arizalar odatda bahorda ochiladi. Universitet non-EU talabalarga 40 ta yillik stipendiya e'lon qilgan.",
+    "deadlines": [
+      {
+        "label": "DreamApply, vizaga muhtoj non-EU, 2026/27 (o'tgan yil)",
+        "date": "30.06.2026"
+      },
+      {
+        "label": "Universitaly pre-enrollment (erkin qabul), 2026/27 (o'tgan yil)",
+        "date": "30.09.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.uniba.it/en/students/international-students/admission/admission-of-international-students"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.uniba.it/en/students/international-students/announcements/call-for-applications-published-for-the-award-of-40-annual-scholarships-for-international-non-eu-students"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "poliba",
@@ -8840,7 +9098,7 @@
     "type": "Davlat",
     "web": "https://www.poliba.it/",
     "detailed": false,
-    "applyUrl": "https://www.poliba.it/en/general-overview",
+    "applyUrl": "https://www.poliba.it/en/procedure-non-eu-students",
     "enCount": 9,
     "programmes": [
       {
@@ -8926,7 +9184,20 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "english": "Magistratura: dasturga qarab B1 yoki B2",
+    "deadlineNote": "Ikki bosqich: Universitaly + Politecnico di Bari'ning Esse3 platformasidagi ariza. 2027/28 tartibi hali e'lon qilinmagan.",
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.poliba.it/en/procedure-non-eu-students"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.poliba.it/en/general-overview"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "lum",
@@ -9028,8 +9299,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-20",
-        "url": "https://www.unisalento.it/didattica/cosa-studiare/percorsi/-/dettaglio/corso/LM52/aerospace-engineering"
+        "code": "LM-20"
       },
       {
         "level": "Magistratura",
@@ -9062,8 +9332,7 @@
         "lang": "Ingliz + italyan",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-31",
-        "url": "https://www.unisalento.it/didattica/cosa-studiare/corsi-di-laurea-magistrale/-/dettaglio/corso/LM54/management-engineering"
+        "code": "LM-31"
       },
       {
         "level": "Magistratura",
@@ -9080,8 +9349,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-53.",
-        "url": "https://www.unisalento.it/didattica/cosa-studiare/percorsi/-/dettaglio/corso/LM56/materials-engineering-and-nanotechnology"
+        "code": "LM-53."
       },
       {
         "level": "Magistratura",
@@ -9094,7 +9362,31 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "fee": "23 € (chaqiriq to'lovi, 2026/27)",
+    "tuition": "Xalqaro talabalar uchun qat'iy 1 000 € / yil (3 qismda), ISEE parificato kerak emas",
+    "deadlineNote": "2027/28 e'lonlari hali chiqmagan.",
+    "deadlines": [
+      {
+        "label": "Muhandislik magistraturasi, non-EU, 2026/27 (o'tgan yil)",
+        "date": "12.01.2026"
+      },
+      {
+        "label": "Universitaly pre-enrollment (magistratura)",
+        "date": "20.07.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://international.unisalento.it/admission/masters-degree"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://international.unisalento.it/admission/enrolment?open=1"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unica",
@@ -9396,8 +9688,7 @@
         "lang": "Ingliz",
         "access": "Erkin qabul",
         "years": "2",
-        "code": "LM-86",
-        "url": "https://www.veterinaria.uniss.it/en/didactics/masters-degree-wildlife-management-conservation-and-control-wmcc"
+        "code": "LM-86"
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
@@ -9746,7 +10037,30 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "tuition": "Chet elda yashovchi non-EU: qat'iy to'lov davlat guruhiga qarab (211 € yoki 267 €, 156 € viloyat solig'i bilan) yoki ISEE parificato bo'yicha",
+    "deadlineNote": "2027/28 sanalari hali e'lon qilinmagan.",
+    "deadlines": [
+      {
+        "label": "Bakalavr: Universitaly pre-enrollment, 2026/27 (o'tgan yil)",
+        "date": "09.08.2026"
+      },
+      {
+        "label": "Magistratura: ariza, 2026/27 (o'tgan yil)",
+        "date": "04.08.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unipa.it/mobilita/en/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unipa.it/mobilita/en/new-students/tuition-fees/"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unict",
@@ -9877,7 +10191,29 @@
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
     "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
-    "fee": "10 € (ingliz tilidagi magistratura)"
+    "fee": "10 € (har bir dastur uchun); qabul qilinsa 75 € tasdiqlash to'lovi",
+    "deadlineNote": "10 ta to'liq ingliz tilidagi magistratura. 2027/28 chaqirig'i hali e'lon qilinmagan; o'tgan yil fevral–mart oralig'ida edi. Universitetning o'z stipendiyalari bor (yiliga 150 € umumiy to'lov bilan).",
+    "deadlines": [
+      {
+        "label": "Ingliz tilidagi magistratura, non-EU, 2026/27 (o'tgan yil)",
+        "date": "10.02 – 17.03.2026"
+      },
+      {
+        "label": "Universitaly pre-enrollment, 2026/27 (o'tgan yil)",
+        "date": "31.07.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unict.it/en/education/masters-degree-programmes-taught-english"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unict.it/en/news-events/university-catania-scholarships-202627"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unime",
@@ -11771,7 +12107,26 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "tuition": "Yiliga odatda 150 – 2 200 € (oila daromadi va o'zlashtirishga qarab)",
+    "deadlineNote": "Avval PICA platformasida oldindan baholashdan o'tasiz; ijobiy natija olganlargina Universitaly'da tasdiqlanadi. Vizaga yotoqxona so'rovi ham kerak. 2027/28 sanalari hali e'lon qilinmagan.",
+    "deadlines": [
+      {
+        "label": "PICA oldindan baholash, 2026/27 (o'tgan yil)",
+        "date": "25.10.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unipg.it/en/international-students/becoming-a-unipg-student"
+      },
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.unipg.it/en/international-students/becoming-a-unipg-student/tuition-fees-and-scholarships"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   },
   {
     "id": "unistrapg",
@@ -12133,7 +12488,7 @@
     "sources": [
       {
         "label": "Qabul ma'lumoti (rasmiy sahifa)",
-        "url": "https://apply.unive.it/news/new/127-application-fee-payment-instructions"
+        "url": "https://apply.unive.it/"
       }
     ],
     "admUpdated": "26.11.2026"
@@ -12155,8 +12510,7 @@
         "lang": "Ingliz",
         "access": "Kirish testi",
         "years": "2",
-        "code": "LM-4",
-        "url": "https://www.iuav.it/it/didattica/lauree-magistrali/ma-architecture"
+        "code": "LM-4"
       },
       {
         "level": "Magistratura",
@@ -13116,6 +13470,26 @@
       }
     ],
     "programmesNote": "Ro'yxat Italiya ta'lim vazirligining Universitaly bazasidan (2026/27) olingan: ingliz tilida va qisman ingliz tilida o'qitiladigan dasturlar. Italyan tilidagi dasturlar uchun B2 italyan tili kerak.",
-    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi"
+    "programmesUrl": "https://www.universitaly.it/it/cerca-corsi",
+    "fee": "Oldindan qabul to'lovi 50 € (ro'yxatdan o'tsangiz, o'qish to'lovidan ayiriladi) + 20 € tasdiqlash to'lovi",
+    "tuition": "2026/27: xalqaro magistratura uchun non-EU talabalarga qat'iy 1 000 € / yil",
+    "deadlineNote": "2027/28 chaqirig'i hali e'lon qilinmagan; o'tgan yil tartibi bo'yicha mart oxirigacha kutiladi.",
+    "deadlines": [
+      {
+        "label": "Xalqaro magistratura chaqirig'i, 2026/27 (o'tgan yil)",
+        "date": "31.03.2026"
+      },
+      {
+        "label": "Universitaly pre-enrollment, 2026/27 (o'tgan yil)",
+        "date": "30.06.2026"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Qabul ma'lumoti (rasmiy sahifa)",
+        "url": "https://www.univr.it/en/our-services/international-degree-seeking-students"
+      }
+    ],
+    "admUpdated": "26.11.2026"
   }
 ]
