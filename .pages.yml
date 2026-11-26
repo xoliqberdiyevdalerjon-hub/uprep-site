@@ -446,6 +446,15 @@ content:
           - { name: amount, label: "Maksimal summa (bo'sh = davlat minimumi)", type: string }
           - { name: note, label: Izoh, type: text }
           - { name: own, label: "Stipendiyani universitetning o'zi beradi", type: boolean }
+      - name: uniScholarships
+        label: Universitetlarning o'z stipendiyalari
+        type: object
+        list: true
+        fields:
+          - { name: uni, label: "Universitet kodi (masalan unical)", type: string }
+          - { name: title, label: Sarlavha, type: string }
+          - { name: text, label: Matn, type: text }
+          - { name: url, label: Rasmiy havola, type: string }
 
   - name: news
     label: Yangiliklar
@@ -489,3 +498,18 @@ content:
         fields:
           - { name: label, label: Nomi, type: string }
           - { name: url, label: Havola, type: string }
+
+  - name: reviews
+    label: Fikrlar (faqat haqiqiy, roziligi bilan)
+    type: file
+    path: content/reviews.json
+    format: json
+    list: true
+    fields:
+      - { name: name, label: "Ism (masalan Aziza R.)", type: string, required: true }
+      - { name: uni, label: "Universitet kodi (masalan polimi)", type: string }
+      - { name: program, label: Dastur, type: string }
+      - { name: year, label: "Yil (masalan 2026)", type: string }
+      - { name: photo, label: Rasm (ixtiyoriy), type: image }
+      - { name: text, label: Fikr, type: text, required: true }
+      - { name: consent, label: "Talaba e'lon qilishga yozma rozilik berdi", type: boolean }

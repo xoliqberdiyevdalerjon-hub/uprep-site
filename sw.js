@@ -1,10 +1,10 @@
 /* Uprep service worker: the site opens offline and loads fast.
    Pages and content (content/*.json) are always fetched fresh first, so CMS edits show up immediately;
    the cached copy is used only when the network fails. Versioned assets are served from cache. */
-const CACHE = "uprep-v2";
+const CACHE = "uprep-v3";
 const CORE = ["./", "index.html", "assets/style.css", "assets/app.js", "assets/config.js", "manifest.webmanifest", "media/favicon.svg", "media/icon-192.png", "media/hero-rome-sm.webp",
   "content/site.json", "content/stages.json", "content/calendar.json", "content/library.json", "content/countries.json", "content/italy.json", "content/cities.json",
-  "content/universities.json", "content/guide.json", "content/dsu.json", "content/living.json", "content/news.json"];
+  "content/universities.json", "content/guide.json", "content/dsu.json", "content/living.json", "content/news.json", "content/reviews.json"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {

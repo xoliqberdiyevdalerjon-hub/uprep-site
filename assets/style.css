@@ -955,3 +955,18 @@ a.news-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line-2),
 .cmp-row.hot .cmp-v{color:var(--red)}
 .cmp-act{display:flex;flex-wrap:wrap;gap:6px}
 .cmp-act .btn{height:38px;padding:0 12px;font-size:13px}
+/* reviews + feedback */
+.rev-grid{display:grid;gap:12px}
+@media (min-width:720px){ .rev-grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))} }
+.rev{margin:0;padding:20px;border-radius:var(--r-lg);background:var(--surface);box-shadow:0 0 0 1px var(--line), var(--sh-1);display:flex;flex-direction:column;gap:14px}
+.rev blockquote{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-2)}
+.rev figcaption{display:flex;align-items:center;gap:12px}
+.rev figcaption img,.rev-av{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none}
+.rev-av{display:grid;place-items:center;background:var(--navy);color:var(--gold-2);font:800 18px/1 var(--display)}
+.rev figcaption b{display:block;font-size:15px}
+.rev figcaption small{display:block;font-size:13px;color:var(--muted)}
+.fb textarea{padding:12px 16px;border-radius:14px;border:0;background:var(--surface-2);box-shadow:inset 0 0 0 1.5px var(--line);font:inherit;font-size:16px;resize:vertical;outline:none}
+.fb textarea:focus{box-shadow:inset 0 0 0 2px var(--navy-3)}
+.fb .cityselect{width:100%;height:50px;border-radius:14px}
+.fb .btn{justify-self:start}
+.callout a{font-weight:700;color:var(--accent)}

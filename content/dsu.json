@@ -325,5 +325,85 @@
       "note": "Venetoda stipendiyani universitet beradi. Yotoqxona va oshxona ESU orqali.",
       "own": true
     }
+  ],
+  "uniScholarships": [
+    {
+      "uni": "unical",
+      "title": "Unical: 132 ta to'liq stipendiya (magistratura)",
+      "text": "O'qish to'lovi, bepul yotoqxona va ovqat, ustiga yiliga 3 600 € nafaqa. 2026/27 da chet ellik magistratura talabalariga berilgan; 2027/28 chaqirig'i 2027-yil yanvarda kutilmoqda.",
+      "url": "https://www.unical.it/internazionale/intenational-students/unical-admission/"
+    },
+    {
+      "uni": "unisa",
+      "title": "Salerno: 48 ta stipendiya (magistratura)",
+      "text": "Chet elda yashovchi non-EU talabalar uchun. 2026/27 chaqirig'i 25.06.2026 gacha edi; yangi chaqiriq odatda bahor oxiri – yoz boshida.",
+      "url": "https://web.unisa.it/uploads/rescue/167/14294/call-for-applications-unisa-scholarship-2026-2027.pdf"
+    },
+    {
+      "uni": "uniba",
+      "title": "Bari: 40 ta yillik stipendiya",
+      "text": "Xalqaro non-EU talabalar uchun universitet stipendiyasi.",
+      "url": "https://www.uniba.it/en/students/international-students/announcements/call-for-applications-published-for-the-award-of-40-annual-scholarships-for-international-non-eu-students"
+    },
+    {
+      "uni": "bocconi",
+      "title": "Bocconi: 100% o'qish to'lovidan ozodlik",
+      "text": "Bocconi4Access: xalqaro birinchi kurs bakalavr talabalari uchun to'liq ozodlik; oilaviy ahvolga qarab 20–100% chegirmalar ham bor.",
+      "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/funding/100-full-tuition-waivers-ay-2027-28"
+    },
+    {
+      "uni": "unibs",
+      "title": "Brescia: STAR va LMINT stipendiyalari",
+      "text": "Non-EU talabalar uchun: Foundation + bakalavr (STAR) va magistratura (STAR + LMINT). Davom ettirish uchun kreditlar (ECTS) talabi bor.",
+      "url": "https://www.unibs.it/en/international/degree-seeking-students/grants"
+    },
+    {
+      "uni": "unisi",
+      "title": "Siena: International Excellence Scholarships",
+      "text": "Xalqaro talabalar uchun universitetning a'lo natija stipendiyalari.",
+      "url": "https://admission.unisi.it/?p=2283"
+    },
+    {
+      "uni": "unimib",
+      "title": "Milano-Bicocca: Bicocca International Scholarship",
+      "text": "Chet el diplomi bilan topshiradigan xalqaro talabalar uchun.",
+      "url": "https://en.unimib.it/study/information-international-students/bicocca-international-scholarship"
+    },
+    {
+      "uni": "unimc",
+      "title": "Macerata: «Invest Your Talent in Italy»",
+      "text": "Avval apply.unimc.it orqali pre-admission arizasi beriladi.",
+      "url": "https://www.unimc.it/en/international/scholarships-for-international-students"
+    },
+    {
+      "uni": "unict",
+      "title": "Catania: universitet stipendiyalari",
+      "text": "Ingliz tilidagi magistratura talabalari uchun; stipendiya bilan yillik umumiy to'lov 150 €.",
+      "url": "https://www.unict.it/en/news-events/university-catania-scholarships-202627"
+    },
+    {
+      "uni": "unicatt",
+      "title": "Cattolica: UCSC International Scholarship",
+      "text": "Magistraturada non-EU qat'iy to'lovni (9 370 €) taxminan 6 400 € gacha kamaytiradi.",
+      "url": "https://international.unicatt.it/ucscinternational-admission-and-tuition-tuition-fees-and-scholarships-10154"
+    },
+    {
+      "uni": "polito",
+      "title": "Politecnico di Torino: Matematik muhandislik stipendiyalari",
+      "text": "2027/28 uchun chet el diplomli magistratura talabalariga 3 ta stipendiya.",
+      "url": "https://www.polito.it/en/education/services-and-life-at-politecnico/right-to-education-and-tuition-fees/scholarships-and-awards?tipo_borsa=S&tipo_laurea=M&tipo_iscriz=P"
+    },
+    {
+      "uni": "unitus",
+      "title": "Tuscia: xalqaro talabalar stipendiyalari",
+      "text": "Universitetning xalqaro talabalarga mo'ljallangan stipendiya chaqiriqlari.",
+      "url": "https://www.unitus.it/en/international/borse-di-studio-international-students/"
+    },
+    {
+      "uni": "unich",
+      "title": "Chieti-Pescara: xalqaro stipendiyalar",
+      "text": "2026/27 chaqirig'i 20.04.2026 da yopilgan; yangi chaqiriq kutilmoqda.",
+      "url": "https://www.unich.it/international/international-students-degree-seekers/admission-procedure"
+    }
   ]
 }
