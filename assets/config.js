@@ -5,6 +5,5 @@ window.UPREP_CONFIG = {
   supabaseAnonKey: "",    // Supabase > Project Settings > API > anon public key (public by design)
   paymentLink: "",        // Stripe Payment Link, e.g. https://buy.stripe.com/xxxx
   googleLogin: false,     // true after Google is enabled in Supabase Auth
-  leadUrl: "",            // Uprep bot: https://<project>.supabase.co/functions/v1/lead (README). Bo'sh = qo'lda yuborish oynasi
   openAll: true           // true = hamma bosqichlar hammaga ochiq (vaqtincha). To'lovni yoqishda false qiling.
 };

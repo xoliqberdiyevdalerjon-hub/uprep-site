@@ -1,0 +1,13 @@
+# Optional: deploy from the command line with `npx wrangler deploy` (inside this folder).
+# The Cloudflare dashboard way (copy-paste worker.js) works too and needs no tools.
+# Secrets are NEVER written here. Add them with:
+#   npx wrangler secret put BOT_TOKEN
+#   npx wrangler secret put CHAT_ID
+#   npx wrangler secret put APP_KEY
+name = "uprep-feedback"
+main = "worker.js"
+compatibility_date = "2025-06-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://xoliqberdiyevdalerjon-hub.github.io"
+TIME_ZONE = "Asia/Tashkent"

@@ -1422,3 +1422,34 @@ main .loading{min-height:50vh}
 }
 .crumbs ol{margin:-12px 0 2px}
 .foot.wrap{padding-left:16px;padding-right:16px}
+
+/* ---------- Feedback (Fikr bildirish) ---------- */
+.fb-form{display:grid;gap:16px}
+.fb-seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:4px;border-radius:16px;background:var(--surface-2);box-shadow:inset 0 0 0 1px var(--line)}
+.fb-k{min-height:44px;padding:0 6px;border-radius:12px;font-weight:700;font-size:14.5px;color:var(--ink-2);transition:background .15s,color .15s}
+.fb-k:hover{color:var(--ink)}
+.fb-k.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(10,20,40,.12),0 0 0 1px var(--line)}
+.fb-form textarea{min-height:150px;resize:vertical}
+.fb-count{justify-self:end;text-align:right;font-variant-numeric:tabular-nums}
+.fb-count.near{color:var(--red)}
+.fb-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.fb-what{border-radius:14px;background:var(--surface-2);padding:0 14px;font-size:14.5px;color:var(--ink-2)}
+.fb-what summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600;color:var(--ink)}
+.fb-what ul{margin:0 0 8px;padding-left:20px;display:grid;gap:4px}
+.fb-what p{margin:0 0 12px;font-size:13.5px;color:var(--muted)}
+.fb-status:empty{display:none}
+.fb-status{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:14px;font-size:14.5px;line-height:1.45;background:var(--surface-2);color:var(--ink)}
+.fb-status svg{width:20px;height:20px;flex:none;margin-top:1px}
+.fb-status > span{flex:1}
+.fb-status.ok{background:var(--green-soft);color:var(--green)}
+.fb-status.warn{background:var(--gold-soft);color:var(--gold-ink)}
+.fb-status.err{background:var(--red-soft);color:var(--red)}
+.fb-status.info svg{color:var(--accent)}
+.fb-status .textbtn{color:inherit}
+.fb-actions{display:flex;gap:10px}
+.fb-send{min-width:180px;justify-content:center}
+.fb-send.busy{opacity:.75;cursor:progress}
+.fb-send.busy svg{animation:spin .9s linear infinite}
+@media (max-width:480px){ .fb-send{flex:1} .fb-k{font-size:13.5px} }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .fb-k.on{background:var(--surface-3)} }
+:root[data-theme="dark"] .fb-k.on{background:var(--surface-3)}

@@ -193,8 +193,8 @@
   var SKEY = "uprep_state_v2";
   var SMAP = { "uprep-profile":"profile", "uprep-quiz":"quiz", "uprep-me":"plan", "uprep-fav":"favorites", "uprep-track":"tracker",
     "uprep-progress-v1":"guideProgress", "uprep-docs-q":"docsAnswers", "uprep-docs-meter":"docsChecklist", "uprep-calc":"calc", "uprep-cmp":"compare",
-    "uprep-xat":"letter", "uprep-theme":"prefs.theme", "uprep-big":"prefs.big", "uprep-calm":"prefs.calm", "uprep-preview":"prefs.preview" };
-  var STATE = { v:2, profile:null, quiz:null, plan:null, favorites:[], tracker:{}, guideProgress:{}, docsAnswers:null, docsChecklist:null, calc:null, compare:[], letter:{}, prefs:{} };
+    "uprep-xat":"letter", "uprep-feedback-draft":"feedbackDraft", "uprep-theme":"prefs.theme", "uprep-big":"prefs.big", "uprep-calm":"prefs.calm", "uprep-preview":"prefs.preview" };
+  var STATE = { v:2, profile:null, quiz:null, plan:null, favorites:[], tracker:{}, guideProgress:{}, docsAnswers:null, docsChecklist:null, calc:null, compare:[], letter:{}, feedbackDraft:null, prefs:{} };
   var stOK = true;
   (function(){
     try{
@@ -216,6 +216,7 @@
     removeItem:function(k){ if(!SMAP[k]){ try{ localStorage.removeItem(k); }catch(e){} return; } var p = SMAP[k]; if(p.indexOf(".") > 0) stPut(p, null); else STATE[p] = null; stSave(); },
     keys:function(){ return Object.keys(SMAP).filter(function(k){ return LS.getItem(k) != null; }); }
   };
+  if(window.UprepFeedback) window.UprepFeedback.setStorage(LS);
 
   /* ---------------- per-visitor state ---------------- */
   var PKEY = "uprep-progress-v1", prog = {};
@@ -315,7 +316,7 @@
   function enN(u){ var n = arr(u && u.programmes).length; return n || (u && u.enCount) || 0; }
 
   /* ---------------- routing ---------------- */
-  var ALIAS = { "pul-kalkulyatori":"kalkulyator", "hujjatlar":"hujjatlarim", "taqvim":"kalendar", "muddatlar":"kalendar", "stipendiyalar":"stipendiya", "dsu":"stipendiya", "universitet":"universitetlar", "unis":"universitetlar", "settings":"sozlamalar", "profil-tahlili":"profil", "motivatsion-xat":"xat", "tarif":"tariflar", "narxlar":"tariflar", "haqimizda":"biz-haqimizda", "qadamlar":"qollanma", "home":"", "bosh-sahifa":"" };
+  var ALIAS = { "pul-kalkulyatori":"kalkulyator", "hujjatlar":"hujjatlarim", "taqvim":"kalendar", "muddatlar":"kalendar", "stipendiyalar":"stipendiya", "dsu":"stipendiya", "universitet":"universitetlar", "unis":"universitetlar", "settings":"sozlamalar", "profil-tahlili":"profil", "motivatsion-xat":"xat", "tarif":"tariflar", "narxlar":"tariflar", "haqimizda":"biz-haqimizda", "qadamlar":"qollanma", "fikr-bildirish":"xabar", "muammo":"xabar", "feedback":"xabar", "home":"", "bosh-sahifa":"" };
   function slug(x){ return norm(x).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
   function hashQuery(){ var h = location.hash || "", i = h.indexOf("?"), o = {}; if(i < 0) return o; h.slice(i + 1).split("&").forEach(function(kv){ if(!kv) return; var p = kv.split("="); try{ o[decodeURIComponent(p[0])] = decodeURIComponent((p[1] || "").replace(/\+/g, " ")); }catch(e){} }); return o; }
   function route(){
@@ -334,6 +335,7 @@
     if(h === "rejam") return {view:"plan"};
     if(h === "taqqoslash") return {view:"cmp"};
     if(h === "fikrlar") return {view:"reviews"};
+    if(h === "xabar") return {view:"feedback"};
     if(h === "foundation") return {view:"foundation"};
     if(h === "noldan") return {view:"noldan"};
     if(h === "biz-haqimizda") return {view:"about"};
@@ -409,7 +411,7 @@
     sh.hz.textContent = ""; HZ = sh.hz;
     var main = el("main", "wrap" + (wide ? "" : " narrow")); main.id = "app-main";
     CRUMBS = crumbsFor(r);
-    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, plans:plansView, profile:profileView, parents:parentsView, amb:ambView, settings:settingsView, tpl:tplView, xat:xatView, out:outView, events:eventsView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView, notfound:notFoundView,
+    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, plans:plansView, profile:profileView, parents:parentsView, amb:ambView, settings:settingsView, feedback:feedbackView, tpl:tplView, xat:xatView, out:outView, events:eventsView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView, notfound:notFoundView,
       item:function(m){ itemView(m, r.i); }, city:function(m){ cityView(m, r.c); }, uni:function(m){ uniView(m, r.u, r.tab); }, stage:function(m){ stageView(m, r.st); }
     }[r.view] || homeView)(main, r);
     if(CRUMBS){ main.insertBefore(CRUMBS, main.firstChild); CRUMBS = null; }
@@ -454,7 +456,7 @@
     if(["guide","noldan","foundation","tests","course","stage","cal","lib","item","italy","living","tpl","xat"].indexOf(v) >= 0) return "guide";
     if(["unis","uni","progs","cmp","quiz","cities","city"].indexOf(v) >= 0) return "unis";
     if(v === "dsu" || v === "calc") return "dsu";
-    if(v === "settings" || v === "plans") return "settings";
+    if(v === "settings" || v === "plans" || v === "feedback") return "settings";
     if(["plan","docs","profile"].indexOf(v) >= 0) return "plan";
     return "other";
   }
@@ -497,6 +499,7 @@
     else if(r.view === "amb") c.push(["Talaba-elchilar"]);
     else if(r.view === "settings") c.push(["Sozlamalar"]);
     else if(r.view === "notfound") c.push(["Sahifa topilmadi"]);
+    else if(r.view === "feedback"){ c.push(["Sozlamalar","sozlamalar"]); c.push(["Fikr bildirish"]); }
     else if(r.view === "tpl"){ c.push(["Qo'llanma","qollanma"]); c.push(["Shablonlar"]); }
     else if(r.view === "xat"){ c.push(["Qo'llanma","qollanma"]); c.push(["Motivatsion xat"]); }
     else if(r.view === "out") c.push(["Natijalar"]);
@@ -546,7 +549,7 @@
     function col(title, links){ var c = el("div"); c.appendChild(el("h2", "foot-h", title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
     col("Qo'llanma", [["8 qadam", "#qollanma"], ["Hammasi bitta sahifada (PDF)", "#noldan"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Italiyada yashash", "#yashash"], ["Kalendar", "#kalendar"], ["Materiallar", "#materiallar"], ["Shablonlar", "#shablonlar"]]);
     col("Vositalar", [["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Profil tahlili", "#profil"], ["Pul kalkulyatori", "#kalkulyator"], ["Motivatsion xat", "#xat"], ["Mening rejam", "#rejam"], ["Sozlamalar", "#sozlamalar"]]);
-    col("Uprep", [["Biz haqimizda", "#biz-haqimizda"]].concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"]]).concat(realAmb().length ? [["Talaba-elchilar", "#elchilar"]] : []).concat(realOut().length ? [["Natijalar", "#natijalar"]] : []).concat(evList().length ? [["Jonli efirlar", "#efirlar"]] : []).concat([["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#fikrlar"], ["Telegram: " + tgName(), tgUrl()]]));
+    col("Uprep", [["Biz haqimizda", "#biz-haqimizda"]].concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"]]).concat(realAmb().length ? [["Talaba-elchilar", "#elchilar"]] : []).concat(realOut().length ? [["Natijalar", "#natijalar"]] : []).concat(evList().length ? [["Jonli efirlar", "#efirlar"]] : []).concat([["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#xabar"], ["Telegram: " + tgName(), tgUrl()]]));
     f.appendChild(g);
     var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uprep." + (S.site.updated ? " Ma'lumotlar oxirgi marta " + S.site.updated + " da yangilandi." : "")));
     var tg = el("a", null, tgName()); tg.href = tgUrl(); tg.target = "_blank"; tg.rel = "noopener"; p.appendChild(tg);
@@ -606,9 +609,10 @@
   }
 
   /* ================= SEND TO ADMIN =================
-     With CFG.leadUrl set (Supabase function "lead" + Telegram bot), the message reaches the admin automatically.
-     Without it: a sheet shows the message, copies it, and opens the admin chat directly from the tap
+     With the relay configured (assets/relay-config.js -> Cloudflare Worker -> Telegram bot) messages reach the admin automatically.
+     Without it, or if sending fails: a sheet shows the message, copies it, and opens the admin chat directly from the tap
      (window.open inside a promise is blocked by mobile browsers, so the link is a real <a> the user taps). */
+  function relayOn(){ return !!(window.UprepFeedback && window.UprepFeedback.isConfigured()); }
   function leadSheet(text, title){
     var old = document.querySelector(".sheet-bg"); if(old) old.remove();
     var bg = el("div", "sheet-bg"), sh = el("div", "sheet"); sh.setAttribute("role", "dialog"); sh.setAttribute("aria-modal", "true");
@@ -630,14 +634,16 @@
     copyText(text);
   }
   function sendLead(kind, text, contact, done){
-    var url = safeUrl(CFG.leadUrl);
-    if(!url){ leadSheet(text); if(done) done(false); return; }
-    fetch(url, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({kind:kind, text:text, contact:str(contact), page:location.href, hp:""})})
-      .then(function(r){ if(!r.ok) throw 0; toast("Yuborildi! " + tgName() + " tez orada javob beradi."); if(done) done(true); })
-      .catch(function(){ leadSheet(text, "Avtomatik yuborilmadi: qo'lda yuboring"); if(done) done(false); });
+    if(!relayOn()){ leadSheet(text); if(done) done(false); return; }
+    window.UprepFeedback.send({kind:kind, text:text, contact:str(contact)}).then(function(r){
+      if(r.ok){ toast("Yuborildi! " + tgName() + " tez orada javob beradi."); if(done) done(true); return; }
+      if(r.reason === "busy") return;
+      leadSheet(text, r.reason === "offline" ? "Internet yo'q: keyinroq yoki qo'lda yuboring" : "Avtomatik yuborilmadi: qo'lda yuboring");
+      if(done) done(false);
+    });
   }
   function leadContactField(){
-    if(!safeUrl(CFG.leadUrl)) return null;
+    if(!relayOn()) return null;
     var l = el("label", "fld"); l.appendChild(el("span", null, "Siz bilan qanday bog'lanamiz? (Telegram @username yoki telefon)"));
     var i = el("input"); i.type = "text"; i.placeholder = "@username yoki +998…"; i.autocomplete = "tel"; l.appendChild(i); l._input = i; return l;
   }
@@ -647,7 +653,7 @@
   function plans(){ var P = arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }); return P.length ? P : [{id:"app", name:"Free", price:price(), note:"Bir marta to'lov", items:arr(S.site.includes)}]; }
   function planAsk(p){
     var body = "Salom! Uprep saytidan yozyapman. «" + str(p.name) + "» (" + str(p.price) + ") " + (p.id ? "tarifi" : "xizmati") + " bo'yicha ma'lumot olmoqchiman.";
-    if(safeUrl(CFG.leadUrl)){ var c = prompt("Siz bilan qanday bog'lanamiz? Telegram @username yoki telefon raqamingiz:"); if(!str(c)) return; sendLead("tarif", body, c); }
+    if(relayOn()){ var c = prompt("Siz bilan qanday bog'lanamiz? Telegram @username yoki telefon raqamingiz:"); if(!str(c)) return; sendLead("tarif", body, c); }
     else leadSheet(body);
   }
   function plansGrid(){
@@ -1170,12 +1176,13 @@
       summary.push("Kerakli yordam: " + pfLabel("help", a.help));
       box.appendChild(el("p", "muted-note", "Bu tahlil taxminiy va kafolat emas. Aniq talablar har bir universitet va viloyat sahifasida."));
       /* send */
-      var sb = el("button", "go"); sb.type = "button"; var sp = el("span"); sp.appendChild(el("small", null, safeUrl(CFG.leadUrl) ? "Natija to'g'ridan-to'g'ri adminga boradi" : "Natija va yuborish yo'riqnomasi chiqadi")); sp.appendChild(el("span", "t", "Natijani " + tgName() + " ga yuborish")); sb.appendChild(sp); sb.appendChild(ic("send"));
+      var sb = el("button", "go"); sb.type = "button"; var sp = el("span"); sp.appendChild(el("small", null, relayOn() ? "Natija to'g'ridan-to'g'ri adminga boradi" : "Natija va yuborish yo'riqnomasi chiqadi")); sp.appendChild(el("span", "t", "Natijani " + tgName() + " ga yuborish")); sb.appendChild(sp); sb.appendChild(ic("send"));
       var cf = leadContactField(); if(cf) box.appendChild(cf);
       sb.onclick = function(){
         var msg = "Salom! Uprep saytida profil tahlilidan o'tdim:\n- " + summary.join("\n- ") + "\n\nMaslahat olmoqchiman.";
         if(cf && !str(cf._input.value)){ toast("Telegram username yoki telefon raqamingizni yozing"); cf._input.focus(); return; }
-        sendLead("profil", msg, cf ? cf._input.value : "", function(ok){ if(ok) sp.lastChild.textContent = "Yuborildi ✓"; });
+        if(sb.disabled) return; sb.disabled = true; sb.setAttribute("aria-busy", "true"); var t0 = sp.lastChild.textContent; sp.lastChild.textContent = "Yuborilmoqda…";
+        sendLead("profil", msg, cf ? cf._input.value : "", function(ok){ sb.removeAttribute("aria-busy"); if(ok) sp.lastChild.textContent = "Yuborildi ✓"; else { sb.disabled = false; sp.lastChild.textContent = t0; } });
       };
       box.appendChild(sb);
       var again = el("button", "markdone"); again.type = "button"; again.appendChild(ic("route")); again.appendChild(el("span", null, "Qaytadan boshlash")); again.onclick = function(){ PRF = {step:0, a:{members:"4", income:""}}; savePRF(); draw(); }; box.appendChild(again);
@@ -1200,7 +1207,7 @@
     if(arr(P.warnings).length){ var mk = el("ul", "mist"); arr(P.warnings).forEach(function(x){ var li = el("li"); li.appendChild(ic("shield")); li.appendChild(el("span", null, x)); mk.appendChild(li); }); main.appendChild(sec(secHead("Ehtiyot bo'ling", null, null, null, "Xavfsizlik"), mk)); }
     var cta = el("div", "links");
     var ask = el("button", "go"); ask.type = "button"; var sp = el("span"); sp.appendChild(el("small", null, "Ota-ona sifatida bevosita yozing")); sp.appendChild(el("span", "t", "Savol berish: " + tgName())); ask.appendChild(sp); ask.appendChild(ic("send"));
-    ask.onclick = function(){ leadSheet("Salom! Men ota-onaman. Farzandimning Italiyada o'qishi bo'yicha savolim bor:\n", "Savolingizni yozing"); };
+    ask.onclick = function(){ go("xabar?tur=savol"); };
     cta.appendChild(ask);
     cta.appendChild(rowBtn("star", "Farzandingiz profilini tahlil qiling", "8 savol, 2 daqiqa, bepul", "g", "#profil"));
     if(plansOn()) cta.appendChild(rowBtn("wallet", "Tariflar", plans().map(function(p){ return p.name + " " + p.price; }).join(" · "), null, "#tariflar"));
@@ -1739,7 +1746,8 @@
     /* Yordam */
     var g5 = group("Yordam");
     row(g5, "send", "c-blue", "Telegram'da yozish", {value:tgName(), href:tgUrl()});
-    row(g5, "help", "c-orange", "Fikr yoki xato haqida xabar", {href:"#fikrlar"});
+    row(g5, "help", "c-orange", "Muammo haqida xabar berish", {sub:"Xato yoki ishlamayotgan joy", href:"#xabar?tur=xato"});
+    row(g5, "chat", "c-purple", "Fikr yoki taklif bildirish", {href:"#xabar?tur=taklif"});
     row(g5, "users", "c-teal", "Biz haqimizda", {href:"#biz-haqimizda"});
     row(g5, "book", "c-indigo", "Italiyada o'qish noldan (PDF)", {href:"#noldan"});
 
@@ -1901,25 +1909,106 @@
     try{ if(navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t).catch(function(){ legacy(); }); }catch(e){}
     legacy(); return Promise.resolve();
   }
+  /* ================= FEEDBACK: problem report / suggestion / question -> Telegram (via relay) ================= */
+  var FBK = [["xato","Muammo"],["taklif","Taklif"],["savol","Savol"],["fikr","Fikr"]];
   function feedbackForm(preset){
+    var FB = window.UprepFeedback, relay = relayOn();
     var c = el("section", "card fb");
-    c.appendChild(el("h3", null, "Fikr, taklif yoki savol yuboring"));
-    c.appendChild(el("p", "note", "Matn nusxalanadi va " + tgName() + " Telegram chati ochiladi: uni joylashtirib yuboring. Har bir xabarni o'qiymiz."));
-    var form = el("form", "form");
-    var kind = el("select", "cityselect"); [["fikr","Talaba sifatida fikrim"],["taklif","Sayt bo'yicha taklif"],["xato","Xato topdim"],["savol","Savol"]].forEach(function(o){ var op = el("option", null, o[1]); op.value = o[0]; if(preset === o[0]) op.selected = true; kind.appendChild(op); });
-    var l1 = el("label", "fld"); l1.appendChild(el("span", null, "Turi")); l1.appendChild(kind); form.appendChild(l1);
-    var nm = el("input"); nm.type = "text"; nm.placeholder = "Ixtiyoriy"; var l2 = el("label", "fld"); l2.appendChild(el("span", null, "Ismingiz")); l2.appendChild(nm); form.appendChild(l2);
-    var tx = el("textarea"); tx.rows = 5; tx.required = true; tx.placeholder = "Masalan: Padova sahifasida muddat o'zgarib qolibdi…"; var l3 = el("label", "fld"); l3.appendChild(el("span", null, "Xabar")); l3.appendChild(tx); form.appendChild(l3);
-    var msg = el("p", "formmsg"); form.appendChild(msg);
-    var sb = el("button", "btn gold"); sb.type = "submit"; sb.appendChild(el("span", null, "Telegram orqali yuborish")); sb.appendChild(ic("send")); form.appendChild(sb);
+    var form = el("form", "form fb-form"); form.noValidate = true;
+    var d0 = FB ? FB.getDraft() : null;
+    var st = { kind: (d0 && d0.kind) || preset || "xato" };
+    if(FBK.map(function(k){ return k[0]; }).indexOf(st.kind) < 0) st.kind = "xato";
+
+    /* type */
+    var seg = el("div", "fb-seg"); seg.setAttribute("role", "radiogroup"); seg.setAttribute("aria-label", "Xabar turi");
+    FBK.forEach(function(k){
+      var b = el("button", "fb-k" + (st.kind === k[0] ? " on" : ""), k[1]); b.type = "button"; b.setAttribute("role", "radio"); b.setAttribute("aria-checked", st.kind === k[0] ? "true" : "false");
+      b.onclick = function(){ st.kind = k[0]; Array.prototype.forEach.call(seg.children, function(x){ x.classList.remove("on"); x.setAttribute("aria-checked", "false"); }); b.classList.add("on"); b.setAttribute("aria-checked", "true"); tx.placeholder = PH[k[0]]; keep(); };
+      seg.appendChild(b);
+    });
+    var lk = el("div", "fld"); lk.appendChild(el("span", null, "Turi")); lk.appendChild(seg); form.appendChild(lk);
+
+    /* text */
+    var PH = { xato:"Nima bo'ldi? Qaysi sahifada? Masalan: «Kalkulyatorda Hisoblash tugmasi ishlamayapti»", taklif:"Saytga nima qo'shsak foydali bo'ladi?", savol:"Savolingizni yozing: javobni Telegram orqali beramiz", fikr:"Sayt haqida fikringiz" };
+    var MAX = 3000;
+    var tx = el("textarea"); tx.id = "fb-text"; tx.rows = 6; tx.maxLength = MAX; tx.placeholder = PH[st.kind]; tx.setAttribute("aria-describedby", "fb-count");
+    var l3 = el("label", "fld"); l3.htmlFor = "fb-text"; l3.appendChild(el("span", null, "Xabar")); l3.appendChild(tx);
+    var cnt = el("small", "fld-h fb-count"); cnt.id = "fb-count"; l3.appendChild(cnt); form.appendChild(l3);
+
+    /* optional contact */
+    var ct = el("input"); ct.type = "text"; ct.id = "fb-contact"; ct.placeholder = "@username yoki +998… (ixtiyoriy)"; ct.autocomplete = "off"; ct.maxLength = 100;
+    var l2 = el("label", "fld"); l2.htmlFor = "fb-contact"; l2.appendChild(el("span", null, "Javob olish uchun aloqa (ixtiyoriy)")); l2.appendChild(ct);
+    l2.appendChild(el("small", "fld-h", "Bo'sh qoldirsangiz, xabar anonim boradi.")); form.appendChild(l2);
+
+    /* honeypot: invisible to people, bots fill it */
+    var hp = el("input"); hp.type = "text"; hp.name = "website"; hp.tabIndex = -1; hp.autocomplete = "off"; hp.className = "fb-hp"; hp.setAttribute("aria-hidden", "true"); form.appendChild(hp);
+
+    /* what is sent */
+    var det = el("details", "fb-what"); det.appendChild(el("summary", null, "Xabar bilan nima yuboriladi?"));
+    var ul = el("ul"); ["Siz yozgan matn va tanlagan turingiz", "Aloqa: faqat o'zingiz yozsangiz", "Sayt versiyasi, sana va vaqt", "Qurilma turi va brauzer (masalan, «Android · Chrome»), til va ochiq sahifa"].forEach(function(t){ ul.appendChild(el("li", null, t)); });
+    det.appendChild(ul); det.appendChild(el("p", null, "Ismingiz, telefoningiz yoki boshqa shaxsiy ma'lumot o'zingiz yozmaguningizcha yuborilmaydi. Xabar faqat Uprep jamoasining Telegramiga boradi."));
+    form.appendChild(det);
+
+    var status = el("div", "fb-status"); status.setAttribute("role", "status"); status.setAttribute("aria-live", "polite"); form.appendChild(status);
+    var row = el("div", "fb-actions");
+    var sb = el("button", "btn gold fb-send"); sb.type = "submit"; var sl = el("span", null, relay ? "Yuborish" : "Telegram orqali yuborish"); sb.appendChild(sl); sb.appendChild(ic("send")); row.appendChild(sb);
+    form.appendChild(row);
+    if(!relay) form.appendChild(el("p", "note", "Avtomatik yuborish hali sozlanmagan: matn nusxalanadi va " + tgName() + " chati ochiladi."));
+
+    /* draft: restore and keep */
+    function say(kind, text, extra){ status.textContent = ""; status.className = "fb-status" + (kind ? " " + kind : ""); if(!text) return; status.appendChild(ic(kind === "ok" ? "check" : kind === "err" ? "stop" : "info")); var sp = el("span", null, text); if(extra) sp.appendChild(extra); status.appendChild(sp); }
+    function count(){ var n = tx.value.length; cnt.textContent = n + " / " + MAX; cnt.classList.toggle("near", n > MAX * 0.9); }
+    var kt = null;
+    function keep(){ if(!FB) return; clearTimeout(kt); kt = setTimeout(function(){ FB.saveDraft({kind:st.kind, text:tx.value, contact:ct.value}); }, 250); }
+    if(d0){
+      tx.value = d0.text; ct.value = d0.contact || "";
+      var del = el("button", "textbtn", "O'chirish"); del.type = "button";
+      del.onclick = function(){ FB.clearDraft(); tx.value = ""; ct.value = ""; count(); say("", ""); tx.focus(); };
+      var wrapD = el("span"); wrapD.appendChild(document.createTextNode(" ")); wrapD.appendChild(del);
+      say("info", "Oldin yozgan qoralamangiz tiklandi.", wrapD);
+    }
+    count();
+    tx.addEventListener("input", function(){ count(); keep(); if(status.classList.contains("err") && str(tx.value).length >= 3) say("", ""); });
+    ct.addEventListener("input", keep);
+
+    function manual(){ var lbl = (FBK.filter(function(k){ return k[0] === st.kind; })[0] || ["", ""])[1]; leadSheet("Uprep sayti · " + lbl + (str(ct.value) ? " (aloqa: " + str(ct.value) + ")" : "") + ":\n" + str(tx.value)); }
+    function tgBtn(){ var b = el("button", "textbtn", "Telegram orqali qo'lda yuborish"); b.type = "button"; b.onclick = manual; var w = el("span"); w.appendChild(document.createTextNode(" ")); w.appendChild(b); return w; }
+    function lock(on){ sb.disabled = on; sb.classList.toggle("busy", on); if(on) sb.setAttribute("aria-busy", "true"); else sb.removeAttribute("aria-busy"); sl.textContent = on ? "Yuborilmoqda…" : (relay ? "Yuborish" : "Telegram orqali yuborish"); tx.readOnly = on; ct.readOnly = on; }
+    function onOnline(){ if(!document.body.contains(form)){ window.removeEventListener("online", onOnline); return; } if(status.classList.contains("warn")) say("info", "Internet qaytdi. Endi «Yuborish»ni bosishingiz mumkin."); }
+    window.addEventListener("online", onOnline);
+
     form.onsubmit = function(e){
-      e.preventDefault(); msg.textContent = "";
-      if(str(tx.value).length < 5){ msg.textContent = "Xabarni yozing."; tx.focus(); return; }
-      var lbl = kind.options[kind.selectedIndex].text;
-      var body = "Uprep sayti, " + lbl + (str(nm.value) ? " (" + str(nm.value) + ")" : "") + ":\n" + str(tx.value) + "\n\nSahifa: " + location.href;
-      sendLead("feedback", body, str(nm.value));
+      e.preventDefault();
+      if(sb.disabled) return;
+      var text = str(tx.value);
+      if(text.length < 3){ say("err", "Kamida bir necha so'z yozing."); tx.focus(); return; }
+      if(FB) FB.saveDraft({kind:st.kind, text:tx.value, contact:ct.value});
+      if(!relay || !FB){ manual(); return; }
+      lock(true); say("", "");
+      FB.send({kind:st.kind, text:text, contact:str(ct.value), hp:hp.value}).then(function(r){
+        lock(false);
+        if(r.ok){
+          FB.clearDraft(); tx.value = ""; ct.value = ""; count();
+          say("ok", "Yuborildi! Rahmat, xabaringiz Uprep jamoasiga yetib bordi.");
+          toast("Xabar yuborildi ✓");
+          return;
+        }
+        if(r.reason === "busy") return;
+        if(r.reason === "offline") say("warn", "Internet yo'q. Xabaringiz shu qurilmada qoralama sifatida saqlandi: internet qaytgach «Yuborish»ni bosing.");
+        else if(r.reason === "timeout") say("err", "Server javob bermadi. Matn qoralamada saqlandi, birozdan keyin qayta urinib ko'ring.", tgBtn());
+        else if(r.reason === "rate") say("warn", "Qisqa vaqtda juda ko'p xabar yuborildi. 10 daqiqadan keyin qayta urinib ko'ring. Matn saqlandi.");
+        else say("err", "Xatolik: xabar yuborilmadi. Matn qoralamada saqlandi.", tgBtn());
+      });
     };
     c.appendChild(form); return c;
+  }
+  function feedbackView(main){
+    var q = hashQuery();
+    pageHead(main, "Fikr bildirish", "Muammo topdingizmi, taklif yoki savolingiz bormi? Yozing: xabar to'g'ridan-to'g'ri Uprep jamoasining Telegramiga boradi.");
+    main.appendChild(feedbackForm(q.tur));
+    var l = el("div", "links");
+    l.appendChild(rowBtn("send", "Telegram'da to'g'ridan-to'g'ri yozish", tgName(), null, tgUrl()));
+    main.appendChild(l);
   }
   function shareBtn(title, cls){
     var b = el("button", "btn " + (cls || "line") + " share"); b.type = "button"; b.appendChild(el("span", null, "Ulashish")); b.appendChild(ic("send"));
@@ -1936,7 +2025,7 @@
     var R = realReviews();
     if(R.length){ var g = el("div", "rev-grid"); R.forEach(function(r){ g.appendChild(reviewCard(r)); }); main.appendChild(sec(secHead("Talabalar fikrlari (" + R.length + ")", null, null, null, "Fikrlar"), g)); }
     else main.appendChild(callout({style:"info", text:"Bu yerda faqat haqiqiy talabalarning fikrlari chiqadi. Uprep bilan o'qishga kirgan bo'lsangiz, pastdagi forma orqali fikringizni yuboring: roziligingiz bilan shu sahifaga qo'shamiz."}));
-    main.appendChild(sec(secHead("Fikr bildiring", null, null, "fikr-forma", "Feedback"), feedbackForm(R.length ? "taklif" : "fikr")));
+    var fl = el("div", "links"); fl.appendChild(rowBtn("chat", "Fikringizni yuboring", "Fikr, taklif yoki muammo: Telegram orqali jamoaga boradi", "g", "#xabar?tur=fikr")); main.appendChild(sec(secHead("Fikr bildiring", null, null, null, "Feedback"), fl));
     footer(main);
   }
   function upcomingAll(n){

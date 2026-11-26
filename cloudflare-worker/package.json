@@ -1,0 +1,9 @@
+{
+  "name": "uprep-feedback-relay",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Worker: forwards Uprep website feedback to Telegram",
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  }
+}

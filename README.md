@@ -22,14 +22,16 @@ app.pagescms.org → uprep-site. Bo'limlar: Bosh sahifa, Biz haqimizda, Noldan: 
 
 Hisoblar yoqilmaguncha sayt "tez orada" rejimida ishlaydi. Egasi uchun ko'rib chiqish: `<sayt>/#oldindan-korish`.
 
-## Saytdan xabarlar avtomatik @Uprep_Admin'ga kelishi (Uprep bot)
-Hozir «Profil tahlili», «Tariflar» va «Fikr» formalari xabarni tayyorlab, foydalanuvchiga Telegram'da qo'lda yuborishni ko'rsatadi. Avtomatik yuborish uchun:
-1. Telegram'da **@BotFather** → `/newbot` → nom bering (masalan Uprep yordamchi) → **token**ni saqlang.
-2. Admin akkauntidan yangi botga `/start` yozing. Brauzerda `https://api.telegram.org/bot<TOKEN>/getUpdates` ni oching va `"chat":{"id": ...}` raqamini oling: bu **ADMIN_CHAT_ID**.
-3. Supabase → Edge Functions → yangi funksiya `lead` (`supabase/functions/lead/index.ts`), **Verify JWT: off**.
-   Secrets: `TELEGRAM_BOT_TOKEN`, `ADMIN_CHAT_ID`, `ALLOWED_ORIGIN` = `https://xoliqberdiyevdalerjon-hub.github.io`.
-4. `assets/config.js` dagi `leadUrl` ga `https://<project>.supabase.co/functions/v1/lead` ni yozing.
-Shundan keyin har bir natija botdan admin chatiga keladi, ichida talabaning aloqasi (@username yoki telefon) bo'ladi.
+## Saytdan xabarlar Telegram'ga (Cloudflare Worker + bot)
+«Fikr bildirish» (`#xabar`), «Profil tahlili» va «Tariflar» xabarlari shunday yo'l bilan keladi:
+sayt → `cloudflare-worker/worker.js` (Cloudflare Worker) → Telegram Bot API → sizning Telegramingiz.
+
+- Bot tokeni va chat ID faqat Worker'ning **Secrets**ida turadi: `BOT_TOKEN`, `CHAT_ID`, `APP_KEY`. Sayt kodida ular yo'q.
+- `assets/relay-config.js`: `url` = Worker manzili, `appKey` = Worker'dagi `APP_KEY` bilan aynan bir xil. `url` bo'sh bo'lsa, sayt xabarni nusxalab, Telegram chatini ochadi (qo'lda yuborish).
+- `ALLOWED_ORIGINS` (Worker, Text): `https://xoliqberdiyevdalerjon-hub.github.io`, faqat shu sayt yubora oladi.
+- Internet bo'lmasa yoki xato bo'lsa, yozilgan matn qoralama bo'lib qurilmada qoladi va faqat muvaffaqiyatli yuborilgandan keyin o'chadi.
+- Testlar: `node --test cloudflare-worker/test/*.test.mjs` (Worker), `node --test tests/feedback.e2e.mjs` (brauzerda forma), lint: `npx eslint@9 cloudflare-worker assets/feedback.js assets/relay-config.js`.
+- Spam ko'paysa: yangi `APP_KEY` yarating, uni Worker'ga va `relay-config.js` ga yozing.
 
 ## Google (hozircha yopiq)
 Sayt hozircha qidiruv tizimlaridan yashirilgan: `index.html` da `<meta name="robots" content="noindex, nofollow">`.
