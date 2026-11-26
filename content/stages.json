@@ -121,6 +121,18 @@
         "type": "callout",
         "style": "tip",
         "text": "Erta topshiring: 2026/27 dan universitetlar Universitaly'da kvotadan ko'pi bilan 20% ortiq pre-enrollment tasdiqlay oladi. Joy tugasa, kech kelganlar qoladi."
+      },
+      {
+        "type": "button",
+        "label": "Motivatsion xat konstruktori",
+        "url": "#xat",
+        "note": "8 savol: xat qoralamasi tayyor"
+      },
+      {
+        "type": "file",
+        "label": "CV shabloni (Word)",
+        "file": "media/shablonlar/cv-shablon.docx",
+        "note": "PDF va boshqa shablonlar: «Shablonlar» sahifasi"
       }
     ],
     "srcLabel": "MUR sirkulyari 2026/27 va 2027/28 (PDF)",
@@ -404,6 +416,12 @@
         "label": "Elchixona: talaba vizasi ro'yxati (PDF)",
         "url": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Studio-immatricolazione-e-corsi-propedeutici-ITALIANO.rev_.pdf",
         "note": "2026/27 o'quv yili, italyan tilida"
+      },
+      {
+        "type": "file",
+        "label": "Homiylik va e'tirozsizlik xati namunasi (Word)",
+        "file": "media/shablonlar/homiy-xati.docx",
+        "note": "Elchixonaning amaldagi talabini tekshiring"
       }
     ],
     "srcLabel": "MUR sirkulyari 2026/27 va 2027/28 (PDF)",
@@ -478,6 +496,12 @@
         "label": "Barcha viloyatlar stipendiyasi",
         "url": "#stipendiya",
         "note": "20 viloyat: idora, muddat, havola"
+      },
+      {
+        "type": "file",
+        "label": "Oila hujjatlari ro'yxati (Word)",
+        "file": "media/shablonlar/oila-hujjatlari-royxati.docx",
+        "note": "Tarjimonga berish va belgilab borish uchun"
       }
     ],
     "srcLabel": "LazioDiSCo – Bando 2026/27",

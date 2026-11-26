@@ -276,6 +276,8 @@
     if(h === "profil") return {view:"profile"};
     if(h === "ota-onalar") return {view:"parents"};
     if(h === "sozlamalar") return {view:"settings"};
+    if(h === "shablonlar") return {view:"tpl"};
+    if(h === "xat") return {view:"xat"};
     if(h === "elchilar") return {view:"amb"};
     if(h === "natijalar") return {view:"out"};
     if(h === "efirlar") return {view:"events"};
@@ -308,11 +310,11 @@
     lastView = r.view + (r.view === "uni" ? ":" + r.u.id : "");
     root.textContent = "";
     root.appendChild(appbar(r));
-    var wide = ["home", "italy", "course", "stage", "guide", "dsu", "plans", "unis", "plan", "calc"].indexOf(r.view) >= 0;
+    var wide = ["home", "italy", "course", "stage", "guide", "dsu", "plans", "unis", "plan", "calc", "xat"].indexOf(r.view) >= 0;
     HZ = el("div", "herozone"); root.appendChild(HZ);
     var main = el("main", "wrap" + (wide ? "" : " narrow"));
     CRUMBS = crumbsFor(r);
-    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, plans:plansView, profile:profileView, parents:parentsView, amb:ambView, settings:settingsView, out:outView, events:eventsView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView,
+    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, plans:plansView, profile:profileView, parents:parentsView, amb:ambView, settings:settingsView, tpl:tplView, xat:xatView, out:outView, events:eventsView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView,
       item:function(m){ itemView(m, r.i); }, city:function(m){ cityView(m, r.c); }, uni:function(m){ uniView(m, r.u, r.tab); }, stage:function(m){ stageView(m, r.st); }
     }[r.view] || homeView)(main, r);
     if(CRUMBS){ main.insertBefore(CRUMBS, main.firstChild); CRUMBS = null; }
@@ -365,7 +367,7 @@
   function section(r){
     var v = r.view;
     if(v === "home") return "home";
-    if(["guide","noldan","foundation","tests","course","stage","cal","lib","item","italy","living"].indexOf(v) >= 0) return "guide";
+    if(["guide","noldan","foundation","tests","course","stage","cal","lib","item","italy","living","tpl","xat"].indexOf(v) >= 0) return "guide";
     if(["unis","uni","progs","cmp","quiz","cities","city"].indexOf(v) >= 0) return "unis";
     if(v === "dsu" || v === "calc") return "dsu";
     if(v === "settings" || v === "plans") return "settings";
@@ -408,6 +410,8 @@
     else if(r.view === "parents") c.push(["Ota-onalar uchun"]);
     else if(r.view === "amb") c.push(["Talaba-elchilar"]);
     else if(r.view === "settings") c.push(["Sozlamalar"]);
+    else if(r.view === "tpl"){ c.push(["Qo'llanma","qollanma"]); c.push(["Shablonlar"]); }
+    else if(r.view === "xat"){ c.push(["Qo'llanma","qollanma"]); c.push(["Motivatsion xat"]); }
     else if(r.view === "out") c.push(["Natijalar"]);
     else if(r.view === "events") c.push(["Jonli efirlar"]);
     else if(r.view === "noldan"){ c.push(["Qo'llanma","qollanma"]); c.push(["Noldan: to'liq yo'riqnoma"]); }
@@ -453,8 +457,8 @@
     var f = el("footer", "foot"), g = el("div", "foot-grid");
     var about = el("div"); about.appendChild(logo(16)); if(S.site.footer) about.appendChild(el("p", null, S.site.footer)); g.appendChild(about);
     function col(title, links){ var c = el("div"); c.appendChild(el("h2", "foot-h", title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
-    col("Qo'llanma", [["8 qadam", "#qollanma"], ["Hammasi bitta sahifada (PDF)", "#noldan"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Italiyada yashash", "#yashash"], ["Kalendar", "#kalendar"], ["Materiallar", "#materiallar"]]);
-    col("Vositalar", [["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Profil tahlili", "#profil"], ["Pul kalkulyatori", "#kalkulyator"], ["Mening rejam", "#rejam"], ["Sozlamalar", "#sozlamalar"]]);
+    col("Qo'llanma", [["8 qadam", "#qollanma"], ["Hammasi bitta sahifada (PDF)", "#noldan"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Italiyada yashash", "#yashash"], ["Kalendar", "#kalendar"], ["Materiallar", "#materiallar"], ["Shablonlar", "#shablonlar"]]);
+    col("Vositalar", [["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Profil tahlili", "#profil"], ["Pul kalkulyatori", "#kalkulyator"], ["Motivatsion xat", "#xat"], ["Mening rejam", "#rejam"], ["Sozlamalar", "#sozlamalar"]]);
     col("Uprep", [["Biz haqimizda", "#biz-haqimizda"]].concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"], ["Talaba-elchilar", "#elchilar"], ["Natijalar", "#natijalar"], ["Jonli efirlar", "#efirlar"], ["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#fikrlar"], ["Telegram: " + tgName(), tgUrl()]]));
     f.appendChild(g);
     var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uprep." + (S.site.updated ? " Ma'lumotlar oxirgi marta " + S.site.updated + " da yangilandi." : "")));
@@ -775,7 +779,7 @@
     main.appendChild(sec(secHead("Boshlashdan oldin bilib oling", null, null, null, "Qisqa"), know));
 
     var more = el("div", "hub");
-    [["book","Hammasini bitta sahifada o'qish","10 bob, PDF bilan","noldan"],["cap","Foundation","11 yillik attestat bilan","foundation"],["checklist","Testlar","IELTS, CEnT-S, TOLC, SAT","testlar"],["home2","Italiyada yashash","Uy, sog'liq, ish","yashash"],["globe","Italiya haqida","Ta'lim tizimi, talaba hayoti","italiya"],["cal","Kalendar","Barcha muhim sanalar","kalendar"],["folder","Materiallar","Rasmiy hujjatlar va havolalar","materiallar"],["chat","Yangiliklar","So'nggi e'lonlar","yangiliklar"]].forEach(function(x){ var a = el("a", "hubtile"); a.href = "#" + x[3]; var i = el("span", "ic"); i.appendChild(ic(x[0])); a.appendChild(i); var t = el("span", "txt"); t.appendChild(el("b", null, x[1])); t.appendChild(el("small", null, x[2])); a.appendChild(t); a.appendChild(ic("next", "chev")); more.appendChild(a); });
+    [["book","Hammasini bitta sahifada o'qish","10 bob, PDF bilan","noldan"],["doc","Hujjat shablonlari","CV, homiylik xati, oila hujjatlari (Word, PDF)","shablonlar"],["text","Motivatsion xat konstruktori","8 savol: xat qoralamasi tayyor","xat"],["cap","Foundation","11 yillik attestat bilan","foundation"],["checklist","Testlar","IELTS, CEnT-S, TOLC, SAT","testlar"],["home2","Italiyada yashash","Uy, sog'liq, ish","yashash"],["globe","Italiya haqida","Ta'lim tizimi, talaba hayoti","italiya"],["cal","Kalendar","Barcha muhim sanalar","kalendar"],["folder","Materiallar","Rasmiy hujjatlar va havolalar","materiallar"],["chat","Yangiliklar","So'nggi e'lonlar","yangiliklar"]].forEach(function(x){ var a = el("a", "hubtile"); a.href = "#" + x[3]; var i = el("span", "ic"); i.appendChild(ic(x[0])); a.appendChild(i); var t = el("span", "txt"); t.appendChild(el("b", null, x[1])); t.appendChild(el("small", null, x[2])); a.appendChild(t); a.appendChild(ic("next", "chev")); more.appendChild(a); });
     main.appendChild(sec(secHead("Batafsil", null, null, null, "Qo'shimcha"), more));
     var srcs = el("div"); arr(G.sources).forEach(function(x){ var u = safeUrl(x.url); if(!u) return; var a = el("a", "src"); a.href = u; a.target = "_blank"; a.rel = "noopener"; a.appendChild(ic("link")); a.appendChild(el("span", null, x.label)); srcs.appendChild(a); });
     main.appendChild(sec(secHead("Manbalar", null, null, null, "Rasmiy"), srcs));
@@ -1598,6 +1602,90 @@
     var g6 = group("Maxfiylik", "Saytda reklama va kuzatuv kodi yo'q. Profil tahlili, kalkulyator va rejangiz faqat shu qurilmada hisoblanadi. Faqat o'zingiz «yuborish» tugmasini bosgan xabar bizga keladi.");
     row(g6, "shield", "c-green", "Ma'lumotlaringiz himoyalangan", {value:"Faqat qurilmada"});
     main.appendChild(el("p", "st-ver", "Uprep · ma'lumotlar " + (S.site.updated || "") + " holatiga"));
+    footer(main);
+  }
+
+  /* ================= TEMPLATES (PDF + Word) ================= */
+  var TPL = [
+    ["cv-shablon", "doc", "CV shabloni", "Ingliz tilida, Europass uslubida. 1-qadam: universitetga ariza", "s1"],
+    ["motivatsion-xat-tuzilmasi", "text", "Motivatsion xat: tuzilma va namunalar", "5 bo'lim, namuna jumlalar va ko'p xatolar", "s1"],
+    ["homiy-xati", "wallet", "Homiylik va e'tirozsizlik xati", "Viza uchun: ota-ona yoki homiy imzolaydi. 5-qadam", "s4"],
+    ["oila-hujjatlari-royxati", "checklist", "Stipendiya uchun oila hujjatlari ro'yxati", "Tarjimonga berish va belgilab borish uchun. 6-qadam", "s5"]
+  ];
+  function tplView(main){
+    var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
+    H.appendChild(kicker("doc", "Bepul · Word va PDF"));
+    H.appendChild(heroTitle("Hujjat shablonlari"));
+    H.appendChild(el("p", "lead", "Yuklab oling, [ ] ichidagilarni o'zingiznikiga almashtiring. Word faylini tahrirlaysiz, PDF esa ko'rish va chop etish uchun."));
+    var g = el("div", "tpl-grid");
+    TPL.forEach(function(t){
+      var c = el("article", "tpl");
+      var hd = el("div", "tpl-h"); var i = el("span", "ic"); i.appendChild(ic(t[1])); hd.appendChild(i); var tx = el("div"); tx.appendChild(el("b", null, t[2])); tx.appendChild(el("small", null, t[3])); hd.appendChild(tx); c.appendChild(hd);
+      var bx = el("div", "ic-btns");
+      var w = btn("navy", "download", "Word", "media/shablonlar/" + t[0] + ".docx"); w.setAttribute("download", ""); bx.appendChild(w);
+      var pd = btn("line", "download", "PDF", "media/shablonlar/" + t[0] + ".pdf"); pd.setAttribute("download", ""); bx.appendChild(pd);
+      c.appendChild(bx); g.appendChild(c);
+    });
+    main.appendChild(g);
+    main.appendChild(rowBtn("text", "Motivatsion xatni shu yerda yozing", "8 ta savol: sayt xat qoralamasini tuzib beradi", "g", "#xat"));
+    main.appendChild(callout({style:"info", text:"Shablonlar namunadir. Har bir universitet va elchixonaning amaldagi talabini tekshiring: masalan, homiylik xati uchun tarjima yoki notarial tasdiq kerakligi."}));
+    footer(main);
+  }
+
+  /* ================= MOTIVATION LETTER BUILDER ================= */
+  var XQ = [
+    ["name", "Ismingiz va familiyangiz", "Aziz Karimov", false],
+    ["prog", "Dastur nomi", "Economics and Management", false],
+    ["uni", "Universitet", "University of Turin", false],
+    ["story", "Bu yo'nalishga qanday qiziqib qoldingiz? Haqiqiy voqea yozing", "When I helped my father plan the budget of his small shop, I realised…", true],
+    ["prep", "Nimalar qilgansiz: fanlar, loyiha, olimpiada, ish", "I took part in the regional economics olympiad and built a simple sales tracker in Excel…", true],
+    ["result", "Bundan nima natija yoki ko'nikma oldingiz", "I learned to work with data and present results clearly…", true],
+    ["whyuni", "Nega aynan shu universitet? 2 ta aniq sabab", "its course in development economics and the chance to join the …", true],
+    ["whyit", "Nega Italiya?", "Italy combines strong public universities with…", true],
+    ["goal", "O'qishdan keyingi maqsadingiz", "work in a bank's risk department and later help small businesses in Uzbekistan…", true]
+  ];
+  var XA = {};
+  try{ XA = JSON.parse(localStorage.getItem("uprep-xat") || "{}") || {}; }catch(e){ XA = {}; }
+  function xatText(){
+    function v(k, d){ return str(XA[k]) || "[" + d + "]"; }
+    function s(t){ t = str(t); return t && !/[.!?]$/.test(t) ? t + "." : t; }
+    return "Dear Admissions Committee,\n\n" +
+      "I am writing to apply for the " + v("prog", "Programme") + (/programme|program|degree|course/i.test(str(XA.prog)) ? "" : " programme") + " at " + v("uni", "University") + ". " + s(v("story", "A real moment that brought you to this field")) + "\n\n" +
+      "Since then, I have worked to build a solid foundation for this path. " + s(v("prep", "Subjects, projects, olympiads, work")) + " " + s(v("result", "What you learned or achieved")) + "\n\n" +
+      "I am applying to " + v("uni", "University") + " because of " + s(v("whyuni", "Two concrete reasons")) + " " + s(v("whyit", "Why Italy")) + "\n\n" +
+      "After graduating, I plan to " + s(v("goal", "Your goal")) + " I believe this programme is the right next step towards that goal, and I would be proud to contribute to the academic community at " + v("uni", "University") + ".\n\n" +
+      "Thank you for considering my application.\n\nSincerely,\n" + v("name", "Full name");
+  }
+  function xatView(main){
+    var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
+    H.appendChild(kicker("text", "Bepul · 10 daqiqa"));
+    H.appendChild(heroTitle("Motivatsion xat konstruktori"));
+    H.appendChild(el("p", "lead", "Savollarga ingliz tilida javob bering: sayt ularni to'g'ri tuzilmadagi xatga yig'adi. Keyin xatni o'zingiz tahrirlaysiz va boyitasiz."));
+    var lay = el("div", "split xat-split"), colA = el("div", "split-main"), colB = el("aside", "split-side"); lay.appendChild(colA); lay.appendChild(colB); main.appendChild(lay);
+    var f = el("section", "card"); f.appendChild(el("h3", null, "Savollar")); f.appendChild(el("p", "note", "Javoblar faqat shu qurilmada saqlanadi. O'zbekcha yozsangiz ham bo'ladi, keyin tarjima qilasiz."));
+    var form = el("div", "form");
+    var out = el("textarea", "xat-out"); out.rows = 22; out.setAttribute("aria-label", "Xat qoralamasi");
+    var wc = el("p", "note");
+    function upd(){ out.value = xatText(); var n = out.value.split(/\s+/).filter(Boolean).length; wc.textContent = n + " so'z · odatda 400–700 so'z (universitet chegarasini tekshiring)"; try{ localStorage.setItem("uprep-xat", JSON.stringify(XA)); }catch(e){} }
+    XQ.forEach(function(q){
+      var l = el("label", "fld"); l.appendChild(el("span", null, q[1]));
+      var i = q[3] ? el("textarea") : el("input"); if(q[3]) i.rows = 3; else i.type = "text";
+      i.placeholder = q[2]; i.value = str(XA[q[0]]); i.oninput = function(){ XA[q[0]] = i.value; upd(); };
+      l.appendChild(i); form.appendChild(l);
+    });
+    f.appendChild(form); colA.appendChild(f);
+    var o = el("section", "card"); o.appendChild(el("h3", null, "Xat qoralamasi")); o.appendChild(out); o.appendChild(wc);
+    var bx = el("div", "ic-btns");
+    var cp = btn("navy", "doc", "Nusxalash", null, function(){ copyText(out.value).then(function(){ toast("Xat nusxalandi."); }); }); bx.appendChild(cp);
+    var dl = btn("line", "download", "Word'da yuklab olish", null, function(){
+      var h = "<html><head><meta charset='utf-8'></head><body style=\"font-family:Calibri;font-size:11pt\">" + out.value.split("\n").map(function(l){ return "<p>" + l.replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</p>"; }).join("") + "</body></html>";
+      var a = el("a"); a.href = URL.createObjectURL(new Blob(["﻿" + h], {type:"application/msword"})); a.download = "motivatsion-xat.doc"; document.body.appendChild(a); a.click(); setTimeout(function(){ a.remove(); }, 400); });
+    bx.appendChild(dl); o.appendChild(bx);
+    o.appendChild(callout({style:"warn", text:"Bu faqat qoralama. Xatni o'z so'zlaringiz bilan boyiting, aniq misollar qo'shing va universitet nomini tekshiring: komissiya umumiy shablonni darhol sezadi."}));
+    if(plansOn()) o.appendChild(rowBtn("star", "Xatingizni biz tekshirib beraylikmi?", "Plus tarifida yoki alohida xizmat sifatida", null, "#tariflar"));
+    colB.appendChild(o);
+    upd();
+    main.appendChild(rowBtn("doc", "Boshqa shablonlar", "CV, homiylik xati, oila hujjatlari ro'yxati", null, "#shablonlar"));
     footer(main);
   }
 
