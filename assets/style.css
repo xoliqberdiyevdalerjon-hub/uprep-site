@@ -1292,7 +1292,9 @@ a.qtile,a.tool,a.ov.link,a.newsline,a.st-acc,a.jmini,.hsteps a,a.hubtile,a.row,b
 /* tap feedback on phones */
 a.lrow:active,a.unicard:active,a.qtile:active,a.hubtile:active,a.row:active,button.row:active,a.tool:active,a.ov.link:active,a.newsline:active,a.st-acc:active,a.jmini:active,.hsteps a:active,.btn:active,.go:active,.chipf:active,.qz-opt:active,.qlinks a:active{transform:scale(.97);transition-duration:.08s}
 /* keyboard focus */
-a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,[role="switch"]:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:12px}
+a:focus-visible,button:focus-visible,select:focus-visible,[role="switch"]:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+input:focus-visible,textarea:focus-visible{outline:none}
+.search:focus-within{box-shadow:0 0 0 2px var(--navy-3), 0 0 0 5px rgba(51,80,143,.15), var(--sh-2)}
 html.calm a:active,html.calm button:active{transform:none!important}
 html.calm .mark .u{stroke-dashoffset:0}
 html.calm .mark .tip{opacity:1;transform:none}
