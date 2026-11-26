@@ -1308,3 +1308,42 @@ html.calm .mark .tip{opacity:1;transform:none}
 .greg .facts,.greg .ft{margin-top:0}
 .greg-h{display:block;margin:12px 0 4px;font:700 15px var(--display)}
 .greg-src{display:grid;gap:4px;margin-top:10px}
+
+/* ================= UI/UX audit fixes ================= */
+/* logo: draw animation only on first load; later renders are static */
+.mark.still .u{animation:none;stroke-dashoffset:0}
+.mark.still .tip{animation:none;opacity:1;transform:none}
+/* selects: one custom chevron in every browser, text centred */
+select,.cityselect{-webkit-appearance:none;-moz-appearance:none;appearance:none}
+select::-ms-expand{display:none}
+.cityselect{line-height:1.25;padding-top:0;padding-bottom:0;text-overflow:ellipsis}
+/* mobile: no clipped rows */
+@media (max-width:719px){
+  .qlinks{flex-wrap:wrap;overflow:visible}
+  .chips,.minimap{-webkit-mask-image:linear-gradient(to right,#000 88%,transparent);mask-image:linear-gradient(to right,#000 88%,transparent);padding-right:28px}
+}
+body{overflow-x:clip}
+/* 44px touch targets */
+.brandlink{min-height:44px;padding:4px 6px 4px 0}
+.iconbtn{height:44px;min-width:44px;justify-content:center}
+.sec-head a,.sec-head button{min-height:44px}
+.crumbs a{display:inline-block;padding:12px 0;margin:-12px 0}
+/* numbers never split across lines */
+.hero-stats b,.about-stats b,.price-v,.st-val,.extra-p,.ev-when b{white-space:nowrap;font-variant-numeric:tabular-nums}
+@media (max-width:420px){ .hero-stats b{font-size:21px} }
+/* desktop: wider pages with two columns */
+.split{display:grid;gap:18px}
+@media (min-width:1024px){
+  .split{grid-template-columns:minmax(0,1fr) 380px;align-items:start;gap:24px}
+  .split-side{grid-column:2;grid-row:1;position:sticky;top:84px}
+  .split-main{grid-column:1;grid-row:1}
+  .calc-split{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .unilist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;background:none;box-shadow:none;padding:0}
+  .unilist > *{border-top:0!important;border-radius:16px;background:var(--surface);box-shadow:0 0 0 1px var(--line), var(--sh-1)}
+  .unilist > .empty{grid-column:1/-1}
+}
+.split-side .sec{margin-top:0}
+.split-side > * + *{margin-top:14px}
+/* accordions: animate only when the user opens them, not on page render */
+.fold-body,.acc-body{animation:none}
+.fold-body.anim,.acc-body.anim{animation:reveal .3s var(--ease)}

@@ -308,7 +308,7 @@
     lastView = r.view + (r.view === "uni" ? ":" + r.u.id : "");
     root.textContent = "";
     root.appendChild(appbar(r));
-    var wide = ["home", "italy", "course", "stage", "guide", "dsu", "plans"].indexOf(r.view) >= 0;
+    var wide = ["home", "italy", "course", "stage", "guide", "dsu", "plans", "unis", "plan", "calc"].indexOf(r.view) >= 0;
     HZ = el("div", "herozone"); root.appendChild(HZ);
     var main = el("main", "wrap" + (wide ? "" : " narrow"));
     CRUMBS = crumbsFor(r);
@@ -318,7 +318,7 @@
     if(CRUMBS){ main.insertBefore(CRUMBS, main.firstChild); CRUMBS = null; }
     root.appendChild(main);
     root.appendChild(tabbar(r));
-    if(top && !keepScroll) window.scrollTo(0, 0);
+    if(top && !keepScroll){ try{ window.scrollTo({top:0, left:0, behavior:"instant"}); }catch(e){ window.scrollTo(0, 0); } }
     reveal(main);
     parallax();
     firstPaint = false;
@@ -328,9 +328,10 @@
   function reveal(main){
     if(REDUCED || !("IntersectionObserver" in window)) return;
     document.documentElement.classList.add("rv-on");
-    if(!IO) IO = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); IO.unobserve(e.target); } }); }, {rootMargin:"0px 0px -6% 0px"});
-    var nodes = main.querySelectorAll(":scope > *:not(.crumbs):not(.tabs), .sec > *, .italy .col > *, .hub > *");
-    Array.prototype.forEach.call(nodes, function(n){ if(n.classList.contains("sec")) return; n.classList.add("rv"); IO.observe(n); });
+    if(document.documentElement.classList.contains("calm")) return;
+    if(!IO) IO = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); IO.unobserve(e.target); } }); }, {rootMargin:"0px 0px 8% 0px", threshold:0.01});
+    var nodes = main.querySelectorAll(":scope > *:not(.crumbs):not(.tabs), .sec > *, .italy .col > *, .hub > *"), vh = window.innerHeight;
+    Array.prototype.forEach.call(nodes, function(n){ if(n.classList.contains("sec")) return; if(n.getBoundingClientRect().top < vh) return; n.classList.add("rv"); IO.observe(n); });
   }
   /* skyline layers move at different speeds while scrolling */
   var pTick = false;
@@ -345,9 +346,11 @@
 
   /* ---------------- chrome ---------------- */
   /* animated brand: a "U" whose right arm becomes an arrow going up (Up-prep); the gold spark is the student */
+  var MKN = 0;
   function markSVG(){
-    return '<svg class="mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="mk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2C4580"/><stop offset="1" stop-color="#14244A"/></linearGradient></defs>' +
-      '<rect width="40" height="40" rx="12" fill="url(#mk)"/><path class="ring" d="M20 4a16 16 0 1 1 0 32a16 16 0 1 1 0-32" fill="none" stroke="rgba(242,178,51,.35)" stroke-width="1" stroke-dasharray="2 5"/>' +
+    var id = "mk" + (++MKN);
+    return '<svg class="mark' + (firstPaint ? '' : ' still') + '" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="' + id + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2C4580"/><stop offset="1" stop-color="#14244A"/></linearGradient></defs>' +
+      '<rect width="40" height="40" rx="12" fill="url(#' + id + ')"/><path class="ring" d="M20 4a16 16 0 1 1 0 32a16 16 0 1 1 0-32" fill="none" stroke="rgba(242,178,51,.35)" stroke-width="1" stroke-dasharray="2 5"/>' +
       '<path class="u" d="M12.5 11 V22.5 a7.5 7.5 0 0 0 15 0 V12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>' +
       '<g class="arr"><path class="tip" d="M23 15.5 L27.5 11 L32 15.5" fill="none" stroke="#F2B233" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>' +
       '<circle class="spark" cx="12.5" cy="7" r="2.1" fill="#F2B233"/></svg>';
@@ -646,7 +649,7 @@
   function globalSearch(){
     var wrap = el("div", "gsearch");
     var res = el("div", "list gres");
-    var sb = searchBox("Universitet yoki shahar: Sapienza, Milan, Bolonya…", "", function(v){
+    var sb = searchBox("Universitet yoki shahar", "", function(v){
       var q = norm(v); res.textContent = ""; if(q.length < 2) return;
       var cs = S.cities.filter(function(c){ return norm(c.name + " " + c.region).indexOf(q) >= 0; }).slice(0, 3);
       var us = S.unis.filter(function(u){ var c = cityById(u.city); return norm(u.short + " " + u.name + " " + (c ? c.name : "")).indexOf(q) >= 0; }).slice(0, 6);
@@ -755,7 +758,7 @@
     H.appendChild(act);
     if(n) H.appendChild(heroStats([[n + " / " + total, "qadam bajarildi"]]));
 
-    main.appendChild(sec(secHead(total + " qadam", null, null, "g-yol", "Yo'l xaritasi", "Odatda 10–12 oy oladi. Stipendiya (5-qadam) boshqa qadamlar bilan yonma-yon, yozda boriladi."), routeLine()));
+    main.appendChild(sec(secHead(total + " qadam", null, null, "g-yol", "Yo'l xaritasi", "Odatda 10–12 oy oladi. Stipendiya (6-qadam) boshqa qadamlar bilan yonma-yon, yozda boriladi."), routeLine()));
 
     var know = el("div", "faq");
     if(arr(G.timeline).length){ var tl = el("ol", "timeline"); arr(G.timeline).forEach(function(t, i){ var li = el("li"); li.appendChild(el("span", "tl-n", String(i + 1))); var b = el("div", "tl-b"); b.appendChild(el("span", "tl-when", t.when)); b.appendChild(el("h3", null, t.title)); b.appendChild(el("p", null, t.text)); li.appendChild(b); tl.appendChild(li); }); know.appendChild(fold("g:taqvim", "Qachon nima qilinadi? (oyma-oy taqvim)", tl, false)); }
@@ -1106,7 +1109,7 @@
   function calcView(main){
     var N = (S.dsu || {}).national || {};
     var LIM = numv(N.isee) || 28339.88, LIMP = numv(N.ispe) || 61608.48, MIN = numv(N.fuoriSede) || 7171.11, VISA = 10179.85;
-    var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
+    var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage});
     H.appendChild(kicker("wallet", "Bepul hisob-kitob"));
     H.appendChild(heroTitle("Pul kalkulyatori"));
     H.appendChild(el("p", "lead", "Viza uchun qancha pul ko'rsatish kerak, boshlanishda qancha xarajat bo'ladi va oilangiz daromadi bilan davlat stipendiyasiga mos kelasizmi: hammasini bir joyda hisoblang."));
@@ -1141,7 +1144,7 @@
     form2.appendChild(g2);
 
     var out = el("div", "calc-out");
-    main.appendChild(form); main.appendChild(form2); main.appendChild(out);
+    var lay = el("div", "split calc-split"), colA = el("div", "split-main"), colB = el("aside", "split-side"); colA.appendChild(form); colA.appendChild(form2); colB.appendChild(out); lay.appendChild(colA); lay.appendChild(colB); main.appendChild(lay);
 
     function draw(){
       var cur = CV.cur, rate = cur === "EUR" ? 1 : numv(CV.rate);
@@ -1399,7 +1402,7 @@
     return g;
   }
   function planView(main){
-    var H = hero({cls:"compact", scene:"rome", narrow:true});
+    var H = hero({cls:"compact", scene:"rome"});
     H.appendChild(kicker("heart", "Shu qurilmada saqlanadi"));
     H.appendChild(heroTitle("Mening rejam"));
     if(!ME){ H.appendChild(el("p", "lead", "Shaxsiy panelingiz: keyingi qadam, universitetlaringizning muddatlari, arizalar holati va hujjatlar bir joyda.")); onboarding(main, function(){ render(true); }); main.appendChild(quickTiles()); footer(main); return; }
@@ -1407,9 +1410,10 @@
     var dm = docsMeter(), favs = FAV.map(uniById).filter(Boolean);
     var sent = favs.filter(function(u){ return trOf(u.id).s >= 1; }).length;
     H.appendChild(heroStats([[favs.length, "universitet"], [sent, "ariza topshirildi"], [dm ? dm.done + "/" + dm.all : "—", "hujjat tayyor"]]));
-    var na = nextAction(); main.appendChild(rowBtn(na[0], "Keyingi qadam: " + na[1], na[2], "g", na[3]));
-    main.appendChild(quickTiles());
-    if(ME.lvl === "fy") main.appendChild(rowBtn("cap", "Foundation bor universitetlar", "11 yillik attestat bilan yo'l", null, "#foundation"));
+    var lay = el("div", "split plan-split"), mc = el("div", "split-main"), side = el("aside", "split-side"); lay.appendChild(mc); lay.appendChild(side); main.appendChild(lay);
+    var na = nextAction(); side.appendChild(rowBtn(na[0], "Keyingi qadam: " + na[1], na[2], "g", na[3]));
+    side.appendChild(quickTiles());
+    if(ME.lvl === "fy") side.appendChild(rowBtn("cap", "Foundation bor universitetlar", "11 yillik attestat bilan yo'l", null, "#foundation"));
 
     var FD = favDeadlines();
     if(FD.length){
@@ -1417,11 +1421,11 @@
       FD.slice(0, 6).forEach(function(x){ var li = el("li"); var w = el("div", "when", x.x.date); w.appendChild(el("span", "left", leftLabel(daysLeft(x.d)))); li.appendChild(w); var t = el("div"); t.appendChild(el("span", "tag", x.u.short || x.u.name)); t.appendChild(el("p", null, x.x.label)); t.appendChild(calAdd({title:(x.u.short || x.u.name) + ": " + x.x.label, d:x.d, details:x.x.label + " (" + x.x.date + ")"})); li.appendChild(t); ul.appendChild(li); });
       var all = el("button", "btn line"); all.type = "button"; all.appendChild(el("span", null, "Hammasini kalendarga qo'shish (.ics)")); all.appendChild(ic("cal"));
       all.onclick = function(){ icsDownload(FD.map(function(x){ return {title:(x.u.short || x.u.name) + ": " + x.x.label, d:x.d, details:x.x.label + " (" + x.x.date + ")"}; }), "uprep-muddatlar"); };
-      main.appendChild(sec(secHead("Universitetlaringiz muddatlari", null, null, null, "Yaqin", "Har biri uchun 7 kun va 1 kun oldin eslatma qo'yiladi."), ul, all));
+      side.appendChild(sec(secHead("Universitetlaringiz muddatlari", null, null, null, "Yaqin", "Har biri uchun 7 kun va 1 kun oldin eslatma qo'yiladi."), ul, all));
     }
     if(!favs.length){
-      main.appendChild(callout({style:"info", text:"Hali universitet saqlamadingiz. Universitet sahifasidagi «Saqlash ♥» tugmasini bosing yoki testdan o'ting."}));
-      var bx = el("div", "ic-btns"); bx.appendChild(btn("gold", "star", "Menga mos universitet", "#mos-universitet")); bx.appendChild(btn("line", "uni", "Universitetlar", "#universitetlar")); main.appendChild(bx);
+      mc.appendChild(callout({style:"info", text:"Hali universitet saqlamadingiz. Universitet sahifasidagi «Saqlash ♥» tugmasini bosing yoki testdan o'ting."}));
+      var bx = el("div", "ic-btns"); bx.appendChild(btn("gold", "star", "Menga mos universitet", "#mos-universitet")); bx.appendChild(btn("line", "uni", "Universitetlar", "#universitetlar")); mc.appendChild(bx);
     } else {
       var g = el("div", "qz-res");
       favs.forEach(function(u){
@@ -1431,12 +1435,12 @@
         var bx2 = el("div", "ic-btns"); var au = safeUrl(u.portalUrl) || safeUrl(u.applyUrl); if(au) bx2.appendChild(btn("gold", "link", "Ariza sahifasi", au)); bx2.appendChild(btn("line", "book", "Talablar", "#uni-" + u.id + "/qabul")); bx2.appendChild(favBtn(u, "line")); c.appendChild(bx2);
         g.appendChild(c);
       });
-      main.appendChild(sec(secHead("Arizalarim (" + favs.length + ")", "Yana qo'shish", "universitetlar", null, "Kuzatuv", "Holatni yangilash uchun nuqtani yoki «Keyingi holat» tugmasini bosing."), g));
-      if(favs.length > 1){ var cb = btn("navy", "list", "Saqlanganlarni taqqoslash", "#taqqoslash"); cb.onclick = function(){ CMP = FAV.slice(0, 3); saveCmp(); }; main.appendChild(cb); }
+      mc.appendChild(sec(secHead("Arizalarim (" + favs.length + ")", "Yana qo'shish", "universitetlar", null, "Kuzatuv", "Holatni yangilash uchun nuqtani yoki «Keyingi holat» tugmasini bosing."), g));
+      if(favs.length > 1){ var cb = btn("navy", "list", "Saqlanganlarni taqqoslash", "#taqqoslash"); cb.onclick = function(){ CMP = FAV.slice(0, 3); saveCmp(); }; mc.appendChild(cb); }
     }
     var n = doneCount(), total = S.stages.length;
-    main.appendChild(sec(secHead("Kurs bosqichlari", null, null, null, n + " / " + total), routeLine()));
-    var rs = el("button", "prevlink"); rs.type = "button"; rs.appendChild(el("span", null, "Maqsadni o'zgartirish")); rs.onclick = function(){ ME = null; saveME(); render(true); }; main.appendChild(rs);
+    mc.appendChild(sec(secHead("Qo'llanma qadamlari", null, null, null, n + " / " + total), routeLine()));
+    var rs = el("button", "prevlink"); rs.type = "button"; rs.appendChild(el("span", null, "Maqsadni o'zgartirish")); rs.onclick = function(){ ME = null; saveME(); render(true); }; mc.appendChild(rs);
     footer(main);
   }
 
@@ -1723,7 +1727,7 @@
 
     var art = el("article", "nd");
     /* print-only cover */
-    var cov = el("header", "nd-cover"); var cl0 = logo(30); cl0.innerHTML = cl0.innerHTML.replace(/id="mk"/, 'id="mk-cov"').replace(/url\(#mk\)/, "url(#mk-cov)"); cov.appendChild(cl0); cov.appendChild(el("span", "nd-cover-tag", "Bepul yo'riqnoma · o'zbek tilida")); cov.appendChild(el("div", "nd-cover-title", N.title || "Italiyada o'qish noldan")); if(N.subtitle) cov.appendChild(el("p", null, N.subtitle));
+    var cov = el("header", "nd-cover"); var cl0 = logo(30); cov.appendChild(cl0); cov.appendChild(el("span", "nd-cover-tag", "Bepul yo'riqnoma · o'zbek tilida")); cov.appendChild(el("div", "nd-cover-title", N.title || "Italiyada o'qish noldan")); if(N.subtitle) cov.appendChild(el("p", null, N.subtitle));
     cov.appendChild(el("small", null, "uprep · " + tgName() + (N.updated ? " · " + N.updated + " holatiga" : ""))); art.appendChild(cov);
 
     if(N.letter){ var lt = el("section", "nd-letter"); lt.appendChild(paras(N.letter)); lt.appendChild(el("p", "sig", "Uprep jamoasi")); art.appendChild(lt); }
@@ -1967,7 +1971,7 @@
     var b = el("button", "fold-btn"); b.type = "button"; b.setAttribute("aria-expanded", isOpen ? "true" : "false");
     b.appendChild(el("span", null, title)); b.appendChild(ic("down", "chev"));
     var bd = el("div", "fold-body"); bd.appendChild(body); bd.hidden = !isOpen;
-    b.onclick = function(){ var o = bd.hidden; bd.hidden = !o; b.setAttribute("aria-expanded", o ? "true" : "false"); open[key] = o; saveOpen(); };
+    b.onclick = function(){ var o = bd.hidden; bd.classList.add("anim"); bd.hidden = !o; b.setAttribute("aria-expanded", o ? "true" : "false"); open[key] = o; saveOpen(); };
     sec.appendChild(b); sec.appendChild(bd); return sec;
   }
   function unisIn(cid){ return S.unis.filter(function(u){ return u.city === cid; }); }
@@ -2012,7 +2016,7 @@
   /* ---------- universities list with search and filters ---------- */
   var UF = { q:"", type:"", city:"" };
   function unisView(main){
-    var H = hero({cls:"compact", scene:"town", narrow:true});
+    var H = hero({cls:"compact", scene:"town"});
     H.appendChild(kicker("uni", "Italiya · " + S.unis.filter(function(u){ return u.type === "Davlat"; }).length + " davlat, " + S.unis.filter(function(u){ return u.type === "Xususiy"; }).length + " xususiy"));
     H.appendChild(heroTitle("Italiya universitetlari"));
     H.appendChild(el("p", "lead", S.unis.length + " ta universitet: Italiya ta'lim vazirligi (MUR) ro'yxatidagi davlat va xususiy universitetlar. Nom yoki shahar bo'yicha qidiring."));
@@ -2034,7 +2038,7 @@
     bar.appendChild(sel);
     main.appendChild(bar);
     var count = el("p", "count-line"); count.setAttribute("aria-live", "polite"); main.appendChild(count);
-    var list = el("div", "list"); main.appendChild(list);
+    var list = el("div", "list unilist"); main.appendChild(list);
     function draw(){
       var q = norm(UF.q);
       var res = S.unis.filter(function(u){
@@ -2535,7 +2539,7 @@
     var t = el("span", "t"); t.appendChild(document.createTextNode(title)); if(meter) t.appendChild(meter); btn.appendChild(t);
     btn.appendChild(ic("down", "chev"));
     var bd = el("div", "acc-body"); bd.appendChild(body); bd.hidden = !isOpen;
-    btn.onclick = function(){ var o = bd.hidden; bd.hidden = !o; btn.setAttribute("aria-expanded", o ? "true" : "false"); open[key] = o; saveOpen(); };
+    btn.onclick = function(){ var o = bd.hidden; bd.classList.add("anim"); bd.hidden = !o; btn.setAttribute("aria-expanded", o ? "true" : "false"); open[key] = o; saveOpen(); };
     wrap.appendChild(btn); wrap.appendChild(bd); return wrap;
   }
   function textBody(body){
