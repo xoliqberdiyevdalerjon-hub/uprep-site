@@ -1,0 +1,116 @@
+{
+  "title": "Italiyada yashash",
+  "lead": "Kvartira topish, firibgarlardan saqlanish, sog'liq, ish va birinchi hafta: talabalar eng ko'p qiynaladigan narsalar, sodda tilda.",
+  "sections": [
+    {
+      "id": "uy",
+      "icon": "home2",
+      "title": "Kvartira topish",
+      "intro": "Katta talaba shaharlarida (Milan, Bolonya, Rim) uy topish eng qiyin ishlardan biri. Erta boshlang: o'qish boshlanishidan 2–3 oy oldin.",
+      "items": [
+        "Turlari: posto letto (boshqa talaba bilan bir xonada joy), stanza singola (alohida xona, oshxona umumiy), monolocale (bir xonali kvartira).",
+        "Birinchi navbatda: viloyat stipendiya idorasining yotoqxonasi (DSU). Stipendiya g'olibi bo'lsangiz, joy bepul yoki ancha arzon bo'lishi mumkin. Ariza stipendiya bilan birga, yozda topshiriladi.",
+        "Universitetning turar joy bo'limi (housing office) va rasmiy e'lonlar sahifasini tekshiring.",
+        "Shu universitetda o'qiyotgan o'zbek va xalqaro talabalar guruhlari ko'p yordam beradi. Lekin u yerda ham ehtiyot bo'ling.",
+        "Kelgandan keyin birinchi haftalar uchun vaqtincha joy (yotoqxona, hostel) bron qiling. Uyni joyida ko'rib, keyin shartnoma tuzing."
+      ]
+    },
+    {
+      "id": "firib",
+      "icon": "shield",
+      "title": "Firibgarlardan saqlanish",
+      "intro": "Chet ellik talabalar eng ko'p aldanadigan joy: oldindan pul so'raydigan soxta e'lonlar.",
+      "items": [
+        "Uyni ko'rmasdan va shartnoma imzolamasdan pul o'tkazmang.",
+        "«Men chet eldaman, kalitni pochta orqali yuboraman» degan egaga ishonmang: bu klassik firibgarlik.",
+        "Narx atrofdagidan ancha arzon bo'lsa, bu xavf belgisi.",
+        "Shaxsan bora olmasangiz, video-qo'ng'iroq orqali uyni jonli ko'rsatishni so'rang.",
+        "Har bir to'lov uchun kvitansiya oling. Naqd emas, bank o'tkazmasi orqali to'lang.",
+        "Egasining shaxsini va uy unga tegishli ekanini so'rang."
+      ]
+    },
+    {
+      "id": "shartnoma",
+      "icon": "doc",
+      "title": "Ijara shartnomasi",
+      "intro": "Rasmiy, ro'yxatdan o'tgan shartnoma sizni himoya qiladi va permesso hamda stipendiya uchun ham kerak bo'ladi.",
+      "items": [
+        "Talabalar uchun maxsus shartnoma turi bor: «contratto per studenti universitari», muddati 6 oydan 3 yilgacha (431/1998-qonun, 5-modda).",
+        "Shartnoma Agenzia delle Entrate'da ro'yxatdan o'tgan bo'lishi kerak. Nusxasini so'rab oling.",
+        "«Fuori sede» stipendiyasi uchun ko'p viloyatlar haq to'lanadigan, ro'yxatdan o'tgan ijara shartnomasini talab qiladi (masalan Padovada kamida 10 oylik).",
+        "Depozit summasi, kommunal to'lovlar (utenze) narxga kiradimi yoki yo'q, shartnomada yozilganini tekshiring.",
+        "Shartnomani imzolashdan oldin tarjima qilib, tushunib oling."
+      ]
+    },
+    {
+      "id": "sogliq",
+      "icon": "heart",
+      "title": "Sog'liq",
+      "intro": "Permesso uchun butun muddatga sug'urta kerak. Ikki yo'l bor.",
+      "items": [
+        "Italiya davlat sog'liqni saqlash tizimiga (SSN) ixtiyoriy yozilish: talaba uchun yiliga 700 €, faqat kalendar yili uchun (yanvar–dekabr), bo'lib to'lanmaydi.",
+        "Yoki Italiyada amal qiladigan xususiy sug'urta polisi.",
+        "SSN'ga yozilsangiz, oilaviy shifokor (medico di base) tanlaysiz va tessera sanitaria (tibbiy karta) olasiz.",
+        "Shoshilinch holatda: 112 raqami. Pronto soccorso (tez yordam bo'limi) hammaga yordam beradi."
+      ]
+    },
+    {
+      "id": "ish",
+      "icon": "briefcase",
+      "title": "Ishlash",
+      "intro": "Talaba permessosi bilan qonuniy ishlash mumkin, lekin cheklov bor.",
+      "items": [
+        "Haftasiga 20 soatgacha (yiliga 1 040 soat) ishlash mumkin.",
+        "Ish beruvchi rasmiy shartnoma (contratto) tuzishi kerak. Norasmiy ish permessoni yangilashda muammo bo'lishi mumkin.",
+        "Universitetlarda talabalar uchun to'lanadigan yarim stavkali ishlar (collaborazioni studentesche) bo'ladi. E'lonlarni universitet saytida kuzating.",
+        "Darslarni birinchi o'ringa qo'ying: stipendiyani keyingi yil ham olish uchun kreditlar (CFU) kerak."
+      ]
+    },
+    {
+      "id": "qiyin",
+      "icon": "stop",
+      "title": "Qiyinchiliklar: halol gapiramiz",
+      "intro": "Italiya go'zal, lekin birinchi yil oson emas. Oldindan bilsangiz, tayyor bo'lasiz.",
+      "items": [
+        "Byurokratiya sekin: Questura, pochta va bankda navbatlar uzun bo'lishi mumkin. Hujjatlarning nusxasini doim yoningizda olib yuring.",
+        "Kundalik hayotda italyan tili kerak bo'ladi: dastur ingliz tilida bo'lsa ham, A2–B1 darajaga yetishga harakat qiling.",
+        "Stipendiya puli odatda kech, bo'lib-bo'lib keladi. Birinchi 3–4 oy uchun o'z pulingiz bo'lsin.",
+        "Katta shaharlarda uy qimmat va kam. Kichikroq universitet shaharlari arzonroq va qulayroq bo'lishi mumkin.",
+        "Yolg'izlik va sog'inch tabiiy. Talabalar uyushmalari va universitet tadbirlari yordam beradi."
+      ]
+    },
+    {
+      "id": "hafta",
+      "icon": "cal",
+      "title": "Birinchi hafta: checklist",
+      "intro": "Kelgan kuningizdan boshlab tartib bilan bajaring.",
+      "items": [
+        "1–8 kun: permesso di soggiorno uchun pochtadagi kitni topshiring.",
+        "Codice fiscale oling (yoki permesso uchrashuvida beriladi).",
+        "Italiya SIM-kartasi va bank hisobi (IBAN): stipendiya shu hisobga keladi.",
+        "Universitetga asl hujjatlarni topshirib, full enrollment'ni yakunlang.",
+        "Stipendiya idorasining portaliga permesso kvitansiyasi va IBAN'ni yuklang.",
+        "Sog'liq: SSN'ga yoziling yoki sug'urtangizni tekshiring.",
+        "Talabalar kartasi va transport abonementini rasmiylashtiring."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "431/1998-qonun, 5-modda: talabalar uchun ijara",
+      "url": "https://brocardi.it/legge-locazioni-abitative/capo-ii/art5.html"
+    },
+    {
+      "label": "Agenzia delle Entrate: ijara bo'yicha qo'llanma (PDF)",
+      "url": "https://agenziaentrate.gov.it/portale/documents/20143/3015794/GUIDA%2BAFFITTI%2B17%2BOTTOBRE%2BINTERNET%2B%281%29.pdf"
+    },
+    {
+      "label": "Bolonya universiteti: xalqaro talabalar uchun sog'liq (SSN)",
+      "url": "https://www.unibo.it/it/studiare/vivere-luniversita-e-la-citta/salute-e-assistenza/assistenza-sanitaria-e-cure-mediche-a-bologna-cesena-forli-ravenna-e-rimini/assistenza-sanitaria-per-gli-studenti-internazionali"
+    },
+    {
+      "label": "Sapienza: «Studia e vivi Roma» qo'llanmasi (PDF)",
+      "url": "https://www.uniroma1.it/sites/default/files/Studia%20vivi%20Roma.pdf"
+    }
+  ]
+}

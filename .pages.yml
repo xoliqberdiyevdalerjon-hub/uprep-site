@@ -19,6 +19,7 @@ content:
       - { name: priceNote, label: Narx ostidagi izoh, type: string }
       - { name: includes, label: Kurs ichida nima bor (ro'yxat), type: string, list: true }
       - { name: footer, label: Pastki izoh, type: text }
+      - { name: updated, label: "Ma'lumotlar yangilangan sana", type: string }
       - { name: heroImage, label: "Bosh sahifa fon rasmi (ixtiyoriy; bo'sh bo'lsa chizilgan Rim manzarasi)", type: image }
       - name: faq
         label: Ko'p beriladigan savollar
@@ -438,3 +439,46 @@ content:
           - { name: amount, label: "Maksimal summa (bo'sh = davlat minimumi)", type: string }
           - { name: note, label: Izoh, type: text }
           - { name: own, label: "Stipendiyani universitetning o'zi beradi", type: boolean }
+
+  - name: news
+    label: Yangiliklar
+    type: file
+    path: content/news.json
+    format: json
+    list: true
+    fields:
+      - { name: date, label: "Sana (masalan 26.11.2026)", type: string }
+      - { name: tag, label: "Belgi (Viza, 2027/28, Stipendiya...)", type: string }
+      - { name: title, label: Sarlavha, type: string }
+      - { name: text, label: Matn, type: text }
+      - { name: link, label: "Havola (#uni-polimi yoki https://...)", type: string }
+
+  - name: living
+    label: Italiyada yashash
+    type: file
+    path: content/living.json
+    format: json
+    fields:
+      - { name: title, label: Sarlavha, type: string }
+      - { name: lead, label: Kirish matni, type: text }
+      - name: sections
+        label: Bo'limlar
+        type: object
+        list: true
+        fields:
+          - { name: id, label: Kod, type: string }
+          - name: icon
+            label: Belgi
+            type: select
+            options:
+              values: [home2, shield, doc, heart, briefcase, stop, cal, coin, plane, train]
+          - { name: title, label: Sarlavha, type: string }
+          - { name: intro, label: Kirish, type: text }
+          - { name: items, label: Bandlar, type: string, list: true }
+      - name: sources
+        label: Manbalar
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Nomi, type: string }
+          - { name: url, label: Havola, type: string }
