@@ -1299,3 +1299,12 @@ html.calm a:active,html.calm button:active{transform:none!important}
 html.calm .mark .u{stroke-dashoffset:0}
 html.calm .mark .tip{opacity:1;transform:none}
 .iconbtn.on{background:var(--navy);color:#fff;box-shadow:none}
+
+/* ---------- Scholarship region guides ---------- */
+.gcommon{margin-bottom:14px}
+.gnotes{margin:8px 0 0;padding-left:18px;display:grid;gap:6px;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.gnotes li::marker{color:var(--gold-ink)}
+.greg{display:grid;gap:4px}
+.greg .facts,.greg .ft{margin-top:0}
+.greg-h{display:block;margin:12px 0 4px;font:700 15px var(--display)}
+.greg-src{display:grid;gap:4px;margin-top:10px}

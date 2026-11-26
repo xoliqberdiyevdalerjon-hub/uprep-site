@@ -790,6 +790,25 @@
     var how = el("ol", "how");
     [["Universitetni tanlang", "Universitet joylashgan viloyat stipendiya idorasini belgilaydi."], ["Yozda ariza bering", "Odatda iyun – sentyabr, siz hali O'zbekistondaligingizda. Muddat viloyatga qarab har xil."], ["Oila hujjatlari", "Oila tarkibi, daromad va mulk ma'lumotnomalari: apostil va italyancha tarjima bilan. Italiyada CAF ulardan ISEE parificato tuzadi."]].forEach(function(x){ var li = el("li"); li.appendChild(el("b", null, x[0])); li.appendChild(el("span", null, x[1])); how.appendChild(li); });
     main.appendChild(sec(secHead("Qanday ishlaydi", null, null, null, "3 qadam"), how));
+    /* per-region documents and conditions */
+    var GC = D.guidesCommon, GS = arr(D.guides);
+    if(GC || GS.length){
+      var wrapG = el("div");
+      if(GC){ var cc = el("section", "card gcommon"); cc.appendChild(el("h3", null, GC.title)); var ul0 = el("ul", "ticks small"); arr(GC.items).forEach(function(t){ var li = el("li"); li.appendChild(ic("check")); li.appendChild(el("span", null, t)); ul0.appendChild(li); }); cc.appendChild(ul0);
+        var ul1 = el("ul", "gnotes"); arr(GC.rules).forEach(function(t){ ul1.appendChild(el("li", null, t)); }); cc.appendChild(ul1); wrapG.appendChild(cc); }
+      var fz = el("div", "faq");
+      GS.forEach(function(g){
+        var b = el("div", "greg");
+        b.appendChild(factTable([["Idora", g.agency], ["Universitetlar", g.unis], ["Muddat (" + (g.year || "") + ")", g.deadline], ["Summa", g.amount]]));
+        if(arr(g.docs).length){ b.appendChild(el("b", "greg-h", "Hujjatlar")); var u1 = el("ul", "ticks small"); arr(g.docs).forEach(function(t){ var li = el("li"); li.appendChild(ic("doc")); li.appendChild(el("span", null, t)); u1.appendChild(li); }); b.appendChild(u1); }
+        if(arr(g.rules).length){ b.appendChild(el("b", "greg-h", "Muhim shartlar")); var u2 = el("ul", "gnotes"); arr(g.rules).forEach(function(t){ u2.appendChild(el("li", null, t)); }); b.appendChild(u2); }
+        var sr = arr(g.sources).filter(function(x){ return safeUrl(x.url); }); if(sr.length){ var sx = el("div", "greg-src"); sr.forEach(function(x){ var a2 = el("a", "src"); a2.href = safeUrl(x.url); a2.target = "_blank"; a2.rel = "noopener"; a2.appendChild(ic("link")); a2.appendChild(el("span", null, x.label)); sx.appendChild(a2); }); b.appendChild(sx); }
+        fz.appendChild(fold("dsug:" + g.id, g.region + " · " + g.agency, b, false));
+      });
+      wrapG.appendChild(fz);
+      wrapG.appendChild(el("p", "muted-note", "Ma'lumotlar 2026/27 bandolaridan (rasmiy manba havolalari har bir viloyat ichida). 2027/28 bandolari odatda bahor–yozda chiqadi: topshirishdan oldin yangi bandoni albatta o'qing."));
+      main.appendChild(sec(secHead("Viloyatlar bo'yicha: hujjatlar va shartlar", null, null, "dsu-docs", "Batafsil", "Eng ko'p tanlanadigan 8 ta viloyat. Viloyatni bosing."), wrapG));
+    }
 
     var wrap = el("div");
     var sb = searchBox("Shahar yoki viloyat: Rim, Milan, Toscana…", DQ, function(v){ DQ = v; draw(); });

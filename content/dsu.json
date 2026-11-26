@@ -89,7 +89,8 @@
       ],
       "url": "https://www.er-go.it/",
       "deadline": "2026/27: 24.08.2026, 16:00 gacha",
-      "note": "Ariza er-go.it saytidagi «Fai domanda online» bo'limi orqali."
+      "note": "Ariza er-go.it saytidagi «Fai domanda online» bo'limi orqali.",
+      "amount": "7 171 € gacha (2026/27)"
     },
     {
       "id": "ardis",
@@ -244,7 +245,8 @@
         "messina"
       ],
       "url": "https://www.ersumessina.it/",
-      "deadline": "2026/27: 18.08.2026 gacha"
+      "deadline": "2026/27: 18.08.2026 gacha",
+      "amount": "7 171 – 8 246 € (2026/27)"
     },
     {
       "id": "enna",
@@ -405,5 +407,255 @@
       "text": "2026/27 chaqirig'i 20.04.2026 da yopilgan; yangi chaqiriq kutilmoqda.",
       "url": "https://www.unich.it/international/international-students-degree-seekers/admission-procedure"
     }
-  ]
+  ],
+  "guides": [
+    {
+      "id": "lazio",
+      "region": "Lazio",
+      "agency": "DiSCo",
+      "unis": "Sapienza, Tor Vergata, Roma Tre",
+      "year": "2026/27",
+      "deadline": "Ariza: 10.06 – 22.07.2026 (yopilgan). ISEEUP va permesso hujjatlari: 10.12.2026 gacha",
+      "amount": "Naqd 6 571 – 7 556 € + kuniga 2 mahal bepul ovqat (600 €). Jami taxminan 7 171 – 8 157 €",
+      "docs": [
+        "Oila tarkibi va propiska: har bir a'zoning ismi, tug'ilgan sanasi va manzili",
+        "Har bir oila a'zosining 2024-yilgi daromadi (ishlamasa, buni aniq yozgan hujjat)",
+        "Uy-joy: 31.12.2024 holatiga oila nomidagi mulk va uning maydoni (m²)",
+        "Ijara shartnomasi, faqat oila ijarada yashasa"
+      ],
+      "rules": [
+        "Hammasi apostil bilan va italyan tiliga tarjima qilingan bo'lishi kerak",
+        "O'zingiz yozgan ariza, affidavit va qasamyodli bayonot qabul qilinmaydi",
+        "ISEEUP faqat DiSCo tan olgan CAF'da hisoblanadi: boshqa CAF'dagi hisob qabul qilinmaydi",
+        "SPID yoki CIE bo'lmasa, CAF'da shaxsan identifikatsiyadan o'tasiz"
+      ],
+      "sources": [
+        {
+          "label": "DiSCo: 2026/27 bando ilovalari",
+          "url": "https://laziodisco.it/bandi/bando-diritto-allo-studio-2026-2027/please-review-the-annexes/"
+        },
+        {
+          "label": "DiSCo: 2026/27 bando (EN, PDF)",
+          "url": "https://laziodisco.it/wp-content/uploads/2026/07/BANDO-DIRITTO-ALLO-STUDIO-ENG-26-27.pdf"
+        }
+      ]
+    },
+    {
+      "id": "lombardia",
+      "region": "Lombardiya",
+      "agency": "Har bir universitetning o'zi",
+      "unis": "Politecnico di Milano, UniMi, Bicocca, Pavia",
+      "year": "2026/27",
+      "deadline": "PoliMi: iyul – avgust 2026; UniMi va Bicocca: 30.09.2026 (hammasi yopilgan)",
+      "amount": "Universitetga qarab. UniMi DSU chegarasidan biroz yuqori daromadli talabalarga 1 055 ta 1 800 € lik o'z stipendiyasini ham beradi",
+      "docs": [
+        "Oila tarkibi, har bir a'zoning daromadi va mol-mulki (chet eldagi)",
+        "Hujjatlar to'liq, haqiqiy va Italiyaga kirish qoidalariga mos bo'lishi kerak"
+      ],
+      "rules": [
+        "PoliMi: chet eldagi daromad va mulk faqat Politecnico tan olgan CAF orqali topshiriladi, boshqa yo'l qabul qilinmaydi",
+        "PoliMi 2026/27 chegaralari: ISEE parificato 26 887,93 €, ISPE 58 452,06 € (davlat maksimumidan pastroq)",
+        "Lombardiyada har bir universitet o'z bandosini chiqaradi: tanlagan universitetingiz bandosini o'qing"
+      ],
+      "sources": [
+        {
+          "label": "PoliMi: DSU 2026/27 qo'shimchasi (PDF)",
+          "url": "https://www.polimi.it/fileadmin/user_upload/studenti/tasse-borse-agevolazioni-economiche/dsu/bando_2026-2027/Supplementation_to_the_DSU_call_a.y._26-27.pdf"
+        },
+        {
+          "label": "PoliMi: DSU 2026/27 bando (EN, PDF)",
+          "url": "https://www.polimi.it/fileadmin/user_upload/studenti/tasse-borse-agevolazioni-economiche/dsu/bando_2026-2027/DSU_Call_a.y._2026-2027.pdf"
+        },
+        {
+          "label": "UniMi: universitet stipendiyalari",
+          "url": "https://www.unimi.it/en/study/financial-support/university-scholarships"
+        },
+        {
+          "label": "Bicocca: DSU 2026/27 bando (PDF)",
+          "url": "https://www.unimib.it/sites/default/files/2026-07/bando-DSU-2026-27%20def_3.pdf"
+        }
+      ]
+    },
+    {
+      "id": "piemonte",
+      "region": "Piemonte",
+      "agency": "EDISU Piemonte",
+      "unis": "UniTo, Politecnico di Torino, UniUPO",
+      "year": "2026/27",
+      "deadline": "Odatda sentyabr boshi (2026/27 yopilgan). Aniq sana bandoda",
+      "amount": "8 455 € gacha (fuori sede). EDISU yotoqxonasida yashovchilarga naqd summa kamroq, yotoqxona joyi bilan",
+      "docs": [
+        "Konsullik hujjatlari (oila tarkibi, daromad, mol-mulk): arizaga ilova qilinadi",
+        "Daromad: 2025-yilgi (2026/27 uchun, faqat EI dan tashqari xalqaro talabalar)"
+      ],
+      "rules": [
+        "ISEE parificato faqat EDISU tan olgan CAAF'larda yoki EDISU'ning o'zida hisoblanadi",
+        "Italiyada oldin stipendiya olgan bo'lsangiz, 2025-yilgi Certificazione Unica'ni ham qo'shasiz"
+      ],
+      "sources": [
+        {
+          "label": "EDISU: 2026/27 bando (PDF)",
+          "url": "https://www.edisu.piemonte.it/sites/default/files/documentazione/bandi-di-concorso/Bando_borsa_di_studio_servizio_abitativo_premio_di_laurea_contributo_studenti_con_disabilit%C3%A0_dal_46_p.c._iscritti_al_collocamento_mirato_a.a._2026-27_0.pdf"
+        }
+      ]
+    },
+    {
+      "id": "emilia",
+      "region": "Emilia-Romagna",
+      "agency": "ER.GO",
+      "unis": "Bolonya, Modena, Parma, Ferrara",
+      "year": "2026/27",
+      "deadline": "Ariza: 23.06 – 24.08.2026, 16:00 gacha. Chet el hujjatlarini yuklash: 20.11.2026 gacha (hammasi yopilgan)",
+      "amount": "7 171 € gacha (fuori sede). Yotoqxona stipendiya hisobidan to'lanadi, ovqat ixtiyoriy kredit",
+      "docs": [
+        "Chet eldagi daromad va mol-mulk hujjatlari, 2025-yil uchun: to'liq, tarjima qilingan va legallashtirilgan",
+        "«Dossier Utente» bo'limi orqali yuklanadi",
+        "ISEE 2026 (diritto allo studio uchun) attestatsiyasi"
+      ],
+      "rules": [
+        "CAF orqali ariza bergan xalqaro talabalar ham chet el hujjatlarini alohida yuklashi shart, aks holda ro'yxatdan chiqariladi",
+        "«Juda kambag'al» davlatlar ro'yxatidagilar uchun boshqa yo'l: Italiya vakolatxonasining «oila yuqori daromadli emas» degan ma'lumotnomasi. O'zbekiston ro'yxatda bor-yo'qligini bandodan tekshiring"
+      ],
+      "sources": [
+        {
+          "label": "ER.GO: muddatlar",
+          "url": "https://www.er-go.it/cosa-fare-per/bandi-di-concorso/scadenze/scadenze-per-richiedere-i-benefici"
+        },
+        {
+          "label": "ER.GO: 2026/27 bando (PDF)",
+          "url": "https://www.er-go.it/cosa-fare-per/bandi-di-concorso/leggi-il-bando/bando-di-concorso-benefici-dsu-a-a-2026_2027.pdf/@@download/file"
+        }
+      ]
+    },
+    {
+      "id": "toscana",
+      "region": "Toskana",
+      "agency": "DSU Toscana",
+      "unis": "Piza, Florensiya, Siena",
+      "year": "2026/27",
+      "deadline": "Ariza va hujjatlar: 07.09.2026, 13:00 gacha (yopilgan). Kech yuborilgan hujjat bilan ro'yxatdan chiqariladi",
+      "amount": "Summa bandoda. Fuori sede g'olibga: o'qish to'lovidan ozodlik, yotoqxonada bepul joy yoki ijara puli, kuniga 2 mahal bepul ovqat",
+      "docs": [
+        "Oila tarkibi (stato di famiglia)",
+        "Daromadlar",
+        "Uy-joy va binolar (fabbricati)",
+        "Bank va boshqa jamg'armalar (patrimonio mobiliare)"
+      ],
+      "rules": [
+        "Hamma hujjat italyan tiliga tarjima qilinadi va Italiya diplomatik vakolatxonasi tomonidan legallashtiriladi (rasmiy sahifa). O'zbekiston apostil konvensiyasi a'zosi: apostil yetarlimi, DSU Toscana'dan tasdiqlang",
+        "Rivojlanayotgan davlatlar uchun muqobil yo'l: Italiya vakolatxonasining «oila yuqori daromadli emas» ma'lumotnomasi",
+        "O'tgan yili topshirgan va iqtisodiy holati o'zgarmaganlar ma'lumotni onlayn tasdiqlashi mumkin"
+      ],
+      "sources": [
+        {
+          "label": "DSU Toscana: xorijlik talabalar",
+          "url": "https://www.dsu.toscana.it/studenti-stranieri"
+        },
+        {
+          "label": "DSU Toscana: 2026/27 bando (PDF)",
+          "url": "https://www.dsu.toscana.it/documents/4390857/32478257/bando+borsa+alloggio+26-27.pdf/092c16da-95e8-1712-b1eb-f159d5e7743e?t=1784280597313"
+        }
+      ]
+    },
+    {
+      "id": "veneto",
+      "region": "Veneto (Padova)",
+      "agency": "Padova universiteti (yotoqxona va oshxona: ESU)",
+      "unis": "Padova",
+      "year": "2026/27",
+      "deadline": "Barcha qadamlar: 30.09.2026 gacha (yopilgan). Reyting: 15.10.2026 (dastlabki), 25.11.2026 (yakuniy)",
+      "amount": "Bandoda. Birinchi kurs ikki qismda, keyingi kurslar bir qismda oladi",
+      "docs": [
+        "Oila chet elda yashasa: ISEE parificato (bandoning alohida bo'limida tartibi)",
+        "Fuori sede bo'lish uchun: haq to'lanadigan, ro'yxatdan o'tgan ijara shartnomasi (kamida 10 oylik)"
+      ],
+      "rules": [
+        "Fuori sede yoki qatnovchi ekaningiz universitetning masofa jadvali bo'yicha aniqlanadi"
+      ],
+      "sources": [
+        {
+          "label": "Padova: viloyat stipendiyalari",
+          "url": "https://www.unipd.it/borse-studio-regionali"
+        },
+        {
+          "label": "Padova: 2026/27 bando (PDF)",
+          "url": "https://wwwassets.unipd.it/sites/default/files/2026-07/Bando%20Borse%20Studio%202026-27.pdf"
+        },
+        {
+          "label": "Padova: reyting sanalari",
+          "url": "https://www.unipd.it/graduatorie-borse-studio-regionali"
+        }
+      ]
+    },
+    {
+      "id": "campania",
+      "region": "Kampaniya",
+      "agency": "ADISURC",
+      "unis": "Neapol (Federico II, Vanvitelli, Parthenope, L'Orientale), Salerno",
+      "year": "2026/27",
+      "deadline": "Ariza: 10.09.2026, 12:00 gacha (yopilgan). Oila chet elda bo'lsa ISEEUP: 31.03.2027 gacha",
+      "amount": "Bandoda (davlat minimumi asosida, daromad va masofaga qarab)",
+      "docs": [
+        "Oila chet elda yashasa: ISEE universitario parificato (ISEEUP)",
+        "Fuori sede uchun: Agenzia delle Entrate'da ro'yxatdan o'tgan ijara shartnomasi (taxminan 10 oylik, bandodan tekshiring)"
+      ],
+      "rules": [
+        "EI dan tashqari talabalar uchun ro'yxatdagi davlatlar bo'lsa: Italiya vakolatxonasining «oila yuqori daromadli emas» ma'lumotnomasi, ariza muddatigacha",
+        "Ariza faqat onlayn, talabaning shaxsiy kabinetida"
+      ],
+      "sources": [
+        {
+          "label": "ADISURC: 2026/27 bando (EN, PDF)",
+          "url": "https://www.adisurcampania.it/sites/default/files/2026-07/Bando%20di%20Concorso%20a.a.%202026.27_ENG.pdf"
+        },
+        {
+          "label": "ADISURC: bando tasdiqlandi",
+          "url": "https://www.adisurcampania.it/notizie/approvazione-bando-di-concorso-20262027"
+        }
+      ]
+    },
+    {
+      "id": "sicilia",
+      "region": "Sitsiliya (Messina)",
+      "agency": "ERSU Messina",
+      "unis": "Messina (Palermo va Kataniyada o'z ERSU'lari bor)",
+      "year": "2026/27",
+      "deadline": "2026/27: 18.08.2026 gacha (yopilgan). 1-kurs reytingi 06.11.2026 da chiqdi",
+      "amount": "7 171 € gacha; ISEE chegaraning yarmidan past bo'lsa 8 246 € gacha. Yotoqxona va ovqat stipendiya hisobidan",
+      "docs": [
+        "Oila tarkibi, daromad va mol-mulk hujjatlari, apostil va italyancha tarjima bilan",
+        "ISEE parificato: to'liq va bo'shliqlarsiz"
+      ],
+      "rules": [
+        "Bandoda xalqaro (EI dan tashqari) talabalar uchun ajratilgan joylar bor",
+        "Hujjatlar ro'yxati va formatini bandodan tekshiring: bu yerda faqat umumiy talablar"
+      ],
+      "sources": [
+        {
+          "label": "ERSU Messina: 2026/27 bando (PDF)",
+          "url": "https://www.ersumessina.it/wp-content/uploads/2026/07/Bando-di-concorso-2026_2027_signed.pdf"
+        },
+        {
+          "label": "ERSU Messina: stipendiyalar",
+          "url": "https://www.ersumessina.it/borse-di-studio/"
+        }
+      ]
+    }
+  ],
+  "guidesCommon": {
+    "title": "Deyarli hamma viloyatda so'raladigan oila hujjatlari",
+    "items": [
+      "Oila tarkibi va propiska (har bir a'zo)",
+      "Har bir oila a'zosining yillik daromadi (qaysi yil: viloyatga qarab 2024 yoki 2025)",
+      "Uy-joy va boshqa ko'chmas mulk, maydoni bilan",
+      "Bank hisoblari va jamg'armalar",
+      "Ijara shartnomasi, agar oila ijarada yashasa"
+    ],
+    "rules": [
+      "O'zbekistonda olinadi, apostil qo'yiladi va italyan tiliga tarjima qilinadi",
+      "Italiyada viloyat tan olgan CAF/CAAF'da ISEE parificato (ISEEUP) hisoblanadi",
+      "O'zingiz yozgan ariza va affidavit odatda qabul qilinmaydi",
+      "ISEE chegarasi: davlat maksimumi 28 339,88 €, lekin ba'zi viloyat va universitetlar pastroq chegara qo'yadi (masalan PoliMi 2026/27: 26 887,93 €)"
+    ]
+  }
 }
