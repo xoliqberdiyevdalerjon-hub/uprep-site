@@ -921,3 +921,11 @@ a.news-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line-2),
 .live-card.warn .ic-h .ic{background:var(--red);color:#fff}
 .live-intro{margin:0 0 6px;font-size:15.5px;color:var(--ink-2)}
 .live-card.warn .ticks li svg{background:var(--red-soft);color:var(--red)}
+.tools{display:grid;gap:12px}
+@media (min-width:720px){ .tools{grid-template-columns:repeat(3,minmax(0,1fr))} }
+.tool{display:flex;align-items:center;gap:14px;padding:18px;border-radius:var(--r-lg);background:var(--surface);box-shadow:0 0 0 1.5px var(--gold), var(--sh-2);text-decoration:none;transition:transform .2s var(--ease)}
+.tool:hover{transform:translateY(-3px)}
+.tool .ic{flex:none;display:grid;place-items:center;width:50px;height:50px;border-radius:15px;background:var(--gold);color:#1B1300}
+.tool .txt{flex:1;min-width:0}
+.tool b{display:block;font:700 17px/1.25 var(--display)}
+.tool small{display:block;margin-top:3px;font-size:13.5px;color:var(--muted)}

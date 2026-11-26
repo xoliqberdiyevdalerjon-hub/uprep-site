@@ -488,6 +488,11 @@
     var up = upcoming()[0]; j.appendChild(up ? departure(up) : rowBtn("cal", "Kalendar", "Yil davomidagi muhim sanalar", null, "#kalendar"));
     main.appendChild(sec(j));
 
+    var tl = el("div", "tools");
+    [["wallet","Pul kalkulyatori","Viza uchun qancha pul kerak va stipendiyaga mos kelasizmi","kalkulyator"],["star","Menga mos universitet","6 savol: sizga mos universitet va dasturlar","mos-universitet"],["search","Dastur qidirish","1 256 ta ingliz tilidagi dastur ichidan izlang","dasturlar"]].forEach(function(x){
+      var a2 = el("a", "tool"); a2.href = "#" + x[3]; var i2 = el("span", "ic"); i2.appendChild(ic(x[0])); a2.appendChild(i2); var t2 = el("span", "txt"); t2.appendChild(el("b", null, x[1])); t2.appendChild(el("small", null, x[2])); a2.appendChild(t2); a2.appendChild(ic("next", "chev")); tl.appendChild(a2);
+    });
+    main.appendChild(sec(secHead("Foydali vositalar", null, null, null, "Bepul"), tl));
     if(S.news.length){ var ng = el("div", "news-grid"); S.news.slice(0, 3).forEach(function(n){ ng.appendChild(newsCard(n)); }); main.appendChild(sec(secHead("So'nggi yangiliklar", "Hammasi", "yangiliklar", null, "Yangilik"), ng)); }
     var G = S.guide || {};
     if(arr(G.overview).length){
