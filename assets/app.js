@@ -1975,7 +1975,7 @@
     function tgBtn(r){ var b = el("button", "textbtn", "Telegram orqali qo'lda yuborish"); b.type = "button"; b.onclick = manual; var w = el("span"); w.appendChild(document.createTextNode(" ")); w.appendChild(b); if(r) w.appendChild(el("small", "fb-code", "Texnik kod: " + fbCode(r))); return w; }
     /* short technical reason, so the owner can tell what to fix in the Worker settings */
     function fbCode(r){
-      var H = { network:"Worker'ga ulanib bo'lmadi (kod yangilanmagan, manzil xato yoki CORS)", bad_response:"Worker eski kod bilan ishlayapti", not_configured:"Worker'da BOT_TOKEN, CHAT_ID yoki APP_KEY yo'q", key:"APP_KEY mos emas", origin:"bu sayt Worker'da ruxsat etilmagan", telegram_401:"BOT_TOKEN noto'g'ri yoki bekor qilingan", telegram_404:"BOT_TOKEN noto'g'ri", telegram_400:"CHAT_ID noto'g'ri yoki botda Start bosilmagan", telegram_403:"botda Start bosilmagan yoki bot bloklangan", telegram_unreachable:"Telegram'ga ulanib bo'lmadi", timeout:"javob kelmadi" };
+      var H = { network:"Worker'ga ulanib bo'lmadi (kod yangilanmagan, manzil xato yoki CORS)", bad_response:"Worker eski kod bilan ishlayapti", not_configured:"Worker'da BOT_TOKEN yoki CHAT_ID qo'shilmagan", key:"APP_KEY mos emas", origin:"bu sayt Worker'da ruxsat etilmagan", telegram_401:"BOT_TOKEN noto'g'ri yoki bekor qilingan", telegram_404:"BOT_TOKEN noto'g'ri", telegram_400:"CHAT_ID noto'g'ri yoki botda Start bosilmagan", telegram_403:"botda Start bosilmagan yoki bot bloklangan", telegram_unreachable:"Telegram'ga ulanib bo'lmadi", timeout:"javob kelmadi" };
       var c = str(r.code);
       return (r.status ? "HTTP " + r.status + (c ? " · " + c : "") : c || "—") + (H[c] ? " (" + H[c] + ")" : "");
     }

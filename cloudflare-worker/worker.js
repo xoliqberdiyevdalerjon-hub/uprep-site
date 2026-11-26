@@ -8,7 +8,8 @@
  * Secrets / variables (Cloudflare dashboard > Worker > Settings > Variables and Secrets):
  *   BOT_TOKEN        (Secret)  token from @BotFather
  *   CHAT_ID          (Secret)  your Telegram user id (or a group id)
- *   APP_KEY          (Secret)  the same random key that is in assets/relay-config.js
+ *   APP_KEY          (Secret, optional)  must match assets/relay-config.js. Not set = DEFAULT_APP_KEY below
+ *                    (the same public key the site sends; set APP_KEY only when you rotate the key)
  *   ALLOWED_ORIGINS  (Text, optional)  comma-separated list of sites allowed to call the Worker.
  *                    Not set = only the Uprep site (DEFAULT_ORIGINS below). "*" = any origin.
  *   TIME_ZONE        (Text, optional)  default "Asia/Tashkent"
@@ -47,6 +48,8 @@ function json(body, status, cors) {
 }
 
 const DEFAULT_ORIGINS = "https://xoliqberdiyevdalerjon-hub.github.io";
+/* not a secret: the website sends it openly; it only filters out random bots */
+const DEFAULT_APP_KEY = "pJBaGKvnMu7IQiTQN0ekW-tC0xC1luCZEBdTZRKFs_g";
 
 function allowedOrigins(env) {
   const raw = env.ALLOWED_ORIGINS == null || String(env.ALLOWED_ORIGINS).trim() === "" ? DEFAULT_ORIGINS : String(env.ALLOWED_ORIGINS);
@@ -173,8 +176,8 @@ async function handle(request, env) {
   if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
   if (request.method !== "POST") return json({ ok: false, error: "method" }, 405, { ...cors, "Allow": "POST, OPTIONS" });
 
-  if (!env.BOT_TOKEN || !env.CHAT_ID || !env.APP_KEY) return json({ ok: false, error: "not_configured" }, 500, cors);
-  if (!(await safeEqual(request.headers.get("x-app-key") || "", env.APP_KEY))) return json({ ok: false, error: "key" }, 401, cors);
+  if (!env.BOT_TOKEN || !env.CHAT_ID) return json({ ok: false, error: "not_configured" }, 500, cors);
+  if (!(await safeEqual(request.headers.get("x-app-key") || "", env.APP_KEY || DEFAULT_APP_KEY))) return json({ ok: false, error: "key" }, 401, cors);
 
   if (!/^application\/json\b/i.test(request.headers.get("Content-Type") || "")) return json({ ok: false, error: "type" }, 415, cors);
   const declared = Number(request.headers.get("Content-Length") || 0);

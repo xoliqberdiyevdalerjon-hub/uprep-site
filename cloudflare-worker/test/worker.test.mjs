@@ -92,9 +92,18 @@ test("the bot token never appears in a response", async () => {
 });
 
 test("missing secrets -> 500 not_configured (fails closed)", async () => {
-  const r = await worker.fetch(req(good), { ...ENV, APP_KEY: "" });
-  assert.equal(r.status, 500);
+  assert.equal((await worker.fetch(req(good), { ...ENV, BOT_TOKEN: "" })).status, 500);
+  assert.equal((await worker.fetch(req(good), { ...ENV, CHAT_ID: "" })).status, 500);
   assert.equal(calls.length, 0);
+});
+
+test("APP_KEY not set: only the built-in site key is accepted", async () => {
+  const env = { ...ENV }; delete env.APP_KEY;
+  assert.equal((await worker.fetch(req(good, { key: KEY }), env)).status, 401);
+  assert.equal(calls.length, 0);
+  const r = await worker.fetch(req(good, { key: "pJBaGKvnMu7IQiTQN0ekW-tC0xC1luCZEBdTZRKFs_g" }), env);
+  assert.equal(r.status, 200);
+  assert.equal(calls.length, 1);
 });
 
 test("method, content type, JSON and size checks", async () => {

@@ -26,12 +26,12 @@ Hisoblar yoqilmaguncha sayt "tez orada" rejimida ishlaydi. Egasi uchun ko'rib ch
 «Fikr bildirish» (`#xabar`), «Profil tahlili» va «Tariflar» xabarlari shunday yo'l bilan keladi:
 sayt → `cloudflare-worker/worker.js` (Cloudflare Worker) → Telegram Bot API → sizning Telegramingiz.
 
-- Bot tokeni va chat ID faqat Worker'ning **Secrets**ida turadi: `BOT_TOKEN`, `CHAT_ID`, `APP_KEY`. Sayt kodida ular yo'q.
+- Bot tokeni va chat ID faqat Worker'ning **Secrets**ida turadi: `BOT_TOKEN`, `CHAT_ID`. Sayt kodida ular yo'q. `APP_KEY` ixtiyoriy: qo'yilmasa, Worker ichidagi `DEFAULT_APP_KEY` ishlatiladi (u `relay-config.js` dagi bilan bir xil).
 - `assets/relay-config.js`: `url` = Worker manzili, `appKey` = Worker'dagi `APP_KEY` bilan aynan bir xil. `url` bo'sh bo'lsa, sayt xabarni nusxalab, Telegram chatini ochadi (qo'lda yuborish).
 - Worker faqat `https://xoliqberdiyevdalerjon-hub.github.io` saytidan kelgan xabarni qabul qiladi (`worker.js` dagi `DEFAULT_ORIGINS`). Boshqa sayt qo'shish kerak bo'lsa, Worker'da `ALLOWED_ORIGINS` (Text) o'zgaruvchisini yarating.
 - Internet bo'lmasa yoki xato bo'lsa, yozilgan matn qoralama bo'lib qurilmada qoladi va faqat muvaffaqiyatli yuborilgandan keyin o'chadi.
 - Testlar: `node --test cloudflare-worker/test/*.test.mjs` (Worker), `node --test tests/feedback.e2e.mjs` (brauzerda forma), lint: `npx eslint@9 cloudflare-worker assets/feedback.js assets/relay-config.js`.
-- Spam ko'paysa: yangi `APP_KEY` yarating, uni Worker'ga va `relay-config.js` ga yozing.
+- Spam ko'paysa: yangi kalit yarating, uni Worker'da `APP_KEY` secret qilib va `relay-config.js` ga yozing.
 
 ## Google (hozircha yopiq)
 Sayt hozircha qidiruv tizimlaridan yashirilgan: `index.html` da `<meta name="robots" content="noindex, nofollow">`.
