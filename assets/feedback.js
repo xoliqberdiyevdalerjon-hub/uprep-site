@@ -84,8 +84,12 @@
       credentials:"omit",
       cache:"no-store"
     }).then(function(r){
-      if(r.ok) return { ok:true };
-      return { ok:false, reason: r.status === 429 ? "rate" : "server", status:r.status };
+      if(!r.ok) return { ok:false, reason: r.status === 429 ? "rate" : "server", status:r.status };
+      /* success only when the relay itself confirms it (a wrong URL can also answer 200) */
+      return r.text().then(function(t){
+        var j = null; try{ j = JSON.parse(t); }catch(e){}
+        return j && j.ok === true ? { ok:true } : { ok:false, reason:"server", status:r.status };
+      }, function(){ return { ok:false, reason:"server", status:r.status }; });
     }, function(){
       if(timedOut) return { ok:false, reason:"timeout" };
       return { ok:false, reason: (root.navigator && root.navigator.onLine === false) ? "offline" : "server" };

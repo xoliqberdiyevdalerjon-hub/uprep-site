@@ -8,6 +8,6 @@ name = "uprep-feedback"
 main = "worker.js"
 compatibility_date = "2025-06-01"
 
+# ALLOWED_ORIGINS defaults to the Uprep site inside worker.js; set it only to allow other sites ("*" = any).
 [vars]
-ALLOWED_ORIGINS = "https://xoliqberdiyevdalerjon-hub.github.io"
 TIME_ZONE = "Asia/Tashkent"

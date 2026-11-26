@@ -125,6 +125,15 @@ test("server error: draft kept, error shown with a manual Telegram fallback", as
   await ctx.close();
 });
 
+test("a 200 answer that is not the relay's {ok:true} is NOT reported as sent", async () => {
+  const { ctx, page } = await open({ relay: (r) => r.fulfill({ status: 200, contentType: "text/plain", body: "Hello World!" }) });
+  await page.fill("#fb-text", "Noto'g'ri manzil sinovi");
+  await page.click(".fb-send");
+  await page.waitForSelector(".fb-status.err");
+  assert.equal((await state(page)).feedbackDraft.text, "Noto'g'ri manzil sinovi");
+  await ctx.close();
+});
+
 test("rate limited (429): friendly warning, draft kept", async () => {
   const { ctx, page } = await open({ relay: (r) => r.fulfill({ status: 429, body: '{"ok":false}' }) });
   await page.fill("#fb-text", "Ko'p yubordim");

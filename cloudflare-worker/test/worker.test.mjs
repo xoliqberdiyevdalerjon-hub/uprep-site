@@ -41,9 +41,16 @@ test("unknown origin is refused (403) and nothing is sent", async () => {
   assert.equal(calls.length, 0);
 });
 
-test("no ALLOWED_ORIGINS = any origin (wildcard)", () => {
-  const h = corsFor(req(good, { origin: "https://any.example" }), { ...ENV, ALLOWED_ORIGINS: "" });
+test("ALLOWED_ORIGINS='*' = any origin (wildcard)", () => {
+  const h = corsFor(req(good, { origin: "https://any.example" }), { ...ENV, ALLOWED_ORIGINS: "*" });
   assert.equal(h["Access-Control-Allow-Origin"], "*");
+});
+
+test("ALLOWED_ORIGINS not set = only the Uprep site", () => {
+  const env = { ...ENV }; delete env.ALLOWED_ORIGINS;
+  assert.equal(corsFor(req(good, { origin: ORIGIN }), env)["Access-Control-Allow-Origin"], ORIGIN);
+  assert.equal(corsFor(req(good, { origin: "https://any.example" }), env), null);
+  assert.equal(corsFor(req(good, { origin: "" }), { ...env, ALLOWED_ORIGINS: "" }), null, "no Origin header = refused");
 });
 
 test("wrong or missing app key -> 401, Telegram not called", async () => {

@@ -9,8 +9,8 @@
  *   BOT_TOKEN        (Secret)  token from @BotFather
  *   CHAT_ID          (Secret)  your Telegram user id (or a group id)
  *   APP_KEY          (Secret)  the same random key that is in assets/relay-config.js
- *   ALLOWED_ORIGINS  (Text, optional)  comma-separated list of sites allowed to call the Worker,
- *                    e.g. "https://xoliqberdiyevdalerjon-hub.github.io". Empty = any origin.
+ *   ALLOWED_ORIGINS  (Text, optional)  comma-separated list of sites allowed to call the Worker.
+ *                    Not set = only the Uprep site (DEFAULT_ORIGINS below). "*" = any origin.
  *   TIME_ZONE        (Text, optional)  default "Asia/Tashkent"
  *
  * Request:  POST /  headers: Content-Type: application/json, x-app-key: <APP_KEY>
@@ -46,8 +46,12 @@ function json(body, status, cors) {
   });
 }
 
+const DEFAULT_ORIGINS = "https://xoliqberdiyevdalerjon-hub.github.io";
+
 function allowedOrigins(env) {
-  return String(env.ALLOWED_ORIGINS || "")
+  const raw = env.ALLOWED_ORIGINS == null || String(env.ALLOWED_ORIGINS).trim() === "" ? DEFAULT_ORIGINS : String(env.ALLOWED_ORIGINS);
+  if (raw.trim() === "*") return [];
+  return raw
     .split(",")
     .map((s) => s.trim().replace(/\/+$/, ""))
     .filter(Boolean);

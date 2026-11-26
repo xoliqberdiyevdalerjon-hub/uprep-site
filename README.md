@@ -28,7 +28,7 @@ sayt → `cloudflare-worker/worker.js` (Cloudflare Worker) → Telegram Bot API 
 
 - Bot tokeni va chat ID faqat Worker'ning **Secrets**ida turadi: `BOT_TOKEN`, `CHAT_ID`, `APP_KEY`. Sayt kodida ular yo'q.
 - `assets/relay-config.js`: `url` = Worker manzili, `appKey` = Worker'dagi `APP_KEY` bilan aynan bir xil. `url` bo'sh bo'lsa, sayt xabarni nusxalab, Telegram chatini ochadi (qo'lda yuborish).
-- `ALLOWED_ORIGINS` (Worker, Text): `https://xoliqberdiyevdalerjon-hub.github.io`, faqat shu sayt yubora oladi.
+- Worker faqat `https://xoliqberdiyevdalerjon-hub.github.io` saytidan kelgan xabarni qabul qiladi (`worker.js` dagi `DEFAULT_ORIGINS`). Boshqa sayt qo'shish kerak bo'lsa, Worker'da `ALLOWED_ORIGINS` (Text) o'zgaruvchisini yarating.
 - Internet bo'lmasa yoki xato bo'lsa, yozilgan matn qoralama bo'lib qurilmada qoladi va faqat muvaffaqiyatli yuborilgandan keyin o'chadi.
 - Testlar: `node --test cloudflare-worker/test/*.test.mjs` (Worker), `node --test tests/feedback.e2e.mjs` (brauzerda forma), lint: `npx eslint@9 cloudflare-worker assets/feedback.js assets/relay-config.js`.
 - Spam ko'paysa: yangi `APP_KEY` yarating, uni Worker'ga va `relay-config.js` ga yozing.

@@ -9,7 +9,7 @@
    The real secrets (BOT_TOKEN, CHAT_ID) live only in the Worker. If spam ever gets through,
    generate a new key, put it here and in the Worker, and redeploy both. */
 window.UPREP_RELAY = {
-  url: "",
+  url: "https://wild-fire-9eb2prep-feedbackprep-feedback.xoliqberdiyevdalerjon.workers.dev",
   appKey: "pJBaGKvnMu7IQiTQN0ekW-tC0xC1luCZEBdTZRKFs_g",
   appName: "Uprep",
   appVersion: "2026.11.26",
