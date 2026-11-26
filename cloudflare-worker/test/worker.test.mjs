@@ -2,7 +2,7 @@
 import { test, beforeEach } from "node:test";
 import assert from "node:assert/strict";
 import worker from "../worker.js";
-const { cutSafe, formatMessage, safeEqual, corsFor, resetRateLimit, LIMITS } = worker._internals;
+const { cutSafe, formatMessage, safeEqual, corsFor, resetRateLimit, LIMITS } = worker.fetch._internals;
 
 const KEY = "test-app-key-0123456789abcdef";
 const ORIGIN = "https://xoliqberdiyevdalerjon-hub.github.io";

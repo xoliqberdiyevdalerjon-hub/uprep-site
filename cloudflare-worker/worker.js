@@ -202,8 +202,7 @@ async function handle(request, env) {
   return json({ ok: true }, 200, cors);
 }
 
-/* Cloudflare reads only the default export. `_internals` is for the tests and is ignored by Cloudflare. */
-export default {
-  fetch: handle,
-  _internals: { LIMITS, corsFor, safeEqual, clean, cutSafe, formatMessage, limited, resetRateLimit },
-};
+/* helpers reachable from the tests; the deployed Worker exports only the fetch handler */
+handle._internals = { LIMITS, corsFor, safeEqual, clean, cutSafe, formatMessage, limited, resetRateLimit };
+
+export default { fetch: handle };
