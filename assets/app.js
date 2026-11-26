@@ -216,12 +216,13 @@
 
   /* ---------------- data ---------------- */
   var root = document.getElementById("app");
-  var S = { site:{}, stages:[], calendar:[], library:[], countries:[], italy:{}, cities:[], unis:[], guide:{}, dsu:{agencies:[]}, living:{}, news:[], reviews:[], foundation:{}, tests:{}, loaded:false };
+  var S = { site:{}, stages:[], calendar:[], library:[], countries:[], italy:{}, cities:[], unis:[], guide:{}, dsu:{agencies:[]}, living:{}, news:[], reviews:[], foundation:{}, tests:{}, noldan:{}, about:{}, loaded:false };
   var firstPaint = true;
   function load(name, fallback){
     return fetch("content/" + name + ".json", {cache:"no-cache"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ return fallback; });
   }
-  Promise.all([load("site",{}), load("stages",[]), load("calendar",[]), load("library",[]), load("countries",[]), load("italy",{}), load("cities",[]), load("universities",[]), load("guide",{}), load("dsu",{agencies:[]}), load("living",{}), load("news",[]), load("reviews",[]), load("foundation",{}), load("tests",{})]).then(function(r){
+  Promise.all([load("site",{}), load("stages",[]), load("calendar",[]), load("library",[]), load("countries",[]), load("italy",{}), load("cities",[]), load("universities",[]), load("guide",{}), load("dsu",{agencies:[]}), load("living",{}), load("news",[]), load("reviews",[]), load("foundation",{}), load("tests",{}), load("noldan",{}), load("about",{})]).then(function(r){
+    S.noldan = r[15] || {}; S.about = r[16] || {};
     S.foundation = r[13] || {}; S.tests = r[14] || {};
     S.reviews = arr(r[12]);
     S.living = r[10] || {}; S.news = arr(r[11]);
@@ -257,6 +258,8 @@
     if(h === "taqqoslash") return {view:"cmp"};
     if(h === "fikrlar") return {view:"reviews"};
     if(h === "foundation") return {view:"foundation"};
+    if(h === "noldan") return {view:"noldan"};
+    if(h === "biz-haqimizda") return {view:"about"};
     if(h === "testlar") return {view:"tests"};
     if(h === "hujjatlarim") return {view:"docs"};
     if(h === "stipendiya") return {view:"dsu"};
@@ -290,7 +293,7 @@
     HZ = el("div", "herozone"); root.appendChild(HZ);
     var main = el("main", "wrap" + (wide ? "" : " narrow"));
     CRUMBS = crumbsFor(r);
-    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView,
+    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView,
       item:function(m){ itemView(m, r.i); }, city:function(m){ cityView(m, r.c); }, uni:function(m){ uniView(m, r.u, r.tab); }, stage:function(m){ stageView(m, r.st); }
     }[r.view] || homeView)(main, r);
     if(CRUMBS){ main.insertBefore(CRUMBS, main.firstChild); CRUMBS = null; }
@@ -337,7 +340,7 @@
   function section(r){
     if(r.view === "home") return "home";
     if(r.view === "guide" || r.view === "dsu") return r.view;
-    if(r.view === "foundation" || r.view === "tests") return "guide";
+    if(r.view === "foundation" || r.view === "tests" || r.view === "noldan") return "guide";
     if(r.view === "docs") return "plan";
     if(r.view === "calc") return "dsu";
     if(r.view === "plan") return "plan";
@@ -381,6 +384,8 @@
     else if(r.view === "progs"){ c.push(["Universitetlar","universitetlar"]); c.push(["Dastur qidirish"]); }
     else if(r.view === "plan") c.push(["Mening rejam"]);
     else if(r.view === "reviews") c.push(["Fikrlar"]);
+    else if(r.view === "about") c.push(["Biz haqimizda"]);
+    else if(r.view === "noldan"){ c.push(["Qo'llanma","qollanma"]); c.push(["Noldan: to'liq yo'riqnoma"]); }
     else if(r.view === "foundation"){ c.push(["Qo'llanma","qollanma"]); c.push(["Foundation"]); }
     else if(r.view === "tests"){ c.push(["Qo'llanma","qollanma"]); c.push(["Testlar"]); }
     else if(r.view === "docs") c.push(["Hujjatlarim"]);
@@ -439,8 +444,8 @@
     var f = el("footer", "foot"), g = el("div", "foot-grid");
     var about = el("div"); about.appendChild(logo(16)); if(S.site.footer) about.appendChild(el("p", null, S.site.footer)); g.appendChild(about);
     function col(title, links){ var c = el("div"); c.appendChild(el("h2", "foot-h", title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
-    col("O'rganish", [["0 dan qo'llanma", "#qollanma"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Italiyada yashash", "#yashash"], ["Kurs", "#kurs"]]);
-    col("Vositalar", [["Hujjatlarim", "#hujjatlarim"], ["Menga mos universitet", "#mos-universitet"], ["Pul kalkulyatori", "#kalkulyator"], ["Kalendar", "#kalendar"], ["Yangiliklar", "#yangiliklar"], ["Fikr va takliflar", "#fikrlar"], ["Telegram: " + tgName(), tgUrl()]]);
+    col("O'rganish", [["0 dan qo'llanma", "#qollanma"], ["Noldan: to'liq yo'riqnoma (PDF)", "#noldan"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Italiyada yashash", "#yashash"], ["Kurs", "#kurs"]]);
+    col("Vositalar", [["Hujjatlarim", "#hujjatlarim"], ["Menga mos universitet", "#mos-universitet"], ["Pul kalkulyatori", "#kalkulyator"], ["Kalendar", "#kalendar"], ["Yangiliklar", "#yangiliklar"], ["Fikr va takliflar", "#fikrlar"], ["Biz haqimizda", "#biz-haqimizda"], ["Telegram: " + tgName(), tgUrl()]]);
     f.appendChild(g);
     var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uprep." + (S.site.updated ? " Ma'lumotlar oxirgi marta " + S.site.updated + " da yangilandi." : "")));
     var tg = el("a", null, tgName()); tg.href = tgUrl(); tg.target = "_blank"; tg.rel = "noopener"; p.appendChild(tg);
@@ -522,7 +527,7 @@
     if(arr(G.overview).length){
       var ov = el("div", "ov-grid");
       arr(G.overview).forEach(function(o, i){ var d = el("a", "ov link" + (i === 3 ? " alt" : "")); d.href = i === 3 ? "#stipendiya" : "#qollanma"; var ii = el("span", "ic"); ii.appendChild(ic(o.icon || "info")); d.appendChild(ii); d.appendChild(el("b", null, o.title)); d.appendChild(el("p", null, o.text)); ov.appendChild(d); });
-      main.appendChild(sec(secHead("Italiyada o'qish 3 qadamda", "To'liq qo'llanma", "qollanma", null, "0 dan boshlash"), ov));
+      main.appendChild(sec(secHead("Italiyada o'qish 3 qadamda", "To'liq qo'llanma", "qollanma", null, "0 dan boshlash"), ov, rowBtn("book", "Italiyada o'qish noldan: to'liq yo'riqnoma", "10 bob, sodda tilda · PDF yuklab olish mumkin", "g", "#noldan")));
     }
 
     /* 3. three tools */
@@ -672,6 +677,7 @@
       var a = el("a", null, x[1]); a.href = "#qollanma"; a.onclick = function(e){ e.preventDefault(); var t = document.getElementById(x[0]); if(t) t.scrollIntoView({behavior: REDUCED ? "auto" : "smooth"}); }; toc.appendChild(a);
     });
     main.appendChild(toc);
+    main.appendChild(rowBtn("book", "To'liq yo'riqnoma: Italiyada o'qish noldan", "10 bob, batafsil va sodda tilda. PDF qilib yuklab olsa ham bo'ladi", "g", "#noldan"));
 
     var ov = el("div", "ov-grid");
     arr(G.overview).forEach(function(o, i){ var d = el("div", "ov" + (i === 3 ? " alt" : "")); var ii = el("span", "ic"); ii.appendChild(ic(o.icon || "info")); d.appendChild(ii); d.appendChild(el("b", null, o.title)); d.appendChild(el("p", null, o.text)); ov.appendChild(d); });
@@ -1195,6 +1201,115 @@
     var L = [];
     S.unis.forEach(function(u){ arr(u.deadlines).forEach(function(d){ var dd = deadline(d.date); if(dd && daysLeft(dd) >= 0) L.push({u:u, d:dd, x:d}); }); });
     var seen = {}; return L.sort(function(a, b){ return a.d - b.d; }).filter(function(x){ if(seen[x.u.id]) return false; seen[x.u.id] = 1; return true; }).slice(0, n || 5);
+  }
+
+  /* ================= NOLDAN: long-form guide (also exported as PDF) ================= */
+  var NOLDAN_PDF = "media/uprep-italiyada-oqish-noldan.pdf";
+  function paras(t, cls){ var f = document.createDocumentFragment(); str(t).split(/\n\s*\n/).forEach(function(p){ if(p.trim()) f.appendChild(el("p", cls || "prose", p.trim())); }); return f; }
+  function linkOut(a, u){ a.href = u; if(/^https:/.test(u)){ a.target = "_blank"; a.rel = "noopener"; } return a; }
+  function noldanView(main){
+    var N = S.noldan || {}, CH = arr(N.chapters);
+    var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
+    H.appendChild(kicker("book", "Bepul · " + CH.length + " bob · taxminan 25 daqiqa"));
+    H.appendChild(heroTitle(N.title || "Italiyada o'qish noldan"));
+    if(N.subtitle) H.appendChild(el("p", "lead", N.subtitle));
+    var act = el("div", "hero-actions");
+    act.appendChild(btn("gold", "down", "PDF yuklab olish", NOLDAN_PDF));
+    act.firstChild.setAttribute("download", "Uprep - Italiyada o'qish noldan.pdf");
+    act.appendChild(shareBtn(N.title || "Italiyada o'qish noldan", "glass"));
+    H.appendChild(act);
+
+    var art = el("article", "nd");
+    /* print-only cover */
+    var cov = el("header", "nd-cover"); var cl0 = logo(30); cl0.innerHTML = cl0.innerHTML.replace(/id="mk"/, 'id="mk-cov"').replace(/url\(#mk\)/, "url(#mk-cov)"); cov.appendChild(cl0); cov.appendChild(el("span", "nd-cover-tag", "Bepul yo'riqnoma · o'zbek tilida")); cov.appendChild(el("h1", null, N.title || "Italiyada o'qish noldan")); if(N.subtitle) cov.appendChild(el("p", null, N.subtitle));
+    cov.appendChild(el("small", null, "uprep · " + tgName() + (N.updated ? " · " + N.updated + " holatiga" : ""))); art.appendChild(cov);
+
+    if(N.letter){ var lt = el("section", "nd-letter"); lt.appendChild(paras(N.letter)); lt.appendChild(el("p", "sig", "Uprep jamoasi")); art.appendChild(lt); }
+
+    if(arr(N.summary).length){
+      var sm = el("ol", "nd-sum");
+      arr(N.summary).forEach(function(x){ var li = el("li"); li.appendChild(el("span", "n", x.n)); var d = el("div"); d.appendChild(el("b", null, x.t)); d.appendChild(el("small", null, x.d)); li.appendChild(d); sm.appendChild(li); });
+      var ss = el("section", "nd-block"); ss.appendChild(el("span", "eyebrow", "Bir qarashda")); ss.appendChild(el("h2", null, "Butun yo'l 6 qadamda")); ss.appendChild(sm); art.appendChild(ss);
+    }
+
+    var toc = el("nav", "nd-toc"); toc.setAttribute("aria-label", "Boblar"); toc.appendChild(el("b", null, "Mundarija"));
+    var tol = el("ol");
+    CH.forEach(function(c){ var li = el("li"), a = el("a", null, c.title); a.href = "#noldan"; a.onclick = function(e){ e.preventDefault(); var t = document.getElementById("nd-" + c.id); if(t) t.scrollIntoView({behavior: REDUCED ? "auto" : "smooth"}); }; li.appendChild(a); tol.appendChild(li); });
+    toc.appendChild(tol); art.appendChild(toc);
+
+    CH.forEach(function(c){
+      var s = el("section", "nd-ch"); s.id = "nd-" + c.id;
+      var hd = el("div", "nd-head"); hd.appendChild(el("span", "eyebrow", c.kicker)); hd.appendChild(el("h2", null, c.title));
+      if(c.when){ var w = el("p", "nd-when"); w.appendChild(ic("cal")); w.appendChild(el("span", null, c.when)); hd.appendChild(w); }
+      s.appendChild(hd);
+      s.appendChild(paras(c.body));
+      if(arr(c.steps).length){ s.appendChild(el("h3", null, "Nima qilasiz")); var ol = el("ol", "nd-steps"); arr(c.steps).forEach(function(t){ ol.appendChild(el("li", null, t)); }); s.appendChild(ol); }
+      arr(c.sections).forEach(function(x){ if(!arr(x.items).length) return; s.appendChild(el("h3", null, x.title)); var ul = el("ul", "ticks small"); arr(x.items).forEach(function(t){ var li = el("li"); li.appendChild(ic("check")); li.appendChild(el("span", null, t)); ul.appendChild(li); }); s.appendChild(ul); });
+      if(str(c.tip)) s.appendChild(callout({style:"tip", text:c.tip}));
+      if(str(c.warn)) s.appendChild(callout({style:"warn", text:c.warn}));
+      var ls = arr(c.links).filter(function(l){ return safeUrl(l.url); });
+      if(ls.length){ var lb = el("div", "nd-links no-print"); ls.forEach(function(l){ var a = linkOut(el("a", "nd-chip"), safeUrl(l.url)); a.appendChild(ic(/^https:/.test(l.url) ? "link" : "next")); a.appendChild(el("span", null, l.label)); lb.appendChild(a); }); s.appendChild(lb); }
+      art.appendChild(s);
+    });
+
+    if(arr(N.mistakes).length){ var mk = el("ul", "mist"); arr(N.mistakes).forEach(function(x){ var li = el("li"); li.appendChild(ic("stop")); li.appendChild(el("span", null, x)); mk.appendChild(li); });
+      var ms = el("section", "nd-ch"); ms.appendChild(el("span", "eyebrow", "Ehtiyot bo'ling")); ms.appendChild(el("h2", null, "Eng ko'p uchraydigan " + arr(N.mistakes).length + " ta xato")); ms.appendChild(mk); art.appendChild(ms); }
+
+    if(N.closing){ var cl = el("section", "nd-letter end"); cl.appendChild(el("h2", null, "Oxirgi so'z")); cl.appendChild(paras(N.closing));
+      var cta = el("p", "nd-cta"); cta.appendChild(document.createTextNode("Savollar va hujjat topshirishda yordam: ")); var ta = el("a", null, tgName()); ta.href = tgUrl(); ta.target = "_blank"; ta.rel = "noopener"; cta.appendChild(ta); cl.appendChild(cta); art.appendChild(cl); }
+
+    var srcs = arr(N.sources).filter(function(x){ return safeUrl(x.url); });
+    if(srcs.length){ var sr = el("section", "nd-src"); sr.appendChild(el("h2", null, "Rasmiy manbalar")); var ul2 = el("ul"); srcs.forEach(function(x){ var li = el("li"), a = linkOut(el("a", null, x.label), safeUrl(x.url)); li.appendChild(a); li.appendChild(el("small", "pr-url", " " + safeUrl(x.url))); ul2.appendChild(li); }); sr.appendChild(ul2);
+      sr.appendChild(el("p", "nd-disc", str(S.site.footer) || "Umumiy ma'lumot, kafolat emas.")); art.appendChild(sr); }
+    main.appendChild(art);
+
+    var bot = el("div", "nd-bottom no-print"); bot.appendChild(btn("gold", "down", "PDF yuklab olish", NOLDAN_PDF)); bot.firstChild.setAttribute("download", "Uprep - Italiyada o'qish noldan.pdf"); bot.appendChild(btn("line", "send", "Telegram'da savol berish", tgUrl())); main.appendChild(bot);
+    footer(main);
+  }
+
+  /* ================= ABOUT ================= */
+  function aboutView(main){
+    var A2 = S.about || {};
+    var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
+    H.appendChild(kicker("users", "Uprep"));
+    H.appendChild(heroTitle(A2.title || "Biz haqimizda"));
+    if(A2.lead) H.appendChild(el("p", "lead", A2.lead));
+
+    if(str(A2.name) || str(A2.bio)){
+      var pc = el("section", "about-card");
+      var ph = safeUrl(A2.photo), fig = el("div", "about-ph");
+      if(ph){ var im = el("img"); im.src = ph; im.alt = str(A2.name); im.loading = "lazy"; fig.appendChild(im); } else fig.innerHTML = markSVG();
+      pc.appendChild(fig);
+      var tx = el("div", "about-tx");
+      if(A2.name) tx.appendChild(el("h2", null, A2.name));
+      if(A2.role) tx.appendChild(el("p", "about-role", A2.role));
+      tx.appendChild(paras(A2.bio));
+      var lk = el("div", "about-links");
+      var tg = el("a", "btn gold"); tg.href = tgUrl(); tg.target = "_blank"; tg.rel = "noopener"; tg.appendChild(el("span", null, tgName())); tg.appendChild(ic("send")); lk.appendChild(tg);
+      arr(A2.links).forEach(function(l){ var u = safeUrl(l.url); if(!u || !str(l.label)) return; lk.appendChild(btn("line", "link", l.label, u)); });
+      tx.appendChild(lk); pc.appendChild(tx); main.appendChild(pc);
+    }
+
+    var stats = arr(A2.stats).filter(function(x){ return x && str(x.big); });
+    if(stats.length){ var sg = el("div", "about-stats"); stats.forEach(function(x){ var d = el("div"); d.appendChild(el("b", null, x.big)); d.appendChild(el("small", null, x.small)); sg.appendChild(d); }); main.appendChild(sg); }
+
+    var story = arr(A2.story).filter(function(x){ return x && str(x.title); });
+    if(story.length){ var tl = el("ol", "timeline"); story.forEach(function(t, i){ var li = el("li"); li.appendChild(el("span", "tl-n", String(i + 1))); var b = el("div", "tl-b"); if(t.year) b.appendChild(el("span", "tl-when", t.year)); b.appendChild(el("h3", null, t.title)); if(t.text) b.appendChild(el("p", null, t.text)); li.appendChild(b); tl.appendChild(li); });
+      main.appendChild(sec(secHead("Bizning yo'limiz", null, null, null, "Tarix"), tl)); }
+
+    var vb = str(A2.video) ? videoBlock({url:A2.video, title:""}) : null; if(vb) main.appendChild(sec(secHead("Video", null, null, null, "Tanishing"), vb));
+
+    var gal = arr(A2.gallery).filter(function(g){ return safeUrl(g.image); });
+    if(gal.length){ var gg = el("div", "about-gal"); gal.forEach(function(g){ var f = el("figure"); var im2 = el("img"); im2.src = safeUrl(g.image); im2.alt = str(g.caption); im2.loading = "lazy"; f.appendChild(im2); if(g.caption) f.appendChild(el("figcaption", null, g.caption)); gg.appendChild(f); }); main.appendChild(sec(secHead("Suratlar", null, null, null, "Galereya"), gg)); }
+
+    if(arr(A2.services).length){ var ul = el("ul", "ticks"); arr(A2.services).forEach(function(t){ var li = el("li"); li.appendChild(ic("check")); li.appendChild(el("span", null, t)); ul.appendChild(li); }); main.appendChild(sec(secHead("Nimada yordam beramiz", null, null, null, "Xizmatlar"), ul)); }
+
+    if(arr(A2.principles).length){ var pg = el("div", "lv-grid"); arr(A2.principles).forEach(function(x){ var d = el("div", "lvc"); d.appendChild(el("b", null, x.t)); d.appendChild(el("p", null, x.d)); pg.appendChild(d); }); main.appendChild(sec(secHead("Qanday ishlaymiz", null, null, null, "Tamoyillar"), pg)); }
+
+    var R = realReviews(); if(R.length){ var rg = el("div", "rev-grid"); R.slice(0, 3).forEach(function(r){ rg.appendChild(reviewCard(r)); }); main.appendChild(sec(secHead("Talabalar fikrlari", "Hammasi", "fikrlar", null, "Fikrlar"), rg)); }
+    main.appendChild(rowBtn("book", "Italiyada o'qish noldan", "To'liq bepul yo'riqnoma va PDF", "g", "#noldan"));
+    main.appendChild(rowBtn("send", "Bizga yozing", tgName() + ": savol va hujjat topshirishda yordam", "", tgUrl()));
+    footer(main);
   }
 
   /* ================= FOUNDATION ================= */

@@ -514,6 +514,112 @@ content:
       - { name: text, label: Fikr, type: text, required: true }
       - { name: consent, label: "Talaba e'lon qilishga yozma rozilik berdi", type: boolean }
 
+  - name: about
+    label: "Biz haqimizda"
+    type: file
+    path: content/about.json
+    format: json
+    fields:
+      - { name: title, label: Sarlavha, type: string }
+      - { name: lead, label: "Qisqa kirish matni (sarlavha ostida)", type: text }
+      - { name: name, label: "Ismingiz (bo'sh bo'lsa, shaxsiy karta chiqmaydi)", type: string }
+      - { name: role, label: "Kimsiz (masalan: Uprep asoschisi, Sapienza talabasi)", type: string }
+      - { name: photo, label: "Rasmingiz (kvadrat rasm yaxshi chiqadi)", type: image }
+      - { name: bio, label: "O'zingiz haqingizda (bo'sh qator = yangi xatboshi)", type: text }
+      - name: story
+        label: "Bizning yo'limiz (yillar bo'yicha)"
+        type: object
+        list: true
+        fields:
+          - { name: year, label: "Yil (masalan 2024)", type: string }
+          - { name: title, label: Sarlavha, type: string }
+          - { name: text, label: Matn, type: text }
+      - name: stats
+        label: "Raqamlar (faqat haqiqiy: masalan 35 / talaba Italiyaga ketdi)"
+        type: object
+        list: true
+        fields:
+          - { name: big, label: Raqam, type: string }
+          - { name: small, label: Izoh, type: string }
+      - { name: video, label: "Tanishuv videosi (YouTube havolasi, ixtiyoriy)", type: string }
+      - name: gallery
+        label: "Suratlar galereyasi"
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Rasm, type: image }
+          - { name: caption, label: "Izoh (ixtiyoriy)", type: string }
+      - { name: services, label: "Nimada yordam beramiz (ro'yxat)", type: string, list: true }
+      - name: principles
+        label: "Qanday ishlaymiz (tamoyillar)"
+        type: object
+        list: true
+        fields:
+          - { name: t, label: Sarlavha, type: string }
+          - { name: d, label: Matn, type: text }
+      - name: links
+        label: "Boshqa havolalar (Telegram kanal, Instagram, YouTube...)"
+        type: object
+        list: true
+        fields:
+          - { name: label, label: "Tugma matni", type: string }
+          - { name: url, label: "Havola (https://...)", type: string }
+
+  - name: noldan
+    label: "Noldan: to'liq yo'riqnoma"
+    type: file
+    path: content/noldan.json
+    format: json
+    fields:
+      - { name: title, label: Sarlavha, type: string }
+      - { name: subtitle, label: "Kichik sarlavha", type: string }
+      - { name: updated, label: "Ma'lumotlar sanasi (masalan 26.11.2026)", type: string }
+      - { name: letter, label: "Kirish maktubi (bo'sh qator = yangi xatboshi)", type: text }
+      - name: summary
+        label: "Bir qarashda (qisqa qadamlar)"
+        type: object
+        list: true
+        fields:
+          - { name: n, label: Raqam, type: string }
+          - { name: t, label: Sarlavha, type: string }
+          - { name: d, label: Izoh, type: string }
+      - name: chapters
+        label: Boblar
+        type: object
+        list: true
+        fields:
+          - { name: id, label: "Qisqa kod (lotin harf, bo'sh joysiz)", type: string, required: true }
+          - { name: kicker, label: "Ustki yozuv (masalan 3-bob)", type: string }
+          - { name: title, label: Sarlavha, type: string, required: true }
+          - { name: when, label: Qachon, type: string }
+          - { name: body, label: "Matn (bo'sh qator = yangi xatboshi)", type: text }
+          - { name: steps, label: "Nima qilasiz (qadamlar)", type: string, list: true }
+          - name: sections
+            label: "Qo'shimcha ro'yxatlar"
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Sarlavha, type: string }
+              - { name: items, label: Qatorlar, type: string, list: true }
+          - { name: tip, label: "Uprep maslahati", type: text }
+          - { name: warn, label: "Diqqat (ogohlantirish)", type: text }
+          - name: links
+            label: Havolalar
+            type: object
+            list: true
+            fields:
+              - { name: label, label: "Tugma matni", type: string }
+              - { name: url, label: "Havola (https://... yoki #sahifa)", type: string }
+      - { name: mistakes, label: "Ko'p uchraydigan xatolar", type: string, list: true }
+      - { name: closing, label: "Oxirgi so'z", type: text }
+      - name: sources
+        label: Manbalar
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Nomi, type: string }
+          - { name: url, label: Havola, type: string }
+
   - name: foundation
     label: Foundation
     type: file

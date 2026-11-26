@@ -1,0 +1,28 @@
+{
+  "title": "Biz haqimizda",
+  "lead": "Uprep o'zbek yoshlariga Italiyada o'qishga kirishda yordam beradi: universitet tanlashdan Italiyadagi birinchi kungacha, o'zbek tilida va faqat rasmiy manbalar asosida.",
+  "name": "",
+  "role": "",
+  "photo": "",
+  "bio": "",
+  "story": [],
+  "stats": [],
+  "services": [
+    "Daraja, yo'nalish va universitet tanlashda maslahat",
+    "Universitetga ariza va hujjatlarni tayyorlash",
+    "DoV yoki CIMEA orqali diplomni tan oldirish",
+    "Universitaly'da pre-enrollment",
+    "Talaba vizasi uchun hujjatlar",
+    "Viloyat stipendiyasi (DSU) va oila hujjatlari",
+    "Italiyaga kelgandan keyingi ishlar: permesso, codice fiscale, full enrollment"
+  ],
+  "principles": [
+    { "t": "Faqat rasmiy manbalar", "d": "Har bir sana, summa va talab universitet, elchixona yoki vazirlik sahifasidan olinadi va manbasi ko'rsatiladi." },
+    { "t": "Halol gapiramiz", "d": "Qabul va vizaga kafolat bermaymiz: qarorni universitet va elchixona chiqaradi. Biz har bir qadamni to'g'ri va o'z vaqtida qilishingizga yordam beramiz." },
+    { "t": "O'zbek tilida, sodda", "d": "Murakkab atamalarni oddiy tilda tushuntiramiz, telefonda o'qishga qulay qilib." },
+    { "t": "Oxirigacha yoningizda", "d": "Ariza bilan tugamaydi: viza, stipendiya va Italiyadagi birinchi haftalarda ham savollaringizga javob beramiz." }
+  ],
+  "gallery": [],
+  "video": "",
+  "links": []
+}

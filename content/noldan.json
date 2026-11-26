@@ -1,0 +1,360 @@
+{
+  "title": "Italiyada o'qish noldan",
+  "subtitle": "Birinchi savoldan Italiyadagi birinchi kuningizgacha: to'liq yo'riqnoma",
+  "updated": "26.11.2026",
+  "letter": "Salom!\n\nAgar shu sahifani ochgan bo'lsangiz, demak boshingizda bitta savol aylanyapti: «Men ham Italiyada o'qiy olamanmi?». Javob ko'pincha «ha». Lekin yo'l uzun, atamalar notanish (pre-acceptance, DoV, Universitaly, permesso...) va internetda bir-biriga zid gaplar ko'p. Shuning uchun ko'pchilik qayerdan boshlashni bilmay, eng muhim muddatlarni o'tkazib yuboradi.\n\nBu yo'riqnoma aynan shuning uchun yozildi. Unda hech narsa bilmaydigan odam uchun hamma narsa tartib bilan, oddiy tilda tushuntirilgan: nima qilasiz, qachon qilasiz, qaysi hujjat kerak va qayerda odamlar ko'p adashadi.\n\nShoshmang. Har bir bobni o'qing, o'zingizga kerakli joyni belgilang va bir vaqtda faqat bitta qadamni bajaring. Yo'l uzun ko'rinadi, lekin har bir qadam alohida olinganda oddiy.",
+  "summary": [
+    { "n": "1", "t": "Maqsadni aniqlaysiz", "d": "Daraja, yo'nalish, 3–5 ta universitet, til va testlar." },
+    { "n": "2", "t": "Universitetga ariza berasiz", "d": "Universitet «sizni olamiz» desa, pre-acceptance xati keladi." },
+    { "n": "3", "t": "Diplomni tan oldirasiz", "d": "Elchixonadan DoV yoki onlayn CIMEA sertifikati." },
+    { "n": "4", "t": "Universitaly'da pre-enrollment", "d": "Vazirlik portalida ariza; universitet tasdiqlaydi." },
+    { "n": "5", "t": "Talaba vizasini olasiz", "d": "Toshkentdagi Italiya elchixonasida D toifali viza." },
+    { "n": "6", "t": "Italiyada rasmiylashtirasiz", "d": "8 kun ichida permesso, keyin full enrollment." },
+    { "n": "★", "t": "Yonma-yon: stipendiya", "d": "Oila hujjatlari O'zbekistonda, ariza yozda." }
+  ],
+  "chapters": [
+    {
+      "id": "boshlash",
+      "kicker": "1-bob",
+      "title": "Avval o'zingizga 5 ta savol bering",
+      "when": "Ariza ochilishidan 2–3 oy oldin (odatda yoz – kuz)",
+      "body": "Italiyaga ketish qarori hujjat yig'ishdan emas, aniq maqsaddan boshlanadi. Chunki keyingi hamma narsa (qaysi test, qaysi hujjat, qaysi muddat, qancha pul) shu maqsadga bog'liq.\n\nQuyidagi savollarga qog'ozga, halol javob yozing. Javob bilmagan joyingiz bo'lsa, xavotir olmang: shu bobning qolgan qismi aynan shular haqida.",
+      "steps": [
+        "Qaysi darajaga topshiraman? Foundation, bakalavr (3 yil) yoki magistratura (2 yil).",
+        "Qaysi yo'nalish? Iqtisod, muhandislik, IT, tibbiyot, xalqaro munosabatlar...",
+        "Qaysi tilda o'qiyman? Ingliz tilidagi dasturlar ko'p: ularda o'qisangiz, italyan tili shart emas.",
+        "Qaysi shahar? Katta shahar qiziqarli, lekin uy qimmat. Kichik universitet shahri arzonroq va tinchroq.",
+        "Pulni kim ko'rsatadi? Viza uchun yiliga 10 179,85 € mablag' kerak: sizda yoki oilangizda."
+      ],
+      "sections": [
+        {
+          "title": "Sizning maktab yoki diplomingiz nimaga yetadi",
+          "items": [
+            "11 yillik maktab attestati: Italiyada bakalavrga odatda 12 yillik ta'lim kerak. Ikki yo'l bor: Foundation yili (Sapienza, Pavia, Padova, Messina va boshqalarda) yoki O'zbekistondagi OTMda 1 yil o'qib, keyin topshirish.",
+            "12 yillik ta'lim (litsey, kollej) yoki OTMning 1-kursi: bakalavrga to'g'ridan-to'g'ri topshirasiz.",
+            "Bakalavr diplomi: magistraturaga topshirasiz. Bakalavrda o'qigan fanlaringiz tanlagan magistraturaga mos bo'lishi kerak.",
+            "Tibbiyot: qabul alohida tartibda, joylar cheklangan va qoidalar so'nggi yillarda o'zgardi. Har yili universitetning bandosini tekshiring."
+          ]
+        },
+        {
+          "title": "Til va testlar",
+          "items": [
+            "Ingliz tili: ko'p dasturlar B2 so'raydi (IELTS taxminan 5.5–6.5, dasturga qarab). Sertifikatni ariza ochilishidan oldin oling.",
+            "CEnT-S: ko'p bakalavr dasturlari so'raydigan test. Uydan topshirsa bo'ladi, oxirgi e'lon qilingan narx 55 €.",
+            "TOLC: italyan tilidagi dasturlar uchun, 35 € (2026). Ingliz tilidagi TOLC turlari CEnT-S bilan almashtirildi.",
+            "SAT, GMAT yoki GRE: ba'zi dasturlar so'raydi (masalan xususiy universitetlar).",
+            "Qaysi test kerakligini aniq bilish uchun tanlagan universitetingizning qabul sahifasini o'qing. Saytimizdagi har bir universitet sahifasida «Qabul va talablar» bo'limi bor."
+          ]
+        }
+      ],
+      "tip": "Bitta universitetga emas, 3–5 tasiga topshiring. Ularning muddatlari turlicha: biri kechiksa yoki rad etsa, boshqasi bor.",
+      "warn": "",
+      "links": [
+        { "label": "Menga mos universitetni topish", "url": "#mos-universitet" },
+        { "label": "Testlar sahifasi", "url": "#testlar" },
+        { "label": "Foundation (11 yillik attestat bilan)", "url": "#foundation" }
+      ]
+    },
+    {
+      "id": "ariza",
+      "kicker": "2-bob",
+      "title": "Universitetga ariza va pre-acceptance",
+      "when": "Odatda noyabr – aprel, har universitetda boshqacha",
+      "body": "Pre-acceptance universitetning «sizni olishga tayyormiz» degan javobi. Usiz keyingi qadamlarning hech biri boshlanmaydi: na Universitaly, na viza.\n\nHar bir universitetning o'z onlayn portali va o'z muddati bor. Siz portalda ro'yxatdan o'tasiz, profilni to'ldirasiz, hujjatlarni yuklaysiz va (agar bor bo'lsa) ariza to'lovini to'laysiz. Keyin komissiya ko'rib chiqadi. Javob bir necha haftadan bir necha oygacha kelishi mumkin.",
+      "steps": [
+        "Universitet sahifasida tanlagan dasturingizni toping va talablarini o'qing: muddat, to'lov, kerakli test.",
+        "Ariza portalida ro'yxatdan o'ting. Hamma joyda bitta email ishlating: keyin universitet, Universitaly va elchixona xatlari shu manzilga keladi.",
+        "Profilni to'ldiring va hujjatlarni aniq, rangli PDF qilib yuklang.",
+        "Ariza to'lovini to'lang: to'lanmagan ariza ko'rib chiqilmaydi. Davlat universitetlarida odatda 0–70 €, xususiylarda 100–150 €.",
+        "Javobni kuting va emailni kuzatib boring. Pre-acceptance kelishi bilan 3- va 4-boblarga o'ting."
+      ],
+      "sections": [
+        {
+          "title": "Odatda so'raladigan hujjatlar",
+          "items": [
+            "Xalqaro pasport",
+            "Attestat yoki diplom",
+            "Transcript (baholar varaqasi)",
+            "Til sertifikati (odatda B2)",
+            "Dastur so'rasa: CV, motivatsion xat, test natijasi (SAT, CEnT-S, TOLC, GMAT)",
+            "Ixtiyoriy: tavsiyanoma"
+          ]
+        },
+        {
+          "title": "Motivatsion xatni qanday yozish kerak",
+          "items": [
+            "Shablondan ko'chirmang. Komissiya yuzlab bir xil xatni o'qiydi, sizniki esa sizning hikoyangiz bo'lishi kerak.",
+            "Uch savolga javob bering: nega aynan shu yo'nalish, nega aynan shu universitet, o'qishdan keyin nima qilmoqchisiz.",
+            "Aniq misol keltiring: loyiha, olimpiada, ish tajribasi, sizni shu sohaga olib kelgan voqea.",
+            "Qisqa yozing: odatda bir sahifa yetadi. Universitet so'z sonini belgilagan bo'lsa, unga rioya qiling.",
+            "Yuborishdan oldin kimgadir o'qitib ko'ring."
+          ]
+        }
+      ],
+      "tip": "Oxirgi kunni kutmang. Portallar oxirgi kunlarda sekinlashadi, ba'zi dasturlarda esa joylar erta tugaydi.",
+      "warn": "Skanlar xira yoki chala bo'lsa, ariza rad etilishi mumkin. Har bir sahifani to'liq, aniq va rangli skanerlang.",
+      "links": [
+        { "label": "Barcha universitetlar va ariza havolalari", "url": "#universitetlar" },
+        { "label": "Kalendar: yaqin muddatlar", "url": "#kalendar" }
+      ]
+    },
+    {
+      "id": "diplom",
+      "kicker": "3-bob",
+      "title": "Diplomni tan oldirish: DoV yoki CIMEA",
+      "when": "Pre-acceptance kelishi bilan darhol",
+      "body": "Italiya sizning attestat yoki diplomingiz o'z tizimida nimaga teng ekanini bilishi kerak. Buning ikki yo'li bor, qaysi biri kerakligini universitetingiz aytadi.\n\nDoV (Dichiarazione di Valore) Toshkentdagi Italiya elchixonasining konsullik bo'limida beriladi. CIMEA esa onlayn tashkilot: siz DiploMe platformasida o'zingiz ariza berasiz va sertifikat elektron keladi.\n\nIkkala holatda ham avval O'zbekistonda hujjatlaringizga apostil qo'ydirasiz va italyan tiliga tarjima qildirasiz. O'zbekiston Gaaga konvensiyasi a'zosi, shuning uchun apostil yetarli.",
+      "steps": [
+        "Attestat yoki diplom va transcript'ga apostil qo'ydiring.",
+        "Elchixona ro'yxatidagi ishonchli tarjimonda italyan tiliga tarjima qildiring. Ro'yxatda yo'q tarjimonning tarjimasi qabul qilinmasligi mumkin.",
+        "DoV uchun: elchixona saytidagi formani to'ldiring va hujjatlarni konsullik bo'limiga topshiring. Ishonchnoma bilan boshqa odam ham topshira oladi.",
+        "CIMEA uchun: cimea-diplome.it saytida o'zingiz ro'yxatdan o'ting (vositachi orqali qabul qilinmaydi), Service Finder'da diplomingizni tanlang, hujjatlarni yuklab to'lang.",
+        "Tayyor DoV yoki CIMEA sertifikatini universitetingizga va Universitaly'ga yuklang."
+      ],
+      "sections": [
+        {
+          "title": "Muddat va narx",
+          "items": [
+            "CIMEA: Comparability va Verification birga 300 € (ko'p davlatlar uchun), ba'zi holatlarda 150 €. Narxni tizim o'zi ko'rsatadi.",
+            "CIMEA standart muddati: 60 ish kuni, ya'ni taxminan 3 oy.",
+            "Tezkor xizmat: +100 €, Comparability 30 ish kunida. Uni faqat ariza paytida tanlash mumkin.",
+            "Apostil va tarjima narxi hujjatlar soni va tarjimonga bog'liq."
+          ]
+        }
+      ],
+      "tip": "Bu bosqichni hech qachon oxirga qoldirmang. CIMEA 3 oy oladi va usiz viza hujjatlari to'liq bo'lmaydi. Pre-acceptance kelgan kuniyoq boshlang.",
+      "warn": "Ba'zi universitetlar (masalan Messina'ning Early Bird bosqichi) DoV yoki CIMEA'ni ariza paytidayoq so'raydi. Universitetingiz shartini oldindan o'qing.",
+      "links": [
+        { "label": "CIMEA DiploMe xizmatlari", "url": "https://www.cimea-diplome.it/page-services" }
+      ]
+    },
+    {
+      "id": "universitaly",
+      "kicker": "4-bob",
+      "title": "Universitaly: pre-enrollment",
+      "when": "Universitet belgilagan muddatgacha (odatda bahor – yoz)",
+      "body": "Universitaly Italiya ta'lim vazirligining yagona portali. Bu yerda siz tanlagan dasturingizga pre-enrollment arizasini berasiz. Universitet arizani tekshirib tasdiqlaydi (validation), shundan keyin u elchixonaga o'tadi. Tasdiqlangan pre-enrollment'siz vizaga topshirib bo'lmaydi.\n\nMuddatni har bir universitet o'zi qo'yadi. Masalan 2026/27 o'quv yilida bu muddatlar 30-iyundan 15-sentyabrgacha bo'lgan, universitetga qarab.",
+      "steps": [
+        "universitaly.it saytida ro'yxatdan o'ting (universitet portalidagi email bilan).",
+        "Pre-enrollment formasini to'ldiring: shaxsiy ma'lumotlar, universitet va dastur, pasport va diplom skanlari.",
+        "Dastur nomini pre-acceptance xatidagidek aniq tanlang.",
+        "Universitet tasdiqlashini kuting. Tasdiqlangan arizaning PDF xulosasini yuklab, chop etib qo'ying: u viza hujjatlari ro'yxatida bor.",
+        "Elchixonadan vizaga topshirish haqida xat keladi. Shundan keyin 6-bobga o'ting."
+      ],
+      "sections": [],
+      "tip": "Erta topshiring. Universitetlar Universitaly'da o'z kvotasidan ko'pi bilan 20% ortiq arizani tasdiqlay oladi. Joy tugasa, kech kelganlar qoladi.",
+      "warn": "Universitet tasdig'ini kutmasdan vizaga yozilmang: tasdiqsiz ariza viza uchun yaroqsiz.",
+      "links": [
+        { "label": "Universitaly portali", "url": "https://www.universitaly.it/" }
+      ]
+    },
+    {
+      "id": "stipendiya",
+      "kicker": "5-bob",
+      "title": "Stipendiya (DSU): eng katta imkoniyat",
+      "when": "Ariza odatda iyun – sentyabr, viloyatga qarab",
+      "body": "Ko'pchilik bilmaydigan narsa: Italiyada oila daromadi past talabalarga viloyat idoralari stipendiya beradi. Bu xorijlik talabalarga ham tegishli. Stipendiya pul, ko'p shaharlarda ovqat va yotoqxona (ba'zi viloyatlarda ular stipendiya hisobidan to'lanadi) hamda o'qish to'lovidan ozodlikni o'z ichiga oladi.\n\n2026/27 o'quv yili uchun davlat belgilagan minimum oiladan uzoqda yashovchi (fuori sede) talaba uchun yiliga 7 171,11 €. Viloyatlar bundan ko'proq ham berishi mumkin.\n\nEng muhim nuqta: ariza yozda, siz hali O'zbekistondaligingizda beriladi. Oila hujjatlarini esa faqat O'zbekistonda tayyorlash mumkin. Shuning uchun bu ishni jo'nab ketishdan oldin boshlaysiz.",
+      "steps": [
+        "Universitetingiz qaysi viloyatda ekanini va u yerdagi stipendiya idorasini toping (Lazio'da DiSCo, Toskanada DSU Toscana va hokazo).",
+        "Idoraning bandosini (shartlar hujjati) o'qing: muddat, summa, kerakli hujjatlar.",
+        "O'zbekistonda oila hujjatlarini oling, apostil qo'ydiring va italyan tiliga tarjima qildiring.",
+        "Idoraning portalida onlayn ariza bering (odatda yozda).",
+        "Italiyaga kelgach, CAF markazida ISEE parificato hisoblatasiz va idora so'ragan hujjatlarni (permesso, IBAN) portalga yuklaysiz."
+      ],
+      "sections": [
+        {
+          "title": "O'zbekistondan olinadigan oila hujjatlari (Lazio misolida)",
+          "items": [
+            "Oila tarkibi va propiska: har bir a'zoning ismi, tug'ilgan sanasi va doimiy manzili.",
+            "Har bir oila a'zosining yillik daromadi. Ishlamaydigan a'zo uchun buni aniq yozgan hujjat.",
+            "Uy-joy: oila a'zolari nomida mulk bor-yo'qligi va maydoni (kadastr ma'lumotnomasi).",
+            "Ijara shartnomasi: faqat oila ijarada yashasa.",
+            "Hammasi apostil bilan va italyan tiliga tarjima qilingan bo'lishi kerak."
+          ]
+        },
+        {
+          "title": "Chegaralar (2026/27)",
+          "items": [
+            "ISEE chegarasi: 28 339,88 €, ISPE chegarasi: 61 608,48 €. Bittasidan oshsa, stipendiya berilmaydi.",
+            "Stipendiya g'oliblari o'qish to'lovidan ozod qilinadi.",
+            "Ikkinchi yildan boshlab stipendiya olish uchun yetarli kredit (CFU) to'plash kerak."
+          ]
+        }
+      ],
+      "tip": "Universitet tanlayotganda stipendiyani ham hisobga oling: har viloyatda summa, ovqat va yotoqxona shartlari boshqacha.",
+      "warn": "O'zingiz yozgan ariza, affidavit yoki qasamyodli bayonot qabul qilinmaydi. Oilaning umumiy daromadi nol bo'la olmaydi. Stipendiyaga ariza berganingiz viza uchun pul isboti o'rnida hisoblanmaydi.",
+      "links": [
+        { "label": "Barcha viloyatlar stipendiyalari", "url": "#stipendiya" },
+        { "label": "Pul kalkulyatori", "url": "#kalkulyator" }
+      ]
+    },
+    {
+      "id": "viza",
+      "kicker": "6-bob",
+      "title": "Talaba vizasi (D toifa)",
+      "when": "Safardan 6 oydan 15 kungacha oldin. 2027/28 uchun eng kechi 31.10.2027",
+      "body": "Talaba vizasi Toshkentdagi Italiya elchixonasining konsullik bo'limiga topshiriladi. Bu D toifadagi milliy viza: 91 kundan 365 kungacha, ko'p martalik. Ko'rib chiqish 90 kungacha davom etadi va shu vaqt davomida pasportingiz elchixonada qoladi.\n\nVizaning eng ko'p savol tug'diradigan qismi pul. Yiliga 10 179,85 € mablag'ingiz borligini ko'rsatishingiz kerak (2026/27 va 2027/28 talabi). Bu pul sarflanmaydi: u sizning yoki oilangizning hisobida borligi ko'rsatiladi.",
+      "steps": [
+        "Universitaly pre-enrollment tasdiqlanganini kuting.",
+        "Hujjatlarni elchixona ro'yxati bo'yicha yig'ing (pastda).",
+        "Bank ko'chirmasini eng oxirida oling: topshirish kunida 10 ish kunidan eski bo'lmasin.",
+        "Konsullik bo'limiga topshiring: safardan 6 oydan oldin emas va 15 kundan kech emas.",
+        "Javobni kuting. Pasport qaror chiqqunicha qaytarilmaydi, shu vaqtga boshqa safar rejalashtirmang."
+      ],
+      "sections": [
+        {
+          "title": "Hujjatlar",
+          "items": [
+            "Imzolangan viza anketasi va 1 ta rasm (oq fon, 6 oydan eski emas)",
+            "Pasport: 10 yil ichida berilgan, viza tugagach yana 90 kun amal qiladi, kamida 2 ta bo'sh sahifa. Pasport va ID nusxasi",
+            "Yashash joyi ma'lumotnomasi (my.gov.uz)",
+            "Universitaly pre-enrollment nusxasi va universitetning qabul xati",
+            "Kamida birinchi to'lov kvitansiyasi",
+            "Til sertifikati, diplom va transcript (asli, nusxasi va italyancha tarjimasi), DoV yoki CIMEA",
+            "Pul: so'nggi 3 oylik bank ko'chirmasi (bank blankasida, ho'l muhr bilan), xalqaro karta ko'chirmasi, ish joyi va maosh ma'lumotnomasi, homiy bo'lsa uning e'tirozsizlik xati",
+            "Sug'urta: kamida 30 000 €, butun Shengen hududi va butun muddat uchun",
+            "Birinchi oy uchun turar joy: bron yoki Italiyadagi odamning taklifnomasi",
+            "Borib-kelish chiptasi broni"
+          ]
+        },
+        {
+          "title": "Pul haqida halol gap",
+          "items": [
+            "Pul qonuniy va kuzatiladigan manbadan bo'lishi kerak: o'zingizning yoki oilangizning (4-darajagacha qarindosh) hisobi.",
+            "Elchixona hisobdagi harakatni va summa oila daromadiga mos kelishini tekshiradi. Oxirgi kunlarda birdan tushgan katta summa savol tug'diradi.",
+            "Shuning uchun pulni oldindan, tushuntirsa bo'ladigan tarzda tayyorlang."
+          ]
+        }
+      ],
+      "tip": "Hammasidan oldin pasport muddatini tekshiring. Viza tugagach u yana 90 kun amal qilishi kerak. Pasport almashtirish vaqt oladi.",
+      "warn": "Turistik viza bilan universitetga yozilib bo'lmaydi, faqat D toifali talaba vizasi bilan. Universitet elchixona muddatidan oldinroq muddat qo'yishi ham mumkin.",
+      "links": [
+        { "label": "Elchixona: talaba vizasi hujjatlari (PDF)", "url": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Study-enrolment-and-foundation-years-ENGLISH-rev.pdf" }
+      ]
+    },
+    {
+      "id": "yolga",
+      "kicker": "7-bob",
+      "title": "Yo'lga tayyorgarlik",
+      "when": "Viza chiqqandan keyin, uchishdan oldin",
+      "body": "Viza qo'lingizda. Tabriklaymiz, eng qiyin qismlardan biri ortda qoldi! Endi xotirjam tayyorlaning: Italiyaga kelgandan keyin birinchi haftalar byurokratiya bilan o'tadi va kerakli qog'oz yoningizda bo'lsa, hammasi ancha oson kechadi.",
+      "steps": [
+        "Barcha asl hujjatlar va ularning tarjimalarini o'zingiz bilan oling: diplom, transcript, DoV yoki CIMEA, pasport, sug'urta.",
+        "Har biridan 2–3 tadan nusxa va telefoningizda skanlarini saqlang.",
+        "Birinchi haftalar uchun vaqtincha joy bron qiling (yotoqxona, hostel). Uzoq muddatli uyni joyida ko'rib, keyin shartnoma tuzing.",
+        "Birinchi 3–4 oy uchun o'z pulingiz bo'lsin: stipendiya puli odatda kech va bo'lib-bo'lib keladi.",
+        "Universitet va stipendiya idorasining muddatlarini kalendaringizga yozib qo'ying."
+      ],
+      "sections": [],
+      "tip": "Shu universitetda o'qiyotgan o'zbek talabalar bilan oldindan tanishing. Ular shahar, uy va birinchi kunlar haqida ko'p yordam beradi.",
+      "warn": "Uyni ko'rmasdan va shartnoma imzolamasdan pul o'tkazmang. «Men chet eldaman, kalitni pochta orqali yuboraman» degan e'lon klassik firibgarlik.",
+      "links": [
+        { "label": "Italiyada yashash: uy, sog'liq, ish", "url": "#yashash" }
+      ]
+    },
+    {
+      "id": "kelgach",
+      "kicker": "8-bob",
+      "title": "Italiyaga keldingiz: birinchi 8 kun",
+      "when": "Kelgan kundan boshlab, permesso uchun 8 kun ichida",
+      "body": "Viza sizni Italiyaga kiritadi, lekin u yerda yashash huquqini permesso di soggiorno (yashash ruxsatnomasi) beradi. Uni kelgandan keyin 8 kun ichida so'rashingiz kerak. Bu qonuniy talab, kechiktirmang.",
+      "steps": [
+        "«Sportello Amico» yozuvi bor Poste Italiane (pochta) bo'limidan birinchi permesso uchun kit (paket) oling.",
+        "Form 1 ni to'ldiring va imzolang. Pasport va viza nusxasi, sug'urta nusxasi va moliyaviy hujjatlarni qo'shing.",
+        "Tamaki do'konidan (Tabaccheria) 16 € lik marca da bollo (davlat markasi) oling.",
+        "Kitni pochtaga topshiring va kvitansiyani (Assicurata) saqlang: karta kelguncha u sizning hujjatingiz.",
+        "Questura barmoq izi uchun chaqiradi. Karta odatda shundan keyin 90 kun atrofida tayyor bo'ladi."
+      ],
+      "sections": [
+        {
+          "title": "Shu haftaning o'zida",
+          "items": [
+            "Codice fiscale (soliq raqami): bank, telefon, ijara va stipendiya uchun kerak.",
+            "Italiya SIM-kartasi.",
+            "Bank hisobi (IBAN): stipendiya shu hisobga keladi.",
+            "Sog'liq: Italiya davlat sog'liq tizimiga (SSN) ixtiyoriy yozilish talaba uchun yiliga 700 € (kalendar yili uchun) yoki Italiyada amal qiladigan xususiy sug'urta."
+          ]
+        }
+      ],
+      "tip": "Hamma hujjatlarning nusxasini doim yoningizda olib yuring. Questura, pochta va bankda navbatlar uzun bo'lishi mumkin: sabr qiling, bu hammada shunday.",
+      "warn": "Pochta kvitansiyasini yo'qotmang. U full enrollment'da ham, stipendiya idorasida ham so'raladi.",
+      "links": []
+    },
+    {
+      "id": "enrollment",
+      "kicker": "9-bob",
+      "title": "Full enrollment: to'liq talaba bo'lish",
+      "when": "Kelgandan keyin, universitet belgilagan muddatda",
+      "body": "Oxirgi rasmiy qadam. Asl hujjatlaringizni universitetning xalqaro talabalar bo'limiga olib borasiz, to'lovlarni rasmiylashtirasiz va talaba raqamingizni olasiz. Ko'p universitetlar buni kelgandan keyin taxminan bir oy ichida so'raydi.",
+      "steps": [
+        "Universitetingizning xalqaro talabalar ofisini va uning ish vaqtini toping.",
+        "Hujjatlarni olib boring: pasport, «University enrolment» talaba vizasi, permesso kvitansiyasi, diplom (rasmiy tarjimasi bilan), DoV yoki CIMEA.",
+        "To'lovlarni rasmiylashtiring. Stipendiya g'olibi bo'lsangiz, o'qish to'lovidan ozod bo'lasiz.",
+        "Talaba raqami va universitet akkauntingizni oling.",
+        "Stipendiya idorasining portaliga enrollment va permesso hujjatlarini yuklang (idora muddatida)."
+      ],
+      "sections": [],
+      "tip": "Stipendiya idorasining muddatlarini alohida kuzating: masalan Lazio DiSCo 2026/27 da permesso va ISEE hujjatlarini 10.12.2026 gacha so'ragan.",
+      "warn": "",
+      "links": []
+    },
+    {
+      "id": "hayot",
+      "kicker": "10-bob",
+      "title": "Italiyada hayot: oldindan bilib qo'ying",
+      "when": "Birinchi yil va undan keyin",
+      "body": "Italiya go'zal mamlakat, lekin birinchi yil oson emas. Buni oldindan bilsangiz, qiyinchilik kelganda «men nimanidir noto'g'ri qildim» deb o'ylamaysiz: bu hammada bo'ladi.",
+      "steps": [],
+      "sections": [
+        {
+          "title": "Ish",
+          "items": [
+            "Talaba permessosi bilan haftasiga 20 soatgacha (yiliga 1 040 soat) rasmiy ishlash mumkin.",
+            "Ish beruvchi rasmiy shartnoma tuzishi kerak. Norasmiy ish permessoni yangilashda muammo tug'dirishi mumkin.",
+            "Universitetlarda talabalar uchun haq to'lanadigan yarim stavkali ishlar bo'ladi."
+          ]
+        },
+        {
+          "title": "O'qish va hujjatlar",
+          "items": [
+            "Darslarni birinchi o'ringa qo'ying: stipendiyani keyingi yil ham olish uchun kreditlar (CFU) kerak.",
+            "Permessoni muddati tugashidan oldin yangilaysiz.",
+            "Stipendiyaga har yili qayta ariza berasiz.",
+            "Italiya permessosi bilan boshqa Shengen davlatlariga 180 kun ichida 90 kungacha borish mumkin."
+          ]
+        },
+        {
+          "title": "Kundalik hayot",
+          "items": [
+            "Dastur ingliz tilida bo'lsa ham, kundalik hayotda italyan tili kerak bo'ladi: A2–B1 darajaga yetishga harakat qiling.",
+            "Katta shaharlarda uy qimmat va kam. Erta qidiring.",
+            "Yolg'izlik va sog'inch tabiiy. Talabalar uyushmalari, universitet tadbirlari va o'zbek talabalar jamoasi yordam beradi."
+          ]
+        }
+      ],
+      "tip": "O'qishni tugatgach, shartlar bajarilsa, talaba permessosini 12 oygacha ish qidirish permessosiga almashtirish mumkin.",
+      "warn": "",
+      "links": [
+        { "label": "Italiyada yashash", "url": "#yashash" }
+      ]
+    }
+  ],
+  "mistakes": [
+    "Faqat bitta universitetga topshirish. 3–5 tasiga topshiring.",
+    "Oxirgi kunni kutish. Portallar sekinlashadi, CIMEA esa 3 oy oladi.",
+    "Har xil email ishlatish. Universitet, Universitaly va elchixona xatlari bitta manzilga kelsin.",
+    "Bank ko'chirmasini erta olish. Topshirish kunida 10 ish kunidan eski bo'lmasin.",
+    "Stipendiya hujjatlarini Italiyaga kelgach qidirish. Ularni O'zbekistonda, apostil va tarjima bilan tayyorlang.",
+    "Permessoni kechiktirish. Kelgandan keyin 8 kun ichida topshiring.",
+    "Ijtimoiy tarmoqdagi «tanishim aytdi» gaplariga ishonish. Har doim rasmiy manbani tekshiring."
+  ],
+  "closing": "Shu yergacha o'qigan bo'lsangiz, siz allaqachon ko'pchilikdan oldindasiz. Endi butun yo'lni ko'rib turibsiz va qaysi qadam qachon kelishini bilasiz.\n\nEsda tuting: talablar va sanalar har yili, universitet va viloyatga qarab o'zgaradi. Bu yo'riqnoma umumiy yo'l xaritasi, kafolat emas. Har bir qadamdan oldin rasmiy manbani tekshiring.\n\nSavolingiz bo'lsa yoki hujjat topshirishda yordam kerak bo'lsa, bizga Telegram'da yozing. Omad!",
+  "sources": [
+    { "label": "Universitaly: Italiya ta'lim vazirligi portali", "url": "https://www.universitaly.it/" },
+    { "label": "Italiya elchixonasi, Toshkent: talaba vizasi (PDF)", "url": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Study-enrolment-and-foundation-years-ENGLISH-rev.pdf" },
+    { "label": "MUR sirkulyari: 2026/27 va 2027/28 qoidalari (PDF)", "url": "https://portale.units.it/sites/default/files/2026-05/Circolare%202026-2027%20studenti_internazionali_EN_0.pdf" },
+    { "label": "MUR: 2026/27 stipendiya minimumlari", "url": "https://www.mur.gov.it/it/atti-e-normativa/decreto-direttoriale-n-175-del-10-02-2026" },
+    { "label": "CIMEA DiploMe xizmatlari", "url": "https://www.cimea-diplome.it/page-services" },
+    { "label": "CISIA: CEnT testi", "url": "https://www.cisiaonline.it/en/cent/all-about-CEnT/all-about-CEnT" }
+  ]
+}
