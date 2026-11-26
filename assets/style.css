@@ -712,7 +712,7 @@ main > .card,main > .list,main > .links,main > .proscons{margin-top:14px}
 /* ================= v7: brand, photo hero, guide, scholarships ================= */
 /* animated logo */
 .logo-b{display:inline-flex;align-items:center;gap:9px;height:calc(var(--h,20px) * 1.8)}
-.logo-b .mark{width:calc(var(--h,20px) * 1.8);height:calc(var(--h,20px) * 1.8);overflow:visible;filter:drop-shadow(0 6px 14px rgba(242,122,12,.32))}
+.logo-b .mark{width:calc(var(--h,20px) * 1.8);height:calc(var(--h,20px) * 1.8);overflow:visible;filter:drop-shadow(0 6px 12px rgba(22,39,74,.28))}
 .logo-b .word{font:800 calc(var(--h,20px) * 1.12)/1 var(--display);letter-spacing:-.03em;color:var(--ink)}
 .logo-b .word b{font-weight:800;color:var(--navy-3)}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .logo-b .word b{color:var(--gold-2)} }

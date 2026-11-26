@@ -348,14 +348,15 @@
   /* animated brand: a "U" whose right arm becomes an arrow going up (Up-prep); the gold spark is the student */
   var MKN = 0;
   function markSVG(){
-    var n = ++MKN, b = "mkb" + n, h = "mkh" + n, d = "mkd" + n;
+    var n = ++MKN, b = "mkb" + n, h = "mkh" + n, g = "mkg" + n;
     return '<svg class="mark' + (firstPaint ? '' : ' still') + '" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs>' +
-      '<linearGradient id="' + b + '" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FFD866"/><stop offset=".5" stop-color="#FFAE21"/><stop offset="1" stop-color="#F27A0C"/></linearGradient>' +
-      '<linearGradient id="' + h + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".42" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
-      '<filter id="' + d + '" filterUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><feDropShadow dx="0" dy="1.4" stdDeviation="1.2" flood-color="#7A3A00" flood-opacity=".35"/></filter></defs>' +
+      '<linearGradient id="' + b + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22417F"/><stop offset="1" stop-color="#132A5C"/></linearGradient>' +
+      '<linearGradient id="' + h + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".1"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
+      '<linearGradient id="' + g + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFCB4D"/><stop offset="1" stop-color="#F2A81F"/></linearGradient></defs>' +
       '<rect width="64" height="64" rx="16" fill="url(#' + b + ')"/><rect width="64" height="64" rx="16" fill="url(#' + h + ')"/>' +
-      '<g transform="translate(32 33) scale(.9) translate(-32 -33)"><path class="u" d="M18 21 V37 a13.5 13.5 0 0 0 27 0 V24" fill="none" stroke="#13224A" stroke-width="8.4" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '<g class="arr"><path class="tip" d="M36 28 L45 19 L54 28" fill="none" stroke="#fff" stroke-width="8.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#' + d + ')"/></g></g></svg>';
+      '<path class="u" d="M20.5 28 V38.5 a11.5 11.5 0 0 0 23 0 V28" fill="none" stroke="#fff" stroke-width="7.6" stroke-linecap="round"/>' +
+      '<g class="tip"><path d="M23.5 21.5 V26.6 Q32 30.6 40.5 26.6 V21.5 Z" fill="#D9921A"/><path d="M32 11 L50 18.6 L32 26.2 L14 18.6 Z" fill="url(#' + g + ')"/>' +
+      '<path d="M46.4 20.2 V28.4" stroke="#F2A81F" stroke-width="1.9" stroke-linecap="round"/><rect x="44.6" y="27.4" width="3.6" height="5.4" rx="1.6" fill="#FFCB4D"/></g></svg>';
   }
   function logo(h){
     var c = el("span", "logo-b"); c.style.setProperty("--h", h + "px"); c.setAttribute("role", "img"); c.setAttribute("aria-label", "Uprep");
