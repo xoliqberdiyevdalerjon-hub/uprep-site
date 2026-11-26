@@ -34,3 +34,6 @@ Shundan keyin har bir natija botdan admin chatiga keladi, ichida talabaning aloq
 ## Google (hozircha yopiq)
 Sayt hozircha qidiruv tizimlaridan yashirilgan: `index.html` da `<meta name="robots" content="noindex, nofollow">`.
 Google uchun tayyor sahifalar `google-seo` tarmog'ida saqlangan (`scripts/build_seo.py`). Ochishga qaror qilinganda: noindex tegini olib tashlash, `google-seo` tarmog'ini birlashtirish va `python3 scripts/build_seo.py` ni ishga tushirish.
+
+## Faqat veb-sayt
+Uprep telefonga o'rnatiladigan ilova (PWA) emas, oddiy veb-sayt. `manifest.webmanifest` olib tashlangan. `sw.js` faqat avval o'rnatilgan eski ilovani tozalash uchun qoldirilgan: u keshni o'chiradi va o'zini ro'yxatdan chiqaradi. `index.html` ham har ochilganda eski service worker'larni o'chiradi.

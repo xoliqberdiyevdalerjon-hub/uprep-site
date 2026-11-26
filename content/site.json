@@ -4,7 +4,7 @@
   "lead": "Davlat va universitet tanlashdan boshlab, viza va birinchi kunlargacha. Hammasi o'zbek tilida, rasmiy manbalar asosida.",
   "telegram": "Uprep_Admin",
   "price": "Bepul (beta)",
-  "priceNote": "Login va onlayn to'lov ishga tushguncha ilova bepul.",
+  "priceNote": "Login va onlayn to'lov ishga tushguncha sayt bepul.",
   "includes": [
     "8 bosqichli to'liq yo'riqnoma: arizadan full enrollment'gacha",
     "«Mening yo'lim» paneli, ariza kuzatuvchi va muddat eslatmalari",
@@ -20,7 +20,7 @@
     },
     {
       "q": "Nima bepul, nima pullik?",
-      "a": "Saytdagi hamma narsa hozir bepul: qo'llanma, «Noldan» yo'riqnomasi, universitetlar, stipendiyalar, ilovaning 8 bosqichi va barcha vositalar. Pullik qismi bu bizning shaxsiy yordamimiz: Plus ($499) va Premium ($1 490, birinchi 10 talaba uchun). Faqat bitta bosqichda yordam kerak bo'lsa, alohida xizmatlar ham bor ($29 dan)."
+      "a": "Saytdagi hamma narsa hozir bepul: qo'llanma, «Noldan» yo'riqnomasi, universitetlar, stipendiyalar, 8 qadamlik qo'llanma va barcha vositalar. Pullik qismi bu bizning shaxsiy yordamimiz: Plus ($499) va Premium ($1 490, birinchi 10 talaba uchun). Faqat bitta bosqichda yordam kerak bo'lsa, alohida xizmatlar ham bor ($29 dan)."
     },
     {
       "q": "To'lov qanday amalga oshiriladi?",
@@ -44,7 +44,7 @@
       "name": "Free",
       "price": "Bepul",
       "note": "Beta davrida: login va onlayn to'lov ishga tushguncha",
-      "tagline": "Ilovadan o'zingiz foydalanasiz: hamma bosqich, hujjatlar, muddatlar va vositalar bir joyda.",
+      "tagline": "Saytdan o'zingiz foydalanasiz: hamma bosqich, hujjatlar, muddatlar va vositalar bir joyda.",
       "badge": "",
       "items": [
         "8 bosqichli to'liq yo'riqnoma: arizadan full enrollment'gacha",

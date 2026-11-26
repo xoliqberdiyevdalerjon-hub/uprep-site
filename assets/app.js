@@ -443,23 +443,7 @@
     tab("heart", "Rejam", sec === "plan", "rejam");
     nav.appendChild(inn); return nav;
   }
-  /* install as an app (PWA) */
-  var DEFER = null;
-  window.addEventListener("beforeinstallprompt", function(e){ e.preventDefault(); DEFER = e; var b = document.querySelector(".install-btn"); if(b) b.hidden = false; });
-  function installCard(){
-    var c = el("section", "install");
-    var i = el("span", "ic"); i.innerHTML = markSVG(); c.appendChild(i);
-    var t = el("div", "txt"); t.appendChild(el("b", null, "Uprep'ni telefonga o'rnating"));
-    var ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
-    t.appendChild(el("small", null, ios ? "Safari'da «Ulashish» tugmasini bosing va «Bosh ekranga qo'shish»ni tanlang." : "Ilova kabi ochiladi, internet sekin bo'lsa ham ishlaydi."));
-    c.appendChild(t);
-    var standalone = window.matchMedia && matchMedia("(display-mode: standalone)").matches;
-    if(standalone) return null;
-    if(!ios){ var b = el("button", "btn gold install-btn", "O'rnatish"); b.type = "button"; b.hidden = !DEFER; b.onclick = function(){ if(!DEFER) return; DEFER.prompt(); DEFER.userChoice.then(function(){ DEFER = null; b.hidden = true; }); }; c.appendChild(b); if(!DEFER) c.appendChild(el("small", "install-note", "Brauzer menyusidagi «Ilovani o'rnatish» yoki «Bosh ekranga qo'shish»")); }
-    return c;
-  }
   function footer(main){
-    var ic0 = installCard(); if(ic0) main.appendChild(ic0);
     var f = el("footer", "foot"), g = el("div", "foot-grid");
     var about = el("div"); about.appendChild(logo(16)); if(S.site.footer) about.appendChild(el("p", null, S.site.footer)); g.appendChild(about);
     function col(title, links){ var c = el("div"); c.appendChild(el("h2", "foot-h", title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
@@ -510,7 +494,7 @@
   function priceCard(compact){
     var c = el("section", "price");
     var top = el("div", "price-top");
-    var l = el("div"); l.appendChild(el("span", "price-k", "Ilova: «" + (str(plans()[0].name) || "Free") + "» tarifi")); l.appendChild(el("b", "price-v", price())); l.appendChild(el("small", null, str(S.site.priceNote) || "Bir marta to'lov. Kurs umrbod ochiq.")); top.appendChild(l);
+    var l = el("div"); l.appendChild(el("span", "price-k", "Sayt: «" + (str(plans()[0].name) || "Free") + "» tarifi")); l.appendChild(el("b", "price-v", price())); l.appendChild(el("small", null, str(S.site.priceNote) || "Bir marta to'lov. Kurs umrbod ochiq.")); top.appendChild(l);
     c.appendChild(top);
     if(!compact){
       var ul = el("ul", "ticks"); arr(S.site.includes).forEach(function(x){ var li = el("li"); li.appendChild(ic("check")); li.appendChild(el("span", null, x)); ul.appendChild(li); }); c.appendChild(ul);
@@ -604,7 +588,7 @@
     var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage});
     H.appendChild(kicker("wallet", "Uchta tarif"));
     H.appendChild(heroTitle("Tariflar va narxlar"));
-    H.appendChild(el("p", "lead", "Ilovadan o'zingiz foydalanasizmi, online yordam kerakmi yoki hammasini biz bilan birga qilasizmi: tanlov sizda."));
+    H.appendChild(el("p", "lead", "Saytdan o'zingiz foydalanasizmi, online yordam kerakmi yoki hammasini biz bilan birga qilasizmi: tanlov sizda."));
     main.appendChild(plansSection("Sizga qaysi biri mos?"));
     main.appendChild(rowBtn("book", "Avval bepul o'qing: Italiyada o'qish noldan", "10 bob, PDF bilan", "g", "#noldan"));
     footer(main);
@@ -1048,7 +1032,7 @@
         if(want.tagline) pc.appendChild(el("p", null, want.tagline));
         pc.appendChild(btn("line", "wallet", "Barcha tariflar", "#tariflar")); box.appendChild(pc);
       } else {
-        var HT = {app:["Mustaqil yo'l", "Ilovadagi bosqichlar, «Mening rejam» paneli va «Noldan» yo'riqnomasi sizga yetadi."], support:["Savollaringizga javob", "Natijangizni yuboring: savollaringizga Telegram'da javob beramiz."], full:["Har bir qadamda yordam", "Natijangizni yuboring: vaziyatingizni ko'rib, qanday yordam bera olishimizni aytamiz."]}[a.help] || ["Keyingi qadam", ""];
+        var HT = {app:["Mustaqil yo'l", "Saytdagi 8 qadam, «Mening rejam» paneli va «Noldan» yo'riqnomasi sizga yetadi."], support:["Savollaringizga javob", "Natijangizni yuboring: savollaringizga Telegram'da javob beramiz."], full:["Har bir qadamda yordam", "Natijangizni yuboring: vaziyatingizni ko'rib, qanday yordam bera olishimizni aytamiz."]}[a.help] || ["Keyingi qadam", ""];
         var pc2 = el("section", "pf-card plan-pick"); var ph2 = el("div", "pf-h"); ph2.appendChild(el("b", null, HT[0])); pc2.appendChild(ph2); if(HT[1]) pc2.appendChild(el("p", null, HT[1])); box.appendChild(pc2);
       }
       summary.push("Kerakli yordam: " + pfLabel("help", a.help));
@@ -1570,10 +1554,9 @@
     row(g3, "upload", "c-blue", "Zaxiradan tiklash", {onclick:function(){ fi.click(); }});
     row(g3, "trash", "c-red", "Barcha ma'lumotlarimni o'chirish", {danger:true, onclick:function(){ if(!confirm("Rejangiz, ariza holatlari, belgilangan hujjatlar va test javoblari shu qurilmadan o'chiriladi. Davom etasizmi?")) return; var ks = []; try{ for(var i = 0; i < localStorage.length; i++){ var k = localStorage.key(i); if(/^uprep-/.test(k)) ks.push(k); } }catch(e){} ks.forEach(function(k){ lsSet(k, ""); }); toast("Ma'lumotlar o'chirildi."); setTimeout(function(){ location.hash = ""; location.reload(); }, 900); }});
 
-    /* Ilova */
-    var g4 = group("Ilova");
+    /* Sayt */
+    var g4 = group("Sayt");
     var standalone = window.matchMedia && matchMedia("(display-mode: standalone)").matches, ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
-    row(g4, "phone", "c-navy", "Telefonga o'rnatish", {value: standalone ? "O'rnatilgan" : null, onclick: standalone ? null : function(){ if(DEFER){ DEFER.prompt(); DEFER.userChoice.then(function(){ DEFER = null; }); } else toast(ios ? "Safari'da «Ulashish» → «Bosh ekranga qo'shish» ni tanlang." : "Brauzer menyusida «Ilovani o'rnatish» yoki «Bosh ekranga qo'shish» ni tanlang."); }});
     row(g4, "share", "c-green", "Do'stlarga ulashish", {onclick:function(){ var u = location.origin + location.pathname, t = "Uprep: Italiyada o'qish, o'zbek tilida"; if(navigator.share) navigator.share({title:t, url:u}).catch(function(){}); else window.open("https://t.me/share/url?url=" + encodeURIComponent(u) + "&text=" + encodeURIComponent(t), "_blank", "noopener"); }});
     row(g4, "languages", "c-purple", "Til", {value:"O'zbekcha", sub:"Rus tilidagi versiya tayyorlanmoqda"});
     row(g4, "user", "c-gold", "Hisob", {value:"Tez orada"});

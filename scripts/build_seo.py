@@ -107,8 +107,8 @@ def page(path, title, desc, body, crumbs, app_hash, jsonld=None):
 {body}
 <section class="cta">
 <h2>Keyingi qadam</h2>
-<p>Uprep ilovasida shu ma'lumotni saqlang, muddatlarni kalendarga qo'shing va arizangizni kuzating. Hammasi bepul.</p>
-<div class="btns"><a class="btn gold" href="{up}#{e(app_hash)}">Ilovada ochish</a><a class="btn" href="{up}#profil">Bepul profil tahlili</a><a class="btn" href="{e(TG)}" rel="noopener">{e(TGN)} ga yozish</a></div>
+<p>Uprep saytida shu ma'lumotni saqlang, muddatlarni kalendarga qo'shing va arizangizni kuzating. Hammasi bepul.</p>
+<div class="btns"><a class="btn gold" href="{up}#{e(app_hash)}">Saytda ochish</a><a class="btn" href="{up}#profil">Bepul profil tahlili</a><a class="btn" href="{e(TG)}" rel="noopener">{e(TGN)} ga yozish</a></div>
 </section>
 </main>
 <footer class="foot"><div class="w">
