@@ -1,0 +1,82 @@
+{
+  "title": "Testlar: nimaga tayyorlanish kerak",
+  "lead": "Italiya universitetlari turli testlarni so'raydi. Bu sahifa qaysi test nima uchunligini, qanday topshirilishini va qaysi universitet so'rashini ko'rsatadi.",
+  "tests": [
+    {
+      "id": "ielts",
+      "name": "IELTS / TOEFL / Cambridge",
+      "for": "Ingliz tili darajasi (deyarli hamma ingliz tilidagi dasturlar)",
+      "level": "Odatda B2: IELTS 5.5–6.5, TOEFL iBT 69–79 (dasturga qarab)",
+      "how": "O'zbekistondagi rasmiy markazlarda topshiriladi. Ba'zi universitetlar sertifikat 2–3 yildan eski bo'lmasligini so'raydi.",
+      "cost": "Narxni rasmiy tashkilot saytida tekshiring",
+      "unis": "Masalan: Parma (IELTS 5.5+, TOEFL 69+), Teramo (IELTS 5.5, TOEFL 72), Milan (B2, 3 yildan eski emas)",
+      "url": ""
+    },
+    {
+      "id": "cents",
+      "name": "CEnT-S (CISIA)",
+      "for": "Ingliz tilidagi bakalavr: muhandislik, iqtisod, farmatsevtika va boshqa fanlar",
+      "level": "Matematika, mantiq, fanlar va (2026-yil noyabridan) o'qib tushunish",
+      "how": "Uydan (CEnT@CASA) yoki universitetda (CEnT@UNI). 2027/28 uchun 5 ta davr: noy–yan, fev–mar, apr–may, iyun–iyul, avg–sen. Sanalarni universitetlar belgilaydi.",
+      "cost": "55 € (oxirgi e'lon qilingan narx)",
+      "unis": "Masalan: Padova, Bolonya (ingliz tilidagi bakalavr dasturlari)",
+      "url": "https://www.cisiaonline.it/en/cent/all-about-CEnT/all-about-CEnT"
+    },
+    {
+      "id": "tolc",
+      "name": "TOLC (CISIA)",
+      "for": "Italyan tilidagi bakalavr dasturlari",
+      "level": "Dasturga qarab TOLC-I, TOLC-E va boshqalar",
+      "how": "Uydan (TOLC@CASA) ham topshirish mumkin, Italiyada bo'lmasangiz ham. Diqqat: ingliz tilidagi TOLC turlari 2025-yil noyabridan CEnT-S bilan almashtirildi.",
+      "cost": "35 € (2026)",
+      "unis": "Masalan: Pavia (saralovchi emas, ba'zi dasturlarda)",
+      "url": "https://www.cisiaonline.it/en/tolc/all-about-TOLC/what-is-the-TOLC"
+    },
+    {
+      "id": "sat",
+      "name": "SAT",
+      "for": "Ba'zi xalqaro bakalavr dasturlari (ko'proq xususiy universitetlarda)",
+      "level": "Universitet belgilagan minimal ball",
+      "how": "College Board orqali, xalqaro test markazlarida.",
+      "cost": "Narxni College Board saytida tekshiring",
+      "unis": "Masalan: Bocconi (o'z testi yoki SAT)",
+      "url": "https://satsuite.collegeboard.org/sat"
+    },
+    {
+      "id": "gmat",
+      "name": "GMAT / GRE",
+      "for": "Ba'zi magistratura dasturlari (biznes, iqtisod)",
+      "level": "Universitet belgilagan minimal ball",
+      "how": "Test markazida yoki onlayn.",
+      "cost": "Narxni rasmiy saytida tekshiring",
+      "unis": "Masalan: Bocconi (GMAT/GRE yoki o'z onlayn testi), LUISS magistraturasi",
+      "url": ""
+    },
+    {
+      "id": "own",
+      "name": "Universitetning o'z testi",
+      "for": "Ayrim dasturlar",
+      "level": "Universitet belgilaydi",
+      "how": "Odatda onlayn; ariza bilan birga ro'yxatdan o'tiladi.",
+      "cost": "Universitetga qarab",
+      "unis": "Masalan: Bocconi testi, LUISS testi, San Raffaele va UniCamillus tibbiyot testlari (180–200 €)",
+      "url": ""
+    },
+    {
+      "id": "ita",
+      "name": "Italyan tili testlari",
+      "for": "Italyan tilidagi dasturlar (odatda B2)",
+      "level": "B2: CILS, CELI, PLIDA sertifikatlari yoki CISIA italyan tili testi",
+      "how": "Sertifikat yoki universitet/CISIA testi (onlayn).",
+      "cost": "Masalan: CISIA italyan testi 35 € (Pavia, kamida 54/72), Brescia testi 25 €",
+      "unis": "Masalan: Pavia, Verona (CISIA ITA-L2), Brescia, Cattolica (bakalavrda B2 italyan)",
+      "url": ""
+    }
+  ],
+  "tips": [
+    "Avval tanlagan universitetingizning «Qabul va talablar» bo'limini o'qing: qaysi test kerakligi o'sha yerda.",
+    "IELTS'ni ariza ochilishidan oldin topshiring: ko'p arizalar sertifikatsiz qabul qilinmaydi.",
+    "CEnT-S va TOLC'ni uydan topshirish mumkin, lekin universitet qaysi formatni qabul qilishini tekshiring.",
+    "Test sanasi ariza muddatidan oldin bo'lishi kerak: natija kelishiga vaqt qoldiring."
+  ]
+}

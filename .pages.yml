@@ -513,3 +513,60 @@ content:
       - { name: photo, label: Rasm (ixtiyoriy), type: image }
       - { name: text, label: Fikr, type: text, required: true }
       - { name: consent, label: "Talaba e'lon qilishga yozma rozilik berdi", type: boolean }
+
+  - name: foundation
+    label: Foundation
+    type: file
+    path: content/foundation.json
+    format: json
+    fields:
+      - { name: title, label: Sarlavha, type: string }
+      - { name: lead, label: Kirish matni, type: text }
+      - name: facts
+        label: Bilish kerak
+        type: object
+        list: true
+        fields:
+          - { name: t, label: Sarlavha, type: string }
+          - { name: d, label: Matn, type: text }
+      - name: items
+        label: Universitetlar
+        type: object
+        list: true
+        fields:
+          - { name: uni, label: "Universitet kodi", type: string }
+          - { name: name, label: Nomi, type: string }
+          - { name: cost, label: Narx, type: string }
+          - { name: when, label: Ariza, type: string }
+          - { name: note, label: Izoh, type: text }
+          - { name: url, label: Rasmiy havola, type: string }
+      - name: sources
+        label: Manbalar
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Nomi, type: string }
+          - { name: url, label: Havola, type: string }
+
+  - name: tests
+    label: Testlar
+    type: file
+    path: content/tests.json
+    format: json
+    fields:
+      - { name: title, label: Sarlavha, type: string }
+      - { name: lead, label: Kirish matni, type: text }
+      - name: tests
+        label: Testlar
+        type: object
+        list: true
+        fields:
+          - { name: id, label: Kod, type: string }
+          - { name: name, label: Nomi, type: string }
+          - { name: for, label: Nima uchun, type: text }
+          - { name: level, label: Daraja, type: text }
+          - { name: how, label: Qanday topshiriladi, type: text }
+          - { name: cost, label: Narx, type: string }
+          - { name: unis, label: Kim so'raydi, type: text }
+          - { name: url, label: Rasmiy havola, type: string }
+      - { name: tips, label: Maslahatlar, type: string, list: true }

@@ -1,0 +1,114 @@
+{
+  "title": "Foundation: 11 yillik maktabdan keyin",
+  "lead": "O'zbekistonda maktab 11 yil. Italiyada bakalavrga odatda 12 yillik ta'lim kerak. Foundation shu bir yillik farqni to'ldiradigan tayyorlov kursi: uni tugatsangiz, bakalavrga topshira olasiz.",
+  "facts": [
+    {
+      "t": "Kimga kerak",
+      "d": "11 yillik attestat bilan bakalavrga kirmoqchi bo'lganlarga. Muqobil yo'l: O'zbekistonda OTMda 1 yil o'qib, keyin to'g'ridan-to'g'ri bakalavrga topshirish."
+    },
+    {
+      "t": "Viza",
+      "d": "Foundation uchun alohida talaba vizasi beriladi. MUR sirkulyariga ko'ra, Foundation kurslari uchun qat'iy oxirgi muddat yo'q, lekin ariza darslar boshlanishidan kech bo'lmasligi kerak. Toshkent elchixonasining ro'yxati «Study enrolment and foundation years» deb nomlangan."
+    },
+    {
+      "t": "Til",
+      "d": "Ko'pincha ingliz tilida o'qitiladi. Tor Vergata 2027/28 uchun kamida B1 ingliz tilini so'raydi; Pavia vizaga muhtojlardan B1 italyan tili sertifikatini ham so'raydi."
+    },
+    {
+      "t": "Narx",
+      "d": "Davlat universitetlarida ham Foundation pullik: odatda 5 000 – 7 500 € (pastdagi jadvalga qarang). Bu bakalavr o'qish to'lovidan alohida."
+    }
+  ],
+  "items": [
+    {
+      "uni": "sapienza",
+      "name": "Sapienza (Rim)",
+      "cost": "5 000 € (1 500 € + 3 500 €), 2026/27",
+      "when": "Ariza to'lovi 200 €; 2026/27 da 15.06.2026 gacha",
+      "note": "Rim, Italiyaning eng katta universiteti.",
+      "url": "https://www.uniroma1.it/sites/default/files/field_file_allegati/bando_fy_2026-2027_def_0.pdf"
+    },
+    {
+      "uni": "unipv",
+      "name": "Pavia",
+      "cost": "5 000 € (3 qismda), 2027/28",
+      "when": "Ariza to'lovi 35 €. 2027/28 1-oqimi 01–15.10.2026 bo'lib o'tdi; keyingi oqimlarni saytda kuzating. Hujjatlar 31.10.2027 gacha",
+      "note": "Vizaga muhtojlar B1 italyan tili sertifikatini 30.06.2027 gacha topshiradi. Darslar oktyabr 2027 – iyun 2028.",
+      "url": "https://foundationyear.unipv.it/en/notice-board/first-intake-foundation-year-20272028-will-be-open-1-15-october-2026"
+    },
+    {
+      "uni": "unipd",
+      "name": "Padova",
+      "cost": "6 000 € (3 qismda); yotoqxona va ovqat alohida",
+      "when": "apply.unipd.it'da «Foundation Year 2027/28» bo'limi ochilgan",
+      "note": "Universitet yangiliklarida e'lon qilingan dastur.",
+      "url": "https://www.unipd.it/en/news/al-il-foundation-year-attrarre-talenti-internazionali"
+    },
+    {
+      "uni": "luiss",
+      "name": "LUISS (Rim)",
+      "cost": "7 500 € (4 500 € + 3 000 €), 2026/27",
+      "when": "2026/27 da arizalar 11.09.2026 gacha",
+      "note": "Ijtimoiy fanlar bo'yicha Foundation (xususiy universitet).",
+      "url": "https://www.luiss.it/en/courses-and-masters/foundation-programme"
+    },
+    {
+      "uni": "unime",
+      "name": "Messina",
+      "cost": "5 000 € (1 000 + 2 000 + 2 000 €), 2026/27",
+      "when": "2027/28 oynalari: 20.05 – 15.07.2027 va 31.08 – 21.09.2027",
+      "note": "Birinchi to'lov viza rad etilsa ham qaytarilmaydi.",
+      "url": "https://international.unime.it/study-us/unime-foundation-course"
+    },
+    {
+      "uni": "torvergata",
+      "name": "Tor Vergata (Rim)",
+      "cost": "Rasmiy sahifada",
+      "when": "2027/28 uchun e'lonni kuzating",
+      "note": "Ingliz tilidagi Foundation kursi; kamida B1 ingliz tili.",
+      "url": "https://web.uniroma2.it/en/percorso/admissions/sezione/foundation-course-in-english"
+    },
+    {
+      "uni": "unibs",
+      "name": "Brescia",
+      "cost": "STAR stipendiyalari bilan",
+      "when": "Foundation + italyan tilidagi bakalavr uchun STAR stipendiyasi",
+      "note": "Non-EU talabalarga universitet stipendiyasi bilan Foundation yili.",
+      "url": "https://www.unibs.it/en/education/our-educational-offer/foundation-year/how-enroll"
+    },
+    {
+      "uni": "unito",
+      "name": "Torino",
+      "cost": "Rasmiy sahifada",
+      "when": "Rasmiy sahifada",
+      "note": "12 yildan kam maktab ta'limi bo'lganlar uchun qo'shimcha Foundation Programme.",
+      "url": "https://en.unito.it/studying-unito/international-degree-seeking-students/application-international-students"
+    },
+    {
+      "uni": "unicatt",
+      "name": "Cattolica (Milan)",
+      "cost": "Rasmiy sahifada",
+      "when": "2027/28 arizalari 2026-yil kuzida ochiladi",
+      "note": "12-sinf o'rnini bosuvchi Foundation Programme (xususiy universitet).",
+      "url": "https://international.unicatt.it/ucscinternational-study-foundation-programme"
+    },
+    {
+      "uni": "unint",
+      "name": "UNINT (Rim)",
+      "cost": "Rasmiy sahifada",
+      "when": "Rasmiy sahifada",
+      "note": "Foundation yili qoidalari e'lon qilingan (xususiy universitet).",
+      "url": "https://www.unint.eu/en/international/foundation-year-regulations-at-unit/"
+    }
+  ],
+  "sources": [
+    {
+      "label": "MUR sirkulyari 2026/27 va 2027/28 (PDF)",
+      "url": "https://portale.units.it/sites/default/files/2026-05/Circolare%202026-2027%20studenti_internazionali_EN_0.pdf"
+    },
+    {
+      "label": "Toshkent elchixonasi: o'qish va Foundation vizasi (PDF)",
+      "url": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Study-enrolment-and-foundation-years-ENGLISH-rev.pdf"
+    }
+  ]
+}

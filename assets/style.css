@@ -980,3 +980,25 @@ a.news-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line-2),
 .mini-actions{display:flex;flex-wrap:wrap;gap:8px}
 .mini-actions .btn{height:40px;padding:0 14px;font-size:14px}
 .hero .hero-actions .btn.glass.fav{min-width:0}
+/* v10: foundation, tests, documents */
+@media (min-width:1100px){ .tools{grid-template-columns:repeat(4,minmax(0,1fr))} }
+@media (min-width:720px) and (max-width:1099px){ .tools{grid-template-columns:repeat(2,minmax(0,1fr))} }
+.tests{display:grid;gap:12px}
+@media (min-width:720px){ .tests{grid-template-columns:repeat(2,minmax(0,1fr))} }
+.test-card{display:flex;flex-direction:column;gap:10px;padding:20px;border-radius:var(--r-lg);background:var(--surface);box-shadow:0 0 0 1px var(--line), var(--sh-1)}
+.test-card .tn{font:800 20px/1.2 var(--display)}
+.test-card .tf{margin:0;font-size:14.5px;color:var(--muted)}
+.test-card .ic-rows{margin:0}
+.test-card .btn{align-self:flex-start;height:42px;font-size:14px}
+.docs-out{display:grid;gap:12px;margin-top:16px}
+.docs-head{display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between;padding:16px 18px;border-radius:var(--r-lg);background:var(--surface);box-shadow:0 0 0 1px var(--line), var(--sh-2)}
+.docs-meter{flex:1;min-width:200px}
+.docs-meter b{font:800 20px/1.2 var(--display)}
+.docs-meter .meter{max-width:none;height:8px}
+.docs-g .ic-h small{font-size:13px;letter-spacing:0;text-transform:none}
+@media print{
+  .appbar,.tabbar,.hero,.foot,.install,.no-print,.crumbs,.scene,.toast{display:none!important}
+  body{background:#fff}
+  .card,.docs-head{box-shadow:none;border:1px solid #ccc;break-inside:avoid}
+  main.wrap{padding:0}
+}
