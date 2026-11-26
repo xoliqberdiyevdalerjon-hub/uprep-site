@@ -1347,3 +1347,5 @@ body{overflow-x:clip}
 /* accordions: animate only when the user opens them, not on page render */
 .fold-body,.acc-body{animation:none}
 .fold-body.anim,.acc-body.anim{animation:reveal .3s var(--ease)}
+@media print{ .mark .u{animation:none;stroke-dashoffset:0} .mark .tip{animation:none;opacity:1;transform:none} }
+@media print{ .nd-cover .logo-b .word b{color:#F7C760} }

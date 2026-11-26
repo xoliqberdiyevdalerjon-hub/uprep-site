@@ -348,12 +348,14 @@
   /* animated brand: a "U" whose right arm becomes an arrow going up (Up-prep); the gold spark is the student */
   var MKN = 0;
   function markSVG(){
-    var id = "mk" + (++MKN);
-    return '<svg class="mark' + (firstPaint ? '' : ' still') + '" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs><linearGradient id="' + id + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2C4580"/><stop offset="1" stop-color="#14244A"/></linearGradient></defs>' +
-      '<rect width="40" height="40" rx="12" fill="url(#' + id + ')"/><path class="ring" d="M20 4a16 16 0 1 1 0 32a16 16 0 1 1 0-32" fill="none" stroke="rgba(242,178,51,.35)" stroke-width="1" stroke-dasharray="2 5"/>' +
-      '<path class="u" d="M12.5 11 V22.5 a7.5 7.5 0 0 0 15 0 V12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '<g class="arr"><path class="tip" d="M23 15.5 L27.5 11 L32 15.5" fill="none" stroke="#F2B233" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>' +
-      '<circle class="spark" cx="12.5" cy="7" r="2.1" fill="#F2B233"/></svg>';
+    var n = ++MKN, b = "mkb" + n, h = "mkh" + n, g = "mkg" + n;
+    return '<svg class="mark' + (firstPaint ? '' : ' still') + '" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><defs>' +
+      '<linearGradient id="' + b + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2F4C8C"/><stop offset=".55" stop-color="#1B2F5E"/><stop offset="1" stop-color="#0F1C3D"/></linearGradient>' +
+      '<linearGradient id="' + h + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".13"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
+      '<linearGradient id="' + g + '" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F2A81F"/><stop offset="1" stop-color="#FFD166"/></linearGradient></defs>' +
+      '<rect width="40" height="40" rx="11" fill="url(#' + b + ')"/><rect width="40" height="40" rx="11" fill="url(#' + h + ')"/>' +
+      '<path class="u" d="M11.8 12.2 V22.2 a8.2 8.2 0 0 0 16.4 0 V13.6" fill="none" stroke="#fff" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<g class="arr"><path class="tip" d="M22.8 15.8 L28.2 10.4 L33.6 15.8" fill="none" stroke="url(#' + g + ')" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/></g></svg>';
   }
   function logo(h){
     var c = el("span", "logo-b"); c.style.setProperty("--h", h + "px"); c.setAttribute("role", "img"); c.setAttribute("aria-label", "Uprep");
