@@ -216,13 +216,13 @@
 
   /* ---------------- data ---------------- */
   var root = document.getElementById("app");
-  var S = { site:{}, stages:[], calendar:[], library:[], countries:[], italy:{}, cities:[], unis:[], guide:{}, dsu:{agencies:[]}, living:{}, news:[], reviews:[], foundation:{}, tests:{}, noldan:{}, about:{}, loaded:false };
+  var S = { site:{}, stages:[], calendar:[], library:[], countries:[], italy:{}, cities:[], unis:[], guide:{}, dsu:{agencies:[]}, living:{}, news:[], reviews:[], foundation:{}, tests:{}, noldan:{}, about:{}, parents:{}, loaded:false };
   var firstPaint = true;
   function load(name, fallback){
     return fetch("content/" + name + ".json", {cache:"no-cache"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ return fallback; });
   }
-  Promise.all([load("site",{}), load("stages",[]), load("calendar",[]), load("library",[]), load("countries",[]), load("italy",{}), load("cities",[]), load("universities",[]), load("guide",{}), load("dsu",{agencies:[]}), load("living",{}), load("news",[]), load("reviews",[]), load("foundation",{}), load("tests",{}), load("noldan",{}), load("about",{})]).then(function(r){
-    S.noldan = r[15] || {}; S.about = r[16] || {};
+  Promise.all([load("site",{}), load("stages",[]), load("calendar",[]), load("library",[]), load("countries",[]), load("italy",{}), load("cities",[]), load("universities",[]), load("guide",{}), load("dsu",{agencies:[]}), load("living",{}), load("news",[]), load("reviews",[]), load("foundation",{}), load("tests",{}), load("noldan",{}), load("about",{}), load("parents",{})]).then(function(r){
+    S.noldan = r[15] || {}; S.about = r[16] || {}; S.parents = r[17] || {};
     S.foundation = r[13] || {}; S.tests = r[14] || {};
     S.reviews = arr(r[12]);
     S.living = r[10] || {}; S.news = arr(r[11]);
@@ -261,6 +261,8 @@
     if(h === "noldan") return {view:"noldan"};
     if(h === "biz-haqimizda") return {view:"about"};
     if(h === "tariflar") return {view:"plans"};
+    if(h === "profil") return {view:"profile"};
+    if(h === "ota-onalar") return {view:"parents"};
     if(h === "testlar") return {view:"tests"};
     if(h === "hujjatlarim") return {view:"docs"};
     if(h === "stipendiya") return {view:"dsu"};
@@ -294,7 +296,7 @@
     HZ = el("div", "herozone"); root.appendChild(HZ);
     var main = el("main", "wrap" + (wide ? "" : " narrow"));
     CRUMBS = crumbsFor(r);
-    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, plans:plansView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView,
+    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, plans:plansView, profile:profileView, parents:parentsView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView,
       item:function(m){ itemView(m, r.i); }, city:function(m){ cityView(m, r.c); }, uni:function(m){ uniView(m, r.u, r.tab); }, stage:function(m){ stageView(m, r.st); }
     }[r.view] || homeView)(main, r);
     if(CRUMBS){ main.insertBefore(CRUMBS, main.firstChild); CRUMBS = null; }
@@ -348,6 +350,7 @@
     if(r.view === "progs" || r.view === "cmp") return "italy";
     if(r.view === "living") return "italy";
     if(r.view === "quiz") return "italy";
+    if(r.view === "profile") return "plan";
     if(["italy","unis","cities","city","uni"].indexOf(r.view) >= 0) return "italy";
     if(["course","stage","cal","lib","item","plans"].indexOf(r.view) >= 0) return "course";
     return "account";
@@ -387,6 +390,8 @@
     else if(r.view === "reviews") c.push(["Fikrlar"]);
     else if(r.view === "about") c.push(["Biz haqimizda"]);
     else if(r.view === "plans"){ c.push(["Kurs","kurs"]); c.push(["Tariflar"]); }
+    else if(r.view === "profile") c.push(["Profil tahlili"]);
+    else if(r.view === "parents") c.push(["Ota-onalar uchun"]);
     else if(r.view === "noldan"){ c.push(["Qo'llanma","qollanma"]); c.push(["Noldan: to'liq yo'riqnoma"]); }
     else if(r.view === "foundation"){ c.push(["Qo'llanma","qollanma"]); c.push(["Foundation"]); }
     else if(r.view === "tests"){ c.push(["Qo'llanma","qollanma"]); c.push(["Testlar"]); }
@@ -447,7 +452,7 @@
     var about = el("div"); about.appendChild(logo(16)); if(S.site.footer) about.appendChild(el("p", null, S.site.footer)); g.appendChild(about);
     function col(title, links){ var c = el("div"); c.appendChild(el("h2", "foot-h", title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
     col("O'rganish", [["0 dan qo'llanma", "#qollanma"], ["Noldan: to'liq yo'riqnoma (PDF)", "#noldan"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Italiyada yashash", "#yashash"], ["Kurs", "#kurs"], ["Tariflar", "#tariflar"]]);
-    col("Vositalar", [["Hujjatlarim", "#hujjatlarim"], ["Menga mos universitet", "#mos-universitet"], ["Pul kalkulyatori", "#kalkulyator"], ["Kalendar", "#kalendar"], ["Yangiliklar", "#yangiliklar"], ["Fikr va takliflar", "#fikrlar"], ["Biz haqimizda", "#biz-haqimizda"], ["Telegram: " + tgName(), tgUrl()]]);
+    col("Vositalar", [["Hujjatlarim", "#hujjatlarim"], ["Menga mos universitet", "#mos-universitet"], ["Pul kalkulyatori", "#kalkulyator"], ["Kalendar", "#kalendar"], ["Yangiliklar", "#yangiliklar"], ["Profil tahlili", "#profil"], ["Ota-onalar uchun", "#ota-onalar"], ["Fikr va takliflar", "#fikrlar"], ["Biz haqimizda", "#biz-haqimizda"], ["Telegram: " + tgName(), tgUrl()]]);
     f.appendChild(g);
     var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uprep." + (S.site.updated ? " Ma'lumotlar oxirgi marta " + S.site.updated + " da yangilandi." : "")));
     var tg = el("a", null, tgName()); tg.href = tgUrl(); tg.target = "_blank"; tg.rel = "noopener"; p.appendChild(tg);
@@ -560,7 +565,7 @@
     var act = el("div", "hero-actions");
     if(started && nx) act.appendChild(btn("gold", "next", "Davom etish: " + (S.stages.indexOf(nx) + 1) + "-bosqich", "#" + nx.id));
     else act.appendChild(btn("gold", "next", "0 dan boshlash", "#qollanma"));
-    act.appendChild(btn("glass", "star", "Menga mos universitet", "#mos-universitet"));
+    act.appendChild(btn("glass", "star", "Bepul profil tahlili", "#profil"));
     H.appendChild(act);
     H.appendChild(globalSearch());
 
@@ -578,7 +583,7 @@
 
     /* 3. three tools */
     var tl = el("div", "tools");
-    [["star","Menga mos universitet","6 savol, 1 daqiqa","mos-universitet"],["doc","Hujjatlarim","Sizga kerak hujjatlar ro'yxati","hujjatlarim"],["wallet","Pul kalkulyatori","Viza puli va stipendiya imkoniyati","kalkulyator"],["search","Dastur qidirish","1 256 ta ingliz tilidagi dastur","dasturlar"]].forEach(function(x){
+    [["star","Profil tahlili","Imkoniyatlaringiz: 8 savol, 2 daqiqa","profil"],["uni","Menga mos universitet","6 savol, 1 daqiqa","mos-universitet"],["doc","Hujjatlarim","Sizga kerak hujjatlar ro'yxati","hujjatlarim"],["wallet","Pul kalkulyatori","Viza puli va stipendiya imkoniyati","kalkulyator"],["search","Dastur qidirish","1 256 ta ingliz tilidagi dastur","dasturlar"]].forEach(function(x){
       var a2 = el("a", "tool"); a2.href = "#" + x[3]; var i2 = el("span", "ic"); i2.appendChild(ic(x[0])); a2.appendChild(i2); var t2 = el("span", "txt"); t2.appendChild(el("b", null, x[1])); t2.appendChild(el("small", null, x[2])); a2.appendChild(t2); a2.appendChild(ic("next", "chev")); tl.appendChild(a2);
     });
     main.appendChild(sec(secHead("Foydali vositalar", null, null, null, "Bepul"), tl));
@@ -601,6 +606,7 @@
     var RV = realReviews();
     if(RV.length){ var rg = el("div", "rev-grid"); RV.slice(0, 3).forEach(function(r){ rg.appendChild(reviewCard(r)); }); main.appendChild(sec(secHead("Talabalar fikrlari", "Hammasi", "fikrlar", null, "Fikrlar"), rg)); }
 
+    main.appendChild(rowBtn("users", "Ota-onalar uchun", "Xarajatlar, viza puli, stipendiya va xavfsizlik: ochiq javoblar", null, "#ota-onalar"));
     /* 6. questions */
     var faq = arr(S.site.faq).filter(function(x){ return x && str(x.q); });
     if(faq.length){
@@ -832,8 +838,8 @@
   var QZ = {step:0, a:{}};
   try{ var qs0 = JSON.parse(localStorage.getItem("uprep-quiz") || "null"); if(qs0 && qs0.a) QZ = qs0; }catch(e){}
   function saveQZ(){ try{ localStorage.setItem("uprep-quiz", JSON.stringify(QZ)); }catch(e){} }
-  function quizMatch(){
-    var a = QZ.a, out = [];
+  function quizMatch(a0){
+    var a = a0 || QZ.a, out = [];
     S.unis.forEach(function(u){
       if(a.money === "dsu" && u.type !== "Davlat") return;
       var c = cityById(u.city), reg = c ? c.region : "";
@@ -918,6 +924,144 @@
       box.appendChild(rowBtn("book", "Keyingi qadam: 0 dan qo'llanma", "Ariza, DoV/CIMEA, viza va stipendiya tartibi", "g", "#qollanma"));
     }
     draw();
+    footer(main);
+  }
+
+  /* ================= PROFILE ANALYSIS (lead form) ================= */
+  var PRQ = [
+    {k:"edu", q:"Hozir qanday ma'lumotingiz bor?", o:[["s11","11 yillik maktab attestati","Maktabni bitirgan yoki bitiryapman"],["s12","12 yillik ta'lim yoki OTMning 1-kursi","Litsey, kollej yoki universitetda o'qiyapman"],["ba","Bakalavr diplomi","Magistraturaga topshirmoqchiman"]]},
+    {k:"field", q:"Qaysi yo'nalish sizni qiziqtiradi?", o:Object.keys(FIELDS).map(function(k){ return [k, FIELDS[k].t, ""]; }).concat([["any","Hali bilmayman",""]])},
+    {k:"eng", q:"Ingliz tilingiz qanday?", o:[["none","Hali sertifikat yo'q","Tayyorlanyapman"],["b2","IELTS 5.5 – 6.5 (B2)",""],["c1","IELTS 7+ (C1)",""]]},
+    {k:"gpa", q:"O'rtacha bahoingiz qanday?", o:[["hi","A'lo","5 ballik tizimda 4.5 dan yuqori yoki 85%+"],["mid","Yaxshi","4 – 4.5 yoki 70–85%"],["lo","O'rtacha","4 dan past yoki 70% dan kam"]]},
+    {k:"area", q:"Italiyaning qaysi qismida o'qimoqchisiz?", o:[["any","Farqi yo'q",""],["north","Shimol","Milan, Turin, Bolonya, Padova…"],["center","Markaz","Rim, Florensiya, Piza, Siena…"],["south","Janub va orollar","Neapol, Bari, Sitsiliya…"]]},
+    {k:"visa", q:"Viza uchun yiliga 10 179,85 € ko'rsata olasizmi?", o:[["yes","Ha, oilamda bor","O'zimning yoki oilamning hisobida"],["part","Qisman, yig'yapmiz",""],["no","Hozircha yo'q",""]]},
+    {k:"fam", q:"Oilangiz haqida (stipendiya uchun, taxminan)", form:true},
+    {k:"help", q:"Sizga qancha yordam kerak?", o:[["app","O'zim qilaman, yo'l-yo'riq yetadi","Mustaqil tarifi"],["support","Savollarimga javob berib turilsa bo'ldi","Yordam bilan tarifi"],["full","Hammasini siz bilan birga qilmoqchiman","To'liq hamrohlik tarifi"]]}
+  ];
+  var PRF = {step:0, a:{members:"4", income:""}};
+  try{ var pf0 = JSON.parse(localStorage.getItem("uprep-profile") || "null"); if(pf0 && pf0.a) PRF = pf0; }catch(e){}
+  function savePRF(){ try{ localStorage.setItem("uprep-profile", JSON.stringify(PRF)); }catch(e){} }
+  var INC = [["5000","5 000 € dan kam"],["10000","5 000 – 15 000 €"],["20000","15 000 – 25 000 €"],["32000","25 000 – 40 000 €"],["50000","40 000 € dan ko'p"]];
+  function pfLabel(k, v){ var Q = PRQ.filter(function(q){ return q.k === k; })[0]; var o = Q && Q.o ? Q.o.filter(function(x){ return x[0] === v; })[0] : null; return o ? o[1] : ""; }
+  function profileView(main){
+    var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
+    H.appendChild(kicker("star", "Bepul · 2 daqiqa"));
+    H.appendChild(heroTitle("Profilingizni tahlil qilamiz"));
+    H.appendChild(el("p", "lead", "8 ta savolga javob bering: qaysi yo'l sizga mos, qaysi universitetlar, stipendiya imkoniyati va viza bo'yicha holatingizni ko'rsatamiz."));
+    var box = el("div", "quiz"); main.appendChild(box);
+    function next(){ PRF.step++; savePRF(); draw(); box.scrollIntoView({behavior: REDUCED ? "auto" : "smooth", block:"start"}); }
+    function draw(){
+      box.textContent = "";
+      if(PRF.step >= PRQ.length){ result(); return; }
+      var Q = PRQ[PRF.step];
+      var top = el("div", "qz-top"); var bar = el("div", "qz-bar"), fill = el("i"); fill.style.width = (PRF.step / PRQ.length * 100) + "%"; bar.appendChild(fill); top.appendChild(bar);
+      top.appendChild(el("span", "qz-n", (PRF.step + 1) + " / " + PRQ.length)); box.appendChild(top);
+      box.appendChild(el("h2", "qz-q", Q.q));
+      if(Q.form){
+        var f = el("div", "form");
+        var m = el("select", "cityselect"); ["1","2","3","4","5","6","7","8"].forEach(function(n){ var op = el("option", null, n); op.value = n; if(PRF.a.members === n) op.selected = true; m.appendChild(op); });
+        var l1 = el("label", "fld"); l1.appendChild(el("span", null, "Oila a'zolari soni (siz bilan)")); l1.appendChild(m); f.appendChild(l1);
+        var inc = el("select", "cityselect"); var op0 = el("option", null, "Tanlang"); op0.value = ""; inc.appendChild(op0);
+        INC.forEach(function(x){ var op = el("option", null, x[1]); op.value = x[0]; if(PRF.a.income === x[0]) op.selected = true; inc.appendChild(op); });
+        var l2 = el("label", "fld"); l2.appendChild(el("span", null, "Butun oilaning yillik daromadi (taxminan, evroda)")); l2.appendChild(inc); f.appendChild(l2);
+        f.appendChild(el("p", "note", "Bu ma'lumot hech qayerga yuborilmaydi: faqat sizning brauzeringizda hisoblanadi."));
+        var go2 = el("button", "btn gold"); go2.type = "button"; go2.appendChild(el("span", null, "Davom etish")); go2.appendChild(ic("next"));
+        go2.onclick = function(){ PRF.a.members = m.value; PRF.a.income = inc.value; next(); };
+        var sk = el("button", "prevlink"); sk.type = "button"; sk.appendChild(el("span", null, "Bilmayman, o'tkazib yuborish")); sk.onclick = function(){ PRF.a.members = m.value; PRF.a.income = ""; next(); };
+        f.appendChild(go2); f.appendChild(sk); box.appendChild(f);
+      } else {
+        var g = el("div", "qz-opts");
+        Q.o.forEach(function(o){
+          var b = el("button", "qz-opt" + (PRF.a[Q.k] === o[0] ? " on" : "")); b.type = "button";
+          if(Q.k === "field" && FIELDS[o[0]]){ var ii = el("span", "ic"); ii.appendChild(ic(FIELDS[o[0]].i)); b.appendChild(ii); }
+          var t = el("span", "txt"); t.appendChild(el("b", null, o[1])); if(o[2]) t.appendChild(el("small", null, o[2])); b.appendChild(t); b.appendChild(ic("next", "chev"));
+          b.onclick = function(){ PRF.a[Q.k] = o[0]; next(); };
+          g.appendChild(b);
+        });
+        box.appendChild(g);
+      }
+      if(PRF.step > 0){ var bk = el("button", "prevlink"); bk.type = "button"; bk.appendChild(ic("back")); bk.appendChild(el("span", null, "Orqaga")); bk.onclick = function(){ PRF.step--; savePRF(); draw(); }; box.appendChild(bk); }
+    }
+    function card(title, status, cls, lines, link){
+      var c = el("section", "pf-card " + (cls || "")); var h = el("div", "pf-h"); h.appendChild(el("b", null, title)); if(status) h.appendChild(el("span", "tag " + (cls === "ok" ? "ok" : cls === "no" ? "hot" : "lang"), status)); c.appendChild(h);
+      lines.forEach(function(l){ if(l) c.appendChild(el("p", null, l)); });
+      if(link) c.appendChild(btn("line", "next", link[0], link[1]));
+      return c;
+    }
+    function result(){
+      var a = PRF.a, out = [], summary = [];
+      var level = a.edu === "ba" ? "Magistratura" : "Bakalavr";
+      /* 1. path */
+      if(a.edu === "s11") box.appendChild(card("Sizning yo'lingiz: Foundation", null, "mid", ["Italiyada bakalavrga odatda 12 yillik ta'lim kerak. 11 yillik attestat bilan ikki yo'l bor: 1 yillik Foundation (Sapienza, Pavia, Padova, Messina va boshqalarda) yoki O'zbekistondagi OTMda 1 yil o'qib, keyin topshirish."], ["Foundation bor universitetlar", "#foundation"]));
+      else box.appendChild(card("Sizning yo'lingiz: " + level, null, "ok", [a.edu === "ba" ? "Bakalavr diplomingiz bilan magistraturaga (2 yil) topshirasiz. Bakalavrda o'qigan fanlaringiz tanlagan dasturga mos bo'lishi kerak." : "Bakalavrga (3 yil) to'g'ridan-to'g'ri topshira olasiz. Ko'p dasturlar SAT yoki CEnT-S natijasini so'raydi."], ["Testlar haqida", "#testlar"]));
+      summary.push("Ma'lumot: " + pfLabel("edu", a.edu));
+      /* 2. English + grades */
+      var eng = a.eng === "none" ? ["no", "Sertifikat kerak", "Deyarli hamma ingliz tilidagi dasturlar B2 (IELTS 5.5–6.5) so'raydi. IELTS'ni ariza ochilishidan oldin topshiring."] : a.eng === "b2" ? ["ok", "Yetarli", "B2 ko'p dasturlar uchun yetadi. Ba'zi kuchli dasturlar yuqoriroq ball so'rashi mumkin: dastur sahifasini tekshiring."] : ["ok", "Kuchli", "C1 bilan eng talabchan dasturlarga ham topshira olasiz."];
+      var gp = a.gpa === "lo" ? "O'rtacha baho bilan ham imkoniyat bor, lekin ba'zi dasturlarda minimal baho talabi bor. Ko'proq universitetga (5 ta va undan ko'p) topshiring va motivatsion xatga alohida e'tibor bering." : a.gpa === "mid" ? "Yaxshi baho ko'p dasturlarga yetadi. 3–5 ta universitetga topshiring." : "A'lo baholar kuchli dasturlar va universitetlarning o'z stipendiyalari uchun ham imkoniyat ochadi.";
+      box.appendChild(card("Til va baholar", eng[1], eng[0], [eng[2], gp]));
+      summary.push("Ingliz tili: " + pfLabel("eng", a.eng)); summary.push("Baho: " + pfLabel("gpa", a.gpa));
+      /* 3. universities */
+      var N0 = S.dsu.national || {}, m0 = Math.max(1, numv(a.members)), sc0 = [0, 1, 1.57, 2.04, 2.46, 2.85][m0] || (2.85 + (m0 - 5) * 0.35);
+      var rich = a.visa === "yes" && a.income && numv(a.income) / sc0 > (numv(N0.isee) || 28339.88);
+      var R = quizMatch({level:level, field:a.field, area:a.area, money: rich ? "self" : "dsu"}).slice(0, 3);
+      if(a.edu !== "s11" && R.length){
+        var uc = el("section", "pf-card"); var uh = el("div", "pf-h"); uh.appendChild(el("b", null, "Sizga mos 3 ta universitet")); uc.appendChild(uh);
+        R.forEach(function(r){ var row = el("a", "lrow"); row.href = "#uni-" + r.u.id + "/yonalishlar"; row.appendChild(el("span", "u-mono", mono(r.u))); var t = el("span", "txt"); t.appendChild(el("b", null, r.u.short || r.u.name)); t.appendChild(el("small", null, (r.city ? r.city.name + " · " : "") + r.ps.length + " ta mos dastur" + (r.nx ? " · " + r.nx.x.label + ": " + r.nx.x.date : ""))); row.appendChild(t); row.appendChild(ic("next", "chev")); uc.appendChild(row); });
+        uc.appendChild(btn("line", "star", "Batafsil tanlash", "#mos-universitet")); box.appendChild(uc);
+        summary.push("Mos universitetlar: " + R.map(function(r){ return r.u.short || r.u.name; }).join(", "));
+      }
+      summary.push("Yo'nalish: " + pfLabel("field", a.field) + "; hudud: " + pfLabel("area", a.area));
+      /* 4. scholarship */
+      var N = S.dsu.national || {}, LIM = numv(N.isee) || 28339.88, m = Math.max(1, numv(a.members)), scale = [0, 1, 1.57, 2.04, 2.46, 2.85][m] || (2.85 + (m - 5) * 0.35);
+      if(a.income){ var isee = numv(a.income) / scale, st = isee <= LIM * 2 / 3 ? ["ok", "Yuqori imkoniyat"] : isee <= LIM ? ["mid", "Mos kelishingiz mumkin"] : ["no", "Chegaradan oshishi mumkin"];
+        box.appendChild(card("Davlat stipendiyasi (DSU)", st[1], st[0], ["Taxminiy hisob: faqat daromad va oila soni bo'yicha. Haqiqiy natija (ISEE parificato) oila mulki va jamg'armasini ham hisobga oladi. 2026/27 chegarasi: ISEE " + (N.isee || "28 339,88 €") + ".", "Oila hujjatlarini O'zbekistonda, jo'nab ketishdan oldin tayyorlash kerak."], ["Aniqroq hisoblash", "#kalkulyator"]));
+        summary.push("Stipendiya: " + st[1] + " (" + m + " kishi, daromad ~" + (INC.filter(function(x){ return x[0] === a.income; })[0] || ["",""])[1] + ")"); }
+      else box.appendChild(card("Davlat stipendiyasi (DSU)", "Hisoblanmadi", "mid", ["Oila daromadini kiritmadingiz. Pul kalkulyatorida aniqroq hisoblab ko'ring."], ["Pul kalkulyatori", "#kalkulyator"]));
+      /* 5. visa money */
+      var vz = a.visa === "yes" ? ["ok", "Tayyor", "Yaxshi. Pul qonuniy va kuzatiladigan manbadan bo'lishi, so'nggi 3 oylik ko'chirmada ko'rinishi kerak."] : a.visa === "part" ? ["mid", "Tayyorlash kerak", "Pulni oldindan, tushuntirsa bo'ladigan tarzda yig'ing: oxirgi kunlarda birdan tushgan katta summa elchixonada savol tug'diradi."] : ["no", "Muhim to'siq", "Bu viza uchun majburiy talab. Stipendiyaga ariza berganingiz uning o'rnini bosmaydi. Oila bilan oldindan reja qiling."];
+      box.appendChild(card("Viza uchun pul: 10 179,85 € / yil", vz[1], vz[0], [vz[2]]));
+      summary.push("Viza puli: " + pfLabel("visa", a.visa));
+      /* 6. plan */
+      var P = plans(), want = P.filter(function(p){ return p.id === a.help; })[0] || P[0];
+      var pc = el("section", "pf-card plan-pick"); var ph = el("div", "pf-h"); ph.appendChild(el("b", null, "Sizga mos tarif: " + want.name)); ph.appendChild(el("span", "tag ok", want.price)); pc.appendChild(ph);
+      if(want.tagline) pc.appendChild(el("p", null, want.tagline));
+      pc.appendChild(btn("line", "wallet", "Barcha tariflar", "#tariflar")); box.appendChild(pc);
+      summary.push("Kerakli yordam: " + pfLabel("help", a.help) + " (" + want.name + ", " + want.price + ")");
+      box.appendChild(el("p", "muted-note", "Bu tahlil taxminiy va kafolat emas. Aniq talablar har bir universitet va viloyat sahifasida."));
+      /* send */
+      var sb = el("button", "go"); sb.type = "button"; var sp = el("span"); sp.appendChild(el("small", null, "Natija nusxalanadi va Telegram ochiladi")); sp.appendChild(el("span", "t", "Natijani " + tgName() + " ga yuborish")); sb.appendChild(sp); sb.appendChild(ic("send"));
+      sb.onclick = function(){ copyText("Salom! Uprep saytida profil tahlilidan o'tdim:\n- " + summary.join("\n- ") + "\n\nMaslahat olmoqchiman.").then(function(){ toast("Natija nusxalandi. Telegram'da joylashtirib yuboring."); window.open(tgUrl(), "_blank", "noopener"); }); };
+      box.appendChild(sb);
+      var again = el("button", "markdone"); again.type = "button"; again.appendChild(ic("route")); again.appendChild(el("span", null, "Qaytadan boshlash")); again.onclick = function(){ PRF = {step:0, a:{members:"4", income:""}}; savePRF(); draw(); }; box.appendChild(again);
+      box.appendChild(rowBtn("book", "Keyingi qadam: Italiyada o'qish noldan", "To'liq yo'riqnoma va PDF", "g", "#noldan"));
+    }
+    draw();
+    footer(main);
+  }
+
+  /* ================= PARENTS ================= */
+  function parentsView(main){
+    var P = S.parents || {};
+    var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
+    H.appendChild(kicker("users", "Ota-onalar uchun"));
+    H.appendChild(heroTitle(P.title || "Ota-onalar uchun"));
+    if(P.lead) H.appendChild(el("p", "lead", P.lead));
+    var fx = arr(P.facts).filter(function(x){ return str(x.big); });
+    if(fx.length){ var sg = el("div", "about-stats"); fx.forEach(function(x){ var d = el("div"); d.appendChild(el("b", null, x.big)); d.appendChild(el("small", null, x.small)); sg.appendChild(d); }); main.appendChild(sg); }
+    var faq = arr(P.faq).filter(function(x){ return str(x.q); });
+    if(faq.length){ var box = el("div", "faq"); faq.forEach(function(x, i){ var b = el("div", "blocks flat"); b.appendChild(paras(x.a)); box.appendChild(fold("par:" + i, str(x.q), b, i === 0)); }); main.appendChild(sec(secHead("Eng ko'p beriladigan savollar", null, null, null, "Savol-javob"), box)); }
+    if(arr(P.docs).length){ var ul = el("ul", "ticks"); arr(P.docs).forEach(function(t){ var li = el("li"); li.appendChild(ic("check")); li.appendChild(el("span", null, t)); ul.appendChild(li); }); main.appendChild(sec(secHead("Sizdan qaysi hujjatlar kerak bo'ladi", null, null, null, "Ota-onadan"), ul)); }
+    if(arr(P.warnings).length){ var mk = el("ul", "mist"); arr(P.warnings).forEach(function(x){ var li = el("li"); li.appendChild(ic("shield")); li.appendChild(el("span", null, x)); mk.appendChild(li); }); main.appendChild(sec(secHead("Ehtiyot bo'ling", null, null, null, "Xavfsizlik"), mk)); }
+    var cta = el("div", "links");
+    var ask = el("button", "go"); ask.type = "button"; var sp = el("span"); sp.appendChild(el("small", null, "Ota-ona sifatida bevosita yozing")); sp.appendChild(el("span", "t", "Savol berish: " + tgName())); ask.appendChild(sp); ask.appendChild(ic("send"));
+    ask.onclick = function(){ copyText("Salom! Men ota-onaman. Farzandimning Italiyada o'qishi bo'yicha savolim bor:").then(function(){ toast("Matn nusxalandi. Telegram'da savolingizni yozib yuboring."); window.open(tgUrl(), "_blank", "noopener"); }); };
+    cta.appendChild(ask);
+    cta.appendChild(rowBtn("star", "Farzandingiz profilini tahlil qiling", "8 savol, 2 daqiqa, bepul", "g", "#profil"));
+    cta.appendChild(rowBtn("wallet", "Tariflar", plans().map(function(p){ return p.name + " " + p.price; }).join(" · "), null, "#tariflar"));
+    cta.appendChild(rowBtn("book", "Italiyada o'qish noldan (PDF)", "Butun yo'l, oddiy tilda", null, "#noldan"));
+    main.appendChild(sec(secHead("Keyingi qadam", null, null, null, "Bog'lanish"), cta));
+    var srcs = el("div"); arr(P.sources).forEach(function(x){ var u = safeUrl(x.url); if(!u) return; var a2 = el("a", "src"); a2.href = u; a2.target = "_blank"; a2.rel = "noopener"; a2.appendChild(ic("link")); a2.appendChild(el("span", null, x.label)); srcs.appendChild(a2); });
+    main.appendChild(sec(secHead("Manbalar", null, null, null, "Rasmiy"), srcs));
     footer(main);
   }
 

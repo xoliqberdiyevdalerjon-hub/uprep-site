@@ -1,0 +1,58 @@
+{
+  "title": "Ota-onalar uchun",
+  "lead": "Farzandingiz Italiyada o'qishni xohlayaptimi? Tabiiyki, sizda ko'p savol bor: qancha pul ketadi, viza qanday olinadi, u yerda kim yordam beradi. Bu sahifada shu savollarga ochiq va halol javob berdik.",
+  "facts": [
+    { "big": "10 179,85 €", "small": "viza uchun yiliga ko'rsatiladigan mablag' (sarflanmaydi)" },
+    { "big": "7 171,11 €", "small": "davlat stipendiyasining minimumi, yiliga (2026/27)" },
+    { "big": "20 soat", "small": "haftasiga talaba qonuniy ishlashi mumkin" }
+  ],
+  "faq": [
+    {
+      "q": "Italiyada o'qish qancha turadi?",
+      "a": "Davlat universitetlarida o'qish to'lovi oila daromadiga qarab hisoblanadi va ko'pincha juda past. Masalan Pizada 2026/27 da chet elliklar uchun yiliga 290 € dan 2 900 € gacha, davlat guruhiga qarab. Xususiy universitetlar ancha qimmat.\n\nStipendiya (DSU) yutgan talaba o'qish to'lovidan to'liq ozod qilinadi.\n\nYashash xarajati shaharga bog'liq: katta shaharlarda (Milan, Rim, Bolonya) uy qimmat, kichik universitet shaharlarida arzonroq."
+    },
+    {
+      "q": "Viza uchun pulni qanday ko'rsatamiz?",
+      "a": "Elchixona yiliga 10 179,85 € mablag' borligini ko'rishni so'raydi (2026/27 va 2027/28 talabi). Bu pul sarflanmaydi: u farzandingizning yoki oilaning hisobida borligi ko'rsatiladi.\n\nPul 4-darajagacha qarindoshning hisobida bo'lishi mumkin. U qonuniy va kuzatiladigan manbadan bo'lishi kerak: elchixona hisobdagi harakatni va summa oila daromadiga mosligini tekshiradi. Oxirgi kunlarda birdan tushgan katta summa savol tug'diradi, shuning uchun pulni oldindan tayyorlang.\n\nOdatda kerak bo'ladi: so'nggi 3 oylik bank ko'chirmasi (bank blankasida, ho'l muhr bilan, topshirish kunida 10 ish kunidan eski emas), ish joyi va maosh ma'lumotnomasi va homiy sifatida e'tirozsizlik xatingiz."
+    },
+    {
+      "q": "Stipendiya haqiqatan beriladimi?",
+      "a": "Ha. Italiyada oila daromadi past talabalarga viloyat idoralari qonun asosida stipendiya beradi va bu chet elliklarga ham tegishli. 2026/27 uchun davlat minimumi oiladan uzoqda yashovchi talabaga yiliga 7 171,11 €.\n\nLekin bu avtomatik emas. Oila daromadi va mulki chegaradan oshmasligi kerak (2026/27 da ISEE 28 339,88 €, ISPE 61 608,48 €). Ariza o'z vaqtida berilishi va ikkinchi yildan boshlab farzandingiz yetarli kredit to'plashi kerak.\n\nEng muhimi: oila hujjatlari (oila tarkibi, daromad, uy-joy) faqat O'zbekistonda olinadi, apostil qo'yilib, italyan tiliga tarjima qilinadi. Bu ishda sizning yordamingiz kerak bo'ladi."
+    },
+    {
+      "q": "Farzandim u yerda ishlay oladimi?",
+      "a": "Ha, talaba permessosi bilan haftasiga 20 soatgacha (yiliga 1 040 soat) rasmiy shartnoma asosida ishlash mumkin. Lekin birinchi yil ishga emas, o'qishga e'tibor berishni maslahat beramiz: stipendiyani saqlab qolish uchun imtihonlardan o'tish kerak.\n\nBirinchi 3–4 oy uchun alohida pul ajrating: stipendiya puli odatda kechikib, bo'lib-bo'lib keladi."
+    },
+    {
+      "q": "U yerda kim yordam beradi? Sog'lig'i-chi?",
+      "a": "Kelgandan keyin 8 kun ichida yashash ruxsatnomasiga (permesso di soggiorno) ariza beriladi. Sog'liq uchun talaba Italiya davlat tizimiga (SSN) yiliga 700 € evaziga yoziladi yoki xususiy sug'urta oladi. Shoshilinch holatda 112 raqami ishlaydi.\n\nUniversitetlarda xalqaro talabalar bo'limi bor. Ko'p shaharlarda o'zbek talabalar jamoasi ham bor va yangi kelganlarga yordam beradi.\n\nBirinchi yil oson emas: byurokratiya sekin, til notanish va uyni sog'inish tabiiy. Buni oldindan bilsangiz, farzandingizni ruhan ham tayyorlay olasiz."
+    },
+    {
+      "q": "Diplom tan olinadimi? O'qishdan keyin-chi?",
+      "a": "Italiya diplomi Yevropada tan olinadi. O'qishni tugatgach, shartlar bajarilsa, farzandingiz talaba permessosini 12 oygacha ish qidirish permessosiga almashtira oladi.\n\nItaliya permessosi bilan boshqa Shengen davlatlariga 180 kun ichida 90 kungacha borish mumkin."
+    },
+    {
+      "q": "Uprep bilan qanday ishlaymiz? Kafolat berasizmi?",
+      "a": "Qabul va vizaga hech kim halol kafolat bera olmaydi: qarorni universitet va elchixona chiqaradi. Biz har bir qadamni to'g'ri va o'z vaqtida bajarishga yordam beramiz.\n\nUchta tarif bor: Mustaqil ($199), Yordam bilan ($499) va To'liq hamrohlik ($1 399). Oxirgisida hujjat yig'ishdan Italiyadagi full enrollment'gacha hammasini birga qilamiz. Shartlarni boshlashdan oldin aniq kelishib olasiz va ota-ona sifatida bizga istalgan savolni o'zingiz bera olasiz."
+    }
+  ],
+  "warnings": [
+    "Kimdir «vizani 100% olib beraman» desa, ehtiyot bo'ling: buni hech kim kafolatlay olmaydi.",
+    "Universitet, CIMEA va elchixona to'lovlarini faqat ularning rasmiy sayti yoki kassasi orqali to'lang.",
+    "Asl hujjatlarni (pasport, diplom) begona odamga qoldirmang. DoV uchun boshqa odam topshirsa, rasmiy ishonchnoma bilan topshiradi.",
+    "Italiyada uy uchun uyni ko'rmasdan va shartnoma imzolamasdan pul o'tkazmang.",
+    "Har bir sanani va summani rasmiy manbadan tekshiring. Ijtimoiy tarmoqdagi «tanishim aytdi» gaplariga tayanmang."
+  ],
+  "docs": [
+    "Oila tarkibi va propiska ma'lumotnomasi (stipendiya uchun)",
+    "Har bir oila a'zosining yillik daromadi haqida ma'lumotnoma (ishlamasa, buni aniq yozgan hujjat)",
+    "Uy-joy: oila a'zolari nomidagi mulk va maydoni (kadastr ma'lumotnomasi)",
+    "Homiy sifatida: bank ko'chirmasi, ish joyi va maosh ma'lumotnomasi, e'tirozsizlik xati (viza uchun)",
+    "Hammasi apostil bilan va italyan tiliga tarjima qilingan bo'lishi kerak"
+  ],
+  "sources": [
+    { "label": "Italiya elchixonasi, Toshkent: talaba vizasi (PDF)", "url": "https://ambtashkent.esteri.it/wp-content/uploads/2026/05/6.-Study-enrolment-and-foundation-years-ENGLISH-rev.pdf" },
+    { "label": "MUR: 2026/27 stipendiya minimumlari", "url": "https://www.mur.gov.it/it/atti-e-normativa/decreto-direttoriale-n-175-del-10-02-2026" },
+    { "label": "MUR sirkulyari: 2026/27 va 2027/28 qoidalari (PDF)", "url": "https://portale.units.it/sites/default/files/2026-05/Circolare%202026-2027%20studenti_internazionali_EN_0.pdf" }
+  ]
+}

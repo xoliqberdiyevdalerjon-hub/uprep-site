@@ -579,6 +579,38 @@ content:
           - { name: label, label: "Tugma matni", type: string }
           - { name: url, label: "Havola (https://...)", type: string }
 
+  - name: parents
+    label: "Ota-onalar uchun"
+    type: file
+    path: content/parents.json
+    format: json
+    fields:
+      - { name: title, label: Sarlavha, type: string }
+      - { name: lead, label: "Kirish matni", type: text }
+      - name: facts
+        label: "Katta raqamlar"
+        type: object
+        list: true
+        fields:
+          - { name: big, label: Raqam, type: string }
+          - { name: small, label: Izoh, type: string }
+      - name: faq
+        label: "Savol-javoblar"
+        type: object
+        list: true
+        fields:
+          - { name: q, label: Savol, type: string }
+          - { name: a, label: "Javob (bo'sh qator = yangi xatboshi)", type: text }
+      - { name: docs, label: "Ota-onadan kerak hujjatlar", type: string, list: true }
+      - { name: warnings, label: "Ehtiyot bo'ling (ro'yxat)", type: string, list: true }
+      - name: sources
+        label: Manbalar
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Nomi, type: string }
+          - { name: url, label: Havola, type: string }
+
   - name: noldan
     label: "Noldan: to'liq yo'riqnoma"
     type: file
