@@ -427,7 +427,7 @@ main.narrow{max-width:800px}
 /* footer */
 .foot{margin-top:56px;padding:28px 0 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 .foot-grid{display:grid;gap:22px}
-@media (min-width:720px){ .foot-grid{grid-template-columns:2fr 1fr 1fr} }
+@media (min-width:720px){ .foot-grid{grid-template-columns:1.6fr 1fr 1fr 1fr} }
 @media (max-width:719px){ .foot-grid{grid-template-columns:1fr 1fr} .foot-grid > div:first-child{grid-column:1/-1} }
 .foot h4,.foot .foot-h{margin:0 0 10px;font-family:var(--body);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink)}
 .foot ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
@@ -1153,7 +1153,7 @@ a.news-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line-2),
   .nd-cover .logo-b{position:absolute;top:16mm;left:14mm}
   .nd-cover .logo-b .word{color:#fff}
   .nd-cover-tag{align-self:flex-start;padding:6px 14px;border-radius:999px;background:rgba(242,178,51,.18);color:#F7C760;font-weight:700;font-size:12pt}
-  .nd-cover h1{margin:18px 0 14px;font:800 54px/1.02 var(--display);color:#fff;letter-spacing:-.02em}
+  .nd-cover .nd-cover-title{margin:18px 0 14px;font:800 54px/1.02 var(--display);color:#fff;letter-spacing:-.02em}
   .nd-cover p{margin:0;font-size:17pt;line-height:1.4;color:#D9E1F2;max-width:150mm}
   .nd-cover small{margin-top:26mm;font-size:11pt;color:#AFC0E0}
   .nd .prose,.nd-letter .prose{font-size:11.5pt;line-height:1.6}
@@ -1192,3 +1192,17 @@ a.news-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line-2),
 .sheet-btns{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 6px}
 .sheet-btns .btn{flex:1;justify-content:center}
 .sheet-x{position:absolute;top:12px;right:12px;width:34px;height:34px;border:0;border-radius:50%;background:var(--surface-2);color:var(--ink);font-size:22px;line-height:1;cursor:pointer}
+
+/* compact "3 steps" cards on phones */
+@media (max-width:719px){
+  .ov{display:grid;grid-template-columns:40px 1fr;column-gap:12px;padding:14px 16px}
+  .ov .ic{grid-row:span 2;width:40px;height:40px;margin:0;border-radius:12px}
+  .ov p{margin-top:4px;font-size:14px}
+}
+
+/* ---------- Settings ---------- */
+.set-g{margin:0 0 14px}
+.set-l{display:block;margin:14px 0 8px;font-size:14.5px}
+.set-seg{display:inline-flex;flex-wrap:wrap}
+.prevlink.danger{color:var(--red)}
+.set-seg button{padding:0 16px}

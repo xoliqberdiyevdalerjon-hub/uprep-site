@@ -2931,11 +2931,11 @@
     "fee": "Har bir ariza 30 €, yiliga 2 tagacha ariza",
     "deadlines": [
       {
-        "label": "MoveIn pre-selection (2026/27)",
+        "label": "MoveIn pre-selection (2026/27, o'tgan yil)",
         "date": "22.12.2025 – 15.05.2026"
       },
       {
-        "label": "Universitaly pre-enrollment (2026/27)",
+        "label": "Universitaly pre-enrollment (2026/27, o'tgan yil)",
         "date": "30.06.2026 gacha"
       }
     ],
@@ -7045,7 +7045,7 @@
     "tuition": "Bakalavr: birinchi to'lov 1 000 €, qolgani ro'yxatdan o'tgan yilning iyul oxirigacha",
     "deadlines": [
       {
-        "label": "2027/28: bakalavr oldindan ro'yxatdan o'tish ochiladi",
+        "label": "2027/28: bakalavr oldindan ro'yxatdan o'tish ochildi (15.11.2026 dan)",
         "date": "15.11.2026"
       }
     ],
@@ -9694,7 +9694,7 @@
         "date": "12.01.2026"
       },
       {
-        "label": "Universitaly pre-enrollment (magistratura)",
+        "label": "Universitaly pre-enrollment (magistratura), 2026/27 (o'tgan yil)",
         "date": "20.07.2026"
       }
     ],
