@@ -428,6 +428,7 @@ main.narrow{max-width:800px}
 .foot{margin-top:56px;padding:28px 0 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 .foot-grid{display:grid;gap:22px}
 @media (min-width:720px){ .foot-grid{grid-template-columns:2fr 1fr 1fr} }
+@media (max-width:719px){ .foot-grid{grid-template-columns:1fr 1fr} .foot-grid > div:first-child{grid-column:1/-1} }
 .foot h4,.foot .foot-h{margin:0 0 10px;font-family:var(--body);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink)}
 .foot ul{margin:0;padding:0;list-style:none;display:grid;gap:7px}
 .foot a{text-decoration:none}
@@ -970,3 +971,12 @@ a.news-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line-2),
 .fb .cityselect{width:100%;height:50px;border-radius:14px}
 .fb .btn{justify-self:start}
 .callout a{font-weight:700;color:var(--accent)}
+/* v9: simpler home */
+.hero.has-photo.home .hero-in{min-height:min(68vh,600px)}
+.newsline{display:flex;align-items:center;gap:10px;margin:-4px 0 6px;padding:12px 14px;border-radius:var(--r-md);background:var(--surface);box-shadow:0 0 0 1px var(--line), var(--sh-1);text-decoration:none}
+.newsline .t{flex:1;min-width:0;font-size:14.5px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.newsline .tag{flex:none}
+.sec > .row{margin-top:12px}
+.mini-actions{display:flex;flex-wrap:wrap;gap:8px}
+.mini-actions .btn{height:40px;padding:0 14px;font-size:14px}
+.hero .hero-actions .btn.glass.fav{min-width:0}
