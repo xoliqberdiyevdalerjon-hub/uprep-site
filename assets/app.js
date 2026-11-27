@@ -2536,7 +2536,7 @@
   function cityRow(c){
     var a = el("a", "lrow"); a.href = "#shahar-" + c.id;
     var t = el("span", "txt"); t.appendChild(el("b", null, c.name)); t.appendChild(el("small", null, str(c.region) + (c.dsu ? ". Stipendiya: " + str(c.dsu) : ""))); a.appendChild(t);
-    if(c.living && c.living.total) a.appendChild(el("span", "tag lang", "≈ " + str(c.living.total).replace(/\s*\(.*\)$/, "") + "/oy"));
+    if(c.living && c.living.total) a.appendChild(el("span", "tag lang", "≈ " + str(c.living.total).replace(/^≈\s*/, "").replace(/\s*\(.*\)$/, "") + "/oy"));
     var n = unisIn(c.id).length; if(n) a.appendChild(el("span", "count", n + " ta"));
     a.appendChild(ic("next", "chev")); return a;
   }

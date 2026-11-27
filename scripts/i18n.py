@@ -19,10 +19,10 @@ LANG = os.environ.get("I18N_LANG", "ru")
 TM_PATH = os.path.join(ROOT, "content", LANG, "_tm.json")
 # fields whose values are used by the code (ids, links, enums compared in app.js) or are not text
 SKIP_KEYS = {"id", "url", "href", "link", "src", "image", "img", "icon", "photo", "logo", "heroImage", "heroCreditUrl",
-             "type", "level", "access", "lang", "area", "status", "kind", "lvl", "tag", "city", "cities", "uni", "unis_ids",
+             "type", "level", "access", "lang", "area", "status", "kind", "lvl", "city", "cities", "uni", "unis_ids",
              "telegram", "email", "phone", "code", "color", "help", "short", "slug", "map", "lat", "lng", "file", "pdf", "video",
-             "recording", "isee", "ispe", "updated", "controller",
-             "style", "route", "reason", "edu", "money", "visa", "eng", "gpa", "dsu", "mode", "result", "f", "k", "cur", "test", "app", "value", "key", "stage", "langs"}
+             "recording", "isee", "ispe", "updated",
+             "style", "route", "reason", "edu", "money", "visa", "eng", "gpa", "mode", "result", "f", "k", "cur", "test", "app", "value", "key", "stage", "langs"}
 SKIP_FILES = {"_tm"}
 
 
