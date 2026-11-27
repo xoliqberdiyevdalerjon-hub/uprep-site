@@ -62,7 +62,7 @@
     {
       "id": "support",
       "name": "Plus",
-      "price": "$499",
+      "price": "499 €",
       "note": "Bir marta to'lov",
       "tagline": "Hujjatlarni o'zingiz topshirasiz, har bir qadamda esa biz yoningizdamiz va xatolaringizni oldindan tutamiz.",
       "badge": "Eng ko'p tanlanadi",
@@ -78,7 +78,7 @@
     {
       "id": "full",
       "name": "Premium",
-      "price": "$1 490",
+      "price": "1 490 €",
       "note": "3 qismga bo'lib to'lash mumkin",
       "tagline": "Noldan Italiyadagi full enrollment'gacha hammasini biz bilan birga qilasiz.",
       "badge": "Eng to'liq yordam",
@@ -98,22 +98,22 @@
   "extras": [
     {
       "name": "Konsultatsiya, 1 soat",
-      "price": "$29",
+      "price": "29 €",
       "note": "Keyin istalgan tarifni olsangiz, shu summa chegiriladi"
     },
     {
       "name": "Motivatsion xat va CV",
-      "price": "$99",
+      "price": "99 €",
       "note": "Tuzilma, tahrir va 2 marta tekshirish"
     },
     {
       "name": "Viza hujjatlarini tekshirish",
-      "price": "$149",
+      "price": "149 €",
       "note": "Elchixona ro'yxati bo'yicha har bir hujjat"
     },
     {
       "name": "Stipendiya (DSU) paketi",
-      "price": "$199",
+      "price": "199 €",
       "note": "Viloyatingiz bandosi, oila hujjatlari, ISEE va ariza"
     }
   ],

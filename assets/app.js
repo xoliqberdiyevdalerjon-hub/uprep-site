@@ -6,6 +6,7 @@
   /* ---------------- icons ---------------- */
   /*! Icons: Lucide, ISC License, Copyright (c) Lucide Icons and Contributors, https://lucide.dev. Fonts: SIL OFL 1.1. Full notices: THIRD_PARTY_LICENSES.txt */
   var ICONS = {
+    "tgplane": "<path d=\"M21.5 4.2 2.9 11.4c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.8-.8l3.3-15.4c.3-1.3-.5-1.9-1.4-1.3Z\" fill=\"currentColor\" stroke=\"none\" /> <path class=\"tg-fold\" d=\"m7.6 14.2 9.8-6.2c.5-.3.9-.1.5.2l-8.2 7.4\" stroke-width=\"1.2\" fill=\"none\" />",
     "send": "<path d=\"M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z\" /> <path d=\"m21.854 2.147-10.94 10.939\" />",
     "stamp": "<path d=\"M5 22h14\" /> <path d=\"M19.27 13.73A2.5 2.5 0 0 0 17.5 13h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1.5c0-.66-.26-1.3-.73-1.77Z\" /> <path d=\"M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-3-3c-1.66 0-3 1-3 3s1 2 1 3.5V13\" />",
     "laptop": "<path d=\"M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16\" />",
@@ -316,7 +317,7 @@
 
   function tgUrl(){ var u = str(S.site.telegram || "Uniroad_Admin").replace(/^@/, ""); return "https://t.me/" + encodeURIComponent(u); }
   function tgName(){ return "@" + str(S.site.telegram || "Uniroad_Admin").replace(/^@/, ""); }
-  function price(){ return str(S.site.price) || "$399"; }
+  function price(){ return str(S.site.price) || "Bepul"; }
   function doneCount(){ return S.stages.filter(function(s){ return prog[s.id]; }).length; }
   function nextStage(){ return S.stages.filter(function(s){ return !prog[s.id]; })[0] || null; }
   function upcoming(){ return S.calendar.filter(function(c){ return c._d && daysLeft(c._d) >= 0; }).sort(function(a, b){ return a._d - b._d; }); }
@@ -389,9 +390,9 @@
   function shell(r){
     if(SH) return SH;
     root.textContent = "";
-    SH = { bar:appbar(r), hz:el("section", "herozone"), main:el("main", "wrap"), foot:footerNode(), tab:tabbar(r) };
+    SH = { bar:appbar(r), hz:el("section", "herozone"), main:el("main", "wrap"), foot:footerNode(), tab:tabbar(r), fab:contactFab() };
     SH.hz.setAttribute("aria-label", "Sahifa boshi");
-    [SH.bar, SH.hz, SH.main, SH.foot, SH.tab].forEach(function(n){ root.appendChild(n); });
+    [SH.bar, SH.hz, SH.main, SH.foot, SH.tab, SH.fab].forEach(function(n){ root.appendChild(n); });
     return SH;
   }
   function markNav(r){
@@ -430,7 +431,7 @@
     }[r.view] || homeView)(main, r);
     if(CRUMBS){ main.insertBefore(CRUMBS, main.firstChild); CRUMBS = null; }
     root.replaceChild(main, sh.main); sh.main = main;
-    markNav(r); accLabel(); updateBell();
+    markNav(r); accLabel(); updateBell(); setFab(r.view);
     if(!firstPaint && !REDUCED && !document.documentElement.classList.contains("calm")){ main.classList.add("enter"); setTimeout(function(){ main.classList.remove("enter"); }, 200); }
     if(restore){ var y = SCROLLS[key]; requestAnimationFrame(function(){ try{ window.scrollTo({top:y, left:0, behavior:"instant"}); }catch(e){ window.scrollTo(0, y); } }); }
     else if(top && !keepScroll){ try{ window.scrollTo({top:0, left:0, behavior:"instant"}); }catch(e){ window.scrollTo(0, 0); } }
@@ -711,6 +712,7 @@
     H.appendChild(heroTitle("Tariflar va narxlar"));
     H.appendChild(el("p", "lead", "Saytdan o'zingiz foydalanasizmi, online yordam kerakmi yoki hammasini biz bilan birga qilasizmi: tanlov sizda."));
     main.appendChild(plansSection("Sizga qaysi biri mos?"));
+    main.appendChild(contactCard("Qaysi tarif mosligini birga aniqlaylik", tgName() + " · savolingizni yozing, Telegram'da javob beramiz"));
     main.appendChild(rowBtn("book", "Avval bepul o'qing: Italiyada o'qish noldan", "10 bob, PDF bilan", "g", "#noldan"));
     footer(main);
   }
@@ -1224,7 +1226,8 @@
     if(arr(P.docs).length){ var ul = el("ul", "ticks"); arr(P.docs).forEach(function(t){ var li = el("li"); li.appendChild(ic("check")); li.appendChild(el("span", null, t)); ul.appendChild(li); }); var dl = el("div", "links"); dl.appendChild(rowBtn("coin", "Stipendiya hujjatlari", "Viloyatlar bo'yicha aniq ro'yxat", null, "#stipendiya")); dl.appendChild(rowBtn("passport", "Viza hujjatlari", "Elchixona ro'yxati (5-qadam)", null, "#s4")); main.appendChild(sec(secHead("Sizdan qaysi hujjatlar kerak bo'ladi", null, null, null, "Ota-onadan"), ul, dl)); }
     if(arr(P.warnings).length){ var mk = el("ul", "mist"); arr(P.warnings).forEach(function(x){ var li = el("li"); li.appendChild(ic("shield")); li.appendChild(el("span", null, x)); mk.appendChild(li); }); main.appendChild(sec(secHead("Ehtiyot bo'ling", null, null, null, "Xavfsizlik"), mk)); }
     var cta = el("div", "links");
-    var ask = el("button", "go"); ask.type = "button"; var sp = el("span"); sp.appendChild(el("small", null, "Ota-ona sifatida bevosita yozing")); sp.appendChild(el("span", "t", "Savol berish: " + tgName())); ask.appendChild(sp); ask.appendChild(ic("send"));
+    cta.appendChild(contactCard("Ota-ona sifatida to'g'ridan-to'g'ri yozing", tgName() + " · farzandingiz hujjatlari, xarajat va xavfsizlik bo'yicha savollar"));
+    var ask = el("button", "go"); ask.type = "button"; var sp = el("span"); sp.appendChild(el("small", null, "Telegram'siz, shu saytning o'zida")); sp.appendChild(el("span", "t", "Saytdan savol yuborish")); ask.appendChild(sp); ask.appendChild(ic("send"));
     ask.onclick = function(){ go("xabar?tur=savol"); };
     cta.appendChild(ask);
     cta.appendChild(rowBtn("star", "Farzandingiz profilini tahlil qiling", "8 savol, 2 daqiqa, bepul", "g", "#profil"));
@@ -2011,6 +2014,34 @@
     setTimeout(updateBell, 0);
   }
 
+  /* ================= CONTACT: "Uniroad admin bilan bog'lanish" =================
+     big card on the pages where people decide (tariffs, parents, feedback, about),
+     a floating Telegram button everywhere (expanded on those pages, compact elsewhere). */
+  function contactCard(title, sub){
+    var a = el("a", "tg-card"); a.href = tgUrl(); a.target = "_blank"; a.rel = "noopener";
+    var av = el("span", "tg-av"); av.innerHTML = markSVG(); a.appendChild(av);
+    var t = el("span", "tg-txt"); t.appendChild(el("small", null, "Telegram")); t.appendChild(el("b", null, title || "Uniroad admin bilan bog'lanish")); t.appendChild(el("span", "tg-sub", sub || tgName() + " · savol, maslahat va tariflar bo'yicha")); a.appendChild(t);
+    var go = el("span", "tg-go"); go.appendChild(ic("tgplane")); go.appendChild(el("span", null, "Yozish")); a.appendChild(go);
+    return a;
+  }
+  var FAB_BIG = ["home", "plans", "parents", "feedback", "about", "profile", "settings"];
+  function contactFab(){
+    var a = el("a", "tg-fab"); a.href = tgUrl(); a.target = "_blank"; a.rel = "noopener"; a.setAttribute("aria-label", "Uniroad admin bilan Telegram'da bog'lanish: " + tgName());
+    var c = el("span", "tg-fab-ic"); c.appendChild(ic("tgplane")); a.appendChild(c);
+    var t = el("span", "tg-fab-t"); t.appendChild(el("small", null, "Savol bormi?")); t.appendChild(el("b", null, "Admin bilan bog'lanish")); a.appendChild(t);
+    var box = el("aside", "tg-fab-box"); box.setAttribute("aria-label", "Bog'lanish"); box.appendChild(a); return box;
+  }
+  var fabY = 0;
+  function setFab(view){
+    var f = document.querySelector(".tg-fab"); if(!f) return;
+    f.href = tgUrl(); f.classList.toggle("big", FAB_BIG.indexOf(view) >= 0); f.classList.remove("tuck");
+  }
+  window.addEventListener("scroll", function(){
+    var f = document.querySelector(".tg-fab.big"); if(!f) return;
+    var y = window.scrollY; if(Math.abs(y - fabY) < 24) return;
+    f.classList.toggle("tuck", y > fabY && y > 240); fabY = y; /* scrolling down: shrink to the icon; scrolling up: show the label again */
+  }, {passive:true});
+
   /* ================= PRIVACY POLICY (content/privacy.json) ================= */
   function privacyView(main){
     var P = S.privacy || {};
@@ -2130,9 +2161,7 @@
     var q = hashQuery();
     pageHead(main, "Fikr bildirish", "Muammo topdingizmi, taklif yoki savolingiz bormi? Yozing: xabar to'g'ridan-to'g'ri Uniroad jamoasining Telegramiga boradi.");
     main.appendChild(feedbackForm(q.tur));
-    var l = el("div", "links");
-    l.appendChild(rowBtn("send", "Telegram'da to'g'ridan-to'g'ri yozish", tgName(), null, tgUrl()));
-    main.appendChild(l);
+    main.appendChild(contactCard("Yoki to'g'ridan-to'g'ri yozing", tgName() + " · Uniroad admin bilan Telegram'da bog'lanish"));
   }
   function shareBtn(title, cls){
     var b = el("button", "btn " + (cls || "line") + " share"); b.type = "button"; b.appendChild(el("span", null, "Ulashish")); b.appendChild(ic("send"));
@@ -2264,7 +2293,7 @@
 
     var R = realReviews(); if(R.length){ var rg = el("div", "rev-grid"); R.slice(0, 3).forEach(function(r){ rg.appendChild(reviewCard(r)); }); main.appendChild(sec(secHead("Talabalar fikrlari", "Hammasi", "fikrlar", null, "Fikrlar"), rg)); }
     main.appendChild(rowBtn("book", "Italiyada o'qish noldan", "To'liq bepul yo'riqnoma va PDF", "g", "#noldan"));
-    main.appendChild(rowBtn("send", "Bizga yozing", tgName() + ": savol va hujjat topshirishda yordam", "", tgUrl()));
+    main.appendChild(contactCard("Uniroad admin bilan bog'lanish", tgName() + " · savol va hujjat topshirishda yordam"));
     footer(main);
   }
 

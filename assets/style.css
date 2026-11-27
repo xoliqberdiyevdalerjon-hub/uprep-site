@@ -1621,3 +1621,58 @@ main .loading{min-height:50vh}
 @media (min-width:920px){ .loadfail{bottom:24px} }
 .living{display:grid;gap:10px}.living .pf-h{display:flex;align-items:center;justify-content:space-between;gap:10px}.living .card-h{margin:0}
 .living-total{margin:0;display:grid;gap:2px}.living-total b{font:800 28px/1.1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}.living-total small{color:var(--muted)}
+
+/* ---------- "Uniroad admin bilan bog'lanish": big contact card + floating Telegram button ---------- */
+.tg-card{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;gap:14px;margin:18px 0;padding:16px 16px 16px 14px;border-radius:var(--r-lg);text-decoration:none;color:#fff;
+  background:linear-gradient(120deg,#0F6FB3 0%,#2756CF 52%,#4A36C9 100%);
+  box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 18px 40px -18px rgba(23,84,190,.75);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.tg-card::before{content:"";position:absolute;z-index:-1;right:-36px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(84,190,255,.55),rgba(84,190,255,0) 68%)}
+.tg-card::after{content:"";position:absolute;z-index:-1;right:70px;bottom:-26px;width:120px;height:120px;opacity:.13;transform:rotate(-14deg);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M21.5 4.2 2.9 11.4c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.8-.8l3.3-15.4c.3-1.3-.5-1.9-1.4-1.3Z'/%3E%3C/svg%3E") center/contain no-repeat}
+.tg-card:hover{transform:translateY(-2px);box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 24px 46px -18px rgba(23,84,190,.85)}
+.tg-card:active{transform:scale(.99)}
+.tg-card:focus-visible{outline:3px solid #7CC8FF;outline-offset:3px}
+.tg-av{flex:none;display:grid;place-items:center;width:54px;height:54px;border-radius:18px;background:rgba(255,255,255,.96);box-shadow:0 8px 18px -8px rgba(0,0,0,.45)}
+.tg-av .mark{width:40px;height:40px}
+.tg-txt{flex:1;min-width:0;display:grid;gap:2px}
+.tg-txt small{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.82)}
+.tg-txt b{font:700 17.5px/1.25 var(--display);color:#fff}
+.tg-sub{font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.88)}
+.tg-go{flex:none;display:inline-flex;align-items:center;gap:7px;padding:11px 16px;border-radius:999px;background:#fff;color:#0F5E9C;font-weight:700;font-size:15px;box-shadow:0 8px 18px -10px rgba(0,0,0,.5)}
+.tg-go svg{width:19px;height:19px;color:#229ED9;--tg-fold:#fff}
+.tg-fold{stroke:var(--tg-fold,#fff)}
+@media (max-width:520px){
+  .tg-card{flex-wrap:wrap;padding:16px}
+  .tg-txt{flex-basis:calc(100% - 70px)}
+  .tg-go{flex:1 1 100%;justify-content:center;padding:12px 16px}
+}
+
+.tg-fab{position:fixed;right:16px;bottom:calc(86px + env(safe-area-inset-bottom,0px));z-index:45;display:flex;align-items:center;gap:0;height:56px;padding:4px;border-radius:999px;text-decoration:none;color:#fff;
+  background:linear-gradient(135deg,#2AABEE 0%,#1C8AD6 55%,#3F52D9 100%);
+  box-shadow:0 0 0 1px rgba(255,255,255,.22) inset,0 14px 30px -10px rgba(20,110,200,.7),0 4px 10px -4px rgba(0,0,0,.25);
+  transition:gap .3s var(--ease),padding .3s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease)}
+.tg-fab-ic{position:relative;flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;color:#fff;--tg-fold:#2390DA;transition:background .3s var(--ease),color .3s var(--ease)}
+.tg-fab-ic svg{width:26px;height:26px;margin-left:-2px}
+.tg-fab-ic::after{content:"";position:absolute;inset:-4px;border-radius:50%;box-shadow:0 0 0 0 rgba(42,171,238,.55);animation:tgping 3.2s ease-out 1.2s infinite}
+.tg-fab-t{display:grid;max-width:0;opacity:0;overflow:hidden;white-space:nowrap;line-height:1.2;transition:max-width .35s var(--ease),opacity .25s var(--ease),padding .3s var(--ease)}
+.tg-fab-t small{font-size:11.5px;font-weight:600;color:rgba(255,255,255,.9)}
+.tg-fab-t b{font:700 15.5px/1.2 var(--display);color:#fff}
+.tg-fab:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.25) inset,0 18px 34px -10px rgba(20,110,200,.8),0 4px 10px -4px rgba(0,0,0,.25)}
+.tg-fab:active{transform:scale(.97)}
+.tg-fab:focus-visible{outline:3px solid #7CC8FF;outline-offset:3px}
+/* big (on the pages where people decide): white icon disc + label */
+.tg-fab.big{gap:10px;padding:5px 20px 5px 5px;height:60px;background:linear-gradient(120deg,#0F6FB3 0%,#2756CF 55%,#4A36C9 100%)}
+.tg-fab.big .tg-fab-ic{width:50px;height:50px;background:#fff;color:#229ED9;--tg-fold:#fff}
+.tg-fab.big .tg-fab-t{max-width:240px;opacity:1}
+/* scrolling down on a big page: shrink back to the round button so it never covers the reading */
+.tg-fab.big.tuck{gap:0;padding:5px}
+.tg-fab.big.tuck .tg-fab-t{max-width:0;opacity:0}
+@media (hover:hover){ .tg-fab:hover .tg-fab-t{max-width:240px;opacity:1} .tg-fab:hover{gap:10px;padding-right:20px} }
+@keyframes tgping{0%{box-shadow:0 0 0 0 rgba(42,171,238,.55)}70%,100%{box-shadow:0 0 0 14px rgba(42,171,238,0)}}
+@media (min-width:920px){ .tg-fab{right:28px;bottom:28px} }
+@media (prefers-reduced-motion: reduce){ .tg-fab-ic::after{animation:none} .tg-fab,.tg-fab-t,.tg-card{transition:none} }
+html.calm .tg-fab-ic::after{animation:none}
+@media print{ .tg-fab{display:none!important} .tg-card{display:none!important} }
+/* room for the floating button under the footer text */
+.foot.wrap{padding-bottom:calc(160px + env(safe-area-inset-bottom,0px))}
+@media (min-width:920px){ .foot.wrap{padding-bottom:110px} }

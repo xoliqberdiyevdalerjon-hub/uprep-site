@@ -13,7 +13,7 @@ app.pagescms.org → uprep-site. Bo'limlar: Bosh sahifa, Biz haqimizda, Noldan: 
    - Authentication → URL Configuration → Site URL: sayt manzili.
    - Project Settings → API → `Project URL` va `anon public` kalitni `assets/config.js` ga yozing.
 2. **Stripe** (stripe.com, Italiya) → Managed Payments'ni yoqing.
-   - Mahsulot: "Uniroad: Italiya kursi", $399, bir martalik, tax code `txcd_20060358` (Online courses – written material).
+   - Mahsulot: "Uniroad: Italiya kursi", 399 € (valyuta: EUR), bir martalik, tax code `txcd_20060358` (Online courses – written material).
    - Payment Link yarating; "After payment" → redirect: `<sayt>/#hisob?paid=1`. Havolani `assets/config.js` dagi `paymentLink` ga yozing.
 3. **Webhook**: Supabase → Edge Functions → `stripe-webhook` (`supabase/functions/stripe-webhook/index.ts`), Verify JWT: off.
    - Secrets: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`.
