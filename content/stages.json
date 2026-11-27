@@ -80,7 +80,7 @@
           "Ariza portalida ro'yxatdan o'ting (havola universitet sahifasidagi «Ariza sahifasi» tugmasida). Hamma joyda bitta email ishlating.",
           "Profilni to'ldiring va hujjatlarni aniq, rangli PDF qilib yuklang.",
           "Ariza to'lovini to'lang: to'lovsiz ariza ko'rib chiqilmaydi.",
-          "Natijani kuting. Pre-acceptance kelsa, darhol DoV/CIMEA va Universitaly'ga o'ting."
+          "Natijani kuting. Pre-acceptance kelsa, darhol DoV/CIMEA'ga o'ting. Pre-enrollment'ni universitet o'zi qilib bermasa, Universitaly'da o'zingiz topshirasiz."
         ]
       },
       {
@@ -259,6 +259,11 @@
         "type": "callout",
         "style": "warn",
         "text": "Muddatni universitetning o'zi belgilaydi (2026/27 da 30.06 dan 15.09 gacha bo'lgan). Universitet kvota +20% dan ko'p arizani tasdiqlay olmaydi: kech qolsangiz, joy qolmasligi mumkin."
+      },
+      {
+        "type": "callout",
+        "style": "tip",
+        "text": "Ba'zi universitetlarda pre-acceptance va pre-enrollment bitta qadamda bo'ladi: universitet arizangizni ko'rib chiqib, qabul qilsa, Universitaly'dagi pre-enrollment'ni ham o'zi tasdiqlaydi yoki bu ishni qabul jarayoniga qo'shib qo'yadi. Shunda alohida ish qilish shart emas. Universitetingiz qaysi tartibda ishlashini uning qabul sahifasidan yoki emailidan tekshiring. Qaysi yo'l bo'lmasin, vizaga topshirish uchun Universitaly'da nomingizga tasdiqlangan pre-enrollment bo'lishi shart: uni Universitaly kabinetingizda ko'rib, tekshirib qo'ying."
       },
       {
         "type": "list",
