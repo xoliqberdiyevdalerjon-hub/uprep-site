@@ -274,9 +274,11 @@
   window.addEventListener("online", function(){ if(LOADFAIL.length) location.reload(); });
   var LOADFAIL = [];
   /* ---------------- language: uz is the source; ru = content/ru/*.json overlays (texts only) + assets/i18n/ru.json for interface strings ---------------- */
-  var LANG = (function(){ try{ var q = /[?&]lang=(uz|ru)\b/.exec(location.search); if(q){ localStorage.setItem("uniroad-lang", q[1]); return q[1]; } return localStorage.getItem("uniroad-lang") === "ru" ? "ru" : "uz"; }catch(e){ return "uz"; } })();
+  var LANG = (function(){ try{ var q = /[?&]lang=(uz|ru|en)\b/.exec(location.search); if(q){ localStorage.setItem("uniroad-lang", q[1]); return q[1]; } var v = localStorage.getItem("uniroad-lang"); return v === "ru" || v === "en" ? v : "uz"; }catch(e){ return "uz"; } })();
   document.documentElement.lang = LANG;
-  function setLang(l){ try{ localStorage.setItem("uniroad-lang", l); }catch(e){} var u = location.href.replace(/([?&])lang=(uz|ru)&?/, "$1").replace(/[?&](#|$)/, "$1"); if(u === location.href) location.reload(); else location.replace(u); }
+  var LANGN = {uz:"O'zbekcha", ru:"Русский", en:"English"};
+  function otherLangs(){ var L = arr(S.site.langs); if(L.indexOf(LANG) < 0 && LANG !== "uz") L = L.concat([LANG]); return ["uz", "ru", "en"].filter(function(l){ return l !== LANG && (l === "uz" ? L.length > 0 : L.indexOf(l) >= 0); }); }
+  function setLang(l){ try{ localStorage.setItem("uniroad-lang", l); }catch(e){} var u = location.href.replace(/([?&])lang=(uz|ru|en)&?/, "$1").replace(/[?&](#|$)/, "$1"); if(u === location.href) location.reload(); else location.replace(u); }
   /* overlay keeps the uz structure: only strings that exist in both are replaced; arrays of objects match by id, otherwise by position */
   function overlay(b, o){
     if(o == null) return b;
@@ -295,13 +297,13 @@
   }
   function load(name, fallback){
     var base = fetch("content/" + name + ".json", {cache:"no-cache"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ LOADFAIL.push(name); showLoadFail(); return fallback; });
-    if(LANG !== "ru") return base;
-    var tr = fetch("content/ru/" + name + ".json", {cache:"no-cache"}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; });
+    if(LANG === "uz") return base;
+    var tr = fetch("content/" + LANG + "/" + name + ".json", {cache:"no-cache"}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; });
     return Promise.all([base, tr]).then(function(x){ return overlay(x[0], x[1]); });
   }
   /* interface strings: exact matches ("s") and patterns ("p": [regex, template]); template: $1 = group (translated too), {1|форма1|форма2|форма5} = Russian plural by group 1 */
   var I18N = null;
-  function plural(n, a, b, c){ n = Math.abs(n) % 100; var m = n % 10; return n > 10 && n < 20 ? c : m > 1 && m < 5 ? b : m === 1 ? a : c; }
+  function plural(n, a, b, c){ if(LANG === "en") return Math.abs(n) === 1 ? a : c; n = Math.abs(n) % 100; var m = n % 10; return n > 10 && n < 20 ? c : m > 1 && m < 5 ? b : m === 1 ? a : c; }
   function T(s){
     if(!I18N || typeof s !== "string") return s;
     var t = s.trim(); if(!t) return s;
@@ -322,8 +324,8 @@
     for(var c = n.firstChild; c; c = c.nextSibling) trTree(c);
   }
   function startI18n(){
-    if(LANG !== "ru") return Promise.resolve();
-    return fetch("assets/i18n/ru.json", {cache:"no-cache"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+    if(LANG === "uz") return Promise.resolve();
+    return fetch("assets/i18n/" + LANG + ".json", {cache:"no-cache"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
       if(!d) return;
       I18N = {s:d.s || {}, p:(d.p || []).map(function(x){ return [new RegExp(x[0]), x[1]]; })};
       document.title = T(document.title); trTree(document.body);
@@ -623,7 +625,7 @@
     function col(title, links){ var c = el("div"); c.appendChild(el("h2", "foot-h", title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
     col("Qo'llanma", [["8 qadam", "#qollanma"], ["Hammasi bitta sahifada (PDF)", "#noldan"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Italiyada yashash", "#yashash"], ["Kalendar", "#kalendar"], ["Materiallar", "#materiallar"], ["Shablonlar", "#shablonlar"]]);
     col("Vositalar", [["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Profil tahlili", "#profil"], ["Pul kalkulyatori", "#kalkulyator"], ["Motivatsion xat", "#xat"], ["Mening rejam", "#rejam"], ["Sozlamalar", "#sozlamalar"]]);
-    col("Uniroad", [["Biz haqimizda", "#biz-haqimizda"]].concat(arr(S.site.langs).indexOf("ru") >= 0 ? [[LANG === "ru" ? "O'zbekcha" : "Русский", "?lang=" + (LANG === "ru" ? "uz" : "ru")]] : []).concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"]]).concat(realAmb().length ? [["Talaba-elchilar", "#elchilar"]] : []).concat(realOut().length ? [["Natijalar", "#natijalar"]] : []).concat(evList().length ? [["Jonli efirlar", "#efirlar"]] : []).concat([["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#xabar"], ["Maxfiylik siyosati", "#maxfiylik"], ["Litsenziyalar", "THIRD_PARTY_LICENSES.txt"], ["Telegram: " + tgName(), tgUrl()]]));
+    col("Uniroad", [["Biz haqimizda", "#biz-haqimizda"]].concat(otherLangs().map(function(l){ return [LANGN[l], "?lang=" + l]; })).concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"]]).concat(realAmb().length ? [["Talaba-elchilar", "#elchilar"]] : []).concat(realOut().length ? [["Natijalar", "#natijalar"]] : []).concat(evList().length ? [["Jonli efirlar", "#efirlar"]] : []).concat([["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#xabar"], ["Maxfiylik siyosati", "#maxfiylik"], ["Litsenziyalar", "THIRD_PARTY_LICENSES.txt"], ["Telegram: " + tgName(), tgUrl()]]));
     f.appendChild(g);
     var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uniroad." + (S.site.updated ? " Ma'lumotlar oxirgi marta " + S.site.updated + " da yangilandi." : "")));
     var tg = el("a", null, tgName()); tg.href = tgUrl(); tg.target = "_blank"; tg.rel = "noopener"; p.appendChild(tg);
@@ -1838,7 +1840,7 @@
     var g4 = group("Sayt");
     var standalone = window.matchMedia && matchMedia("(display-mode: standalone)").matches, ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
     row(g4, "share", "c-green", "Do'stlarga ulashish", {onclick:function(){ var u = location.origin + location.pathname, t = "Uniroad: Italiyada o'qish, o'zbek tilida"; if(navigator.share) navigator.share({title:t, url:u}).catch(function(){}); else window.open("https://t.me/share/url?url=" + encodeURIComponent(u) + "&text=" + encodeURIComponent(t), "_blank", "noopener"); }});
-    if(arr(S.site.langs).indexOf("ru") >= 0 || LANG === "ru") row(g4, "languages", "c-purple", "Til / Язык", {value:LANG === "ru" ? "Русский" : "O'zbekcha", sub:LANG === "ru" ? "O'zbekchaga o'tish" : "Переключить на русский", onclick:function(){ setLang(LANG === "ru" ? "uz" : "ru"); }});
+    if(otherLangs().length) otherLangs().forEach(function(l, i){ row(g4, "languages", "c-purple", i ? LANGN[l] : "Til / Язык / Language", {value:i ? "" : LANGN[LANG], sub:{uz:"O'zbekchaga o'tish", ru:"Переключить на русский", en:"Switch to English"}[l], onclick:function(){ setLang(l); }}); });
     else row(g4, "languages", "c-purple", "Til", {value:"O'zbekcha", sub:"Rus tilidagi versiya tayyorlanmoqda"});
     if(LIVE) row(g4, "user", "c-gold", "Hisob", {href:A.user ? "#hisob" : "#kirish", value:A.user ? "Kirgansiz" : "Kirish"});
 
@@ -2265,7 +2267,7 @@
   }
 
   /* ================= NOLDAN: long-form guide (also exported as PDF) ================= */
-  var NOLDAN_PDF = LANG === "ru" ? "media/uniroad-noldan-ru.pdf" : "media/uniroad-noldan-yoriqnoma.pdf";
+  var NOLDAN_PDF = LANG === "uz" ? "media/uniroad-noldan-yoriqnoma.pdf" : "media/uniroad-noldan-" + LANG + ".pdf";
   function paras(t, cls){ var f = document.createDocumentFragment(); str(t).split(/\n\s*\n/).forEach(function(p){ if(p.trim()) f.appendChild(el("p", cls || "prose", p.trim())); }); return f; }
   function linkOut(a, u){ a.href = u; if(/^https:/.test(u)){ a.target = "_blank"; a.rel = "noopener"; } return a; }
   function noldanView(main){

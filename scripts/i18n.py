@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Uniroad: rus tili uchun kontent tarjimasi.
+"""Uniroad: kontent tarjimasi (ru, en). Til: I18N_LANG=en python3 scripts/i18n.py ... (standart: ru).
 
 Manba har doim o'zbekcha content/*.json. Tarjimalar bitta "tarjima xotirasi"da saqlanadi:
 content/ru/_tm.json  ({"o'zbekcha matn": "русский текст"}).
@@ -15,13 +15,14 @@ raqam, havola va id'lar o'zbekcha fayldan olinadi. O'zbekcha matn o'zgarsa, eski
 import json, os, re, sys, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TM_PATH = os.path.join(ROOT, "content", "ru", "_tm.json")
+LANG = os.environ.get("I18N_LANG", "ru")
+TM_PATH = os.path.join(ROOT, "content", LANG, "_tm.json")
 # fields whose values are used by the code (ids, links, enums compared in app.js) or are not text
 SKIP_KEYS = {"id", "url", "href", "link", "src", "image", "img", "icon", "photo", "logo", "heroImage", "heroCreditUrl",
              "type", "level", "access", "lang", "area", "status", "kind", "lvl", "tag", "city", "cities", "uni", "unis_ids",
              "telegram", "email", "phone", "code", "color", "help", "short", "slug", "map", "lat", "lng", "file", "pdf", "video",
              "recording", "isee", "ispe", "updated", "controller",
-             "style", "route", "reason", "edu", "money", "visa", "eng", "gpa", "dsu", "mode", "result", "f", "k", "cur", "test", "app", "value", "key", "stage"}
+             "style", "route", "reason", "edu", "money", "visa", "eng", "gpa", "dsu", "mode", "result", "f", "k", "cur", "test", "app", "value", "key", "stage", "langs"}
 SKIP_FILES = {"_tm"}
 
 
@@ -161,7 +162,7 @@ def cmd_build():
         with open(p, encoding="utf-8") as f:
             data = json.load(f)
         ov = overlay(data, tm)
-        out = os.path.join(ROOT, "content", "ru", n + ".json")
+        out = os.path.join(ROOT, "content", LANG, n + ".json")
         if ov:
             with open(out, "w", encoding="utf-8") as f:
                 json.dump(ov, f, ensure_ascii=False, separators=(",", ":"))
