@@ -24,12 +24,8 @@
       "a": "Faqat rasmiy manbalardan: universitetlarning o'z saytlari, Italiyaning Toshkentdagi elchixonasi, Italiya ta'lim vazirligi (MUR), CIMEA va viloyat stipendiya idoralarining (DSU) bandolari. Har bir sahifa pastida manba havolasi turadi."
     },
     {
-      "q": "Nima bepul, nima pullik?",
-      "a": "Saytdagi hamma narsa bepul: 8 qadamlik qo'llanma, «Noldan» yo'riqnomasi, universitetlar, stipendiyalar va barcha vositalar. Pullik qismi faqat bizning shaxsiy yordamimiz. Tariflar va narxlar: Sozlamalar → To'lov."
-    },
-    {
-      "q": "To'lov qanday amalga oshiriladi?",
-      "a": "Hozircha tarif tanlab, Telegram orqali yozasiz va to'lov shartlarini @Uniroad_Admin bilan kelishasiz. Premium'ni 3 qismga bo'lib to'lash mumkin. Onlayn to'lov (karta) ishga tushgach, saytning o'zida to'lash mumkin bo'ladi."
+      "q": "Sayt bepulmi?",
+      "a": "Saytdagi hamma narsa bepul: 8 qadamlik qo'llanma, «Noldan» yo'riqnomasi, universitetlar, stipendiyalar va barcha vositalar. Savolingiz bo'lsa, Telegram'da yozing."
     },
     {
       "q": "Qabul yoki vizaga kafolat berasizmi?",
@@ -117,5 +113,12 @@
       "note": "Viloyatingiz bandosi, oila hujjatlari, ISEE va ariza"
     }
   ],
-  "plansNote": "Qabul va vizaga kafolat berilmaydi: qarorni universitet va elchixona chiqaradi. Universitet, CIMEA, elchixona to'lovlari, tarjima va apostil tarif narxiga kirmaydi."
+  "plansNote": "Qabul va vizaga kafolat berilmaydi: qarorni universitet va elchixona chiqaradi. Universitet, CIMEA, elchixona to'lovlari, tarjima va apostil tarif narxiga kirmaydi.",
+  "plansHidden": true,
+  "faqHidden": [
+    {
+      "q": "To'lov qanday amalga oshiriladi?",
+      "a": "Hozircha tarif tanlab, Telegram orqali yozasiz va to'lov shartlarini @Uniroad_Admin bilan kelishasiz. Premium'ni 3 qismga bo'lib to'lash mumkin. Onlayn to'lov (karta) ishga tushgach, saytning o'zida to'lash mumkin bo'ladi."
+    }
+  ]
 }

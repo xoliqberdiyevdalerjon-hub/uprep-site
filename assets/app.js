@@ -668,7 +668,7 @@
   }
 
   /* ================= PLANS (3 tiers) ================= */
-  function plansOn(){ return arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }).length > 0; }
+  function plansOn(){ return !S.site.plansHidden && arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }).length > 0; }
   function plans(){ var P = arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }); return P.length ? P : [{id:"app", name:"Free", price:price(), note:"Bir marta to'lov", items:arr(S.site.includes)}]; }
   function planAsk(p){
     var body = "Salom! Uniroad saytidan yozyapman. «" + str(p.name) + "» (" + str(p.price) + ") " + (p.id ? "tarifi" : "xizmati") + " bo'yicha ma'lumot olmoqchiman.";
