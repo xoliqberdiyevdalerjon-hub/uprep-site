@@ -1,4 +1,4 @@
-/* Uprep endi faqat veb-sayt. Bu fayl avval telefonga o'rnatilgan ilovani (service worker) o'chiradi:
+/* Uniroad endi faqat veb-sayt. Bu fayl avval telefonga o'rnatilgan ilovani (service worker) o'chiradi:
    eski keshni tozalaydi, o'zini ro'yxatdan chiqaradi va ochiq sahifalarni yangilaydi. */
 self.addEventListener("install", () => self.skipWaiting());
 self.addEventListener("activate", e => {

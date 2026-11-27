@@ -1,4 +1,4 @@
-/* Uprep feedback service: sends a message to the Cloudflare Worker relay (-> Telegram).
+/* Uniroad feedback service: sends a message to the Cloudflare Worker relay (-> Telegram).
    - settings come from assets/relay-config.js (window.UPREP_RELAY)
    - one request at a time, with a total timeout
    - drafts: the text the user typed is kept on the device until a send succeeds
@@ -47,7 +47,7 @@
   function meta(){
     var c = cfg(), loc = root.location || {};
     return {
-      app: String(c.appName || "Uprep"),
+      app: String(c.appName || "Uniroad"),
       version: String(c.appVersion || ""),
       platform: platform(),
       lang: String((root.navigator && root.navigator.language) || ""),

@@ -1,4 +1,4 @@
-/* Uprep platform. Texts live in content/*.json (edited in Pages CMS). Accounts and payment: Supabase + Stripe,
+/* Uniroad platform. Texts live in content/*.json (edited in Pages CMS). Accounts and payment: Supabase + Stripe,
    switched on by assets/config.js. This file only draws pages; nothing here needs editing to add content. */
 (function(){
   "use strict";
@@ -433,22 +433,20 @@
   window.addEventListener("scroll", function(){ if(pTick) return; pTick = true; requestAnimationFrame(function(){ pTick = false; parallax(); }); }, {passive:true});
 
   /* ---------------- chrome ---------------- */
-  /* animated brand: a "U" whose right arm becomes an arrow going up (Up-prep); the gold spark is the student */
+  /* Uniroad brand mark: a "u" whose right arm rises into an arrow (growth, the road up); the gold dot is the student */
   var MKN = 0;
   function markSVG(){
-    var n = ++MKN, b = "mkb" + n, h = "mkh" + n, g = "mkg" + n;
+    var n = ++MKN, b = "mkb" + n;
     return '<svg class="mark still" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs>' +
-      '<linearGradient id="' + b + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22417F"/><stop offset="1" stop-color="#132A5C"/></linearGradient>' +
-      '<linearGradient id="' + h + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".1"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
-      '<linearGradient id="' + g + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFCB4D"/><stop offset="1" stop-color="#F2A81F"/></linearGradient></defs>' +
-      '<rect width="64" height="64" rx="16" fill="url(#' + b + ')"/><rect width="64" height="64" rx="16" fill="url(#' + h + ')"/>' +
-      '<path class="u" d="M20.5 28 V38.5 a11.5 11.5 0 0 0 23 0 V28" fill="none" stroke="#fff" stroke-width="7.6" stroke-linecap="round"/>' +
-      '<g class="tip"><path d="M23.5 21.5 V26.6 Q32 30.6 40.5 26.6 V21.5 Z" fill="#D9921A"/><path d="M32 11 L50 18.6 L32 26.2 L14 18.6 Z" fill="url(#' + g + ')"/>' +
-      '<path d="M46.4 20.2 V28.4" stroke="#F2A81F" stroke-width="1.9" stroke-linecap="round"/><rect x="44.6" y="27.4" width="3.6" height="5.4" rx="1.6" fill="#FFCB4D"/></g></svg>';
+      '<linearGradient id="' + b + '" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4338CA"/><stop offset=".55" stop-color="#6D3BF5"/><stop offset="1" stop-color="#C026D3"/></linearGradient></defs>' +
+      '<rect width="64" height="64" rx="16" fill="url(#' + b + ')"/>' +
+      '<circle class="ur-dot" cx="20" cy="15.5" r="3.4" fill="#FDE68A"/>' +
+      '<path d="M20 24 V37.5 a12 12 0 0 0 24 0 V15" fill="none" stroke="#fff" stroke-width="7.4" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<path class="ur-arr" d="M36.6 21.2 L44 13.8 L51.4 21.2" fill="none" stroke="#fff" stroke-width="7.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   }
   function logo(h){
-    var c = el("span", "logo-b"); c.style.setProperty("--h", h + "px"); c.setAttribute("role", "img"); c.setAttribute("aria-label", "Uprep");
-    c.innerHTML = markSVG(); var w = el("span", "word"); w.appendChild(el("b", null, "up")); w.appendChild(document.createTextNode("rep")); c.appendChild(w); return c;
+    var c = el("span", "logo-b"); c.style.setProperty("--h", h + "px"); c.setAttribute("role", "img"); c.setAttribute("aria-label", "Uniroad");
+    c.innerHTML = markSVG(); c.appendChild(el("span", "word", "uniroad")); return c;
   }
   function section(r){
     var v = r.view;
@@ -463,7 +461,7 @@
 
   function appbar(r){
     var bar = el("header", "appbar"), w = el("div", "wrap");
-    var hl = el("a", "brandlink"); hl.href = "#"; hl.setAttribute("aria-label", "Uprep, bosh sahifa"); hl.appendChild(logo(20)); w.appendChild(hl);
+    var hl = el("a", "brandlink"); hl.href = "#"; hl.setAttribute("aria-label", "Uniroad, bosh sahifa"); hl.appendChild(logo(20)); w.appendChild(hl);
     var nav = el("nav", "topnav"); nav.setAttribute("aria-label", "Asosiy bo'limlar");
     [["Qo'llanma","qollanma","guide"],["Universitetlar","universitetlar","unis"],["Stipendiya","stipendiya","dsu"],["Rejam","rejam","plan"]].forEach(function(x){
       var a = el("a", null, x[0]); a.href = "#" + x[1]; a.setAttribute("data-sec", x[2]); nav.appendChild(a);
@@ -549,9 +547,9 @@
     function col(title, links){ var c = el("div"); c.appendChild(el("h2", "foot-h", title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
     col("Qo'llanma", [["8 qadam", "#qollanma"], ["Hammasi bitta sahifada (PDF)", "#noldan"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Italiyada yashash", "#yashash"], ["Kalendar", "#kalendar"], ["Materiallar", "#materiallar"], ["Shablonlar", "#shablonlar"]]);
     col("Vositalar", [["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Profil tahlili", "#profil"], ["Pul kalkulyatori", "#kalkulyator"], ["Motivatsion xat", "#xat"], ["Mening rejam", "#rejam"], ["Sozlamalar", "#sozlamalar"]]);
-    col("Uprep", [["Biz haqimizda", "#biz-haqimizda"]].concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"]]).concat(realAmb().length ? [["Talaba-elchilar", "#elchilar"]] : []).concat(realOut().length ? [["Natijalar", "#natijalar"]] : []).concat(evList().length ? [["Jonli efirlar", "#efirlar"]] : []).concat([["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#xabar"], ["Telegram: " + tgName(), tgUrl()]]));
+    col("Uniroad", [["Biz haqimizda", "#biz-haqimizda"]].concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"]]).concat(realAmb().length ? [["Talaba-elchilar", "#elchilar"]] : []).concat(realOut().length ? [["Natijalar", "#natijalar"]] : []).concat(evList().length ? [["Jonli efirlar", "#efirlar"]] : []).concat([["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#xabar"], ["Telegram: " + tgName(), tgUrl()]]));
     f.appendChild(g);
-    var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uprep." + (S.site.updated ? " Ma'lumotlar oxirgi marta " + S.site.updated + " da yangilandi." : "")));
+    var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uniroad." + (S.site.updated ? " Ma'lumotlar oxirgi marta " + S.site.updated + " da yangilandi." : "")));
     var tg = el("a", null, tgName()); tg.href = tgUrl(); tg.target = "_blank"; tg.rel = "noopener"; p.appendChild(tg);
     f.appendChild(p); return f;
   }
@@ -652,7 +650,7 @@
   function plansOn(){ return arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }).length > 0; }
   function plans(){ var P = arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }); return P.length ? P : [{id:"app", name:"Free", price:price(), note:"Bir marta to'lov", items:arr(S.site.includes)}]; }
   function planAsk(p){
-    var body = "Salom! Uprep saytidan yozyapman. «" + str(p.name) + "» (" + str(p.price) + ") " + (p.id ? "tarifi" : "xizmati") + " bo'yicha ma'lumot olmoqchiman.";
+    var body = "Salom! Uniroad saytidan yozyapman. «" + str(p.name) + "» (" + str(p.price) + ") " + (p.id ? "tarifi" : "xizmati") + " bo'yicha ma'lumot olmoqchiman.";
     if(relayOn()){ var c = prompt("Siz bilan qanday bog'lanamiz? Telegram @username yoki telefon raqamingiz:"); if(!str(c)) return; sendLead("tarif", body, c); }
     else leadSheet(body);
   }
@@ -701,7 +699,7 @@
   function homeView(main){
     var nx = nextStage(), started = doneCount() > 0;
     var H = hero({cls:"home", scene:"rome", image:S.site.heroImage});
-    H.appendChild(kicker("flag", str(S.site.eyebrow) || "Uprep"));
+    H.appendChild(kicker("flag", str(S.site.eyebrow) || "Uniroad"));
     H.appendChild(heroTitle("Italiyada o'qishni shu yerdan boshlang"));
     H.appendChild(el("p", "lead", "Universitet tanlashdan Italiyadagi birinchi kuningizgacha: oddiy tilda, qadamma-qadam va bepul."));
     var act = el("div", "hero-actions");
@@ -855,7 +853,7 @@
     H.appendChild(el("p", "lead", "Hech narsa bilmasangiz ham shu yerdan boshlang. Har bir qadamda nima qilish, qaysi hujjat kerak va qachongacha ekani yozilgan."));
     var act = el("div", "hero-actions");
     act.appendChild(btn("gold", "next", n && nx ? "Davom etish: " + (S.stages.indexOf(nx) + 1) + "-qadam" : "1-qadamdan boshlash", "#" + (nx || S.stages[0] || {id:""}).id));
-    var pdf = btn("glass", "download", "PDF yuklab olish", NOLDAN_PDF); pdf.setAttribute("download", "Uprep - Italiyada o'qish noldan.pdf"); act.appendChild(pdf);
+    var pdf = btn("glass", "download", "PDF yuklab olish", NOLDAN_PDF); pdf.setAttribute("download", "Uniroad - Italiyada o'qish noldan.pdf"); act.appendChild(pdf);
     H.appendChild(act);
     if(n) H.appendChild(heroStats([[n + " / " + total, "qadam bajarildi"]]));
 
@@ -1179,7 +1177,7 @@
       var sb = el("button", "go"); sb.type = "button"; var sp = el("span"); sp.appendChild(el("small", null, relayOn() ? "Natija to'g'ridan-to'g'ri adminga boradi" : "Natija va yuborish yo'riqnomasi chiqadi")); sp.appendChild(el("span", "t", "Natijani " + tgName() + " ga yuborish")); sb.appendChild(sp); sb.appendChild(ic("send"));
       var cf = leadContactField(); if(cf) box.appendChild(cf);
       sb.onclick = function(){
-        var msg = "Salom! Uprep saytida profil tahlilidan o'tdim:\n- " + summary.join("\n- ") + "\n\nMaslahat olmoqchiman.";
+        var msg = "Salom! Uniroad saytida profil tahlilidan o'tdim:\n- " + summary.join("\n- ") + "\n\nMaslahat olmoqchiman.";
         if(cf && !str(cf._input.value)){ toast("Telegram username yoki telefon raqamingizni yozing"); cf._input.focus(); return; }
         if(sb.disabled) return; sb.disabled = true; sb.setAttribute("aria-busy", "true"); var t0 = sp.lastChild.textContent; sp.lastChild.textContent = "Yuborilmoqda…";
         sendLead("profil", msg, cf ? cf._input.value : "", function(ok){ sb.removeAttribute("aria-busy"); if(ok) sp.lastChild.textContent = "Yuborildi ✓"; else { sb.disabled = false; sp.lastChild.textContent = t0; } });
@@ -1431,11 +1429,11 @@
   /* ev: {title, d (Date, all-day) | start (Date, exact), details} */
   function gcalUrl(ev){
     var dates = ev.start ? utcStamp(ev.start) + "/" + utcStamp(new Date(ev.start.getTime() + 3600000)) : ymd(ev.d) + "/" + ymd(new Date(ev.d.getFullYear(), ev.d.getMonth(), ev.d.getDate() + 1));
-    return "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(ev.title) + "&dates=" + dates + "&details=" + encodeURIComponent(str(ev.details) + "\n\nUprep: " + location.origin + location.pathname);
+    return "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(ev.title) + "&dates=" + dates + "&details=" + encodeURIComponent(str(ev.details) + "\n\nUniroad: " + location.origin + location.pathname);
   }
   function icsEsc(t){ return str(t).replace(/\\/g, "\\\\").replace(/;/g, "\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
   function icsDownload(list, name){
-    var L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Uprep//UZ", "CALSCALE:GREGORIAN"];
+    var L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Uniroad//UZ", "CALSCALE:GREGORIAN"];
     list.forEach(function(ev, i){
       L.push("BEGIN:VEVENT", "UID:uprep-" + Date.now() + "-" + i + "@uprep", "DTSTAMP:" + utcStamp(new Date()));
       if(ev.start){ L.push("DTSTART:" + utcStamp(ev.start), "DTEND:" + utcStamp(new Date(ev.start.getTime() + 3600000))); }
@@ -1629,7 +1627,7 @@
   function outView(main){
     var H = hero({cls:"compact", scene:"town", narrow:true});
     H.appendChild(kicker("check", "Haqiqiy natijalar"));
-    H.appendChild(heroTitle("Uprep talabalari natijalari"));
+    H.appendChild(heroTitle("Uniroad talabalari natijalari"));
     H.appendChild(el("p", "lead", "Talabalarimiz qayerga, qanday baho va IELTS bilan topshirgani va natijasi. Ismlar ko'rsatilmaydi, har bir natija talabaning roziligi bilan qo'shiladi."));
     var O = realOut();
     if(!O.length){ main.appendChild(callout({style:"info", text:"Natijalar to'planmoqda. Bu yerda faqat haqiqiy natijalar chiqadi: biror raqam o'ylab topilmaydi."})); footer(main); return; }
@@ -1651,7 +1649,7 @@
     var t = el("div", "ev-tx"); t.appendChild(el("b", null, e.title)); if(e.where) t.appendChild(el("small", null, e.where)); if(e.desc) t.appendChild(el("p", null, e.desc));
     var bx = el("div", "ic-btns");
     if(past){ var r = safeUrl(e.recording); if(r) bx.appendChild(btn("line", "play", "Yozuvni ko'rish", r)); }
-    else { var l = safeUrl(e.link); if(l) bx.appendChild(btn("gold", "link", "Qatnashish", l)); t.appendChild(calAdd({title:"Uprep efiri: " + e.title, start:x.s, details:str(e.desc) + (l ? "\n" + l : "")})); }
+    else { var l = safeUrl(e.link); if(l) bx.appendChild(btn("gold", "link", "Qatnashish", l)); t.appendChild(calAdd({title:"Uniroad efiri: " + e.title, start:x.s, details:str(e.desc) + (l ? "\n" + l : "")})); }
     t.appendChild(bx); c.appendChild(t); return c;
   }
   function eventsView(main){
@@ -1732,14 +1730,14 @@
     row(g3, "download", "c-teal", "Zaxira nusxasini yuklab olish", {onclick:function(){ var o = {app:"uprep", v:1, saved:new Date().toISOString(), data:{}}; LS.keys().forEach(function(k){ o.data[k] = LS.getItem(k); });
       var a = el("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(o)], {type:"application/json"})); a.download = "uprep-zaxira-" + todayStr().replace(/\./g, "-") + ".json"; document.body.appendChild(a); a.click(); setTimeout(function(){ a.remove(); }, 500); toast("Zaxira fayli yuklandi. Uni xavfsiz joyda saqlang."); }});
     var fi = el("input"); fi.type = "file"; fi.accept = ".json,application/json"; fi.hidden = true; main.appendChild(fi);
-    fi.onchange = function(){ var f = fi.files && fi.files[0]; if(!f) return; var r = new FileReader(); r.onload = function(){ try{ var o = JSON.parse(r.result); if(!o || o.app !== "uprep" || typeof o.data !== "object") throw 0; var n = 0; Object.keys(o.data).forEach(function(k){ if(/^uprep-/.test(k) && typeof o.data[k] === "string"){ LS.setItem(k, o.data[k]); n++; } }); toast(n + " ta yozuv tiklandi. Sahifa yangilanmoqda…"); setTimeout(function(){ location.reload(); }, 1200); }catch(e){ toast("Bu fayl Uprep zaxirasi emas."); } }; r.readAsText(f); };
+    fi.onchange = function(){ var f = fi.files && fi.files[0]; if(!f) return; var r = new FileReader(); r.onload = function(){ try{ var o = JSON.parse(r.result); if(!o || o.app !== "uprep" || typeof o.data !== "object") throw 0; var n = 0; Object.keys(o.data).forEach(function(k){ if(/^uprep-/.test(k) && typeof o.data[k] === "string"){ LS.setItem(k, o.data[k]); n++; } }); toast(n + " ta yozuv tiklandi. Sahifa yangilanmoqda…"); setTimeout(function(){ location.reload(); }, 1200); }catch(e){ toast("Bu fayl Uniroad zaxirasi emas."); } }; r.readAsText(f); };
     row(g3, "upload", "c-blue", "Zaxiradan tiklash", {onclick:function(){ fi.click(); }});
     row(g3, "trash", "c-red", "Barcha ma'lumotlarimni o'chirish", {danger:true, onclick:function(){ if(!confirm("Rejangiz, ariza holatlari, belgilangan hujjatlar va test javoblari shu qurilmadan o'chiriladi. Davom etasizmi?")) return; LS.keys().forEach(function(k){ LS.removeItem(k); }); try{ Object.keys(localStorage).forEach(function(k){ if(/^uprep-/.test(k)) localStorage.removeItem(k); }); }catch(e){} toast("Ma'lumotlar o'chirildi."); setTimeout(function(){ location.hash = ""; location.reload(); }, 900); }});
 
     /* Sayt */
     var g4 = group("Sayt");
     var standalone = window.matchMedia && matchMedia("(display-mode: standalone)").matches, ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
-    row(g4, "share", "c-green", "Do'stlarga ulashish", {onclick:function(){ var u = location.origin + location.pathname, t = "Uprep: Italiyada o'qish, o'zbek tilida"; if(navigator.share) navigator.share({title:t, url:u}).catch(function(){}); else window.open("https://t.me/share/url?url=" + encodeURIComponent(u) + "&text=" + encodeURIComponent(t), "_blank", "noopener"); }});
+    row(g4, "share", "c-green", "Do'stlarga ulashish", {onclick:function(){ var u = location.origin + location.pathname, t = "Uniroad: Italiyada o'qish, o'zbek tilida"; if(navigator.share) navigator.share({title:t, url:u}).catch(function(){}); else window.open("https://t.me/share/url?url=" + encodeURIComponent(u) + "&text=" + encodeURIComponent(t), "_blank", "noopener"); }});
     row(g4, "languages", "c-purple", "Til", {value:"O'zbekcha", sub:"Rus tilidagi versiya tayyorlanmoqda"});
     if(LIVE) row(g4, "user", "c-gold", "Hisob", {href:A.user ? "#hisob" : "#kirish", value:A.user ? "Kirgansiz" : "Kirish"});
 
@@ -1754,7 +1752,7 @@
     /* Maxfiylik */
     var g6 = group("Maxfiylik", "Saytda reklama va kuzatuv kodi yo'q. Profil tahlili, kalkulyator va rejangiz faqat shu qurilmada hisoblanadi. Faqat o'zingiz «yuborish» tugmasini bosgan xabar bizga keladi.");
     row(g6, "shield", "c-green", "Ma'lumotlaringiz himoyalangan", {value:"Faqat qurilmada"});
-    main.appendChild(el("p", "st-ver", "Uprep · ma'lumotlar " + (S.site.updated || "") + " holatiga"));
+    main.appendChild(el("p", "st-ver", "Uniroad · ma'lumotlar " + (S.site.updated || "") + " holatiga"));
     footer(main);
   }
 
@@ -1946,7 +1944,7 @@
     /* what is sent */
     var det = el("details", "fb-what"); det.appendChild(el("summary", null, "Xabar bilan nima yuboriladi?"));
     var ul = el("ul"); ["Siz yozgan matn va tanlagan turingiz", "Aloqa: faqat o'zingiz yozsangiz", "Sayt versiyasi, sana va vaqt", "Qurilma turi va brauzer (masalan, «Android · Chrome»), til va ochiq sahifa"].forEach(function(t){ ul.appendChild(el("li", null, t)); });
-    det.appendChild(ul); det.appendChild(el("p", null, "Ismingiz, telefoningiz yoki boshqa shaxsiy ma'lumot o'zingiz yozmaguningizcha yuborilmaydi. Xabar faqat Uprep jamoasining Telegramiga boradi."));
+    det.appendChild(ul); det.appendChild(el("p", null, "Ismingiz, telefoningiz yoki boshqa shaxsiy ma'lumot o'zingiz yozmaguningizcha yuborilmaydi. Xabar faqat Uniroad jamoasining Telegramiga boradi."));
     form.appendChild(det);
 
     var status = el("div", "fb-status"); status.setAttribute("role", "status"); status.setAttribute("aria-live", "polite"); form.appendChild(status);
@@ -1971,7 +1969,7 @@
     tx.addEventListener("input", function(){ count(); keep(); if(status.classList.contains("err") && str(tx.value).length >= 3) say("", ""); });
     ct.addEventListener("input", keep);
 
-    function manual(){ var lbl = (FBK.filter(function(k){ return k[0] === st.kind; })[0] || ["", ""])[1]; leadSheet("Uprep sayti · " + lbl + (str(ct.value) ? " (aloqa: " + str(ct.value) + ")" : "") + ":\n" + str(tx.value)); }
+    function manual(){ var lbl = (FBK.filter(function(k){ return k[0] === st.kind; })[0] || ["", ""])[1]; leadSheet("Uniroad sayti · " + lbl + (str(ct.value) ? " (aloqa: " + str(ct.value) + ")" : "") + ":\n" + str(tx.value)); }
     function tgBtn(r){ var b = el("button", "textbtn", "Telegram orqali qo'lda yuborish"); b.type = "button"; b.onclick = manual; var w = el("span"); w.appendChild(document.createTextNode(" ")); w.appendChild(b); if(r) w.appendChild(el("small", "fb-code", "Texnik kod: " + fbCode(r))); return w; }
     /* short technical reason, so the owner can tell what to fix in the Worker settings */
     function fbCode(r){
@@ -1995,7 +1993,7 @@
         lock(false);
         if(r.ok){
           FB.clearDraft(); tx.value = ""; ct.value = ""; count();
-          say("ok", "Yuborildi! Rahmat, xabaringiz Uprep jamoasiga yetib bordi.");
+          say("ok", "Yuborildi! Rahmat, xabaringiz Uniroad jamoasiga yetib bordi.");
           toast("Xabar yuborildi ✓");
           return;
         }
@@ -2010,7 +2008,7 @@
   }
   function feedbackView(main){
     var q = hashQuery();
-    pageHead(main, "Fikr bildirish", "Muammo topdingizmi, taklif yoki savolingiz bormi? Yozing: xabar to'g'ridan-to'g'ri Uprep jamoasining Telegramiga boradi.");
+    pageHead(main, "Fikr bildirish", "Muammo topdingizmi, taklif yoki savolingiz bormi? Yozing: xabar to'g'ridan-to'g'ri Uniroad jamoasining Telegramiga boradi.");
     main.appendChild(feedbackForm(q.tur));
     var l = el("div", "links");
     l.appendChild(rowBtn("send", "Telegram'da to'g'ridan-to'g'ri yozish", tgName(), null, tgUrl()));
@@ -2018,7 +2016,7 @@
   }
   function shareBtn(title, cls){
     var b = el("button", "btn " + (cls || "line") + " share"); b.type = "button"; b.appendChild(el("span", null, "Ulashish")); b.appendChild(ic("send"));
-    b.onclick = function(){ var url = location.href, text = title + " · Uprep";
+    b.onclick = function(){ var url = location.href, text = title + " · Uniroad";
       if(navigator.share){ navigator.share({title:text, url:url}).catch(function(){}); return; }
       window.open("https://t.me/share/url?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(text), "_blank", "noopener"); };
     return b;
@@ -2027,10 +2025,10 @@
     var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
     H.appendChild(kicker("chat", "Haqiqiy talabalar"));
     H.appendChild(heroTitle("Fikrlar va takliflar"));
-    H.appendChild(el("p", "lead", "Uprep bilan Italiyaga ketgan talabalarning fikrlari. Har bir fikr talabaning roziligi bilan e'lon qilinadi."));
+    H.appendChild(el("p", "lead", "Uniroad bilan Italiyaga ketgan talabalarning fikrlari. Har bir fikr talabaning roziligi bilan e'lon qilinadi."));
     var R = realReviews();
     if(R.length){ var g = el("div", "rev-grid"); R.forEach(function(r){ g.appendChild(reviewCard(r)); }); main.appendChild(sec(secHead("Talabalar fikrlari (" + R.length + ")", null, null, null, "Fikrlar"), g)); }
-    else main.appendChild(callout({style:"info", text:"Bu yerda faqat haqiqiy talabalarning fikrlari chiqadi. Uprep bilan o'qishga kirgan bo'lsangiz, pastdagi forma orqali fikringizni yuboring: roziligingiz bilan shu sahifaga qo'shamiz."}));
+    else main.appendChild(callout({style:"info", text:"Bu yerda faqat haqiqiy talabalarning fikrlari chiqadi. Uniroad bilan o'qishga kirgan bo'lsangiz, pastdagi forma orqali fikringizni yuboring: roziligingiz bilan shu sahifaga qo'shamiz."}));
     var fl = el("div", "links"); fl.appendChild(rowBtn("chat", "Fikringizni yuboring", "Fikr, taklif yoki muammo: Telegram orqali jamoaga boradi", "g", "#xabar?tur=fikr")); main.appendChild(sec(secHead("Fikr bildiring", null, null, null, "Feedback"), fl));
     footer(main);
   }
@@ -2052,7 +2050,7 @@
     if(N.subtitle) H.appendChild(el("p", "lead", N.subtitle));
     var act = el("div", "hero-actions");
     act.appendChild(btn("gold", "down", "PDF yuklab olish", NOLDAN_PDF));
-    act.firstChild.setAttribute("download", "Uprep - Italiyada o'qish noldan.pdf");
+    act.firstChild.setAttribute("download", "Uniroad - Italiyada o'qish noldan.pdf");
     act.appendChild(shareBtn(N.title || "Italiyada o'qish noldan", "glass"));
     H.appendChild(act);
 
@@ -2060,9 +2058,9 @@
     var art = el("article", "nd");
     /* print-only cover */
     var cov = el("header", "nd-cover"); var cl0 = logo(30); cov.appendChild(cl0); cov.appendChild(el("span", "nd-cover-tag", "Bepul yo'riqnoma · o'zbek tilida")); cov.appendChild(el("div", "nd-cover-title", N.title || "Italiyada o'qish noldan")); if(N.subtitle) cov.appendChild(el("p", null, N.subtitle));
-    cov.appendChild(el("small", null, "uprep · " + tgName() + (N.updated ? " · " + N.updated + " holatiga" : ""))); art.appendChild(cov);
+    cov.appendChild(el("small", null, "uniroad · " + tgName() + (N.updated ? " · " + N.updated + " holatiga" : ""))); art.appendChild(cov);
 
-    if(N.letter){ var lt = el("section", "nd-letter"); lt.appendChild(paras(N.letter)); lt.appendChild(el("p", "sig", "Uprep jamoasi")); art.appendChild(lt); }
+    if(N.letter){ var lt = el("section", "nd-letter"); lt.appendChild(paras(N.letter)); lt.appendChild(el("p", "sig", "Uniroad jamoasi")); art.appendChild(lt); }
 
     if(arr(N.summary).length){
       var sm = el("ol", "nd-sum");
@@ -2101,7 +2099,7 @@
       sr.appendChild(el("p", "nd-disc", str(S.site.footer) || "Umumiy ma'lumot, kafolat emas.")); art.appendChild(sr); }
     main.appendChild(art);
 
-    var bot = el("div", "nd-bottom no-print"); bot.appendChild(btn("gold", "down", "PDF yuklab olish", NOLDAN_PDF)); bot.firstChild.setAttribute("download", "Uprep - Italiyada o'qish noldan.pdf"); bot.appendChild(btn("line", "send", "Telegram'da savol berish", tgUrl())); main.appendChild(bot);
+    var bot = el("div", "nd-bottom no-print"); bot.appendChild(btn("gold", "down", "PDF yuklab olish", NOLDAN_PDF)); bot.firstChild.setAttribute("download", "Uniroad - Italiyada o'qish noldan.pdf"); bot.appendChild(btn("line", "send", "Telegram'da savol berish", tgUrl())); main.appendChild(bot);
     footer(main);
   }
 
@@ -2109,7 +2107,7 @@
   function aboutView(main){
     var A2 = S.about || {};
     var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
-    H.appendChild(kicker("users", "Uprep"));
+    H.appendChild(kicker("users", "Uniroad"));
     H.appendChild(heroTitle(A2.title || "Biz haqimizda"));
     if(A2.lead) H.appendChild(el("p", "lead", A2.lead));
 
@@ -2544,7 +2542,7 @@
     box.appendChild(factTable([["Shahar", city ? city.name : ""], ["Viloyat", city ? city.region : ""], ["Turi", u.type], ["Tashkil topgan", u.founded ? u.founded + "-yil" : ""], ["Reyting", u.rank], ["Stipendiya", u.scholarship || (city && city.dsu ? city.dsu : "")], ["Qabul foizi", u.acceptance]]));
     var vb = videoBlock({url:u.video, title:"Ariza topshirish: video"}); if(vb) box.appendChild(vb);
     var UA = realAmb(u.id); if(UA.length){ var ag = el("div", "amb-grid"); UA.forEach(function(a){ ag.appendChild(ambCard(a)); }); var ah = el("section", "card"); ah.appendChild(el("h3", null, "Shu yerda o'qiyotgan talabaga yozing")); ah.appendChild(ag); box.appendChild(ah); }
-    var UO = realOut(u.id); if(UO.length){ var og = el("div", "outc-grid"); UO.slice(0, 4).forEach(function(o){ og.appendChild(outCard(o)); }); var oh = el("section", "card"); oh.appendChild(el("h3", null, "Uprep talabalari natijalari (" + UO.length + ")")); oh.appendChild(og); if(UO.length > 4){ var oa = el("a", "trk-next"); oa.href = "#natijalar"; oa.appendChild(el("span", null, "Barcha natijalar")); oa.appendChild(ic("next")); oh.appendChild(oa); } box.appendChild(oh); }
+    var UO = realOut(u.id); if(UO.length){ var og = el("div", "outc-grid"); UO.slice(0, 4).forEach(function(o){ og.appendChild(outCard(o)); }); var oh = el("section", "card"); oh.appendChild(el("h3", null, "Uniroad talabalari natijalari (" + UO.length + ")")); oh.appendChild(og); if(UO.length > 4){ var oa = el("a", "trk-next"); oa.href = "#natijalar"; oa.appendChild(el("span", null, "Barcha natijalar")); oa.appendChild(ic("next")); oh.appendChild(oa); } box.appendChild(oh); }
     if(u.tip) box.appendChild(callout({style:"tip", text:u.tip}));
     var mini = el("div", "mini-actions"); mini.appendChild(cmpBtn(u, "line")); mini.appendChild(shareBtn(u.short || u.name, "line")); box.appendChild(mini);
     box.appendChild(applyCard(u));
@@ -2954,7 +2952,7 @@
   function callout(b){
     var st = ["tip","warn","info"].indexOf(str(b.style)) >= 0 ? str(b.style) : "info";
     var c = el("div", "callout " + st); c.appendChild(ic(st === "tip" ? "bulb" : st === "warn" ? "stop" : "info"));
-    var sp = el("span"); if(st === "tip") sp.appendChild(el("b", null, "Uprep maslahati: ")); if(st === "warn") sp.appendChild(el("b", null, "Diqqat: ")); sp.appendChild(document.createTextNode(str(b.text))); c.appendChild(sp);
+    var sp = el("span"); if(st === "tip") sp.appendChild(el("b", null, "Uniroad maslahati: ")); if(st === "warn") sp.appendChild(el("b", null, "Diqqat: ")); sp.appendChild(document.createTextNode(str(b.text))); c.appendChild(sp);
     return c;
   }
   function videoBlock(b){

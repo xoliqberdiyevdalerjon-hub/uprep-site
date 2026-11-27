@@ -25,7 +25,7 @@ function req(body, { method = "POST", key = KEY, origin = ORIGIN, type = "applic
   headers.set("CF-Connecting-IP", ip);
   return new Request("https://relay.example.workers.dev/", { method, headers, body: method === "POST" ? (typeof body === "string" ? body : JSON.stringify(body)) : undefined });
 }
-const good = { kind: "xato", text: "Kalkulyator ishlamayapti", contact: "", meta: { app: "Uprep", version: "2026.11.26", platform: "Android · Chrome · telefon", lang: "uz-UZ", page: "#kalkulyator" }, hp: "" };
+const good = { kind: "xato", text: "Kalkulyator ishlamayapti", contact: "", meta: { app: "Uniroad", version: "2026.11.26", platform: "Android · Chrome · telefon", lang: "uz-UZ", page: "#kalkulyator" }, hp: "" };
 
 test("OPTIONS preflight returns 204 with CORS for an allowed origin", async () => {
   const r = await worker.fetch(req(null, { method: "OPTIONS" }), ENV);
@@ -46,7 +46,7 @@ test("ALLOWED_ORIGINS='*' = any origin (wildcard)", () => {
   assert.equal(h["Access-Control-Allow-Origin"], "*");
 });
 
-test("ALLOWED_ORIGINS not set = only the Uprep site", () => {
+test("ALLOWED_ORIGINS not set = only the Uniroad site", () => {
   const env = { ...ENV }; delete env.ALLOWED_ORIGINS;
   assert.equal(corsFor(req(good, { origin: ORIGIN }), env)["Access-Control-Allow-Origin"], ORIGIN);
   assert.equal(corsFor(req(good, { origin: "https://any.example" }), env), null);
@@ -71,7 +71,7 @@ test("valid request is forwarded to Telegram sendMessage with secrets from env",
   assert.equal(payload.disable_web_page_preview, true);
   assert.equal(payload.parse_mode, undefined, "plain text: user input can not inject formatting");
   assert.match(payload.text, /Muammo haqida xabar/);
-  assert.match(payload.text, /Uprep v2026\.11\.26/);
+  assert.match(payload.text, /Uniroad v2026\.11\.26/);
   assert.match(payload.text, /Android · Chrome · telefon · uz-UZ/);
   assert.match(payload.text, /#kalkulyator/);
   assert.match(payload.text, /anonim/);

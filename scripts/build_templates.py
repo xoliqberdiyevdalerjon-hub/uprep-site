@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Uprep hujjat shablonlari: Word (.docx) va PDF uchun HTML. python3 scripts/build_templates.py"""
+"""Uniroad hujjat shablonlari: Word (.docx) va PDF uchun HTML. python3 scripts/build_templates.py"""
 import os, json, html
 from docx import Document
 from docx.shared import Pt, RGBColor, Cm
@@ -7,8 +7,8 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "media", "shablonlar")
-NAVY = RGBColor(0x16, 0x27, 0x4A)
-NOTE = "Uprep shabloni · [ ] ichidagilarni o'zingiznikiga almashtiring · @Uprep_Admin"
+NAVY = RGBColor(0x37, 0x30, 0xA3)
+NOTE = "Uniroad shabloni · [ ] ichidagilarni o'zingiznikiga almashtiring · @Uprep_Admin"
 
 # Each template: (file, title, uz_intro, blocks). block = ("h", text) | ("p", text) | ("ul", [..]) | ("table", [[..],..]) | ("sign", text)
 T = [
@@ -108,18 +108,19 @@ def html_build(fn, title, intro, blocks):
         elif kind == "ul": b.append("<ul>" + "".join(f"<li>{e(i)}</li>" for i in val) + "</ul>")
         elif kind == "table": b.append("<table>" + "".join("<tr>" + "".join((f"<th>{e(c)}</th>" if i == 0 else f"<td>{e(c)}</td>") for c in row) + "</tr>" for i, row in enumerate(val)) + "</table>")
         elif kind == "sign": b.append(f"<p class='sign'>{e(val)}</p>")
-    return f"""<!doctype html><html lang="uz"><head><meta charset="utf-8"><style>
-@page{{size:A4;margin:16mm 17mm}} body{{font:11pt/1.5 'Instrument Sans',system-ui,sans-serif;color:#0E1930}}
+    return f"""<!doctype html><html lang="uz"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&family=Instrument+Sans:wght@400;600;700&display=block" rel="stylesheet"><style>
+@page{{size:A4;margin:16mm 17mm}} body{{font:11pt/1.5 'Instrument Sans',system-ui,sans-serif;color:#14122E}}
 .top{{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #F2B233;padding-bottom:8px;margin-bottom:10px}}
-.brand{{font:800 16pt system-ui;color:#16274A}} .brand b{{color:#F2A81F}}
-h1{{font:800 19pt system-ui;color:#16274A;margin:6px 0}} .intro{{background:#FCF0D4;border-radius:8px;padding:8px 12px;font-size:9.5pt;color:#5C4A10}}
-h2.big{{font:800 15pt system-ui;color:#16274A;margin:16px 0 6px}} h3{{font:700 12pt system-ui;color:#16274A;margin:14px 0 4px;border-bottom:1px solid #E6E1D6;padding-bottom:3px}}
+.brand{{display:flex;align-items:center;gap:8px;font:700 16pt 'Sora',system-ui;color:#3B2FC4;letter-spacing:-.02em}} .brand svg{{width:26px;height:26px}}
+h1{{font:800 19pt system-ui;color:#3730A3;margin:6px 0}} .intro{{background:#FCF0D4;border-radius:8px;padding:8px 12px;font-size:9.5pt;color:#5C4A10}}
+h2.big{{font:800 15pt system-ui;color:#3730A3;margin:16px 0 6px}} h3{{font:700 12pt system-ui;color:#3730A3;margin:14px 0 4px;border-bottom:1px solid #E5E2EF;padding-bottom:3px}}
 p{{margin:4px 0}} ul{{margin:4px 0 4px 18px;padding:0}} li{{margin:3px 0}}
-table{{width:100%;border-collapse:collapse;margin:10px 0;font-size:10pt}} th,td{{border:1px solid #D8D1C2;padding:6px 8px;text-align:left}} th{{background:#16274A;color:#fff}}
+table{{width:100%;border-collapse:collapse;margin:10px 0;font-size:10pt}} th,td{{border:1px solid #D5D1E4;padding:6px 8px;text-align:left}} th{{background:#3730A3;color:#fff}}
 .sign{{margin-top:28px}} .foot{{margin-top:18px;text-align:center;font-size:8pt;color:#999}}
-</style></head><body><div class="top"><span class="brand">up<b>rep</b></span><span style="font-size:9pt;color:#5C6479">Shablon</span></div>
+</style></head><body><div class="top"><span class="brand">{MARK}uniroad</span><span style="font-size:9pt;color:#5C6479">Shablon</span></div>
 <h1>{e(title)}</h1><div class="intro">{e(intro)}</div>{''.join(b)}<div class="foot">{e(NOTE)}</div></body></html>"""
 
+MARK = open(os.path.join(ROOT, "media", "favicon.svg"), encoding="utf-8").read().strip()
 os.makedirs(OUT, exist_ok=True)
 manifest = []
 for fn, title, intro, blocks in T:

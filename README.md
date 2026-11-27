@@ -1,4 +1,4 @@
-# Uprep — chet elda o'qish platformasi
+# Uniroad (sobiq Uniroad) — chet elda o'qish platformasi
 
 Sayt: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/
 
@@ -13,7 +13,7 @@ app.pagescms.org → uprep-site. Bo'limlar: Bosh sahifa, Biz haqimizda, Noldan: 
    - Authentication → URL Configuration → Site URL: sayt manzili.
    - Project Settings → API → `Project URL` va `anon public` kalitni `assets/config.js` ga yozing.
 2. **Stripe** (stripe.com, Italiya) → Managed Payments'ni yoqing.
-   - Mahsulot: "Uprep: Italiya kursi", $399, bir martalik, tax code `txcd_20060358` (Online courses – written material).
+   - Mahsulot: "Uniroad: Italiya kursi", $399, bir martalik, tax code `txcd_20060358` (Online courses – written material).
    - Payment Link yarating; "After payment" → redirect: `<sayt>/#hisob?paid=1`. Havolani `assets/config.js` dagi `paymentLink` ga yozing.
 3. **Webhook**: Supabase → Edge Functions → `stripe-webhook` (`supabase/functions/stripe-webhook/index.ts`), Verify JWT: off.
    - Secrets: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`.
@@ -38,7 +38,7 @@ Sayt hozircha qidiruv tizimlaridan yashirilgan: `index.html` da `<meta name="rob
 Google uchun tayyor sahifalar `google-seo` tarmog'ida saqlangan (`scripts/build_seo.py`). Ochishga qaror qilinganda: noindex tegini olib tashlash, `google-seo` tarmog'ini birlashtirish va `python3 scripts/build_seo.py` ni ishga tushirish.
 
 ## Faqat veb-sayt
-Uprep telefonga o'rnatiladigan ilova (PWA) emas, oddiy veb-sayt. `manifest.webmanifest` olib tashlangan. `sw.js` faqat avval o'rnatilgan eski ilovani tozalash uchun qoldirilgan: u keshni o'chiradi va o'zini ro'yxatdan chiqaradi. `index.html` ham har ochilganda eski service worker'larni o'chiradi.
+Uniroad telefonga o'rnatiladigan ilova (PWA) emas, oddiy veb-sayt. `manifest.webmanifest` olib tashlangan. `sw.js` faqat avval o'rnatilgan eski ilovani tozalash uchun qoldirilgan: u keshni o'chiradi va o'zini ro'yxatdan chiqaradi. `index.html` ham har ochilganda eski service worker'larni o'chiradi.
 
 ## Asosiy raqamlar bitta joyda
 
@@ -47,3 +47,7 @@ Viza summasi, uning yili va SSN to'lovi `content/site.json` ichidagi `facts` bo'
 ## Brauzerda saqlanadigan ma'lumotlar
 
 Foydalanuvchining rejasi, profil tahlili, saqlangan universitetlar va sozlamalari brauzerda bitta `uprep_state_v2` yozuvida saqlanadi. Eski `uprep-*` yozuvlari birinchi ochilishda avtomatik ko'chiriladi.
+
+## Brend: Uniroad
+Belgi: binafsha gradientli kvadrat ichida oq "u", uning o'ng tomoni yuqoriga strelka bo'lib ko'tariladi, oltin nuqta esa talaba (`media/favicon.svg`, `assets/app.js` dagi `markSVG`). Ranglar: #4338CA → #6D3BF5 → #C026D3, aksent oltin #FDE68A / #F2B233. Logotip yozuvi: Sora 700, `uniroad`.
+Ichki kalitlar (`uprep-*`, `uprep_state_v2`), repozitoriy nomi va Telegram `@Uprep_Admin` o'zgartirilmagan: ular foydalanuvchi ma'lumotlarini va havolalarni buzmaslik uchun saqlangan.

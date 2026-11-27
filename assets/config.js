@@ -1,4 +1,4 @@
-/* Uprep platform settings. Fill these in once the accounts exist (see README).
+/* Uniroad platform settings. Fill these in once the accounts exist (see README).
    Empty values = "tayyorlanmoqda" mode: login and payment show a "coming soon" note. */
 window.UPREP_CONFIG = {
   supabaseUrl: "",        // e.g. https://abcd1234.supabase.co

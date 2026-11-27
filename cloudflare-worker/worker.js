@@ -1,5 +1,5 @@
 /**
- * Uprep feedback relay: Cloudflare Worker.
+ * Uniroad feedback relay: Cloudflare Worker.
  *
  * The website POSTs a small JSON message here; the Worker checks it and forwards it to the
  * owner's Telegram chat with the Bot API (sendMessage). The bot token and chat id live ONLY in
@@ -11,7 +11,7 @@
  *   APP_KEY          (Secret, optional)  must match assets/relay-config.js. Not set = DEFAULT_APP_KEY below
  *                    (the same public key the site sends; set APP_KEY only when you rotate the key)
  *   ALLOWED_ORIGINS  (Text, optional)  comma-separated list of sites allowed to call the Worker.
- *                    Not set = only the Uprep site (DEFAULT_ORIGINS below). "*" = any origin.
+ *                    Not set = only the Uniroad site (DEFAULT_ORIGINS below). "*" = any origin.
  *   TIME_ZONE        (Text, optional)  default "Asia/Tashkent"
  *
  * Request:  POST /  headers: Content-Type: application/json, x-app-key: <APP_KEY>
@@ -137,7 +137,7 @@ function stamp(env) {
 function formatMessage(data, env) {
   const meta = data && typeof data.meta === "object" && data.meta ? data.meta : {};
   const title = KINDS[clean(data.kind, 20)] || "📩 Saytdan xabar";
-  const app = clean(meta.app, 40) || "Uprep";
+  const app = clean(meta.app, 40) || "Uniroad";
   const version = clean(meta.version, 30);
   const platform = [clean(meta.platform, 60), clean(meta.lang, 20)].filter(Boolean).join(" · ");
   const page = clean(meta.page, 120);

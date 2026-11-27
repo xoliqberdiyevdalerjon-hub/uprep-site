@@ -101,7 +101,7 @@ content:
             label: Maslahat / Ogohlantirish
             fields:
               - name: style
-                label: "Turi: tip = Uprep maslahati (yashil), warn = ogohlantirish (qizil), info = ma'lumot (ko'k)"
+                label: "Turi: tip = Uniroad maslahati (yashil), warn = ogohlantirish (qizil), info = ma'lumot (ko'k)"
                 type: select
                 options:
                   values: [tip, warn, info]
@@ -355,7 +355,7 @@ content:
       - { name: docs, label: Kerakli hujjatlar, type: string, list: true }
       - { name: scholarship, label: Stipendiya, type: text }
       - { name: acceptance, label: Qabul foizi, type: text }
-      - { name: tip, label: Uprep maslahati, type: text }
+      - { name: tip, label: Uniroad maslahati, type: text }
       - { name: video, label: "Ariza videosi (YouTube havolasi)", type: string }
       - { name: programmesUrl, label: "Yo'nalishlar ro'yxati havolasi", type: string }
       - name: programmes
@@ -552,7 +552,7 @@ content:
       - { name: title, label: Sarlavha, type: string }
       - { name: lead, label: "Qisqa kirish matni (sarlavha ostida)", type: text }
       - { name: name, label: "Ismingiz (bo'sh bo'lsa, shaxsiy karta chiqmaydi)", type: string }
-      - { name: role, label: "Kimsiz (masalan: Uprep asoschisi, Sapienza talabasi)", type: string }
+      - { name: role, label: "Kimsiz (masalan: Uniroad asoschisi, Sapienza talabasi)", type: string }
       - { name: photo, label: "Rasmingiz (kvadrat rasm yaxshi chiqadi)", type: image }
       - { name: bio, label: "O'zingiz haqingizda (bo'sh qator = yangi xatboshi)", type: text }
       - name: story
@@ -725,7 +725,7 @@ content:
             fields:
               - { name: title, label: Sarlavha, type: string }
               - { name: items, label: Qatorlar, type: string, list: true }
-          - { name: tip, label: "Uprep maslahati", type: text }
+          - { name: tip, label: "Uniroad maslahati", type: text }
           - { name: warn, label: "Diqqat (ogohlantirish)", type: text }
           - name: links
             label: Havolalar

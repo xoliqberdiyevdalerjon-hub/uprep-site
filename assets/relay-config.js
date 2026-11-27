@@ -1,4 +1,4 @@
-/* Uprep feedback relay settings (Cloudflare Worker -> Telegram bot).
+/* Uniroad feedback relay settings (Cloudflare Worker -> Telegram bot).
    Only these two lines change when the Worker is created or moved:
      url    - the Worker address, e.g. https://uprep-feedback.<your-subdomain>.workers.dev
      appKey - must be EXACTLY the same as the APP_KEY secret in the Worker settings.
@@ -11,7 +11,7 @@
 window.UPREP_RELAY = {
   url: "https://wild-fire-9eb2prep-feedbackprep-feedback.xoliqberdiyevdalerjon.workers.dev",
   appKey: "pJBaGKvnMu7IQiTQN0ekW-tC0xC1luCZEBdTZRKFs_g",
-  appName: "Uprep",
+  appName: "Uniroad",
   appVersion: "2026.11.26",
   timeoutMs: 18000
 };
