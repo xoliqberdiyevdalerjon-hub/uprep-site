@@ -49,6 +49,8 @@ test("ALLOWED_ORIGINS='*' = any origin (wildcard)", () => {
 test("ALLOWED_ORIGINS not set = only the Uniroad site", () => {
   const env = { ...ENV }; delete env.ALLOWED_ORIGINS;
   assert.equal(corsFor(req(good, { origin: ORIGIN }), env)["Access-Control-Allow-Origin"], ORIGIN);
+  assert.equal(corsFor(req(good, { origin: "https://uniroad.org" }), env)["Access-Control-Allow-Origin"], "https://uniroad.org");
+  assert.equal(corsFor(req(good, { origin: "https://www.uniroad.org" }), env)["Access-Control-Allow-Origin"], "https://www.uniroad.org");
   assert.equal(corsFor(req(good, { origin: "https://any.example" }), env), null);
   assert.equal(corsFor(req(good, { origin: "" }), { ...env, ALLOWED_ORIGINS: "" }), null, "no Origin header = refused");
 });

@@ -47,7 +47,7 @@ function json(body, status, cors) {
   });
 }
 
-const DEFAULT_ORIGINS = "https://xoliqberdiyevdalerjon-hub.github.io";
+const DEFAULT_ORIGINS = "https://uniroad.org,https://www.uniroad.org,https://xoliqberdiyevdalerjon-hub.github.io";
 /* not a secret: the website sends it openly; it only filters out random bots */
 const DEFAULT_APP_KEY = "pJBaGKvnMu7IQiTQN0ekW-tC0xC1luCZEBdTZRKFs_g";
 
