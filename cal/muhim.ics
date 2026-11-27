@@ -1,0 +1,496 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · Asosiy muddatlar
+X-WR-CALDESC:Italiyada o'qish: viza\, Universitaly\, stipendiya va universi
+ tet muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:d8135a63825673316f55@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Elchixona: 2026/27: talaba vizasi uchun oxirgi kun
+DESCRIPTION:2026/27: talaba vizasi uchun oxirgi kun (30.11.2026 gacha)\n\nB
+ archa muddatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#k
+ alendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Elchixona: 2026/27: talaba vizasi uchun oxirgi k
+ un
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Elchixona: 2026/27: talaba vizasi uchun oxirgi kun
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:d3636cdb045df57fa95a@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Macerata: 1-oqim tugaydi (2027/28)
+DESCRIPTION:Macerata: 1-oqim tugaydi (2027/28) (30.11.2026)\n\nBarcha mudda
+ tlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Macerata: 1-oqim tugaydi (2027/28)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Macerata: 1-oqim tugaydi (2027/28)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:fc0b258c2493337ac03d@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:PoliMi: Politecnico di Milano: magistratura early bird (stipendiya 
+ uchun ham)
+DESCRIPTION:Politecnico di Milano: magistratura early bird (stipendiya uchu
+ n ham) (01.12.2026)\n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub
+ .github.io/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: PoliMi: Politecnico di Milano: magistratura earl
+ y bird (stipendiya uchun ham)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: PoliMi: Politecnico di Milano: magistratura early bird 
+ (stipendiya uchun ham)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:5eb3899f6275afeccce6@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:DiSCo: 2026/27: CAF'da ISEEUP\, permesso hujjatlari va enrollment
+DESCRIPTION:2026/27: CAF'da ISEEUP\, permesso hujjatlari va enrollment (10.
+ 12.2026 gacha)\n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.gith
+ ub.io/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: DiSCo: 2026/27: CAF'da ISEEUP\, permesso hujjatl
+ ari va enrollment
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: DiSCo: 2026/27: CAF'da ISEEUP\, permesso hujjatlari va 
+ enrollment
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:b383c4d9021cc7d1e02a@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+SUMMARY:Bicocca: Milano-Bicocca: erkin qabul dasturlari\, 1-chaqiriq tugayd
+ i
+DESCRIPTION:Milano-Bicocca: erkin qabul dasturlari\, 1-chaqiriq tugaydi (22
+ .12.2026)\n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.github.io
+ /uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Bicocca: Milano-Bicocca: erkin qabul dasturlari\
+ , 1-chaqiriq tugaydi
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Bicocca: Milano-Bicocca: erkin qabul dasturlari\, 1-cha
+ qiriq tugaydi
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8b4f9ec7cf6e5236497a@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270108
+DTEND;VALUE=DATE:20270109
+SUMMARY:Macerata: 2-oqim tugaydi
+DESCRIPTION:Macerata: 2-oqim tugaydi (08.01.2027)\n\nBarcha muddatlar: http
+ s://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Macerata: 2-oqim tugaydi
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Macerata: 2-oqim tugaydi
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:37e28700648846b23b33@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+SUMMARY:Bergamo: magistratura oldindan baholash tugaydi
+DESCRIPTION:Bergamo: magistratura oldindan baholash tugaydi (15.01.2027)\n\
+ nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/
+ #kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Bergamo: magistratura oldindan baholash tugaydi
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Bergamo: magistratura oldindan baholash tugaydi
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:52806dd20ce2369f589d@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270119
+DTEND;VALUE=DATE:20270120
+SUMMARY:Bocconi: xalqaro nomzodlar uchun onlayn testga yozilishning oxirgi 
+ kuni (2027/28)
+DESCRIPTION:Bocconi: xalqaro nomzodlar uchun onlayn testga yozilishning oxi
+ rgi kuni (2027/28) (19.01.2027)\n\nBarcha muddatlar: https://xoliqberdiyev
+ dalerjon-hub.github.io/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Bocconi: xalqaro nomzodlar uchun onlayn testga y
+ ozilishning oxirgi kuni (2027/28)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Bocconi: xalqaro nomzodlar uchun onlayn testga yozilish
+ ning oxirgi kuni (2027/28)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:69d50455e8df97482324@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270121
+SUMMARY:Pavia: 2-chaqiriq tugaydi
+DESCRIPTION:Pavia: 2-chaqiriq tugaydi (20.01.2027)\n\nBarcha muddatlar: htt
+ ps://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Pavia: 2-chaqiriq tugaydi
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Pavia: 2-chaqiriq tugaydi
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:6bbd48c587982dc60c16@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270128
+DTEND;VALUE=DATE:20270129
+SUMMARY:PoliMi: Politecnico di Milano: magistratura umumiy chaqiriq tugaydi
+DESCRIPTION:Politecnico di Milano: magistratura umumiy chaqiriq tugaydi (28
+ .01.2027)\n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.github.io
+ /uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: PoliMi: Politecnico di Milano: magistratura umum
+ iy chaqiriq tugaydi
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: PoliMi: Politecnico di Milano: magistratura umumiy chaq
+ iriq tugaydi
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:5a213cfc16b097657d55@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270129
+DTEND;VALUE=DATE:20270130
+SUMMARY:UniTo: Torino: magistratura 1-chaqiriq tugaydi
+DESCRIPTION:Torino: magistratura 1-chaqiriq tugaydi (29.01.2027)\n\nBarcha 
+ muddatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalenda
+ r
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: UniTo: Torino: magistratura 1-chaqiriq tugaydi
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: UniTo: Torino: magistratura 1-chaqiriq tugaydi
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:0df5419dd1253531abfd@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:Pisa: ingliz tilidagi ko'p magistraturalar muddati
+DESCRIPTION:Pisa: ingliz tilidagi ko'p magistraturalar muddati (01.02.2027)
+ \n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-si
+ te/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Pisa: ingliz tilidagi ko'p magistraturalar mudda
+ ti
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Pisa: ingliz tilidagi ko'p magistraturalar muddati
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:b00cb7a3582731f8f9f4@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270210
+DTEND;VALUE=DATE:20270211
+SUMMARY:DiSCo: Enrollment uchun oxirgi chegara\, undan keyin stipendiya yo'
+ q
+DESCRIPTION:Enrollment uchun oxirgi chegara\, undan keyin stipendiya yo'q (
+ 10.02.2027)\n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.github.
+ io/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: DiSCo: Enrollment uchun oxirgi chegara\, undan k
+ eyin stipendiya yo'q
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: DiSCo: Enrollment uchun oxirgi chegara\, undan keyin st
+ ipendiya yo'q
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:b9b974be4f227205750f@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270210
+DTEND;VALUE=DATE:20270211
+SUMMARY:LUISS: bakalavr (non-EU) arizasi tugaydi
+DESCRIPTION:LUISS: bakalavr (non-EU) arizasi tugaydi (10.02.2027)\n\nBarcha
+  muddatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalend
+ ar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: LUISS: bakalavr (non-EU) arizasi tugaydi
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: LUISS: bakalavr (non-EU) arizasi tugaydi
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:573f1697b7a1d700dc80@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270217
+DTEND;VALUE=DATE:20270218
+SUMMARY:Cattolica: Economics and Management (BSc) muddati
+DESCRIPTION:Cattolica: Economics and Management (BSc) muddati (17.02.2027)\
+ n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-sit
+ e/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Cattolica: Economics and Management (BSc) muddat
+ i
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Cattolica: Economics and Management (BSc) muddati
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:559e9a13b8ddfaa8b8c4@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270217
+DTEND;VALUE=DATE:20270218
+SUMMARY:L'Aquila: xalqaro talabalar chaqirig'i tugaydi (13:00)
+DESCRIPTION:L'Aquila: xalqaro talabalar chaqirig'i tugaydi (13:00) (17.02.2
+ 027)\n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.github.io/upre
+ p-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: L'Aquila: xalqaro talabalar chaqirig'i tugaydi (
+ 13:00)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: L'Aquila: xalqaro talabalar chaqirig'i tugaydi (13:00)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:c3980e5def426e114209@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270307
+DTEND;VALUE=DATE:20270308
+SUMMARY:Padova: chet elda yashovchi non-EU\, asosiy chaqiriq tugaydi
+DESCRIPTION:Padova: chet elda yashovchi non-EU\, asosiy chaqiriq tugaydi (0
+ 7.03.2027)\n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.github.i
+ o/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Padova: chet elda yashovchi non-EU\, asosiy chaq
+ iriq tugaydi
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Padova: chet elda yashovchi non-EU\, asosiy chaqiriq tu
+ gaydi
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e2b357ca4a616547db69@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270319
+DTEND;VALUE=DATE:20270320
+SUMMARY:Messina: vizaga muhtojlar\, 1-chaqiriq tugaydi
+DESCRIPTION:Messina: vizaga muhtojlar\, 1-chaqiriq tugaydi (19.03.2027)\n\n
+ Barcha muddatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#
+ kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Messina: vizaga muhtojlar\, 1-chaqiriq tugaydi
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Messina: vizaga muhtojlar\, 1-chaqiriq tugaydi
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:4b2592ab342cf29ea98e@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270415
+DTEND;VALUE=DATE:20270416
+SUMMARY:UniTo: Torino: bakalavr chaqirig'i tugaydi
+DESCRIPTION:Torino: bakalavr chaqirig'i tugaydi (15.04.2027)\n\nBarcha mudd
+ atlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: UniTo: Torino: bakalavr chaqirig'i tugaydi
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: UniTo: Torino: bakalavr chaqirig'i tugaydi
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8db7984127a07e0aac16@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270422
+DTEND;VALUE=DATE:20270423
+SUMMARY:IULM: ikki yillik magistraturalar muddati (2027/28)
+DESCRIPTION:IULM: ikki yillik magistraturalar muddati (2027/28) (22.04.2027
+ )\n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-s
+ ite/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: IULM: ikki yillik magistraturalar muddati (2027/
+ 28)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: IULM: ikki yillik magistraturalar muddati (2027/28)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f03d696fe771cc4f78e0@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20271031
+DTEND;VALUE=DATE:20271101
+SUMMARY:Viza: 2027/28: talaba vizasiga ariza berishning oxirgi kuni (bakala
+ vr va magistratura)
+DESCRIPTION:2027/28: talaba vizasiga ariza berishning oxirgi kuni (bakalavr
+  va magistratura) (31.10.2027)\n\nBarcha muddatlar: https://xoliqberdiyevd
+ alerjon-hub.github.io/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Viza: 2027/28: talaba vizasiga ariza berishning 
+ oxirgi kuni (bakalavr va magistratura)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Viza: 2027/28: talaba vizasiga ariza berishning oxirgi 
+ kuni (bakalavr va magistratura)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

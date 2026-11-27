@@ -1,0 +1,59 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · Messina (UniMe)
+X-WR-CALDESC:Messina (UniMe): ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:0b122560ab9beabc1405@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270319
+DTEND;VALUE=DATE:20270320
+SUMMARY:Messina (UniMe): 2027/28: vizaga muhtoj non-EU\, 1-chaqiriq
+DESCRIPTION:2027/28: vizaga muhtoj non-EU\, 1-chaqiriq (02.02 – 19.03.202
+ 7)\nAriza: https://international.unime.it/study-us/application-and-admissi
+ on\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/u
+ prep-site/#uni-unime/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unime/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Messina (UniMe): 2027/28: vizaga muhtoj non-EU\,
+  1-chaqiriq
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Messina (UniMe): 2027/28: vizaga muhtoj non-EU\, 1-chaq
+ iriq
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:49aebc18f76c929442c1@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270508
+DTEND;VALUE=DATE:20270509
+SUMMARY:Messina (UniMe): 2027/28: keyingi chaqiriq
+DESCRIPTION:2027/28: keyingi chaqiriq (08.04 – 08.05.2027)\nAriza: https:
+ //international.unime.it/study-us/application-and-admission\n\nTalablar va
+  hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-un
+ ime/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unime/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Messina (UniMe): 2027/28: keyingi chaqiriq
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Messina (UniMe): 2027/28: keyingi chaqiriq
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

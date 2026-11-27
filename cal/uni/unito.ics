@@ -1,0 +1,82 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · Turin (UniTo)
+X-WR-CALDESC:Turin (UniTo): ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:3e043bdc7cbca2ee81c8@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270129
+DTEND;VALUE=DATE:20270130
+SUMMARY:Turin (UniTo): 2027/28: magistratura\, 1-chaqiriq
+DESCRIPTION:2027/28: magistratura\, 1-chaqiriq (25.11.2026 – 29.01.2027)\
+ nAriza: https://apply.unito.it\n\nTalablar va hujjatlar: https://xoliqberd
+ iyevdalerjon-hub.github.io/uprep-site/#uni-unito/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unito/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Turin (UniTo): 2027/28: magistratura\, 1-chaqiri
+ q
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Turin (UniTo): 2027/28: magistratura\, 1-chaqiriq
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:dfa998200d2c625bb33f@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270415
+DTEND;VALUE=DATE:20270416
+SUMMARY:Turin (UniTo): 2027/28: bakalavr va 5–6 yillik erkin qabul dastur
+ lari
+DESCRIPTION:2027/28: bakalavr va 5–6 yillik erkin qabul dasturlari (19.02
+  – 15.04.2027)\nAriza: https://apply.unito.it\n\nTalablar va hujjatlar: 
+ https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unito/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unito/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Turin (UniTo): 2027/28: bakalavr va 5–6 yillik
+  erkin qabul dasturlari
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Turin (UniTo): 2027/28: bakalavr va 5–6 yillik erkin 
+ qabul dasturlari
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:e34545edcedc07b54b0c@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270715
+DTEND;VALUE=DATE:20270716
+SUMMARY:Turin (UniTo): Universitaly pre-enrollment (viza)
+DESCRIPTION:Universitaly pre-enrollment (viza) (15.07.2027)\nAriza: https:/
+ /apply.unito.it\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hu
+ b.github.io/uprep-site/#uni-unito/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unito/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Turin (UniTo): Universitaly pre-enrollment (viza
+ )
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Turin (UniTo): Universitaly pre-enrollment (viza)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

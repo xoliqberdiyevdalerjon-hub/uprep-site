@@ -1,0 +1,122 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · Macerata
+X-WR-CALDESC:Macerata: ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:cbd0b34c462dd4e9a861@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Macerata: 2027/28: 1-oqim
+DESCRIPTION:2027/28: 1-oqim (03.11 – 30.11.2026)\nAriza: https://apply.un
+ imc.it/\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github
+ .io/uprep-site/#uni-unimc/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimc/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Macerata: 2027/28: 1-oqim
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Macerata: 2027/28: 1-oqim
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:361912a98d8c843495c7@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270108
+DTEND;VALUE=DATE:20270109
+SUMMARY:Macerata: 2027/28: 2-oqim
+DESCRIPTION:2027/28: 2-oqim (08.01.2027)\nAriza: https://apply.unimc.it/\n\
+ nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-
+ site/#uni-unimc/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimc/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Macerata: 2027/28: 2-oqim
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Macerata: 2027/28: 2-oqim
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8054215c8aaaa7b14eab@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:Macerata: 2027/28: 3-oqim
+DESCRIPTION:2027/28: 3-oqim (01.02.2027)\nAriza: https://apply.unimc.it/\n\
+ nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-
+ site/#uni-unimc/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimc/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Macerata: 2027/28: 3-oqim
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Macerata: 2027/28: 3-oqim
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:19c75ec91904f397c922@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270301
+DTEND;VALUE=DATE:20270302
+SUMMARY:Macerata: 2027/28: 4-oqim
+DESCRIPTION:2027/28: 4-oqim (01.03.2027)\nAriza: https://apply.unimc.it/\n\
+ nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-
+ site/#uni-unimc/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimc/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Macerata: 2027/28: 4-oqim
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Macerata: 2027/28: 4-oqim
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1f3edb72cf51677ef5c0@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270430
+DTEND;VALUE=DATE:20270501
+SUMMARY:Macerata: 2027/28: oxirgi muddat (ba'zi dasturlar)
+DESCRIPTION:2027/28: oxirgi muddat (ba'zi dasturlar) (30.04.2027)\nAriza: h
+ ttps://apply.unimc.it/\n\nTalablar va hujjatlar: https://xoliqberdiyevdale
+ rjon-hub.github.io/uprep-site/#uni-unimc/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimc/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Macerata: 2027/28: oxirgi muddat (ba'zi dasturla
+ r)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Macerata: 2027/28: oxirgi muddat (ba'zi dasturlar)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · IULM
+X-WR-CALDESC:IULM: ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:53b86309760ad1b5a6a7@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270422
+DTEND;VALUE=DATE:20270423
+SUMMARY:IULM: 2027/28: ikki yillik magistraturalar (ko'p dasturlar)
+DESCRIPTION:2027/28: ikki yillik magistraturalar (ko'p dasturlar) (22.04.20
+ 27)\nAriza: https://apply.iulm.it/\n\nTalablar va hujjatlar: https://xoliq
+ berdiyevdalerjon-hub.github.io/uprep-site/#uni-iulm/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-iulm/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: IULM: 2027/28: ikki yillik magistraturalar (ko'p
+  dasturlar)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: IULM: 2027/28: ikki yillik magistraturalar (ko'p dastur
+ lar)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

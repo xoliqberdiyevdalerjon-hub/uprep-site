@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · Cattolica
+X-WR-CALDESC:Cattolica: ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:8e7f021e9e9da5002940@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270217
+DTEND;VALUE=DATE:20270218
+SUMMARY:Cattolica: Economics and Management (BSc)\, 2027/28
+DESCRIPTION:Economics and Management (BSc)\, 2027/28 (04.11.2026 – 17.02.
+ 2027)\nAriza: https://international.unicatt.it/ucscinternational-admission
+ -and-tuition-application-timeline-5420\n\nTalablar va hujjatlar: https://x
+ oliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unicatt/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unicatt/qab
+ ul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Cattolica: Economics and Management (BSc)\, 2027
+ /28
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Cattolica: Economics and Management (BSc)\, 2027/28
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

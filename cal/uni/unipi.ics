@@ -1,0 +1,79 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · Pisa
+X-WR-CALDESC:Pisa: ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:7fd9a28a832ab8fe6387@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:Pisa: Ingliz tilidagi magistratura 2027/28 (ko'p dasturlar)
+DESCRIPTION:Ingliz tilidagi magistratura 2027/28 (ko'p dasturlar) (01.02.20
+ 27)\nAriza: https://applymscenglish.unipi.it/\n\nTalablar va hujjatlar: ht
+ tps://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipi/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipi/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Pisa: Ingliz tilidagi magistratura 2027/28 (ko'p
+  dasturlar)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Pisa: Ingliz tilidagi magistratura 2027/28 (ko'p dastur
+ lar)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:7e77e23bd26430a63852@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270301
+DTEND;VALUE=DATE:20270302
+SUMMARY:Pisa: Natijalar (Computer Science)
+DESCRIPTION:Natijalar (Computer Science) (01.03.2027)\nAriza: https://apply
+ mscenglish.unipi.it/\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerj
+ on-hub.github.io/uprep-site/#uni-unipi/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipi/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Pisa: Natijalar (Computer Science)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Pisa: Natijalar (Computer Science)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:444901fed82288d9fe89@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270430
+DTEND;VALUE=DATE:20270501
+SUMMARY:Pisa: Economics magistraturasi (chet el diplomi)
+DESCRIPTION:Economics magistraturasi (chet el diplomi) (30.04.2027)\nAriza:
+  https://applymscenglish.unipi.it/\n\nTalablar va hujjatlar: https://xoliq
+ berdiyevdalerjon-hub.github.io/uprep-site/#uni-unipi/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipi/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Pisa: Economics magistraturasi (chet el diplomi)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Pisa: Economics magistraturasi (chet el diplomi)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

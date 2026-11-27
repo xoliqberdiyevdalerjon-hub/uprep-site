@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · Teramo
+X-WR-CALDESC:Teramo: ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:ad7cd2335a8932eff46d@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Teramo: Universitaly pre-enrollment va viza\, 2026/27 (joriy 2026/2
+ 7 qabuli)
+DESCRIPTION:Universitaly pre-enrollment va viza\, 2026/27 (joriy 2026/27 qa
+ buli) (aprel – 30.11.2026)\nAriza: https://www.unite.it/English/Studying
+ _at_UniTe/How_to_apply\n\nTalablar va hujjatlar: https://xoliqberdiyevdale
+ rjon-hub.github.io/uprep-site/#uni-unite/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unite/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Teramo: Universitaly pre-enrollment va viza\, 20
+ 26/27 (joriy 2026/27 qabuli)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Teramo: Universitaly pre-enrollment va viza\, 2026/27 (
+ joriy 2026/27 qabuli)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,66 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · Politecnico di Milano
+X-WR-CALDESC:Politecnico di Milano: ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:90b6bae9e57c14015f70@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Politecnico di Milano: Magistratura 2027/28: early bird (stipendiya
+  uchun ham)
+DESCRIPTION:Magistratura 2027/28: early bird (stipendiya uchun ham) (01.10 
+ – 01.12.2026)\nAriza: https://www.polimi.it/en/prospective-students/how-
+ to-apply/admission-to-laurea-magistrale/foreign-qualification/application\
+ n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/upre
+ p-site/#uni-polimi/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-polimi/qabu
+ l
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Politecnico di Milano: Magistratura 2027/28: ear
+ ly bird (stipendiya uchun ham)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Politecnico di Milano: Magistratura 2027/28: early bird
+  (stipendiya uchun ham)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8a002e36b2adcf005cc5@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270128
+DTEND;VALUE=DATE:20270129
+SUMMARY:Politecnico di Milano: Magistratura 2027/28: umumiy chaqiriq
+DESCRIPTION:Magistratura 2027/28: umumiy chaqiriq (01.10.2026 – 28.01.202
+ 7)\nAriza: https://www.polimi.it/en/prospective-students/how-to-apply/admi
+ ssion-to-laurea-magistrale/foreign-qualification/application\n\nTalablar v
+ a hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-p
+ olimi/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-polimi/qabu
+ l
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Politecnico di Milano: Magistratura 2027/28: umu
+ miy chaqiriq
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Politecnico di Milano: Magistratura 2027/28: umumiy cha
+ qiriq
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

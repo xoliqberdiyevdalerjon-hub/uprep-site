@@ -193,8 +193,8 @@
   var SKEY = "uprep_state_v2";
   var SMAP = { "uprep-profile":"profile", "uprep-quiz":"quiz", "uprep-me":"plan", "uprep-fav":"favorites", "uprep-track":"tracker",
     "uprep-progress-v1":"guideProgress", "uprep-docs-q":"docsAnswers", "uprep-docs-meter":"docsChecklist", "uprep-calc":"calc", "uprep-cmp":"compare",
-    "uprep-xat":"letter", "uprep-feedback-draft":"feedbackDraft", "uprep-theme":"prefs.theme", "uprep-big":"prefs.big", "uprep-calm":"prefs.calm", "uprep-preview":"prefs.preview" };
-  var STATE = { v:2, profile:null, quiz:null, plan:null, favorites:[], tracker:{}, guideProgress:{}, docsAnswers:null, docsChecklist:null, calc:null, compare:[], letter:{}, feedbackDraft:null, prefs:{} };
+    "uprep-xat":"letter", "uprep-feedback-draft":"feedbackDraft", "uprep-notif":"notif", "uprep-theme":"prefs.theme", "uprep-big":"prefs.big", "uprep-calm":"prefs.calm", "uprep-preview":"prefs.preview" };
+  var STATE = { v:2, profile:null, quiz:null, plan:null, favorites:[], tracker:{}, guideProgress:{}, docsAnswers:null, docsChecklist:null, calc:null, compare:[], letter:{}, feedbackDraft:null, notif:null, prefs:{} };
   var stOK = true;
   (function(){
     try{
@@ -316,7 +316,7 @@
   function enN(u){ var n = arr(u && u.programmes).length; return n || (u && u.enCount) || 0; }
 
   /* ---------------- routing ---------------- */
-  var ALIAS = { "pul-kalkulyatori":"kalkulyator", "hujjatlar":"hujjatlarim", "taqvim":"kalendar", "muddatlar":"kalendar", "stipendiyalar":"stipendiya", "dsu":"stipendiya", "universitet":"universitetlar", "unis":"universitetlar", "settings":"sozlamalar", "profil-tahlili":"profil", "motivatsion-xat":"xat", "tarif":"tariflar", "narxlar":"tariflar", "haqimizda":"biz-haqimizda", "qadamlar":"qollanma", "fikr-bildirish":"xabar", "muammo":"xabar", "feedback":"xabar", "home":"", "bosh-sahifa":"" };
+  var ALIAS = { "pul-kalkulyatori":"kalkulyator", "hujjatlar":"hujjatlarim", "taqvim":"kalendar", "muddatlar":"kalendar", "stipendiyalar":"stipendiya", "dsu":"stipendiya", "universitet":"universitetlar", "unis":"universitetlar", "settings":"sozlamalar", "profil-tahlili":"profil", "motivatsion-xat":"xat", "tarif":"tariflar", "narxlar":"tariflar", "haqimizda":"biz-haqimizda", "qadamlar":"qollanma", "fikr-bildirish":"xabar", "muammo":"xabar", "feedback":"xabar", "eslatmalar":"bildirishnomalar", "notifications":"bildirishnomalar", "obuna":"bildirishnomalar", "home":"", "bosh-sahifa":"" };
   function slug(x){ return norm(x).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
   function hashQuery(){ var h = location.hash || "", i = h.indexOf("?"), o = {}; if(i < 0) return o; h.slice(i + 1).split("&").forEach(function(kv){ if(!kv) return; var p = kv.split("="); try{ o[decodeURIComponent(p[0])] = decodeURIComponent((p[1] || "").replace(/\+/g, " ")); }catch(e){} }); return o; }
   function route(){
@@ -336,6 +336,7 @@
     if(h === "taqqoslash") return {view:"cmp"};
     if(h === "fikrlar") return {view:"reviews"};
     if(h === "xabar") return {view:"feedback"};
+    if(h === "bildirishnomalar") return {view:"notif"};
     if(h === "foundation") return {view:"foundation"};
     if(h === "noldan") return {view:"noldan"};
     if(h === "biz-haqimizda") return {view:"about"};
@@ -411,12 +412,12 @@
     sh.hz.textContent = ""; HZ = sh.hz;
     var main = el("main", "wrap" + (wide ? "" : " narrow")); main.id = "app-main";
     CRUMBS = crumbsFor(r);
-    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, plans:plansView, profile:profileView, parents:parentsView, amb:ambView, settings:settingsView, feedback:feedbackView, tpl:tplView, xat:xatView, out:outView, events:eventsView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView, notfound:notFoundView,
+    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, plans:plansView, profile:profileView, parents:parentsView, amb:ambView, settings:settingsView, feedback:feedbackView, notif:notifView, tpl:tplView, xat:xatView, out:outView, events:eventsView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView, notfound:notFoundView,
       item:function(m){ itemView(m, r.i); }, city:function(m){ cityView(m, r.c); }, uni:function(m){ uniView(m, r.u, r.tab); }, stage:function(m){ stageView(m, r.st); }
     }[r.view] || homeView)(main, r);
     if(CRUMBS){ main.insertBefore(CRUMBS, main.firstChild); CRUMBS = null; }
     root.replaceChild(main, sh.main); sh.main = main;
-    markNav(r); accLabel();
+    markNav(r); accLabel(); updateBell();
     if(!firstPaint && !REDUCED && !document.documentElement.classList.contains("calm")){ main.classList.add("enter"); setTimeout(function(){ main.classList.remove("enter"); }, 200); }
     if(restore){ var y = SCROLLS[key]; requestAnimationFrame(function(){ try{ window.scrollTo({top:y, left:0, behavior:"instant"}); }catch(e){ window.scrollTo(0, y); } }); }
     else if(top && !keepScroll){ try{ window.scrollTo({top:0, left:0, behavior:"instant"}); }catch(e){ window.scrollTo(0, 0); } }
@@ -457,6 +458,7 @@
     if(["unis","uni","progs","cmp","quiz","cities","city"].indexOf(v) >= 0) return "unis";
     if(v === "dsu" || v === "calc") return "dsu";
     if(v === "settings" || v === "plans" || v === "feedback") return "settings";
+    if(v === "notif") return "notif";
     if(["plan","docs","profile"].indexOf(v) >= 0) return "plan";
     return "other";
   }
@@ -470,6 +472,7 @@
     });
     w.appendChild(nav);
     w.appendChild(el("span", "ttl"));
+    var bl = el("a", "iconbtn bellbtn"); bl.href = "#bildirishnomalar"; bl.setAttribute("aria-label", "Bildirishnomalar"); bl.title = "Bildirishnomalar"; bl.setAttribute("data-sec", "notif"); bl.appendChild(ic("bell")); var bd = el("span", "bdg"); bd.hidden = true; bl.appendChild(bd); w.appendChild(bl);
     var gs = el("a", "iconbtn"); gs.href = "#sozlamalar"; gs.setAttribute("aria-label", "Sozlamalar"); gs.title = "Sozlamalar"; gs.setAttribute("data-sec", "settings"); gs.appendChild(ic("gear")); w.appendChild(gs);
     var acc = el("button", "iconbtn acc"); acc.type = "button"; acc.hidden = !LIVE;
     acc.appendChild(ic("user")); acc.appendChild(el("span"));
@@ -499,6 +502,7 @@
     else if(r.view === "amb") c.push(["Talaba-elchilar"]);
     else if(r.view === "settings") c.push(["Sozlamalar"]);
     else if(r.view === "notfound") c.push(["Sahifa topilmadi"]);
+    else if(r.view === "notif") c.push(["Bildirishnomalar"]);
     else if(r.view === "feedback"){ c.push(["Sozlamalar","sozlamalar"]); c.push(["Fikr bildirish"]); }
     else if(r.view === "tpl"){ c.push(["Qo'llanma","qollanma"]); c.push(["Shablonlar"]); }
     else if(r.view === "xat"){ c.push(["Qo'llanma","qollanma"]); c.push(["Motivatsion xat"]); }
@@ -1433,7 +1437,7 @@
     var dates = ev.start ? utcStamp(ev.start) + "/" + utcStamp(new Date(ev.start.getTime() + 3600000)) : ymd(ev.d) + "/" + ymd(new Date(ev.d.getFullYear(), ev.d.getMonth(), ev.d.getDate() + 1));
     return "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(ev.title) + "&dates=" + dates + "&details=" + encodeURIComponent(str(ev.details) + "\n\nUniroad: " + location.origin + location.pathname);
   }
-  function icsEsc(t){ return str(t).replace(/\\/g, "\\\\").replace(/;/g, "\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
+  function icsEsc(t){ return str(t).replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
   function icsDownload(list, name){
     var L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Uniroad//UZ", "CALSCALE:GREGORIAN"];
     list.forEach(function(ev, i){
@@ -1722,6 +1726,7 @@
     /* Eslatmalar */
     var g2 = group("Eslatmalar", "Muddatlar telefoningiz kalendariga 7 kun va 1 kun oldin eslatma bilan qo'shiladi.");
     var FD = favDeadlines();
+    row(g2, "cal", "c-indigo", "Kalendarga obuna va bildirishnomalar", {sub:"Muddatlar kalendaringizga o'zi tushadi va yangilanadi", href:"#bildirishnomalar"});
     row(g2, "bell", "c-red", "Muddatlarni kalendarga qo'shish", {value: FD.length ? FD.length + " ta" : "Yo'q", onclick:function(){ if(!FD.length){ toast("Avval universitet saqlang: muddatlari shu yerda chiqadi."); go("universitetlar"); return; } icsDownload(FD.map(function(x){ return {title:(x.u.short || x.u.name) + ": " + x.x.label, d:x.d, details:x.x.label + " (" + x.x.date + ")"}; }), "uprep-muddatlar"); }});
     if(evList().length) row(g2, "chat", "c-purple", "Jonli efirlar", {href:"#efirlar"});
 
@@ -1909,6 +1914,88 @@
     try{ if(navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t).catch(function(){ legacy(); }); }catch(e){}
     legacy(); return Promise.resolve();
   }
+  /* ================= NOTIFICATIONS: deadlines + news + calendar subscriptions =================
+     No push service is needed: the bell shows what is new since the last visit, and calendar feeds (cal/*.ics,
+     built by scripts/build_ics.py) put deadlines into the visitor's own calendar, which refreshes itself. */
+  var NOTIF = null;
+  try{ NOTIF = JSON.parse(LS.getItem("uprep-notif") || "null"); }catch(e){ NOTIF = null; }
+  if(!NOTIF || typeof NOTIF !== "object") NOTIF = {seen:"", ack:[]};
+  if(!Array.isArray(NOTIF.ack)) NOTIF.ack = [];
+  function saveNotif(){ try{ LS.setItem("uprep-notif", JSON.stringify(NOTIF)); }catch(e){} }
+  function isoDay(d){ return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+  function feedUrl(path){ return location.origin + location.pathname.replace(/[^/]*$/, "") + path; }
+  /* subscribe buttons: Google Calendar, Apple/Outlook (webcal), copy link */
+  function subLinks(path, name, compact){
+    var https = feedUrl(path), webcal = https.replace(/^https?:/, "webcal:");
+    var w = el("div", "sub-links" + (compact ? " compact" : ""));
+    var g = el("a", "sub-btn"); g.href = "https://calendar.google.com/calendar/render?cid=" + encodeURIComponent(webcal); g.target = "_blank"; g.rel = "noopener"; g.appendChild(ic("cal")); g.appendChild(el("span", null, "Google")); w.appendChild(g);
+    var a = el("a", "sub-btn"); a.href = webcal; a.appendChild(ic("cal")); a.appendChild(el("span", null, "iPhone / Outlook")); w.appendChild(a);
+    var c = el("button", "sub-btn"); c.type = "button"; c.appendChild(ic("link")); c.appendChild(el("span", null, "Havola")); c.onclick = function(){ copyText(https).then(function(){ toast("Obuna havolasi nusxalandi: kalendaringizda «URL orqali qo'shish»ga joylang."); }); }; w.appendChild(c);
+    w.setAttribute("aria-label", (name || "Muddatlar") + ": kalendarga obuna");
+    return w;
+  }
+  function newsItems(){ return arr(S.news).map(function(n){ return {n:n, d:deadline(n.date)}; }).sort(function(a, b){ return (b.d || 0) - (a.d || 0); }); }
+  function urgentItems(days){
+    var L = [];
+    favDeadlines().forEach(function(x){ var n = daysLeft(x.d); if(n <= days) L.push({key:"u|" + x.u.id + "|" + x.x.label + "|" + x.x.date, d:x.d, n:n, title:(x.u.short || x.u.name) + ": " + x.x.label, href:"#uni-" + x.u.id + "/qabul", u:x.u}); });
+    upcoming().forEach(function(c){ var n = daysLeft(c._d); if(n <= days) L.push({key:"c|" + c.date + "|" + c.text, d:c._d, n:n, title:(c.tag && str(c.text).indexOf(c.tag) !== 0 ? c.tag + ": " : "") + c.text, href:"#kalendar"}); });
+    return L.sort(function(a, b){ return a.d - b.d; });
+  }
+  function isNewNews(x){
+    if(!x.d) return false;
+    if(NOTIF.seen) return isoDay(x.d) > NOTIF.seen;
+    return daysLeft(x.d) >= -3; /* first visit: only the last few days */
+  }
+  function unreadCount(){
+    var u = urgentItems(7).filter(function(x){ return NOTIF.ack.indexOf(x.key) < 0; }).length;
+    var n = newsItems().filter(isNewNews).length;
+    return u + (NOTIF.seen ? n : Math.min(n, 3)); /* a first-time visitor is not greeted with a wall of badges */
+  }
+  function updateBell(){
+    var b = document.querySelector(".appbar .bellbtn"); if(!b) return;
+    var n = 0; try{ n = unreadCount(); }catch(e){ n = 0; }
+    var bd = b.querySelector(".bdg"); bd.hidden = !n; bd.textContent = n > 9 ? "9+" : String(n);
+    b.setAttribute("aria-label", n ? "Bildirishnomalar, " + n + " ta yangi" : "Bildirishnomalar");
+  }
+  function notifView(main){
+    pageHead(main, "Bildirishnomalar", "Yaqin muddatlar, yangiliklar va kalendaringizga avtomatik eslatmalar bir joyda.");
+    var NI = newsItems(), U = urgentItems(14);
+    /* 1. deadlines in the next 14 days */
+    var box = el("div", "list");
+    if(U.length) U.forEach(function(x){
+      var a = el("a", "lrow"); a.href = x.href;
+      if(x.u) a.appendChild(el("span", "u-mono", mono(x.u))); else { var ii = el("span", "ic"); ii.appendChild(ic("cal")); a.appendChild(ii); }
+      var t = el("span", "txt"); t.appendChild(el("b", null, x.title)); t.appendChild(el("small", null, x.d.toLocaleDateString("ru-RU"))); a.appendChild(t);
+      a.appendChild(el("span", "tag hot", leftLabel(x.n))); a.appendChild(ic("next", "chev")); box.appendChild(a);
+    });
+    else box.appendChild(el("div", "empty", "Keyingi 14 kunda muddat yo'q." + (FAV.length ? "" : " Universitet saqlasangiz, uning muddatlari ham shu yerda chiqadi.")));
+    var hd1 = secHead("Yaqin 14 kun", "Kalendar", "kalendar", null, "Muddatlar", FAV.length ? "Saqlangan " + FAV.length + " ta universitetingiz va umumiy muddatlar." : "Umumiy muddatlar. Universitet saqlasangiz, uniki ham qo'shiladi.");
+    main.appendChild(sec(hd1, box));
+    /* 2. news */
+    var nl = el("div", "list");
+    NI.slice(0, 6).forEach(function(x){
+      var n = x.n, a = el("a", "lrow"); var lk = safeUrl(n.link); a.href = lk || "#yangiliklar"; if(/^https:/.test(lk)){ a.target = "_blank"; a.rel = "noopener"; }
+      var t = el("span", "txt"); var b = el("b", null, n.title); t.appendChild(b); t.appendChild(el("small", null, [n.tag, n.date].filter(Boolean).join(" · "))); a.appendChild(t);
+      if(isNewNews(x)) a.appendChild(el("span", "tag new", "Yangi"));
+      a.appendChild(ic(/^https:/.test(lk) ? "link" : "next", "chev")); nl.appendChild(a);
+    });
+    if(!NI.length) nl.appendChild(el("div", "empty", "Hozircha yangilik yo'q."));
+    main.appendChild(sec(secHead("Yangiliklar", "Hammasi", "yangiliklar", null, "Yangi"), nl));
+    /* 3. calendar subscriptions */
+    var sb = el("div", "subs");
+    var c1 = el("div", "sub-card"); c1.appendChild(el("b", null, "Asosiy muddatlar")); c1.appendChild(el("small", null, "Viza, Universitaly, stipendiya va yirik universitetlar")); c1.appendChild(subLinks("cal/muhim.ics", "Asosiy muddatlar")); sb.appendChild(c1);
+    var favs = FAV.map(uniById).filter(Boolean);
+    favs.forEach(function(u){ var c = el("div", "sub-card"); c.appendChild(el("b", null, u.short || u.name)); c.appendChild(el("small", null, arr(u.deadlines).length ? arr(u.deadlines).length + " ta muddat" : "Muddatlar e'lon qilinishi bilan qo'shiladi")); c.appendChild(subLinks("cal/uni/" + u.id + ".ics", u.short || u.name, true)); sb.appendChild(c); });
+    if(!favs.length){ var c2 = el("a", "sub-card more"); c2.href = "#universitetlar"; c2.appendChild(el("b", null, "Universitetlaringiz muddatlari")); c2.appendChild(el("small", null, "Universitetni saqlang (♥): uning muddatlariga ham obuna shu yerda chiqadi")); sb.appendChild(c2); }
+    var how = el("ul", "sub-how");
+    ["Bir marta obuna bo'lasiz: muddatlar telefoningiz yoki kompyuteringiz kalendariga o'zi tushadi.", "Biz sanani yangilasak yoki yangi muddat qo'shsak, kalendaringiz ham o'zi yangilanadi (odatda bir kun ichida).", "iPhone va Outlook 7 kun va 1 kun oldin eslatadi. Google Kalendarda eslatmani yoqish: Sozlamalar → shu kalendar → Bildirishnomalar."].forEach(function(t){ var li = el("li"); li.appendChild(ic("check")); li.appendChild(el("span", null, t)); how.appendChild(li); });
+    main.appendChild(sec(secHead("Kalendaringizga avtomatik eslatma", null, null, "obuna", "Obuna", "Eslatmalar hech qanday ilovasiz, to'g'ridan-to'g'ri kalendaringizga keladi."), sb, how));
+    main.appendChild(el("p", "muted-note", "Ma'lumotlar har hafta rasmiy manbalardan (universitetlar, MUR, elchixona, DSU) AI yordamida tekshiriladi; har bir sana rasmiy manba bilan tasdiqlanganidan keyingina saytga va kalendar obunalariga qo'shiladi. Oxirgi yangilanish: " + (S.site.updated || "—") + "."));
+    /* everything shown here now counts as seen */
+    NOTIF.seen = isoDay(TODAY); NOTIF.ack = urgentItems(7).map(function(x){ return x.key; }); saveNotif();
+    setTimeout(updateBell, 0);
+  }
+
   /* ================= FEEDBACK: problem report / suggestion / question -> Telegram (via relay) ================= */
   var FBK = [["xato","Muammo"],["taklif","Taklif"],["savol","Savol"],["fikr","Fikr"]];
   function feedbackForm(preset){
@@ -2577,6 +2664,7 @@
           var dp = el("div"); dp.appendChild(el("p", null, d.label)); if(dd && n >= 0) dp.appendChild(calAdd({title:(u.short || u.name) + ": " + d.label, d:dd, details:d.label + " (" + d.date + ")"})); li.appendChild(dp); ol.appendChild(li);
         });
         dc.appendChild(ol);
+        var sl = el("div", "sub-line"); sl.appendChild(el("span", null, "Barcha muddatlarni kalendaringizga obuna qiling, yangilansa o'zi o'zgaradi:")); sl.appendChild(subLinks("cal/uni/" + u.id + ".ics", u.short || u.name, true)); dc.appendChild(sl);
       }
       if(u.deadlineNote) dc.appendChild(el("p", "note", u.deadlineNote));
       box.appendChild(dc);

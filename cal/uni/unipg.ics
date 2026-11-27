@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · Perugia
+X-WR-CALDESC:Perugia: ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:dddba3ebfd2394c3f69e@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+SUMMARY:Perugia: PICA oldindan baholash\, 2026/27 (o'tgan yil)
+DESCRIPTION:PICA oldindan baholash\, 2026/27 (o'tgan yil) (25.10.2026)\nAri
+ za: https://unipg.it/en/international-students/students-wishing-to-enroll/
+ how-to-apply\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.g
+ ithub.io/uprep-site/#uni-unipg/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipg/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Perugia: PICA oldindan baholash\, 2026/27 (o'tga
+ n yil)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Perugia: PICA oldindan baholash\, 2026/27 (o'tgan yil)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

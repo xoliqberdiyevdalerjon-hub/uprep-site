@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · Padova
+X-WR-CALDESC:Padova: ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:f1376f6df2d268c287ac@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270307
+DTEND;VALUE=DATE:20270308
+SUMMARY:Padova: 2027/28: chet elda yashovchi non-EU\, asosiy chaqiriq (ko'p
+  dasturlar)
+DESCRIPTION:2027/28: chet elda yashovchi non-EU\, asosiy chaqiriq (ko'p das
+ turlar) (07.01 – 07.03.2027)\nAriza: https://apply.unipd.it/\n\nTalablar
+  va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni
+ -unipd/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipd/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Padova: 2027/28: chet elda yashovchi non-EU\, as
+ osiy chaqiriq (ko'p dasturlar)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Padova: 2027/28: chet elda yashovchi non-EU\, asosiy ch
+ aqiriq (ko'p dasturlar)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

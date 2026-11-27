@@ -1,0 +1,90 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · LUISS
+X-WR-CALDESC:LUISS: ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:8585cb0d8b3be4767e0b@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270210
+DTEND;VALUE=DATE:20270211
+SUMMARY:LUISS: Bakalavr\, non-EU: Luiss testi yoki natijalar bo'yicha (2027
+ /28)
+DESCRIPTION:Bakalavr\, non-EU: Luiss testi yoki natijalar bo'yicha (2027/28
+ ) (10.02.2027)\nAriza: https://www.luiss.it/en/orientation-and-admissions/
+ admission-procedures/masters-degree-admissions/admission-masters-degrees-2
+ 0262027-extra-eu/certified-selection-students-outside-eu-and-schengen-area
+ \n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/upr
+ ep-site/#uni-luiss/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-luiss/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: LUISS: Bakalavr\, non-EU: Luiss testi yoki natij
+ alar bo'yicha (2027/28)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: LUISS: Bakalavr\, non-EU: Luiss testi yoki natijalar bo
+ 'yicha (2027/28)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:0b738b7c09e2bc251183@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:LUISS: Magistratura\, non-EU (2027/28)
+DESCRIPTION:Magistratura\, non-EU (2027/28) (dekabr 2026 – 31.03.2027)\nA
+ riza: https://www.luiss.it/en/orientation-and-admissions/admission-procedu
+ res/masters-degree-admissions/admission-masters-degrees-20262027-extra-eu/
+ certified-selection-students-outside-eu-and-schengen-area\n\nTalablar va h
+ ujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-luis
+ s/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-luiss/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: LUISS: Magistratura\, non-EU (2027/28)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: LUISS: Magistratura\, non-EU (2027/28)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:7c8b1760d87640ae1c9a@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270510
+DTEND;VALUE=DATE:20270511
+SUMMARY:LUISS: Bakalavr\, non-EU: keyingi Luiss testi (2027/28)
+DESCRIPTION:Bakalavr\, non-EU: keyingi Luiss testi (2027/28) (10.05.2027)\n
+ Ariza: https://www.luiss.it/en/orientation-and-admissions/admission-proced
+ ures/masters-degree-admissions/admission-masters-degrees-20262027-extra-eu
+ /certified-selection-students-outside-eu-and-schengen-area\n\nTalablar va 
+ hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-lui
+ ss/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-luiss/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: LUISS: Bakalavr\, non-EU: keyingi Luiss testi (2
+ 027/28)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: LUISS: Bakalavr\, non-EU: keyingi Luiss testi (2027/28)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · L'Aquila
+X-WR-CALDESC:L'Aquila: ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:bc0920266fb78db62685@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270217
+DTEND;VALUE=DATE:20270218
+SUMMARY:L'Aquila: 2027/28: xalqaro talabalar chaqirig'i
+DESCRIPTION:2027/28: xalqaro talabalar chaqirig'i (17.02.2027)\nAriza: http
+ s://www.univaq.it/en/section.php?id=2065\n\nTalablar va hujjatlar: https:/
+ /xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-univaq/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-univaq/qabu
+ l
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: L'Aquila: 2027/28: xalqaro talabalar chaqirig'i
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: L'Aquila: 2027/28: xalqaro talabalar chaqirig'i
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -51,3 +51,8 @@ Foydalanuvchining rejasi, profil tahlili, saqlangan universitetlar va sozlamalar
 ## Brend: Uniroad
 Belgi: binafsha gradientli kvadrat ichida oq "U" va uning ustida oltin talaba qalpoqchasi (`media/favicon.svg`, `assets/app.js` dagi `markSVG`). Ranglar: #4338CA → #6D3BF5 → #C026D3, aksent oltin #FDE68A / #F2B233. Logotip yozuvi: Bricolage Grotesque 800, `Uni` to'q indigo + `road` brend gradientida.
 Ichki kalitlar (`uprep-*`, `uprep_state_v2`), repozitoriy nomi va Telegram `@Uprep_Admin` o'zgartirilmagan: ular foydalanuvchi ma'lumotlarini va havolalarni buzmaslik uchun saqlangan.
+
+## Bildirishnomalar va kalendar obunasi
+- Saytdagi qo'ng'iroqcha (`#bildirishnomalar`): yaqin 14 kundagi muddatlar (saqlangan universitetlar + umumiy kalendar), yangiliklar va oxirgi tashrifdan beri yangilari.
+- Kalendar obunalari: `cal/muhim.ics` (umumiy muddatlar) va `cal/uni/<id>.ics` (har bir universitet). Foydalanuvchi bir marta obuna bo'ladi, kalendari o'zi yangilanadi.
+- Ma'lumot o'zgarganda: `python3 scripts/build_ics.py` (haftalik avtomatik tekshiruv buni o'zi bajaradi).

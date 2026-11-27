@@ -1,0 +1,83 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · Bicocca
+X-WR-CALDESC:Bicocca: ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:e71b6077579f6fb9c527@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261222
+DTEND;VALUE=DATE:20261223
+SUMMARY:Bicocca: 2027/28: erkin qabul dasturlari\, 1-chaqiriq
+DESCRIPTION:2027/28: erkin qabul dasturlari\, 1-chaqiriq (22.10 – 22.12.2
+ 026)\nAriza: https://apply.unimib.it/\n\nTalablar va hujjatlar: https://xo
+ liqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimib/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimib/qabu
+ l
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Bicocca: 2027/28: erkin qabul dasturlari\, 1-cha
+ qiriq
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Bicocca: 2027/28: erkin qabul dasturlari\, 1-chaqiriq
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:b94d2a138509d2a40a28@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270205
+DTEND;VALUE=DATE:20270206
+SUMMARY:Bicocca: Til sertifikati (1-chaqiriq)
+DESCRIPTION:Til sertifikati (1-chaqiriq) (05.02.2027)\nAriza: https://apply
+ .unimib.it/\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.gi
+ thub.io/uprep-site/#uni-unimib/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimib/qabu
+ l
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Bicocca: Til sertifikati (1-chaqiriq)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Bicocca: Til sertifikati (1-chaqiriq)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:c59a374fd6767c9106da@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270308
+DTEND;VALUE=DATE:20270309
+SUMMARY:Bicocca: Cheklangan joyli dasturlar (masalan Scienze biologiche)
+DESCRIPTION:Cheklangan joyli dasturlar (masalan Scienze biologiche) (11.01 
+ – 08.03.2027)\nAriza: https://apply.unimib.it/\n\nTalablar va hujjatlar:
+  https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimib/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimib/qabu
+ l
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Bicocca: Cheklangan joyli dasturlar (masalan Sci
+ enze biologiche)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Bicocca: Cheklangan joyli dasturlar (masalan Scienze bi
+ ologiche)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

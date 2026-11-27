@@ -1,0 +1,83 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Uniroad//Muddatlar//UZ
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Uniroad · Bergamo
+X-WR-CALDESC:Bergamo: ariza muddatlari. Uniroad.
+X-WR-TIMEZONE:Asia/Tashkent
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:41b3e390f5c4d234c7b9@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+SUMMARY:Bergamo: 2027/28: magistratura oldindan baholash\, 1-chaqiriq
+DESCRIPTION:2027/28: magistratura oldindan baholash\, 1-chaqiriq (26.11.202
+ 6 – 15.01.2027)\nAriza: https://apply.unibg.it/\n\nTalablar va hujjatlar
+ : https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unibg/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unibg/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Bergamo: 2027/28: magistratura oldindan baholash
+ \, 1-chaqiriq
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Bergamo: 2027/28: magistratura oldindan baholash\, 1-ch
+ aqiriq
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:74a84dbf6f0e4244aedd@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270131
+DTEND;VALUE=DATE:20270201
+SUMMARY:Bergamo: Ba'zi ingliz tilidagi magistraturalar (masalan Economics a
+ nd Data Analysis)
+DESCRIPTION:Ba'zi ingliz tilidagi magistraturalar (masalan Economics and Da
+ ta Analysis) (31.01.2027)\nAriza: https://apply.unibg.it/\n\nTalablar va h
+ ujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unib
+ g/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unibg/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Bergamo: Ba'zi ingliz tilidagi magistraturalar (
+ masalan Economics and Data Analysis)
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Bergamo: Ba'zi ingliz tilidagi magistraturalar (masalan
+  Economics and Data Analysis)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:21cb4632d9a9a604adc8@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:Bergamo: Natijalar
+DESCRIPTION:Natijalar (31.03.2027)\nAriza: https://apply.unibg.it/\n\nTalab
+ lar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#
+ uni-unibg/qabul
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unibg/qabul
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Bergamo: Natijalar
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Bergamo: Natijalar
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
