@@ -4,7 +4,7 @@
   "use strict";
 
   /* ---------------- icons ---------------- */
-  /* icons: Lucide (ISC license), https://lucide.dev */
+  /*! Icons: Lucide, ISC License, Copyright (c) Lucide Icons and Contributors, https://lucide.dev. Fonts: SIL OFL 1.1. Full notices: THIRD_PARTY_LICENSES.txt */
   var ICONS = {
     "send": "<path d=\"M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z\" /> <path d=\"m21.854 2.147-10.94 10.939\" />",
     "stamp": "<path d=\"M5 22h14\" /> <path d=\"M19.27 13.73A2.5 2.5 0 0 0 17.5 13h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1.5c0-.66-.26-1.3-.73-1.77Z\" /> <path d=\"M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-3-3c-1.66 0-3 1-3 3s1 2 1 3.5V13\" />",
@@ -566,7 +566,7 @@
     function col(title, links){ var c = el("div"); c.appendChild(el("h2", "foot-h", title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
     col("Qo'llanma", [["8 qadam", "#qollanma"], ["Hammasi bitta sahifada (PDF)", "#noldan"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Italiyada yashash", "#yashash"], ["Kalendar", "#kalendar"], ["Materiallar", "#materiallar"], ["Shablonlar", "#shablonlar"]]);
     col("Vositalar", [["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Profil tahlili", "#profil"], ["Pul kalkulyatori", "#kalkulyator"], ["Motivatsion xat", "#xat"], ["Mening rejam", "#rejam"], ["Sozlamalar", "#sozlamalar"]]);
-    col("Uniroad", [["Biz haqimizda", "#biz-haqimizda"]].concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"]]).concat(realAmb().length ? [["Talaba-elchilar", "#elchilar"]] : []).concat(realOut().length ? [["Natijalar", "#natijalar"]] : []).concat(evList().length ? [["Jonli efirlar", "#efirlar"]] : []).concat([["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#xabar"], ["Maxfiylik siyosati", "#maxfiylik"], ["Telegram: " + tgName(), tgUrl()]]));
+    col("Uniroad", [["Biz haqimizda", "#biz-haqimizda"]].concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"]]).concat(realAmb().length ? [["Talaba-elchilar", "#elchilar"]] : []).concat(realOut().length ? [["Natijalar", "#natijalar"]] : []).concat(evList().length ? [["Jonli efirlar", "#efirlar"]] : []).concat([["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#xabar"], ["Maxfiylik siyosati", "#maxfiylik"], ["Litsenziyalar", "THIRD_PARTY_LICENSES.txt"], ["Telegram: " + tgName(), tgUrl()]]));
     f.appendChild(g);
     var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uniroad." + (S.site.updated ? " Ma'lumotlar oxirgi marta " + S.site.updated + " da yangilandi." : "")));
     var tg = el("a", null, tgName()); tg.href = tgUrl(); tg.target = "_blank"; tg.rel = "noopener"; p.appendChild(tg);
