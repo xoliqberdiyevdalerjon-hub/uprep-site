@@ -107,6 +107,31 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:4de7a3ada12a3b156da5@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:Valle d'Aosta: VDA2 stipendiya bandosi (2026/27): ISEE 44 968 €
+  gacha\, onlayn
+DESCRIPTION:VDA2 stipendiya bandosi (2026/27): ISEE 44 968 € gacha\, on
+ layn (04.12.2026\, 12:00 gacha)\n\nBarcha muddatlar: https://xoliqberdiyev
+ dalerjon-hub.github.io/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: Valle d'Aosta: VDA2 stipendiya bandosi (2026/27)
+ : ISEE 44 968 € gacha\, onlayn
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: Valle d'Aosta: VDA2 stipendiya bandosi (2026/27): ISEE 
+ 44 968 € gacha\, onlayn
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:5eb3899f6275afeccce6@uniroad
 DTSTAMP:20261126T000000Z
 DTSTART;VALUE=DATE:20261210

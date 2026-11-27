@@ -303,14 +303,16 @@
     },
     {
       "id": "enna",
-      "name": "Universitet orqali",
+      "name": "ERSU Enna",
       "region": "Sicilia",
       "cities": [
         "enna"
       ],
-      "deadline": "Universitetdan so'rang.",
-      "note": "Enna (Kore) talabalari stipendiya bo'yicha universitetning talabalar xizmatiga murojaat qiladi.",
-      "own": true
+      "deadline": "2026/27: 07.09.2026, 14:00 gacha",
+      "note": "Enna (Kore) talabalariga stipendiyani ERSU Enna beradi.",
+      "url": "https://www.ersuenna.it/",
+      "isee": 25948.6,
+      "ispe": 56410.04
     },
     {
       "id": "dsu-toscana",
@@ -348,9 +350,10 @@
       "cities": [
         "bolzano"
       ],
-      "deadline": "Universitetdan so'rang.",
-      "note": "Bolzanoda stipendiyani avtonom viloyat beradi. unibz talabalar xizmati yo'l ko'rsatadi.",
-      "own": true
+      "deadline": "2026/27: 03.11.2026, 12:00 gacha",
+      "note": "Bolzanoda stipendiyani avtonom viloyat beradi. Yangi kelgan non-EU talaba birinchi yili odatda topshira olmaydi (pastda shartlar).",
+      "url": "https://www.provincia.bz.it/borsa-di-studio",
+      "amount": "Viloyat bandosida"
     },
     {
       "id": "adisu-umbria",
@@ -372,9 +375,12 @@
       "cities": [
         "aosta"
       ],
-      "deadline": "Universitetdan so'rang.",
-      "note": "Valle d'Aostada stipendiyani viloyat beradi. Universitet talabalar xizmati yo'l ko'rsatadi.",
-      "own": true
+      "deadline": "2026/27: VDA2 bandosi 04.12.2026, 12:00 gacha ochiq",
+      "note": "Valle d'Aosta universiteti talabalari uchun viloyatning ikki bandosi bor: VDA1 va VDA2.",
+      "url": "https://www.regione.vda.it/istruzione/dirittostudio/borse_universita_valdostane/default_i.aspx",
+      "isee": 28339.88,
+      "ispe": 61608.48,
+      "amount": "VDA2: 1 502 – 2 524 € (2026/27)"
     },
     {
       "id": "veneto",
@@ -1295,6 +1301,73 @@
         {
           "label": "ARDSU: chet ellik talabalar uchun 12 ta stipendiya",
           "url": "https://www.ardsubasilicata.it/main/page/1/2825/1/2026/BANDO_PER_L%E2%80%99ASSEGNAZIONE_DI_BORSE_DI_STUDIO_IN_FAVORE_DI_STUDENTI_STRANIERI_ACCADEMICO_2026-2027_"
+        }
+      ]
+    },
+    {
+      "id": "enna",
+      "region": "Sitsiliya (Enna)",
+      "agency": "ERSU Enna",
+      "unis": "Enna «Kore» universiteti",
+      "year": "2026/27",
+      "docs": [
+        "ISEEU/ISPEU parificato: CAF hisoblaydi; ERSU portalidagi «Fascicolo»ga yuklanadi",
+        "Kerak bo'lsa, O'zbekiston idoralari bergan, italyanchaga tarjima qilingan va legallashtirilgan oila hujjatlari arizaga ilova qilinadi"
+      ],
+      "rules": [
+        "Ariza: 07.09.2026, 14:00 gacha",
+        "Kechikkan xalqaro talabalar ISEE parificato'ni 30.11.2026, 14:00 gacha yuklab to'ldirishi mumkin",
+        "Chegaralar: ISEE 25 948,60 €, ISPE 56 410,04 €"
+      ],
+      "sources": [
+        {
+          "label": "ERSU Enna: 2026/27 bando (PDF)",
+          "url": "https://www.ersuenna.it/wp-content/uploads/2026/07/Bando-2026-27-definitivo.pdf"
+        }
+      ]
+    },
+    {
+      "id": "bolzano",
+      "region": "Trentino-Alto Adige (Bolzano)",
+      "agency": "Bolzano viloyati idorasi",
+      "unis": "Bolzano universiteti (unibz)",
+      "year": "2026/27",
+      "docs": [
+        "DURP deklaratsiyasi (2025-yil daromadi, 31.12.2025 holatidagi mol-mulk) myCIVIS portalida",
+        "Non-EU talabalar: permesso di soggiorno aslini ariza muddatigacha (2026/27: 03.11.2026, 12:00) Via Andreas-Hofer 18'dagi idoraga shaxsan olib boradi"
+      ],
+      "rules": [
+        "Non-EU talaba faqat quyidagi holatda topshira oladi: uzoq muddatli permesso bo'lsa, yoki oddiy permesso bilan Alto Adige'da kamida 1 yildan beri uzluksiz ro'yxatda turgan bo'lsa (shuningdek qochqin va himoya maqomi bo'lsa)",
+        "Ya'ni O'zbekistondan endi kelgan talaba birinchi yili odatda viloyat stipendiyasini ololmaydi: ikkinchi yildan topshiradi",
+        "2026/27 da xatolarni tuzatish: 27.11 – 11.12.2026, 12:00"
+      ],
+      "sources": [
+        {
+          "label": "Bolzano viloyati: universitet stipendiyalari",
+          "url": "https://www.provincia.bz.it/borsa-di-studio"
+        }
+      ]
+    },
+    {
+      "id": "vda",
+      "region": "Valle d'Aosta",
+      "agency": "Valle d'Aosta viloyati",
+      "unis": "Valle d'Aosta universiteti, Aosta konservatoriyasi",
+      "year": "2026/27",
+      "docs": [
+        "Ariza faqat onlayn, SPID, CIE yoki TS-CNS bilan",
+        "ISEE-Universitario (oilasi chet elda bo'lsa, parificato tartibini viloyat idorasidan so'rang)"
+      ],
+      "rules": [
+        "Ikki bando: VDA1 (ISEE 28 339,88 €, ISPE 61 608,48 € gacha, kattaroq summa) va VDA2 (ISEE 44 968 € gacha, ISPE chegarasi yo'q)",
+        "VDA2 summasi: 1 502 – 2 524 € (o'qish to'lovi qaytarilmaydi)",
+        "VDA2 2026/27 arizasi 04.12.2026, 12:00 gacha ochiq",
+        "Savollar: borseunionline@regione.vda.it, tel. 0165 275858"
+      ],
+      "sources": [
+        {
+          "label": "Valle d'Aosta viloyati: stipendiyalar",
+          "url": "https://www.regione.vda.it/istruzione/dirittostudio/borse_universita_valdostane/default_i.aspx"
         }
       ]
     }
