@@ -44,7 +44,9 @@
         "teramo"
       ],
       "url": "https://www.adsuteramo.it/",
-      "deadline": "2026/27: 07.09.2026, 12:00 gacha"
+      "deadline": "2026/27: 07.09.2026, 12:00 gacha",
+      "isee": 24335.11,
+      "ispe": 52902.43
     },
     {
       "id": "ardsu-bas",
@@ -54,7 +56,7 @@
         "potenza"
       ],
       "url": "https://www.ardsubasilicata.it/",
-      "deadline": "2026/27: 09.10.2026 gacha (uzaytirilgan)"
+      "deadline": "2026/27: 24.08 – 09.10.2026, 23:59 gacha (uzaytirilgan)"
     },
     {
       "id": "calabria",
@@ -67,7 +69,10 @@
       ],
       "deadline": "Har bir universitet o'z bandosini chiqaradi (odatda iyul–sentyabr).",
       "note": "Kalabriyada stipendiyani universitetning o'zi beradi. Universitet sahifasidagi havolaga qarang.",
-      "own": true
+      "own": true,
+      "isee": 26500,
+      "ispe": 57500,
+      "minNote": "Bu Unical chegarasi; Reggio Calabria'da ISEE 28 339,88 €"
     },
     {
       "id": "adisurc",
@@ -112,7 +117,10 @@
         "udine"
       ],
       "url": "https://www.ardis.fvg.it/",
-      "deadline": "2026/27: 17.09.2026, 13:00 gacha"
+      "deadline": "2026/27: 17.09.2026, 13:00 gacha",
+      "isee": 28339.88,
+      "ispe": 61608.48,
+      "amount": "7 171 € (2026/27)"
     },
     {
       "id": "disco",
@@ -163,7 +171,7 @@
       "amount": "8 248 € gacha (PoliMi, UniMi, Bicocca)",
       "isee": 26887.93,
       "ispe": 58452.06,
-      "minNote": "PoliMi va Paviya oila daromadini viza summasidan (10 179,85 €) kam deb qabul qilmaydi"
+      "minNote": "PoliMi, Paviya va Bergamo oila daromadini viza summasidan (10 179,85 €) kam deb qabul qilmaydi"
     },
     {
       "id": "erdis",
@@ -250,7 +258,9 @@
         "sassari"
       ],
       "url": "https://ersusassari.it/",
-      "deadline": "2026/27: 27.07 – 07.09.2026, 13:00 gacha"
+      "deadline": "2026/27: 27.07 – 07.09.2026, 13:00 gacha",
+      "isee": 28339.88,
+      "ispe": 61608.48
     },
     {
       "id": "ersu-pa",
@@ -533,7 +543,7 @@
       "id": "lombardia",
       "region": "Lombardiya",
       "agency": "Har bir universitetning o'zi",
-      "unis": "Politecnico di Milano, UniMi, Bicocca, Pavia (EDiSU)",
+      "unis": "PoliMi, UniMi, Bicocca, Pavia (EDiSU), Bergamo, Brescia, Bocconi (ISU), Cattolica (EDUCatt)",
       "year": "2026/27",
       "deadline": "PoliMi: 1-kurs 05.08.2026, 12:00; UniMi va Bicocca: 30.09.2026; Pavia: 15.09.2026, 15:00 (hammasi yopilgan)",
       "amount": "Fuori sede 8 248 € gacha (PoliMi, UniMi, Bicocca)",
@@ -541,7 +551,11 @@
         "UniMi: oila tarkibi (FHDYo yoki boshqa vakolatli idoradan), har bir a'zoning 2025-yilgi daromadi (yo'q bo'lsa, yo'qligi haqida), 31.12.2025 holatiga bank jamg'armalari va ko'chmas mulk (m² bilan). Hammasi Italiya elchixonasi yoki konsulligida legallashtirilib, italyanchaga tarjima qilinadi va onlayn yuklanadi: 30.09.2026 gacha (yotoqxona so'rasangiz 07.08.2026)",
         "PoliMi: ISEEU parificato'ni faqat Politecnico shartnoma tuzgan CAF hisoblaydi va o'zi universitetga yuboradi. Hujjatlar CAF'ga 05.08.2026 gacha (2-kurs va yuqori: 21.07.2026) topshiriladi, aks holda ariza qabul qilinmaydi",
         "Bicocca: chet elda yashovchilar ISEE hujjatlarini 30.09.2026 gacha (yotoqxona so'rasangiz 20.08.2026) yuklaydi. Italyan codice fiscale oldindan kerak (Agenzia delle Entrate yoki O'zbekistondagi Italiya elchixonasi orqali)",
-        "Pavia (EDiSU): asl nusxada oila tarkibi, 2025-yilgi daromad, 31.12.2025 holatiga binolar (m²) va bank qoldig'i (dekabr 2025 ko'chirmasi). Italiya elchixonasida legallashtiriladi va tarjimasi tasdiqlanadi (apostil ham bo'ladi). EDiSU'ga 15.09.2026, 15:00 gacha, oldindan navbat olib topshiriladi"
+        "Pavia (EDiSU): asl nusxada oila tarkibi, 2025-yilgi daromad, 31.12.2025 holatiga binolar (m²) va bank qoldig'i (dekabr 2025 ko'chirmasi). Italiya elchixonasida legallashtiriladi va tarjimasi tasdiqlanadi (apostil ham bo'ladi). EDiSU'ga 15.09.2026, 15:00 gacha, oldindan navbat olib topshiriladi",
+        "Bergamo: hujjatlar Italiya diplomatik vakolatxonasida tarjima qilinib legallashtiriladi va asl nusxada CAF CISL Bergamo'ga (portalida ticket orqali) yuboriladi. ISEEU parificato 2026-yilda va 05.10.2026 gacha imzolangan bo'lishi kerak; ariza ham 05.10.2026 gacha",
+        "Brescia: ISEE parificato universitet bilan shartnomali CAAF'da, 24.09.2026 gacha; hujjatlar Italiya diplomatik vakolatxonasi tomonidan italyanchaga tarjima qilinadi. Ariza 24.09.2026 gacha (yotoqxona bilan 20.08.2026, 13:00)",
+        "Bocconi (ISU): ISEEU parificato faqat Bocconi bilan shartnomali CAF'da. Ariza: 08.01 – 25.06.2026 yoki 24.08 – 04.09.2026",
+        "Cattolica (EDUCatt): ISEEUP 2026-yilda imzolangan bo'lishi kerak; ariza 30.09.2026 gacha"
       ],
       "rules": [
         "Lombardiyada har bir universitet o'z bandosini chiqaradi: tanlagan universitetingiz bandosini o'qing",
@@ -552,7 +566,10 @@
         "UniMi: ko'chmas mulk har m² uchun 500 € deb hisoblanadi",
         "Almashinuv dasturida (Erasmus va boshqalar) oyiga 600 € gacha qo'shimcha, 10 oygacha",
         "UniMi: DSU chegarasidan biroz yuqori daromadli talabalarga universitetning o'z stipendiyasi bor (1 055 ta, har biri 1 800 €)",
-        "Pavia: chet eldagi oila daromadi 10 179,85 € dan kam deb qabul qilinmaydi (viza uchun minimal summa)"
+        "Pavia: chet eldagi oila daromadi 10 179,85 € dan kam deb qabul qilinmaydi (viza uchun minimal summa)",
+        "Bergamo, Brescia, Bocconi, Cattolica chegaralari ham ISEE 26 887,93 € (Bocconi va Brescia'da ISPE 58 452,06 €); fuori sede 8 248 € gacha",
+        "Bergamo: chet eldagi oila daromadi 10 179,85 € dan kam deb qabul qilinmaydi",
+        "Cattolica: universitetning chet elliklar uchun maxsus to'lov tizimidan (UCSC International) foydalanayotgan non-EU talabalar EDUCatt stipendiyasiga topshira olmaydi: oldindan qaysi biri foydaliroq ekanini hisoblang"
       ],
       "sources": [
         {
@@ -590,6 +607,22 @@
         {
           "label": "EDiSU Pavia: 2026/27 bando (PDF)",
           "url": "https://www.edisu.pv.it/download/4758/"
+        },
+        {
+          "label": "Bergamo: DSU 2026/27 bando (PDF)",
+          "url": "https://www.unibg.it/sites/default/files/media/documents/2026-07-16/Bando%20DSU%20A.A.%202026-2027%20ITA_0.pdf"
+        },
+        {
+          "label": "Brescia: DSU 2026/27 bando (PDF)",
+          "url": "https://www.unibs.it/sites/default/files/2026-07/Bando%20servizi%20DSU%2026-27%20prot..pdf"
+        },
+        {
+          "label": "ISU Bocconi: 2026/27 bando (PDF)",
+          "url": "https://www.unibocconi.it/sites/default/files/media/attachments/a.a.%202026-27%20Bando%20DEFINITIVO%20Borse%20di%20studio%20ISU%20Bocconi_5.pdf"
+        },
+        {
+          "label": "EDUCatt: 2026/27 bando (PDF)",
+          "url": "https://www.educatt.it/agevolazioni/doc/EDUCattBandoBorse.pdf"
         }
       ]
     },
@@ -1132,6 +1165,136 @@
         {
           "label": "ADISU Puglia: 2026/27 bando (imzolangan nusxa, PDF)",
           "url": "https://thisislocomotive.com/wp-content/uploads/2026/07/Puglia-202627.pdf"
+        }
+      ]
+    },
+    {
+      "id": "calabria",
+      "region": "Kalabriya",
+      "agency": "Universitetning o'zi",
+      "unis": "Unical (Kozensa), Reggio Calabria (Mediterranea)",
+      "year": "2026/27",
+      "docs": [
+        "Unical: ISEE parificato'ni shartnomali (abilitati) CAF beradi, 2026-yilda olingan bo'lishi kerak. 1-kurs talabasi uni CAF hujjatlari bilan birga sosCR portaliga 30.11.2026 gacha yuklaydi; ungacha ro'yxatda «shartli» turadi",
+        "Reggio Calabria (Mediterranea): ISEE parificato DSU portalidagi «Fascicolo»ga 31.10.2026, 14:00 gacha yuklanadi"
+      ],
+      "rules": [
+        "Unical ariza (12:00 gacha): magistratura erta qabul 31.07, bakalavr 06.08, magistratura 2-bosqich 30.09.2026",
+        "Unical chegaralari: ISEE 26 500 €, ISPE 57 500 €; fuori sede 7 171,11 € (eng past daromadda 8 246,78 €)",
+        "Reggio Calabria: ariza 06.07 – 30.09.2026, 14:00 gacha; chegaralar ISEE 28 339,88 €, ISPE 61 608,48 €",
+        "Kalabriyada umumiy viloyat idorasi yo'q: har bir universitet o'z bandosini chiqaradi"
+      ],
+      "sources": [
+        {
+          "label": "Unical: 2026/27 bando (PDF)",
+          "url": "https://www.unical.it/media/medias/2026/Bando-diritto-allo-studio-2026.27_signed.pdf"
+        },
+        {
+          "label": "Reggio Calabria: DSU 2026/27 bando (PDF)",
+          "url": "https://www.unirc.it/sites/default/files/2026-07/BANDO%20DSU%2026_27.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ersu-ss",
+      "region": "Sardiniya (Sassari)",
+      "agency": "ERSU Sassari",
+      "unis": "Sassari universiteti",
+      "year": "2026/27",
+      "docs": [
+        "Asl nusxada: oila tarkibi (ota-ona, aka-uka va birga yashovchilarning ismi va tug'ilgan sanasi), har bir a'zoning 2024-yilgi daromadi (ishlamasa, buni yozgan hujjat va ishsizlik holati), 31.12.2024 holatiga ko'chmas mulk (m² bilan; yo'q bo'lsa, yo'qligi haqida) va bank jamg'armasi",
+        "Rasmiy tarjimonda italyanchaga tarjima qilinadi, O'zbekistonda legallashtiriladi va oxirida Italiya elchixonasi yoki konsulligida legallashtiriladi",
+        "ISEE parificato faqat ERSU bilan shartnomali CAF'da: ariza muddatigacha (07.09.2026) so'raladi, CAF bergan protokol raqami bilan arizani to'ldirish mumkin"
+      ],
+      "rules": [
+        "Ariza: 27.07 – 07.09.2026, 13:00 gacha",
+        "ISEE parificato'ni topshirishning oxirgi muddati: yotoqxona so'raganlarga 28.09.2026, faqat stipendiya so'raganlarga 22.10.2026; ungacha pul to'xtatib turiladi",
+        "Affidavit va chet el elchixonasi bergan o'z-o'zini tasdiqlash qabul qilinmaydi",
+        "Chegaralar: ISEE 28 339,88 €, ISPE 61 608,48 €"
+      ],
+      "sources": [
+        {
+          "label": "ERSU Sassari: 2026/27 bando (PDF)",
+          "url": "https://ersusassari.it/.galleries/doc-documenti/Bando-Borse-di-studio-e-Servizi-Abitativi-a.a.-2026-2027.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ardis",
+      "region": "Friuli-Venezia Giulia",
+      "agency": "ARDiS",
+      "unis": "Triest, Udine universitetlari",
+      "year": "2026/27",
+      "docs": [
+        "Oilasi chet elda yashovchi talaba ISEE universitario parificato'ni faqat ARDiS bilan shartnomali CAF'dan oladi (bepul). Kerakli chet el hujjatlari ro'yxatini CAF beradi",
+        "ISEE parificato ariza muddatigacha olingan bo'lishi kerak: onlayn arizada buni belgilaysiz, CAF ma'lumotni o'zi ARDiS'ga yuboradi",
+        "Italiyada yashab, oilasi chet elda bo'lsa: avval istalgan CAF'da Italiya ISEE'si (2024-yil ma'lumotlari), keyin shartnomali CAF'da ISEE parificato"
+      ],
+      "rules": [
+        "Ariza: 15.07 – 17.09.2026, 13:00 gacha",
+        "Fuori sede uchun ijara shartnomasi ma'lumotlari 21.10.2026, 13:00 gacha kiritiladi",
+        "Chegaralar: ISEE 28 339,88 €, ISPE 61 608,48 €",
+        "Summa: fuori sede 7 171,11 € (eng past daromadda 15% ko'proq)"
+      ],
+      "sources": [
+        {
+          "label": "ARDiS: 2026/27 bando unico (PDF)",
+          "url": "https://www.ardis.fvg.it/upload/schede/1784105330.pdf"
+        },
+        {
+          "label": "ARDiS: bando yangiliklari",
+          "url": "https://www.ardis.fvg.it/contenuti.php?view=news&id=11441&tipo="
+        }
+      ]
+    },
+    {
+      "id": "adsu-te",
+      "region": "Abruzzo (Teramo)",
+      "agency": "ADSU Teramo",
+      "unis": "Teramo universiteti, G. Braga instituti",
+      "year": "2026/27",
+      "docs": [
+        "Oila tarkibi, har bir a'zoning 2025-yilgi yalpi daromadi, 31.12.2025 holatiga binolar (m² bilan; har m² 500 € deb hisoblanadi), bank jamg'armasi va to'lanadigan ijara",
+        "Italiya elchixonasida legallashtiriladi va italyancha tarjimasini ham elchixona tasdiqlaydi",
+        "Faqat shaxsiy profildagi onlayn bo'lim orqali 07.10.2026 gacha yuboriladi"
+      ],
+      "rules": [
+        "Ariza: 07.09.2026, 12:00 gacha, faqat onlayn (SPID va PEC kerak)",
+        "Talablarga aniq mos kelmagan hujjat bilan ariza qabul qilinmaydi",
+        "Chegaralar: ISEE 24 335,11 €, ISPE 52 902,43 €"
+      ],
+      "sources": [
+        {
+          "label": "ADSU Teramo: 2026/27 bando (EN, PDF)",
+          "url": "https://www.adsuteramo.it/moduli/downloadFile.php?file=oggetto_notizie/262091138111O__O15_BANDO_BDS_INGLESE_28-07-2026_mod.pdf"
+        },
+        {
+          "label": "ADSU Teramo: bando (IT, PDF)",
+          "url": "https://www.adsuteramo.it/moduli/downloadFile.php?file=oggetto_notizie/262091138110O__OBandoBorseStudio2026_2027_mod.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ardsu-bas",
+      "region": "Basilicata",
+      "agency": "ARDSU Basilicata",
+      "unis": "Basilicata universiteti (UNIBAS)",
+      "year": "2026/27",
+      "docs": [
+        "Bando PDF'i skanerlangan holda chiqarilgan: chet el oila hujjatlari tartibini ARDSU'dan yoki CAF'dan oldindan tasdiqlang"
+      ],
+      "rules": [
+        "Ariza: 24.08 – 09.10.2026, 23:59 gacha (uzaytirilgan), SOL portalida",
+        "Alohida: UNIBAS magistraturasiga kiradigan chet ellik talabalar uchun 12 ta ARDSU stipendiyasi (yotoqxona va ovqat + bir martalik yordam, 01.10.2026 dan 12 oy)"
+      ],
+      "sources": [
+        {
+          "label": "ARDSU Basilicata: 2026/27 bando sahifasi",
+          "url": "https://www.ardsubasilicata.it/main/page/1/2843/1/2026/Pubblicazione_Bando_Borse_di_studio_&_alloggi_a.a._2026_2027"
+        },
+        {
+          "label": "ARDSU: chet ellik talabalar uchun 12 ta stipendiya",
+          "url": "https://www.ardsubasilicata.it/main/page/1/2825/1/2026/BANDO_PER_L%E2%80%99ASSEGNAZIONE_DI_BORSE_DI_STUDIO_IN_FAVORE_DI_STUDENTI_STRANIERI_ACCADEMICO_2026-2027_"
         }
       ]
     }
