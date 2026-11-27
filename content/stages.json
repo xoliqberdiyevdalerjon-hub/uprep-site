@@ -90,6 +90,7 @@
         "items": [
           "Pasport",
           "Attestat yoki diplom",
+          "Ta'lim muassasasidan ma'lumotnoma (hozir o'qiyotgan bo'lsangiz: qayerda va qaysi sinf yoki kursda o'qishingiz)",
           "Transcript (baholar varaqasi)",
           "Til sertifikati (odatda B2)",
           "Dastur so'rasa: CV, motivatsion xat, SAT / CEnT-S / TOLC / GMAT natijasi",
@@ -164,7 +165,7 @@
         "title": "DoV: qadamlar",
         "style": "steps",
         "items": [
-          "Attestat yoki diplom va transcript'ga apostil qo'ydiring.",
+          "Attestat yoki diplom, transcript va ta'lim muassasasidan ma'lumotnomaga apostil qo'ydiring.",
           "Elchixonaning ishonchli tarjimonlaridan biriga italyan tiliga tarjima qildiring. Noto'g'ri tarjima bo'lsa, arizani boshidan topshirasiz.",
           "Elchixona saytidan ariza formasini yuklab, to'ldiring.",
           "Universitaly'dagi pre-enrollment formasini yuklab oling.",
@@ -173,15 +174,17 @@
       },
       {
         "type": "list",
-        "title": "DoV: hujjatlar",
+        "title": "DoV va CIMEA: hujjatlar",
         "style": "checklist",
         "items": [
           "Pasport nusxasi",
-          "To'ldirilgan ariza formasi",
-          "Universitaly pre-enrollment formasi",
-          "Apostillangan asl hujjatlar",
-          "Ularning apostil bilan rangli nusxasi",
-          "Italyancha tarjima"
+          "Attestat yoki diplom",
+          "Transcript (baholar varaqasi)",
+          "Ta'lim muassasasidan ma'lumotnoma",
+          "Til sertifikati",
+          "Apostil va italyancha tarjima: attestat yoki diplom, transcript va ma'lumotnoma (asli va apostil bilan rangli nusxasi)",
+          "DoV uchun: to'ldirilgan ariza formasi",
+          "DoV uchun: Universitaly pre-enrollment formasi"
         ]
       },
       {

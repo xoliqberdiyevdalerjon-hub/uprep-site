@@ -75,6 +75,7 @@
           "items": [
             "Xalqaro pasport",
             "Attestat yoki diplom",
+            "Ta'lim muassasasidan ma'lumotnoma (hozir o'qiyotgan bo'lsangiz: qayerda va qaysi sinf yoki kursda o'qishingiz)",
             "Transcript (baholar varaqasi)",
             "Til sertifikati (odatda B2)",
             "Dastur so'rasa: CV, motivatsion xat, test natijasi (SAT, CEnT-S, TOLC, GMAT)",
@@ -106,13 +107,25 @@
       "when": "Pre-acceptance kelishi bilan darhol",
       "body": "Italiya sizning attestat yoki diplomingiz o'z tizimida nimaga teng ekanini bilishi kerak. Buning ikki yo'li bor, qaysi biri kerakligini universitetingiz aytadi.\n\nDoV (Dichiarazione di Valore) Toshkentdagi Italiya elchixonasining konsullik bo'limida beriladi. CIMEA esa onlayn tashkilot: siz DiploMe platformasida o'zingiz ariza berasiz va sertifikat elektron keladi.\n\nIkkala holatda ham avval O'zbekistonda hujjatlaringizga apostil qo'ydirasiz va italyan tiliga tarjima qildirasiz. O'zbekiston Gaaga konvensiyasi a'zosi, shuning uchun apostil yetarli.",
       "steps": [
-        "Attestat yoki diplom va transcript'ga apostil qo'ydiring.",
+        "Attestat yoki diplom, transcript va ta'lim muassasasidan ma'lumotnomaga apostil qo'ydiring.",
         "Elchixona ro'yxatidagi ishonchli tarjimonda italyan tiliga tarjima qildiring. Ro'yxatda yo'q tarjimonning tarjimasi qabul qilinmasligi mumkin.",
         "DoV uchun: elchixona saytidagi formani to'ldiring va hujjatlarni konsullik bo'limiga topshiring. Ishonchnoma bilan boshqa odam ham topshira oladi.",
         "CIMEA uchun: cimea-diplome.it saytida o'zingiz ro'yxatdan o'ting (vositachi orqali qabul qilinmaydi), Service Finder'da diplomingizni tanlang, hujjatlarni yuklab to'lang.",
         "Tayyor DoV yoki CIMEA sertifikatini universitetingizga va Universitaly'ga yuklang."
       ],
       "sections": [
+        {
+          "title": "Hujjatlar (DoV va CIMEA)",
+          "items": [
+            "Pasport nusxasi",
+            "Attestat yoki diplom",
+            "Transcript (baholar varaqasi)",
+            "Ta'lim muassasasidan ma'lumotnoma",
+            "Til sertifikati",
+            "Apostil va italyancha tarjima qilinadi: attestat yoki diplom, transcript va ma'lumotnoma",
+            "DoV uchun qo'shimcha: to'ldirilgan ariza formasi va Universitaly pre-enrollment formasi"
+          ]
+        },
         {
           "title": "Muddat va narx",
           "items": [
