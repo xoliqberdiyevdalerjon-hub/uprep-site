@@ -513,44 +513,62 @@
   {
     "id": "s6",
     "title": "Italiyaga kelgach",
-    "sub": "Birinchi kunlardagi ishlar",
+    "sub": "Birinchi haftadagi ishlar, to'g'ri tartibda",
     "icon": "plane",
-    "when": "Permesso uchun: kelgandan keyin 8 kun ichida",
-    "intro": "Viza sizni Italiyaga kiritadi, yashash huquqini esa permesso di soggiorno beradi. Uni birinchi haftada boshlang.",
+    "when": "Uy: kelishdan oldin. Permesso: kelgandan keyin 8 ish kuni ichida",
+    "intro": "Viza sizni Italiyaga kiritadi, yashash huquqini esa permesso di soggiorno beradi. Quyida hamma ish bajariladigan tartibda: avval uy, keyin birinchi kunlardagi ishlar, eng oxirida full enrollment.",
     "blocks": [
       {
-        "type": "list",
-        "title": "Nima qilasiz",
-        "style": "steps",
-        "items": [
-          "«Sportello Amico» yozuvi bor Poste Italiane bo'limidan birinchi permesso uchun sariq kitni oling.",
-          "Form 1 ni to'ldiring va imzolang. Pasport va viza nusxasi, sug'urta nusxasi va moliyaviy hujjatlarni qo'shing.",
-          "Tamaki do'konidan (Tabaccheria) 16 € lik marca da bollo oling.",
-          "Kitni pochtaga topshiring va kvitansiyani (Assicurata) saqlang.",
-          "Questura barmoq izi uchun chaqiradi. Karta odatda shundan keyin 90 kun atrofida tayyor bo'ladi."
-        ]
+        "type": "callout",
+        "style": "warn",
+        "text": "Kelishdan oldin: uyni toping. Bu talabalarning eng katta muammosi: yaxshi xonalar o'qish boshlanishidan ancha oldin band bo'ladi. Universitetning uy-joy bo'limi, shu shahardagi o'zbek talabalar va ishonchli saytlardan qidiring. Uyni video orqali ko'rmasdan va shartnoma imzolamasdan pul o'tkazmang. Hech bo'lmasa birinchi haftalar uchun joy (yotoqxona yoki hostel) bron qilingan bo'lsin."
       },
       {
         "type": "list",
-        "title": "Hujjatlar",
+        "title": "Kelgandan keyin: shu tartibda",
+        "style": "steps",
+        "items": [
+          "SIM-karta oling: TIM, Vodafone, WindTre yoki Iliad do'konida, pasport bilan. Italiya raqami permesso, bank va universitet uchun kerak.",
+          "Jamoat transporti kartasini oling: shahar transport kompaniyasida oylik yoki yillik abonement. Ko'p shaharlarda talabalar uchun chegirma bor.",
+          "Tabaccheria'dan (tamaki do'koni) 16 € lik marca da bollo (davlat markasi) oling.",
+          "«Sportello Amico» yozuvi bor Poste Italiane bo'limidan birinchi permesso uchun sariq kitni oling. Form 1 ni to'ldirib imzolang, pasport va viza nusxasi, sug'urta va moliyaviy hujjatlar nusxasini va marca da bollo'ni qo'shing.",
+          "Kitni pochtaga topshiring va kvitansiyani (ricevuta) oling: karta kelguncha u sizning hujjatingiz. Buni kelgandan keyin 8 ish kuni ichida qiling.",
+          "Codice fiscale (soliq raqami) oling: Agenzia delle Entrate ofisida, pasport va viza bilan, bepul. Bank, ijara shartnomasi va stipendiya uchun kerak. Agar avvalroq berilgan bo'lsa, qayta olish shart emas.",
+          "Bank hisobi oching (IBAN): DSU stipendiyasi shu hisobga tushadi. Buning uchun codice fiscale kerak.",
+          "Questura barmoq izi uchun chaqiradi: kun va vaqt kvitansiyada yoki SMS'da bo'ladi. Karta odatda shundan keyin 90 kun atrofida tayyor bo'ladi.",
+          "Hamma hujjatlar yig'ilgach: full enrollment (8-qadam). Universitet belgilagan muddatga kechikmang."
+        ]
+      },
+      {
+        "type": "callout",
+        "style": "info",
+        "text": "Ixtiyoriy, lekin juda foydali: tessera sanitaria (Italiya tibbiy kartasi). Italiya sog'liqni saqlash tizimiga (SSN) yozilsangiz, oilaviy shifokor (medico di base) tanlaysiz va davlat poliklinika va shifoxonalaridan italyanlar kabi foydalanasiz. Talaba uchun ixtiyoriy yozilish yiliga {{ssn}} (kalendar yili uchun). Mahalliy ASL ofisiga permesso kvitansiyasi va codice fiscale bilan boring."
+      },
+      {
+        "type": "list",
+        "title": "Birinchi hafta: checklist",
         "style": "checklist",
         "items": [
-          "# Yana kerak bo'ladi",
-          "Codice fiscale: soliq raqami. Bank, telefon, ijara va DiSCo uchun kerak",
-          "Bank hisobi (IBAN): stipendiya shu hisobga keladi",
+          "Uy yoki xona (kelishdan oldin)",
           "Italiya SIM-kartasi",
-          "Butun muddatga sog'liq sug'urtasi"
+          "Jamoat transporti kartasi",
+          "Marca da bollo 16 €",
+          "Permesso kvitansiyasi (ricevuta)",
+          "Codice fiscale",
+          "Bank hisobi (IBAN)",
+          "Butun muddatga sog'liq sug'urtasi",
+          "Ixtiyoriy: tessera sanitaria"
         ]
       },
       {
         "type": "callout",
         "style": "tip",
-        "text": "Pochta kvitansiyasini yo'qotmang. Karta kelguncha u sizning hujjatingiz va full enrollment'da ham so'raladi. Sapienza'ning asosiy kampusida (CU007) permesso bo'yicha politsiya bo'limi ishlaydi."
+        "text": "Pochta kvitansiyasini yo'qotmang. Karta kelguncha u sizning hujjatingiz va full enrollment'da ham, stipendiya idorasida ham so'raladi. Sapienza'ning asosiy kampusida (CU007) permesso bo'yicha politsiya bo'limi ishlaydi."
       },
       {
         "type": "callout",
         "style": "info",
-        "text": "Uy topish, firibgarlardan saqlanish va ijara shartnomasi haqida batafsil: «Italiyada yashash» sahifasi. Eslatma: yotoqxonaga ariza berganingiz viza uchun uy-joy isboti hisoblanmaydi."
+        "text": "Eslatma: yotoqxonaga ariza berganingiz viza uchun uy-joy isboti hisoblanmaydi. Uy topish, firibgarlardan saqlanish va ijara shartnomasi haqida batafsil: «Italiyada yashash» sahifasi."
       },
       {
         "type": "button",

@@ -10,7 +10,7 @@
     { "n": "4", "t": "Pre-enrollment", "d": "Universitaly portalida ariza; universitet tasdiqlaydi." },
     { "n": "5", "t": "Viza", "d": "Toshkentdagi Italiya elchixonasida D toifali talaba vizasi." },
     { "n": "6", "t": "Stipendiya (DSU)", "d": "Oila hujjatlari O'zbekistonda tayyorlanadi, ariza yozda beriladi." },
-    { "n": "7", "t": "Italiyaga kelgach", "d": "8 kun ichida permesso, codice fiscale va birinchi hafta ishlari." },
+    { "n": "7", "t": "Italiyaga kelgach", "d": "SIM-karta, transport kartasi, permesso, codice fiscale va bank: to'g'ri tartibda." },
     { "n": "8", "t": "Full enrollment", "d": "Asl hujjatlarni topshirib, to'liq talaba bo'lasiz." }
   ],
   "chapters": [
@@ -255,7 +255,7 @@
       "steps": [
         "Barcha asl hujjatlar va ularning tarjimalarini o'zingiz bilan oling: diplom, transcript, DoV yoki CIMEA, pasport, sug'urta.",
         "Har biridan 2–3 tadan nusxa va telefoningizda skanlarini saqlang.",
-        "Birinchi haftalar uchun vaqtincha joy bron qiling (yotoqxona, hostel). Uzoq muddatli uyni joyida ko'rib, keyin shartnoma tuzing.",
+        "Uyni Italiyaga kelishdan oldin toping: bu talabalarning eng katta muammosi, yaxshi xonalar erta band bo'ladi. Universitetning uy-joy bo'limi va shu shahardagi o'zbek talabalardan so'rang. Hech bo'lmasa birinchi haftalar uchun joy (yotoqxona, hostel) bron qilingan bo'lsin.",
         "Birinchi 3–4 oy uchun o'z pulingiz bo'lsin: stipendiya puli odatda kech va bo'lib-bo'lib keladi.",
         "Universitet va stipendiya idorasining muddatlarini kalendaringizga yozib qo'ying."
       ],
@@ -269,30 +269,36 @@
     {
       "id": "kelgach",
       "kicker": "8-bob",
-      "title": "Italiyaga keldingiz: birinchi 8 kun",
-      "when": "Kelgan kundan boshlab, permesso uchun 8 kun ichida",
-      "body": "Viza sizni Italiyaga kiritadi, lekin u yerda yashash huquqini permesso di soggiorno (yashash ruxsatnomasi) beradi. Uni kelgandan keyin 8 kun ichida so'rashingiz kerak. Bu qonuniy talab, kechiktirmang.",
+      "title": "Italiyaga keldingiz: birinchi hafta",
+      "when": "Kelgan kundan boshlab, permesso uchun 8 ish kuni ichida",
+      "body": "Viza sizni Italiyaga kiritadi, lekin u yerda yashash huquqini permesso di soggiorno (yashash ruxsatnomasi) beradi. Uni kelgandan keyin 8 ish kuni ichida so'rashingiz kerak. Bu qonuniy talab, kechiktirmang.\n\nQuyida hamma ish bajariladigan tartibda. Uy esa undan oldin, Italiyaga kelishdan avval topilgan bo'lishi kerak (7-bob).",
       "steps": [
-        "«Sportello Amico» yozuvi bor Poste Italiane (pochta) bo'limidan birinchi permesso uchun kit (paket) oling.",
-        "Form 1 ni to'ldiring va imzolang. Pasport va viza nusxasi, sug'urta nusxasi va moliyaviy hujjatlarni qo'shing.",
-        "Tamaki do'konidan (Tabaccheria) 16 € lik marca da bollo (davlat markasi) oling.",
-        "Kitni pochtaga topshiring va kvitansiyani (Assicurata) saqlang: karta kelguncha u sizning hujjatingiz.",
-        "Questura barmoq izi uchun chaqiradi. Karta odatda shundan keyin 90 kun atrofida tayyor bo'ladi."
+        "SIM-karta oling: TIM, Vodafone, WindTre yoki Iliad do'konida, pasport bilan. Italiya raqami permesso, bank va universitet uchun kerak.",
+        "Jamoat transporti kartasini oling: shahar transport kompaniyasida oylik yoki yillik abonement. Ko'p shaharlarda talabalar uchun chegirma bor.",
+        "Tabaccheria'dan (tamaki do'koni) 16 € lik marca da bollo (davlat markasi) oling.",
+        "«Sportello Amico» yozuvi bor Poste Italiane (pochta) bo'limidan birinchi permesso uchun sariq kit (paket) oling. Form 1 ni to'ldirib imzolang, pasport va viza nusxasi, sug'urta va moliyaviy hujjatlar nusxasini va marca da bollo'ni qo'shing.",
+        "Kitni pochtaga topshiring va kvitansiyani (ricevuta) oling: karta kelguncha u sizning hujjatingiz.",
+        "Codice fiscale (soliq raqami) oling: Agenzia delle Entrate ofisida, pasport va viza bilan, bepul. Agar avvalroq berilgan bo'lsa, qayta olish shart emas.",
+        "Bank hisobi oching (IBAN): stipendiya shu hisobga tushadi. Buning uchun codice fiscale kerak.",
+        "Questura barmoq izi uchun chaqiradi. Karta odatda shundan keyin 90 kun atrofida tayyor bo'ladi.",
+        "Hamma hujjatlar yig'ilgach: full enrollment (keyingi bob)."
       ],
       "sections": [
         {
-          "title": "Shu haftaning o'zida",
+          "title": "Ixtiyoriy, lekin juda foydali: tessera sanitaria",
           "items": [
-            "Codice fiscale (soliq raqami): bank, telefon, ijara va stipendiya uchun kerak.",
-            "Italiya SIM-kartasi.",
-            "Bank hisobi (IBAN): stipendiya shu hisobga keladi.",
-            "Sog'liq: Italiya davlat sog'liq tizimiga (SSN) ixtiyoriy yozilish talaba uchun yiliga {{ssn}} (kalendar yili uchun) yoki Italiyada amal qiladigan xususiy sug'urta."
+            "Bu Italiya tibbiy kartasi: oilaviy shifokor (medico di base) tanlaysiz va davlat poliklinika va shifoxonalaridan italyanlar kabi foydalanasiz.",
+            "Uni olish uchun Italiya sog'liqni saqlash tizimiga (SSN) yozilasiz: talaba uchun yiliga {{ssn}} (kalendar yili uchun).",
+            "Mahalliy ASL ofisiga permesso kvitansiyasi va codice fiscale bilan boring.",
+            "SSN'ga yozilmasangiz, Italiyada amal qiladigan xususiy sug'urtangiz butun muddatga bo'lishi kerak."
           ]
         }
       ],
       "tip": "Hamma hujjatlarning nusxasini doim yoningizda olib yuring. Questura, pochta va bankda navbatlar uzun bo'lishi mumkin: sabr qiling, bu hammada shunday.",
       "warn": "Pochta kvitansiyasini yo'qotmang. U full enrollment'da ham, stipendiya idorasida ham so'raladi.",
-      "links": []
+      "links": [
+        { "label": "Italiyada yashash: uy, sog'liq, ish", "url": "#yashash" }
+      ]
     },
     {
       "id": "enrollment",
