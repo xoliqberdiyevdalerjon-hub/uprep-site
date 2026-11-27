@@ -89,7 +89,7 @@
         "piacenza"
       ],
       "url": "https://www.er-go.it/",
-      "deadline": "2026/27: 24.08.2026, 16:00 gacha",
+      "deadline": "2026/27: 23.06 – 24.08.2026, 16:00 gacha (chet el hujjatlari ham)",
       "note": "Ariza er-go.it saytidagi «Fai domanda online» bo'limi orqali.",
       "amount": "7 171 € gacha (2026/27)"
     },
@@ -144,7 +144,8 @@
       ],
       "deadline": "Har bir universitet o'z bandosini chiqaradi (2026/27 da ko'pchiligida 30.09.2026 gacha).",
       "note": "Lombardiyada stipendiyani har bir universitet o'zi beradi. Universitet sahifasidagi havolaga qarang.",
-      "own": true
+      "own": true,
+      "amount": "8 248 € gacha (PoliMi, UniMi, Bicocca)"
     },
     {
       "id": "erdis",
@@ -157,7 +158,8 @@
         "urbino"
       ],
       "url": "https://erdis.it/",
-      "deadline": "2026/27: 28.08.2026 gacha"
+      "deadline": "2026/27: 28.08.2026 gacha",
+      "amount": "7 171 € (fuori sede)"
     },
     {
       "id": "esu-molise",
@@ -182,7 +184,7 @@
       ],
       "url": "https://www.edisu.piemonte.it/",
       "deadline": "2026/27: 22.07 – 04.09.2026, 12:00 gacha (yopilgan)",
-      "amount": "8 455 € gacha",
+      "amount": "8 097 € gacha (fuori sede)",
       "note": "Ariza onlayn, SPID yoki CIE bilan shaxsiy kabinet orqali."
     },
     {
@@ -272,7 +274,8 @@
       ],
       "url": "https://www.dsu.toscana.it/",
       "deadline": "2026/27: 20.07 – 07.09.2026, 13:00 gacha",
-      "note": "Fuori sede g'olibga: o'qish to'lovidan ozod, yotoqxonada bepul joy yoki ijara puli, kuniga 2 mahal bepul ovqat. Ariza «Sportello Studente» portalida."
+      "note": "Fuori sede g'olibga: o'qish to'lovidan ozod, yotoqxonada bepul joy yoki ijara puli, kuniga 2 mahal bepul ovqat. Ariza «Sportello Studente» portalida.",
+      "amount": "3 338 € naqd + yotoqxona + ovqat"
     },
     {
       "id": "opera-tn",
@@ -283,7 +286,7 @@
       ],
       "url": "https://www.operauni.tn.it/",
       "deadline": "2026/27: 13.07 – 07.09.2026 (yopilgan)",
-      "amount": "1 445 – 8 605 € (2026/27)"
+      "amount": "3 586 – 7 171 € (fuori sede)"
     },
     {
       "id": "bolzano",
@@ -304,7 +307,8 @@
         "perugia"
       ],
       "url": "https://www.adisu.umbria.it/",
-      "deadline": "2026/27: 02.09.2026, 12:00 gacha. Chet el hujjatlari: 30.10.2026, 12:00 gacha"
+      "deadline": "2026/27: 02.09.2026, 12:00 gacha. Chet el hujjatlari: 30.10.2026, 12:00 gacha",
+      "amount": "8 247 € gacha (fuori sede)"
     },
     {
       "id": "vda",
@@ -329,7 +333,7 @@
       "deadline": "Har bir universitet o'z bandosini chiqaradi (odatda iyul – 30.09).",
       "note": "Venetoda stipendiyani universitet beradi. Yotoqxona va oshxona ESU orqali.",
       "own": true,
-      "amount": "Padova: 7 171 € gacha (STEM: ~8 605 €)"
+      "amount": "Padova: 8 246 € gacha"
     }
   ],
   "uniScholarships": [
@@ -419,20 +423,24 @@
       "agency": "DiSCo",
       "unis": "Sapienza, Tor Vergata, Roma Tre",
       "year": "2026/27",
-      "deadline": "Ariza: 10.06 – 22.07.2026 (yopilgan). ISEEUP va permesso hujjatlari: 10.12.2026 gacha",
+      "deadline": "Ariza: 10.06 – 22.07.2026, 12:00 (yopilgan). ISEEUP: 10.12.2026 gacha",
       "amount": "Naqd 6 571 – 7 556 € + kuniga 2 mahal bepul ovqat (600 €). Jami taxminan 7 171 – 8 157 €",
       "docs": [
-        "Oila tarkibi va propiska: har bir a'zoning ismi, tug'ilgan sanasi va manzili",
-        "Har bir oila a'zosining 2024-yilgi daromadi (ishlamasa, buni aniq yozgan hujjat)",
-        "Uy-joy: 31.12.2024 holatiga oila nomidagi mulk va uning maydoni (m²)",
-        "Ijara shartnomasi, faqat oila ijarada yashasa",
-        "Oilangizning yarmidan kami chet elda yashasa: fuori sede maqomi uchun ijara shartnomasi"
+        "Oila tarkibi: har bir a'zoning ismi, familiyasi va tug'ilgan sanasi",
+        "Har bir a'zoning 2024-yildagi yalpi daromadi (daromad bo'lmasa, buni hujjatda aniq yozdiring)",
+        "31.12.2024 holatiga uy-joy va binolar, maydoni (m²) bilan",
+        "31.12.2024 holatiga bankdagi jamg'arma (yo'q bo'lsa, buni ham hujjat bilan)",
+        "Oila ijarada yashasa: to'lanadigan ijara haqi",
+        "ISEEUP: 10.12.2026 gacha DiSCo tan olgan CAF'da bepul hisoblanadi"
       ],
       "rules": [
-        "Hujjatlar O'zbekistonda olinadi, italyan tiliga tarjima qilinadi va apostil qo'yiladi (yoki Italiya konsulligida legallashtiriladi)",
+        "Hujjatlar O'zbekistondagi Italiya diplomatik vakolatxonasi orqali beriladi va italyan tiliga tarjima qilinadi. Apostil qabul qilinishini CAF'dan oldindan so'rang",
         "O'zingiz yozgan ariza, affidavit va qasamyodli bayonot qabul qilinmaydi",
-        "ISEEUP 10.12.2026 gacha faqat DiSCo bilan shartnomasi bor CAF'da imzolanadi: boshqa CAF'dagi hisob va keyin keltirilgan hujjat qabul qilinmaydi",
-        "DiSCo FAQ'iga ko'ra ma'lumotlar INPS bazasida 01.12.2026 gacha bo'lishi kerak: CAF bilan oldindan, noyabr boshida uchrashing",
+        "Oilaning umumiy daromadi nol bo'lmasligi va viza va permesso uchun talab qilinadigan moliyaviy shartlarga mos bo'lishi kerak",
+        "10.12.2026 dan keyin keltirilgan hech qanday hujjat (hatto asli ham) qabul qilinmaydi",
+        "Chegaralar: ISEE 28 339,88 €, ISPE 61 608,48 €",
+        "Summa: fuori sede 7 556,78 € + kuniga 2 mahal bepul ovqat (ISEE 14 169,94 € gacha). ISEE 18 893,25 € dan oshsa, summa yarmigacha kamayadi",
+        "Oilaning kamida yarmi chet elda yashasa, avtomatik fuori sede hisoblanasiz: ijara shartnomasi shart emas",
         "SPID yoki CIE bo'lmasa, CAF'da shaxsan identifikatsiyadan o'tasiz"
       ],
       "sources": [
@@ -456,21 +464,22 @@
       "agency": "Har bir universitetning o'zi",
       "unis": "Politecnico di Milano, UniMi, Bicocca, Pavia (EDiSU)",
       "year": "2026/27",
-      "deadline": "PoliMi: iyul – avgust 2026; UniMi va Bicocca: 30.09.2026; Pavia: 15.09.2026, 15:00 (hammasi yopilgan)",
-      "amount": "Universitetga qarab. UniMi DSU chegarasidan biroz yuqori daromadli talabalarga 1 055 ta 1 800 € lik o'z stipendiyasini ham beradi",
+      "deadline": "PoliMi: 1-kurs 05.08.2026, 12:00; UniMi va Bicocca: 30.09.2026; Pavia: 15.09.2026, 15:00 (hammasi yopilgan)",
+      "amount": "Fuori sede 8 248 € gacha (PoliMi, UniMi, Bicocca)",
       "docs": [
-        "Oila tarkibi, har bir a'zoning daromadi va mol-mulki (chet eldagi): to'liq, italyan tiliga tarjima qilingan va legallashtirilgan",
-        "PoliMi: ISEEU parificato'ni faqat Politecnico shartnoma tuzgan CAF hisoblaydi va o'zi universitetga yuboradi",
-        "UniMi: ISEE arizasi (DSU) 30.09.2026 gacha imzolangan bo'lishi kerak; chet el hujjatlari bo'yicha ISEE ekvivalentini universitet hisoblaydi",
-        "Bicocca: codice fiscale oldindan kerak (Agenzia delle Entrate yoki O'zbekistondagi Italiya elchixonasi orqali). Chet elda yashovchilar ISEE hujjatlarini keyinroq, 30.04.2027 gacha yuklashi mumkin",
+        "UniMi: oila tarkibi (FHDYo yoki boshqa vakolatli idoradan), har bir a'zoning 2025-yilgi daromadi (yo'q bo'lsa, yo'qligi haqida), 31.12.2025 holatiga bank jamg'armalari va ko'chmas mulk (m² bilan). Hammasi Italiya elchixonasi yoki konsulligida legallashtirilib, italyanchaga tarjima qilinadi va onlayn yuklanadi: 30.09.2026 gacha (yotoqxona so'rasangiz 07.08.2026)",
+        "PoliMi: ISEEU parificato'ni faqat Politecnico shartnoma tuzgan CAF hisoblaydi va o'zi universitetga yuboradi. Hujjatlar CAF'ga 05.08.2026 gacha (2-kurs va yuqori: 21.07.2026) topshiriladi, aks holda ariza qabul qilinmaydi",
+        "Bicocca: chet elda yashovchilar ISEE hujjatlarini 30.09.2026 gacha (yotoqxona so'rasangiz 20.08.2026) yuklaydi. Italyan codice fiscale oldindan kerak (Agenzia delle Entrate yoki O'zbekistondagi Italiya elchixonasi orqali)",
         "Pavia (EDiSU): chet el daromad hujjatlarini topshirish uchun EDiSU saytida oldindan navbat (appuntamento) olinadi"
       ],
       "rules": [
         "Lombardiyada har bir universitet o'z bandosini chiqaradi: tanlagan universitetingiz bandosini o'qing",
-        "PoliMi 2026/27 chegaralari: ISEE parificato 26 887,93 €, ISPE 58 452,06 € (davlat maksimumidan pastroq)",
-        "Bicocca 2026/27: ISEE chegarasi 26 887,93 €",
-        "PoliMi: chet eldagi daromad va mulk faqat Politecnico tan olgan CAF orqali topshiriladi, boshqa yo'l qabul qilinmaydi",
-        "UniMi va Bicocca: almashinuv dasturida (Erasmus va boshqalar) oyiga 600 € gacha qo'shimcha",
+        "Chegaralar (PoliMi, UniMi, Bicocca): ISEE 26 887,93 €, ISPE 58 452,06 €",
+        "Summa (fuori sede): ISEE 13 443,97 € gacha 8 248 € (7 419 € naqd + kuniga bepul ovqat), keyingi guruhlarda 7 172 € va 5 857 €",
+        "PoliMi: chet eldagi oila daromadi viza uchun talab qilinadigan minimal summadan past bo'lmasligi kerak",
+        "Bicocca: 1-kurs bakalavr va 5 yillik dasturlarda attestat bahosi kamida 70/100 bo'lishi kerak (chet el bahosi vazirlik formulasi bilan aylantiriladi)",
+        "UniMi: ko'chmas mulk har m² uchun 500 € deb hisoblanadi",
+        "Almashinuv dasturida (Erasmus va boshqalar) oyiga 600 € gacha qo'shimcha, 10 oygacha",
         "UniMi: DSU chegarasidan biroz yuqori daromadli talabalarga universitetning o'z stipendiyasi bor (1 055 ta, har biri 1 800 €)"
       ],
       "sources": [
@@ -514,18 +523,21 @@
       "agency": "EDISU Piemonte",
       "unis": "UniTo, Politecnico di Torino, UniUPO",
       "year": "2026/27",
-      "deadline": "Ariza: 22.07 – 04.09.2026, 12:00 gacha (yopilgan)",
-      "amount": "8 455 € gacha (fuori sede). EDISU yotoqxonasida yashovchilarga naqd summa kamroq, yotoqxona joyi bilan",
+      "deadline": "Ariza: 22.07 – 04.09.2026, 12:00 (yopilgan). 1-kurs hujjatlari: yotoqxona bilan 04.09, faqat stipendiya 25.09.2026",
+      "amount": "Fuori sede 8 097 € gacha (STEM'dagi qizlarga 8 455 €)",
       "docs": [
-        "Konsullik hujjatlari: oila tarkibi, har bir a'zoning 2025-yilgi daromadi va mol-mulki. Italyan tiliga tarjima qilingan va legallashtirilgan (apostil qabul qilinadigan davlatlar bandoning F ilovasida)",
-        "ISEE parificato: faqat EDISU bilan shartnomasi bor CAAF'da yoki EDISU'ning o'zida hisoblanadi",
-        "SPID yoki CIE bo'lmasa: portalga kirish uchun «Codice Temporaneo d'Accesso» (iyuldan so'raladi, 1 yil amal qiladi)",
-        "Italiyada oldin stipendiya olgan bo'lsangiz: Certificazione Unica 2025 (2024-yilgi daromad)"
+        "Konsullik hujjatlari (asl nusxada): oila tarkibi (ismi, familiyasi, tug'ilgan sanasi), 18 yoshdan katta har bir a'zoning 2025-yilgi yalpi daromadi (ishlamasa, ishsizligini ko'rsatuvchi hujjat), 31.12.2025 holatiga bank jamg'armalari va ko'chmas mulk (m² bilan; yo'q bo'lsa, yo'qligi haqida hujjat)",
+        "Tarjima rasmiy tarjimonda, legallashtirish konsullikda yoki apostil bilan. Tarjima va legallashtirish 2026-yilda qilingan bo'lishi shart: 01.01.2026 dan oldingi sanalar qabul qilinmaydi",
+        "Pochta orqali (raccomandata A/R yoki kuryer): EDISU Piemonte, Via Madama Cristina 83, 10126 Torino. Konvertga familiya, ism va «D.C. a.a. 2026/27» yoziladi; ichiga codice fiscale va pasport nusxasi solinadi",
+        "1-kurs muddatlari: yotoqxona bilan 04.09.2026, faqat stipendiya 25.09.2026. Kamchilik bo'lsa, 12.11.2026 gacha to'ldirish mumkin",
+        "Talaba vizasi (D turi) arizaga yuklanadi; hali olmagan bo'lsangiz, keyinroq «Visa» bo'limi orqali",
+        "SPID yoki CIE bo'lmasa: portalga kirish uchun «Codice Temporaneo d'Accesso» (iyuldan so'raladi, 1 yil amal qiladi)"
       ],
       "rules": [
-        "Chegaralar: ISEE 26 306,25 €, ISPE 57 187,53 € gacha",
-        "ISEE parificato birinchi to'liq va to'g'ri topshirilgan hujjatlar bo'yicha hisoblanadi: keyin qo'shimcha hujjat bilan o'zgartirib bo'lmaydi. Hammasini birinchi marta to'liq olib boring",
-        "Ba'zi manbalarga ko'ra tarjima va legallashtirish bando yilida (2026) qilingan bo'lishi kerak: bandoning F ilovasidan tekshiring",
+        "Chegaralar: ISEE 26 306,25 €, ISPE 57 187,53 €",
+        "Summa (fuori sede): ISEE 13 153,12 € gacha 8 096,78 €, keyin 7 021 €, 5 587 € va 3 800 € gacha kamayadi. STEM'dagi qizlarga 8 455 € gacha",
+        "ISEE parificato birinchi to'liq va to'g'ri topshirilgan hujjatlar bo'yicha hisoblanadi: keyin qo'shimcha hujjat bilan o'zgartirib bo'lmaydi. Hammasini birinchi marta to'liq yuboring",
+        "Faqat bank jamg'armasi yo'qligi uchun notarial tasdiqlangan o'z bayonotingiz qabul qilinadi; qolgan hamma hujjat rasmiy idoradan",
         "Birinchi kursda oldingi baholar (merit) hisobga olinmaydi",
         "30.11.2026 gacha universitetga ro'yxatdan o'tmagan bo'lsangiz, natija «sospeso»: 02.04.2027 gacha ro'yxatdan o'tishingiz shart",
         "EDISU yotoqxonasida yashasangiz, naqd summa kamroq bo'ladi (joy stipendiya hisobidan)"
@@ -547,17 +559,22 @@
       "agency": "ER.GO",
       "unis": "Bolonya, Modena, Parma, Ferrara",
       "year": "2026/27",
-      "deadline": "Ariza: 23.06 – 24.08.2026, 16:00 gacha. Chet el hujjatlarini yuklash: 20.11.2026 gacha (hammasi yopilgan)",
-      "amount": "7 171 € gacha (fuori sede). Yotoqxona stipendiya hisobidan to'lanadi, ovqat ixtiyoriy kredit",
+      "deadline": "Ariza va chet el hujjatlari: 23.06 – 24.08.2026, 16:00 gacha (yopilgan)",
+      "amount": "7 171 € gacha (fuori sede)",
       "docs": [
-        "Chet eldagi oila hujjatlari, 2025-yil uchun: oila tarkibi, har bir a'zoning daromadi va mol-mulki (uy-joy, bankdagi jamg'arma). To'liq, italyan tiliga tarjima qilingan va legallashtirilgan bo'lishi kerak",
-        "Ular er-go.it'dagi «Dossier Utente» bo'limiga yuklanadi (2026/27 uchun 20.11.2026 gacha)",
+        "Chet eldagi oila hujjatlari, 2025-yil uchun: oila tarkibi, har bir a'zoning 2025-yildagi ishi (necha oy ishlagani yoki ishsizligi) va yalpi daromadi (soliq idorasidan; bo'lmasa ish beruvchi ma'lumotnomasi yoki 12 oylik varaqalari)",
+        "31.12.2025 holatiga uy-joy va binolar (m² bilan; yo'q bo'lsa, mulk yo'qligi haqida ma'lumotnoma), qolgan ipoteka qarzi va bankdagi jamg'arma",
+        "Hammasi er-go.it'dagi Dossier Utente → Corrispondenza e protocollo → Invia documentazione → Documentazione redditi esteri bo'limiga ariza muddatigacha (2026/27: 24.08.2026, 16:00) yuklanadi",
         "ISEE 2026 Università attestatsiyasi (INPS yoki CAF orqali): faqat Italiyada yashasangiz yoki o'zingiz yoki oilangizning Italiyada daromadi yoki mol-mulki bo'lsa. Bunda ham oilangiz chet elda yashasa, chet el hujjatlarini qo'shimcha topshirasiz"
       ],
       "rules": [
-        "CAF orqali ariza bergan xalqaro talabalar ham chet el hujjatlarini alohida yuklashi shart, aks holda ro'yxatdan chiqariladi",
+        "Hujjatlar O'zbekistondagi Italiya elchixonasi orqali legallashtiriladi yoki apostil qo'yiladi va Italiya konsulligida yoki rasmiy tarjimonda italyanchaga tarjima qilinadi. Avtosertifikat va o'z bayonotingiz qabul qilinmaydi",
+        "CAF orqali ariza bergan xalqaro talabalar ham chet el hujjatlarini Dossier Utente'ga alohida yuklashi shart, aks holda stipendiyaga loyiq deb topilmaydi",
+        "20.11.2026 muddati faqat Bolonya universitetida to'lov imtiyozini (no tax area) so'raganlar uchun: stipendiya uchun muddat 24.08.2026",
+        "Chegaralar: ISEE 25 000 €, ISPE 50 000 €",
+        "Summa (fuori sede): ISEE 16 666,67 € gacha 7 171,11 €; ISEE oshgan sari 3 585,56 € gacha kamayadi. 140 € tassa regionale qaytariladi",
+        "ER.GO tekshiruv uchun asl qog'oz hujjatlarni so'rashi mumkin: asllarini saqlang, aks holda stipendiya bekor qilinadi",
         "Italiya ISEE 2026 2024-yilgi daromad va 31.12.2024 holatidagi mol-mulk bo'yicha hisoblanadi va 31.12.2026 gacha amal qiladi",
-        "Italiyada ISEE qilish uchun kerak bo'ladi: codice fiscale, pasport, permesso di soggiorno, ro'yxatdan o'tgan ijara shartnomasi va bank hisoblari (31.12.2024 dagi qoldiq va o'rtacha yillik qoldiq)",
         "Oldin stipendiya olgan bo'lsangiz: 2024-yilda olgan stipendiyani ISEE arizasida (DSU) soliqsiz daromad sifatida yozasiz. ER.GO stipendiyasi uchun ma'lumotnoma (CU 2025) «Dossier Utente»da; ER.GO keyin bu summani ISEE'dan ayirib hisoblaydi"
       ],
       "sources": [
@@ -582,19 +599,22 @@
       "unis": "Piza, Florensiya, Siena",
       "year": "2026/27",
       "deadline": "Ariza va hujjatlar: 07.09.2026, 13:00 gacha (yopilgan). Kech yuborilgan hujjat bilan ro'yxatdan chiqariladi",
-      "amount": "Summa bandoda. Fuori sede g'olibga: o'qish to'lovidan ozodlik, yotoqxonada bepul joy yoki ijara puli, kuniga 2 mahal bepul ovqat",
+      "amount": "Fuori sede: 3 338 € naqd + bepul yotoqxona + kuniga 2 mahal bepul ovqat (ISEE 13 500 € gacha)",
       "docs": [
-        "Oila tarkibi (stato di famiglia)",
-        "Daromadlar",
-        "Uy-joy va binolar (fabbricati)",
-        "Bank va boshqa jamg'armalar (patrimonio mobiliare)"
+        "Oila tarkibi (stato di famiglia); ota-ona bitta bo'lsa, ajrashish yoki vafot hujjati",
+        "Har bir voyaga yetgan a'zoning 2025-yilgi yalpi daromadi soliq idorasidan (bo'lmasa, ish beruvchi ma'lumotnomasi yoki 12 oylik varaqalari). Ishlamaydiganlar uchun: talaba ma'lumotnomasi, ishsizlik hujjati va h.k.",
+        "31.12.2025 holatiga uy-joy va binolar (m² bilan) va bank jamg'armasi",
+        "Hujjatlar 2026-yilda berilgan bo'lishi kerak"
       ],
       "rules": [
-        "Hamma hujjat italyan tiliga tarjima qilinadi va Italiya diplomatik vakolatxonasi tomonidan legallashtiriladi (rasmiy sahifa). O'zbekiston apostil konvensiyasi a'zosi: apostil yetarlimi, DSU Toscana'dan tasdiqlang",
-        "Chegaralar: ISEE 27 000 €, ISPE 60 000 € gacha",
-        "Hujjatlar qog'ozda yuboriladi: raccomandata A/R yoki kuryer orqali Florensiyadagi ARDSU ofisiga. Konvertga ism-familiya va «DB 2026/2027» yoziladi",
+        "Hujjatlar Italiya elchixonasi orqali legallashtiriladi yoki apostil qo'yiladi (O'zbekiston Gaaga konvensiyasi a'zosi) va italyanchaga tarjima qilinadi. Affidavit va o'z-o'zini tasdiqlash qabul qilinmaydi",
+        "Asl hujjatlar pochtada (raccomandata A/R yoki kuryer) yuboriladi: ARDSU Toscana, Viale Antonio Gramsci 36, 50132 Firenze. Konvertga ism-familiya va «DB 2026/2027» yoziladi; ariza kvitansiyasi va ID nusxasi ilova qilinadi. Pochta muhri sanasi hisoblanadi, asllar qaytarilmaydi",
+        "Muddat: 07.09.2026 (bakalavr va magistratura)",
+        "Chegaralar: ISEE 27 000 €, ISPE 60 000 €",
+        "Chet ellik talabalar har doim fuori sede hisoblanadi",
+        "Summa (fuori sede): ISEE 13 500 € gacha 3 338 € naqd, 18 000 € gacha 2 262 €, 27 000 € gacha 1 060 €, ustiga bepul yotoqxona (qiymati 3 150 €) va kuniga 2 mahal ovqat (1 760 €)",
+        "Ijarada yashovchi fuori sede talabaga yotoqxona o'rniga 3 150 € gacha ijara yordami (semestr uchun 1 575 €)",
         "To'lov: 04.11.2026 holatida g'olib bo'lsangiz, 20% 10.11.2026 da, 30% 31.12.2026 gacha, qolgani merit sharti bajarilgach",
-        "Ijarada yashovchi fuori sede talabaga ijara uchun 3 150 € gacha yordam (semestr uchun 1 575 €)",
         "O'tgan yili g'olib bo'lib, shu bosqichda qayta topshirsangiz, iqtisodiy hujjatlarni qayta yubormaysiz: ahvol o'zgarmaganini onlayn tasdiqlaysiz"
       ],
       "sources": [
@@ -619,20 +639,21 @@
       "unis": "Padova, Ca' Foscari (Venetsiya)",
       "year": "2026/27",
       "deadline": "Padova va Ca' Foscari: 30.09.2026 gacha (yopilgan)",
-      "amount": "Padova: fuori sede 7 171 € gacha, STEM'da eng yuqori guruhda taxminan 8 605 €",
+      "amount": "Padova: fuori sede 8 246 € (ISEE 13 153 € gacha), keyin 7 171 € va eng kami 3 586 €; STEM'dagi qizlarga 8 605 €",
       "docs": [
         "Oila chet elda yashasa: ISEE parificato. Padova'da faqat universitet bilan shartnomasi bor CAF'da so'raladi, DSU 30.09.2026 gacha imzolanadi",
-        "Chet eldagi oila hujjatlari (oila tarkibi, daromad, mol-mulk): italyan tiliga tarjima qilingan va legallashtirilgan",
+        "Chet eldagi oila hujjatlari (oila tarkibi, daromad, mol-mulk): tarjima va legallashtirish talablarini shartnomali CAF ro'yxati bo'yicha tayyorlang",
         "Padova: 30.09.2026 gacha Uniweb'da «Richiesta di agevolazioni» to'ldiriladi va 1-rata to'lanadi",
         "Fuori sede bo'lish uchun: haq to'lanadigan, ro'yxatdan o'tgan ijara shartnomasi (kamida 10 oylik)"
       ],
       "rules": [
         "Chegaralar (Padova va Ca' Foscari): ISEE 26 306,25 €, ISPE 43 125,94 € gacha",
-        "Padova: legallashtirilgan nusxalarni 25.11.2026 gacha qo'shsangiz, ariza mart 2027 dagi qo'shimcha ro'yxatda ko'rib chiqiladi",
-        "Padova: yakuniy ro'yxat 25.11.2026; 1-qism pul 15.12.2026 gacha (Uniweb'ga bank rekvizitlari kiritilgan bo'lsa)",
+        "Padova summasi (fuori sede): ISEE 13 153,12 € gacha 8 246 €, 17 537,50 € gacha 7 171,11 €, undan yuqorida 3 585,50 € gacha kamayadi",
+        "Padova: ESU yotoqxonasida yashasangiz, stipendiyadan ovqat uchun 760 € va yotoqxona uchun 1 600 € ushlanadi",
+        "Padova: dastlabki ro'yxat 15.10.2026, yakuniy 25.11.2026, qo'shimcha ro'yxat mart 2027 gacha",
         "Padova: stipendiya arizasi va o'qish to'lovini kamaytirish arizasi alohida (to'lovni kamaytirish: 30.11.2026 gacha)",
         "Fuori sede yoki qatnovchi ekaningiz universitetning masofa jadvali bo'yicha aniqlanadi",
-        "Ca' Foscari: ESU Venezia yotoqxonasi uchun 1-kurs arizasi 15.09.2026 gacha; uy 80 km dan uzoq yoki yo'l 80 daqiqadan ko'p bo'lishi kerak",
+        "Ca' Foscari: stipendiya arizasi 30.09.2026, 12:30 gacha; fuori sede uchun uy 80 km dan uzoq yoki yo'l 80 daqiqadan ko'p bo'lishi kerak",
         "Ca' Foscari Honours Scholarships: faqat a'lo baholar uchun, yiliga 10 000 € (2026/27 muddati 31.03.2026 edi)"
       ],
       "sources": [
@@ -700,13 +721,17 @@
       "deadline": "2026/27: 18.08.2026 gacha (yopilgan). 1-kurs reytingi 06.11.2026 da chiqdi",
       "amount": "7 171 € gacha; ISEE chegaraning yarmidan past bo'lsa 8 246 € gacha. Yotoqxona va ovqat stipendiya hisobidan",
       "docs": [
-        "Oila tarkibi, daromad va mol-mulk hujjatlari, apostil va italyancha tarjima bilan",
-        "ISEE parificato: to'liq va bo'shliqlarsiz"
+        "ISEE parificato: ERSU ro'yxatidagi CAF hisoblaydi (bandoning 17-jadvali) va u ERSU portalidagi «Fascicolo» bo'limiga 16.09.2026 gacha yuklanadi",
+        "Kerak bo'lsa, O'zbekiston idoralari bergan, italyanchaga tarjima qilingan va legallashtirilgan oila hujjatlari arizaga ilova qilinadi",
+        "Permesso yoki uning kvitansiyasi va shaxsni tasdiqlovchi hujjat"
       ],
       "rules": [
         "Ariza: 01.07 – 18.08.2026, 14:00 gacha, studenti.ersumessina.it portalida",
-        "Bandoda xalqaro (EI dan tashqari) talabalar uchun ajratilgan joylar bor",
-        "Hujjatlar ro'yxati va formatini bandodan tekshiring: bu yerda faqat umumiy talablar"
+        "Kechikkan xalqaro talabalar 30.11.2026 gacha to'ldirishi mumkin, lekin ro'yxat oxiriga qo'yiladi",
+        "Chegaralar: ISEE 22 500 €, ISPE 53 000 €",
+        "Summa: fuori sede 7 171,11 €; ISEE chegaraning yarmidan past bo'lsa 8 246,77 €",
+        "1-kurs ro'yxati 06.11.2026 da chiqdi, 1-qism pul 10.11.2026 gacha",
+        "Bandoda xalqaro (EI dan tashqari) talabalar uchun ajratilgan joylar bor"
       ],
       "sources": [
         {
@@ -726,16 +751,18 @@
       "unis": "Trento universiteti",
       "year": "2026/27",
       "deadline": "Stipendiya va o'qish to'lovidan ozodlik: 13.07 – 07.09.2026 (yopilgan)",
-      "amount": "1 445 – 8 605 € (2026/27)",
+      "amount": "Fuori sede 3 586 – 7 171 €",
       "docs": [
-        "Oila chet elda yashasa: bandoning «chet elda yashovchi oila» bo'limidagi hujjatlar (oila tarkibi, daromad, mol-mulk)",
-        "Ariza Opera Universitaria portalida onlayn"
+        "Oila tarkibi va yashash joyi, har bir a'zoning 2024-yilgi daromadi, uy-joylar maydoni (m²) va 2024-yildagi bank jamg'armalari",
+        "Hujjatlar O'zbekiston idoralaridan olinadi, italyanchaga tarjima qilinadi va Italiya elchixonasi yoki konsulligida aslga mosligi tasdiqlanadi",
+        "Avval Trento universiteti bilan shartnomasi bor CAF'da ISEE parificato olasiz (navbat universitetning Service Desk sahifasida), so'ng uni operauniversitaria@pec.operauni.tn.it manziliga yuborib, onlayn ariza to'ldirasiz",
+        "Fuori sede uchun: o'z nomingizga ro'yxatdan o'tgan, kamida 10 oylik ijara shartnomasi, 08.09 – 15.10.2026 da yuklanadi"
       ],
       "rules": [
-        "Chegaralar: ISEE 26 000 €, ISPE 52 000 € gacha",
-        "Stipendiya ro'yxati 31.10.2026 gacha tasdiqlanadi",
-        "Yotoqxona arizasi stipendiyadan oldin, avgustda yopiladi",
-        "Tarjima va legallashtirish talablarini bandodan tekshiring: bu yerda faqat umumiy talablar"
+        "Chegaralar: ISEE 26 000 €, ISPE 52 000 €",
+        "Muddatlar: yotoqxona tasdig'i 05.08, yangi yotoqxona 19.08, faqat stipendiya va to'lovdan ozodlik 07.09.2026",
+        "Summa: fuori sede 3 585,56 – 7 171,12 €, daromadga qarab",
+        "Stipendiya ro'yxati 31.10.2026 gacha tasdiqlanadi"
       ],
       "sources": [
         {
@@ -757,13 +784,16 @@
       "deadline": "15.06 – 31.07.2026, 12:00 gacha (yopilgan)",
       "amount": "Fuori sede 7 172 € gacha (yotoqxona va ovqat bilan birga)",
       "docs": [
-        "Italiya ISEE'sini INPS orqali ololmaydigan talabalar uchun: ISEEUP attestatsiyasi (bandoning 11.1.2 va 11.1.3-moddalari)",
-        "Chet eldagi oila hujjatlari: oila tarkibi, daromad va mol-mulk"
+        "ISEEUP: faqat ALiSEO bilan shartnomasi bor CAAF'larda, ular talab qiladigan konsullik hujjatlari bilan (CAAF ro'yxati ALiSEO saytida)",
+        "ISEEUP 2026 attestatsiyasi onlayn arizaga yuklanadi"
       ],
       "rules": [
-        "Faqat Genuya universiteti va Liguriyadagi AFAM institutlari talabalari uchun",
-        "Summa ISEE va talaba maqomiga (fuori sede, qatnovchi) qarab",
-        "Ba'zi talabalar uchun qo'shimcha ariza oynasi: 19.02 – 12.03.2027, 12:00 gacha (kimlar uchunligini bandodan tekshiring)"
+        "Ariza: 15.06 – 31.07.2026, 12:00 gacha",
+        "ISEEUP 19.10.2026 gacha bo'lmasa, ro'yxatda «sospeso» bo'lasiz: 31.12.2026 gacha to'g'rilanmasa, stipendiya butunlay bekor qilinadi",
+        "Chegaralar: ISEE 28 339 €, ISPE 61 608 €",
+        "Oilasi chet elda yashovchi talabalar fuori sede hisoblanadi",
+        "Summa: 7 172 € gacha (yotoqxona va ovqat qiymati bilan)",
+        "Faqat Genuya universiteti va Liguriyadagi AFAM institutlari talabalari uchun"
       ],
       "sources": [
         {
@@ -773,6 +803,10 @@
         {
           "label": "ALiSEO: FAQ",
           "url": "https://www.aliseo.liguria.it/benefici-economici-universitari/borsa-di-studio-universitaria/faq/"
+        },
+        {
+          "label": "ALiSEO: 2026/27 bando (EN, PDF)",
+          "url": "https://www.aliseo.liguria.it/wp-content/uploads/2026/07/Bando-attribuzione-benefici-a.a.-2026_2027_-ENGLISH-3.pdf"
         }
       ]
     },
@@ -783,15 +817,20 @@
       "unis": "Macerata, Camerino, Ankona (UnivPM), Urbino",
       "year": "2026/27",
       "deadline": "28.08.2026 gacha, uzaytirilmaydi (yopilgan)",
-      "amount": "Bandoning F ilovasida",
+      "amount": "Fuori sede 7 171,11 €",
       "docs": [
-        "Oila tarkibi, daromad va mol-mulk bo'yicha rasmiy hujjatlar, vakolatli organ tasdig'i bilan",
-        "Chet ellik talabalar ISEE/ISPE hisobi: bandoning 11.2-bo'limi va ERDIS'ning «Rules for international students 26_27» hujjati"
+        "Oila tarkibi (ariza sanasidagi holat); ota-ona vafot etgan yoki ajrashgan bo'lsa, tegishli hujjat",
+        "Har bir a'zoning 2024-yilgi daromadi (milliy valyutada); 18 yoshdan kattalarning daromadi bo'lmasa, buni aniq yozgan hujjat",
+        "31.12.2024 holatiga ko'chmas mulk va bank jamg'armasi (yo'q bo'lsa, yo'qligi haqida)",
+        "Permesso nusxasi (03.05.2027 gacha topshirish mumkin, unga qadar pul to'xtatib turiladi)"
       ],
       "rules": [
-        "Chet ellik talabalar qayerda o'qishidan qat'i nazar fuori sede hisoblanadi",
-        "Ariza faqat ERDIS portalida onlayn",
-        "Istalgan fuqarolik (EI va EI dan tashqari) bilan topshirish mumkin"
+        "Har bir hujjat Italiya elchixonasida legallashtiriladi yoki apostil qo'yiladi; tarjima Italiya konsulligida yoki rasmiy tarjimonda tasdiqlanadi. Bank hujjatlariga legallashtirish shart emas, faqat rasmiy tarjima",
+        "Asl hujjatlar ariza muddatigacha: 28.08.2026. Kechiksangiz, 18.09.2026 gacha to'liq topshirib yakuniy ro'yxatga kirish mumkin (qo'shimcha hujjat 21.10.2026 gacha)",
+        "Chegaralar: ISEE 24 000 €, ISPE 50 000 €",
+        "Summa: fuori sede 7 171,11 €",
+        "Chet ellik talabalar har doim fuori sede hisoblanadi; ISEE parificato'ni ERDIS o'zi hisoblaydi",
+        "Ariza faqat ERDIS portalida onlayn"
       ],
       "sources": [
         {
@@ -811,14 +850,20 @@
       "unis": "Perugia universiteti, Perugia chet elliklar universiteti",
       "year": "2026/27",
       "deadline": "Ariza: 02.09.2026, 12:00 gacha. Chet el daromad hujjatlari: 30.10.2026, 12:00 gacha (yopilgan)",
-      "amount": "Bandoda",
+      "amount": "Fuori sede 8 246,78 € gacha",
       "docs": [
-        "Chet eldagi oila daromadi va mol-mulki hujjatlari: faqat o'z davlatingizdagi Italiya diplomatik vakolatxonasida legallashtirilgan",
-        "Hujjatlar ADiSU portaliga yuklanadi"
+        "Oila tarkibi (tug'ilgan sanalar va oilaviy holat bilan); ota-ona bitta bo'lsa, ajrashish yoki vafot hujjati",
+        "Har bir voyaga yetgan a'zoning 2025-yilgi yalpi daromadi soliq idorasidan; ishlamaydiganlar uchun ishsizlik yoki o'qish hujjati (o'qish hujjati faqat tarjima qilinadi)",
+        "31.12.2025 holatiga uy-joy va binolar (m² bilan, kadastr idorasidan) va bank jamg'armalari. Ijara shartnomasi mulk yo'qligini isbotlamaydi",
+        "ADiSU portali → Area studenti → Trasmissione documentazione orqali yuklanadi"
       ],
       "rules": [
-        "Muddatdan keyin topshirilgan ariza ko'rib chiqilmaydi",
-        "Yotoqxonada yashovchilar chet el hujjatlarini 02.09.2026, 12:00 gacha to'liq topshirmasa, 01.10.2026 dan bepul joydan mahrum bo'ladi"
+        "Italiya elchixonasida legallashtiriladi yoki apostil qo'yiladi. Tarjima Italiya konsulligida yoki rasmiy tarjimonda; tarjimon bayonnomasi ham apostil yoki legallashtirilgan bo'lishi kerak",
+        "Muddatlar: 02.09.2026, 12:00 (bepul yotoqxona va ovqat 01.10 dan); 30.10.2026, 12:00 oxirgi muddat, undan keyin chetlashtiriladi",
+        "Chegaralar: ISEE 28 339,88 €, ISPE 61 608,48 €",
+        "Summa (fuori sede, ISEE 14 169,63 € gacha): 8 246,78 € (6 646,78 € naqd + ovqat)",
+        "Asl qog'oz hujjatlarni saqlang: ADiSU tekshiruv uchun so'rashi mumkin",
+        "Bandoda daromad yili bir joyda 2024, hujjatlar ro'yxatida 2025 deb yozilgan: 2025-yilgisini tayyorlang va ADiSU'dan tasdiqlang"
       ],
       "sources": [
         {
@@ -846,7 +891,8 @@
       "Italiyada viloyat tan olgan CAF/CAAF'da ISEE parificato (ISEEUP) hisoblanadi",
       "O'zingiz yozgan ariza va affidavit odatda qabul qilinmaydi",
       "ISEE chegarasi: davlat maksimumi 28 339,88 €, lekin ba'zi viloyat va universitetlar pastroq chegara qo'yadi (masalan PoliMi 2026/27: 26 887,93 €)",
-      "O'zbekiston 2026/27 uchun MUR'ning «juda kambag'al davlatlar» ro'yxatida yo'q (DM 176/2026). Shuning uchun o'zbek talabalar oila hujjatlarini to'liq topshiradi: «oila yuqori daromadli emas» degan qisqa yo'l ularga to'g'ri kelmaydi"
+      "O'zbekiston 2026/27 uchun MUR'ning «juda kambag'al davlatlar» ro'yxatida yo'q (DM 176/2026). Shuning uchun o'zbek talabalar oila hujjatlarini to'liq topshiradi: «oila yuqori daromadli emas» degan qisqa yo'l ularga to'g'ri kelmaydi",
+      "Hujjat yig'ish uchun agentlik yoki vositachi kerak emas: ER.GO va EDISU pul evaziga «yordam» taklif qilganlardan ehtiyot bo'lishni ochiq ogohlantiradi"
     ]
   }
 }

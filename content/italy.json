@@ -7,8 +7,8 @@
       "small": "to'liq ingliz tilidagi dastur (2025/26)"
     },
     {
-      "big": "~8 455 €",
-      "small": "yillik DSU stipendiyasi, maksimal (2026/27, EDISU)"
+      "big": "~8 248 €",
+      "small": "yillik DSU stipendiyasi, eng ko'pi (2026/27, masalan PoliMi va UniMi)"
     },
     {
       "big": "20 soat",
@@ -95,7 +95,7 @@
         {
           "type": "text",
           "title": "Stipendiya (DSU) qanday ishlaydi",
-          "body": "Har bir viloyatda stipendiyani o'z idorasi beradi: Lazio'da DiSCo, Piemonte'da EDISU, Emilia-Romagna'da ER.GO, Toscana'da DSU Toscana. Lombardiya'da esa har bir universitetning o'zi.\n\nStipendiya oila daromadi va mulkiga qarab beriladi. Buning uchun O'zbekistondan oila tarkibi, daromad va uy-joy hujjatlari apostil va italyancha tarjima bilan olib kelinadi, Italiyada CAF ular asosida ISEE parificato hisoblaydi.\n\n2026/27 yilda fuori sede talaba uchun maksimal summa taxminan 7 171–8 455 € bo'ldi. Ba'zi shaharlarda yotoqxona va ovqat bepul, ba'zilarida ular stipendiya hisobidan to'lanadi."
+          "body": "Har bir viloyatda stipendiyani o'z idorasi beradi: Lazio'da DiSCo, Piemonte'da EDISU, Emilia-Romagna'da ER.GO, Toscana'da DSU Toscana. Lombardiya'da esa har bir universitetning o'zi.\n\nStipendiya oila daromadi va mulkiga qarab beriladi. Buning uchun O'zbekistondan oila tarkibi, daromad va uy-joy hujjatlari Italiya elchixonasida legallashtirilib yoki apostil qo'yilib, italyancha tarjima bilan olib kelinadi, Italiyada CAF ular asosida ISEE parificato hisoblaydi.\n\n2026/27 yilda fuori sede talaba uchun maksimal summa taxminan 7 171–8 248 € bo'ldi (STEM'dagi qizlarga ba'zi viloyatlarda ko'proq). Ba'zi shaharlarda yotoqxona va ovqat bepul, ba'zilarida ular stipendiya hisobidan to'lanadi."
         }
       ]
     },
