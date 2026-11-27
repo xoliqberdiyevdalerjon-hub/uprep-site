@@ -49,5 +49,5 @@ Viza summasi, uning yili va SSN to'lovi `content/site.json` ichidagi `facts` bo'
 Foydalanuvchining rejasi, profil tahlili, saqlangan universitetlar va sozlamalari brauzerda bitta `uprep_state_v2` yozuvida saqlanadi. Eski `uprep-*` yozuvlari birinchi ochilishda avtomatik ko'chiriladi.
 
 ## Brend: Uniroad
-Belgi: binafsha gradientli kvadrat ichida oq "U" va uning ustida oltin talaba qalpoqchasi (`media/favicon.svg`, `assets/app.js` dagi `markSVG`). Ranglar: #4338CA → #6D3BF5 → #C026D3, aksent oltin #FDE68A / #F2B233. Logotip yozuvi: Sora 700, `uniroad`.
+Belgi: binafsha gradientli kvadrat ichida oq "U" va uning ustida oltin talaba qalpoqchasi (`media/favicon.svg`, `assets/app.js` dagi `markSVG`). Ranglar: #4338CA → #6D3BF5 → #C026D3, aksent oltin #FDE68A / #F2B233. Logotip yozuvi: Bricolage Grotesque 800, `Uni` to'q indigo + `road` brend gradientida.
 Ichki kalitlar (`uprep-*`, `uprep_state_v2`), repozitoriy nomi va Telegram `@Uprep_Admin` o'zgartirilmagan: ular foydalanuvchi ma'lumotlarini va havolalarni buzmaslik uchun saqlangan.

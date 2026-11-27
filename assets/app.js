@@ -448,7 +448,7 @@
   }
   function logo(h){
     var c = el("span", "logo-b"); c.style.setProperty("--h", h + "px"); c.setAttribute("role", "img"); c.setAttribute("aria-label", "Uniroad");
-    c.innerHTML = markSVG(); c.appendChild(el("span", "word", "uniroad")); return c;
+    c.innerHTML = markSVG(); var w = el("span", "word", "Uni"); w.appendChild(el("i", null, "road")); c.appendChild(w); return c;
   }
   function section(r){
     var v = r.view;

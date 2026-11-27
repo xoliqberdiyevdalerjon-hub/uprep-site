@@ -108,16 +108,16 @@ def html_build(fn, title, intro, blocks):
         elif kind == "ul": b.append("<ul>" + "".join(f"<li>{e(i)}</li>" for i in val) + "</ul>")
         elif kind == "table": b.append("<table>" + "".join("<tr>" + "".join((f"<th>{e(c)}</th>" if i == 0 else f"<td>{e(c)}</td>") for c in row) + "</tr>" for i, row in enumerate(val)) + "</table>")
         elif kind == "sign": b.append(f"<p class='sign'>{e(val)}</p>")
-    return f"""<!doctype html><html lang="uz"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&family=Instrument+Sans:wght@400;600;700&display=block" rel="stylesheet"><style>
+    return f"""<!doctype html><html lang="uz"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Instrument+Sans:wght@400;600;700&display=block" rel="stylesheet"><style>
 @page{{size:A4;margin:16mm 17mm}} body{{font:11pt/1.5 'Instrument Sans',system-ui,sans-serif;color:#14122E}}
 .top{{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #F2B233;padding-bottom:8px;margin-bottom:10px}}
-.brand{{display:flex;align-items:center;gap:8px;font:700 16pt 'Sora',system-ui;color:#3B2FC4;letter-spacing:-.02em}} .brand svg{{width:26px;height:26px}}
+.brand{{display:flex;align-items:center;gap:8px;font:800 17pt 'Bricolage Grotesque',system-ui;color:#1E1A4D;letter-spacing:-.035em}} .brand svg{{width:26px;height:26px}} .brand i{{font-style:normal;background:linear-gradient(90deg,#5B45E8,#8B3CF0 55%,#C026D3);-webkit-background-clip:text;background-clip:text;color:transparent}}
 h1{{font:800 19pt system-ui;color:#3730A3;margin:6px 0}} .intro{{background:#FCF0D4;border-radius:8px;padding:8px 12px;font-size:9.5pt;color:#5C4A10}}
 h2.big{{font:800 15pt system-ui;color:#3730A3;margin:16px 0 6px}} h3{{font:700 12pt system-ui;color:#3730A3;margin:14px 0 4px;border-bottom:1px solid #E5E2EF;padding-bottom:3px}}
 p{{margin:4px 0}} ul{{margin:4px 0 4px 18px;padding:0}} li{{margin:3px 0}}
 table{{width:100%;border-collapse:collapse;margin:10px 0;font-size:10pt}} th,td{{border:1px solid #D5D1E4;padding:6px 8px;text-align:left}} th{{background:#3730A3;color:#fff}}
 .sign{{margin-top:28px}} .foot{{margin-top:18px;text-align:center;font-size:8pt;color:#999}}
-</style></head><body><div class="top"><span class="brand">{MARK}uniroad</span><span style="font-size:9pt;color:#5C6479">Shablon</span></div>
+</style></head><body><div class="top"><span class="brand">{MARK}Uni<i>road</i></span><span style="font-size:9pt;color:#5C6479">Shablon</span></div>
 <h1>{e(title)}</h1><div class="intro">{e(intro)}</div>{''.join(b)}<div class="foot">{e(NOTE)}</div></body></html>"""
 
 MARK = open(os.path.join(ROOT, "media", "favicon.svg"), encoding="utf-8").read().strip()

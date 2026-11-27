@@ -714,9 +714,12 @@ main.enter{animation:main-in .16s ease-out}
 /* animated logo */
 .logo-b{display:inline-flex;align-items:center;gap:9px;height:calc(var(--h,20px) * 1.8)}
 .logo-b .mark{width:calc(var(--h,20px) * 1.8);height:calc(var(--h,20px) * 1.8);overflow:visible;filter:drop-shadow(0 6px 12px rgba(79,54,220,.3))}
-.logo-b .word{font:700 calc(var(--h,20px) * 1.1)/1 "Sora", var(--display);letter-spacing:-.025em;color:#3B2FC4}
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .logo-b .word{color:#C4B5FD} }
-:root[data-theme="dark"] .logo-b .word{color:#C4B5FD}
+/* wordmark: "Uni" in deep indigo + "road" in the brand gradient (Bricolage 800) */
+.logo-b .word{font:800 calc(var(--h,20px) * 1.18)/1 var(--display);letter-spacing:-.035em;color:#1E1A4D}
+.logo-b .word i{font-style:normal;background:linear-gradient(90deg,#5B45E8 0%,#8B3CF0 55%,#C026D3 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.02em}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .logo-b .word{color:#fff} :root:not([data-theme="light"]) .logo-b .word i{background-image:linear-gradient(90deg,#A78BFA 0%,#C084FC 55%,#F0ABFC 100%)} }
+:root[data-theme="dark"] .logo-b .word{color:#fff}
+:root[data-theme="dark"] .logo-b .word i{background-image:linear-gradient(90deg,#A78BFA 0%,#C084FC 55%,#F0ABFC 100%)}
 .brandlink:hover .mark .ur-cap{transform-box:view-box;animation:ur-up .9s var(--ease)}
 @keyframes ur-up{0%,100%{transform:none}45%{transform:translateY(-2.5px)}}
 @media (prefers-reduced-motion: reduce){ .brandlink:hover .mark .ur-cap{animation:none} }
@@ -1155,6 +1158,7 @@ a.news-card:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line-2),
   .nd-cover::before{content:"";position:absolute;right:-40mm;top:-40mm;width:140mm;height:140mm;border-radius:50%;background:radial-gradient(circle,#F2B233 0,rgba(242,178,51,.25) 35%,rgba(242,178,51,0) 70%)}
   .nd-cover .logo-b{position:absolute;top:16mm;left:14mm}
   .nd-cover .logo-b .word{color:#fff}
+  .nd-cover .logo-b .word i{background-image:linear-gradient(90deg,#A78BFA,#F0ABFC)}
   .nd-cover-tag{align-self:flex-start;padding:6px 14px;border-radius:999px;background:rgba(242,178,51,.18);color:#F7C760;font-weight:700;font-size:12pt}
   .nd-cover .nd-cover-title{margin:18px 0 14px;font:800 54px/1.02 var(--display);color:#fff;letter-spacing:-.02em}
   .nd-cover p{margin:0;font-size:17pt;line-height:1.4;color:#D9E1F2;max-width:150mm}
