@@ -61,3 +61,11 @@ Ichki kalitlar (`uprep-*`, `uprep_state_v2`), repozitoriy nomi va Telegram `@Upr
 - Sayt `assets/app.min.js` va `assets/feedback.min.js` ni yuklaydi. `assets/app.js` yoki `assets/feedback.js` o'zgarsa: `bash scripts/build_min.sh`, so'ng `index.html` dagi `?v=` raqamini oshiring.
 - `index.html` da Content-Security-Policy bor: skriptlar faqat saytning o'zidan; ichki (inline) skript yo'q (`assets/boot.js`). Yangi tashqi xizmat qo'shilsa, CSP ro'yxatiga ham qo'shing.
 - `404.html`: noma'lum manzillarni saytning "Sahifa topilmadi" sahifasiga yo'naltiradi.
+
+## Oxirida qilinadigan ishlar (egasi kiritadi)
+- [ ] Footer va maxfiylik sahifasi uchun: ism-familiya (yoki biznes nomi), P.IVA raqami, email (P.IVA'ni saytda ko'rsatish qonuniy talab).
+- [ ] Talaba-elchilar: rasm, ism, universitet, Telegram (rozilik bilan) → `content/ambassadors.json`.
+- [ ] Natijalar va fikrlar: haqiqiy talabalar, rozilik bilan → `content/outcomes.json`, `content/reviews.json`.
+- [ ] Jonli efirlar: sana, mavzu, havola → `content/events.json`.
+- [ ] Domen uniroad.org faollashgach: DNS yozuvlari + Worker'da `ALLOWED_ORIGINS`, keyin saytni domenga ulash.
+- [ ] Eski @Uprep1_bot ni o'chirish (@BotFather → /deletebot).
