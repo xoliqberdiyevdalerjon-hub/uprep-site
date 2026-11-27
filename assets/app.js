@@ -433,16 +433,18 @@
   window.addEventListener("scroll", function(){ if(pTick) return; pTick = true; requestAnimationFrame(function(){ pTick = false; parallax(); }); }, {passive:true});
 
   /* ---------------- chrome ---------------- */
-  /* Uniroad brand mark: a "u" whose right arm rises into an arrow (growth, the road up); the gold dot is the student */
+  /* Uniroad brand mark: a white "U" (university, the road) under a gold graduation cap, on the violet brand gradient */
   var MKN = 0;
   function markSVG(){
-    var n = ++MKN, b = "mkb" + n;
+    var n = ++MKN, b = "mkb" + n, h = "mkh" + n, g = "mkg" + n;
     return '<svg class="mark still" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs>' +
-      '<linearGradient id="' + b + '" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4338CA"/><stop offset=".55" stop-color="#6D3BF5"/><stop offset="1" stop-color="#C026D3"/></linearGradient></defs>' +
-      '<rect width="64" height="64" rx="16" fill="url(#' + b + ')"/>' +
-      '<circle class="ur-dot" cx="20" cy="15.5" r="3.4" fill="#FDE68A"/>' +
-      '<path d="M20 24 V37.5 a12 12 0 0 0 24 0 V15" fill="none" stroke="#fff" stroke-width="7.4" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '<path class="ur-arr" d="M36.6 21.2 L44 13.8 L51.4 21.2" fill="none" stroke="#fff" stroke-width="7.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      '<linearGradient id="' + b + '" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4338CA"/><stop offset=".55" stop-color="#6D3BF5"/><stop offset="1" stop-color="#C026D3"/></linearGradient>' +
+      '<linearGradient id="' + h + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
+      '<linearGradient id="' + g + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE38A"/><stop offset="1" stop-color="#F7B731"/></linearGradient></defs>' +
+      '<rect width="64" height="64" rx="16" fill="url(#' + b + ')"/><rect width="64" height="64" rx="16" fill="url(#' + h + ')"/>' +
+      '<path d="M20.5 28.5 V38.5 a11.5 11.5 0 0 0 23 0 V28.5" fill="none" stroke="#fff" stroke-width="7.8" stroke-linecap="round"/>' +
+      '<g class="ur-cap"><path d="M23.5 21.5 V26.8 Q32 31 40.5 26.8 V21.5 Z" fill="#E09A12"/><path d="M32 10.5 L50.5 18.4 L32 26.3 L13.5 18.4 Z" fill="url(#' + g + ')"/>' +
+      '<path d="M46.6 20 V28.6" stroke="#F7B731" stroke-width="1.9" stroke-linecap="round"/><rect x="44.8" y="27.6" width="3.6" height="5.6" rx="1.6" fill="#FFE38A"/></g></svg>';
   }
   function logo(h){
     var c = el("span", "logo-b"); c.style.setProperty("--h", h + "px"); c.setAttribute("role", "img"); c.setAttribute("aria-label", "Uniroad");
