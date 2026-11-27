@@ -171,7 +171,7 @@
     if(CRUMBS){ inn.appendChild(CRUMBS); CRUMBS = null; }
     h._in = inn; HZ.appendChild(h); return inn;
   }
-  function heroTitle(t, cls){ t = str(t); var h = el("h1", cls), i = t.lastIndexOf(" "); if(i > 0){ h.appendChild(document.createTextNode(t.slice(0, i + 1))); h.appendChild(el("em", null, t.slice(i + 1))); } else h.textContent = t; return h; }
+  function heroTitle(t, cls){ t = T(str(t)); var h = el("h1", cls), i = t.lastIndexOf(" "); if(i > 0){ h.appendChild(document.createTextNode(t.slice(0, i + 1))); h.appendChild(el("em", null, t.slice(i + 1))); } else h.textContent = t; return h; }
   function heroStats(list){ var g = el("div", "hero-stats"); list.forEach(function(x){ if(!x || !str(x[0])) return; var d = el("div"); d.appendChild(el("b", null, String(x[0]))); d.appendChild(el("small", null, x[1])); g.appendChild(d); }); return g; }
   function btn(cls, icon, label, href, fn){ var b = el(href ? "a" : "button", "btn " + cls); if(href){ b.href = href; if(/^https:/.test(href)){ b.target = "_blank"; b.rel = "noopener"; } } else { b.type = "button"; b.onclick = fn; } b.appendChild(el("span", null, label)); if(icon) b.appendChild(ic(icon)); return b; }
   function kicker(icon, text, href){ var k = el(href ? "a" : "span", "kicker"); if(href) k.href = href; if(icon === "flag") k.appendChild(el("span", "flag")); else if(icon) k.appendChild(ic(icon)); k.appendChild(document.createTextNode(text)); return k; }
@@ -623,7 +623,7 @@
     function col(title, links){ var c = el("div"); c.appendChild(el("h2", "foot-h", title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
     col("Qo'llanma", [["8 qadam", "#qollanma"], ["Hammasi bitta sahifada (PDF)", "#noldan"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Italiyada yashash", "#yashash"], ["Kalendar", "#kalendar"], ["Materiallar", "#materiallar"], ["Shablonlar", "#shablonlar"]]);
     col("Vositalar", [["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Profil tahlili", "#profil"], ["Pul kalkulyatori", "#kalkulyator"], ["Motivatsion xat", "#xat"], ["Mening rejam", "#rejam"], ["Sozlamalar", "#sozlamalar"]]);
-    col("Uniroad", [["Biz haqimizda", "#biz-haqimizda"]].concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"]]).concat(realAmb().length ? [["Talaba-elchilar", "#elchilar"]] : []).concat(realOut().length ? [["Natijalar", "#natijalar"]] : []).concat(evList().length ? [["Jonli efirlar", "#efirlar"]] : []).concat([["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#xabar"], ["Maxfiylik siyosati", "#maxfiylik"], ["Litsenziyalar", "THIRD_PARTY_LICENSES.txt"], ["Telegram: " + tgName(), tgUrl()]]));
+    col("Uniroad", [["Biz haqimizda", "#biz-haqimizda"]].concat(arr(S.site.langs).indexOf("ru") >= 0 ? [[LANG === "ru" ? "O'zbekcha" : "Русский", "?lang=" + (LANG === "ru" ? "uz" : "ru")]] : []).concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"]]).concat(realAmb().length ? [["Talaba-elchilar", "#elchilar"]] : []).concat(realOut().length ? [["Natijalar", "#natijalar"]] : []).concat(evList().length ? [["Jonli efirlar", "#efirlar"]] : []).concat([["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#xabar"], ["Maxfiylik siyosati", "#maxfiylik"], ["Litsenziyalar", "THIRD_PARTY_LICENSES.txt"], ["Telegram: " + tgName(), tgUrl()]]));
     f.appendChild(g);
     var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uniroad." + (S.site.updated ? " Ma'lumotlar oxirgi marta " + S.site.updated + " da yangilandi." : "")));
     var tg = el("a", null, tgName()); tg.href = tgUrl(); tg.target = "_blank"; tg.rel = "noopener"; p.appendChild(tg);
@@ -2265,7 +2265,7 @@
   }
 
   /* ================= NOLDAN: long-form guide (also exported as PDF) ================= */
-  var NOLDAN_PDF = "media/uniroad-noldan-yoriqnoma.pdf";
+  var NOLDAN_PDF = LANG === "ru" ? "media/uniroad-noldan-ru.pdf" : "media/uniroad-noldan-yoriqnoma.pdf";
   function paras(t, cls){ var f = document.createDocumentFragment(); str(t).split(/\n\s*\n/).forEach(function(p){ if(p.trim()) f.appendChild(el("p", cls || "prose", p.trim())); }); return f; }
   function linkOut(a, u){ a.href = u; if(/^https:/.test(u)){ a.target = "_blank"; a.rel = "noopener"; } return a; }
   function noldanView(main){
@@ -2754,7 +2754,7 @@
     var a = city ? dsuFor(city.id) : null, N = S.dsu.national || {};
     var link = safeUrl(u.dsuUrl) || (a && safeUrl(a.url)) || "";
     var rows = [["Idora", a ? (a.own ? "Universitetning o'zi" : a.name) + " · " + a.region : (city ? city.region : "")],
-      ["Summa", a && a.amount ? a.amount + " gacha / yil (fuori sede)" : (N.fuoriSede ? "kamida " + N.fuoriSede + " / yil (fuori sede, eng kam daromadli oila, " + (N.year || "") + ")" : "")],
+      ["Summa", a && a.amount ? str(a.amount) : (N.fuoriSede ? "kamida " + N.fuoriSede + " / yil (fuori sede, eng kam daromadli oila, " + (N.year || "") + ")" : "")],
       ["Ariza", a ? a.deadline : ""], ["Shart", "ISEE parificato: oila daromadi va mulki" + (a && a.isee ? ", ISEE " + eur(a.isee) + " va ISPE " + eur(a.ispe) + " gacha" : (N.isee ? ", ISEE " + N.isee + " gacha (davlat maksimumi)" : ""))]];
     var foot = [];
     if(a && a.note) foot.push(el("p", "ic-note", a.note));
