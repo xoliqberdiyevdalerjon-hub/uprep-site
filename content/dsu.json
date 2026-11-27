@@ -508,12 +508,15 @@
       "deadline": "Ariza: 23.06 – 24.08.2026, 16:00 gacha. Chet el hujjatlarini yuklash: 20.11.2026 gacha (hammasi yopilgan)",
       "amount": "7 171 € gacha (fuori sede). Yotoqxona stipendiya hisobidan to'lanadi, ovqat ixtiyoriy kredit",
       "docs": [
-        "Chet eldagi daromad va mol-mulk hujjatlari, 2025-yil uchun: to'liq, tarjima qilingan va legallashtirilgan",
-        "«Dossier Utente» bo'limi orqali yuklanadi",
-        "ISEE 2026 (diritto allo studio uchun) attestatsiyasi"
+        "Chet eldagi oila hujjatlari, 2025-yil uchun: oila tarkibi, har bir a'zoning daromadi va mol-mulki (uy-joy, bankdagi jamg'arma). To'liq, italyan tiliga tarjima qilingan va legallashtirilgan bo'lishi kerak",
+        "Ular er-go.it'dagi «Dossier Utente» bo'limiga yuklanadi (2026/27 uchun 20.11.2026 gacha)",
+        "ISEE 2026 Università attestatsiyasi (INPS yoki CAF orqali): faqat Italiyada yashasangiz yoki o'zingiz yoki oilangizning Italiyada daromadi yoki mol-mulki bo'lsa. Bunda ham oilangiz chet elda yashasa, chet el hujjatlarini qo'shimcha topshirasiz"
       ],
       "rules": [
         "CAF orqali ariza bergan xalqaro talabalar ham chet el hujjatlarini alohida yuklashi shart, aks holda ro'yxatdan chiqariladi",
+        "Italiya ISEE 2026 2024-yilgi daromad va 31.12.2024 holatidagi mol-mulk bo'yicha hisoblanadi va 31.12.2026 gacha amal qiladi",
+        "Italiyada ISEE qilish uchun kerak bo'ladi: codice fiscale, pasport, permesso di soggiorno, ro'yxatdan o'tgan ijara shartnomasi va bank hisoblari (31.12.2024 dagi qoldiq va o'rtacha yillik qoldiq)",
+        "Oldin stipendiya olgan bo'lsangiz: 2024-yilda olgan stipendiyani ISEE arizasida (DSU) soliqsiz daromad sifatida yozasiz. ER.GO stipendiyasi uchun ma'lumotnoma (CU 2025) «Dossier Utente»da; ER.GO keyin bu summani ISEE'dan ayirib hisoblaydi",
         "«Juda kambag'al» davlatlar ro'yxatidagilar uchun boshqa yo'l: Italiya vakolatxonasining «oila yuqori daromadli emas» degan ma'lumotnomasi. O'zbekiston ro'yxatda bor-yo'qligini bandodan tekshiring"
       ],
       "sources": [

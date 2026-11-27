@@ -939,7 +939,7 @@
       function fill(){
         var cities = arr(a.cities).map(function(id){ return cityById(id); }).filter(Boolean);
         if(cities.length){ var cl = el("div", "dc-cities"); cities.forEach(function(ct){ var lk = el("a", "tag", ct.name); lk.href = "#shahar-" + ct.id; cl.appendChild(lk); }); bd.appendChild(cl); }
-        bd.appendChild(factTable([["Muddat", a.deadline], ["Summa", a.amount ? a.amount + " gacha" : "kamida " + str(N.fuoriSede) + " (fuori sede, davlat minimumi)"]].concat(g ? [["Universitetlar", g.unis]] : [])));
+        bd.appendChild(factTable([["Muddat", a.deadline], ["Summa", a.amount ? (/gacha/.test(a.amount) ? a.amount : a.amount + " gacha") : "kamida " + str(N.fuoriSede) + " (fuori sede, davlat minimumi)"]].concat(g ? [["Universitetlar", g.unis]] : [])));
         if(a.note) bd.appendChild(el("p", "ic-note", a.note));
         if(g){
           if(arr(g.docs).length){ bd.appendChild(el("b", "greg-h", "Hujjatlar")); var u1 = el("ul", "ticks small"); arr(g.docs).forEach(function(t){ var li = el("li"); li.appendChild(ic("doc")); li.appendChild(el("span", null, t)); u1.appendChild(li); }); bd.appendChild(u1); }
