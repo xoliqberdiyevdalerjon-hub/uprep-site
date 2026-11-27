@@ -4,10 +4,10 @@
 #   npx wrangler secret put BOT_TOKEN
 #   npx wrangler secret put CHAT_ID
 #   npx wrangler secret put APP_KEY
-name = "uprep-feedback"
+name = "uniroad-feedback"
 main = "worker.js"
 compatibility_date = "2025-06-01"
 
-# ALLOWED_ORIGINS defaults to the Uprep site inside worker.js; set it only to allow other sites ("*" = any).
+# ALLOWED_ORIGINS defaults to the Uniroad site inside worker.js; set it only to allow other sites ("*" = any).
 [vars]
 TIME_ZONE = "Asia/Tashkent"

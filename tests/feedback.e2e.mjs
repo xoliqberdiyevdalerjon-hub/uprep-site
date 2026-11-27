@@ -36,14 +36,14 @@ async function open({ relay, url = RELAY, timeoutMs = 18000, viewport = { width:
   const page = await ctx.newPage();
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.route("**/assets/relay-config.js*", (r) => r.fulfill({ contentType: "text/javascript", body: `window.UPREP_RELAY=${JSON.stringify({ url, appKey: KEY, appName: "Uprep", appVersion: "test-1", timeoutMs })};` }));
+  await page.route("**/assets/relay-config.js*", (r) => r.fulfill({ contentType: "text/javascript", body: `window.UNIROAD_RELAY=${JSON.stringify({ url, appKey: KEY, appName: "Uniroad", appVersion: "test-1", timeoutMs })};` }));
   const sent = [];
   await page.route(RELAY + "**", async (r) => { sent.push({ headers: r.request().headers(), body: JSON.parse(r.request().postData() || "{}") }); await relay(r, sent.length); });
   await page.goto(base + "#xabar?tur=xato");
   await page.waitForSelector(".fb-form");
   return { ctx, page, sent, errors };
 }
-const state = (page) => page.evaluate(() => JSON.parse(localStorage.getItem("uprep_state_v2") || "{}"));
+const state = (page) => page.evaluate(() => JSON.parse(localStorage.getItem("uniroad_state") || "{}"));
 const statusOf = (page) => page.evaluate(() => { const s = document.querySelector(".fb-status"); return { cls: s.className, text: s.innerText }; });
 
 test("success: message is sent once with app key and coarse metadata, draft is cleared", async () => {
@@ -59,7 +59,7 @@ test("success: message is sent once with app key and coarse metadata, draft is c
   assert.equal(b.kind, "xato");
   assert.equal(b.text, "Kalkulyatorda xato bor");
   assert.equal(b.contact, "", "contact only when typed");
-  assert.equal(b.meta.app, "Uprep");
+  assert.equal(b.meta.app, "Uniroad");
   assert.equal(b.meta.version, "test-1");
   assert.match(b.meta.platform, /·/);
   assert.equal(b.meta.page, "#xabar");

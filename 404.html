@@ -9,7 +9,8 @@
 <script>
 /* GitHub Pages shows this for unknown paths: send the visitor to the site's own "page not found" view (or the right page) */
 (function(){
-  var p = location.pathname, base = p.indexOf("/uprep-site/") === 0 ? "/uprep-site/" : "/";
+  /* on github.io the site lives under /<repository>/, on its own domain at / */
+  var p = location.pathname, m = p.match(/^\/[^/]+\//), base = /github\.io$/.test(location.hostname) && m ? m[0] : "/";
   var rest = p.slice(base.length).replace(/\/+$/, "").replace(/\.html?$/, "");
   location.replace(base + (rest ? "#" + rest.replace(/\//g, "-") : ""));
 })();

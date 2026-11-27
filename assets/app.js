@@ -186,22 +186,23 @@
   function daysLeft(d){ return Math.round((d - TODAY) / 86400000); }
   function leftLabel(n){ return n === 0 ? "Bugun" : n === 1 ? "Ertaga" : n + " kun qoldi"; }
 
-  /* ---------------- one saved state (uprep_state_v2) ----------------
+  /* ---------------- one saved state (uniroad_state) ----------------
      Everything this visitor saves lives in ONE localStorage entry with a clear schema.
      LS keeps the old key names as an interface (backups and older code use them), maps each to a field,
-     and on first run silently moves any legacy "uprep-*" entries into the new store. */
-  var SKEY = "uprep_state_v2";
-  var SMAP = { "uprep-profile":"profile", "uprep-quiz":"quiz", "uprep-me":"plan", "uprep-fav":"favorites", "uprep-track":"tracker",
-    "uprep-progress-v1":"guideProgress", "uprep-docs-q":"docsAnswers", "uprep-docs-meter":"docsChecklist", "uprep-calc":"calc", "uprep-cmp":"compare",
-    "uprep-xat":"letter", "uprep-feedback-draft":"feedbackDraft", "uprep-notif":"notif", "uprep-theme":"prefs.theme", "uprep-big":"prefs.big", "uprep-calm":"prefs.calm", "uprep-preview":"prefs.preview" };
+     and on first run silently moves data saved under the site's former name into the new store. */
+  var SKEY = "uniroad_state", OLDP = "uprep"; /* OLDP: former name, used only to migrate visitors' saved data */
+  var SMAP = { "uniroad-profile":"profile", "uniroad-quiz":"quiz", "uniroad-me":"plan", "uniroad-fav":"favorites", "uniroad-track":"tracker",
+    "uniroad-progress-v1":"guideProgress", "uniroad-docs-q":"docsAnswers", "uniroad-docs-meter":"docsChecklist", "uniroad-calc":"calc", "uniroad-cmp":"compare",
+    "uniroad-xat":"letter", "uniroad-feedback-draft":"feedbackDraft", "uniroad-notif":"notif", "uniroad-theme":"prefs.theme", "uniroad-big":"prefs.big", "uniroad-calm":"prefs.calm", "uniroad-preview":"prefs.preview" };
   var STATE = { v:2, profile:null, quiz:null, plan:null, favorites:[], tracker:{}, guideProgress:{}, docsAnswers:null, docsChecklist:null, calc:null, compare:[], letter:{}, feedbackDraft:null, notif:null, prefs:{} };
   var stOK = true;
   (function(){
     try{
-      var raw = localStorage.getItem(SKEY);
+      var raw = localStorage.getItem(SKEY), oldKey = OLDP + "_state_v2";
+      if(!raw && localStorage.getItem(oldKey)){ raw = localStorage.getItem(oldKey); localStorage.setItem(SKEY, raw); localStorage.removeItem(oldKey); }
       if(raw){ var o = JSON.parse(raw); if(o && o.v === 2) for(var k in o) STATE[k] = o[k]; if(!STATE.prefs) STATE.prefs = {}; return; }
       var moved = [];
-      Object.keys(SMAP).forEach(function(lk){ var v = localStorage.getItem(lk); if(v == null) return; stPut(SMAP[lk], parseVal(v)); moved.push(lk); });
+      Object.keys(SMAP).forEach(function(lk){ var ok = OLDP + lk.slice(7), v = localStorage.getItem(lk); if(v == null){ v = localStorage.getItem(ok); lk = ok; } if(v == null) return; stPut(SMAP[lk.replace(OLDP + "-", "uniroad-")], parseVal(v)); moved.push(lk); });
       localStorage.setItem(SKEY, JSON.stringify(STATE));
       moved.forEach(function(lk){ localStorage.removeItem(lk); });
     }catch(e){ stOK = false; }
@@ -216,22 +217,22 @@
     removeItem:function(k){ if(!SMAP[k]){ try{ localStorage.removeItem(k); }catch(e){} return; } var p = SMAP[k]; if(p.indexOf(".") > 0) stPut(p, null); else STATE[p] = null; stSave(); },
     keys:function(){ return Object.keys(SMAP).filter(function(k){ return LS.getItem(k) != null; }); }
   };
-  if(window.UprepFeedback) window.UprepFeedback.setStorage(LS);
+  if(window.UniroadFeedback) window.UniroadFeedback.setStorage(LS);
 
   /* ---------------- per-visitor state ---------------- */
-  var PKEY = "uprep-progress-v1", prog = {};
+  var PKEY = "uniroad-progress-v1", prog = {};
   try{ prog = JSON.parse(LS.getItem(PKEY) || "{}") || {}; }catch(e){ prog = {}; }
   function saveProg(){ try{ LS.setItem(PKEY, JSON.stringify(prog)); }catch(e){} }
   var open = {};
-  try{ open = JSON.parse(sessionStorage.getItem("uprep-open") || "{}") || {}; }catch(e){ open = {}; }
-  function saveOpen(){ try{ sessionStorage.setItem("uprep-open", JSON.stringify(open)); }catch(e){} }
+  try{ open = JSON.parse(sessionStorage.getItem("uniroad-open") || "{}") || {}; }catch(e){ open = {}; }
+  function saveOpen(){ try{ sessionStorage.setItem("uniroad-open", JSON.stringify(open)); }catch(e){} }
 
   /* ---------------- accounts (Supabase) ---------------- */
-  var CFG = window.UPREP_CONFIG || {};
+  var CFG = window.UNIROAD_CONFIG || {};
   var LIVE = !!(str(CFG.supabaseUrl) && str(CFG.supabaseAnonKey));
   var A = { sb:null, user:null, paid:false, ready:!LIVE };
   var PREVIEW = false; /* owner's design preview, only while accounts are not switched on */
-  try{ PREVIEW = !LIVE && LS.getItem("uprep-preview") === "1"; }catch(e){}
+  try{ PREVIEW = !LIVE && LS.getItem("uniroad-preview") === "1"; }catch(e){}
   function hasCourse(){ if(CFG.openAll) return true; return LIVE ? A.paid : PREVIEW; }
 
   function loadScript(src){ return new Promise(function(res, rej){ var s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = rej; document.head.appendChild(s); }); }
@@ -313,8 +314,8 @@
     return m.filter(function(n){ return !LZok[n]; });
   }
 
-  function tgUrl(){ var u = str(S.site.telegram || "Uprep_Admin").replace(/^@/, ""); return "https://t.me/" + encodeURIComponent(u); }
-  function tgName(){ return "@" + str(S.site.telegram || "Uprep_Admin").replace(/^@/, ""); }
+  function tgUrl(){ var u = str(S.site.telegram || "Uniroad_Admin").replace(/^@/, ""); return "https://t.me/" + encodeURIComponent(u); }
+  function tgName(){ return "@" + str(S.site.telegram || "Uniroad_Admin").replace(/^@/, ""); }
   function price(){ return str(S.site.price) || "$399"; }
   function doneCount(){ return S.stages.filter(function(s){ return prog[s.id]; }).length; }
   function nextStage(){ return S.stages.filter(function(s){ return !prog[s.id]; })[0] || null; }
@@ -334,7 +335,7 @@
     try{ h = decodeURIComponent(h); }catch(e){}
     if(ALIAS.hasOwnProperty(h)) h = ALIAS[h];
     if(h === "") return {view:"home"};
-    if(h === "oldindan-korish"){ try{ LS.setItem("uprep-preview", "1"); }catch(e){} PREVIEW = !LIVE; location.replace("#kurs"); return {view:"course"}; }
+    if(h === "oldindan-korish"){ try{ LS.setItem("uniroad-preview", "1"); }catch(e){} PREVIEW = !LIVE; location.replace("#kurs"); return {view:"course"}; }
     if(h === "italiya") return {view:"italy"};
     if(h === "qollanma") return {view:"guide"};
     if(h === "mos-universitet") return {view:"quiz"};
@@ -402,7 +403,7 @@
     });
   }
   var SCROLLS = {};
-  try{ SCROLLS = JSON.parse(sessionStorage.getItem("uprep-scroll") || "{}") || {}; }catch(e){ SCROLLS = {}; }
+  try{ SCROLLS = JSON.parse(sessionStorage.getItem("uniroad-scroll") || "{}") || {}; }catch(e){ SCROLLS = {}; }
   var curKey = "", popNav = false;
   window.addEventListener("popstate", function(){ popNav = true; });
   function render(top){
@@ -416,7 +417,7 @@
     var r = route();
     var keepScroll = r.view === "uni" && lastView === "uni:" + r.u.id;
     lastView = r.view + (r.view === "uni" ? ":" + r.u.id : "");
-    if(curKey){ SCROLLS[curKey] = window.scrollY; try{ sessionStorage.setItem("uprep-scroll", JSON.stringify(SCROLLS)); }catch(e){} }
+    if(curKey){ SCROLLS[curKey] = window.scrollY; try{ sessionStorage.setItem("uniroad-scroll", JSON.stringify(SCROLLS)); }catch(e){} }
     var key = (location.hash || "#").split("?")[0];
     var restore = popNav && SCROLLS[key] != null && key !== curKey; popNav = false; curKey = key;
     var sh = shell(r);
@@ -599,7 +600,7 @@
   /* ---------------- payments ---------------- */
   function startPurchase(){
     if(!LIVE || !str(CFG.paymentLink)){ toast("To'lov tez orada ochiladi. Hozircha " + tgName() + " ga yozing."); return; }
-    if(!A.user){ try{ sessionStorage.setItem("uprep-after-login", "pay"); }catch(e){} go("royxat"); return; }
+    if(!A.user){ try{ sessionStorage.setItem("uniroad-after-login", "pay"); }catch(e){} go("royxat"); return; }
     var u = safeUrl(CFG.paymentLink); if(!u) return;
     location.href = u + (u.indexOf("?") < 0 ? "?" : "&") + "client_reference_id=" + encodeURIComponent(A.user.id) + "&prefilled_email=" + encodeURIComponent(A.user.email || "");
   }
@@ -629,7 +630,7 @@
      With the relay configured (assets/relay-config.js -> Cloudflare Worker -> Telegram bot) messages reach the admin automatically.
      Without it, or if sending fails: a sheet shows the message, copies it, and opens the admin chat directly from the tap
      (window.open inside a promise is blocked by mobile browsers, so the link is a real <a> the user taps). */
-  function relayOn(){ return !!(window.UprepFeedback && window.UprepFeedback.isConfigured()); }
+  function relayOn(){ return !!(window.UniroadFeedback && window.UniroadFeedback.isConfigured()); }
   function leadSheet(text, title){
     var old = document.querySelector(".sheet-bg"); if(old) old.remove();
     var bg = el("div", "sheet-bg"), sh = el("div", "sheet"); sh.setAttribute("role", "dialog"); sh.setAttribute("aria-modal", "true");
@@ -652,7 +653,7 @@
   }
   function sendLead(kind, text, contact, done){
     if(!relayOn()){ leadSheet(text); if(done) done(false); return; }
-    window.UprepFeedback.send({kind:kind, text:text, contact:str(contact)}).then(function(r){
+    window.UniroadFeedback.send({kind:kind, text:text, contact:str(contact)}).then(function(r){
       if(r.ok){ toast("Yuborildi! " + tgName() + " tez orada javob beradi."); if(done) done(true); return; }
       if(r.reason === "busy") return;
       leadSheet(text, r.reason === "offline" ? "Internet yo'q: keyinroq yoki qo'lda yuboring" : "Avtomatik yuborilmadi: qo'lda yuboring");
@@ -991,8 +992,8 @@
     {k:"money", q:"O'qish xarajatini qanday qoplaysiz?", o:[["dsu","Stipendiyaga tayanaman","Faqat davlat universitetlari"],["self","Oilam to'laydi","Xususiy universitetlar ham"]]}
   ];
   var QZ = {step:0, a:{}};
-  try{ var qs0 = JSON.parse(LS.getItem("uprep-quiz") || "null"); if(qs0 && qs0.a) QZ = qs0; }catch(e){}
-  function saveQZ(){ try{ LS.setItem("uprep-quiz", JSON.stringify(QZ)); }catch(e){} }
+  try{ var qs0 = JSON.parse(LS.getItem("uniroad-quiz") || "null"); if(qs0 && qs0.a) QZ = qs0; }catch(e){}
+  function saveQZ(){ try{ LS.setItem("uniroad-quiz", JSON.stringify(QZ)); }catch(e){} }
   function quizMatch(a0){
     var a = a0 || QZ.a, out = [];
     S.unis.forEach(function(u){
@@ -1094,8 +1095,8 @@
     {k:"help", q:"Sizga qancha yordam kerak?", o:[["app","O'zim qilaman, yo'l-yo'riq yetadi","Free"],["support","Savollarimga javob berib turilsa bo'ldi","Plus"],["full","Hammasini siz bilan birga qilmoqchiman","Premium"]]}
   ];
   var PRF = {step:0, a:{members:"4", income:""}};
-  try{ var pf0 = JSON.parse(LS.getItem("uprep-profile") || "null"); if(pf0 && pf0.a) PRF = pf0; }catch(e){}
-  function savePRF(){ try{ LS.setItem("uprep-profile", JSON.stringify(PRF)); }catch(e){} }
+  try{ var pf0 = JSON.parse(LS.getItem("uniroad-profile") || "null"); if(pf0 && pf0.a) PRF = pf0; }catch(e){}
+  function savePRF(){ try{ LS.setItem("uniroad-profile", JSON.stringify(PRF)); }catch(e){} }
   var INC = [["5000","5 000 € dan kam"],["10000","5 000 – 15 000 €"],["20000","15 000 – 25 000 €"],["32000","25 000 – 40 000 €"],["50000","40 000 € dan ko'p"]];
   function pfLabel(k, v){ var Q = PRQ.filter(function(q){ return q.k === k; })[0]; var o = Q && Q.o ? Q.o.filter(function(x){ return x[0] === v; })[0] : null; return o ? o[1] : ""; }
   function profileView(main){
@@ -1236,7 +1237,7 @@
   }
 
   /* ================= MONEY CALCULATOR ================= */
-  var CK = "uprep-calc", CV = {cur:"EUR", rate:"", members:"4", income:"", m2:"", savings:"", apps:"3", fee:"30", cimea:"300"};
+  var CK = "uniroad-calc", CV = {cur:"EUR", rate:"", members:"4", income:"", m2:"", savings:"", apps:"3", fee:"30", cimea:"300"};
   try{ var cv0 = JSON.parse(LS.getItem(CK) || "null"); if(cv0) for(var k0 in cv0) CV[k0] = cv0[k0]; }catch(e){}
   function eur(n){ return (Math.round(n * 100) / 100).toLocaleString("ru-RU", {minimumFractionDigits:0, maximumFractionDigits:2}).replace(/ /g, " ") + " €"; }
   function numv(x){ var n = parseFloat(String(x || "").replace(/\s/g, "").replace(",", ".")); return isNaN(n) ? 0 : n; }
@@ -1433,9 +1434,9 @@
 
   /* ================= FAVOURITES + MY PLAN ================= */
   var FAV = [];
-  try{ FAV = JSON.parse(LS.getItem("uprep-fav") || "[]") || []; }catch(e){ FAV = []; }
+  try{ FAV = JSON.parse(LS.getItem("uniroad-fav") || "[]") || []; }catch(e){ FAV = []; }
   function isFav(id){ return FAV.indexOf(id) >= 0; }
-  function toggleFav(id){ if(isFav(id)) FAV.splice(FAV.indexOf(id), 1); else FAV.push(id); try{ LS.setItem("uprep-fav", JSON.stringify(FAV)); }catch(e){} }
+  function toggleFav(id){ if(isFav(id)) FAV.splice(FAV.indexOf(id), 1); else FAV.push(id); try{ LS.setItem("uniroad-fav", JSON.stringify(FAV)); }catch(e){} }
   function favBtn(u, cls){
     var b = el("button", "btn " + (cls || "glass") + " fav" + (isFav(u.id) ? " on" : "")); b.type = "button";
     function paint(){ b.textContent = ""; b.appendChild(el("span", null, isFav(u.id) ? "Saqlangan" : "Saqlash")); b.appendChild(ic("heart")); b.classList.toggle("on", isFav(u.id)); b.setAttribute("aria-pressed", isFav(u.id) ? "true" : "false"); }
@@ -1454,7 +1455,7 @@
   function icsDownload(list, name){
     var L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Uniroad//UZ", "CALSCALE:GREGORIAN"];
     list.forEach(function(ev, i){
-      L.push("BEGIN:VEVENT", "UID:uprep-" + Date.now() + "-" + i + "@uprep", "DTSTAMP:" + utcStamp(new Date()));
+      L.push("BEGIN:VEVENT", "UID:uniroad-" + Date.now() + "-" + i + "@uniroad", "DTSTAMP:" + utcStamp(new Date()));
       if(ev.start){ L.push("DTSTART:" + utcStamp(ev.start), "DTEND:" + utcStamp(new Date(ev.start.getTime() + 3600000))); }
       else { L.push("DTSTART;VALUE=DATE:" + ymd(ev.d), "DTEND;VALUE=DATE:" + ymd(new Date(ev.d.getFullYear(), ev.d.getMonth(), ev.d.getDate() + 1))); }
       L.push("SUMMARY:" + icsEsc(ev.title), "DESCRIPTION:" + icsEsc(ev.details));
@@ -1462,13 +1463,13 @@
       L.push("END:VEVENT");
     });
     L.push("END:VCALENDAR");
-    var blob = new Blob([L.join("\r\n")], {type:"text/calendar;charset=utf-8"}), a = el("a"); a.href = URL.createObjectURL(blob); a.download = (name || "uprep") + ".ics"; document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 800);
+    var blob = new Blob([L.join("\r\n")], {type:"text/calendar;charset=utf-8"}), a = el("a"); a.href = URL.createObjectURL(blob); a.download = (name || "uniroad") + ".ics"; document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 800);
     toast("Kalendar fayli yuklandi: uni oching va «Qo'shish»ni bosing.");
   }
   function calAdd(ev){
     var w = el("span", "caladd no-print");
     var g = el("a", null); g.href = gcalUrl(ev); g.target = "_blank"; g.rel = "noopener"; g.appendChild(ic("cal")); g.appendChild(el("span", null, "Google")); w.appendChild(g);
-    var i = el("button", null); i.type = "button"; i.appendChild(ic("cal")); i.appendChild(el("span", null, "iPhone / .ics")); i.onclick = function(){ icsDownload([ev], "uprep-muddat"); }; w.appendChild(i);
+    var i = el("button", null); i.type = "button"; i.appendChild(ic("cal")); i.appendChild(el("span", null, "iPhone / .ics")); i.onclick = function(){ icsDownload([ev], "uniroad-muddat"); }; w.appendChild(i);
     return w;
   }
 
@@ -1483,8 +1484,8 @@
     ["Full enrollment", "Tabriklaymiz! Stipendiya idorasining muddatlarini kuzating.", "#stipendiya"]
   ];
   var TR = {};
-  try{ TR = JSON.parse(LS.getItem("uprep-track") || "{}") || {}; }catch(e){ TR = {}; }
-  function saveTR(){ try{ LS.setItem("uprep-track", JSON.stringify(TR)); }catch(e){} }
+  try{ TR = JSON.parse(LS.getItem("uniroad-track") || "{}") || {}; }catch(e){ TR = {}; }
+  function saveTR(){ try{ LS.setItem("uniroad-track", JSON.stringify(TR)); }catch(e){} }
   function todayStr(){ var t = new Date(); return String(t.getDate()).padStart(2, "0") + "." + String(t.getMonth() + 1).padStart(2, "0") + "." + t.getFullYear(); }
   function trOf(id){ return TR[id] || {s:0, d:{}}; }
   function tracker(u, onChange){
@@ -1511,9 +1512,9 @@
 
   /* ================= "MENING YO'LIM" ================= */
   var ME = null;
-  try{ ME = JSON.parse(LS.getItem("uprep-me") || "null"); }catch(e){ ME = null; }
-  function saveME(){ try{ LS.setItem("uprep-me", JSON.stringify(ME)); }catch(e){} }
-  function docsMeter(){ try{ return JSON.parse(LS.getItem("uprep-docs-meter") || "null"); }catch(e){ return null; } }
+  try{ ME = JSON.parse(LS.getItem("uniroad-me") || "null"); }catch(e){ ME = null; }
+  function saveME(){ try{ LS.setItem("uniroad-me", JSON.stringify(ME)); }catch(e){} }
+  function docsMeter(){ try{ return JSON.parse(LS.getItem("uniroad-docs-meter") || "null"); }catch(e){ return null; } }
   function favDeadlines(){
     var L = []; FAV.map(uniById).filter(Boolean).forEach(function(u){ arr(u.deadlines).forEach(function(d){ var dd = deadline(d.date); if(dd && daysLeft(dd) >= 0) L.push({u:u, d:dd, x:d}); }); });
     return L.sort(function(a, b){ return a.d - b.d; });
@@ -1581,7 +1582,7 @@
       var ul = el("ol", "agenda");
       FD.slice(0, 6).forEach(function(x){ var li = el("li"); var w = el("div", "when", x.x.date); w.appendChild(el("span", "left", leftLabel(daysLeft(x.d)))); li.appendChild(w); var t = el("div"); t.appendChild(el("span", "tag", x.u.short || x.u.name)); t.appendChild(el("p", null, x.x.label)); t.appendChild(calAdd({title:(x.u.short || x.u.name) + ": " + x.x.label, d:x.d, details:x.x.label + " (" + x.x.date + ")"})); li.appendChild(t); ul.appendChild(li); });
       var all = el("button", "btn line"); all.type = "button"; all.appendChild(el("span", null, "Hammasini kalendarga qo'shish (.ics)")); all.appendChild(ic("cal"));
-      all.onclick = function(){ icsDownload(FD.map(function(x){ return {title:(x.u.short || x.u.name) + ": " + x.x.label, d:x.d, details:x.x.label + " (" + x.x.date + ")"}; }), "uprep-muddatlar"); };
+      all.onclick = function(){ icsDownload(FD.map(function(x){ return {title:(x.u.short || x.u.name) + ": " + x.x.label, d:x.d, details:x.x.label + " (" + x.x.date + ")"}; }), "uniroad-muddatlar"); };
       side.appendChild(sec(secHead("Universitetlaringiz muddatlari", null, null, null, "Yaqin", "Har biri uchun 7 kun va 1 kun oldin eslatma qo'yiladi."), ul, all));
     }
     var recs = arr(ME.recs).map(uniById).filter(function(u){ return u && !isFav(u.id); });
@@ -1730,29 +1731,29 @@
     /* Ko'rinish */
     var g1 = group("Ko'rinish");
     var tr = el("div", "st-row st-seg-row"); var ti = el("span", "st-ic c-indigo"); ti.appendChild(ic("moon")); tr.appendChild(ti); var tt = el("span", "st-tx"); tt.appendChild(el("b", null, "Mavzu")); tr.appendChild(tt);
-    var seg = el("div", "st-seg"), th = lsGet("uprep-theme");
-    [["", "Avto"], ["light", "Yorug'"], ["dark", "Qorong'i"]].forEach(function(o){ var b = el("button", o[0] === th ? "on" : "", o[1]); b.type = "button"; b.setAttribute("aria-pressed", o[0] === th ? "true" : "false"); b.onclick = function(){ Array.prototype.forEach.call(seg.children, function(x){ x.classList.remove("on"); x.setAttribute("aria-pressed", "false"); }); b.classList.add("on"); b.setAttribute("aria-pressed", "true"); lsSet("uprep-theme", o[0]); applyTheme(o[0]); }; seg.appendChild(b); });
+    var seg = el("div", "st-seg"), th = lsGet("uniroad-theme");
+    [["", "Avto"], ["light", "Yorug'"], ["dark", "Qorong'i"]].forEach(function(o){ var b = el("button", o[0] === th ? "on" : "", o[1]); b.type = "button"; b.setAttribute("aria-pressed", o[0] === th ? "true" : "false"); b.onclick = function(){ Array.prototype.forEach.call(seg.children, function(x){ x.classList.remove("on"); x.setAttribute("aria-pressed", "false"); }); b.classList.add("on"); b.setAttribute("aria-pressed", "true"); lsSet("uniroad-theme", o[0]); applyTheme(o[0]); }; seg.appendChild(b); });
     tr.appendChild(seg); g1.appendChild(tr);
-    row(g1, "type", "c-blue", "Katta matn", {sub:"Barcha sahifalarda shriftni kattalashtiradi", toggle:{get:function(){ return document.documentElement.classList.contains("bigtext"); }, set:function(v){ document.documentElement.classList.toggle("bigtext", v); lsSet("uprep-big", v ? "1" : ""); }}});
-    row(g1, "zap", "c-orange", "Animatsiyalarni kamaytirish", {sub:"Tinchroq ko'rinish, batareyani tejaydi", toggle:{get:function(){ return document.documentElement.classList.contains("calm"); }, set:function(v){ document.documentElement.classList.toggle("calm", v); lsSet("uprep-calm", v ? "1" : ""); }}});
+    row(g1, "type", "c-blue", "Katta matn", {sub:"Barcha sahifalarda shriftni kattalashtiradi", toggle:{get:function(){ return document.documentElement.classList.contains("bigtext"); }, set:function(v){ document.documentElement.classList.toggle("bigtext", v); lsSet("uniroad-big", v ? "1" : ""); }}});
+    row(g1, "zap", "c-orange", "Animatsiyalarni kamaytirish", {sub:"Tinchroq ko'rinish, batareyani tejaydi", toggle:{get:function(){ return document.documentElement.classList.contains("calm"); }, set:function(v){ document.documentElement.classList.toggle("calm", v); lsSet("uniroad-calm", v ? "1" : ""); }}});
 
     /* Eslatmalar */
     var g2 = group("Eslatmalar", "Muddatlar telefoningiz kalendariga 7 kun va 1 kun oldin eslatma bilan qo'shiladi.");
     var FD = favDeadlines();
     row(g2, "cal", "c-indigo", "Kalendarga obuna va bildirishnomalar", {sub:"Muddatlar kalendaringizga o'zi tushadi va yangilanadi", href:"#bildirishnomalar"});
-    row(g2, "bell", "c-red", "Muddatlarni kalendarga qo'shish", {value: FD.length ? FD.length + " ta" : "Yo'q", onclick:function(){ if(!FD.length){ toast("Avval universitet saqlang: muddatlari shu yerda chiqadi."); go("universitetlar"); return; } icsDownload(FD.map(function(x){ return {title:(x.u.short || x.u.name) + ": " + x.x.label, d:x.d, details:x.x.label + " (" + x.x.date + ")"}; }), "uprep-muddatlar"); }});
+    row(g2, "bell", "c-red", "Muddatlarni kalendarga qo'shish", {value: FD.length ? FD.length + " ta" : "Yo'q", onclick:function(){ if(!FD.length){ toast("Avval universitet saqlang: muddatlari shu yerda chiqadi."); go("universitetlar"); return; } icsDownload(FD.map(function(x){ return {title:(x.u.short || x.u.name) + ": " + x.x.label, d:x.d, details:x.x.label + " (" + x.x.date + ")"}; }), "uniroad-muddatlar"); }});
     if(evList().length) row(g2, "chat", "c-purple", "Jonli efirlar", {href:"#efirlar"});
 
     /* Ma'lumotlarim */
     var dm = docsMeter();
     var g3 = group("Mening ma'lumotlarim", "Login ishga tushguncha ma'lumotlaringiz faqat shu brauzerda. Telefon almashtirsangiz, zaxira faylini yangi qurilmada «Tiklash» orqali oching.");
     row(g3, "list", "c-green", "Saqlangan ma'lumotlar", {sub: FAV.length + " universitet · " + Object.keys(TR).length + " ariza kuzatuvda · " + (dm ? dm.done + "/" + dm.all : "0") + " hujjat belgilangan"});
-    row(g3, "download", "c-teal", "Zaxira nusxasini yuklab olish", {onclick:function(){ var o = {app:"uprep", v:1, saved:new Date().toISOString(), data:{}}; LS.keys().forEach(function(k){ o.data[k] = LS.getItem(k); });
-      var a = el("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(o)], {type:"application/json"})); a.download = "uprep-zaxira-" + todayStr().replace(/\./g, "-") + ".json"; document.body.appendChild(a); a.click(); setTimeout(function(){ a.remove(); }, 500); toast("Zaxira fayli yuklandi. Uni xavfsiz joyda saqlang."); }});
+    row(g3, "download", "c-teal", "Zaxira nusxasini yuklab olish", {onclick:function(){ var o = {app:"uniroad", v:1, saved:new Date().toISOString(), data:{}}; LS.keys().forEach(function(k){ o.data[k] = LS.getItem(k); });
+      var a = el("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(o)], {type:"application/json"})); a.download = "uniroad-zaxira-" + todayStr().replace(/\./g, "-") + ".json"; document.body.appendChild(a); a.click(); setTimeout(function(){ a.remove(); }, 500); toast("Zaxira fayli yuklandi. Uni xavfsiz joyda saqlang."); }});
     var fi = el("input"); fi.type = "file"; fi.accept = ".json,application/json"; fi.hidden = true; main.appendChild(fi);
-    fi.onchange = function(){ var f = fi.files && fi.files[0]; if(!f) return; var r = new FileReader(); r.onload = function(){ try{ var o = JSON.parse(r.result); if(!o || o.app !== "uprep" || typeof o.data !== "object") throw 0; var n = 0; Object.keys(o.data).forEach(function(k){ if(/^uprep-/.test(k) && typeof o.data[k] === "string"){ LS.setItem(k, o.data[k]); n++; } }); toast(n + " ta yozuv tiklandi. Sahifa yangilanmoqda…"); setTimeout(function(){ location.reload(); }, 1200); }catch(e){ toast("Bu fayl Uniroad zaxirasi emas."); } }; r.readAsText(f); };
+    fi.onchange = function(){ var f = fi.files && fi.files[0]; if(!f) return; var r = new FileReader(); r.onload = function(){ try{ var o = JSON.parse(r.result); if(!o || (o.app !== "uniroad" && o.app !== OLDP) || typeof o.data !== "object") throw 0; var n = 0; Object.keys(o.data).forEach(function(k){ var nk = k.indexOf(OLDP + "-") === 0 ? "uniroad-" + k.slice(OLDP.length + 1) : k; if(/^uniroad-/.test(nk) && typeof o.data[k] === "string"){ LS.setItem(nk, o.data[k]); n++; } }); toast(n + " ta yozuv tiklandi. Sahifa yangilanmoqda…"); setTimeout(function(){ location.reload(); }, 1200); }catch(e){ toast("Bu fayl Uniroad zaxirasi emas."); } }; r.readAsText(f); };
     row(g3, "upload", "c-blue", "Zaxiradan tiklash", {onclick:function(){ fi.click(); }});
-    row(g3, "trash", "c-red", "Barcha ma'lumotlarimni o'chirish", {danger:true, onclick:function(){ if(!confirm("Rejangiz, ariza holatlari, belgilangan hujjatlar va test javoblari shu qurilmadan o'chiriladi. Davom etasizmi?")) return; LS.keys().forEach(function(k){ LS.removeItem(k); }); try{ Object.keys(localStorage).forEach(function(k){ if(/^uprep-/.test(k)) localStorage.removeItem(k); }); }catch(e){} toast("Ma'lumotlar o'chirildi."); setTimeout(function(){ location.hash = ""; location.reload(); }, 900); }});
+    row(g3, "trash", "c-red", "Barcha ma'lumotlarimni o'chirish", {danger:true, onclick:function(){ if(!confirm("Rejangiz, ariza holatlari, belgilangan hujjatlar va test javoblari shu qurilmadan o'chiriladi. Davom etasizmi?")) return; LS.keys().forEach(function(k){ LS.removeItem(k); }); try{ Object.keys(localStorage).forEach(function(k){ if(k.indexOf("uniroad") === 0 || k.indexOf(OLDP) === 0) localStorage.removeItem(k); }); }catch(e){} toast("Ma'lumotlar o'chirildi."); setTimeout(function(){ location.hash = ""; location.reload(); }, 900); }});
 
     /* Sayt */
     var g4 = group("Sayt");
@@ -1817,7 +1818,7 @@
     ["goal", "O'qishdan keyingi maqsadingiz", "work in a bank's risk department and later help small businesses in Uzbekistan…", true]
   ];
   var XA = {};
-  try{ XA = JSON.parse(LS.getItem("uprep-xat") || "{}") || {}; }catch(e){ XA = {}; }
+  try{ XA = JSON.parse(LS.getItem("uniroad-xat") || "{}") || {}; }catch(e){ XA = {}; }
   function xatText(){
     function v(k, d){ return str(XA[k]) || "[" + d + "]"; }
     function s(t){ t = str(t); return t && !/[.!?]$/.test(t) ? t + "." : t; }
@@ -1838,7 +1839,7 @@
     var form = el("div", "form");
     var out = el("textarea", "xat-out"); out.rows = 22; out.setAttribute("aria-label", "Xat qoralamasi");
     var wc = el("p", "note");
-    function upd(){ out.value = xatText(); var n = out.value.split(/\s+/).filter(Boolean).length; wc.textContent = n + " so'z · odatda 400–700 so'z (universitet chegarasini tekshiring)"; try{ LS.setItem("uprep-xat", JSON.stringify(XA)); }catch(e){} }
+    function upd(){ out.value = xatText(); var n = out.value.split(/\s+/).filter(Boolean).length; wc.textContent = n + " so'z · odatda 400–700 so'z (universitet chegarasini tekshiring)"; try{ LS.setItem("uniroad-xat", JSON.stringify(XA)); }catch(e){} }
     XQ.forEach(function(q){
       var l = el("label", "fld"); l.appendChild(el("span", null, q[1]));
       var i = q[3] ? el("textarea") : el("input"); if(q[3]) i.rows = 3; else i.type = "text";
@@ -1863,8 +1864,8 @@
 
   /* ================= COMPARE universities ================= */
   var CMP = [];
-  try{ CMP = JSON.parse(LS.getItem("uprep-cmp") || "[]") || []; }catch(e){ CMP = []; }
-  function saveCmp(){ try{ LS.setItem("uprep-cmp", JSON.stringify(CMP)); }catch(e){} }
+  try{ CMP = JSON.parse(LS.getItem("uniroad-cmp") || "[]") || []; }catch(e){ CMP = []; }
+  function saveCmp(){ try{ LS.setItem("uniroad-cmp", JSON.stringify(CMP)); }catch(e){} }
   function cmpBtn(u, cls){
     var b = el("button", "btn " + (cls || "glass")); b.type = "button";
     function paint(){ var on = CMP.indexOf(u.id) >= 0; b.textContent = ""; b.appendChild(el("span", null, on ? "Taqqoslashda" : "Taqqoslash")); b.appendChild(ic(on ? "check" : "list")); b.setAttribute("aria-pressed", on ? "true" : "false"); }
@@ -1932,10 +1933,10 @@
      No push service is needed: the bell shows what is new since the last visit, and calendar feeds (cal/*.ics,
      built by scripts/build_ics.py) put deadlines into the visitor's own calendar, which refreshes itself. */
   var NOTIF = null;
-  try{ NOTIF = JSON.parse(LS.getItem("uprep-notif") || "null"); }catch(e){ NOTIF = null; }
+  try{ NOTIF = JSON.parse(LS.getItem("uniroad-notif") || "null"); }catch(e){ NOTIF = null; }
   if(!NOTIF || typeof NOTIF !== "object") NOTIF = {seen:"", ack:[]};
   if(!Array.isArray(NOTIF.ack)) NOTIF.ack = [];
-  function saveNotif(){ try{ LS.setItem("uprep-notif", JSON.stringify(NOTIF)); }catch(e){} }
+  function saveNotif(){ try{ LS.setItem("uniroad-notif", JSON.stringify(NOTIF)); }catch(e){} }
   function isoDay(d){ return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
   function feedUrl(path){ return location.origin + location.pathname.replace(/[^/]*$/, "") + path; }
   /* subscribe buttons: Google Calendar, Apple/Outlook (webcal), copy link */
@@ -2029,7 +2030,7 @@
   /* ================= FEEDBACK: problem report / suggestion / question -> Telegram (via relay) ================= */
   var FBK = [["xato","Muammo"],["taklif","Taklif"],["savol","Savol"],["fikr","Fikr"]];
   function feedbackForm(preset){
-    var FB = window.UprepFeedback, relay = relayOn();
+    var FB = window.UniroadFeedback, relay = relayOn();
     var c = el("section", "card fb");
     var form = el("form", "form fb-form"); form.noValidate = true;
     var d0 = FB ? FB.getDraft() : null;
@@ -2158,7 +2159,7 @@
   }
 
   /* ================= NOLDAN: long-form guide (also exported as PDF) ================= */
-  var NOLDAN_PDF = "media/uprep-noldan-yoriqnoma.pdf";
+  var NOLDAN_PDF = "media/uniroad-noldan-yoriqnoma.pdf";
   function paras(t, cls){ var f = document.createDocumentFragment(); str(t).split(/\n\s*\n/).forEach(function(p){ if(p.trim()) f.appendChild(el("p", cls || "prose", p.trim())); }); return f; }
   function linkOut(a, u){ a.href = u; if(/^https:/.test(u)){ a.target = "_blank"; a.rel = "noopener"; } return a; }
   function noldanView(main){
@@ -2315,7 +2316,7 @@
 
   /* ================= MY DOCUMENTS: personalized checklist ================= */
   var DQ2 = {level:"Bakalavr", route:"dov", dsu:"yes", money:"family"};
-  try{ var dq0 = JSON.parse(LS.getItem("uprep-docs-q") || "null"); if(dq0) for(var k1 in dq0) DQ2[k1] = dq0[k1]; }catch(e){}
+  try{ var dq0 = JSON.parse(LS.getItem("uniroad-docs-q") || "null"); if(dq0) for(var k1 in dq0) DQ2[k1] = dq0[k1]; }catch(e){}
   function stageChecklist(id, titleRe){
     var s = S.stages.filter(function(x){ return x.id === id; })[0]; if(!s) return [];
     var out = [];
@@ -2328,7 +2329,7 @@
     H.appendChild(heroTitle("Hujjatlarim"));
     H.appendChild(el("p", "lead", "4 ta savolga javob bering: sizga kerak bo'ladigan barcha hujjatlar bosqichma-bosqich ro'yxat bo'lib chiqadi. Belgilaganlaringiz kurs bosqichlarida ham ko'rinadi."));
     var form = el("section", "card calc-form no-print"), grid = el("div", "calc-grid");
-    function q(key, label, opts){ var l = el("label", "fld"); l.appendChild(el("span", null, label)); var s = el("select", "cityselect"); opts.forEach(function(o){ var op = el("option", null, o[1]); op.value = o[0]; if(DQ2[key] === o[0]) op.selected = true; s.appendChild(op); }); s.onchange = function(){ DQ2[key] = s.value; try{ LS.setItem("uprep-docs-q", JSON.stringify(DQ2)); }catch(e){} draw(); }; l.appendChild(s); grid.appendChild(l); }
+    function q(key, label, opts){ var l = el("label", "fld"); l.appendChild(el("span", null, label)); var s = el("select", "cityselect"); opts.forEach(function(o){ var op = el("option", null, o[1]); op.value = o[0]; if(DQ2[key] === o[0]) op.selected = true; s.appendChild(op); }); s.onchange = function(){ DQ2[key] = s.value; try{ LS.setItem("uniroad-docs-q", JSON.stringify(DQ2)); }catch(e){} draw(); }; l.appendChild(s); grid.appendChild(l); }
     q("level", "Qaysi daraja?", [["Foundation","Foundation (11 yillik maktabdan keyin)"],["Bakalavr","Bakalavr"],["Magistratura","Magistratura"]]);
     q("route", "Diplomni qanday tasdiqlaysiz?", [["dov","DoV (elchixona orqali)"],["cimea","CIMEA (onlayn)"],["unk","Hali bilmayman"]]);
     q("dsu", "Stipendiyaga (DSU) topshirasizmi?", [["yes","Ha"],["no","Yo'q"]]);
@@ -2357,7 +2358,7 @@
       G.push([(DQ2.dsu === "yes" ? "6" : "5") + ". Italiyaga kelgach", "plane", stageChecklist("s6").concat(stageChecklist("s7"))]);
       var all = 0, done = 0;
       G.forEach(function(g){ g[2] = g[2].filter(function(x){ return !/^#/.test(x.text); }); all += g[2].length; done += g[2].filter(function(x){ return prog[x.key]; }).length; });
-      try{ LS.setItem("uprep-docs-meter", JSON.stringify({done:done, all:all})); }catch(e){}
+      try{ LS.setItem("uniroad-docs-meter", JSON.stringify({done:done, all:all})); }catch(e){}
       var head = el("div", "docs-head");
       var m = el("div", "docs-meter"); var bar = el("span", "meter"); var bi = el("i"); bi.style.width = (all ? done / all * 100 : 0) + "%"; bar.appendChild(bi); m.appendChild(el("b", null, done + " / " + all + " tayyor")); m.appendChild(bar); head.appendChild(m);
       var pr = btn("navy", "file", "PDF qilib saqlash", null, function(){ window.print(); }); pr.classList.add("no-print"); head.appendChild(pr);
@@ -3000,13 +3001,13 @@
     return "Xatolik: " + m;
   }
   function afterLogin(){
-    var next = ""; try{ next = sessionStorage.getItem("uprep-after-login") || ""; sessionStorage.removeItem("uprep-after-login"); }catch(e){}
+    var next = ""; try{ next = sessionStorage.getItem("uniroad-after-login") || ""; sessionStorage.removeItem("uniroad-after-login"); }catch(e){}
     if(next === "pay" && !A.paid){ startPurchase(); return; }
     go(A.paid ? "kurs" : "hisob");
   }
   function accountView(main, r){
     if(!A.user){
-      if(PREVIEW){ pageHead(main, "Hisob", "Ko'rib chiqish rejimi: hisoblar hali ishga tushmagan."); var off = el("button", "markdone", "Ko'rib chiqish rejimini o'chirish"); off.type = "button"; off.onclick = function(){ try{ LS.removeItem("uprep-preview"); }catch(e){} PREVIEW = false; go(""); }; main.appendChild(off); footer(main); return; }
+      if(PREVIEW){ pageHead(main, "Hisob", "Ko'rib chiqish rejimi: hisoblar hali ishga tushmagan."); var off = el("button", "markdone", "Ko'rib chiqish rejimini o'chirish"); off.type = "button"; off.onclick = function(){ try{ LS.removeItem("uniroad-preview"); }catch(e){} PREVIEW = false; go(""); }; main.appendChild(off); footer(main); return; }
       go("kirish"); return;
     }
     pageHead(main, "Hisob", A.user.email || "");

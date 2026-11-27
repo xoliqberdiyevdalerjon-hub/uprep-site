@@ -1,4 +1,4 @@
--- Uprep: accounts, paid access and the paid course content.
+-- Uniroad: accounts, paid access and the paid course content.
 -- Run once in Supabase > SQL Editor.
 
 -- 1) One profile row per user. "paid" is set only by the Stripe webhook (service role), never by the user.

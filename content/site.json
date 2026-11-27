@@ -7,7 +7,7 @@
     "vizaYil": "2026/27 va 2027/28",
     "ssn": "700 €"
   },
-  "telegram": "Uprep_Admin",
+  "telegram": "Uniroad_Admin",
   "price": "Bepul (beta)",
   "priceNote": "Login va onlayn to'lov ishga tushguncha sayt bepul.",
   "includes": [
@@ -29,7 +29,7 @@
     },
     {
       "q": "To'lov qanday amalga oshiriladi?",
-      "a": "Hozircha tarif tanlab, Telegram orqali yozasiz va to'lov shartlarini @Uprep_Admin bilan kelishasiz. Premium'ni 3 qismga bo'lib to'lash mumkin. Onlayn to'lov (karta) ishga tushgach, saytning o'zida to'lash mumkin bo'ladi."
+      "a": "Hozircha tarif tanlab, Telegram orqali yozasiz va to'lov shartlarini @Uniroad_Admin bilan kelishasiz. Premium'ni 3 qismga bo'lib to'lash mumkin. Onlayn to'lov (karta) ishga tushgach, saytning o'zida to'lash mumkin bo'ladi."
     },
     {
       "q": "Qabul yoki vizaga kafolat berasizmi?",

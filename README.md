@@ -5,7 +5,7 @@ Sayt: https://uniroad.org (domen Cloudflare'da, GitHub Pages'ga ulangan; eski ma
 ## Matnlarni tahrirlash
 app.pagescms.org → uprep-site. Bo'limlar: Bosh sahifa, Biz haqimizda, Noldan: to'liq yo'riqnoma, Bosqichlar (kurs), Davlatlar, Italiya sahifasi, Shaharlar, Universitetlar, Kalendar, Materiallar. **Save** bosilgach sayt 1–2 daqiqada yangilanadi.
 
-**Eslatma:** «Noldan» matni CMS'da o'zgartirilsa, sahifa darhol yangilanadi, lekin `media/uprep-noldan-yoriqnoma.pdf` fayli avtomatik o'zgarmaydi. Uni Playwright bilan `#noldan` sahifasidan qayta yaratish kerak.
+**Eslatma:** «Noldan» matni CMS'da o'zgartirilsa, sahifa darhol yangilanadi, lekin `media/uniroad-noldan-yoriqnoma.pdf` fayli avtomatik o'zgarmaydi. Uni Playwright bilan `#noldan` sahifasidan qayta yaratish kerak.
 
 ## Hisob va to'lovni yoqish (bir marta)
 1. **Supabase** (supabase.com, GitHub bilan kiring) → New project.
@@ -46,11 +46,11 @@ Viza summasi, uning yili va SSN to'lovi `content/site.json` ichidagi `facts` bo'
 
 ## Brauzerda saqlanadigan ma'lumotlar
 
-Foydalanuvchining rejasi, profil tahlili, saqlangan universitetlar va sozlamalari brauzerda bitta `uprep_state_v2` yozuvida saqlanadi. Eski `uprep-*` yozuvlari birinchi ochilishda avtomatik ko'chiriladi.
+Foydalanuvchining rejasi, profil tahlili, saqlangan universitetlar va sozlamalari brauzerda bitta `uniroad_state` yozuvida saqlanadi. Sobiq nom ostida saqlangan yozuvlar birinchi ochilishda avtomatik ko'chiriladi.
 
 ## Brend: Uniroad
 Belgi: binafsha gradientli kvadrat ichida oq "U" va uning ustida oltin talaba qalpoqchasi (`media/favicon.svg`, `assets/app.js` dagi `markSVG`). Ranglar: #4338CA → #6D3BF5 → #C026D3, aksent oltin #FDE68A / #F2B233. Logotip yozuvi: Bricolage Grotesque 800, `Uni` to'q indigo + `road` brend gradientida.
-Ichki kalitlar (`uprep-*`, `uprep_state_v2`), repozitoriy nomi va Telegram `@Uprep_Admin` o'zgartirilmagan: ular foydalanuvchi ma'lumotlarini va havolalarni buzmaslik uchun saqlangan.
+Brauzer kalitlari `uniroad-*` / `uniroad_state`; sobiq nom ostidagi ma'lumotlar avtomatik ko'chiriladi. Telegram: `@Uniroad_Admin` (`content/site.json` → `telegram`). Repozitoriy nomi (`uprep-site`) faqat vaqtinchalik github.io manzilida ko'rinadi.
 
 ## Bildirishnomalar va kalendar obunasi
 - Saytdagi qo'ng'iroqcha (`#bildirishnomalar`): yaqin 14 kundagi muddatlar (saqlangan universitetlar + umumiy kalendar), yangiliklar va oxirgi tashrifdan beri yangilari.

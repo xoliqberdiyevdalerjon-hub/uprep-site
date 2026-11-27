@@ -8,7 +8,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "media", "shablonlar")
 NAVY = RGBColor(0x37, 0x30, 0xA3)
-NOTE = "Uniroad shabloni · [ ] ichidagilarni o'zingiznikiga almashtiring · @Uprep_Admin"
+NOTE = "Uniroad shabloni · [ ] ichidagilarni o'zingiznikiga almashtiring · @Uniroad_Admin"
 
 # Each template: (file, title, uz_intro, blocks). block = ("h", text) | ("p", text) | ("ul", [..]) | ("table", [[..],..]) | ("sign", text)
 T = [

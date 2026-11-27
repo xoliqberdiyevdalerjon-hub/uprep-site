@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Uprep: Google uchun statik sahifalar yaratadi (content/*.json dan).
+"""Uniroad: Google uchun statik sahifalar yaratadi (content/*.json dan).
 
 Sayt asosiy ilovasi #hash manzillarda ishlaydi va Google ularni alohida sahifa deb ko'rmaydi.
 Bu skript har bir universitet va asosiy mavzu uchun oddiy HTML sahifa, sitemap.xml va robots.txt yozadi.
@@ -27,8 +27,8 @@ SITE, UNIS, CITIES = load("site", {}), load("universities", []), load("cities", 
 DSU, GUIDE, NOLDAN = load("dsu", {}), load("guide", {}), load("noldan", {})
 FOUND, TESTS, PARENTS = load("foundation", {}), load("tests", {}), load("parents", {})
 CITY = {c["id"]: c for c in CITIES}
-TG = "https://t.me/" + str(SITE.get("telegram") or "Uprep_Admin").lstrip("@")
-TGN = "@" + str(SITE.get("telegram") or "Uprep_Admin").lstrip("@")
+TG = "https://t.me/" + str(SITE.get("telegram") or "Uniroad_Admin").lstrip("@")
+TGN = "@" + str(SITE.get("telegram") or "Uniroad_Admin").lstrip("@")
 UPDATED = SITE.get("updated") or TODAY.strftime("%d.%m.%Y")
 
 
@@ -107,13 +107,13 @@ def page(path, title, desc, body, crumbs, app_hash, jsonld=None):
 {body}
 <section class="cta">
 <h2>Keyingi qadam</h2>
-<p>Uprep saytida shu ma'lumotni saqlang, muddatlarni kalendarga qo'shing va arizangizni kuzating. Hammasi bepul.</p>
+<p>Uniroad saytida shu ma'lumotni saqlang, muddatlarni kalendarga qo'shing va arizangizni kuzating. Hammasi bepul.</p>
 <div class="btns"><a class="btn gold" href="{up}#{e(app_hash)}">Saytda ochish</a><a class="btn" href="{up}#profil">Bepul profil tahlili</a><a class="btn" href="{e(TG)}" rel="noopener">{e(TGN)} ga yozish</a></div>
 </section>
 </main>
 <footer class="foot"><div class="w">
 <p>{e(SITE.get("footer") or "")}</p>
-<p>Ma'lumotlar {e(UPDATED)} holatiga. © {TODAY.year} Uprep · <a href="{e(TG)}" rel="noopener">{e(TGN)}</a></p>
+<p>Ma'lumotlar {e(UPDATED)} holatiga. © {TODAY.year} Uniroad · <a href="{e(TG)}" rel="noopener">{e(TGN)}</a></p>
 <p class="links"><a href="{up}noldan/">Italiyada o'qish noldan</a> · <a href="{up}universitetlar/">Universitetlar</a> · <a href="{up}stipendiya/">Stipendiyalar</a> · <a href="{up}foundation/">Foundation</a> · <a href="{up}testlar/">Testlar</a> · <a href="{up}ota-onalar/">Ota-onalar uchun</a> · <a href="{up}tariflar/">Tariflar</a></p>
 </div></footer>
 </body>
@@ -147,7 +147,7 @@ def uni_page(u):
     ba = [p for p in en if p.get("level") == "Bakalavr"]
     ma = [p for p in en if p.get("level") == "Magistratura"]
     city_name = c.get("name", "")
-    title = f"{short} ({city_name}): qabul, muddatlar, stipendiya, ingliz tilidagi dasturlar | Uprep"
+    title = f"{short} ({city_name}): qabul, muddatlar, stipendiya, ingliz tilidagi dasturlar | Uniroad"
     desc = f"{name}: {u.get('enCount') or len(en)} ta ingliz tilidagi dastur, ariza tartibi va muddatlari, {('stipendiya: ' + ag['name']) if ag else 'stipendiya'}. O'zbek tilida, rasmiy manbalar asosida."
     b = [f"<h1>{e(short)}: Italiyada o'qish</h1>"]
     b.append(f'<p class="lead">{e(u.get("intro") or (name + ": " + city_name + " shahridagi " + str(u.get("type", "")).lower() + " universitet."))}</p>')
@@ -179,7 +179,7 @@ def uni_page(u):
         t += '<p><a href="../../stipendiya/">Barcha viloyatlar stipendiyalari va kerakli oila hujjatlari</a></p></section>'
         b.append(t)
     if u.get("tip"):
-        b.append(f'<p class="tip"><b>Uprep maslahati:</b> {e(u["tip"])}</p>')
+        b.append(f'<p class="tip"><b>Uniroad maslahati:</b> {e(u["tip"])}</p>')
     for lvl_name, lst in (("Bakalavr", ba), ("Magistratura", ma)):
         if lst:
             items = "".join(f"<li>{e(p.get('name'))}{(' <small>· ' + e(p.get('access'))) + '</small>' if p.get('access') else ''}</li>" for p in lst[:60])
@@ -209,7 +209,7 @@ def unis_index():
     for reg in sorted(by):
         items = "".join(f'<li><a href="../uni/{e(u["id"])}/">{e(u.get("short") or u["name"])}</a> <small>· {e(CITY.get(u.get("city"), {}).get("name", ""))} · {e(u.get("type", ""))}{(" · " + str(u["enCount"]) + " ingliz dasturi") if u.get("enCount") else ""}</small></li>' for u in sorted(by[reg], key=lambda x: x.get("short") or x["name"]))
         b.append(f"<section><h2>{e(reg)}</h2><ul class=\"list\">{items}</ul></section>")
-    return page("universitetlar/", f"Italiya universitetlari ({len(UNIS)} ta): qabul, dasturlar, stipendiya | Uprep",
+    return page("universitetlar/", f"Italiya universitetlari ({len(UNIS)} ta): qabul, dasturlar, stipendiya | Uniroad",
                 f"Italiyadagi {len(UNIS)} ta universitet bo'yicha o'zbek tilida ma'lumot: ingliz tilidagi dasturlar, ariza muddatlari, talablar va stipendiyalar.",
                 "\n".join(b), [("Bosh sahifa", ""), ("Universitetlar", "universitetlar/")], "universitetlar")
 
@@ -228,7 +228,7 @@ def dsu_page():
     if us:
         b.append("<section><h2>Universitetlarning o'z stipendiyalari</h2>" + "".join(f"<h3>{e(x.get('title'))}</h3><p>{e(x.get('text'))}</p>" for x in us) + "</section>")
     b.append("<section><h2>O'zbekistondan olinadigan oila hujjatlari</h2>" + ul(PARENTS.get("docs") or []) + "</section>")
-    return page("stipendiya/", "Italiyada stipendiya (DSU) 2026/27: viloyatlar, summalar, muddatlar | Uprep",
+    return page("stipendiya/", "Italiyada stipendiya (DSU) 2026/27: viloyatlar, summalar, muddatlar | Uniroad",
                 f"Italiya viloyat stipendiyalari: minimum {N.get('fuoriSede', '')} yiliga, ISEE chegarasi {N.get('isee', '')}. Har bir viloyat idorasi, muddat va oila hujjatlari o'zbek tilida.",
                 "\n".join(b), [("Bosh sahifa", ""), ("Stipendiya", "stipendiya/")], "stipendiya")
 
@@ -236,7 +236,7 @@ def dsu_page():
 def noldan_page():
     N = NOLDAN
     b = [f"<h1>{e(N.get('title') or 'Italiyada o`qish noldan')}</h1>", f"<p class=\"lead\">{e(N.get('subtitle'))}</p>",
-         '<p class="btns"><a class="btn gold" href="../media/uprep-noldan-yoriqnoma.pdf">PDF yuklab olish</a></p>', paras(N.get("letter"))]
+         '<p class="btns"><a class="btn gold" href="../media/uniroad-noldan-yoriqnoma.pdf">PDF yuklab olish</a></p>', paras(N.get("letter"))]
     toc = "".join(f'<li><a href="#{e(c["id"])}">{e(c.get("title"))}</a></li>' for c in N.get("chapters", []))
     b.append(f"<nav class=\"toc\"><b>Mundarija</b><ol>{toc}</ol></nav>")
     for c in N.get("chapters", []):
@@ -249,7 +249,7 @@ def noldan_page():
         for s in c.get("sections") or []:
             t += f"<h3>{e(s.get('title'))}</h3>" + ul(s.get("items") or [])
         if c.get("tip"):
-            t += f'<p class="tip"><b>Uprep maslahati:</b> {e(c["tip"])}</p>'
+            t += f'<p class="tip"><b>Uniroad maslahati:</b> {e(c["tip"])}</p>'
         if c.get("warn"):
             t += f'<p class="warn"><b>Diqqat:</b> {e(c["warn"])}</p>'
         b.append(t + "</section>")
@@ -258,8 +258,8 @@ def noldan_page():
     b.append("<section><h2>Oxirgi so'z</h2>" + paras(N.get("closing")) + "</section>")
     b.append(sources_html(N.get("sources") or []))
     ld = {"@context": "https://schema.org", "@type": "Article", "headline": N.get("title"), "description": N.get("subtitle"), "inLanguage": "uz",
-          "author": {"@type": "Organization", "name": "Uprep"}, "dateModified": TODAY.isoformat()}
-    return page("noldan/", "Italiyada o'qish noldan: to'liq yo'riqnoma (2027/28) | Uprep",
+          "author": {"@type": "Organization", "name": "Uniroad"}, "dateModified": TODAY.isoformat()}
+    return page("noldan/", "Italiyada o'qish noldan: to'liq yo'riqnoma (2027/28) | Uniroad",
                 "Italiyada o'qish bosqichma-bosqich: universitet tanlash, ariza, DoV/CIMEA, Universitaly, viza, stipendiya, permesso va full enrollment. O'zbek tilida, bepul PDF.",
                 "\n".join(b), [("Bosh sahifa", ""), ("Italiyada o'qish noldan", "noldan/")], "noldan", ld)
 
@@ -273,7 +273,7 @@ def simple_pages():
     rows = "".join(f"<tr><td><b>{e(x.get('name'))}</b>{('<br><small>' + e(x.get('note')) + '</small>') if x.get('note') else ''}</td><td>{e(x.get('cost'))}</td><td>{e(x.get('when'))}</td></tr>" for x in FOUND.get("items") or [])
     b.append(f"<section><h2>Foundation bor universitetlar</h2><div class=\"tw\"><table><thead><tr><th>Universitet</th><th>Narx</th><th>Ariza</th></tr></thead><tbody>{rows}</tbody></table></div></section>")
     b.append(sources_html(FOUND.get("sources") or []))
-    out.append(page("foundation/", "Italiyada Foundation: 11 yillik attestat bilan o'qish | Uprep",
+    out.append(page("foundation/", "Italiyada Foundation: 11 yillik attestat bilan o'qish | Uniroad",
                     "11 yillik maktab attestati bilan Italiyada o'qish: Foundation yili bor universitetlar, narxlar va ariza muddatlari. O'zbek tilida.",
                     "\n".join(b), [("Bosh sahifa", ""), ("Foundation", "foundation/")], "foundation"))
     # Tests
@@ -282,7 +282,7 @@ def simple_pages():
         b.append(f"<section><h2>{e(t.get('name'))}</h2><p>{e(t.get('for'))}</p>" + facts_table([("Daraja", t.get("level")), ("Qanday", t.get("how")), ("Narx", t.get("cost")), ("Kim so'raydi", t.get("unis"))]) + "</section>")
     if TESTS.get("tips"):
         b.append("<section><h2>Maslahatlar</h2>" + ul(TESTS["tips"]) + "</section>")
-    out.append(page("testlar/", "Italiya universitetlari uchun testlar: IELTS, CEnT-S, TOLC, SAT | Uprep",
+    out.append(page("testlar/", "Italiya universitetlari uchun testlar: IELTS, CEnT-S, TOLC, SAT | Uniroad",
                     "Italiyada o'qish uchun qaysi test kerak: IELTS, CEnT-S, TOLC, SAT, GMAT va italyan tili testlari. Narx, qanday topshiriladi va qaysi universitet so'raydi.",
                     "\n".join(b), [("Bosh sahifa", ""), ("Testlar", "testlar/")], "testlar"))
     # Parents (FAQPage)
@@ -294,17 +294,17 @@ def simple_pages():
         b.append("<section><h2>Ehtiyot bo'ling</h2>" + ul(P["warnings"]) + "</section>")
     b.append(sources_html(P.get("sources") or []))
     ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": f.get("q"), "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"\s+", " ", f.get("a", ""))}} for f in P.get("faq") or []]}
-    out.append(page("ota-onalar/", "Farzandim Italiyada o'qimoqchi: ota-onalar uchun savol-javob | Uprep",
+    out.append(page("ota-onalar/", "Farzandim Italiyada o'qimoqchi: ota-onalar uchun savol-javob | Uniroad",
                     "Italiyada o'qish narxi, viza uchun pul isboti, stipendiya, xavfsizlik va ishlash: ota-onalar uchun ochiq javoblar, o'zbek tilida.",
                     "\n".join(b), [("Bosh sahifa", ""), ("Ota-onalar uchun", "ota-onalar/")], "ota-onalar", ld))
     # Tariffs
-    b = ["<h1>Uprep tariflari</h1>", "<p class=\"lead\">Saytdagi ma'lumot va vositalar bepul. Pullik qismi shaxsiy yordamimiz.</p>"]
+    b = ["<h1>Uniroad tariflari</h1>", "<p class=\"lead\">Saytdagi ma'lumot va vositalar bepul. Pullik qismi shaxsiy yordamimiz.</p>"]
     for p in SITE.get("plans") or []:
         b.append(f"<section class=\"plan\"><h2>{e(p.get('name'))}: {e(p.get('price'))}</h2><p class=\"note\">{e(p.get('note'))}</p><p>{e(p.get('tagline'))}</p>{ul(p.get('items') or [])}</section>")
     if SITE.get("extras"):
         b.append("<section><h2>Alohida xizmatlar</h2><ul class=\"list\">" + "".join(f"<li><b>{e(x.get('name'))}: {e(x.get('price'))}</b> <small>· {e(x.get('note'))}</small></li>" for x in SITE["extras"]) + "</ul></section>")
     b.append(f"<p class=\"note\">{e(SITE.get('plansNote'))}</p>")
-    out.append(page("tariflar/", "Uprep tariflari: Italiyaga o'qishga kirishda yordam | Uprep",
+    out.append(page("tariflar/", "Uniroad tariflari: Italiyaga o'qishga kirishda yordam | Uniroad",
                     "Italiyaga o'qishga kirishda yordam: bepul ilova, online yordam va to'liq hamrohlik. Narxlar va nimalar kirishi.",
                     "\n".join(b), [("Bosh sahifa", ""), ("Tariflar", "tariflar/")], "tariflar"))
     # Guide (overview + glossary)
@@ -316,7 +316,7 @@ def simple_pages():
     b.append("<section><h2>Lug'at</h2><dl class=\"facts\">" + "".join(f"<div><dt>{e(x.get('term'))}</dt><dd>{e(x.get('def'))}</dd></div>" for x in G.get("glossary") or []) + "</dl></section>")
     b.append('<p><a href="../noldan/">Batafsil: Italiyada o\'qish noldan (10 bob, PDF)</a></p>')
     b.append(sources_html(G.get("sources") or []))
-    out.append(page("qollanma/", "Italiyada o'qish: 0 dan qo'llanma, yo'l xaritasi va lug'at | Uprep",
+    out.append(page("qollanma/", "Italiyada o'qish: 0 dan qo'llanma, yo'l xaritasi va lug'at | Uniroad",
                     "Italiyada o'qish qanday boshlanadi: 10 qadamlik yo'l xaritasi, qaysi daraja mos, xarajatlar va 20 dan ortiq atama lug'ati. O'zbek tilida.",
                     "\n".join(b), [("Bosh sahifa", ""), ("Qo'llanma", "qollanma/")], "qollanma"))
     return out

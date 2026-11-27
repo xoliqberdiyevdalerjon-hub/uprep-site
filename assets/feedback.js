@@ -1,16 +1,16 @@
 /* Uniroad feedback service: sends a message to the Cloudflare Worker relay (-> Telegram).
-   - settings come from assets/relay-config.js (window.UPREP_RELAY)
+   - settings come from assets/relay-config.js (window.UNIROAD_RELAY)
    - one request at a time, with a total timeout
    - drafts: the text the user typed is kept on the device until a send succeeds
-   Exposes window.UprepFeedback. No personal data is added: only what the caller passes plus
+   Exposes window.UniroadFeedback. No personal data is added: only what the caller passes plus
    coarse technical info (site version, device type, browser, language, open page). */
 (function(root){
   "use strict";
 
-  var DRAFT_KEY = "uprep-feedback-draft";
+  var DRAFT_KEY = "uniroad-feedback-draft";
   var store = null; /* {getItem, setItem, removeItem}; app.js plugs in its unified store */
 
-  function cfg(){ return root.UPREP_RELAY || {}; }
+  function cfg(){ return root.UNIROAD_RELAY || {}; }
   function isConfigured(){ var c = cfg(); return /^https:\/\/[^\s/]+/.test(String(c.url || "")) && String(c.appKey || "").length >= 16; }
 
   function storage(){
@@ -103,7 +103,7 @@
     return Promise.race([req, guard]).then(done);
   }
 
-  root.UprepFeedback = {
+  root.UniroadFeedback = {
     send:send, isConfigured:isConfigured, isBusy:isBusy, meta:meta,
     getDraft:getDraft, saveDraft:saveDraft, clearDraft:clearDraft, setStorage:setStorage,
     DRAFT_KEY:DRAFT_KEY
