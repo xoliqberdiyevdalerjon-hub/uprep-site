@@ -19,7 +19,9 @@
       ],
       "url": "https://adsuaq.org/",
       "deadline": "2026/27: 31.08.2026 gacha",
-      "amount": "7 171 € (2026/27)"
+      "amount": "7 171 € (2026/27)",
+      "isee": 24335.11,
+      "ispe": 52902.43
     },
     {
       "id": "adsu-ch",
@@ -30,7 +32,9 @@
       ],
       "url": "https://www.adsuchietipescara.it/",
       "deadline": "2026/27: 01.09.2026, 12:00 gacha",
-      "amount": "7 171 € (2026/27)"
+      "amount": "7 171 € (2026/27)",
+      "isee": 24335.11,
+      "ispe": 52902.43
     },
     {
       "id": "adsu-te",
@@ -77,7 +81,9 @@
       ],
       "url": "https://www.adisurcampania.it/",
       "deadline": "2026/27: 10.09.2026, 12:00 gacha",
-      "amount": "7 171 € gacha (fuori sede)"
+      "amount": "7 171 € gacha (fuori sede)",
+      "isee": 25500,
+      "ispe": 54000
     },
     {
       "id": "ergo",
@@ -93,7 +99,9 @@
       "url": "https://www.er-go.it/",
       "deadline": "2026/27: 23.06 – 24.08.2026, 16:00 gacha (chet el hujjatlari ham)",
       "note": "Ariza er-go.it saytidagi «Fai domanda online» bo'limi orqali.",
-      "amount": "7 171 € gacha (2026/27)"
+      "amount": "7 171 € gacha (2026/27)",
+      "isee": 25000,
+      "ispe": 50000
     },
     {
       "id": "ardis",
@@ -118,7 +126,10 @@
       "url": "https://www.laziodisco.it/",
       "deadline": "2026/27: 10.06 – 22.07.2026",
       "amount": "6 571 – 7 556 € naqd (2026/27)",
-      "note": "Fuori sede talabaga kuniga 2 mahal bepul ovqat (yiliga 600 € qiymatida), xohlasa pulga almashtirish mumkin. Ovqat qiymati bilan jami taxminan 7 171 – 8 157 €."
+      "note": "Fuori sede talabaga kuniga 2 mahal bepul ovqat (yiliga 600 € qiymatida), xohlasa pulga almashtirish mumkin. Ovqat qiymati bilan jami taxminan 7 171 – 8 157 €.",
+      "isee": 28339.88,
+      "ispe": 61608.48,
+      "minNote": "Oilaning umumiy daromadi nol bo'lmasligi kerak"
     },
     {
       "id": "aliseo",
@@ -129,7 +140,9 @@
       ],
       "url": "https://www.aliseo.liguria.it/",
       "deadline": "2026/27: 15.06 – 31.07.2026",
-      "amount": "7 172 € gacha (2026/27)"
+      "amount": "7 172 € gacha (2026/27)",
+      "isee": 28339,
+      "ispe": 61608
     },
     {
       "id": "lombardia",
@@ -147,7 +160,10 @@
       "deadline": "Har bir universitet o'z bandosini chiqaradi (2026/27 da ko'pchiligida 30.09.2026 gacha).",
       "note": "Lombardiyada stipendiyani har bir universitet o'zi beradi. Universitet sahifasidagi havolaga qarang.",
       "own": true,
-      "amount": "8 248 € gacha (PoliMi, UniMi, Bicocca)"
+      "amount": "8 248 € gacha (PoliMi, UniMi, Bicocca)",
+      "isee": 26887.93,
+      "ispe": 58452.06,
+      "minNote": "PoliMi va Paviya oila daromadini viza summasidan (10 179,85 €) kam deb qabul qilmaydi"
     },
     {
       "id": "erdis",
@@ -161,7 +177,9 @@
       ],
       "url": "https://erdis.it/",
       "deadline": "2026/27: 28.08.2026 gacha",
-      "amount": "7 171 € (fuori sede)"
+      "amount": "7 171 € (fuori sede)",
+      "isee": 24000,
+      "ispe": 50000
     },
     {
       "id": "esu-molise",
@@ -174,7 +192,9 @@
       "url": "https://www.esu.molise.it/",
       "deadline": "2026/27: 30.10.2026 gacha",
       "note": "Ariza uchun SPID/CIE yoki ESU beradigan vaqtinchalik login; chet el hujjatlari PEC orqali yuboriladi.",
-      "amount": "7 171 € (2026/27)"
+      "amount": "7 171 € (2026/27)",
+      "isee": 27619.44,
+      "ispe": 46303.98
     },
     {
       "id": "edisu",
@@ -188,7 +208,9 @@
       "url": "https://www.edisu.piemonte.it/",
       "deadline": "2026/27: 22.07 – 04.09.2026, 12:00 gacha (yopilgan)",
       "amount": "8 097 € gacha (fuori sede)",
-      "note": "Ariza onlayn, SPID yoki CIE bilan shaxsiy kabinet orqali."
+      "note": "Ariza onlayn, SPID yoki CIE bilan shaxsiy kabinet orqali.",
+      "isee": 26306.25,
+      "ispe": 57187.53
     },
     {
       "id": "adisu-puglia",
@@ -203,7 +225,9 @@
       ],
       "url": "https://adisupuglia.it/",
       "deadline": "2026/27: 14.07 – 13.08.2026, 12:00 gacha",
-      "amount": "7 172 € (2026/27)"
+      "amount": "7 172 € (2026/27)",
+      "isee": 26000,
+      "ispe": 56000
     },
     {
       "id": "ersu-ca",
@@ -214,7 +238,9 @@
       ],
       "url": "https://www.ersucagliari.it/",
       "deadline": "2026/27: 28.08.2026, 13:00 gacha",
-      "amount": "7 516 € naqd gacha (2026/27)"
+      "amount": "7 516 € naqd gacha (2026/27)",
+      "isee": 28339.88,
+      "ispe": 61608.48
     },
     {
       "id": "ersu-ss",
@@ -235,7 +261,9 @@
       ],
       "url": "https://www.ersupalermo.it/",
       "deadline": "2026/27: 05.06 – 22.07.2026, 14:00 gacha",
-      "amount": "7 171 – 8 247 € (2026/27)"
+      "amount": "7 171 – 8 247 € (2026/27)",
+      "isee": 23000,
+      "ispe": 52500
     },
     {
       "id": "ersu-ct",
@@ -246,7 +274,9 @@
       ],
       "url": "https://www.ersucatania.it/",
       "deadline": "2026/27: 24.06 – 10.08.2026, 14:00 gacha",
-      "amount": "7 171 – 8 247 € (2026/27)"
+      "amount": "7 171 – 8 247 € (2026/27)",
+      "isee": 25000,
+      "ispe": 60000
     },
     {
       "id": "ersu-me",
@@ -257,7 +287,9 @@
       ],
       "url": "https://www.ersumessina.it/",
       "deadline": "2026/27: 18.08.2026 gacha",
-      "amount": "7 171 – 8 246 € (2026/27)"
+      "amount": "7 171 – 8 246 € (2026/27)",
+      "isee": 22500,
+      "ispe": 53000
     },
     {
       "id": "enna",
@@ -282,7 +314,9 @@
       "url": "https://www.dsu.toscana.it/",
       "deadline": "2026/27: 20.07 – 07.09.2026, 13:00 gacha",
       "note": "Fuori sede g'olibga: o'qish to'lovidan ozod, yotoqxonada bepul joy yoki ijara puli, kuniga 2 mahal bepul ovqat. Ariza «Sportello Studente» portalida.",
-      "amount": "3 338 € naqd + yotoqxona + ovqat"
+      "amount": "3 338 € naqd + yotoqxona + ovqat",
+      "isee": 27000,
+      "ispe": 60000
     },
     {
       "id": "opera-tn",
@@ -293,7 +327,9 @@
       ],
       "url": "https://www.operauni.tn.it/",
       "deadline": "2026/27: 13.07 – 07.09.2026 (yopilgan)",
-      "amount": "3 586 – 7 171 € (fuori sede)"
+      "amount": "3 586 – 7 171 € (fuori sede)",
+      "isee": 26000,
+      "ispe": 52000
     },
     {
       "id": "bolzano",
@@ -315,7 +351,9 @@
       ],
       "url": "https://www.adisu.umbria.it/",
       "deadline": "2026/27: 02.09.2026, 12:00 gacha. Chet el hujjatlari: 30.10.2026, 12:00 gacha",
-      "amount": "8 247 € gacha (fuori sede)"
+      "amount": "8 247 € gacha (fuori sede)",
+      "isee": 28339.88,
+      "ispe": 61608.48
     },
     {
       "id": "vda",
@@ -340,7 +378,9 @@
       "deadline": "Har bir universitet o'z bandosini chiqaradi (odatda iyul – 30.09).",
       "note": "Venetoda stipendiyani universitet beradi. Yotoqxona va oshxona ESU orqali.",
       "own": true,
-      "amount": "Padova: 8 246 € gacha"
+      "amount": "Padova: 8 246 € gacha",
+      "isee": 26306.25,
+      "ispe": 43125.94
     }
   ],
   "uniScholarships": [

@@ -908,7 +908,7 @@
     H.appendChild(kicker("coin", "Italiya · 20 viloyat · " + (N.year || "2026/27")));
     H.appendChild(heroTitle("Viloyatlar bo'yicha stipendiyalar"));
     H.appendChild(el("p", "lead", "Italiyada stipendiyani universitet emas, viloyatning idorasi beradi (ba'zi viloyatlarda universitetning o'zi). Universitetingiz qaysi viloyatda bo'lsa, ariza o'sha idoraga beriladi."));
-    H.appendChild(heroStats([[N.fuoriSede, "fuori sede, minimal summa"], [N.pendolare, "pendolare (qatnovchi)"], [N.isee, "ISEE chegarasi"], ["0 €", "g'oliblar uchun o'qish to'lovi"]]));
+    H.appendChild(heroStats([[N.fuoriSede, "fuori sede, minimal summa"], [N.pendolare, "pendolare (qatnovchi)"], [N.isee, "ISEE: davlat maksimumi (viloyatlarda pastroq)"], ["0 €", "g'oliblar uchun o'qish to'lovi"]]));
 
     main.appendChild(qlinks([["wallet","Imkoniyatimni hisoblash","kalkulyator"],["doc","Kerakli oila hujjatlari","s5"],["star","Profil tahlili","profil"]]));
     var how = el("ol", "how");
@@ -953,7 +953,7 @@
       function fill(){
         var cities = arr(a.cities).map(function(id){ return cityById(id); }).filter(Boolean);
         if(cities.length){ var cl = el("div", "dc-cities"); cities.forEach(function(ct){ var lk = el("a", "tag", ct.name); lk.href = "#shahar-" + ct.id; cl.appendChild(lk); }); bd.appendChild(cl); }
-        bd.appendChild(factTable([["Muddat", a.deadline], ["Summa", a.amount ? (/gacha/.test(a.amount) ? a.amount : a.amount + " gacha") : "kamida " + str(N.fuoriSede) + " (fuori sede, davlat minimumi)"]].concat(g ? [["Universitetlar", g.unis]] : [])));
+        bd.appendChild(factTable([["Muddat", a.deadline], ["Summa", a.amount ? (/gacha/.test(a.amount) ? a.amount : a.amount + " gacha") : "kamida " + str(N.fuoriSede) + " (fuori sede, davlat minimumi)"], ["Chegara", a.isee ? "ISEE " + eur(a.isee) + " · ISPE " + eur(a.ispe) : "ISEE " + str(N.isee) + " gacha (davlat maksimumi; bandoda tekshiring)"]].concat(g ? [["Universitetlar", g.unis]] : [])));
         if(a.note) bd.appendChild(el("p", "ic-note", a.note));
         if(g){
           if(arr(g.docs).length){ bd.appendChild(el("b", "greg-h", "Hujjatlar")); var u1 = el("ul", "ticks small"); arr(g.docs).forEach(function(t){ var li = el("li"); li.appendChild(ic("doc")); li.appendChild(el("span", null, t)); u1.appendChild(li); }); bd.appendChild(u1); }
@@ -1190,7 +1190,7 @@
       /* 4. scholarship */
       var N = S.dsu.national || {}, LIM = numv(N.isee) || 28339.88, m = Math.max(1, numv(a.members)), scale = [0, 1, 1.57, 2.04, 2.46, 2.85][m] || (2.85 + (m - 5) * 0.35);
       if(a.income){ var isee = numv(a.income) / scale, st = isee <= LIM * 2 / 3 ? ["ok", "Yuqori imkoniyat"] : isee <= LIM ? ["mid", "Mos kelishingiz mumkin"] : ["no", "Chegaradan oshishi mumkin"];
-        box.appendChild(card("Davlat stipendiyasi (DSU)", st[1], st[0], ["Taxminiy hisob: faqat daromad va oila soni bo'yicha. Haqiqiy natija (ISEE parificato) oila mulki va jamg'armasini ham hisobga oladi. 2026/27 chegarasi: ISEE " + (N.isee || "28 339,88 €") + ".", "Oila hujjatlarini O'zbekistonda, jo'nab ketishdan oldin tayyorlash kerak."], ["Aniqroq hisoblash", "#kalkulyator"]));
+        box.appendChild(card("Davlat stipendiyasi (DSU)", st[1], st[0], ["Taxminiy hisob: faqat daromad va oila soni bo'yicha. Haqiqiy natija (ISEE parificato) oila mulki va jamg'armasini ham hisobga oladi. 2026/27 da davlat maksimumi ISEE " + (N.isee || "28 339,88 €") + ", lekin ko'p viloyatlarda pastroq (22 500 € dan boshlab). Kalkulyatorda viloyatni tanlab aniq hisoblang.", "Oila hujjatlarini O'zbekistonda, jo'nab ketishdan oldin tayyorlash kerak."], ["Aniqroq hisoblash", "#kalkulyator"]));
         summary.push("Stipendiya: " + st[1] + " (" + m + " kishi, daromad ~" + (INC.filter(function(x){ return x[0] === a.income; })[0] || ["",""])[1] + ")"); }
       else box.appendChild(card("Davlat stipendiyasi (DSU)", "Hisoblanmadi", "mid", ["Oila daromadini kiritmadingiz. Pul kalkulyatorida aniqroq hisoblab ko'ring."], ["Pul kalkulyatori", "#kalkulyator"]));
       /* 5. visa money */
@@ -1254,7 +1254,7 @@
   }
 
   /* ================= MONEY CALCULATOR ================= */
-  var CK = "uniroad-calc", CV = {cur:"EUR", rate:"", members:"4", income:"", m2:"", savings:"", apps:"3", fee:"30", cimea:"300"};
+  var CK = "uniroad-calc", CV = {cur:"EUR", rate:"", reg:"", members:"4", income:"", m2:"", savings:"", apps:"3", fee:"30", cimea:"300"};
   try{ var cv0 = JSON.parse(LS.getItem(CK) || "null"); if(cv0) for(var k0 in cv0) CV[k0] = cv0[k0]; }catch(e){}
   function eur(n){ return (Math.round(n * 100) / 100).toLocaleString("ru-RU", {minimumFractionDigits:0, maximumFractionDigits:2}).replace(/ /g, " ") + " €"; }
   function numv(x){ var n = parseFloat(String(x || "").replace(/\s/g, "").replace(",", ".")); return isNaN(n) ? 0 : n; }
@@ -1262,10 +1262,12 @@
   function cleanNum(v){ var t = String(v || "").replace(/[^\d.,\s]/g, "").replace(/\s+/g, " ").replace(/^\s+/, ""); var i = t.search(/[.,]/); if(i >= 0) t = t.slice(0, i + 1) + t.slice(i + 1).replace(/[.,]/g, ""); return t; }
   function posv(x){ return Math.max(0, numv(cleanNum(x))); }
   function groupNum(v){ var t = cleanNum(v).replace(/\s/g, ""); if(!t) return ""; var p = t.split(/[.,]/), w = p[0].replace(/^0+(?=\d)/, "").replace(/\B(?=(\d{3})+(?!\d))/g, " "); return p.length > 1 ? w + "," + p[1].slice(0, 2) : w; }
-  for(var kc in CV) if(["cur","members","apps","cimea"].indexOf(kc) < 0) CV[kc] = cleanNum(CV[kc]);
+  for(var kc in CV) if(["cur","reg","members","apps","cimea"].indexOf(kc) < 0) CV[kc] = cleanNum(CV[kc]);
   function calcView(main){
     var N = (S.dsu || {}).national || {};
-    var LIM = numv(N.isee) || 28339.88, LIMP = numv(N.ispe) || 61608.48, MIN = numv(N.fuoriSede) || 7171.11, VISA = numv(F("viza")) || 10179.85;
+    var LIM0 = numv(N.isee) || 28339.88, LIMP0 = numv(N.ispe) || 61608.48, MIN = numv(N.fuoriSede) || 7171.11, VISA = numv(F("viza")) || 10179.85;
+    /* each regional office has its own (often lower) limits: the student picks where they will study */
+    var REGS = arr((S.dsu || {}).agencies).filter(function(a){ return a.isee; }).sort(function(x, y){ return x.region.localeCompare(y.region) || x.name.localeCompare(y.name); });
     var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage});
     H.appendChild(kicker("wallet", "Bepul hisob-kitob"));
     H.appendChild(heroTitle("Pul kalkulyatori"));
@@ -1301,6 +1303,7 @@
     }
     field("cur", "Valyuta", "", null, [["EUR","Yevro (€)"],["USD","AQSh dollari ($)"],["UZS","So'm"]]);
     var rateL = field("rate", "Kurs: 1 € necha (tanlangan valyutada)?", "masalan, bugungi bank kursi");
+    field("reg", "Qayerda o'qimoqchisiz?", "Har bir viloyat idorasining chegarasi boshqacha", null, [["", "Hali bilmayman (davlat maksimumi)"]].concat(REGS.map(function(a){ return [a.id, a.region + " · " + (a.own ? "universitetlar" : a.name) + " · ISEE " + eur(a.isee)]; })));
     field("members", "Oila a'zolari soni (siz bilan)", "", null, [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"],["7","7"],["8","8"]]);
     field("income", "Oilaning bir yillik umumiy daromadi", "barcha ishlaydiganlar, soliqdan oldin");
     field("m2", "Oilaga tegishli uy-joylar maydoni (m²)", "barcha kvartira va uylar, jami");
@@ -1353,6 +1356,7 @@
       s.appendChild(el("small", null, "Davlat stipendiyasi (DSU) imkoniyati"));
       if(cur !== "EUR" && !rate){ s.appendChild(el("p", null, "Hisoblash uchun valyuta kursini kiriting.")); out.appendChild(s); return; }
       if(!numv(CV.income) && !numv(CV.m2) && !numv(CV.savings)){ s.appendChild(el("p", null, "Oila daromadi, uy-joy maydoni va jamg'armani kiriting.")); out.appendChild(s); return; }
+      var RG = REGS.filter(function(a){ return a.id === CV.reg; })[0] || null, LIM = RG ? RG.isee : LIM0, LIMP = RG ? RG.ispe : LIMP0, who = RG ? (RG.own ? RG.region + " universitetlari" : RG.name) : "davlat maksimumi";
       var isp = prop + sav, isee = (inc + 0.2 * isp) / scale, ispe = isp / scale;
       var lvl, cls;
       if(isee <= LIM * 2 / 3 && ispe <= LIMP){ lvl = "Yuqori imkoniyat"; cls = "ok"; }
@@ -1361,11 +1365,14 @@
       s.classList.add(cls);
       s.appendChild(el("b", null, lvl));
       var ul2 = el("ul", "res-list");
-      [["Taxminiy ISEE", eur(isee) + " (chegara " + eur(LIM) + ")"], ["Taxminiy ISPE", eur(ispe) + " (chegara " + eur(LIMP) + ")"], ["Uy-joy bahosi", groupNum(String(capped("m2", posv(CV.m2)))) + " m² × 500 € = " + eur(prop)], ["Oila koeffitsienti", m + " kishi → " + scale]].forEach(function(r){ var li = el("li"); li.appendChild(el("span", null, r[0])); li.appendChild(el("b", null, r[1])); ul2.appendChild(li); });
+      [["Taxminiy ISEE", eur(isee) + " (chegara " + eur(LIM) + ", " + who + ")"], ["Taxminiy ISPE", eur(ispe) + " (chegara " + eur(LIMP) + ")"], ["Uy-joy bahosi", groupNum(String(capped("m2", posv(CV.m2)))) + " m² × 500 € = " + eur(prop)], ["Oila koeffitsienti", m + " kishi → " + scale]].forEach(function(r){ var li = el("li"); li.appendChild(el("span", null, r[0])); li.appendChild(el("b", null, r[1])); ul2.appendChild(li); });
       s.appendChild(ul2);
       s.appendChild(el("p", null, cls === "ok" ? "ISEE chegaraning 2/3 qismidan past: eng katta summa va qonun bo'yicha +15% qo'shimcha. Fuori sede talaba uchun kamida " + eur(MIN) + " / yil, bepul ovqat va o'qish to'lovidan ozodlik." :
         cls === "mid" ? "Chegaradan past: stipendiyaga ariza bera olasiz. Summa viloyat va daromadga qarab belgilanadi (fuori sede uchun davlat minimumi " + eur(MIN) + ")." :
         "Davlat stipendiyasi chegarasidan yuqori. Universitetlarning o'z stipendiyalari va o'qish to'lovi chegirmalariga qarang."));
+      if(!RG && cls !== "no") s.appendChild(el("p", "ic-note", "Bu davlat maksimumi bilan hisoblandi. Ko'p viloyatlarda chegara pastroq (masalan Messina 22 500 €, Bolonya 25 000 €): yuqorida o'qimoqchi bo'lgan joyni tanlang."));
+      if(inc < VISA) s.appendChild(callout({style:"warn", text:"Oila daromadi juda past ko'rsatilgan (" + eur(inc) + "). Ba'zi idoralar uni viza uchun talab qilinadigan summadan (" + eur(VISA) + ") kam deb qabul qilmaydi (masalan PoliMi, Paviya), Lazio'da esa umumiy daromad nol bo'lmasligi kerak. Daromad hujjatlari haqiqiy va to'liq bo'lsin."}));
+      if(RG && RG.minNote) s.appendChild(el("p", "ic-note", RG.minNote + "."));
       out.appendChild(s);
       out.appendChild(callout({style:"info", text:"Bu taxminiy hisob. Haqiqiy ISEE parificato'ni Italiyada CAF hisoblaydi: u ba'zi chegirmalarni ham qo'llaydi, shuning uchun haqiqiy natija odatda shu yerdagidan past yoki unga teng chiqadi. Chet eldagi uy-joy har m² uchun 500 € deb baholanadi, yer hisobga olinmaydi."}));
       var bx = el("div", "ic-btns"); bx.appendChild(btn("navy", "coin", "Viloyatlar stipendiyasi", "#stipendiya")); bx.appendChild(btn("line", "book", "0 dan qo'llanma", "#qollanma")); out.appendChild(bx);
@@ -2692,7 +2699,7 @@
     var link = safeUrl(u.dsuUrl) || (a && safeUrl(a.url)) || "";
     var rows = [["Idora", a ? (a.own ? "Universitetning o'zi" : a.name) + " · " + a.region : (city ? city.region : "")],
       ["Summa", a && a.amount ? a.amount + " gacha / yil (fuori sede)" : (N.fuoriSede ? "kamida " + N.fuoriSede + " / yil (fuori sede, eng kam daromadli oila, " + (N.year || "") + ")" : "")],
-      ["Ariza", a ? a.deadline : ""], ["Shart", "ISEE parificato: oila daromadi va mulki" + (N.isee ? ", ISEE " + N.isee + " gacha" : "")]];
+      ["Ariza", a ? a.deadline : ""], ["Shart", "ISEE parificato: oila daromadi va mulki" + (a && a.isee ? ", ISEE " + eur(a.isee) + " va ISPE " + eur(a.ispe) + " gacha" : (N.isee ? ", ISEE " + N.isee + " gacha (davlat maksimumi)" : ""))]];
     var foot = [];
     if(a && a.note) foot.push(el("p", "ic-note", a.note));
     var bx = el("div", "ic-btns");
