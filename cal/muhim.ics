@@ -54,6 +54,34 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:dc81809b27342a7f4398@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:PoliMi: Magistratura qabul arizasi to'lovi: merit stipendiyasiga (P
+ latinum 10 000 €\, Gold 8 000 €) topshirish uchun shart
+DESCRIPTION:Magistratura qabul arizasi to'lovi: merit stipendiyasiga (Plati
+ num 10 000 €\, Gold 8 000 €) topshirish uchun shart (01.12.2026 ga
+ cha)\n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.github.io/upre
+ p-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: PoliMi: Magistratura qabul arizasi to'lovi: meri
+ t stipendiyasiga (Platinum 10 000 €\, Gold 8 000 €) topshirish uch
+ un shart
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: PoliMi: Magistratura qabul arizasi to'lovi: merit stipe
+ ndiyasiga (Platinum 10 000 €\, Gold 8 000 €) topshirish uchun shar
+ t
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:fc0b258c2493337ac03d@uniroad
 DTSTAMP:20261126T000000Z
 DTSTART;VALUE=DATE:20261201
@@ -99,6 +127,31 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Ertaga: DiSCo: 2026/27: CAF'da ISEEUP\, permesso hujjatlari va 
  enrollment
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:b5df5790f08cc18763b4@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:PoliMi: Merit stipendiyasi arizasi (2027/28\, ingliz tilidagi magis
+ tratura)\, Online Services orqali
+DESCRIPTION:Merit stipendiyasi arizasi (2027/28\, ingliz tilidagi magistrat
+ ura)\, Online Services orqali (15.12.2026\, 12:00 gacha)\n\nBarcha muddatl
+ ar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: PoliMi: Merit stipendiyasi arizasi (2027/28\, in
+ gliz tilidagi magistratura)\, Online Services orqali
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: PoliMi: Merit stipendiyasi arizasi (2027/28\, ingliz ti
+ lidagi magistratura)\, Online Services orqali
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
@@ -375,6 +428,30 @@ END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Ertaga: L'Aquila: xalqaro talabalar chaqirig'i tugaydi (13:00)
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:715e45b68ca527d6a448@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270304
+DTEND;VALUE=DATE:20270305
+SUMMARY:PoliMi: Merit stipendiyasi uchun ingliz tili sertifikatini yuklash
+DESCRIPTION:Merit stipendiyasi uchun ingliz tili sertifikatini yuklash (04.
+ 03.2027 gacha)\n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.gith
+ ub.io/uprep-site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: PoliMi: Merit stipendiyasi uchun ingliz tili ser
+ tifikatini yuklash
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: PoliMi: Merit stipendiyasi uchun ingliz tili sertifikat
+ ini yuklash
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
