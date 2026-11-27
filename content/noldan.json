@@ -171,7 +171,7 @@
       "steps": [
         "Universitetingiz qaysi viloyatda ekanini va u yerdagi stipendiya idorasini toping (Lazio'da DiSCo, Toskanada DSU Toscana va hokazo).",
         "Idoraning bandosini (shartlar hujjati) o'qing: muddat, summa, kerakli hujjatlar.",
-        "O'zbekistonda oila hujjatlarini oling, apostil qo'ydiring va italyan tiliga tarjima qildiring.",
+        "O'zbekistonda oila hujjatlarini oling, Italiya elchixonasida legallashtiring (yoki apostil qo'ydiring; qaysi biri qabul qilinishini idora yoki CAF'dan oldindan so'rang) va italyan tiliga tarjima qildiring.",
         "Idoraning portalida onlayn ariza bering (odatda yozda).",
         "Italiyaga kelgach, CAF markazida ISEE parificato hisoblatasiz va idora so'ragan hujjatlarni (permesso, IBAN) portalga yuklaysiz."
       ],
@@ -182,8 +182,9 @@
             "Oila tarkibi va propiska: har bir a'zoning ismi, tug'ilgan sanasi va doimiy manzili.",
             "Har bir oila a'zosining yillik daromadi. Ishlamaydigan a'zo uchun buni aniq yozgan hujjat.",
             "Uy-joy: oila a'zolari nomida mulk bor-yo'qligi va maydoni (kadastr ma'lumotnomasi).",
+            "Bank: har bir a'zoning bankdagi jamg'armasi (yo'q bo'lsa, yo'qligi haqida hujjat).",
             "Ijara shartnomasi: faqat oila ijarada yashasa.",
-            "Hammasi apostil bilan va italyan tiliga tarjima qilingan bo'lishi kerak."
+            "Hammasi Italiya elchixonasida legallashtirilgan (yoki apostil qo'yilgan) va italyan tiliga tarjima qilingan bo'lishi kerak."
           ]
         },
         {
@@ -364,7 +365,7 @@
     "Oxirgi kunni kutish. Portallar sekinlashadi, CIMEA esa 3 oy oladi.",
     "Har xil email ishlatish. Universitet, Universitaly va elchixona xatlari bitta manzilga kelsin.",
     "Bank ko'chirmasini erta olish. Topshirish kunida 10 ish kunidan eski bo'lmasin.",
-    "Stipendiya hujjatlarini Italiyaga kelgach qidirish. Ularni O'zbekistonda, apostil va tarjima bilan tayyorlang.",
+    "Stipendiya hujjatlarini Italiyaga kelgach qidirish. Ularni O'zbekistonda, legallashtirish (yoki apostil) va tarjima bilan tayyorlang.",
     "Permessoni kechiktirish. Kelgandan keyin 8 kun ichida topshiring.",
     "Ijtimoiy tarmoqdagi «tanishim aytdi» gaplariga ishonish. Har doim rasmiy manbani tekshiring."
   ],
