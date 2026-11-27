@@ -294,6 +294,32 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:efe58838982801d35274@uniroad
+DTSTAMP:20261126T000000Z
+DTSTART;VALUE=DATE:20270129
+DTEND;VALUE=DATE:20270130
+SUMMARY:PoliTo: Matematik muhandislik magistraturasi: chet el diplomlilar u
+ chun 3 ta stipendiya (har biri 16 000 €)\, 2027/28
+DESCRIPTION:Matematik muhandislik magistraturasi: chet el diplomlilar uchun
+  3 ta stipendiya (har biri 16 000 €)\, 2027/28 (29.01.2027\, 23:55 gac
+ ha)\n\nBarcha muddatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep
+ -site/#kalendar
+URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#kalendar
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:1 hafta qoldi: PoliTo: Matematik muhandislik magistraturasi: ch
+ et el diplomlilar uchun 3 ta stipendiya (har biri 16 000 €)\, 2027/28
+TRIGGER:-P7D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ertaga: PoliTo: Matematik muhandislik magistraturasi: chet el d
+ iplomlilar uchun 3 ta stipendiya (har biri 16 000 €)\, 2027/28
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:5a213cfc16b097657d55@uniroad
 DTSTAMP:20261126T000000Z
 DTSTART;VALUE=DATE:20270129
