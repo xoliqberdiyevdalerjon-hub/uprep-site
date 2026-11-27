@@ -11,7 +11,7 @@ import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 const { chromium } = require("playwright");
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
-const RELAY = "https://relay.test/";
+const RELAY = "https://relay-test.example.workers.dev/"; // a *.workers.dev host, so the site's Content-Security-Policy applies as in production
 const KEY = "e2e-key-0123456789abcdef";
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".webp": "image/webp", ".jpg": "image/jpeg", ".pdf": "application/pdf" };
 

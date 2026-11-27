@@ -56,3 +56,8 @@ Ichki kalitlar (`uprep-*`, `uprep_state_v2`), repozitoriy nomi va Telegram `@Upr
 - Saytdagi qo'ng'iroqcha (`#bildirishnomalar`): yaqin 14 kundagi muddatlar (saqlangan universitetlar + umumiy kalendar), yangiliklar va oxirgi tashrifdan beri yangilari.
 - Kalendar obunalari: `cal/muhim.ics` (umumiy muddatlar) va `cal/uni/<id>.ics` (har bir universitet). Foydalanuvchi bir marta obuna bo'ladi, kalendari o'zi yangilanadi.
 - Ma'lumot o'zgarganda: `python3 scripts/build_ics.py` (haftalik avtomatik tekshiruv buni o'zi bajaradi).
+
+## Kod va xavfsizlik
+- Sayt `assets/app.min.js` va `assets/feedback.min.js` ni yuklaydi. `assets/app.js` yoki `assets/feedback.js` o'zgarsa: `bash scripts/build_min.sh`, so'ng `index.html` dagi `?v=` raqamini oshiring.
+- `index.html` da Content-Security-Policy bor: skriptlar faqat saytning o'zidan; ichki (inline) skript yo'q (`assets/boot.js`). Yangi tashqi xizmat qo'shilsa, CSP ro'yxatiga ham qo'shing.
+- `404.html`: noma'lum manzillarni saytning "Sahifa topilmadi" sahifasiga yo'naltiradi.

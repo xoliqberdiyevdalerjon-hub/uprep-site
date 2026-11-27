@@ -2,6 +2,8 @@
 <html lang="uz">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self'; media-src 'self' https:; connect-src 'self' https://*.workers.dev https://*.supabase.co; frame-src https://www.youtube-nocookie.com https://player.vimeo.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="google-site-verification" content="O1Dk-TTNUqNGjQwwzdzgxDX950J0ZRFmFASPZj_ZKI0" />
 <!-- Qidiruv tizimlaridan ataylab yashirilgan (egasining qarori). Google'ga chiqarishda shu 3 ta robots/googlebot/bingbot qatorini olib tashlang va google-seo branch'ini qo'shing. -->
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
@@ -22,17 +24,16 @@
 <link rel="preload" as="image" href="media/hero-rome-sm.webp" type="image/webp" media="(max-width: 699px)">
 <link rel="preload" as="font" type="font/woff2" href="media/fonts/bricolage-grotesque-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="media/fonts/instrument-sans-latin.woff2" crossorigin>
-<link rel="stylesheet" href="assets/style.css?v=50">
+<link rel="stylesheet" href="assets/style.css?v=52">
 </head>
 <body>
-<script>try{var P=(JSON.parse(localStorage.getItem("uprep_state_v2")||"null")||{}).prefs||{};var L=function(k){return localStorage.getItem("uprep-"+k)};var B=P.big||L("big"),C=P.calm||L("calm"),t=P.theme||L("theme"),d=document.documentElement;if(B)d.classList.add("bigtext");if(C)d.classList.add("calm");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}</script>
+<script src="assets/boot.js?v=1"></script>
 <div class="scene" aria-hidden="true"><i></i><i></i><i></i></div>
 <div id="app"><div class="loading" role="status"><span>Yuklanmoqda…</span></div></div>
 <noscript><p style="padding:20px">Sayt ishlashi uchun brauzerda JavaScript yoqilgan bo'lishi kerak.</p></noscript>
 <script src="assets/config.js?v=7"></script>
 <script src="assets/relay-config.js?v=3"></script>
-<script src="assets/feedback.js?v=4"></script>
-<script src="assets/app.js?v=60"></script>
-<script>/* Uniroad faqat veb-sayt: avval o'rnatilgan ilova (service worker) va uning keshi o'chiriladi */if("serviceWorker" in navigator){navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){r.unregister();});}).catch(function(){});}if(window.caches){caches.keys().then(function(ks){ks.forEach(function(k){if(/^uprep-/.test(k))caches.delete(k);});}).catch(function(){});}</script>
+<script src="assets/feedback.min.js?v=5"></script>
+<script src="assets/app.min.js?v=61"></script>
 </body>
 </html>

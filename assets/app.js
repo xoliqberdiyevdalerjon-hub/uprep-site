@@ -261,8 +261,18 @@
   var root = document.getElementById("app");
   var S = { site:{}, stages:[], calendar:[], library:[], countries:[], italy:{}, cities:[], unis:[], guide:{}, dsu:{agencies:[]}, living:{}, news:[], reviews:[], foundation:{}, tests:{}, noldan:{}, about:{}, parents:{}, amb:[], out:[], ev:[], loaded:false };
   var firstPaint = true;
+  /* if a data file cannot be loaded (no internet, server hiccup) the visitor sees why and can retry, instead of a silently empty page */
+  function showLoadFail(){
+    if(document.querySelector(".loadfail")) return;
+    var b = el("div", "loadfail"); b.setAttribute("role", "alert");
+    b.appendChild(el("span", null, navigator.onLine === false ? "Internet yo'q: ma'lumotlarning bir qismi yuklanmadi." : "Ma'lumotlarning bir qismi yuklanmadi. Sahifa to'liq ko'rinmasligi mumkin."));
+    var r = el("button", "btn gold", "Qayta yuklash"); r.type = "button"; r.onclick = function(){ location.reload(); }; b.appendChild(r);
+    document.body.appendChild(b);
+  }
+  window.addEventListener("online", function(){ if(LOADFAIL.length) location.reload(); });
+  var LOADFAIL = [];
   function load(name, fallback){
-    return fetch("content/" + name + ".json", {cache:"no-cache"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ return fallback; });
+    return fetch("content/" + name + ".json", {cache:"no-cache"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ LOADFAIL.push(name); showLoadFail(); return fallback; });
   }
   /* key figures live in ONE place: site.json "facts" (visa money, SSN) and dsu.json "national" (DSU limits).
      Texts write {{viza}}, {{isee}}, {{ispe}}, {{stip}}, {{ssn}} and get the current value, so a number is never out of sync. */
@@ -378,7 +388,8 @@
   function shell(r){
     if(SH) return SH;
     root.textContent = "";
-    SH = { bar:appbar(r), hz:el("div", "herozone"), main:el("main", "wrap"), foot:footerNode(), tab:tabbar(r) };
+    SH = { bar:appbar(r), hz:el("section", "herozone"), main:el("main", "wrap"), foot:footerNode(), tab:tabbar(r) };
+    SH.hz.setAttribute("aria-label", "Sahifa boshi");
     [SH.bar, SH.hz, SH.main, SH.foot, SH.tab].forEach(function(n){ root.appendChild(n); });
     return SH;
   }
@@ -1255,7 +1266,7 @@
     }
     function capped(key, v){ var M = {income:2000000, savings:5000000, m2:3000, fee:500}; return M[key] ? Math.min(v, M[key]) : v; }
     var form = el("section", "card calc-form");
-    form.appendChild(el("h3", null, "1. Oila ma'lumotlari"));
+    form.appendChild(el("h2", "card-h", "1. Oila ma'lumotlari"));
     form.appendChild(el("p", "note", "Stipendiya oila daromadi va mulkiga qarab beriladi (ISEE parificato). Taxminiy raqamlarni kiriting."));
     var grid = el("div", "calc-grid");
     function field(key, label, hint, type, opts){
@@ -1279,7 +1290,7 @@
     form.appendChild(grid);
 
     var form2 = el("section", "card calc-form");
-    form2.appendChild(el("h3", null, "2. Ariza xarajatlari"));
+    form2.appendChild(el("h2", "card-h", "2. Ariza xarajatlari"));
     var g2 = el("div", "calc-grid");
     grid = g2;
     field("apps", "Nechta universitetga topshirasiz?", "", null, [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"]]);
@@ -1522,7 +1533,7 @@
   }
   function lvlName(v){ return v === "fy" ? "Foundation" : v === "ma" ? "Magistratura" : "Bakalavr"; }
   function onboarding(main, done){
-    var c = el("section", "card onb"); c.appendChild(el("h3", null, "Keling, yo'lingizni sozlaymiz"));
+    var c = el("section", "card onb"); c.appendChild(el("h2", "card-h", "Keling, yo'lingizni sozlaymiz"));
     c.appendChild(el("p", "note", "3 ta savol. Javoblar faqat shu qurilmada saqlanadi."));
     var me = ME || {lvl:"", year:""};
     function grp(label, key, opts){ var w = el("div", "onb-q"); w.appendChild(el("b", null, label)); var r = el("div", "onb-opts"); opts.forEach(function(o){ var b = el("button", "chipf" + (me[key] === o[0] ? " on" : ""), o[1]); b.type = "button"; b.onclick = function(){ me[key] = o[0]; Array.prototype.forEach.call(r.children, function(x){ x.classList.remove("on"); }); b.classList.add("on"); }; r.appendChild(b); }); w.appendChild(r); c.appendChild(w); }
