@@ -288,7 +288,7 @@
     S.calendar.forEach(function(c){ c._d = deadline(c.date); });
     return initAuth();
   }).then(function(){ S.loaded = true; render(false); setTimeout(function(){ need(Object.keys(LAZY)); }, 2500); });
-  var LAZY = { guide:{}, living:{}, foundation:{}, tests:{}, noldan:{}, about:{}, parents:{}, library:[], countries:[], italy:{} };
+  var LAZY = { privacy:{}, guide:{}, living:{}, foundation:{}, tests:{}, noldan:{}, about:{}, parents:{}, library:[], countries:[], italy:{} };
   var LZ = {}, LZok = {};
   function need(names){
     return Promise.all(names.map(function(n){
@@ -299,7 +299,7 @@
   /* which page texts a hash needs before it can be drawn */
   function needsFor(){
     var h = (location.hash || "").replace(/^#/, "").split("?")[0]; if(ALIAS.hasOwnProperty(h)) h = ALIAS[h];
-    var m = { qollanma:["guide"], kurs:["guide"], yashash:["living"], foundation:["foundation"], testlar:["tests"], noldan:["noldan"], "biz-haqimizda":["about"], "ota-onalar":["parents"], materiallar:["library"], italiya:["italy", "countries"] }[h] || (/^m-\d+$/.test(h) ? ["library"] : []);
+    var m = { qollanma:["guide"], kurs:["guide"], yashash:["living"], foundation:["foundation"], testlar:["tests"], noldan:["noldan"], "biz-haqimizda":["about"], "ota-onalar":["parents"], maxfiylik:["privacy"], materiallar:["library"], italiya:["italy", "countries"] }[h] || (/^m-\d+$/.test(h) ? ["library"] : []);
     return m.filter(function(n){ return !LZok[n]; });
   }
 
@@ -316,7 +316,7 @@
   function enN(u){ var n = arr(u && u.programmes).length; return n || (u && u.enCount) || 0; }
 
   /* ---------------- routing ---------------- */
-  var ALIAS = { "pul-kalkulyatori":"kalkulyator", "hujjatlar":"hujjatlarim", "taqvim":"kalendar", "muddatlar":"kalendar", "stipendiyalar":"stipendiya", "dsu":"stipendiya", "universitet":"universitetlar", "unis":"universitetlar", "settings":"sozlamalar", "profil-tahlili":"profil", "motivatsion-xat":"xat", "tarif":"tariflar", "narxlar":"tariflar", "haqimizda":"biz-haqimizda", "qadamlar":"qollanma", "fikr-bildirish":"xabar", "muammo":"xabar", "feedback":"xabar", "eslatmalar":"bildirishnomalar", "notifications":"bildirishnomalar", "obuna":"bildirishnomalar", "home":"", "bosh-sahifa":"" };
+  var ALIAS = { "pul-kalkulyatori":"kalkulyator", "hujjatlar":"hujjatlarim", "taqvim":"kalendar", "muddatlar":"kalendar", "stipendiyalar":"stipendiya", "dsu":"stipendiya", "universitet":"universitetlar", "unis":"universitetlar", "settings":"sozlamalar", "profil-tahlili":"profil", "motivatsion-xat":"xat", "tarif":"tariflar", "narxlar":"tariflar", "haqimizda":"biz-haqimizda", "qadamlar":"qollanma", "fikr-bildirish":"xabar", "muammo":"xabar", "feedback":"xabar", "eslatmalar":"bildirishnomalar", "notifications":"bildirishnomalar", "obuna":"bildirishnomalar", "privacy":"maxfiylik", "maxfiylik-siyosati":"maxfiylik", "home":"", "bosh-sahifa":"" };
   function slug(x){ return norm(x).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
   function hashQuery(){ var h = location.hash || "", i = h.indexOf("?"), o = {}; if(i < 0) return o; h.slice(i + 1).split("&").forEach(function(kv){ if(!kv) return; var p = kv.split("="); try{ o[decodeURIComponent(p[0])] = decodeURIComponent((p[1] || "").replace(/\+/g, " ")); }catch(e){} }); return o; }
   function route(){
@@ -337,6 +337,7 @@
     if(h === "fikrlar") return {view:"reviews"};
     if(h === "xabar") return {view:"feedback"};
     if(h === "bildirishnomalar") return {view:"notif"};
+    if(h === "maxfiylik") return {view:"privacy"};
     if(h === "foundation") return {view:"foundation"};
     if(h === "noldan") return {view:"noldan"};
     if(h === "biz-haqimizda") return {view:"about"};
@@ -412,7 +413,7 @@
     sh.hz.textContent = ""; HZ = sh.hz;
     var main = el("main", "wrap" + (wide ? "" : " narrow")); main.id = "app-main";
     CRUMBS = crumbsFor(r);
-    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, plans:plansView, profile:profileView, parents:parentsView, amb:ambView, settings:settingsView, feedback:feedbackView, notif:notifView, tpl:tplView, xat:xatView, out:outView, events:eventsView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView, notfound:notFoundView,
+    ({home:homeView, italy:italyView, guide:guideView, dsu:dsuView, quiz:quizView, calc:calcView, living:livingView, news:newsView, progs:progSearchView, plan:planView, cmp:compareView, reviews:reviewsView, foundation:foundationView, noldan:noldanView, about:aboutView, plans:plansView, profile:profileView, parents:parentsView, amb:ambView, settings:settingsView, feedback:feedbackView, notif:notifView, privacy:privacyView, tpl:tplView, xat:xatView, out:outView, events:eventsView, tests:testsView, docs:docsView, unis:unisView, cities:citiesView, course:courseView, cal:calView, lib:libView, login:loginView, account:accountView, notfound:notFoundView,
       item:function(m){ itemView(m, r.i); }, city:function(m){ cityView(m, r.c); }, uni:function(m){ uniView(m, r.u, r.tab); }, stage:function(m){ stageView(m, r.st); }
     }[r.view] || homeView)(main, r);
     if(CRUMBS){ main.insertBefore(CRUMBS, main.firstChild); CRUMBS = null; }
@@ -503,6 +504,7 @@
     else if(r.view === "settings") c.push(["Sozlamalar"]);
     else if(r.view === "notfound") c.push(["Sahifa topilmadi"]);
     else if(r.view === "notif") c.push(["Bildirishnomalar"]);
+    else if(r.view === "privacy") c.push(["Maxfiylik siyosati"]);
     else if(r.view === "feedback"){ c.push(["Sozlamalar","sozlamalar"]); c.push(["Fikr bildirish"]); }
     else if(r.view === "tpl"){ c.push(["Qo'llanma","qollanma"]); c.push(["Shablonlar"]); }
     else if(r.view === "xat"){ c.push(["Qo'llanma","qollanma"]); c.push(["Motivatsion xat"]); }
@@ -553,7 +555,7 @@
     function col(title, links){ var c = el("div"); c.appendChild(el("h2", "foot-h", title)); var ul = el("ul"); links.forEach(function(l){ var li = el("li"), a = el("a", null, l[0]); a.href = l[1]; if(/^https:/.test(l[1])){ a.target = "_blank"; a.rel = "noopener"; } li.appendChild(a); ul.appendChild(li); }); c.appendChild(ul); g.appendChild(c); }
     col("Qo'llanma", [["8 qadam", "#qollanma"], ["Hammasi bitta sahifada (PDF)", "#noldan"], ["Foundation", "#foundation"], ["Testlar", "#testlar"], ["Italiyada yashash", "#yashash"], ["Kalendar", "#kalendar"], ["Materiallar", "#materiallar"], ["Shablonlar", "#shablonlar"]]);
     col("Vositalar", [["Universitetlar", "#universitetlar"], ["Stipendiyalar", "#stipendiya"], ["Profil tahlili", "#profil"], ["Pul kalkulyatori", "#kalkulyator"], ["Motivatsion xat", "#xat"], ["Mening rejam", "#rejam"], ["Sozlamalar", "#sozlamalar"]]);
-    col("Uniroad", [["Biz haqimizda", "#biz-haqimizda"]].concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"]]).concat(realAmb().length ? [["Talaba-elchilar", "#elchilar"]] : []).concat(realOut().length ? [["Natijalar", "#natijalar"]] : []).concat(evList().length ? [["Jonli efirlar", "#efirlar"]] : []).concat([["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#xabar"], ["Telegram: " + tgName(), tgUrl()]]));
+    col("Uniroad", [["Biz haqimizda", "#biz-haqimizda"]].concat(plansOn() ? [["Tariflar", "#tariflar"]] : []).concat([["Ota-onalar uchun", "#ota-onalar"]]).concat(realAmb().length ? [["Talaba-elchilar", "#elchilar"]] : []).concat(realOut().length ? [["Natijalar", "#natijalar"]] : []).concat(evList().length ? [["Jonli efirlar", "#efirlar"]] : []).concat([["Yangiliklar", "#yangiliklar"], ["Fikr bildirish", "#xabar"], ["Maxfiylik siyosati", "#maxfiylik"], ["Telegram: " + tgName(), tgUrl()]]));
     f.appendChild(g);
     var p = el("p", "brand"); p.appendChild(document.createTextNode("© " + new Date().getFullYear() + " Uniroad." + (S.site.updated ? " Ma'lumotlar oxirgi marta " + S.site.updated + " da yangilandi." : "")));
     var tg = el("a", null, tgName()); tg.href = tgUrl(); tg.target = "_blank"; tg.rel = "noopener"; p.appendChild(tg);
@@ -1759,6 +1761,7 @@
     /* Maxfiylik */
     var g6 = group("Maxfiylik", "Saytda reklama va kuzatuv kodi yo'q. Profil tahlili, kalkulyator va rejangiz faqat shu qurilmada hisoblanadi. Faqat o'zingiz «yuborish» tugmasini bosgan xabar bizga keladi.");
     row(g6, "shield", "c-green", "Ma'lumotlaringiz himoyalangan", {value:"Faqat qurilmada"});
+    row(g6, "doc", "c-navy", "Maxfiylik siyosati", {href:"#maxfiylik"});
     main.appendChild(el("p", "st-ver", "Uniroad · ma'lumotlar " + (S.site.updated || "") + " holatiga"));
     footer(main);
   }
@@ -1996,6 +1999,22 @@
     setTimeout(updateBell, 0);
   }
 
+  /* ================= PRIVACY POLICY (content/privacy.json) ================= */
+  function privacyView(main){
+    var P = S.privacy || {};
+    function fill(t){ return str(t).replace(/\{telegram\}/g, tgName()).replace(/\{controller\}/g, str(P.controller) || "Uniroad loyihasi egasi"); }
+    pageHead(main, P.title || "Maxfiylik siyosati", fill(P.lead));
+    if(P.updated) main.appendChild(el("p", "muted-note", "Oxirgi yangilanish: " + P.updated));
+    var art = el("article", "card policy");
+    arr(P.sections).forEach(function(x){
+      art.appendChild(el("h2", null, str(x.h)));
+      art.appendChild(paras(fill(x.p)));
+      var ls = arr(x.links).filter(function(l){ return safeUrl(l.url); });
+      if(ls.length){ var ul = el("ul", "policy-links"); ls.forEach(function(l){ var li = el("li"), a = el("a", null, str(l.label)); a.href = safeUrl(l.url); a.target = "_blank"; a.rel = "noopener"; li.appendChild(a); ul.appendChild(li); }); art.appendChild(ul); }
+    });
+    main.appendChild(art);
+  }
+
   /* ================= FEEDBACK: problem report / suggestion / question -> Telegram (via relay) ================= */
   var FBK = [["xato","Muammo"],["taklif","Taklif"],["savol","Savol"],["fikr","Fikr"]];
   function feedbackForm(preset){
@@ -2033,7 +2052,7 @@
     /* what is sent */
     var det = el("details", "fb-what"); det.appendChild(el("summary", null, "Xabar bilan nima yuboriladi?"));
     var ul = el("ul"); ["Siz yozgan matn va tanlagan turingiz", "Aloqa: faqat o'zingiz yozsangiz", "Sayt versiyasi, sana va vaqt", "Qurilma turi va brauzer (masalan, «Android · Chrome»), til va ochiq sahifa"].forEach(function(t){ ul.appendChild(el("li", null, t)); });
-    det.appendChild(ul); det.appendChild(el("p", null, "Ismingiz, telefoningiz yoki boshqa shaxsiy ma'lumot o'zingiz yozmaguningizcha yuborilmaydi. Xabar faqat Uniroad jamoasining Telegramiga boradi."));
+    det.appendChild(ul); det.appendChild(el("p", null, "Ismingiz, telefoningiz yoki boshqa shaxsiy ma'lumot o'zingiz yozmaguningizcha yuborilmaydi. Xabar faqat Uniroad jamoasining Telegramiga boradi.")); var pv = el("a", null, "Maxfiylik siyosati"); pv.href = "#maxfiylik"; det.appendChild(pv);
     form.appendChild(det);
 
     var status = el("div", "fb-status"); status.setAttribute("role", "status"); status.setAttribute("aria-live", "polite"); form.appendChild(status);
@@ -3051,7 +3070,13 @@
     var fig = el("figure", "media");
     if(b.title) fig.appendChild(el("div", "ttl", b.title));
     var fr = el("div", "frame");
-    if(emb){ var f = el("iframe"); f.src = emb; f.title = str(b.title) || "Video"; f.loading = "lazy"; f.allow = "accelerometer; encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen = true; fr.appendChild(f); fig.appendChild(fr); }
+    if(emb){
+      /* privacy: YouTube/Vimeo load only after the visitor presses play (no third-party request before consent) */
+      var pl = el("button", "vid-gate"); pl.type = "button"; pl.appendChild(ic("play"));
+      var gt = el("span"); gt.appendChild(el("b", null, "Videoni ko'rish")); gt.appendChild(el("small", null, "Bosganingizda video " + host(emb) + " saytidan yuklanadi va u sizning IP manzilingizni ko'radi.")); pl.appendChild(gt);
+      pl.onclick = function(){ var f = el("iframe"); f.src = emb + (emb.indexOf("?") < 0 ? "?" : "&") + "autoplay=1"; f.title = str(b.title) || "Video"; f.allow = "accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen = true; fr.textContent = ""; fr.appendChild(f); };
+      fr.appendChild(pl); fig.appendChild(fr);
+    }
     else if(file || isVideoFile(url)){ var v = el("video"); v.controls = true; v.preload = "metadata"; v.playsInline = true; v.src = file || url; fr.appendChild(v); fig.appendChild(fr); }
     else return linkBlock({url:url, label:str(b.title) || "Videoni ochish", note:b.caption});
     if(b.caption) fig.appendChild(el("figcaption", null, b.caption));

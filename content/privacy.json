@@ -1,0 +1,64 @@
+{
+  "title": "Maxfiylik siyosati",
+  "updated": "27.11.2026",
+  "controller": "Uniroad loyihasi egasi",
+  "lead": "Qisqasi: saytda ro'yxatdan o'tish, cookie, reklama va kuzatuv (analitika) kodi yo'q. Siz kiritgan ma'lumotlar faqat sizning qurilmangizda saqlanadi. Bizga faqat siz o'zingiz «Yuborish» tugmasini bosgan xabar keladi.",
+  "sections": [
+    {
+      "h": "1. Ma'lumotlar uchun kim javobgar",
+      "p": "Ma'lumotlar nazoratchisi: {controller}. Savol, so'rov yoki ma'lumotingizni o'chirish uchun Telegram orqali yozing: {telegram}."
+    },
+    {
+      "h": "2. Qurilmangizda saqlanadigan ma'lumotlar",
+      "p": "Rejangiz, profil tahlili javoblari, saqlangan universitetlar, kalkulyator raqamlari, xat va xabar qoralamalari hamda sozlamalar brauzeringizning ichki xotirasida (localStorage) saqlanadi. Ular bizga yoki boshqa birovga yuborilmaydi.\n\nUlarni istalgan payt o'chirishingiz mumkin: Sozlamalar → «Barcha ma'lumotlarimni o'chirish»."
+    },
+    {
+      "h": "3. Bizga yuboriladigan ma'lumotlar",
+      "p": "Faqat siz o'zingiz yuborsangiz: «Fikr bildirish» formasi, profil tahlili natijasi yoki tarif so'rovi.\n\nTarkibi: siz yozgan matn; aloqa ma'lumoti (Telegram yoki telefon) faqat o'zingiz yozsangiz; texnik ma'lumot: sayt versiyasi, sana, qurilma turi va brauzer (masalan, «Android · Chrome»), til va ochiq sahifa.\n\nMaqsad: savolingizga javob berish va saytdagi xatolarni tuzatish. Asos: siz so'ragan javob va yuborish orqali bergan roziligingiz (GDPR 6(1)(a) va 6(1)(b))."
+    },
+    {
+      "h": "4. Ma'lumot kimlar orqali o'tadi",
+      "p": "Xabaringiz Cloudflare Worker orqali sayt egasining Telegram chatiga yetkaziladi. Worker xabarni saqlamaydi, faqat uzatadi. Telegram xabarni o'z serverlarida saqlaydi.\n\nSayt GitHub Pages'da joylashgan: GitHub xavfsizlik maqsadida tashrif buyuruvchilarning IP manzilini qisqa muddat qayd etishi mumkin.\n\nBu kompaniyalar Yevropa Ittifoqidan tashqarida ham ishlaydi va o'z maxfiylik siyosatlariga amal qiladi (havolalar pastda).",
+      "links": [
+        {
+          "label": "GitHub maxfiylik siyosati",
+          "url": "https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+        },
+        {
+          "label": "Cloudflare maxfiylik siyosati",
+          "url": "https://www.cloudflare.com/privacypolicy/"
+        },
+        {
+          "label": "Telegram maxfiylik siyosati",
+          "url": "https://telegram.org/privacy"
+        }
+      ]
+    },
+    {
+      "h": "5. Siz bosgandagina ishlaydigan tashqi xizmatlar",
+      "p": "Kalendarga obuna (Google, Apple, Outlook), videolar (YouTube, Vimeo) va Telegram havolalari faqat siz bosganingizdan keyin o'sha xizmatga ulanadi. Shundan so'ng o'sha xizmatning o'z qoidalari amal qiladi.\n\nShriftlar va rasmlar saytning o'zidan yuklanadi."
+    },
+    {
+      "h": "6. Qancha vaqt saqlanadi",
+      "p": "Telegram'ga kelgan xabarlar savolingiz hal bo'lgach o'chiriladi, ko'pi bilan 12 oy saqlanadi. Qurilmangizdagi ma'lumotlarni faqat o'zingiz boshqarasiz."
+    },
+    {
+      "h": "7. Huquqlaringiz",
+      "p": "Siz bizdan o'zingiz haqingizdagi ma'lumotni ko'rish, tuzatish yoki o'chirishni so'rashingiz va rozilikni qaytarib olishingiz mumkin. Buning uchun {telegram} ga yozing, 30 kun ichida javob beramiz.\n\nYevropa Ittifoqida bo'lsangiz, Italiyaning shaxsiy ma'lumotlarni himoya qilish organiga (Garante per la protezione dei dati personali) shikoyat qilish huquqingiz bor.",
+      "links": [
+        {
+          "label": "Garante per la protezione dei dati personali",
+          "url": "https://www.garanteprivacy.it/"
+        }
+      ]
+    },
+    {
+      "h": "8. Yoshlar",
+      "p": "14 yoshdan kichik bo'lsangiz, bizga xabar yuborishdan oldin ota-onangiz bilan maslahatlashing."
+    },
+    {
+      "h": "9. O'zgarishlar",
+      "p": "Bu siyosat o'zgarsa, shu sahifada yangi sana bilan e'lon qilinadi."
+    }
+  ]
+}

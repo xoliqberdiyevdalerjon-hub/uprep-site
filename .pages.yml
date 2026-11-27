@@ -800,3 +800,27 @@ content:
           - { name: unis, label: Kim so'raydi, type: text }
           - { name: url, label: Rasmiy havola, type: string }
       - { name: tips, label: Maslahatlar, type: string, list: true }
+  - name: privacy
+    label: "Maxfiylik siyosati"
+    type: file
+    path: content/privacy.json
+    format: json
+    fields:
+      - { name: title, label: Sarlavha, type: string }
+      - { name: updated, label: "Oxirgi yangilanish (DD.MM.YYYY)", type: string }
+      - { name: controller, label: "Ma'lumotlar nazoratchisi (ism-familiya yoki kompaniya, email)", type: string }
+      - { name: lead, label: Qisqacha, type: text }
+      - name: sections
+        label: Bo'limlar
+        type: object
+        list: true
+        fields:
+          - { name: h, label: Sarlavha, type: string }
+          - { name: p, label: "Matn ({telegram} va {controller} o'zi qo'yiladi)", type: text }
+          - name: links
+            label: Havolalar
+            type: object
+            list: true
+            fields:
+              - { name: label, label: Matn, type: string }
+              - { name: url, label: Manzil, type: string }
