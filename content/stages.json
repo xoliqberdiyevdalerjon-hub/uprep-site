@@ -602,6 +602,11 @@
       },
       {
         "type": "callout",
+        "style": "warn",
+        "text": "Ro'yxatdan o'tishda birinchi to'lovni qilasiz va summasi universitetga qarab farq qiladi. Odatda unga viloyatning stipendiya solig'i (tassa regionale per il diritto allo studio, ko'p viloyatlarda 140 €) va 16 € lik bollo kiradi, ba'zi universitetlarda universitet hissasi ham qo'shiladi. Muddatdan kechiksangiz, jarima (mora) qo'shiladi. Misol, Sapienza: taxminan 189 €, muddatdan kechiksangiz 249 €. Aniq summa va muddatni universitetingizning «Tasse e contributi» sahifasida tekshiring."
+      },
+      {
+        "type": "callout",
         "style": "tip",
         "text": "Stipendiya idorasi ham enrollment va permesso hujjatlarini kutadi (masalan Lazio DiSCo 2026/27 da 10.12.2026 gacha). O'z viloyatingiz idorasining muddatini «Stipendiyalar» sahifasida tekshiring."
       },
