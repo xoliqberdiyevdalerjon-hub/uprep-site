@@ -273,8 +273,63 @@
   }
   window.addEventListener("online", function(){ if(LOADFAIL.length) location.reload(); });
   var LOADFAIL = [];
+  /* ---------------- language: uz is the source; ru = content/ru/*.json overlays (texts only) + assets/i18n/ru.json for interface strings ---------------- */
+  var LANG = (function(){ try{ var q = /[?&]lang=(uz|ru)\b/.exec(location.search); if(q){ localStorage.setItem("uniroad-lang", q[1]); return q[1]; } return localStorage.getItem("uniroad-lang") === "ru" ? "ru" : "uz"; }catch(e){ return "uz"; } })();
+  document.documentElement.lang = LANG;
+  function setLang(l){ try{ localStorage.setItem("uniroad-lang", l); }catch(e){} var u = location.href.replace(/([?&])lang=(uz|ru)&?/, "$1").replace(/[?&](#|$)/, "$1"); if(u === location.href) location.reload(); else location.replace(u); }
+  /* overlay keeps the uz structure: only strings that exist in both are replaced; arrays of objects match by id, otherwise by position */
+  function overlay(b, o){
+    if(o == null) return b;
+    if(typeof b === "string") return typeof o === "string" && o.trim() ? o : b;
+    if(Array.isArray(b)){
+      if(!Array.isArray(o)) return b;
+      var byId = null;
+      if(b.some(function(x){ return x && typeof x === "object" && x.id != null; })){ byId = {}; o.forEach(function(x){ if(x && x.id != null) byId[x.id] = x; }); }
+      return b.map(function(x, i){ return overlay(x, byId && x && typeof x === "object" && x.id != null ? byId[x.id] : o[i]); });
+    }
+    if(b && typeof b === "object"){
+      if(!o || typeof o !== "object" || Array.isArray(o)) return b;
+      for(var k in b) if(Object.prototype.hasOwnProperty.call(b, k) && Object.prototype.hasOwnProperty.call(o, k)) b[k] = overlay(b[k], o[k]);
+    }
+    return b;
+  }
   function load(name, fallback){
-    return fetch("content/" + name + ".json", {cache:"no-cache"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ LOADFAIL.push(name); showLoadFail(); return fallback; });
+    var base = fetch("content/" + name + ".json", {cache:"no-cache"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ LOADFAIL.push(name); showLoadFail(); return fallback; });
+    if(LANG !== "ru") return base;
+    var tr = fetch("content/ru/" + name + ".json", {cache:"no-cache"}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; });
+    return Promise.all([base, tr]).then(function(x){ return overlay(x[0], x[1]); });
+  }
+  /* interface strings: exact matches ("s") and patterns ("p": [regex, template]); template: $1 = group (translated too), {1|форма1|форма2|форма5} = Russian plural by group 1 */
+  var I18N = null;
+  function plural(n, a, b, c){ n = Math.abs(n) % 100; var m = n % 10; return n > 10 && n < 20 ? c : m > 1 && m < 5 ? b : m === 1 ? a : c; }
+  function T(s){
+    if(!I18N || typeof s !== "string") return s;
+    var t = s.trim(); if(!t) return s;
+    var v = Object.prototype.hasOwnProperty.call(I18N.s, t) ? I18N.s[t] : null;
+    if(v == null) for(var i = 0; i < I18N.p.length; i++){
+      var m = I18N.p[i][0].exec(t);
+      if(m){ v = I18N.p[i][1].replace(/\{(\d)\|([^|}]*)\|([^|}]*)\|([^}]*)\}/g, function(_, g, a, b, c){ return plural(parseInt(String(m[+g] || "").replace(/[^\d]/g, ""), 10) || 0, a, b, c); }).replace(/\$(\d)/g, function(_, g){ return m[+g] != null ? T(m[+g]) : ""; }); break; }
+    }
+    return v == null ? s : s.replace(t, v);
+  }
+  var TR_ATTR = ["aria-label", "placeholder", "title", "alt"];
+  function trTree(n){
+    if(!I18N || !n) return;
+    if(n.nodeType === 3){ var p = n.parentNode; if(p && !/^(SCRIPT|STYLE|TEXTAREA)$/.test(p.nodeName)){ var v = T(n.nodeValue); if(v !== n.nodeValue) n.nodeValue = v; } return; }
+    if(n.nodeType !== 1 || n.hasAttribute("data-notr")) return;
+    for(var i = 0; i < TR_ATTR.length; i++){ var a = n.getAttribute(TR_ATTR[i]); if(a){ var w = T(a); if(w !== a) n.setAttribute(TR_ATTR[i], w); } }
+    if(n.nodeName === "INPUT" && /^(button|submit)$/.test(n.type) && n.value){ var x = T(n.value); if(x !== n.value) n.value = x; }
+    for(var c = n.firstChild; c; c = c.nextSibling) trTree(c);
+  }
+  function startI18n(){
+    if(LANG !== "ru") return Promise.resolve();
+    return fetch("assets/i18n/ru.json", {cache:"no-cache"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+      if(!d) return;
+      I18N = {s:d.s || {}, p:(d.p || []).map(function(x){ return [new RegExp(x[0]), x[1]]; })};
+      document.title = T(document.title); trTree(document.body);
+      new MutationObserver(function(ms){ ms.forEach(function(m){ if(m.type === "childList") m.addedNodes.forEach(trTree); else trTree(m.target); }); })
+        .observe(document.body, {childList:true, subtree:true, characterData:true, attributes:true, attributeFilter:TR_ATTR});
+    }).catch(function(){});
   }
   /* key figures live in ONE place: site.json "facts" (visa money, SSN) and dsu.json "national" (DSU limits).
      Texts write {{viza}}, {{isee}}, {{ispe}}, {{stip}}, {{ssn}} and get the current value, so a number is never out of sync. */
@@ -291,7 +346,7 @@
     return o;
   }
   /* boot loads only what the shell, home page and the tools need; page-specific texts are fetched on demand (cached) */
-  Promise.all([load("site",{}), load("stages",[]), load("calendar",[]), load("cities",[]), load("universities",[]), load("dsu",{agencies:[]}), load("news",[]), load("reviews",[]), load("ambassadors",[]), load("outcomes",[]), load("events",[])]).then(function(r){
+  Promise.all([load("site",{}), load("stages",[]), load("calendar",[]), load("cities",[]), load("universities",[]), load("dsu",{agencies:[]}), load("news",[]), load("reviews",[]), load("ambassadors",[]), load("outcomes",[]), load("events",[]), startI18n()]).then(function(r){
     S.site = r[0] || {}; S.stages = arr(r[1]); S.calendar = arr(r[2]); S.cities = arr(r[3]); S.unis = arr(r[4]);
     S.dsu = r[5] || {agencies:[]}; S.dsu.agencies = arr(S.dsu.agencies);
     S.news = arr(r[6]); S.reviews = arr(r[7]); S.amb = arr(r[8]); S.out = arr(r[9]); S.ev = arr(r[10]);
@@ -672,7 +727,7 @@
   function plans(){ var P = arr(S.site.plans).filter(function(x){ return x && str(x.name) && str(x.price); }); return P.length ? P : [{id:"app", name:"Free", price:price(), note:"Bir marta to'lov", items:arr(S.site.includes)}]; }
   function planAsk(p){
     var body = "Salom! Uniroad saytidan yozyapman. «" + str(p.name) + "» (" + str(p.price) + ") " + (p.id ? "tarifi" : "xizmati") + " bo'yicha ma'lumot olmoqchiman.";
-    if(relayOn()){ var c = prompt("Siz bilan qanday bog'lanamiz? Telegram @username yoki telefon raqamingiz:"); if(!str(c)) return; sendLead("tarif", body, c); }
+    if(relayOn()){ var c = prompt(T("Siz bilan qanday bog'lanamiz? Telegram @username yoki telefon raqamingiz:")); if(!str(c)) return; sendLead("tarif", body, c); }
     else leadSheet(body);
   }
   function plansGrid(){
@@ -1777,13 +1832,14 @@
     var fi = el("input"); fi.type = "file"; fi.accept = ".json,application/json"; fi.hidden = true; main.appendChild(fi);
     fi.onchange = function(){ var f = fi.files && fi.files[0]; if(!f) return; var r = new FileReader(); r.onload = function(){ try{ var o = JSON.parse(r.result); if(!o || (o.app !== "uniroad" && o.app !== OLDP) || typeof o.data !== "object") throw 0; var n = 0; Object.keys(o.data).forEach(function(k){ var nk = k.indexOf(OLDP + "-") === 0 ? "uniroad-" + k.slice(OLDP.length + 1) : k; if(/^uniroad-/.test(nk) && typeof o.data[k] === "string"){ LS.setItem(nk, o.data[k]); n++; } }); toast(n + " ta yozuv tiklandi. Sahifa yangilanmoqda…"); setTimeout(function(){ location.reload(); }, 1200); }catch(e){ toast("Bu fayl Uniroad zaxirasi emas."); } }; r.readAsText(f); };
     row(g3, "upload", "c-blue", "Zaxiradan tiklash", {onclick:function(){ fi.click(); }});
-    row(g3, "trash", "c-red", "Barcha ma'lumotlarimni o'chirish", {danger:true, onclick:function(){ if(!confirm("Rejangiz, ariza holatlari, belgilangan hujjatlar va test javoblari shu qurilmadan o'chiriladi. Davom etasizmi?")) return; LS.keys().forEach(function(k){ LS.removeItem(k); }); try{ Object.keys(localStorage).forEach(function(k){ if(k.indexOf("uniroad") === 0 || k.indexOf(OLDP) === 0) localStorage.removeItem(k); }); }catch(e){} toast("Ma'lumotlar o'chirildi."); setTimeout(function(){ location.hash = ""; location.reload(); }, 900); }});
+    row(g3, "trash", "c-red", "Barcha ma'lumotlarimni o'chirish", {danger:true, onclick:function(){ if(!confirm(T("Rejangiz, ariza holatlari, belgilangan hujjatlar va test javoblari shu qurilmadan o'chiriladi. Davom etasizmi?"))) return; LS.keys().forEach(function(k){ LS.removeItem(k); }); try{ Object.keys(localStorage).forEach(function(k){ if(k.indexOf("uniroad") === 0 || k.indexOf(OLDP) === 0) localStorage.removeItem(k); }); }catch(e){} toast("Ma'lumotlar o'chirildi."); setTimeout(function(){ location.hash = ""; location.reload(); }, 900); }});
 
     /* Sayt */
     var g4 = group("Sayt");
     var standalone = window.matchMedia && matchMedia("(display-mode: standalone)").matches, ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
     row(g4, "share", "c-green", "Do'stlarga ulashish", {onclick:function(){ var u = location.origin + location.pathname, t = "Uniroad: Italiyada o'qish, o'zbek tilida"; if(navigator.share) navigator.share({title:t, url:u}).catch(function(){}); else window.open("https://t.me/share/url?url=" + encodeURIComponent(u) + "&text=" + encodeURIComponent(t), "_blank", "noopener"); }});
-    row(g4, "languages", "c-purple", "Til", {value:"O'zbekcha", sub:"Rus tilidagi versiya tayyorlanmoqda"});
+    if(arr(S.site.langs).indexOf("ru") >= 0 || LANG === "ru") row(g4, "languages", "c-purple", "Til / Язык", {value:LANG === "ru" ? "Русский" : "O'zbekcha", sub:LANG === "ru" ? "O'zbekchaga o'tish" : "Переключить на русский", onclick:function(){ setLang(LANG === "ru" ? "uz" : "ru"); }});
+    else row(g4, "languages", "c-purple", "Til", {value:"O'zbekcha", sub:"Rus tilidagi versiya tayyorlanmoqda"});
     if(LIVE) row(g4, "user", "c-gold", "Hisob", {href:A.user ? "#hisob" : "#kirish", value:A.user ? "Kirgansiz" : "Kirish"});
 
     /* Yordam */
