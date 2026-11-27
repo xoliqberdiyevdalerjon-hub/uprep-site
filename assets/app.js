@@ -915,6 +915,20 @@
     [["Universitetni tanlang", "Universitet joylashgan viloyat stipendiya idorasini belgilaydi."], ["Yozda ariza bering", "Odatda iyun – sentyabr, siz hali O'zbekistondaligingizda. Muddat viloyatga qarab har xil."], ["Oila hujjatlari", "Oila tarkibi, daromad va mulk ma'lumotnomalari: apostil va italyancha tarjima bilan. Italiyada CAF ulardan ISEE parificato tuzadi."]].forEach(function(x){ var li = el("li"); li.appendChild(el("b", null, x[0])); li.appendChild(el("span", null, x[1])); how.appendChild(li); });
     main.appendChild(sec(secHead("Qanday ishlaydi", null, null, null, "3 qadam"), how));
 
+    /* every kind of scholarship an Uzbek student can apply for: regional DSU, Italian government, Uzbek government, universities, Erasmus Mundus */
+    var ST = arr(D.scholarshipTypes);
+    if(ST.length){ var tg = el("div", "dsu-rows"); ST.forEach(function(x){ var key = "dsut:" + x.id, isOpen = key in open ? open[key] : false;
+        var box = el("section", "dsu-row has-guide st-row"), bt = el("button", "dsu-sum"); bt.type = "button"; bt.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        var l = el("span", "ds-l"); if(x.tag) l.appendChild(el("span", "tag ok", x.tag)); l.appendChild(el("b", null, x.title)); l.appendChild(el("span", "st-amt", x.amount)); l.appendChild(el("small", null, x.deadline)); bt.appendChild(l);
+        bt.appendChild(ic("down", "chev"));
+        var bd = el("div", "dsu-body"); bd.hidden = !isOpen;
+        bd.appendChild(factTable([["Kimlar uchun", x.who], ["Summa", x.amount], ["Muddat", x.deadline]]));
+        if(arr(x.rules).length){ var u2 = el("ul", "gnotes"); arr(x.rules).forEach(function(t){ u2.appendChild(el("li", null, t)); }); bd.appendChild(u2); }
+        var bx = el("div", "ic-btns"), lu = safeUrl(x.url), ls = safeUrl(x.src); if(lu) bx.appendChild(btn("navy", "link", "Rasmiy sahifa", lu)); if(ls) bx.appendChild(btn("line", "doc", "Manba", ls)); if(bx.firstChild) bd.appendChild(bx);
+        bt.onclick = function(){ var o = bd.hidden; bd.hidden = !o; bt.setAttribute("aria-expanded", o ? "true" : "false"); open[key] = o; saveOpen(); };
+        box.appendChild(bt); box.appendChild(bd); tg.appendChild(box); });
+      main.appendChild(sec(secHead("Stipendiya turlari (" + ST.length + ")", null, null, null, "Hammasi", "O'zbekistonlik talaba topshira oladigan barcha asosiy stipendiyalar. Qatorni bosing: shartlar va rasmiy manba ochiladi."), tg)); }
+
     /* the documents every region asks for: one collapsible checklist */
     var GC = D.guidesCommon, GS = arr(D.guides);
     if(GC){ var cc = el("div", "blocks flat"); var ul0 = el("ul", "ticks small"); arr(GC.items).forEach(function(t){ var li = el("li"); li.appendChild(ic("check")); li.appendChild(el("span", null, t)); ul0.appendChild(li); }); cc.appendChild(ul0);

@@ -1676,3 +1676,8 @@ html.calm .tg-fab-ic::after{animation:none}
 /* room for the floating button under the footer text */
 .foot.wrap{padding-bottom:calc(160px + env(safe-area-inset-bottom,0px))}
 @media (min-width:920px){ .foot.wrap{padding-bottom:110px} }
+/* scholarship types: one column so long amounts never squeeze the title */
+.st-row .dsu-sum .ds-l{gap:4px}
+.st-row .dsu-sum .ds-l .tag{margin:0 0 2px}
+.st-row .st-amt{font-weight:700;font-size:14.5px;color:var(--accent);font-variant-numeric:tabular-nums}
+.st-row .dsu-sum .ds-l small{text-transform:none;letter-spacing:0;font-weight:500}

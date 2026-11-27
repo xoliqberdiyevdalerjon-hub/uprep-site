@@ -338,9 +338,45 @@
   ],
   "uniScholarships": [
     {
+      "uni": "polimi",
+      "title": "PoliMi: Platinum va Gold (magistratura, 2027/28)",
+      "text": "Ingliz tilidagi magistraturaga: Platinum 10 000 € (10 ta) va Gold 8 000 € (18 ta), ikkalasi ham o'qish to'lovidan to'liq ozodlik bilan; Piacenza, Cremona, Lecco va Mantova kampuslarida qo'shimcha stipendiyalar. Qabul arizasi 01.10 – 01.12.2026 da to'langan bo'lishi kerak, stipendiya arizasi 15.12.2026, 12:00 gacha (Online Services orqali). Ingliz tili sertifikati 04.03.2027 gacha. G'olib faqat taxminan 190 € ma'muriy to'lov to'laydi.",
+      "url": "https://www.polimi.it/fileadmin/user_upload/futuri_studenti/borse-di-studio/Merit_Based_Call_For_Applications_a.y._2027-2028.pdf"
+    },
+    {
+      "uni": "polimi",
+      "title": "PoliMi: ingliz tilidagi yangi bakalavrlar",
+      "text": "2026/27: Cremona (Process Engineering) uchun 4 ta va Piacenza (Industrial Engineering) uchun 10 ta stipendiya, yiliga 5 000 € (brutto) + o'qish to'lovidan ozodlik, shartlar bajarilsa 3 yilgacha uzaytiriladi. Muddat 04.06.2026 edi; 2027/28 chaqirig'i bahorda kutiladi.",
+      "url": "https://www.polimi.it/fileadmin/user_upload/futuri_studenti/Call_for_scholarships_for_international_BSc_programs_a.y._26-27.pdf"
+    },
+    {
+      "uni": "unipd",
+      "title": "Padova: International Excellence Scholarship",
+      "text": "Ingliz tilidagi bakalavr va magistraturaga 76 tagacha: yiliga 8 000 € (brutto) + o'qish to'lovidan ozodlik (faqat tassa regionale va bollo to'lanadi); bakalavrga 3 yil, magistraturaga 2 yil. Alohida ariza yo'q: qabulning birinchi bosqichida topshirsangiz avtomatik ko'rib chiqiladi. Italiyada yashamaydigan, chet el diplomli talabalar uchun. Boshqa stipendiya bilan birga berilmaydi; davom ettirish uchun keyingi yil 30-noyabrgacha kamida 20 CFU kerak.",
+      "url": "https://www.unipd.it/en/padua-international-excellence-scholarship-programme"
+    },
+    {
+      "uni": "unito",
+      "title": "Turin: Talents4UniTo (magistratura)",
+      "text": "2026/27: 40 ta stipendiya, 2 yilga jami 20 000 € (brutto) + o'qish to'lovidan ozodlik (har yilgi 1-qismdan tashqari). Ingliz tilidagi, joyi cheklanmagan magistraturalar uchun, ingliz tili kamida B2. Alohida ariza yo'q: apply.unito.it'da qabul arizasi 29.01.2026 gacha berilgan bo'lishi kerak edi. DSU va boshqa stipendiyalar bilan birga berilmaydi.",
+      "url": "https://en.unito.it/sites/sten/files/documenti/2026-01/bando_talents4unito_2026_2027_en.pdf"
+    },
+    {
+      "uni": "unive",
+      "title": "Ca' Foscari: Honours va International College",
+      "text": "Honours Scholarships: 2026/27 da bakalavrga 8 ta, magistraturaga 20 ta, yiliga 10 000 € + o'qish to'lovidan ozodlik; 2027/28 chaqirig'i kuz oxirida e'lon qilinadi. International College: har yili 12 bakalavr va 8 magistr qabul qilinadi; o'qish, qo'shimcha kollej dasturi va Santa Marta yotoqxonasi (10 oy) uchun yiliga atigi 1 000 € (bakalavr) yoki 1 500 € (magistr) to'lanadi.",
+      "url": "https://www.unive.it/pag/19545/?L=1"
+    },
+    {
+      "uni": "unitn",
+      "title": "Trento: xalqaro tadqiqotlar magistraturasi",
+      "text": "2026/27: International Security Studies va European and International Studies magistraturalariga 2 tadan stipendiya, yiliga 7 200 €; reytingga qarab ko'proq talabaga o'qish to'lovidan ozodlik. Muddat 04.03.2026 edi.",
+      "url": "https://conshouston.esteri.it/en/news/dal_consolato/2026/02/universita-di-trento-borse-di-studio-per-lauree-magistrali-in-studi-internazionali-a-a-2026-2027/"
+    },
+    {
       "uni": "unical",
       "title": "Unical: 132 ta to'liq stipendiya (magistratura)",
-      "text": "O'qish to'lovi, bepul yotoqxona va ovqat, ustiga yiliga 3 600 € nafaqa. 2026/27 da chet ellik magistratura talabalariga berilgan; 2027/28 chaqirig'i 2027-yil yanvarda kutilmoqda.",
+      "text": "O'qish to'lovi, bepul yotoqxona va ovqat, ustiga yiliga 3 600 € nafaqa. 2026/27 da chet ellik magistratura talabalariga berilgan; 2027/28 chaqirig'i 2027-yil yanvarda kutilmoqda.",
       "url": "https://www.unical.it/internazionale/intenational-students/unical-admission/"
     },
     {
@@ -388,13 +424,13 @@
     {
       "uni": "unict",
       "title": "Catania: universitet stipendiyalari",
-      "text": "Ingliz tilidagi magistratura talabalari uchun; stipendiya bilan yillik umumiy to'lov 150 €.",
+      "text": "Ingliz tilidagi magistratura talabalari uchun; stipendiya bilan yillik umumiy to'lov 150 €.",
       "url": "https://www.unict.it/en/news-events/university-catania-scholarships-202627"
     },
     {
       "uni": "unicatt",
       "title": "Cattolica: UCSC International Scholarship",
-      "text": "Magistraturada non-EU qat'iy to'lovni (9 370 €) taxminan 6 400 € gacha kamaytiradi.",
+      "text": "Magistraturada non-EU qat'iy to'lovni (9 370 €) taxminan 6 400 € gacha kamaytiradi.",
       "url": "https://international.unicatt.it/ucscinternational-admission-and-tuition-tuition-fees-and-scholarships-10154"
     },
     {
@@ -894,5 +930,104 @@
       "O'zbekiston 2026/27 uchun MUR'ning «juda kambag'al davlatlar» ro'yxatida yo'q (DM 176/2026). Shuning uchun o'zbek talabalar oila hujjatlarini to'liq topshiradi: «oila yuqori daromadli emas» degan qisqa yo'l ularga to'g'ri kelmaydi",
       "Hujjat yig'ish uchun agentlik yoki vositachi kerak emas: ER.GO va EDISU pul evaziga «yordam» taklif qilganlardan ehtiyot bo'lishni ochiq ogohlantiradi"
     ]
-  }
+  },
+  "scholarshipTypes": [
+    {
+      "id": "dsu",
+      "title": "Viloyat stipendiyasi (DSU)",
+      "tag": "Eng asosiy",
+      "who": "Bakalavr, magistratura va PhD · oila daromadiga qarab",
+      "amount": "7 171 – 8 248 € gacha",
+      "deadline": "Odatda iyun – sentyabr",
+      "rules": [
+        "Italiyadagi deyarli har bir davlat universiteti talabasi topshira oladi: baholar emas, oila daromadi va mol-mulki hal qiladi",
+        "G'olib o'qish to'lovidan ozod bo'ladi, ko'p joyda yotoqxona va ovqat ham beriladi",
+        "Ariza universitet joylashgan viloyatning idorasiga beriladi: pastdagi ro'yxatda har bir idoraning hujjatlari va muddati bor",
+        "O'zbekiston «juda kambag'al davlatlar» ro'yxatida yo'q, shuning uchun oila hujjatlari to'liq topshiriladi"
+      ],
+      "url": ""
+    },
+    {
+      "id": "maeci",
+      "title": "Italiya hukumati stipendiyasi (MAECI)",
+      "tag": "Davlat",
+      "who": "Magistratura, PhD, AFAM, tadqiqot · O'zbekiston fuqarolari ham",
+      "amount": "10 800 € (9 oy)",
+      "deadline": "2027/28 chaqirig'i hali chiqmagan (2026-yilda muddat 26.03 edi)",
+      "rules": [
+        "O'zbekiston 2026/27 tanlovidagi davlatlar ro'yxatida bor",
+        "Yangi stipendiya magistratura (2-sikl), PhD, AFAM va tadqiqot uchun; bakalavrda faqat oldingi g'oliblar uzaytiradi",
+        "Yosh: magistratura va AFAM uchun 28 yoshgacha, PhD 30, tadqiqot 40 yoshgacha (ariza muddati kuni)",
+        "Til: dastur tilida kamida B2 (ingliz yoki italyan)",
+        "Pul 3 qismda: 5 500 € (kelganda), 2 300 € (fevral), 3 000 € (iyun, yil davomida 27 CFU to'plangach)",
+        "Italiyaga 15.11 gacha kelmasangiz, summa kechikkan kunlarga qarab kamayadi",
+        "Ba'zi universitetlar MAECI g'oliblarini o'qish to'lovidan ozod qiladi; tassa regionale baribir o'zingizdan",
+        "Ariza studyinitaly.esteri.it portalida, faqat bitta fuqarolik bo'yicha. 2027/28 chaqirig'i hali e'lon qilinmagan: 2026-yilda muddat 26-mart edi"
+      ],
+      "url": "https://www.esteri.it/it/servizi-opportunita/opportunita/borse-di-studio/per-cittadini-stranieri/",
+      "src": "https://www.esteri.it/wp-content/uploads/2026/03/Bando-26-27-ITA.pdf"
+    },
+    {
+      "id": "iyt",
+      "title": "Invest Your Talent in Italy",
+      "tag": "Davlat",
+      "who": "Ingliz tilidagi magistratura",
+      "amount": "9 oylik stipendiya + o'qish to'lovidan ozodlik",
+      "deadline": "O'zbekiston hozircha ro'yxatda yo'q · 2027/28 hali ochilmagan",
+      "rules": [
+        "Hozirgi tanlov faqat ro'yxatdagi 23 davlat uchun: O'zbekiston unda yo'q (Qozog'iston bor)",
+        "Ro'yxat har yili yangilanadi: 2027/28 chaqirig'i chiqqanda tekshiramiz va xabar beramiz"
+      ],
+      "url": "https://investyourtalentapplication.esteri.it/SitoIYT/EN/invest-your-talent-in-italy"
+    },
+    {
+      "id": "eyuf",
+      "title": "El-yurt umidi jamg'armasi (O'zbekiston)",
+      "tag": "O'zbekiston",
+      "who": "O'zbekiston fuqarolari · bakalavr, magistratura, PhD",
+      "amount": "To'liq: o'qish, viza, sug'urta, yo'l, yashash va ijara",
+      "deadline": "2026: aprel va 1 – 15.11.2026 (yopilgan)",
+      "rules": [
+        "Yosh: bakalavr 30 yoshgacha, magistratura 22–40, PhD 25–45",
+        "Ish staji: magistratura uchun 1 yildan, PhD uchun 2 yildan ortiq",
+        "IELTS: bakalavr kamida 6.0, magistratura va PhD kamida 7.0 (yoki unga teng sertifikat)",
+        "Xorijiy universitetning qabul xati (Letter of Acceptance) kerak: avval Italiyadagi universitetga qabul qilinasiz",
+        "Hujjatlar: jamg'arma direktori nomiga ariza, qabul xati, attestat yoki diplom, til sertifikati, motivatsion insho, mehnat daftarchasi (bo'lsa)",
+        "2026/27 ikkinchi tanlovida 290 ta kvota: 101 bakalavr, 158 magistratura, 31 PhD",
+        "Ariza jamg'armaning onlayn platformasida. Shartnomadagi majburiyatlarni (O'zbekistonga qaytib ishlash va h.k.) oldindan o'qing"
+      ],
+      "url": "https://eyuf.uz/",
+      "src": "https://www.spot.uz/oz/2026/10/29/el-yurt-umidi"
+    },
+    {
+      "id": "uni",
+      "title": "Universitetlarning o'z stipendiyalari",
+      "tag": "Merit",
+      "who": "Asosan a'lo baholi talabalar",
+      "amount": "2 500 – 10 000 € yiliga yoki o'qishdan ozodlik",
+      "deadline": "Ko'pi dekabr – mart",
+      "rules": [
+        "Oila daromadiga emas, baholar va qabul natijasiga qaraladi",
+        "Ko'pida alohida ariza shart emas: qabulning birinchi bosqichida topshirsangiz avtomatik ko'rib chiqiladi (masalan Padova, Turin)",
+        "Ko'p universitet stipendiyalarini DSU bilan birga olib bo'lmaydi (masalan Turin, Padova): qaysi biri foydaliroq ekanini oldindan hisoblang",
+        "Ro'yxat pastda, «Universitetlarning o'z stipendiyalari» bo'limida"
+      ],
+      "url": ""
+    },
+    {
+      "id": "em",
+      "title": "Erasmus Mundus Joint Masters",
+      "tag": "Yevropa Ittifoqi",
+      "who": "Magistratura · 3 ta davlatdagi universitetlarda",
+      "amount": "To'liq: ishtirok xarajatlari + yo'l, viza va oylik nafaqa",
+      "deadline": "Odatda oktabr – yanvar",
+      "rules": [
+        "Kamida 3 davlatdagi 3 ta universitet birga o'qitadigan 1–2 yillik magistratura; ko'pchiligida Italiya universiteti ham bor",
+        "Ariza to'g'ridan-to'g'ri dasturning o'ziga beriladi: har bir dastur o'z muddati va talablarini e'lon qiladi",
+        "To'liq stipendiya eng yuqori ball olgan talabalarga beriladi",
+        "Dasturlarni Yevropa komissiyasining katalogidan qidiring"
+      ],
+      "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters-scholarships"
+    }
+  ]
 }
