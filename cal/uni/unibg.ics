@@ -16,8 +16,8 @@ DTEND;VALUE=DATE:20270116
 SUMMARY:Bergamo: 2027/28: magistratura oldindan baholash\, 1-chaqiriq
 DESCRIPTION:2027/28: magistratura oldindan baholash\, 1-chaqiriq (26.11.202
  6 – 15.01.2027)\nAriza: https://apply.unibg.it/\n\nTalablar va hujjatlar
- : https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unibg/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unibg/qabul
+ : https://uniroad-uz.github.io/uprep-site/#uni-unibg/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unibg/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -41,9 +41,8 @@ SUMMARY:Bergamo: Ba'zi ingliz tilidagi magistraturalar (masalan Economics a
  nd Data Analysis)
 DESCRIPTION:Ba'zi ingliz tilidagi magistraturalar (masalan Economics and Da
  ta Analysis) (31.01.2027)\nAriza: https://apply.unibg.it/\n\nTalablar va h
- ujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unib
- g/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unibg/qabul
+ ujjatlar: https://uniroad-uz.github.io/uprep-site/#uni-unibg/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unibg/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -65,9 +64,8 @@ DTSTART;VALUE=DATE:20270331
 DTEND;VALUE=DATE:20270401
 SUMMARY:Bergamo: Natijalar
 DESCRIPTION:Natijalar (31.03.2027)\nAriza: https://apply.unibg.it/\n\nTalab
- lar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#
- uni-unibg/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unibg/qabul
+ lar va hujjatlar: https://uniroad-uz.github.io/uprep-site/#uni-unibg/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unibg/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

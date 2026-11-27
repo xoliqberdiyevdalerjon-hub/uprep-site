@@ -9,7 +9,7 @@ O'z domeningizga o'tsangiz, BASE ni o'zgartiring.
 """
 import html, json, os, re, shutil, datetime
 
-BASE = "https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/"
+BASE = "https://uniroad-uz.github.io/uprep-site/"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TODAY = datetime.date.today()
 GENERATED = ["uni", "universitetlar", "stipendiya", "noldan", "foundation", "testlar", "ota-onalar", "tariflar", "qollanma"]

@@ -15,9 +15,9 @@ DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:Macerata: 2027/28: 1-oqim
 DESCRIPTION:2027/28: 1-oqim (03.11 – 30.11.2026)\nAriza: https://apply.un
- imc.it/\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github
- .io/uprep-site/#uni-unimc/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimc/qabul
+ imc.it/\n\nTalablar va hujjatlar: https://uniroad-uz.github.io/uprep-site/
+ #uni-unimc/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unimc/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -37,9 +37,9 @@ DTSTART;VALUE=DATE:20270108
 DTEND;VALUE=DATE:20270109
 SUMMARY:Macerata: 2027/28: 2-oqim
 DESCRIPTION:2027/28: 2-oqim (08.01.2027)\nAriza: https://apply.unimc.it/\n\
- nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-
- site/#uni-unimc/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimc/qabul
+ nTalablar va hujjatlar: https://uniroad-uz.github.io/uprep-site/#uni-unimc
+ /qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unimc/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -59,9 +59,9 @@ DTSTART;VALUE=DATE:20270201
 DTEND;VALUE=DATE:20270202
 SUMMARY:Macerata: 2027/28: 3-oqim
 DESCRIPTION:2027/28: 3-oqim (01.02.2027)\nAriza: https://apply.unimc.it/\n\
- nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-
- site/#uni-unimc/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimc/qabul
+ nTalablar va hujjatlar: https://uniroad-uz.github.io/uprep-site/#uni-unimc
+ /qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unimc/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -81,9 +81,9 @@ DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270302
 SUMMARY:Macerata: 2027/28: 4-oqim
 DESCRIPTION:2027/28: 4-oqim (01.03.2027)\nAriza: https://apply.unimc.it/\n\
- nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-
- site/#uni-unimc/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimc/qabul
+ nTalablar va hujjatlar: https://uniroad-uz.github.io/uprep-site/#uni-unimc
+ /qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unimc/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -103,9 +103,9 @@ DTSTART;VALUE=DATE:20270430
 DTEND;VALUE=DATE:20270501
 SUMMARY:Macerata: 2027/28: oxirgi muddat (ba'zi dasturlar)
 DESCRIPTION:2027/28: oxirgi muddat (ba'zi dasturlar) (30.04.2027)\nAriza: h
- ttps://apply.unimc.it/\n\nTalablar va hujjatlar: https://xoliqberdiyevdale
- rjon-hub.github.io/uprep-site/#uni-unimc/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimc/qabul
+ ttps://apply.unimc.it/\n\nTalablar va hujjatlar: https://uniroad-uz.github
+ .io/uprep-site/#uni-unimc/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unimc/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -16,8 +16,8 @@ DTEND;VALUE=DATE:20270202
 SUMMARY:Pisa: Ingliz tilidagi magistratura 2027/28 (ko'p dasturlar)
 DESCRIPTION:Ingliz tilidagi magistratura 2027/28 (ko'p dasturlar) (01.02.20
  27)\nAriza: https://applymscenglish.unipi.it/\n\nTalablar va hujjatlar: ht
- tps://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipi/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipi/qabul
+ tps://uniroad-uz.github.io/uprep-site/#uni-unipi/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unipi/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -39,9 +39,9 @@ DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270302
 SUMMARY:Pisa: Natijalar (Computer Science)
 DESCRIPTION:Natijalar (Computer Science) (01.03.2027)\nAriza: https://apply
- mscenglish.unipi.it/\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerj
- on-hub.github.io/uprep-site/#uni-unipi/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipi/qabul
+ mscenglish.unipi.it/\n\nTalablar va hujjatlar: https://uniroad-uz.github.i
+ o/uprep-site/#uni-unipi/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unipi/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -61,9 +61,9 @@ DTSTART;VALUE=DATE:20270430
 DTEND;VALUE=DATE:20270501
 SUMMARY:Pisa: Economics magistraturasi (chet el diplomi)
 DESCRIPTION:Economics magistraturasi (chet el diplomi) (30.04.2027)\nAriza:
-  https://applymscenglish.unipi.it/\n\nTalablar va hujjatlar: https://xoliq
- berdiyevdalerjon-hub.github.io/uprep-site/#uni-unipi/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipi/qabul
+  https://applymscenglish.unipi.it/\n\nTalablar va hujjatlar: https://uniro
+ ad-uz.github.io/uprep-site/#uni-unipi/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unipi/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

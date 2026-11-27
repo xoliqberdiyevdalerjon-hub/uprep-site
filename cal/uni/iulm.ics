@@ -15,9 +15,9 @@ DTSTART;VALUE=DATE:20270422
 DTEND;VALUE=DATE:20270423
 SUMMARY:IULM: 2027/28: ikki yillik magistraturalar (ko'p dasturlar)
 DESCRIPTION:2027/28: ikki yillik magistraturalar (ko'p dasturlar) (22.04.20
- 27)\nAriza: https://apply.iulm.it/\n\nTalablar va hujjatlar: https://xoliq
- berdiyevdalerjon-hub.github.io/uprep-site/#uni-iulm/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-iulm/qabul
+ 27)\nAriza: https://apply.iulm.it/\n\nTalablar va hujjatlar: https://uniro
+ ad-uz.github.io/uprep-site/#uni-iulm/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-iulm/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

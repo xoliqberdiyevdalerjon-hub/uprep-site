@@ -15,9 +15,9 @@ DTSTART;VALUE=DATE:20270129
 DTEND;VALUE=DATE:20270130
 SUMMARY:Turin (UniTo): 2027/28: magistratura\, 1-chaqiriq
 DESCRIPTION:2027/28: magistratura\, 1-chaqiriq (25.11.2026 – 29.01.2027)\
- nAriza: https://apply.unito.it\n\nTalablar va hujjatlar: https://xoliqberd
- iyevdalerjon-hub.github.io/uprep-site/#uni-unito/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unito/qabul
+ nAriza: https://apply.unito.it\n\nTalablar va hujjatlar: https://uniroad-u
+ z.github.io/uprep-site/#uni-unito/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unito/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -40,8 +40,8 @@ SUMMARY:Turin (UniTo): 2027/28: bakalavr va 5–6 yillik erkin qabul dastur
  lari
 DESCRIPTION:2027/28: bakalavr va 5–6 yillik erkin qabul dasturlari (19.02
   – 15.04.2027)\nAriza: https://apply.unito.it\n\nTalablar va hujjatlar: 
- https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unito/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unito/qabul
+ https://uniroad-uz.github.io/uprep-site/#uni-unito/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unito/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -63,9 +63,9 @@ DTSTART;VALUE=DATE:20270715
 DTEND;VALUE=DATE:20270716
 SUMMARY:Turin (UniTo): Universitaly pre-enrollment (viza)
 DESCRIPTION:Universitaly pre-enrollment (viza) (15.07.2027)\nAriza: https:/
- /apply.unito.it\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hu
- b.github.io/uprep-site/#uni-unito/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unito/qabul
+ /apply.unito.it\n\nTalablar va hujjatlar: https://uniroad-uz.github.io/upr
+ ep-site/#uni-unito/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unito/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

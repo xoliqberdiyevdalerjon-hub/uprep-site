@@ -15,10 +15,9 @@ DTSTART;VALUE=DATE:20261222
 DTEND;VALUE=DATE:20261223
 SUMMARY:Bicocca: 2027/28: erkin qabul dasturlari\, 1-chaqiriq
 DESCRIPTION:2027/28: erkin qabul dasturlari\, 1-chaqiriq (22.10 – 22.12.2
- 026)\nAriza: https://apply.unimib.it/\n\nTalablar va hujjatlar: https://xo
- liqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimib/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimib/qabu
- l
+ 026)\nAriza: https://apply.unimib.it/\n\nTalablar va hujjatlar: https://un
+ iroad-uz.github.io/uprep-site/#uni-unimib/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unimib/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -39,10 +38,9 @@ DTSTART;VALUE=DATE:20270205
 DTEND;VALUE=DATE:20270206
 SUMMARY:Bicocca: Til sertifikati (1-chaqiriq)
 DESCRIPTION:Til sertifikati (1-chaqiriq) (05.02.2027)\nAriza: https://apply
- .unimib.it/\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.gi
- thub.io/uprep-site/#uni-unimib/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimib/qabu
- l
+ .unimib.it/\n\nTalablar va hujjatlar: https://uniroad-uz.github.io/uprep-s
+ ite/#uni-unimib/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unimib/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -63,9 +61,8 @@ DTEND;VALUE=DATE:20270309
 SUMMARY:Bicocca: Cheklangan joyli dasturlar (masalan Scienze biologiche)
 DESCRIPTION:Cheklangan joyli dasturlar (masalan Scienze biologiche) (11.01 
  – 08.03.2027)\nAriza: https://apply.unimib.it/\n\nTalablar va hujjatlar:
-  https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimib/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unimib/qabu
- l
+  https://uniroad-uz.github.io/uprep-site/#uni-unimib/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unimib/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

@@ -16,9 +16,9 @@ DTEND;VALUE=DATE:20270320
 SUMMARY:Messina (UniMe): 2027/28: vizaga muhtoj non-EU\, 1-chaqiriq
 DESCRIPTION:2027/28: vizaga muhtoj non-EU\, 1-chaqiriq (02.02 – 19.03.202
  7)\nAriza: https://international.unime.it/study-us/application-and-admissi
- on\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/u
- prep-site/#uni-unime/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unime/qabul
+ on\n\nTalablar va hujjatlar: https://uniroad-uz.github.io/uprep-site/#uni-
+ unime/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unime/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -41,9 +41,8 @@ DTEND;VALUE=DATE:20270509
 SUMMARY:Messina (UniMe): 2027/28: keyingi chaqiriq
 DESCRIPTION:2027/28: keyingi chaqiriq (08.04 – 08.05.2027)\nAriza: https:
  //international.unime.it/study-us/application-and-admission\n\nTalablar va
-  hujjatlar: https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-un
- ime/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unime/qabul
+  hujjatlar: https://uniroad-uz.github.io/uprep-site/#uni-unime/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unime/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

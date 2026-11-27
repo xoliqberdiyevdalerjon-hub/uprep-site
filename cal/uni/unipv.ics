@@ -15,9 +15,9 @@ DTSTART;VALUE=DATE:20261118
 DTEND;VALUE=DATE:20261119
 SUMMARY:Pavia: 2027/28: 1-chaqiriq
 DESCRIPTION:2027/28: 1-chaqiriq (12.11 – 18.11.2026)\nAriza: https://appl
- y.unipv.eu/\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.gi
- thub.io/uprep-site/#uni-unipv/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipv/qabul
+ y.unipv.eu/\n\nTalablar va hujjatlar: https://uniroad-uz.github.io/uprep-s
+ ite/#uni-unipv/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unipv/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -37,9 +37,9 @@ DTSTART;VALUE=DATE:20270120
 DTEND;VALUE=DATE:20270121
 SUMMARY:Pavia: 2027/28: 2-chaqiriq
 DESCRIPTION:2027/28: 2-chaqiriq (12.01 – 20.01.2027)\nAriza: https://appl
- y.unipv.eu/\n\nTalablar va hujjatlar: https://xoliqberdiyevdalerjon-hub.gi
- thub.io/uprep-site/#uni-unipv/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipv/qabul
+ y.unipv.eu/\n\nTalablar va hujjatlar: https://uniroad-uz.github.io/uprep-s
+ ite/#uni-unipv/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unipv/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -59,9 +59,9 @@ DTSTART;VALUE=DATE:20270322
 DTEND;VALUE=DATE:20270323
 SUMMARY:Pavia: 2027/28: 3-chaqiriq (joy qolsa)
 DESCRIPTION:2027/28: 3-chaqiriq (joy qolsa) (12.03 – 22.03.2027)\nAriza: 
- https://apply.unipv.eu/\n\nTalablar va hujjatlar: https://xoliqberdiyevdal
- erjon-hub.github.io/uprep-site/#uni-unipv/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipv/qabul
+ https://apply.unipv.eu/\n\nTalablar va hujjatlar: https://uniroad-uz.githu
+ b.io/uprep-site/#uni-unipv/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unipv/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -82,8 +82,8 @@ DTEND;VALUE=DATE:20270525
 SUMMARY:Pavia: Universitaly pre-enrollment va viza (erkin qabul dasturlari)
 DESCRIPTION:Universitaly pre-enrollment va viza (erkin qabul dasturlari) (2
  4.05.2027)\nAriza: https://apply.unipv.eu/\n\nTalablar va hujjatlar: https
- ://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipv/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipv/qabul
+ ://uniroad-uz.github.io/uprep-site/#uni-unipv/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unipv/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -105,9 +105,9 @@ DTSTART;VALUE=DATE:20270612
 DTEND;VALUE=DATE:20270613
 SUMMARY:Pavia: 2027/28: 4-chaqiriq (joy qolsa)
 DESCRIPTION:2027/28: 4-chaqiriq (joy qolsa) (06.06 – 12.06.2027)\nAriza: 
- https://apply.unipv.eu/\n\nTalablar va hujjatlar: https://xoliqberdiyevdal
- erjon-hub.github.io/uprep-site/#uni-unipv/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipv/qabul
+ https://apply.unipv.eu/\n\nTalablar va hujjatlar: https://uniroad-uz.githu
+ b.io/uprep-site/#uni-unipv/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unipv/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY
@@ -127,9 +127,9 @@ DTSTART;VALUE=DATE:20270831
 DTEND;VALUE=DATE:20270901
 SUMMARY:Pavia: Cheklangan joyli dasturlar uchun pre-enrollment
 DESCRIPTION:Cheklangan joyli dasturlar uchun pre-enrollment (31.08.2027)\nA
- riza: https://apply.unipv.eu/\n\nTalablar va hujjatlar: https://xoliqberdi
- yevdalerjon-hub.github.io/uprep-site/#uni-unipv/qabul
-URL:https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/#uni-unipv/qabul
+ riza: https://apply.unipv.eu/\n\nTalablar va hujjatlar: https://uniroad-uz
+ .github.io/uprep-site/#uni-unipv/qabul
+URL:https://uniroad-uz.github.io/uprep-site/#uni-unipv/qabul
 TRANSP:TRANSPARENT
 BEGIN:VALARM
 ACTION:DISPLAY

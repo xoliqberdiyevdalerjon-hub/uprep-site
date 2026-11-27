@@ -10,7 +10,7 @@ import datetime, hashlib, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "cal")
-SITE = "https://xoliqberdiyevdalerjon-hub.github.io/uprep-site/"  # redirects to the custom domain once it is connected
+SITE = "https://uniroad-uz.github.io/uprep-site/"  # redirects to the custom domain once it is connected
 KEEP_PAST_DAYS = 45  # recently passed dates stay visible for a while, older ones drop out
 
 

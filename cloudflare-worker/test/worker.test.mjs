@@ -5,7 +5,7 @@ import worker from "../worker.js";
 const { cutSafe, formatMessage, safeEqual, corsFor, resetRateLimit, LIMITS } = worker.fetch._internals;
 
 const KEY = "test-app-key-0123456789abcdef";
-const ORIGIN = "https://xoliqberdiyevdalerjon-hub.github.io";
+const ORIGIN = "https://uniroad-uz.github.io";
 const ENV = { BOT_TOKEN: "123:ABC", CHAT_ID: "42", APP_KEY: KEY, ALLOWED_ORIGINS: ORIGIN + ", http://localhost:8765" };
 
 let calls = [];
