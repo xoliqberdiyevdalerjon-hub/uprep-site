@@ -91,7 +91,21 @@
         "label": "ANM (Neapol transporti)",
         "url": "https://www.anm.it/"
       }
-    ]
+    ],
+    "living": {
+      "year": "2026",
+      "total": "700 – 1 000 € (taxminan)",
+      "room": "250 – 400 €",
+      "food": "200 – 300 €",
+      "transport": "",
+      "note": "Federico II rasmiy taqdimotida: kommunal xizmatlar oyiga 100 – 150 €, oziq-ovqat 200 – 300 €. Universitet o'zi yotoqxona bermaydi. Umumiy byudjet taxminiy.",
+      "sources": [
+        {
+          "label": "Federico II: Welcome Day 2025 (rasmiy, PDF)",
+          "url": "https://www.international.unina.it/wp-content/uploads/2025/09/2025-WELCOME-DAY-UNINA-PRESENTATION_compressed.pdf"
+        }
+      ]
+    }
   },
   {
     "id": "benevento",
@@ -149,7 +163,21 @@
         "label": "TPER (Bolonya transporti)",
         "url": "https://www.tper.it/"
       }
-    ]
+    ],
+    "living": {
+      "year": "2026",
+      "total": "900 – 1 200 € (taxminan)",
+      "room": "≈ 400 € + kommunal",
+      "food": "150 – 200 €",
+      "transport": "≈ 27 € oyiga (27 yoshgacha)",
+      "note": "Xona narxi Bolonya universitetining rasmiy sahifasidan; umumiy byudjet ijara saytlari bo'yicha taxmin.",
+      "sources": [
+        {
+          "label": "Università di Bologna: Living costs (rasmiy)",
+          "url": "https://www.unibo.it/en/study/life-at-university-and-in-the-city/living-in-the-city/living-costs-in-bologna"
+        }
+      ]
+    }
   },
   {
     "id": "ferrara",
@@ -245,7 +273,25 @@
         "label": "ATAC (Rim transporti)",
         "url": "https://www.atac.roma.it/"
       }
-    ]
+    ],
+    "living": {
+      "year": "2026",
+      "total": "800 – 1 200 €",
+      "room": "450 – 800 €",
+      "food": "200 – 300 €",
+      "transport": "35 € (ATAC oylik)",
+      "note": "Sapienza kamida 800 € ni (ijara bilan) minimal byudjet deb tavsiya qiladi; ijara saytlari 800 – 1 200 € deydi. San Lorenzo, Pigneto kabi mahallalarda arzonroq, markazda qimmat.",
+      "sources": [
+        {
+          "label": "Sapienza: Living as a PhD student (rasmiy)",
+          "url": "https://phd.uniroma1.it/web/Living-as-a-PhD-student_nK1502_EN.aspx"
+        },
+        {
+          "label": "Uniplaces: Rome 2026 (ijara bozori)",
+          "url": "https://www.uniplaces.com/city-explorer/cost-of-living-in-rome-2026/"
+        }
+      ]
+    }
   },
   {
     "id": "cassino",
@@ -317,7 +363,25 @@
         "label": "ATM (Milan transporti)",
         "url": "https://www.atm.it/"
       }
-    ]
+    ],
+    "living": {
+      "year": "2026",
+      "total": "680 – 1 160 €",
+      "room": "400 – 700 €",
+      "food": "150 – 200 €",
+      "transport": "22 € oyiga (27 yoshgacha)",
+      "note": "Politecnico di Milano rasmiy hisobi, o'qish to'lovisiz. Bocconi ma'lumotiga ko'ra xususiy ikki kishilik xona 500 – 750 €. Città Studi va Bovisa arzonroq.",
+      "sources": [
+        {
+          "label": "Politecnico di Milano: Cost of living (rasmiy)",
+          "url": "https://www.polimi.it/en/international-prospective-students/life/living-in-italy/useful-information/cost-of-living/"
+        },
+        {
+          "label": "Bocconi: Estimated costs (rasmiy)",
+          "url": "https://www.unibocconi.it/en/programs/current-students/services/estimated-costs"
+        }
+      ]
+    }
   },
   {
     "id": "bergamo",
@@ -479,7 +543,25 @@
         "label": "GTT (Turin transporti)",
         "url": "https://www.gtt.to.it/"
       }
-    ]
+    ],
+    "living": {
+      "year": "2026",
+      "total": "700 – 1 000 € (taxminan)",
+      "room": "250 – 350 €",
+      "food": "",
+      "transport": "25 € oyiga (26 yoshgacha)",
+      "note": "Xona va transport narxlari Turin universitetining rasmiy sahifasidan; umumiy byudjet ijara saytlari bo'yicha taxmin. Ba'zi talabalar uchun shahar transporti bepul bo'lishi mumkin (Piemove dasturi), shartlarini tekshiring.",
+      "sources": [
+        {
+          "label": "Università di Torino: Cost of living (rasmiy)",
+          "url": "https://en.unito.it/living-turin/when-you-arrive/cost-living-turin"
+        },
+        {
+          "label": "Politecnico di Torino: Cost of living (rasmiy)",
+          "url": "https://www.polito.it/en/education/international-students/practical-information/cost-of-living"
+        }
+      ]
+    }
   },
   {
     "id": "novara",
@@ -637,7 +719,25 @@
         "label": "Autolinee Toscane (transport)",
         "url": "https://www.at-bus.it/"
       }
-    ]
+    ],
+    "living": {
+      "year": "2026",
+      "total": "800 – 1 300 € (taxminan)",
+      "room": "400 – 650 €",
+      "food": "",
+      "transport": "≈ 38 € oyiga",
+      "note": "Florensiya universiteti rasmiy oylik summa e'lon qilmaydi; raqamlar ijara saytlari bo'yicha taxmin. Universitet oshxonalarida narx oila daromadiga (ISEE) qarab arzonlashadi.",
+      "sources": [
+        {
+          "label": "Uniplaces: Florence 2026 (ijara bozori)",
+          "url": "https://www.uniplaces.com/city-explorer/cost-of-living-in-florence-2026/"
+        },
+        {
+          "label": "Università di Firenze: oshxonalar (rasmiy)",
+          "url": "https://www.unifi.it/en/study-us/university-life/canteens"
+        }
+      ]
+    }
   },
   {
     "id": "pisa",
@@ -661,7 +761,25 @@
         "label": "Autolinee Toscane (transport)",
         "url": "https://www.at-bus.it/"
       }
-    ]
+    ],
+    "living": {
+      "year": "2026",
+      "total": "700 – 1 000 €",
+      "room": "300 – 450 €",
+      "food": "",
+      "transport": "",
+      "note": "Piza universiteti: xona o'rtacha 300 – 350 € + kommunal (kommunal bilan 400 – 450 €). Uy egalari odatda 2–3 oylik ijara miqdorida depozit so'raydi. Umumiy byudjet Sant'Anna maktabi hisobi.",
+      "sources": [
+        {
+          "label": "Università di Pisa: Accommodation (rasmiy)",
+          "url": "https://www.unipi.it/index.php/accommodation"
+        },
+        {
+          "label": "Sant'Anna Pisa: Living in Pisa (rasmiy)",
+          "url": "https://www.santannapisa.it/en/formazione/master-human-rights/living-pisa"
+        }
+      ]
+    }
   },
   {
     "id": "siena",
@@ -777,7 +895,21 @@
         "label": "Busitalia (Padova transporti)",
         "url": "https://www.fsbusitalia.it/"
       }
-    ]
+    ],
+    "living": {
+      "year": "2026",
+      "total": "≈ 850 €",
+      "room": "≈ 450 € (kommunal bilan)",
+      "food": "≈ 250 €",
+      "transport": "",
+      "note": "Padova universitetining rasmiy taxminiy oylik byudjeti: ijara va kommunal 450 €, oziq-ovqat 250 €, bo'sh vaqt va sport 200 €. Birinchi oylar uchun depozit va boshqa xarajatlarga qo'shimcha pul ajrating.",
+      "sources": [
+        {
+          "label": "Università di Padova: Living costs (rasmiy)",
+          "url": "https://www.unipd.it/en/living-costs"
+        }
+      ]
+    }
   },
   {
     "id": "verona",

@@ -297,6 +297,23 @@ content:
       - { name: dsu, label: Stipendiya idorasi, type: string }
       - { name: intro, label: Kirish matni, type: text }
       - { name: image, label: "Fon rasmi (ixtiyoriy)", type: image }
+      - name: living
+        label: "Yashash narxi (oyiga, faqat rasmiy yoki ishonchli manba bilan)"
+        type: object
+        fields:
+          - { name: year, label: "Yil", type: string }
+          - { name: total, label: "Jami oyiga (masalan 800 – 1 000 €)", type: string }
+          - { name: room, label: "Xona (umumiy kvartirada)", type: string }
+          - { name: food, label: "Oziq-ovqat", type: string }
+          - { name: transport, label: "Transport", type: string }
+          - { name: note, label: Izoh, type: text }
+          - name: sources
+            label: Manbalar
+            type: object
+            list: true
+            fields:
+              - { name: label, label: Matn, type: string }
+              - { name: url, label: Manzil, type: string }
       - name: links
         label: Foydali rasmiy havolalar
         type: object

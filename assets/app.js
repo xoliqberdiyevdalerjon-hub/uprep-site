@@ -2427,6 +2427,7 @@
   function cityRow(c){
     var a = el("a", "lrow"); a.href = "#shahar-" + c.id;
     var t = el("span", "txt"); t.appendChild(el("b", null, c.name)); t.appendChild(el("small", null, str(c.region) + (c.dsu ? ". Stipendiya: " + str(c.dsu) : ""))); a.appendChild(t);
+    if(c.living && c.living.total) a.appendChild(el("span", "tag lang", "≈ " + str(c.living.total).replace(/\s*\(.*\)$/, "") + "/oy"));
     var n = unisIn(c.id).length; if(n) a.appendChild(el("span", "count", n + " ta"));
     a.appendChild(ic("next", "chev")); return a;
   }
@@ -2564,12 +2565,26 @@
       if(arr(c.cons).length){ var q = el("section", "pc con"); var h2 = el("h3"); h2.appendChild(ic("minus")); h2.appendChild(document.createTextNode("Bilib qo'ying")); q.appendChild(h2); var ul2 = el("ul"); arr(c.cons).forEach(function(x){ var li = el("li"); li.appendChild(ic("info")); li.appendChild(el("span", null, x)); ul2.appendChild(li); }); q.appendChild(ul2); pc.appendChild(q); }
       main.appendChild(pc);
     }
+    var lv = livingCard(c); if(lv) main.appendChild(lv);
     var dsuC = scholarshipCard({}, c); dsuC.classList.add("city-dsu"); main.appendChild(dsuC);
     if(arr(c.links).length){ var lk = el("div", "links"); arr(c.links).forEach(function(l){ var u = safeUrl(l.url); if(u) lk.appendChild(rowBtn(/Questura/.test(l.label) ? "shield" : /transport|Trasporti/i.test(l.label) ? "train" : "landmark", l.label, host(u), null, u)); }); main.appendChild(sec(secHead("Foydali rasmiy havolalar", null, null, null, c.name), lk)); }
     if(arr(c.points).length){ var card = el("section", "card"); card.appendChild(el("h3", null, "Bilish kerak")); var ul3 = el("ul", "bullets"); arr(c.points).forEach(function(x){ ul3.appendChild(el("li", null, x)); }); card.appendChild(ul3); main.appendChild(card); }
     var us = unisIn(c.id);
     if(us.length){ main.appendChild(secHead("Universitetlar (" + us.length + ")")); var g = el("div", "list"); us.sort(function(a, b){ return (b.detailed ? 1 : 0) - (a.detailed ? 1 : 0); }).forEach(function(u){ g.appendChild(uniRow(u)); }); main.appendChild(g); }
     footer(main);
+  }
+  /* monthly living costs of a city (content/cities.json "living"), always with its sources */
+  function livingCard(c){
+    var L = c && c.living; if(!L || !str(L.total)) return null;
+    var card = el("section", "card living");
+    var h = el("div", "pf-h"); h.appendChild(el("h2", "card-h", "Yashash narxi: oyiga")); if(L.year) h.appendChild(el("span", "tag", L.year)); card.appendChild(h);
+    var big = el("p", "living-total"); big.appendChild(el("b", null, L.total)); big.appendChild(el("small", null, "ijara, ovqat va transport bilan, o'qish to'lovisiz")); card.appendChild(big);
+    card.appendChild(factTable([["Xona (umumiy kvartirada)", L.room], ["Oziq-ovqat", L.food], ["Transport", L.transport]]));
+    if(L.note) card.appendChild(el("p", "note", L.note));
+    var src = arr(L.sources).filter(function(x){ return safeUrl(x.url); });
+    if(src.length){ var sx = el("div", "greg-src"); src.forEach(function(x){ var a = el("a", "src"); a.href = safeUrl(x.url); a.target = "_blank"; a.rel = "noopener"; a.appendChild(ic("link")); a.appendChild(el("span", null, x.label)); sx.appendChild(a); }); card.appendChild(sx); }
+    var k = el("a", "res-link"); k.href = "#kalkulyator"; k.appendChild(el("span", null, "Umumiy xarajatlarni hisoblash")); k.appendChild(ic("next")); card.appendChild(k);
+    return card;
   }
   function factTable(rows){
     var t = el("dl", "facts");
@@ -2658,7 +2673,7 @@
     var intro = str(u.intro) || ((u.short || u.name) + ": " + (city ? city.name + " shahridagi " : "") + str(u.type).toLowerCase() + " universitet. Italiya ta'lim vazirligining Universitaly bazasiga ko'ra, 2026/27 o'quv yilida bu yerda " + (enN(u) ? enN(u) + " ta ingliz tilidagi (yoki qisman ingliz tilidagi) dastur bor." : "ingliz tilidagi dastur yo'q: o'qish italyan tilida, B2 italyan tili kerak."));
     box.appendChild(el("p", "lead-p", intro));
     if(enN(u)){ var sb = statsBlock({items:[{big:String(enN(u)), small:"ingliz tilidagi dastur"}, {big:String(nB), small:"bakalavr"}, {big:String(nM), small:"magistratura"}].concat(nU ? [{big:String(nU), small:"yagona sikl (5–6 yil)"}] : [])}); if(sb) box.appendChild(sb); }
-    box.appendChild(factTable([["Shahar", city ? city.name : ""], ["Viloyat", city ? city.region : ""], ["Turi", u.type], ["Tashkil topgan", u.founded ? u.founded + "-yil" : ""], ["Reyting", u.rank], ["Stipendiya", u.scholarship || (city && city.dsu ? city.dsu : "")], ["Qabul foizi", u.acceptance]]));
+    box.appendChild(factTable([["Shahar", city ? city.name : ""], ["Viloyat", city ? city.region : ""], ["Turi", u.type], ["Tashkil topgan", u.founded ? u.founded + "-yil" : ""], ["Reyting", u.rank], ["Stipendiya", u.scholarship || (city && city.dsu ? city.dsu : "")], ["Yashash narxi (oyiga)", city && city.living && city.living.total ? city.living.total : ""], ["Qabul foizi", u.acceptance]]));
     var vb = videoBlock({url:u.video, title:"Ariza topshirish: video"}); if(vb) box.appendChild(vb);
     var UA = realAmb(u.id); if(UA.length){ var ag = el("div", "amb-grid"); UA.forEach(function(a){ ag.appendChild(ambCard(a)); }); var ah = el("section", "card"); ah.appendChild(el("h3", null, "Shu yerda o'qiyotgan talabaga yozing")); ah.appendChild(ag); box.appendChild(ah); }
     var UO = realOut(u.id); if(UO.length){ var og = el("div", "outc-grid"); UO.slice(0, 4).forEach(function(o){ og.appendChild(outCard(o)); }); var oh = el("section", "card"); oh.appendChild(el("h3", null, "Uniroad talabalari natijalari (" + UO.length + ")")); oh.appendChild(og); if(UO.length > 4){ var oa = el("a", "trk-next"); oa.href = "#natijalar"; oa.appendChild(el("span", null, "Barcha natijalar")); oa.appendChild(ic("next")); oh.appendChild(oa); } box.appendChild(oh); }
