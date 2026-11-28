@@ -180,12 +180,10 @@ def cmd_build():
             data = json.load(f)
         ov = overlay(data, tm)
         out = os.path.join(ROOT, "content", LANG, n + ".json")
-        if ov:
-            with open(out, "w", encoding="utf-8") as f:
-                json.dump(ov, f, ensure_ascii=False, separators=(",", ":"))
-                f.write("\n")
-        elif os.path.exists(out):
-            os.remove(out)
+        # always write a file (even "null" for files with nothing to translate) so the site gets no 404s
+        with open(out, "w", encoding="utf-8") as f:
+            json.dump(ov, f, ensure_ascii=False, separators=(",", ":"))
+            f.write("\n")
     cmd_check(quiet=True)
 
 

@@ -374,7 +374,7 @@
       "sources": [
         {
           "label": "Politecnico di Milano: Cost of living (rasmiy)",
-          "url": "https://www.polimi.it/en/international-prospective-students/life/living-in-italy/useful-information/cost-of-living/"
+          "url": "https://www.polimi.it/en/information-for/international-prospective-students/life/living-in-italy/useful-information/cost-of-living"
         },
         {
           "label": "Bocconi: Estimated costs (rasmiy)",
@@ -423,7 +423,7 @@
       },
       {
         "label": "Autoguidovie (Paviya transporti)",
-        "url": "https://www.autoguidovie.it/"
+        "url": "https://autoguidovie.it/"
       }
     ]
   },
@@ -550,11 +550,15 @@
       "room": "250 – 350 €",
       "food": "",
       "transport": "25 € oyiga (26 yoshgacha)",
-      "note": "Xona va transport narxlari Turin universitetining rasmiy sahifasidan; umumiy byudjet ijara saytlari bo'yicha taxmin. Ba'zi talabalar uchun shahar transporti bepul bo'lishi mumkin (Piemove dasturi), shartlarini tekshiring.",
+      "note": "Xona narxi Turin universitetining, transport narxi GTT'ning rasmiy sahifasidan; umumiy byudjet ijara saytlari bo'yicha taxmin. Ba'zi talabalar uchun shahar transporti bepul bo'lishi mumkin (Piemove dasturi), shartlarini tekshiring.",
       "sources": [
         {
           "label": "Università di Torino: Cost of living (rasmiy)",
-          "url": "https://en.unito.it/living-turin/when-you-arrive/cost-living-turin"
+          "url": "https://studyprogram.unito.it/node/41"
+        },
+        {
+          "label": "GTT: tariflar (rasmiy)",
+          "url": "https://www.gtt.to.it/cms/en/fares"
         },
         {
           "label": "Politecnico di Torino: Cost of living (rasmiy)",

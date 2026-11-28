@@ -1599,7 +1599,7 @@
   function saveME(){ try{ LS.setItem("uniroad-me", JSON.stringify(ME)); }catch(e){} }
   function docsMeter(){ try{ return JSON.parse(LS.getItem("uniroad-docs-meter") || "null"); }catch(e){ return null; } }
   function favDeadlines(){
-    var L = []; FAV.map(uniById).filter(Boolean).forEach(function(u){ arr(u.deadlines).forEach(function(d){ var dd = deadline(d.date); if(dd && daysLeft(dd) >= 0) L.push({u:u, d:dd, x:d}); }); });
+    var L = []; FAV.map(uniById).filter(Boolean).forEach(function(u){ arr(u.deadlines).forEach(function(d){ var dd = !d.open && deadline(d.date); if(dd && daysLeft(dd) >= 0) L.push({u:u, d:dd, x:d}); }); });
     return L.sort(function(a, b){ return a.d - b.d; });
   }
   function nextAction(){
@@ -2265,7 +2265,7 @@
   }
   function upcomingAll(n){
     var L = [];
-    S.unis.forEach(function(u){ arr(u.deadlines).forEach(function(d){ var dd = deadline(d.date); if(dd && daysLeft(dd) >= 0) L.push({u:u, d:dd, x:d}); }); });
+    S.unis.forEach(function(u){ arr(u.deadlines).forEach(function(d){ var dd = !d.open && deadline(d.date); if(dd && daysLeft(dd) >= 0) L.push({u:u, d:dd, x:d}); }); });
     var seen = {}; return L.sort(function(a, b){ return a.d - b.d; }).filter(function(x){ if(seen[x.u.id]) return false; seen[x.u.id] = 1; return true; }).slice(0, n || 5);
   }
 
@@ -2544,7 +2544,7 @@
     a.appendChild(ic("next", "chev")); return a;
   }
   function uniNext(u){
-    var list = arr(u.deadlines).map(function(d){ return {d:deadline(d.date), x:d}; }).filter(function(o){ return o.d && daysLeft(o.d) >= 0; }).sort(function(a, b){ return a.d - b.d; });
+    var list = arr(u.deadlines).map(function(d){ return {d:d.open ? null : deadline(d.date), x:d}; }).filter(function(o){ return o.d && daysLeft(o.d) >= 0; }).sort(function(a, b){ return a.d - b.d; });
     return list[0] || null;
   }
   function mono(u){ return str(u.short || u.name).replace(/[^A-Za-z]/g, "").slice(0, 2).toUpperCase(); }
@@ -2815,9 +2815,9 @@
       if(arr(u.deadlines).length){
         var ol = el("ol", "agenda inset");
         arr(u.deadlines).forEach(function(d){
-          var dd = deadline(d.date), n = dd ? daysLeft(dd) : null;
+          var dd = d.open ? null : deadline(d.date), n = dd ? daysLeft(dd) : null; // open:true = an opening date, not a deadline
           var li = el("li", n != null && n < 0 ? "past" : "");
-          var w = el("div", "when", d.date); if(n != null) w.appendChild(el("span", "left", n < 0 ? "O'tdi" : leftLabel(n))); li.appendChild(w);
+          var w = el("div", "when", d.date); if(d.open) w.appendChild(el("span", "left", "Ochiq")); else if(n != null) w.appendChild(el("span", "left", n < 0 ? "O'tdi" : leftLabel(n))); li.appendChild(w);
           var dp = el("div"); dp.appendChild(el("p", null, d.label)); if(dd && n >= 0) dp.appendChild(calAdd({title:(u.short || u.name) + ": " + d.label, d:dd, details:d.label + " (" + d.date + ")"})); li.appendChild(dp); ol.appendChild(li);
         });
         dc.appendChild(ol);

@@ -8,29 +8,4 @@ X-WR-CALDESC:LIUC: ariza muddatlari. Uniroad.
 X-WR-TIMEZONE:Asia/Tashkent
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
-BEGIN:VEVENT
-UID:00892c22d8d89509e41d@uniroad
-DTSTAMP:20261126T000000Z
-DTSTART;VALUE=DATE:20261115
-DTEND;VALUE=DATE:20261116
-SUMMARY:LIUC: 2027/28: bakalavr oldindan ro'yxatdan o'tish ochildi (15.11.2
- 026 dan)
-DESCRIPTION:2027/28: bakalavr oldindan ro'yxatdan o'tish ochildi (15.11.202
- 6 dan) (15.11.2026)\n\nTalablar va hujjatlar: https://uniroad-uz.github.io
- /uprep-site/#uni-liuc/qabul
-URL:https://uniroad-uz.github.io/uprep-site/#uni-liuc/qabul
-TRANSP:TRANSPARENT
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:1 hafta qoldi: LIUC: 2027/28: bakalavr oldindan ro'yxatdan o'ti
- sh ochildi (15.11.2026 dan)
-TRIGGER:-P7D
-END:VALARM
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Ertaga: LIUC: 2027/28: bakalavr oldindan ro'yxatdan o'tish ochi
- ldi (15.11.2026 dan)
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
 END:VCALENDAR

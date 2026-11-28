@@ -110,6 +110,8 @@ def main():
         apply = u.get("applyUrl") or u.get("portalUrl") or ""
         ev = []
         for x in u.get("deadlines") or []:
+            if x.get("open"):  # an opening date, not a deadline
+                continue
             d = last_date(x.get("date", ""))
             if not d or d < cutoff:
                 continue

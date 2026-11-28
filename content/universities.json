@@ -1807,7 +1807,7 @@
         "access": "Erkin qabul",
         "years": "2",
         "code": "LM-74",
-        "url": "https://corsi.unibo.it/magistrale/GeologiaTerritorio"
+        "url": "https://corsi.unibo.it/magistrale/GeologiaTerritorio/"
       },
       {
         "level": "Magistratura",
@@ -5845,7 +5845,7 @@
         "access": "Kirish testi",
         "years": "2",
         "code": "LM-26",
-        "url": "https://www.ccsage.polimi.it/"
+        "url": "https://www.polimi.it/en/education/laurea-magistrale-programmes/programme-detail/agricultural-engineering"
       },
       {
         "level": "Magistratura",
@@ -7102,7 +7102,8 @@
     "deadlines": [
       {
         "label": "2027/28: bakalavr oldindan ro'yxatdan o'tish ochildi (15.11.2026 dan)",
-        "date": "15.11.2026"
+        "date": "15.11.2026",
+        "open": true
       }
     ],
     "deadlineNote": "To'liq ingliz tilidagi Economics and Management uchun 90 joy. Magistratura 2027/28 to'lovlari hali belgilanmagan.",
@@ -11143,7 +11144,7 @@
       },
       {
         "label": "Firenze: chet elda yashovchi non-EU talabalar",
-        "url": "https://www.unifi.it/en/study-us/access-and-enrolment/international-students/enrolment-non-eu-students-residing-abroad"
+        "url": "https://www.unifi.it/en/study-us/your-learning-path/start-your-enrolment/international-students/non-eu-students"
       }
     ],
     "admUpdated": "26.11.2026",
