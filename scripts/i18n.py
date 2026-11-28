@@ -71,11 +71,18 @@ def walk(o, key=None):
             yield from walk(v, k)
 
 
+CUR_FILE = ""  # set by cmd_build; _urlmap.json keys "<file>|<value>" override plain "<value>" keys for one file
+
+
+def remap(v):
+    return URLMAP.get(CUR_FILE + "|" + v, URLMAP.get(v))
+
+
 def overlay(o, tm):
     """same shape as o, only translated strings; None = nothing to overlay"""
     if isinstance(o, str):
-        if o in URLMAP:
-            return URLMAP[o]
+        if remap(o) is not None:
+            return remap(o)
         return tm.get(o) if translatable(o) and tm.get(o) and tm[o] != o else None
     if isinstance(o, list):
         has_id = any(isinstance(x, dict) and "id" in x for x in o)
@@ -94,8 +101,8 @@ def overlay(o, tm):
         out = {}
         for k, v in o.items():
             if k in SKIP_KEYS or k.startswith("_"):
-                if isinstance(v, str) and v in URLMAP:
-                    out[k] = URLMAP[v]
+                if isinstance(v, str) and remap(v) is not None:
+                    out[k] = remap(v)
                 continue
             ov = overlay(v, tm)
             if ov not in (None, "", {}, []):
@@ -164,9 +171,11 @@ def cmd_add(path):
 
 
 def cmd_build():
+    global CUR_FILE
     tm = load_tm()
     for p in files():
         n = name_of(p)
+        CUR_FILE = n
         with open(p, encoding="utf-8") as f:
             data = json.load(f)
         ov = overlay(data, tm)
