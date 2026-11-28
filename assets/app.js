@@ -274,11 +274,12 @@
   window.addEventListener("online", function(){ if(LOADFAIL.length) location.reload(); });
   var LOADFAIL = [];
   /* ---------------- language: uz is the source; ru = content/ru/*.json overlays (texts only) + assets/i18n/ru.json for interface strings ---------------- */
-  var LANG = (function(){ try{ var q = /[?&]lang=(uz|ru|en)\b/.exec(location.search); if(q){ localStorage.setItem("uniroad-lang", q[1]); return q[1]; } var v = localStorage.getItem("uniroad-lang"); return v === "ru" || v === "en" ? v : "uz"; }catch(e){ return "uz"; } })();
+  var LANG = (function(){ try{ var q = /[?&]lang=(uz|ru|en|kk)\b/.exec(location.search); if(q){ localStorage.setItem("uniroad-lang", q[1]); return q[1]; } var v = localStorage.getItem("uniroad-lang"); return v === "ru" || v === "en" || v === "kk" ? v : "uz"; }catch(e){ return "uz"; } })();
   document.documentElement.lang = LANG;
-  var LANGN = {uz:"O'zbekcha", ru:"Русский", en:"English"};
-  function otherLangs(){ var L = arr(S.site.langs); if(L.indexOf(LANG) < 0 && LANG !== "uz") L = L.concat([LANG]); return ["uz", "ru", "en"].filter(function(l){ return l !== LANG && (l === "uz" ? L.length > 0 : L.indexOf(l) >= 0); }); }
-  function setLang(l){ try{ localStorage.setItem("uniroad-lang", l); }catch(e){} var u = location.href.replace(/([?&])lang=(uz|ru|en)&?/, "$1").replace(/[?&](#|$)/, "$1"); if(u === location.href) location.reload(); else location.replace(u); }
+  var LCUR = LANG === "kk" ? {c:"KZT", n:"Tenge (₸)", s:" ₸", r:[200, 2000], h:"500–700 ₸"} : {c:"UZS", n:"So'm", s:" so'm", r:[3000, 50000], h:"14 000 so'm"};
+  var LANGN = {uz:"O'zbekcha", ru:"Русский", en:"English", kk:"Қазақша"};
+  function otherLangs(){ var L = arr(S.site.langs); if(L.indexOf(LANG) < 0 && LANG !== "uz") L = L.concat([LANG]); return ["uz", "ru", "en", "kk"].filter(function(l){ return l !== LANG && (l === "uz" ? L.length > 0 : L.indexOf(l) >= 0); }); }
+  function setLang(l){ try{ localStorage.setItem("uniroad-lang", l); }catch(e){} var u = location.href.replace(/([?&])lang=(uz|ru|en|kk)&?/, "$1").replace(/[?&](#|$)/, "$1"); if(u === location.href) location.reload(); else location.replace(u); }
   /* overlay keeps the uz structure: only strings that exist in both are replaced; arrays of objects match by id, otherwise by position */
   function overlay(b, o){
     if(o == null) return b;
@@ -303,7 +304,7 @@
   }
   /* interface strings: exact matches ("s") and patterns ("p": [regex, template]); template: $1 = group (translated too), {1|форма1|форма2|форма5} = Russian plural by group 1 */
   var I18N = null;
-  function plural(n, a, b, c){ if(LANG === "en") return Math.abs(n) === 1 ? a : c; n = Math.abs(n) % 100; var m = n % 10; return n > 10 && n < 20 ? c : m > 1 && m < 5 ? b : m === 1 ? a : c; }
+  function plural(n, a, b, c){ if(LANG === "kk") return a; if(LANG === "en") return Math.abs(n) === 1 ? a : c; n = Math.abs(n) % 100; var m = n % 10; return n > 10 && n < 20 ? c : m > 1 && m < 5 ? b : m === 1 ? a : c; }
   function T(s){
     if(!I18N || typeof s !== "string") return s;
     var t = s.trim(); if(!t) return s;
@@ -842,7 +843,7 @@
     var m = el("div", "pass-main");
     var top = el("div", "pass-top"); top.appendChild(el("span", null, "Sizning yo'lingiz")); top.appendChild(el("span", "seat", "Talaba · " + (str(S.site.eyebrow).match(/\d{4}\/\d{2}/) || ["2026/27"])[0])); m.appendChild(top);
     var rt = el("div", "route");
-    var a = el("div", "city"); a.appendChild(el("b", null, "TAS")); a.appendChild(el("small", null, "Toshkent")); rt.appendChild(a);
+    var a = el("div", "city"); a.appendChild(el("b", null, LANG === "kk" ? "NQZ" : "TAS")); a.appendChild(el("small", null, LANG === "kk" ? "Astana" : "Toshkent")); rt.appendChild(a);
     var tr = el("div", "track"); tr.setAttribute("role", "img"); tr.setAttribute("aria-label", n + " / " + total + " bosqich bajarildi");
     tr.appendChild(el("span", "fill")); var pl = el("span", "plane"); pl.appendChild(ic("plane")); tr.appendChild(pl); rt.appendChild(tr);
     var b = el("div", "city r"); b.appendChild(el("b", null, "ITA")); b.appendChild(el("small", null, "Italiya")); rt.appendChild(b);
@@ -1313,6 +1314,7 @@
   /* ================= MONEY CALCULATOR ================= */
   var CK = "uniroad-calc", CV = {cur:"EUR", rate:"", reg:"", members:"4", income:"", m2:"", savings:"", apps:"3", fee:"30", cimea:"300"};
   try{ var cv0 = JSON.parse(LS.getItem(CK) || "null"); if(cv0) for(var k0 in cv0) CV[k0] = cv0[k0]; }catch(e){}
+  if(CV.cur !== "EUR" && CV.cur !== "USD" && CV.cur !== LCUR.c){ CV.cur = "EUR"; CV.rate = ""; }
   function eur(n){ return (Math.round(n * 100) / 100).toLocaleString("ru-RU", {minimumFractionDigits:0, maximumFractionDigits:2}).replace(/ /g, " ") + " €"; }
   function numv(x){ var n = parseFloat(String(x || "").replace(/\s/g, "").replace(",", ".")); return isNaN(n) ? 0 : n; }
   /* money inputs: only digits and one decimal separator (no minus, no letters); never negative in calculations */
@@ -1334,7 +1336,7 @@
     /* realistic ranges; a value outside them is flagged next to the field and capped in the result */
     function calcLimit(key, n){
       var rate = CV.cur === "EUR" ? 1 : posv(CV.rate), e = rate ? n / rate : 0;
-      if(key === "rate" && CV.cur !== "EUR"){ if(!n) return ""; var R = CV.cur === "USD" ? [0.5, 3] : [3000, 50000]; return n < R[0] || n > R[1] ? "Kurs odatiy emas: 1 € ≈ " + (CV.cur === "USD" ? "1,1 $" : "14 000 so'm") + " atrofida. Bank kursini tekshiring." : ""; }
+      if(key === "rate" && CV.cur !== "EUR"){ if(!n) return ""; var R = CV.cur === "USD" ? [0.5, 3] : LCUR.r; return n < R[0] || n > R[1] ? "Kurs odatiy emas: 1 € ≈ " + (CV.cur === "USD" ? "1,1 $" : LCUR.h) + " atrofida. Bank kursini tekshiring." : ""; }
       if(key === "income" && e > 2000000) return "Juda katta summa (2 mln € dan ortiq). Raqamni tekshiring: ortiqcha nol yozilgan bo'lishi mumkin.";
       if(key === "savings" && e > 5000000) return "Juda katta summa (5 mln € dan ortiq). Raqamni tekshiring.";
       if(key === "m2" && n > 3000) return "3 000 m² dan katta maydon odatiy emas. Raqamni tekshiring.";
@@ -1358,7 +1360,7 @@
       if(!opts) inp.addEventListener("blur", function(){ inp.value = groupNum(inp.value); CV[key] = inp.value; try{ LS.setItem(CK, JSON.stringify(CV)); }catch(e){} });
       l.appendChild(inp); if(hint && opts) l.appendChild(el("small", "fld-h", hint)); if(!opts) l.appendChild(err); grid.appendChild(l); return inp;
     }
-    field("cur", "Valyuta", "", null, [["EUR","Yevro (€)"],["USD","AQSh dollari ($)"],["UZS","So'm"]]);
+    field("cur", "Valyuta", "", null, [["EUR","Yevro (€)"],["USD","AQSh dollari ($)"],[LCUR.c, LCUR.n]]);
     var rateL = field("rate", "Kurs: 1 € necha (tanlangan valyutada)?", "masalan, bugungi bank kursi");
     field("reg", "Qayerda o'qimoqchisiz?", "Har bir viloyat idorasining chegarasi boshqacha", null, [["", "Hali bilmayman (davlat maksimumi)"]].concat(REGS.map(function(a){ return [a.id, a.region + " · " + (a.own ? "universitetlar" : a.name) + " · ISEE " + eur(a.isee)]; })));
     field("members", "Oila a'zolari soni (siz bilan)", "", null, [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"],["6","6"],["7","7"],["8","8"]]);
@@ -1384,7 +1386,7 @@
       rateL.parentNode.style.display = cur === "EUR" ? "none" : "";
       out.textContent = "";
       function toE(v){ return rate ? posv(v) / rate : 0; }
-      function loc(e){ return cur === "EUR" || !rate ? "" : " ≈ " + Math.round(e * rate).toLocaleString("ru-RU").replace(/ /g, " ") + (cur === "USD" ? " $" : " so'm"); }
+      function loc(e){ return cur === "EUR" || !rate ? "" : " ≈ " + Math.round(e * rate).toLocaleString("ru-RU").replace(/ /g, " ") + (cur === "USD" ? " $" : LCUR.s); }
 
       /* visa */
       var v = el("section", "res-card visa");
@@ -1840,7 +1842,7 @@
     var g4 = group("Sayt");
     var standalone = window.matchMedia && matchMedia("(display-mode: standalone)").matches, ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
     row(g4, "share", "c-green", "Do'stlarga ulashish", {onclick:function(){ var u = location.origin + location.pathname, t = "Uniroad: Italiyada o'qish, o'zbek tilida"; if(navigator.share) navigator.share({title:t, url:u}).catch(function(){}); else window.open("https://t.me/share/url?url=" + encodeURIComponent(u) + "&text=" + encodeURIComponent(t), "_blank", "noopener"); }});
-    if(otherLangs().length) otherLangs().forEach(function(l, i){ row(g4, "languages", "c-purple", i ? LANGN[l] : "Til / Язык / Language", {value:i ? "" : LANGN[LANG], sub:{uz:"O'zbekchaga o'tish", ru:"Переключить на русский", en:"Switch to English"}[l], onclick:function(){ setLang(l); }}); });
+    if(otherLangs().length) otherLangs().forEach(function(l, i){ row(g4, "languages", "c-purple", i ? LANGN[l] : "Til / Язык / Language", {value:i ? "" : LANGN[LANG], sub:{uz:"O'zbekchaga o'tish", ru:"Переключить на русский", en:"Switch to English", kk:"Қазақ тіліне ауысу"}[l], onclick:function(){ setLang(l); }}); });
     else row(g4, "languages", "c-purple", "Til", {value:"O'zbekcha", sub:"Rus tilidagi versiya tayyorlanmoqda"});
     if(LIVE) row(g4, "user", "c-gold", "Hisob", {href:A.user ? "#hisob" : "#kirish", value:A.user ? "Kirgansiz" : "Kirish"});
 

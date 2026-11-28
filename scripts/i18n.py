@@ -17,6 +17,10 @@ import json, os, re, sys, glob
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANG = os.environ.get("I18N_LANG", "ru")
 TM_PATH = os.path.join(ROOT, "content", LANG, "_tm.json")
+try:
+    URLMAP = json.load(open(os.path.join(ROOT, "content", LANG, "_urlmap.json"), encoding="utf-8"))
+except FileNotFoundError:
+    URLMAP = {}
 # fields whose values are used by the code (ids, links, enums compared in app.js) or are not text
 SKIP_KEYS = {"id", "url", "href", "link", "src", "image", "img", "icon", "photo", "logo", "heroImage", "heroCreditUrl",
              "type", "level", "access", "lang", "area", "status", "kind", "lvl", "city", "cities", "uni", "unis_ids",
@@ -70,6 +74,8 @@ def walk(o, key=None):
 def overlay(o, tm):
     """same shape as o, only translated strings; None = nothing to overlay"""
     if isinstance(o, str):
+        if o in URLMAP:
+            return URLMAP[o]
         return tm.get(o) if translatable(o) and tm.get(o) and tm[o] != o else None
     if isinstance(o, list):
         has_id = any(isinstance(x, dict) and "id" in x for x in o)
@@ -88,6 +94,8 @@ def overlay(o, tm):
         out = {}
         for k, v in o.items():
             if k in SKIP_KEYS or k.startswith("_"):
+                if isinstance(v, str) and v in URLMAP:
+                    out[k] = URLMAP[v]
                 continue
             ov = overlay(v, tm)
             if ov not in (None, "", {}, []):
