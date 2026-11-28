@@ -975,6 +975,10 @@
 },
 "p": [
 [
+"^Kurs odatiy emas: 1 € ≈ (.+) atrofida\\. Bank kursini tekshiring\\.$",
+"Unusual rate: 1 € ≈ $1. Check the bank rate."
+],
+[
 "^(\\d+) ta universitet, muddatlar va ariza havolalari$",
 "$1 {1|university|universities|universities}, deadlines and application links"
 ],

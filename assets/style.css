@@ -1681,4 +1681,4 @@ html.calm .tg-fab-ic::after{animation:none}
 .st-row .dsu-sum .ds-l .tag{margin:0 0 2px}
 .st-row .st-amt{font-weight:700;font-size:14.5px;color:var(--accent);font-variant-numeric:tabular-nums}
 .st-row .dsu-sum .ds-l small{text-transform:none;letter-spacing:0;font-weight:500}
-html[lang="ru"] .tab{font-size:9.5px;letter-spacing:-.01em}
+html[lang="ru"] .tab,html[lang="kk"] .tab{font-size:9.5px;letter-spacing:-.01em}
