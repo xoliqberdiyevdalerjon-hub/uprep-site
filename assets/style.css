@@ -1682,3 +1682,19 @@ html.calm .tg-fab-ic::after{animation:none}
 .st-row .st-amt{font-weight:700;font-size:14.5px;color:var(--accent);font-variant-numeric:tabular-nums}
 .st-row .dsu-sum .ds-l small{text-transform:none;letter-spacing:0;font-weight:500}
 html[lang="ru"] .tab,html[lang="kk"] .tab,html[lang="tg"] .tab{font-size:9.5px;letter-spacing:-.01em}
+
+/* Settings: language picker. Each option is a card in its own language; the chosen one carries the accent ring and a tick */
+.lang-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.lang-opt{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:3px;min-height:112px;padding:14px 14px 12px;border:0;border-radius:18px;background:var(--surface);box-shadow:0 0 0 1px var(--line), var(--sh-1);color:var(--ink);text-align:left;font:inherit;cursor:pointer;transition:box-shadow .18s var(--ease), transform .18s var(--ease)}
+.lang-opt b{font:700 18px/1.15 var(--display);letter-spacing:-.02em;padding-right:26px}
+.lang-opt small{font-size:12.5px;line-height:1.35;color:var(--ink-2)}
+.lang-visa{display:flex;align-items:flex-start;gap:6px;margin-top:auto;padding-top:8px;font-size:11.5px;line-height:1.35;color:var(--muted)}
+.lang-visa svg{flex:none;width:13px;height:13px;margin-top:1px;stroke-width:2}
+.lang-opt:hover{box-shadow:0 0 0 1px var(--line-2), var(--sh-2)}
+.lang-opt:active{transform:scale(.98)}
+.lang-opt:focus-visible{outline:none;box-shadow:0 0 0 2px var(--bg), 0 0 0 4px var(--accent)}
+.lang-opt.on{box-shadow:0 0 0 2px var(--accent), var(--sh-2);cursor:default}
+.lang-opt.on .lang-visa{color:var(--ink-2)}
+.lang-tick{position:absolute;top:12px;right:12px;width:22px;height:22px;padding:4px;border-radius:50%;background:var(--accent);color:var(--surface);stroke-width:3}
+@media (min-width:640px){.lang-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){.lang-opt{transition:none}.lang-opt:active{transform:none}}
