@@ -196,6 +196,70 @@ T_TG = [
  ]),
 ]
 
+NOTE_TR = "Uniroad şablonu · [ ] içindekileri kendi bilgilerinizle değiştirin · @Uniroad_Admin"
+T_TR = [
+ ("cv-shablon", "CV (Curriculum Vitae)", "İngilizce, 1–2 sayfa. En önemli bilgiler en üstte. Her satırı kendinize göre uyarlayın, boş kalan bölümü silin.", [
+  ("h", "[FULL NAME]"),
+  ("p", "Date of birth: [DD.MM.YYYY] · Nationality: Turkish · [City], Türkiye"),
+  ("p", "Email: [email@example.com] · Phone: [+90 ..] · Telegram: [@username]"),
+  ("h2", "Education"),
+  ("ul", ["[2023 – 2027] [High school / University name], [City] — [Diploma or degree]. Diploma grade: [88/100] or GPA [3.40/4.00]",
+          "Relevant subjects: [Mathematics, Physics, Economics …]",
+          "YKS (ÖSYM): taken in [year] — [TYT/AYT score, if useful]"]),
+  ("h2", "Language skills"),
+  ("ul", ["English: [B2 / C1] — IELTS [6.5] ([month year])", "Turkish: native", "Italian: [A1, currently studying]"]),
+  ("h2", "Tests"),
+  ("ul", ["[SAT / CEnT-S / TOLC / GMAT]: [score] ([date])"]),
+  ("h2", "Experience and projects"),
+  ("ul", ["[Month year – Month year] [Role], [Organisation] — [what you did, one line, with a result or number]",
+          "[Project name] — [what it is, your role, result]"]),
+  ("h2", "Achievements"),
+  ("ul", ["[Olympiad / competition / award], [level], [year]", "[Volunteering / leadership role], [year]"]),
+  ("h2", "Skills"),
+  ("ul", ["[Microsoft Office, Python, Canva, …]", "[Teamwork, public speaking, …]"]),
+  ("h2", "Interests"),
+  ("p", "[2–3 real interests that say something about you]"),
+ ]),
+ ("motivatsion-xat-tuzilmasi", "Niyet mektubu: yapı ve örnek cümleler", "Üniversite kelime sınırı koyduysa ona uyun (genellikle 1 sayfa, 400–700 kelime). Örnek cümleleri kopyalamayın: yalnızca yol göstermek içindir.", [
+  ("h2", "1. Giriş: kimsiniz ve neden yazıyorsunuz"),
+  ("p", "Dear Admissions Committee,\nI am writing to apply for the [Programme name] at [University]. [One sentence about who you are and what drives you.]"),
+  ("h2", "2. Neden bu alan"),
+  ("p", "[A real moment or experience that brought you to this field.] Since then, I have [what you did to explore it: course, project, olympiad …]."),
+  ("h2", "3. Hazırlığınız"),
+  ("p", "During my studies at [school/university], I [results, subjects, GPA]. I also [project / work / volunteering] where I [specific skill + result]."),
+  ("h2", "4. Neden bu üniversite ve İtalya"),
+  ("p", "The [Programme] at [University] attracts me because of [2 concrete things: course, professor, lab, approach]. Studying in Italy will also [real reason]."),
+  ("h2", "5. Hedefleriniz ve sonuç"),
+  ("p", "After graduating, I plan to [short-term goal] and later [long-term goal], [how it connects to Türkiye or your field].\nThank you for considering my application.\nSincerely,\n[Full name]"),
+  ("h2", "Sık yapılan hatalar"),
+  ("ul", ["İnternetten örnek kopyalamak: komisyon bunu hemen fark eder", "Yalnızca genel sözler («I am hardworking»): örnek verin", "CV'yi yeniden saymak", "Üniversite adını yanlış yazmak veya başka bir üniversitenin adını unutmak", "Çok uzun yazmak: kelime sınırına uyun"]),
+ ]),
+ ("homiy-xati", "Sponsorluk ve garanti mektubu (vize için)", "İtalya'nın Türkiye'deki temsilciliklerinin öğrenci vizesi listesinde, ebeveynler için kimlik fotokopisiyle birlikte imzalı garanti mektubu yer alır. Bu bir örnektir: teslim etmeden önce bağlı olduğunuz temsilciliğin (Ankara, İstanbul veya İzmir) güncel listesini ve tercüme şartını kontrol edin. Sponsor imzalar.", [
+  ("h", "DECLARATION OF FINANCIAL SUPPORT AND GUARANTEE"),
+  ("p", "To: Visa Office, [Embassy of Italy in Ankara / Consulate General of Italy in Istanbul / Consulate of Italy in Izmir]"),
+  ("p", "I, [Sponsor full name], born on [DD.MM.YYYY], T.C. identity no. [ ], passport no. [ ], residing at [address], working as [position] at [employer], hereby declare that:"),
+  ("ul", ["I am the [father / mother / …] of [Student full name], born on [DD.MM.YYYY], passport no. [ ].",
+          "I have no objection to my [son / daughter] studying at [University], [Programme], in Italy for the academic year [2027/28].",
+          "I undertake to cover all living and study expenses of the student during the stay in Italy, including at least the annual amount required for the student visa ([10 179,85 €] for 2027/28 — check the current amount).",
+          "The funds come from [salary / business income / savings], as shown in the attached bank statements, payslips and tax documents."]),
+  ("p", "Attachments: bank statement for the last 6 months (stamped and signed by the bank), payslips for the last 3 months, tax documents, copy of my identity card, proof of relationship (nüfus kayıt örneği)."),
+  ("sign", "Date: [DD.MM.YYYY]          Signature: ____________________          [Sponsor full name]"),
+ ]),
+ ("oila-hujjatlari-royxati", "Burs için aile belgeleri: tercüman için liste", "Türkiye'de toplanır, her birine apostil yapılır ve İtalyancaya çevrilir. Kesin liste bölgeye göre değişir: üniversitenizin bölgesindeki bandoyu kontrol edin. «Nereden» sütunu yalnızca fikir vermek içindir: hangi belgenin nereden alındığını önceden teyit edin.", [
+  ("table", [["Belge", "Nereden", "Apostil", "Tercüme", "Hazır"],
+             ["Nüfus kayıt örneği (tüm hane)", "e-Devlet / Nüfus Müdürlüğü", "☐", "☐", "☐"],
+             ["Yerleşim yeri belgesi (her üye)", "e-Devlet / Nüfus Müdürlüğü", "☐", "☐", "☐"],
+             ["Babanın geliri (yıl: bandoya göre)", "İşyeri / vergi dairesi", "☐", "☐", "☐"],
+             ["Annenin geliri veya çalışmadığına dair belge", "İşyeri / SGK (e-Devlet)", "☐", "☐", "☐"],
+             ["Diğer üyelerin geliri", "İşyeri / vergi dairesi", "☐", "☐", "☐"],
+             ["Konut mülkiyeti ve yüzölçümü (m²)", "Tapu Müdürlüğü / e-Devlet", "☐", "☐", "☐"],
+             ["Diğer taşınmazlar (varsa)", "Tapu Müdürlüğü / e-Devlet", "☐", "☐", "☐"],
+             ["Banka hesapları ve birikimler (31.12 itibarıyla)", "Banka", "☐", "☐", "☐"],
+             ["Kira sözleşmesi (aile kirada oturuyorsa)", "Ev sahibi / noter", "☐", "☐", "☐"]]),
+  ("ul", ["Kendi yazdığınız dilekçe ve affidavit genellikle kabul edilmez", "Ailenin toplam geliri sıfır olamaz", "Tercümeyi yeminli tercümana yaptırın; kurumun istediği onay sırasını önceden sorun"]),
+ ]),
+]
+
 def docx_build(fn, title, intro, blocks, note=NOTE):
     d = Document()
     for s in d.sections: s.left_margin = s.right_margin = Cm(2); s.top_margin = s.bottom_margin = Cm(1.8)
@@ -247,7 +311,7 @@ table{{width:100%;border-collapse:collapse;margin:10px 0;font-size:10pt}} th,td{
 MARK = open(os.path.join(ROOT, "media", "favicon.svg"), encoding="utf-8").read().strip()
 os.makedirs(OUT, exist_ok=True)
 manifest = []
-for sets, sfx, note, lang, tag in [(T, "", NOTE, "uz", "Shablon"), (T_KK, "-kk", NOTE_KK, "kk", "Үлгі"), (T_TG, "-tg", NOTE_TG, "tg", "Намуна")]:
+for sets, sfx, note, lang, tag in [(T, "", NOTE, "uz", "Shablon"), (T_KK, "-kk", NOTE_KK, "kk", "Үлгі"), (T_TG, "-tg", NOTE_TG, "tg", "Намуна"), (T_TR, "-tr", NOTE_TR, "tr", "Şablon")]:
     for fn, title, intro, blocks in sets:
         docx_build(fn + sfx, title, intro, blocks, note)
         with open(os.path.join(OUT, fn + sfx + ".html"), "w", encoding="utf-8") as f: f.write(html_build(fn, title, intro, blocks, note, lang, tag))
