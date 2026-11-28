@@ -274,11 +274,11 @@
   window.addEventListener("online", function(){ if(LOADFAIL.length) location.reload(); });
   var LOADFAIL = [];
   /* ---------------- language: uz is the source; ru = content/ru/*.json overlays (texts only) + assets/i18n/ru.json for interface strings ---------------- */
-  var LANG = (function(){ try{ var q = /[?&]lang=(uz|ru|en|kk)\b/.exec(location.search); if(q){ localStorage.setItem("uniroad-lang", q[1]); return q[1]; } var v = localStorage.getItem("uniroad-lang"); return v === "ru" || v === "en" || v === "kk" ? v : "uz"; }catch(e){ return "uz"; } })();
+  var LANG = (function(){ try{ var q = /[?&]lang=(uz|ru|en|kk|tg)\b/.exec(location.search); if(q){ localStorage.setItem("uniroad-lang", q[1]); return q[1]; } var v = localStorage.getItem("uniroad-lang"); return v === "ru" || v === "en" || v === "kk" || v === "tg" ? v : "uz"; }catch(e){ return "uz"; } })();
   document.documentElement.lang = LANG;
-  var LCUR = LANG === "kk" ? {c:"KZT", n:"Tenge (₸)", s:" ₸", r:[200, 2000], h:"500–700 ₸"} : {c:"UZS", n:"So'm", s:" so'm", r:[3000, 50000], h:"14 000 so'm"};
-  var LANGN = {uz:"O'zbekcha", ru:"Русский", en:"English", kk:"Қазақша"};
-  function otherLangs(){ var L = arr(S.site.langs); if(L.indexOf(LANG) < 0 && LANG !== "uz") L = L.concat([LANG]); return ["uz", "ru", "en", "kk"].filter(function(l){ return l !== LANG && (l === "uz" ? L.length > 0 : L.indexOf(l) >= 0); }); }
+  var LCUR = LANG === "kk" ? {c:"KZT", n:"Tenge (₸)", s:" ₸", r:[200, 2000], h:"500–700 ₸"} : LANG === "tg" ? {c:"TJS", n:"Somoni (TJS)", s:" сомонӣ", r:[5, 20], h:"10–12 сомонӣ"} : {c:"UZS", n:"So'm", s:" so'm", r:[3000, 50000], h:"14 000 so'm"};
+  var LANGN = {uz:"O'zbekcha", ru:"Русский", en:"English", kk:"Қазақша", tg:"Тоҷикӣ"};
+  function otherLangs(){ var L = arr(S.site.langs); if(L.indexOf(LANG) < 0 && LANG !== "uz") L = L.concat([LANG]); return ["uz", "ru", "en", "kk", "tg"].filter(function(l){ return l !== LANG && (l === "uz" ? L.length > 0 : L.indexOf(l) >= 0); }); }
   function setLang(l){ try{ localStorage.setItem("uniroad-lang", l); }catch(e){} var u = location.href.replace(/([?&])lang=(uz|ru|en|kk)&?/, "$1").replace(/[?&](#|$)/, "$1"); if(u === location.href) location.reload(); else location.replace(u); }
   /* overlay keeps the uz structure: only strings that exist in both are replaced; arrays of objects match by id, otherwise by position */
   function overlay(b, o){
@@ -304,7 +304,7 @@
   }
   /* interface strings: exact matches ("s") and patterns ("p": [regex, template]); template: $1 = group (translated too), {1|форма1|форма2|форма5} = Russian plural by group 1 */
   var I18N = null;
-  function plural(n, a, b, c){ if(LANG === "kk") return a; if(LANG === "en") return Math.abs(n) === 1 ? a : c; n = Math.abs(n) % 100; var m = n % 10; return n > 10 && n < 20 ? c : m > 1 && m < 5 ? b : m === 1 ? a : c; }
+  function plural(n, a, b, c){ if(LANG === "kk" || LANG === "tg") return a; if(LANG === "en") return Math.abs(n) === 1 ? a : c; n = Math.abs(n) % 100; var m = n % 10; return n > 10 && n < 20 ? c : m > 1 && m < 5 ? b : m === 1 ? a : c; }
   function T(s){
     if(!I18N || typeof s !== "string") return s;
     var t = s.trim(); if(!t) return s;
@@ -843,7 +843,7 @@
     var m = el("div", "pass-main");
     var top = el("div", "pass-top"); top.appendChild(el("span", null, "Sizning yo'lingiz")); top.appendChild(el("span", "seat", "Talaba · " + (str(S.site.eyebrow).match(/\d{4}\/\d{2}/) || ["2026/27"])[0])); m.appendChild(top);
     var rt = el("div", "route");
-    var a = el("div", "city"); a.appendChild(el("b", null, LANG === "kk" ? "NQZ" : "TAS")); a.appendChild(el("small", null, LANG === "kk" ? "Astana" : "Toshkent")); rt.appendChild(a);
+    var a = el("div", "city"); a.appendChild(el("b", null, LANG === "kk" ? "NQZ" : LANG === "tg" ? "DYU" : "TAS")); a.appendChild(el("small", null, LANG === "kk" ? "Astana" : LANG === "tg" ? "Dushanbe" : "Toshkent")); rt.appendChild(a);
     var tr = el("div", "track"); tr.setAttribute("role", "img"); tr.setAttribute("aria-label", n + " / " + total + " bosqich bajarildi");
     tr.appendChild(el("span", "fill")); var pl = el("span", "plane"); pl.appendChild(ic("plane")); tr.appendChild(pl); rt.appendChild(tr);
     var b = el("div", "city r"); b.appendChild(el("b", null, "ITA")); b.appendChild(el("small", null, "Italiya")); rt.appendChild(b);
@@ -1842,7 +1842,7 @@
     var g4 = group("Sayt");
     var standalone = window.matchMedia && matchMedia("(display-mode: standalone)").matches, ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
     row(g4, "share", "c-green", "Do'stlarga ulashish", {onclick:function(){ var u = location.origin + location.pathname, t = "Uniroad: Italiyada o'qish, o'zbek tilida"; if(navigator.share) navigator.share({title:t, url:u}).catch(function(){}); else window.open("https://t.me/share/url?url=" + encodeURIComponent(u) + "&text=" + encodeURIComponent(t), "_blank", "noopener"); }});
-    if(otherLangs().length) otherLangs().forEach(function(l, i){ row(g4, "languages", "c-purple", i ? LANGN[l] : "Til / Язык / Language", {value:i ? "" : LANGN[LANG], sub:{uz:"O'zbekchaga o'tish", ru:"Переключить на русский", en:"Switch to English", kk:"Қазақ тіліне ауысу"}[l], onclick:function(){ setLang(l); }}); });
+    if(otherLangs().length) otherLangs().forEach(function(l, i){ row(g4, "languages", "c-purple", i ? LANGN[l] : "Til / Язык / Language", {value:i ? "" : LANGN[LANG], sub:{uz:"O'zbekchaga o'tish", ru:"Переключить на русский", en:"Switch to English", kk:"Қазақ тіліне ауысу", tg:"Гузариш ба забони тоҷикӣ"}[l], onclick:function(){ setLang(l); }}); });
     else row(g4, "languages", "c-purple", "Til", {value:"O'zbekcha", sub:"Rus tilidagi versiya tayyorlanmoqda"});
     if(LIVE) row(g4, "user", "c-gold", "Hisob", {href:A.user ? "#hisob" : "#kirish", value:A.user ? "Kirgansiz" : "Kirish"});
 
@@ -1869,7 +1869,7 @@
     ["homiy-xati", "wallet", "Homiylik va e'tirozsizlik xati", "Viza uchun: ota-ona yoki homiy imzolaydi. 5-qadam", "s4"],
     ["oila-hujjatlari-royxati", "checklist", "Stipendiya uchun oila hujjatlari ro'yxati", "Tarjimonga berish va belgilab borish uchun. 6-qadam", "s5"]
   ];
-  var TSFX = LANG === "kk" ? "-kk" : ""; // Kazakh templates are adapted to Kazakhstan (scripts/build_templates.py)
+  var TSFX = LANG === "kk" ? "-kk" : LANG === "tg" ? "-tg" : ""; // Kazakh templates are adapted to Kazakhstan (scripts/build_templates.py)
   function tplView(main){
     var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
     H.appendChild(kicker("doc", "Bepul · Word va PDF"));
