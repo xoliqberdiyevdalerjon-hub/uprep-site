@@ -134,6 +134,68 @@ T_KK = [
  ]),
 ]
 
+NOTE_TG = "Намунаи Uniroad · чизҳои дохили [ ]-ро ба маълумоти худатон иваз кунед · @Uniroad_Admin"
+T_TG = [
+ ("cv-shablon", "CV (Curriculum Vitae)", "Бо забони англисӣ, 1–2 саҳифа. Муҳимтаринаш дар боло. Ҳар сатрро ба худ мутобиқ кунед, бахши холиро нест кунед.", [
+  ("h", "[FULL NAME]"),
+  ("p", "Date of birth: [DD.MM.YYYY] · Nationality: Tajik · [City], Tajikistan"),
+  ("p", "Email: [email@example.com] · Phone: [+992 ..] · Telegram: [@username]"),
+  ("h2", "Education"),
+  ("ul", ["[2023 – 2026] [School / Lyceum / University name], [City] — [Degree or certificate]. GPA: [5.0 / 4.8] or [92%]",
+          "Relevant subjects: [Mathematics, Physics, Economics …]"]),
+  ("h2", "Language skills"),
+  ("ul", ["English: [B2 / C1] — IELTS [6.5] ([month year])", "Tajik: native · Russian: [B2 / C1]", "Italian: [A1, currently studying]"]),
+  ("h2", "Tests"),
+  ("ul", ["[SAT / CEnT-S / TOLC / GMAT]: [score] ([date])"]),
+  ("h2", "Experience and projects"),
+  ("ul", ["[Month year – Month year] [Role], [Organisation] — [what you did, one line, with a result or number]",
+          "[Project name] — [what it is, your role, result]"]),
+  ("h2", "Achievements"),
+  ("ul", ["[Olympiad / competition / award], [level], [year]", "[Volunteering / leadership role], [year]"]),
+  ("h2", "Skills"),
+  ("ul", ["[Microsoft Office, Python, Canva, …]", "[Teamwork, public speaking, …]"]),
+  ("h2", "Interests"),
+  ("p", "[2–3 real interests that say something about you]"),
+ ]),
+ ("motivatsion-xat-tuzilmasi", "Номаи ангезишӣ: сохтор ва ҷумлаҳои намунавӣ", "Агар донишгоҳ шумораи калимаҳоро муайян карда бошад, риоя кунед (одатан 1 саҳифа, 400–700 калима). Ҷумлаҳои намунавиро нусха накунед: онҳо танҳо барои самтгирӣ.", [
+  ("h2", "1. Муқаддима: шумо кистед ва барои чӣ менависед"),
+  ("p", "Dear Admissions Committee,\nI am writing to apply for the [Programme name] at [University]. [One sentence about who you are and what drives you.]"),
+  ("h2", "2. Чаро маҳз ҳамин самт"),
+  ("p", "[A real moment or experience that brought you to this field.] Since then, I have [what you did to explore it: course, project, olympiad …]."),
+  ("h2", "3. Омодагии шумо"),
+  ("p", "During my studies at [school/university], I [results, subjects, GPA]. I also [project / work / volunteering] where I [specific skill + result]."),
+  ("h2", "4. Чаро маҳз ҳамин донишгоҳ ва Италия"),
+  ("p", "The [Programme] at [University] attracts me because of [2 concrete things: course, professor, lab, approach]. Studying in Italy will also [real reason]."),
+  ("h2", "5. Ҳадафҳои шумо ва хулоса"),
+  ("p", "After graduating, I plan to [short-term goal] and later [long-term goal], [how it connects to Tajikistan or your field].\nThank you for considering my application.\nSincerely,\n[Full name]"),
+  ("h2", "Хатоҳои маъмул"),
+  ("ul", ["Нусхабардории намуна аз интернет: комиссия инро фавран мефаҳмад", "Танҳо гапҳои умумӣ («I am hardworking»): мисол оред", "Аз нав шумурдани CV", "Номи донишгоҳро хато навиштан ё боқӣ мондани номи донишгоҳи дигар", "Хеле дароз навиштан: ҳадди калимаҳоро риоя кунед"]),
+ ]),
+ ("homiy-xati", "Мактуби сарпарастӣ ва розигӣ (барои раводид)", "Дар Тоҷикистон сафорати Италия нест: барои Тоҷикистон Сафорати Италия дар Тошкент масъул аст ва дар рӯйхати он «мактуби розигии корфармо ё аъзои оилаи сарпараст» ҳаст. Ин намуна аст: пеш аз супоридан рӯйхати амалкунандаи сафорат ва талаботи тарҷумаро санҷед. Сарпараст имзо мекунад.", [
+  ("h", "DECLARATION OF FINANCIAL SUPPORT AND NO OBJECTION"),
+  ("p", "To: Consular Section, Embassy of Italy in Tashkent (competent for Tajikistan)"),
+  ("p", "I, [Sponsor full name], born on [DD.MM.YYYY], passport no. [ ], residing at [address], working as [position] at [employer], hereby declare that:"),
+  ("ul", ["I am the [father / mother / …] of [Student full name], born on [DD.MM.YYYY], passport no. [ ].",
+          "I have no objection to my [son / daughter] studying at [University], [Programme], in Italy for the academic year [2027/28].",
+          "I undertake to cover all living and study expenses of the student during the stay in Italy, including at least the annual amount required for the student visa ([10 179,85 €] for 2027/28 — check the current amount).",
+          "The funds come from [salary / business income / savings], as shown in the attached bank statements and employment certificate."]),
+  ("p", "Attachments: bank statement (last 3 months), employment and salary certificate, copy of passport, proof of relationship."),
+  ("sign", "Date: [DD.MM.YYYY]          Signature: ____________________          [Sponsor full name]"),
+ ]),
+ ("oila-hujjatlari-royxati", "Ҳуҷҷатҳои оила барои стипендия: рӯйхат барои тарҷумон", "Дар Тоҷикистон ҷамъ карда мешавад, ба ҳар кадом апостил гузошта ва ба забони итолиёвӣ тарҷума мешавад. Рӯйхати аниқ вобаста ба минтақа фарқ мекунад: bando-и минтақаи донишгоҳатонро санҷед. Сутуни «Аз куҷо» танҳо барои самтгирӣ аст: кадом маълумотнома аз куҷо дода мешавад, пешакӣ дақиқ кунед.", [
+  ("table", [["Ҳуҷҷат", "Аз куҷо", "Апостил", "Тарҷума", "Тайёр"],
+             ["Ҳайати оила ва бақайдгирӣ (ҳар аъзо)", "Мақомоти маҳаллӣ, САҲШ (ЗАГС)", "☐", "☐", "☐"],
+             ["Даромади падар (сол: вобаста ба bando)", "Ҷои кор / мақомоти андоз", "☐", "☐", "☐"],
+             ["Даромади модар ё ҳуҷҷат дар бораи кор накардан", "Ҷои кор / мақоми дахлдор", "☐", "☐", "☐"],
+             ["Даромади дигар аъзоён", "Ҷои кор", "☐", "☐", "☐"],
+             ["Амволи манзил ва масоҳати он (m²)", "Мақомоти бақайдгирии амвол", "☐", "☐", "☐"],
+             ["Дигар амволи ғайриманқул (агар бошад)", "Мақомоти бақайдгирии амвол", "☐", "☐", "☐"],
+             ["Ҳисобҳои бонкӣ ва пасандозҳо (то 31.12)", "Бонк", "☐", "☐", "☐"],
+             ["Шартномаи иҷора (агар оила дар иҷора зиндагӣ кунад)", "Нотариус", "☐", "☐", "☐"]]),
+  ("ul", ["Аризаи худнавишта ва affidavit одатан қабул намешаванд", "Даромади умумии оила наметавонад сифр бошад", "Тарҷумаро назди тарҷумоне кунонед, ки сафорат ё идора эътироф мекунад"]),
+ ]),
+]
+
 def docx_build(fn, title, intro, blocks, note=NOTE):
     d = Document()
     for s in d.sections: s.left_margin = s.right_margin = Cm(2); s.top_margin = s.bottom_margin = Cm(1.8)
@@ -185,7 +247,7 @@ table{{width:100%;border-collapse:collapse;margin:10px 0;font-size:10pt}} th,td{
 MARK = open(os.path.join(ROOT, "media", "favicon.svg"), encoding="utf-8").read().strip()
 os.makedirs(OUT, exist_ok=True)
 manifest = []
-for sets, sfx, note, lang, tag in [(T, "", NOTE, "uz", "Shablon"), (T_KK, "-kk", NOTE_KK, "kk", "Үлгі")]:
+for sets, sfx, note, lang, tag in [(T, "", NOTE, "uz", "Shablon"), (T_KK, "-kk", NOTE_KK, "kk", "Үлгі"), (T_TG, "-tg", NOTE_TG, "tg", "Намуна")]:
     for fn, title, intro, blocks in sets:
         docx_build(fn + sfx, title, intro, blocks, note)
         with open(os.path.join(OUT, fn + sfx + ".html"), "w", encoding="utf-8") as f: f.write(html_build(fn, title, intro, blocks, note, lang, tag))

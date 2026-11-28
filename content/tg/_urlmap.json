@@ -1,1 +1,10 @@
-{}
+{
+"media/shablonlar/cv-shablon.docx": "media/shablonlar/cv-shablon-tg.docx",
+"media/shablonlar/cv-shablon.pdf": "media/shablonlar/cv-shablon-tg.pdf",
+"media/shablonlar/homiy-xati.docx": "media/shablonlar/homiy-xati-tg.docx",
+"media/shablonlar/homiy-xati.pdf": "media/shablonlar/homiy-xati-tg.pdf",
+"media/shablonlar/oila-hujjatlari-royxati.docx": "media/shablonlar/oila-hujjatlari-royxati-tg.docx",
+"media/shablonlar/oila-hujjatlari-royxati.pdf": "media/shablonlar/oila-hujjatlari-royxati-tg.pdf",
+"media/shablonlar/motivatsion-xat-tuzilmasi.docx": "media/shablonlar/motivatsion-xat-tuzilmasi-tg.docx",
+"media/shablonlar/motivatsion-xat-tuzilmasi.pdf": "media/shablonlar/motivatsion-xat-tuzilmasi-tg.pdf"
+}
