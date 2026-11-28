@@ -1869,6 +1869,7 @@
     ["homiy-xati", "wallet", "Homiylik va e'tirozsizlik xati", "Viza uchun: ota-ona yoki homiy imzolaydi. 5-qadam", "s4"],
     ["oila-hujjatlari-royxati", "checklist", "Stipendiya uchun oila hujjatlari ro'yxati", "Tarjimonga berish va belgilab borish uchun. 6-qadam", "s5"]
   ];
+  var TSFX = LANG === "kk" ? "-kk" : ""; // Kazakh templates are adapted to Kazakhstan (scripts/build_templates.py)
   function tplView(main){
     var H = hero({cls:"compact", scene:"rome", image:S.site.heroImage, narrow:true});
     H.appendChild(kicker("doc", "Bepul · Word va PDF"));
@@ -1879,8 +1880,8 @@
       var c = el("article", "tpl");
       var hd = el("div", "tpl-h"); var i = el("span", "ic"); i.appendChild(ic(t[1])); hd.appendChild(i); var tx = el("div"); tx.appendChild(el("b", null, t[2])); tx.appendChild(el("small", null, t[3])); hd.appendChild(tx); c.appendChild(hd);
       var bx = el("div", "ic-btns");
-      var w = btn("navy", "download", "Word", "media/shablonlar/" + t[0] + ".docx"); w.setAttribute("download", ""); bx.appendChild(w);
-      var pd = btn("line", "download", "PDF", "media/shablonlar/" + t[0] + ".pdf"); pd.setAttribute("download", ""); bx.appendChild(pd);
+      var w = btn("navy", "download", "Word", "media/shablonlar/" + t[0] + TSFX + ".docx"); w.setAttribute("download", ""); bx.appendChild(w);
+      var pd = btn("line", "download", "PDF", "media/shablonlar/" + t[0] + TSFX + ".pdf"); pd.setAttribute("download", ""); bx.appendChild(pd);
       c.appendChild(bx); g.appendChild(c);
     });
     main.appendChild(g);
